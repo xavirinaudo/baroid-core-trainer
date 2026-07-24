@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACERPRO | Fluids Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- JSZip for Zip Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fade-in 0.4s ease-out forwards;
+        }
+
+        .active-scale:active {
+            transform: scale(0.95);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tracer: {
+                            red: '#E31837',
+                            dark: '#121212',
+                            slate: '#F8F9FA'
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '2.5rem',
+                        '6xl': '3.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // --- Error Boundary simple (Dentro de Babel para evitar ReferenceError en local) ---
+        class ErrorBoundary extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { hasError: false, error: null };
+            }
+            static getDerivedStateFromError(error) { return { hasError: true, error }; }
+            componentDidCatch(error, errorInfo) { console.error("Error UI:", error, errorInfo); }
+            render() {
+                if (this.state.hasError) {
+                    return (
+                        <div className="min-h-screen bg-black flex flex-col items-center justify-center p-10 text-center">
+                            <i data-lucide="alert-triangle" className="text-red-600 mb-6" style={{ width: 80, height: 80 }}></i>
+                            <h1 className="text-3xl font-black text-white uppercase italic tracking-tighter mb-4">ALGO SALIÓ MAL</h1>
+                            <p className="text-slate-500 mb-8 max-w-md text-sm">Se detectó un error en el renderizado. Intente refrescar la página.</p>
+                            <button onClick={() => window.location.reload()} className="bg-red-600 text-white px-10 py-4 rounded-3xl font-black uppercase text-xs">Refrescar Aplicación</button>
+                        </div>
+                    );
+                }
+                return this.props.children;
+            }
+        }
+
+        const { useState, useMemo, useEffect, useRef } = React;
+
+        // --- Icons Helper (Optimizado para rendimiento) ---
+        const Icon = React.memo(({ name, size = 20, className = "" }) => {
+            const iconRef = useRef(null);
+            useEffect(() => {
+                if (iconRef.current && window.lucide) {
+                    window.lucide.createIcons({ elements: [iconRef.current] });
+                }
+            }, [name, size]);
+            return (
+                <span className={`inline-flex items-center justify-center pointer-events-none transition-opacity duration-200 ${className}`} style={{ width: size, height: size }}>
+                    <i ref={iconRef} data-lucide={name} style={{ width: size, height: size }}></i>
+                </span>
+            );
+        });
+
+        // --- Branding ---
+        const TRACER_RED = "#E31837";
+        const TRACER_DARK = "#121212";
+
+        // --- Datos Maestros Iniciales ---
+        const OPERADORAS_INI = [
+            { id: 'op1', nombre: 'YPF S.A.' },
+            { id: 'op2', nombre: 'Pan American Energy' },
+            { id: 'op3', nombre: 'Vista Energy' },
+            { id: 'op4', nombre: 'Pluspetrol' },
+            { id: 'op5', nombre: 'CHEVRON' },
+            { id: 'op6', nombre: 'SHELL S.A.' },
+            { id: 'op7', nombre: 'PHOENIX' },
+            { id: 'op8', nombre: 'Pampa Energía' }
+        ];
+
+        const PADS_INI = {
+            op1: [{ id: 'pad1', nombre: 'PAD 101 - Loma Campana' }, { id: 'pad2', nombre: 'PAD 202 - La Amarga Chica' }, { id: 'pad3', nombre: 'PAD 301 - Bandurria Sur' }, { id: 'pad4', nombre: 'PAD 402 - Aguada Pichana Este' }],
+            op2: [{ id: 'pad5', nombre: 'PAD 05 - Lindero Atravesado' }, { id: 'pad6', nombre: 'PAD 17 - Cerro Dragón' }, { id: 'pad7', nombre: 'PAD 12 - Estancia Vieja' }],
+            op3: [{ id: 'pad8', nombre: 'PAD V-01 - Bajada del Palo' }, { id: 'pad9', nombre: 'PAD V-02 - Bajada de Añelo' }, { id: 'pad10', nombre: 'PAD V-03 - Traful' }],
+            op4: [{ id: 'pad11', nombre: 'PAD P-10 - Aguada de la Arena' }, { id: 'pad12', nombre: 'PAD P-15 - Rincón de los Sauces' }, { id: 'pad13', nombre: 'PAD P-20 - Chihuidos' }],
+            op5: [{ id: 'pad14', nombre: 'PAD CH-01 - Loma Negra' }, { id: 'pad15', nombre: 'PAD CH-02 - Bandurria Norte' }, { id: 'pad16', nombre: 'PAD CH-03 - El Trapial' }],
+            op6: [{ id: 'pad17', nombre: 'PAD SH-01 - Cruz de Lorena' }, { id: 'pad18', nombre: 'PAD SH-02 - Sierras Blancas' }, { id: 'pad19', nombre: 'PAD SH-03 - La Yesera' }],
+            op7: [{ id: 'pad20', nombre: 'PAD PH-01 - Parva Negra' }, { id: 'pad21', nombre: 'PAD PH-02 - Puesto Hernández' }, { id: 'pad22', nombre: 'PAD PH-03 - Coirón Amargo' }],
+            op8: [{ id: 'pad23', nombre: 'PAD PAM-01 - El Mangrullo' }]
+        };
+
+        const PRODUCTOS_INI = [
+            { id: 'p1', nombre: 'BARITA EN BOLSONES', cat: 'barita' },
+            { id: 'p2', nombre: 'BARITA EN SILO', cat: 'barita' },
+            { id: 'p3', nombre: 'TRACERPRO (Baritina 4.2 SG)', cat: 'barita' },
+            { id: 'p4', nombre: 'LIME FG – Cal', cat: 'quimico' },
+            { id: 'p5', nombre: 'BARABLOK™ 400 NA', cat: 'quimico' },
+            { id: 'p6', nombre: 'BARACARB®-DF FINE', cat: 'quimico' },
+            { id: 'p7', nombre: 'BARACARB®-DF MEDIUM', cat: 'quimico' },
+            { id: 'p8', nombre: 'BARACARB®-DF COARSE', cat: 'quimico' },
+            { id: 'p9', nombre: 'GELTONE® II', cat: 'quimico' },
+            { id: 'p10', nombre: 'BDF™-965 FINE', cat: 'quimico' },
+            { id: 'p11', nombre: 'BDF™-965 MEDIUM', cat: 'quimico' },
+            { id: 'p12', nombre: 'BaraShield®-982', cat: 'quimico' },
+            { id: 'p13', nombre: 'BaraShield®-981', cat: 'quimico' },
+            { id: 'p14', nombre: 'BaraFLC®-903', cat: 'quimico' },
+            { id: 'p15', nombre: 'BaraSeal™-957', cat: 'quimico' },
+            { id: 'p16', nombre: 'STOPPIT™', cat: 'quimico' },
+            { id: 'p17', nombre: 'OBTURANTE MEZCLA', cat: 'quimico' },
+            { id: 'p18', nombre: 'EZ MUL® LA', cat: 'quimico' },
+            { id: 'p19', nombre: 'CLAY GRABBER®', cat: 'quimico' },
+            { id: 'p20', nombre: 'CLAY SYNC™ II', cat: 'quimico' },
+            { id: 'p21', nombre: 'BARA-DEFOAM® HP', cat: 'quimico' },
+            { id: 'p22', nombre: 'OMC® 3', cat: 'quimico' },
+            { id: 'p23', nombre: 'THERMA-THIN YPF', cat: 'quimico' },
+            { id: 'p24', nombre: 'XLR-RATE™', cat: 'quimico' },
+            { id: 'p25', nombre: 'DRILTREAT®', cat: 'quimico' },
+            { id: 'p26', nombre: 'INVERMUL® LA', cat: 'quimico' },
+            { id: 'p27', nombre: 'RM-63™', cat: 'quimico' },
+            { id: 'p28', nombre: 'BAROFIBRE®', cat: 'quimico' },
+            { id: 'p29', nombre: 'BARAZAN® D PLUS', cat: 'quimico' },
+            { id: 'p30', nombre: 'CARBONOX®', cat: 'quimico' },
+            { id: 'p31', nombre: 'PAC™-L', cat: 'quimico' },
+            { id: 'p32', nombre: 'BENTONITA BOLSÓN', cat: 'quimico' },
+            { id: 'p33', nombre: 'BENTONITA PALLET', cat: 'quimico' },
+            { id: 'p34', nombre: 'SODA ASH', cat: 'quimico' },
+            { id: 'p35', nombre: 'SODA CÁUSTICA', cat: 'quimico' },
+            { id: 'p36', nombre: 'Potassium chloride (KCl)', cat: 'quimico' },
+            { id: 'p37', nombre: 'BARAVIS W-637', cat: 'quimico' },
+            { id: 'p38', nombre: 'TS PLUS YPF', cat: 'quimico' },
+            { id: 'p39', nombre: 'CALCIUM CHLORIDE BRINE (YPF)', cat: 'quimico' },
+            { id: 'p40', nombre: 'Cloruro de Calcio', cat: 'quimico' },
+            { id: 'p41', nombre: 'INVERMUL®', cat: 'quimico' },
+            { id: 'p42', nombre: 'LE SUPERMUL™', cat: 'quimico' },
+            { id: 'p43', nombre: 'TAU-MOD®', cat: 'quimico' }
+        ];
+
+        // --- IndexedDB for Files Persistence ---
+        const DB_NAME = 'TracerFilesDB';
+        const STORE_NAME = 'remitos_files';
+
+        const initDB = () => {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, 1);
+                request.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) db.createObjectStore(STORE_NAME);
+                };
+                request.onsuccess = (e) => resolve(e.target.result);
+                request.onerror = (e) => reject(e.target.error);
+            });
+        };
+
+        const saveFileToDB = async (id, file) => {
+            const db = await initDB();
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).put(file, id);
+        };
+
+        const getFileFromDB = async (id) => {
+            const db = await initDB();
+            return new Promise(resolve => {
+                const request = db.transaction(STORE_NAME).objectStore(STORE_NAME).get(id);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => resolve(null);
+            });
+        };
+
+
+        // --- Helpers ---
+        const copyToClipboard = (text, onSuccess) => {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                if (onSuccess) onSuccess();
+            } catch (err) {
+                console.error("No se pudo copiar", err);
+            }
+            document.body.removeChild(textArea);
+        };
+
+        // --- Data Persistence Helpers ---
+        const getUsers = () => JSON.parse(localStorage.getItem('tracer_users') || '[]');
+        const saveUser = (user) => {
+            const users = getUsers();
+            users.push(user);
+            localStorage.setItem('tracer_users', JSON.stringify(users));
+        };
+
+        const getSharedSO = (operadoraId) => {
+            const currentMonth = new Date().toISOString().slice(0, 7); // YYYY-MM
+            const sharedData = JSON.parse(localStorage.getItem('tracer_shared_so') || '{}');
+            const key = `${operadoraId}_${currentMonth}`;
+            return sharedData[key] || '';
+        };
+
+        const setSharedSO = (operadoraId, soNumber) => {
+            const currentMonth = new Date().toISOString().slice(0, 7);
+            const sharedData = JSON.parse(localStorage.getItem('tracer_shared_so') || '{}');
+            const key = `${operadoraId}_${currentMonth}`;
+            sharedData[key] = soNumber;
+            localStorage.setItem('tracer_shared_so', JSON.stringify(sharedData));
+        };
+
+        const getLotMemory = (productId, lotCode) => {
+            const key = `${productId}_${lotCode.toUpperCase()}`;
+            const memory = JSON.parse(localStorage.getItem('tracer_lot_memory') || '{}');
+            return memory[key] || '';
+        };
+
+        const saveLotMemory = (productId, lotCode, expiry) => {
+            const key = `${productId}_${lotCode.toUpperCase()}`;
+            const memory = JSON.parse(localStorage.getItem('tracer_lot_memory') || '{}');
+            memory[key] = expiry;
+            localStorage.setItem('tracer_lot_memory', JSON.stringify(memory));
+
+            // Save to suggestions
+            const suggestions = JSON.parse(localStorage.getItem('tracer_lot_suggestions') || '{}');
+            if (!suggestions[productId]) suggestions[productId] = [];
+            if (!suggestions[productId].includes(lotCode.toUpperCase())) {
+                suggestions[productId].unshift(lotCode.toUpperCase());
+                suggestions[productId] = suggestions[productId].slice(0, 5); // Keep last 5
+            }
+            localStorage.setItem('tracer_lot_suggestions', JSON.stringify(suggestions));
+        };
+
+        const getLotSuggestions = (productId) => {
+            const suggestions = JSON.parse(localStorage.getItem('tracer_lot_suggestions') || '{}');
+            return suggestions[productId] || [];
+        };
+
+        // --- Mock Data Generator ---
+        const generateMockData = (ops, allPads, prods) => {
+            const data = [];
+            const baritaProducts = prods.filter(p => p.cat === 'barita');
+            const quimicoProducts = prods.filter(p => p.cat === 'quimico');
+            const lotPool = ['LOT-A100', 'LOT-B200', 'LOT-C300', 'LOT-D400', 'LOT-X888', 'LOT-Z999', 'LOT-555-K', 'LOT-999-J'];
+
+            for (let i = 0; i < 20; i++) {
+                const op = ops[Math.floor(Math.random() * ops.length)];
+                const padList = allPads[op.id] || [];
+                const pad = padList[Math.floor(Math.random() * padList.length)] || { id: 'unknown', nombre: 'PAD DESCONOCIDO' };
+                const date = new Date();
+                date.setDate(date.getDate() - Math.floor(Math.random() * 200));
+                const dateStr = date.toISOString().split('T')[0];
+                const remitoNumber = `REM-${10000 + i}`;
+                const soNumber = `SO-${20000 + Math.floor(i / 3)}`;
+                const hasError = Math.random() < 0.10;
+                const comments = hasError ? "Novedad en la descarga reportada." : "";
+
+                const isBaritaRemito = Math.random() < 0.4;
+                let itemsInRemito = [];
+
+                if (isBaritaRemito) {
+                    const prod = baritaProducts[Math.floor(Math.random() * baritaProducts.length)];
+                    if (prod) {
+                        itemsInRemito.push({
+                            productoId: prod.id, producto: prod.nombre, categoria: prod.cat,
+                            cantidad: Math.floor(Math.random() * 40) + 10,
+                            lote: lotPool[Math.floor(Math.random() * lotPool.length)],
+                            vencimiento: '2027-12-31'
+                        });
+                    }
+                } else {
+                    const numItems = Math.floor(Math.random() * 4) + 1;
+                    const usedProds = new Set();
+                    for (let j = 0; j < numItems; j++) {
+                        const prod = quimicoProducts[Math.floor(Math.random() * quimicoProducts.length)];
+                        if (!prod || usedProds.has(prod.id)) continue;
+                        usedProds.add(prod.id);
+                        itemsInRemito.push({
+                            productoId: prod.id, producto: prod.nombre, categoria: prod.cat,
+                            cantidad: Math.floor(Math.random() * 15) + 1,
+                            lote: lotPool[Math.floor(Math.random() * lotPool.length)],
+                            vencimiento: '2026-08-15'
+                        });
+                    }
+                }
+
+                itemsInRemito.forEach(it => {
+                    data.push({
+                        ...it,
+                        operadoraId: op.id, operadora: op.nombre,
+                        padId: pad.id, pad: pad.nombre,
+                        soNumber, remito: remitoNumber, fecha: dateStr,
+                        hasError, comentarios: comments, estadoWellSight: true
+                    });
+                });
+            }
+            return data;
+        };
+
+        // --- UI Components ---
+        const HeaderComp = ({ onGoHome }) => {
+            const [dateTime, setDateTime] = React.useState(new Date());
+
+            React.useEffect(() => {
+                const timer = setInterval(() => setDateTime(new Date()), 1000);
+                return () => clearInterval(timer);
+            }, []);
+
+            const formatTime = (date) => {
+                return date.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' hs';
+            };
+
+            const formatDate = (date) => {
+                return date.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            };
+
+            return (
+                <header className="bg-tracer-dark border-b border-white/10 px-6 py-3 sticky top-0 z-50">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                            <button onClick={onGoHome} className="w-10 h-10 bg-tracer-red rounded flex items-center justify-center shadow-lg transform -rotate-12 transition-transform hover:rotate-0 active-scale">
+                                <Icon name="truck" size={20} className="text-white" />
+                            </button>
+                            <div>
+                                <span className="font-black text-xl text-white tracking-tighter uppercase italic leading-none block">
+                                    TRACER<span className="text-red-600">PRO</span> <span className="text-slate-500 font-light text-sm">FLUIDS SERVICES</span>
+                                </span>
+                                <span className="text-[9px] font-bold text-red-500 uppercase tracking-[0.3em] italic">Logística y Trazabilidad</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 md:gap-6">
+                            <div className="flex flex-col items-end">
+                                <span className="text-white text-sm font-black italic tracking-tighter leading-none">{formatTime(dateTime)}</span>
+                                <span className="text-slate-500 text-[9px] font-bold uppercase tracking-widest mt-1">{formatDate(dateTime)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            );
+        };
+
+        const SettingsView = ({ operadoras, setOperadoras, productos, setProductos, pads, setPads, showToast }) => {
+            const [newItem, setNewItem] = useState('');
+            const [activeTab, setActiveTab] = useState('ops');
+
+            const addOp = () => {
+                if (!newItem) return;
+                const id = 'op_' + Date.now();
+                setOperadoras([...operadoras, { id, nombre: newItem.toUpperCase() }]);
+                setPads({ ...pads, [id]: [] });
+                setNewItem('');
+                showToast("Operadora agregada");
+            };
+
+            const addPad = (opId, val) => {
+                if (!val) return;
+                const newPad = { id: 'pad_' + Date.now(), nombre: val.toUpperCase() };
+                setPads({ ...pads, [opId]: [...(pads[opId] || []), newPad] });
+                showToast("PAD agregado");
+            };
+
+            const addProd = () => {
+                if (!newItem) return;
+                setProductos([...productos, { id: 'p_' + Date.now(), nombre: newItem.toUpperCase(), cat: 'quimico' }]);
+                setNewItem('');
+                showToast("Producto agregado");
+            };
+
+            const removeOp = (id) => {
+                setOperadoras(operadoras.filter(o => o.id !== id));
+                showToast("Operadora eliminada");
+            };
+
+            return (
+                <div className="max-w-4xl mx-auto p-6 animate-in">
+                    <h2 className="text-3xl font-black text-slate-900 uppercase italic mb-8 tracking-tighter">Configuración</h2>
+                    
+                    <div className="flex gap-4 mb-8">
+                        <button onClick={() => setActiveTab('ops')} className={`px-6 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all ${activeTab === 'ops' ? 'bg-red-600 text-white' : 'bg-white text-slate-400 border border-slate-100'}`}>Operadoras y PADs</button>
+                        <button onClick={() => setActiveTab('prods')} className={`px-6 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all ${activeTab === 'prods' ? 'bg-red-600 text-white' : 'bg-white text-slate-400 border border-slate-100'}`}>Productos</button>
+                    </div>
+
+                    {activeTab === 'ops' ? (
+                        <div className="space-y-6">
+                            <div className="flex gap-4">
+                                <input type="text" placeholder="Nueva Operadora..." className="flex-1 p-4 bg-white rounded-2xl font-bold text-xs border border-slate-100 shadow-sm" value={newItem} onChange={e => setNewItem(e.target.value)} />
+                                <button onClick={addOp} className="bg-slate-900 text-white px-8 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-red-600">Agregar</button>
+                            </div>
+                            <div className="grid grid-cols-1 gap-4">
+                                {operadoras.map(op => (
+                                    <div key={op.id} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-4 font-sans italic">
+                                        <div className="flex justify-between items-center border-b border-slate-50 pb-4">
+                                            <p className="font-black text-slate-900 uppercase italic">{op.nombre}</p>
+                                            <button onClick={() => removeOp(op.id)} className="text-slate-300 hover:text-red-600"><Icon name="trash-2" size={16} /></button>
+                                        </div>
+                                        <div className="pl-4 space-y-2">
+                                            <div className="flex gap-3">
+                                                <input type="text" placeholder="Nuevo PAD..." className="flex-1 p-3 bg-slate-50 rounded-xl text-[10px] font-bold" id={`inp_${op.id}`} />
+                                                <button onClick={() => {
+                                                    const val = document.getElementById(`inp_${op.id}`).value;
+                                                    addPad(op.id, val);
+                                                    document.getElementById(`inp_${op.id}`).value = '';
+                                                }} className="bg-red-600 text-white px-4 rounded-xl text-[10px] font-black uppercase tracking-widest">Añadir</button>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2 pt-2">
+                                                {(pads[op.id] || []).map(p => (
+                                                    <span key={p.id} className="px-3 py-1.5 bg-slate-100 rounded-lg text-[9px] font-black text-slate-500 uppercase italic flex items-center gap-2">
+                                                        {p.nombre}
+                                                        <button onClick={() => {
+                                                            const updatedPads = { ...pads, [op.id]: pads[op.id].filter(x => x.id !== p.id) };
+                                                            setPads(updatedPads);
+                                                        }} className="hover:text-red-600"><Icon name="x" size={10} /></button>
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="space-y-6">
+                            <div className="flex gap-4">
+                                <input type="text" placeholder="Nuevo Producto..." className="flex-1 p-4 bg-white rounded-2xl font-bold text-xs border border-slate-100 shadow-sm" value={newItem} onChange={e => setNewItem(e.target.value)} />
+                                <button onClick={addProd} className="bg-slate-900 text-white px-8 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-red-600 tracking-widest">Agregar</button>
+                            </div>
+                            <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                                {productos.map(p => (
+                                    <div key={p.id} className="flex justify-between items-center p-4 border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                                        <span className="font-bold text-[11px] uppercase text-slate-800 italic">{p.nombre}</span>
+                                        <button onClick={() => setProductos(productos.filter(x => x.id !== p.id))} className="text-slate-300 hover:text-red-600"><Icon name="trash-2" size={14} /></button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+
+        const WellSightModal = ({ isOpen, onClose, header, items, onConfirm, showToast, onDownload, operadoras, pads }) => {
+            useEffect(() => {
+                const handleEsc = (e) => { if (e.key === 'Escape') onClose(); };
+                if (isOpen) {
+                    window.addEventListener('keydown', handleEsc);
+                }
+                return () => {
+                    window.removeEventListener('keydown', handleEsc);
+                };
+            }, [isOpen]);
+
+            if (!isOpen) return null;
+
+            const hasBarita = items.some(it => it.nombre.toLowerCase().includes('barita'));
+            const hasQuimicos = items.some(it => !it.nombre.toLowerCase().includes('barita'));
+
+            let loadMsg = "";
+            if (hasQuimicos && hasBarita) loadMsg = "Se recibieron productos químicos y barita";
+            else if (hasBarita) loadMsg = "Se recibió barita";
+            else loadMsg = "Se recibieron productos químicos";
+
+            const padName = pads[header.operadoraId]?.find(p => p.id === header.padId)?.nombre;
+            const opName = operadoras.find(o => o.id === header.operadoraId)?.nombre;
+
+            const copyStandard = () => {
+                const text = `SO: ${header?.soNumber || ''} | REMITO: ${header?.remito || ''} | ${loadMsg} en locación ${padName}.`;
+                copyToClipboard(text, () => showToast("Datos copiados (WellSight)"));
+            };
+
+            const copyError = () => {
+                const text = `REPORTE DE ERROR LOGÍSTICA\nFecha: ${new Date().toLocaleDateString()}\nOperadora: ${opName}\nPAD: ${padName}\nSO: ${header?.soNumber || ''}\nRemito: ${header?.remito || ''}\nError: ${header?.comentarios || ''}`;
+                copyToClipboard(text, () => showToast("Reporte de Error copiado"));
+            };
+
+            const standardComment = `${loadMsg} en locación ${padName}.`;
+            const errorReportText = `REPORTE DE ERROR LOGÍSTICA\nFecha: ${new Date().toLocaleDateString()}\nOperadora: ${opName}\nPAD: ${padName}\nSO: ${header?.soNumber || ''}\nRemito: ${header?.remito || ''}\nError: ${header?.comentarios || ''}`;
+
+            return (
+                <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in">
+                    <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3rem] p-6 md:p-10 shadow-2xl relative italic flex flex-col custom-scrollbar">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase italic tracking-tighter mb-4 flex items-center gap-3 shrink-0">
+                            <Icon name="clipboard-check" className="text-red-600" /> Resumen de Carga
+                        </h3>
+
+                        <div className="space-y-4 pr-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex items-center justify-between group h-fit">
+                                    <div className="flex-1">
+                                        <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1 italic">Operadora / PAD</p>
+                                        <p className="font-bold text-slate-900 uppercase text-[11px] italic underline decoration-red-600/30">{opName} | {padName}</p>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-900 p-5 rounded-3xl flex flex-col justify-between border border-white/5 group translate-all hover:bg-black group">
+                                    <div className="flex justify-between items-start mb-1">
+                                        <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] italic">Número de SO</p>
+                                        <button onClick={() => copyToClipboard(header?.soNumber || '', () => showToast("SO Copiada"))} className="text-slate-300 hover:text-white active-scale transition-colors p-3 bg-white/10 rounded-xl"><Icon name="copy" size={16} /></button>
+                                    </div>
+                                    <p className="font-black text-white text-3xl tracking-tighter italic leading-none">{header?.soNumber || '---'}</p>
+                                </div>
+                                <div className="bg-slate-900 p-5 rounded-3xl flex flex-col justify-between border border-white/5 group translate-all hover:bg-black group">
+                                    <div className="flex justify-between items-start mb-1">
+                                        <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] italic">Nro de Remito</p>
+                                        <button onClick={() => copyToClipboard(header?.remito || '', () => showToast("Remito Copiado"))} className="text-slate-300 hover:text-white active-scale transition-colors p-3 bg-white/10 rounded-xl"><Icon name="copy" size={16} /></button>
+                                    </div>
+                                    <p className="font-black text-white text-3xl tracking-tighter italic leading-none">{header?.remito || '---'}</p>
+                                </div>
+                            </div>
+
+                            <div className="bg-slate-50 p-5 rounded-3xl border border-slate-200">
+                                <div className="flex justify-between items-start mb-2">
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic">Comentario</p>
+                                    <button onClick={() => copyToClipboard(standardComment || '', () => showToast("Comentario Copiado"))} className="text-slate-400 hover:text-red-600 active-scale transition-colors p-2 bg-slate-100 rounded-xl"><Icon name="copy" size={16} /></button>
+                                </div>
+                                <p className="text-[10px] font-bold text-slate-700 italic border-l-4 border-red-600 pl-4 py-1 leading-relaxed">{standardComment}</p>
+                            </div>
+
+                            {header.hasError && (
+                                <div className="bg-red-50 p-6 rounded-3xl border border-red-100 space-y-3 relative overflow-hidden group">
+                                    <div className="absolute -top-4 -right-4 opacity-5 group-hover:rotate-12 transition-transform"><Icon name="alert-triangle" size={80} className="text-red-600" /></div>
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-[11px] font-black text-red-600 uppercase tracking-widest italic flex items-center gap-2">
+                                            <Icon name="file-warning" size={14} /> Vista Previa Reporte de Error
+                                        </p>
+                                        <button onClick={() => copyToClipboard(errorReportText, () => showToast("Reporte Copiado"))} className="bg-red-600 text-white p-3 rounded-2xl active-scale hover:bg-black transition-colors shadow-lg flex items-center gap-2 px-5">
+                                            <Icon name="copy" size={14} /> <span className="text-[10px]">COPIAR</span>
+                                        </button>
+                                    </div>
+                                    <div className="bg-white/80 p-5 rounded-2xl border border-red-100 text-[11px] font-black text-red-900 whitespace-pre-wrap font-mono uppercase italic tracking-tight leading-normal">
+                                        {errorReportText}
+                                    </div>
+                                    {header.file && (
+                                        <button onClick={onDownload} className="w-full bg-red-600 text-white p-4 rounded-2xl font-black uppercase text-[10px] flex items-center justify-center gap-2 active-scale shadow-lg">
+                                            <Icon name="download" size={16} /> Descargar Remito del Error
+                                        </button>
+                                    )}
+                                </div>
+                            )}
+
+                            {header.file && (
+                                <button onClick={onDownload} className="w-full bg-green-50 text-green-700 p-4 rounded-3xl font-black uppercase text-[10px] flex items-center justify-center gap-2 border border-green-100 active-scale mb-4">
+                                    <Icon name="download" size={16} /> Descargar Remito Adjunto
+                                </button>
+                            )}
+
+                            <div className="pt-2">
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-2 italic mb-3">Productos en Envío ({items.length})</p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
+                                    {items.map((it, idx) => (
+                                        <div key={idx} className="flex justify-between items-center p-2 border-b border-slate-50 text-[10px] font-bold uppercase text-slate-800 italic">
+                                            <span className="flex items-center gap-2 truncate pr-2"><div className="w-1.5 h-1.5 rounded-full bg-red-600 shrink-0"></div>{it.nombre}</span>
+                                            <span className="text-slate-400 shrink-0 text-[9px]">LOTE: {it.lote} • <span className="text-red-600">{it.cantidad} UN</span></span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col gap-3 shrink-0">
+                            <button onClick={onConfirm} className="w-full bg-red-600 text-white p-5 rounded-4xl font-black uppercase text-[11px] tracking-[0.2em] hover:bg-black transition-all shadow-xl shadow-red-900/20 flex items-center justify-center gap-3 active-scale italic">
+                                <Icon name="check-square" size={20} /> FINALIZAR Y GUARDAR EN TRACER
+                            </button>
+                            <button onClick={onClose} className="w-full text-slate-400 font-black uppercase text-[9px] tracking-[0.3em] hover:text-red-600 italic transition-colors">← Volver a Modificar</button>
+                        </div>
+                    </div>
+                </div>
+            );
+
+        };
+
+        const IngenieroView = React.memo(({ recepciones, setRecepciones, onSetVista, showToast, operadoras, productos, pads, setPads }) => {
+            const [header, setHeader] = useState({ operadoraId: '', padId: '', soNumber: '', remito: '', file: null, fileName: '', comentarios: '', hasError: false });
+            const [items, setItems] = useState([]);
+            const [current, setCurrent] = useState({ productoId: '', cantidad: '', lote: '', vencimiento: '' });
+            const [isWSModalOpen, setIsWSModalOpen] = useState(false);
+            const [step, setStep] = useState(1);
+            const [suggestions, setSuggestions] = useState([]);
+
+            useEffect(() => {
+                if (header.operadoraId) {
+                    const ultimaSO = getSharedSO(header.operadoraId);
+                    setHeader(prev => ({ ...prev, soNumber: ultimaSO }));
+                }
+            }, [header.operadoraId]);
+
+            useEffect(() => {
+                if (current.productoId) {
+                    setSuggestions(getLotSuggestions(current.productoId));
+                }
+            }, [current.productoId]);
+
+            useEffect(() => {
+                if (current.productoId && current.lote.length > 2) {
+                    const savedExpiry = getLotMemory(current.productoId, current.lote);
+                    if (savedExpiry && !current.vencimiento) {
+                        setCurrent(prev => ({ ...prev, vencimiento: savedExpiry }));
+                        showToast("FEFO: Vencimiento recuperado.");
+                    }
+                }
+            }, [current.lote, current.productoId]);
+
+            const addItem = () => {
+                if (!current.productoId || !current.cantidad || !current.lote || !current.vencimiento) {
+                    return showToast("Complete todos los campos");
+                }
+                const p = productos.find(x => x.id === current.productoId);
+                saveLotMemory(current.productoId, current.lote, current.vencimiento);
+                setItems([...items, { ...current, id: Date.now(), nombre: p.nombre, categoria: p.cat }]);
+                setCurrent({ productoId: '', cantidad: '', lote: '', vencimiento: '' });
+                showToast("Producto agregado");
+            };
+
+            const handleFile = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    setHeader({ ...header, file: file, fileName: file.name });
+                    showToast("Archivo seleccionado: " + file.name);
+                }
+            };
+
+            const downloadOriginalFile = () => {
+                if (!header.file) return;
+                const url = URL.createObjectURL(header.file);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = header.fileName;
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            const syncAll = async () => {
+                const opName = operadoras.find(o => o.id === header.operadoraId)?.nombre;
+                const padName = pads[header.operadoraId]?.find(p => p.id === header.padId)?.nombre;
+
+                let finalFileName = header.fileName;
+                if (header.file) {
+                    const extension = header.fileName.split('.').pop();
+                    finalFileName = `Remito${header.remito}.${extension}`;
+                    await saveFileToDB(header.remito, header.file);
+                }
+
+                const nuevas = items.map(it => ({
+                    ...header,
+                    ...it,
+                    producto: it.nombre,
+                    categoria: it.categoria,
+                    operadora: opName,
+                    pad: padName,
+                    remito: header.remito,
+                    estadoWellSight: true,
+                    fecha: new Date().toISOString().split('T')[0],
+                    hasStoredFile: !!header.file,
+                    fileName: finalFileName
+                }));
+
+                setRecepciones([...nuevas, ...recepciones]);
+                if (header.soNumber) setSharedSO(header.operadoraId, header.soNumber);
+                onSetVista('menu');
+                showToast("¡Registro Exitoso!");
+            };
+
+            return (
+                <div className="max-w-6xl mx-auto p-4 md:p-6 animate-in">
+                    <WellSightModal isOpen={isWSModalOpen} onClose={() => setIsWSModalOpen(false)} header={header} items={items} onConfirm={syncAll} showToast={showToast} onDownload={downloadOriginalFile} operadoras={operadoras} pads={pads} />
+
+                    <div className="flex items-center gap-4 mb-6">
+                        <h2 className="text-2xl font-black text-slate-950 uppercase italic tracking-tighter">Entrada de Insumos</h2>
+                        <div className="flex-1 h-[2px] bg-slate-100"></div>
+                        <span className="text-[10px] font-black text-slate-400">PASO {step}/2</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div className="lg:col-span-2 space-y-6">
+                            {step === 1 ? (
+                                <div className="bg-white p-6 rounded-5xl shadow-xl border border-slate-100 space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Operadora</label>
+                                            <select className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" value={header.operadoraId} onChange={e => setHeader({ ...header, operadoraId: e.target.value })}>
+                                                <option value="">Seleccione Operadora</option>
+                                                {operadoras.map(o => <option key={o.id} value={o.id}>{o.nombre}</option>)}
+                                            </select>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">PAD / Locación</label>
+                                            <select 
+                                                className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" 
+                                                disabled={!header.operadoraId} 
+                                                value={header.padId} 
+                                                onChange={e => {
+                                                    const val = e.target.value;
+                                                    if (val === 'NEW_PAD') {
+                                                        const name = prompt("Ingrese el nombre del nuevo PAD:");
+                                                        if (name) {
+                                                            const newId = 'pad_' + Date.now();
+                                                            const newPad = { id: newId, nombre: name.toUpperCase() };
+                                                            const currentPads = pads[header.operadoraId] || [];
+                                                            setPads({ ...pads, [header.operadoraId]: [...currentPads, newPad] });
+                                                            setHeader({ ...header, padId: newId });
+                                                            showToast("PAD agregado correctamente");
+                                                        }
+                                                    } else {
+                                                        setHeader({ ...header, padId: val });
+                                                    }
+                                                }}
+                                            >
+                                                <option value="">Seleccione PAD</option>
+                                                {header.operadoraId && pads[header.operadoraId]?.map(p => <option key={p.id} value={p.id}>{p.nombre}</option>)}
+                                                {header.operadoraId && <option value="NEW_PAD" className="text-red-600 font-black">+ AGREGAR NUEVO PAD</option>}
+                                            </select>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Número de SO</label>
+                                            <input type="text" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" placeholder="SO-XXXX" value={header.soNumber} onChange={e => setHeader({ ...header, soNumber: e.target.value })} />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Nro de Remito</label>
+                                            <input type="text" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" placeholder="Remito" value={header.remito} onChange={e => setHeader({ ...header, remito: e.target.value })} />
+                                        </div>
+                                        <div className="col-span-1 md:col-span-2">
+                                            <input type="file" accept="image/jpeg,application/pdf" className="hidden" id="fileInp" onChange={handleFile} />
+                                            <label htmlFor="fileInp" className={`w-full p-5 rounded-3xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-4 cursor-pointer active-scale shadow-lg transition-all ${header.file ? 'bg-green-600 text-white' : 'bg-slate-900 text-white hover:bg-black'}`}>
+                                                <Icon name={header.file ? "check-circle" : "file-plus"} size={18} /> {header.fileName || "CAPTURAR REMITO (JPG/PDF)"}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <button onClick={() => onSetVista('menu')} className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-500 p-5 rounded-3xl font-black uppercase text-[10px] active-scale transition-colors">Cancelar</button>
+                                        <button onClick={() => setStep(2)} disabled={!header.remito || !header.operadoraId} className="flex-2 w-full bg-red-600 hover:bg-black text-white p-5 rounded-3xl font-black uppercase text-[10px] tracking-widest disabled:opacity-20 active-scale shadow-xl shadow-red-900/10 transition-all">Siguiente: Cargar Productos</button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="bg-white p-6 rounded-5xl shadow-xl border border-slate-100 space-y-6 animate-in">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="col-span-1 md:col-span-2 space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Producto</label>
+                                            <select className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" value={current.productoId} onChange={e => setCurrent({ ...current, productoId: e.target.value })}>
+                                                <option value="">Seleccione Producto</option>
+                                                {productos.map(p => <option key={p.id} value={p.id}>{p.nombre}</option>)}
+                                            </select>
+                                        </div>
+                                        <div className="space-y-1 relative">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Lote</label>
+                                            <input type="text" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs uppercase" placeholder="LOT-XXX" value={current.lote} onChange={e => setCurrent({ ...current, lote: e.target.value })} />
+                                            {suggestions.length > 0 && !current.lote && (
+                                                <div className="absolute top-full left-0 right-0 bg-white border border-slate-100 rounded-xl shadow-lg z-10 mt-1 max-h-40 overflow-y-auto">
+                                                    <p className="p-2 text-[8px] font-black text-slate-400 uppercase border-b border-slate-50">Sugerencias</p>
+                                                    {suggestions.map(s => (
+                                                        <button key={s} onClick={() => setCurrent({ ...current, lote: s })} className="w-full text-left p-3 text-xs font-bold hover:bg-slate-50 text-slate-600 uppercase">{s}</button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="space-y-1">
+                                            <div className="flex justify-between items-center pr-2">
+                                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Vencimiento</label>
+                                                <a 
+                                                    href="https://qcdoc.corp.halliburton.com/COQ/SampleSearch.aspx" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-1.5 text-[9px] font-black text-red-600 uppercase italic hover:bg-red-50 px-3 py-1.5 rounded-xl transition-all active-scale"
+                                                    title="Portal QCDOC - Halliburton"
+                                                >
+                                                    <Icon name="external-link" size={12} /> QCDOC
+                                                </a>
+                                            </div>
+                                            <input type="date" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" value={current.vencimiento} onChange={e => setCurrent({ ...current, vencimiento: e.target.value })} />
+                                        </div>
+                                        <div className="col-span-1 md:col-span-2 space-y-1">
+                                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Cantidad</label>
+                                            <input type="number" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" placeholder="0" value={current.cantidad} onChange={e => setCurrent({ ...current, cantidad: e.target.value })} />
+                                        </div>
+                                    </div>
+                                    <button onClick={addItem} className="w-full p-5 border-2 border-dashed border-slate-200 text-slate-400 hover:text-red-600 hover:border-red-200 font-black rounded-3xl flex items-center justify-center gap-4 uppercase text-[10px] active-scale">
+                                        <Icon name="plus" size={18} /> AGREGAR AL REMITO
+                                    </button>
+                                    <div className="pt-6 border-t border-slate-100 space-y-4">
+                                        <label className="flex items-center gap-3 cursor-pointer group">
+                                            <input type="checkbox" className="w-6 h-6 rounded-lg text-red-600 focus:ring-red-500 border-slate-200" checked={header.hasError} onChange={e => setHeader({ ...header, hasError: e.target.checked })} />
+                                            <span className="text-xs font-black uppercase italic text-slate-600 group-hover:text-red-600">¿Remito con error o novedad?</span>
+                                        </label>
+
+                                        {header.hasError && (
+                                            <div className="space-y-2 animate-in">
+                                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest">Comentarios u Observaciones</label>
+                                                <textarea className="w-full p-4 bg-slate-50 rounded-2xl font-bold text-xs border-none focus:ring-1 focus:ring-red-200" rows="3" placeholder="Detalle el error aquí..." value={header.comentarios} onChange={e => setHeader({ ...header, comentarios: e.target.value })}></textarea>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="flex gap-4 pt-4 border-t border-slate-100">
+                                        <button onClick={() => setStep(1)} className="flex-1 bg-slate-100 text-slate-500 p-5 rounded-3xl font-black uppercase text-[10px] active-scale">Volver</button>
+                                        <button onClick={() => {
+                                            if (header.hasError && !header.comentarios) return showToast("Por favor detallar el error");
+                                            setIsWSModalOpen(true);
+                                        }} disabled={items.length === 0} className="flex-2 w-full bg-red-600 text-white p-5 rounded-3xl font-black uppercase text-[10px] tracking-widest active-scale shadow-xl shadow-red-900/10">Validar Registro</button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="space-y-6">
+                            <div className="bg-baroid-dark rounded-5xl p-8 text-white min-h-[400px] flex flex-col shadow-2xl overflow-hidden">
+                                <h3 className="text-[9px] font-black uppercase text-slate-500 tracking-[0.4em] mb-6 italic">Detalle Remito</h3>
+                                <div className="flex-1 space-y-3 overflow-y-auto max-h-[350px] pr-2 custom-scrollbar">
+                                    {items.length === 0 ? (
+                                        <div className="text-center mt-10 opacity-10"><Icon name="package" size={60} className="mx-auto" /><p className="mt-2 text-[10px] font-black italic uppercase">Vacio</p></div>
+                                    ) : (
+                                        items.map((it, idx) => (
+                                            <div key={idx} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex justify-between items-center animate-in">
+                                                <div>
+                                                    <p className="font-black text-[10px] uppercase text-red-500 mb-1">{it.nombre}</p>
+                                                    <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">LOT: {it.lote} • CANT: {it.cantidad}</p>
+                                                </div>
+                                                <button onClick={() => setItems(items.filter((_, i) => i !== idx))} className="text-slate-600 hover:text-red-500 active-scale transition-colors"><Icon name="trash-2" size={14} /></button>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
+
+        const SupervisorDashboard = React.memo(({ recepciones, setRecepciones, showToast, setSelectedRemito, operadoras }) => {
+            const [fOp, setFOp] = useState('');
+            const [fCat, setFCat] = useState('todos');
+            const [fRemito, setFRemito] = useState('');
+            const [fLote, setFLote] = useState('');
+            const [fInicio, setFInicio] = useState('');
+            const [fFin, setFFin] = useState('');
+
+            const filtered = useMemo(() => {
+                const safeRecepciones = Array.isArray(recepciones) ? recepciones : [];
+                const searchOp = fOp || '';
+                const searchRemito = (fRemito || '').toLowerCase();
+                const searchLote = (fLote || '').toLowerCase();
+
+                return safeRecepciones.filter(r => {
+                    if (!r) return false;
+                    const remitoVal = String(r.remito || '').toLowerCase();
+                    const loteVal = String(r.lote || '').toLowerCase();
+                    const operadoraIdVal = String(r.operadoraId || '');
+                    const categoriaVal = String(r.categoria || '');
+                    const fechaVal = String(r.fecha || '');
+
+                    const matchOp = !searchOp || operadoraIdVal === searchOp;
+                    const matchCat = fCat === 'todos' || categoriaVal === fCat;
+                    const matchRemito = !searchRemito || remitoVal.includes(searchRemito);
+                    const matchLote = !searchLote || loteVal.includes(searchLote);
+                    const matchDate = (!fInicio || fechaVal >= fInicio) && (!fFin || fechaVal <= fFin);
+                    return matchOp && matchCat && matchRemito && matchLote && matchDate;
+                }).slice(0, 500);
+            }, [recepciones, fOp, fCat, fRemito, fLote, fInicio, fFin]);
+
+            const groupedData = useMemo(() => {
+                const groups = {};
+                filtered.forEach(r => {
+                    const opName = r.operadora || 'SIN OPERADORA';
+                    const key = `${opName}-${r.remito}`;
+                    if (!groups[key]) {
+                        groups[key] = {
+                            id: key,
+                            remito: r.remito,
+                            operadora: opName,
+                            pad: r.pad || 'S/P',
+                            soNumber: r.soNumber || 'S/N',
+                            fecha: r.fecha || '',
+                            categoria: r.categoria,
+                            hasError: r.hasError,
+                            comentarios: r.comentarios,
+                            hasStoredFile: r.hasStoredFile,
+                            fileName: r.fileName,
+                            items: []
+                        };
+                    }
+                    groups[key].items.push(r);
+                });
+                return Object.values(groups).sort((a, b) => {
+                    const dA = a.fecha ? new Date(a.fecha).getTime() : 0;
+                    const dB = b.fecha ? new Date(b.fecha).getTime() : 0;
+                    return (dB || 0) - (dA || 0);
+                }).slice(0, 100);
+            }, [filtered]);
+
+            const exportData = async () => {
+                if (groupedData.length === 0) return showToast("No hay datos para exportar");
+                showToast("Generando reporte y comprimiendo archivos...");
+                
+                try {
+                    const zip = new JSZip();
+                    
+                    // 1. Generate CSV
+                    const headers = "Fecha,Remito,SO,Operadora,Productos y Cantidades Recibidas\n";
+                    const rows = groupedData.map(g => {
+                        const prodInfo = g.items.map(it => `${it.producto} (${it.cantidad} UN)`).join(" | ");
+                        return `${g.fecha},${g.remito},${g.soNumber},${g.operadora},"${prodInfo}"`;
+                    }).join("\n");
+                    zip.file(`Reporte_TracerPro_${Date.now()}.csv`, headers + rows);
+
+                    // 2. Add files to ZIP
+                    const folder = zip.folder("Archivos_Adjuntos");
+                    let filesAdded = 0;
+                    
+                    for (const g of groupedData) {
+                        if (g.hasStoredFile) {
+                            const file = await getFileFromDB(g.remito);
+                            if (file) {
+                                const ext = g.fileName ? g.fileName.split('.').pop() : (file.name ? file.name.split('.').pop() : 'pdf');
+                                const name = g.fileName || `Remito${g.remito}.${ext}`;
+                                folder.file(name, file);
+                                filesAdded++;
+                            }
+                        }
+                    }
+
+                    // 3. Generate and Trigger Download
+                    const content = await zip.generateAsync({ type: "blob" });
+                    const url = window.URL.createObjectURL(content);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `Export_TracerPro_${Date.now()}.zip`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    showToast(`Descarga completada: CSV + ${filesAdded} archivos`);
+                } catch (err) {
+                    console.error(err);
+                    showToast("Error al exportar datos");
+                }
+            };
+
+            const setRange = (days) => {
+                const fin = new Date().toISOString().split('T')[0];
+                const inicio = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+                setFInicio(inicio);
+                setFFin(fin);
+                showToast(`Rango: ${days} días`);
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto p-4 md:p-6 animate-in">
+
+
+
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                        <div>
+                            <h2 className="text-3xl font-black text-slate-900 uppercase italic tracking-tighter italic leading-none">Remitos</h2>
+                            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-2 italic">Control y Trazabilidad de Productos</p>
+                        </div>
+                        <button onClick={exportData} className="bg-green-600 text-white px-8 py-4 rounded-3xl font-black text-xs uppercase tracking-widest flex items-center gap-3 active-scale shadow-xl shadow-green-900/10">
+                            <Icon name="download" size={18} /> Exportar Reporte (.ZIP)
+                        </button>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-5xl shadow-xl border border-slate-100 mb-6 space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                            <div className="relative group/field">
+                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Nro Remito</label>
+                                <input type="text" placeholder="Remito..." className="w-full p-4 bg-slate-50 rounded-2xl font-black text-xs border-none focus:ring-1 focus:ring-red-600/20 pr-10" value={fRemito} onChange={e => setFRemito(e.target.value)} />
+                                {fRemito && <button onClick={() => setFRemito('')} className="absolute right-3 top-9 text-slate-400 hover:text-red-600 active-scale"><Icon name="x" size={14} /></button>}
+                            </div>
+                            <div className="relative group/field">
+                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Nro Lote</label>
+                                <input type="text" placeholder="Lote..." className="w-full p-4 bg-slate-50 rounded-2xl font-black text-xs border-none focus:ring-1 focus:ring-red-600/20 pr-10" value={fLote} onChange={e => setFLote(e.target.value)} />
+                                {fLote && <button onClick={() => setFLote('')} className="absolute right-3 top-9 text-slate-400 hover:text-red-600 active-scale"><Icon name="x" size={14} /></button>}
+                            </div>
+                            <div>
+                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Operadora</label>
+                                <select className="w-full p-4 bg-slate-50 rounded-2xl font-black text-xs border-none focus:ring-1 focus:ring-red-600/20" value={fOp} onChange={e => setFOp(e.target.value)}>
+                                    <option value="">Todas</option>
+                                    {operadoras.map(o => <option key={o.id} value={o.id}>{o.nombre}</option>)}
+                                </select>
+                            </div>
+                            <div>
+                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Desde</label>
+                                <input type="date" className="w-full p-4 bg-slate-50 rounded-2xl font-black text-xs border-none focus:ring-1 focus:ring-red-600/20" value={fInicio} onChange={e => setFInicio(e.target.value)} />
+                            </div>
+                            <div>
+                                <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Hasta</label>
+                                <input type="date" className="w-full p-4 bg-slate-50 rounded-2xl font-black text-xs border-none focus:ring-1 focus:ring-red-600/20" value={fFin} onChange={e => setFFin(e.target.value)} />
+                            </div>
+                            <div className="flex flex-wrap gap-2 pt-6">
+                                <button onClick={() => setRange(7)} className="px-4 py-2 bg-slate-100 rounded-xl text-[9px] font-black uppercase text-slate-500 hover:bg-slate-200">7D</button>
+                                <button onClick={() => setRange(30)} className="px-4 py-2 bg-slate-100 rounded-xl text-[9px] font-black uppercase text-slate-500 hover:bg-slate-200">30D</button>
+                                <button onClick={() => { setFRemito(''); setFLote(''); setFOp(''); setFCat('todos'); setFInicio(''); setFFin(''); }} className="px-4 py-2 bg-red-50 rounded-xl text-[9px] font-black uppercase text-red-600 hover:bg-red-100"><Icon name="rotate-ccw" size={12} /></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-white rounded-5xl shadow-2xl border border-slate-100 overflow-hidden">
+                        <table className="w-full text-left">
+                            <thead className="bg-slate-50 text-[10px] font-black text-slate-400 uppercase tracking-widest italic border-b border-slate-100">
+                                <tr>
+                                    <th className="px-6 py-4">Fecha</th>
+                                    <th className="px-6 py-4">Remito / SO</th>
+                                    <th className="px-6 py-4">Operadora</th>
+                                    <th className="px-6 py-4 text-right">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-50">
+                                {groupedData.length === 0 ? (
+                                    <tr><td colSpan="4" className="px-10 py-16 text-center opacity-30 italic font-black uppercase text-xs tracking-widest">Sin resultados</td></tr>
+                                ) : (
+                                    groupedData.map((r, i) => (
+                                        <tr key={i} className={`hover:bg-slate-50/80 group cursor-pointer transition-all border-b border-slate-50 ${r?.hasError ? 'bg-red-50/30' : ''}`} onClick={() => setSelectedRemito(r)}>
+                                            <td className="px-6 py-5 text-slate-400 font-bold text-xs italic">{r?.fecha || '---'}</td>
+                                            <td className="px-6 py-5">
+                                                <div className="flex items-center gap-2">
+                                                    <p className="font-black text-slate-900 text-sm uppercase leading-none mb-1.5">{r?.remito || '---'}</p>
+                                                    {r?.hasError && <Icon name="alert-circle" size={16} className="text-red-600 animate-pulse" />}
+                                                </div>
+                                                <p className="text-[10px] font-bold text-red-600 uppercase tracking-widest italic opacity-80">SO: {r?.soNumber || '---'}</p>
+                                            </td>
+                                            <td className="px-6 py-5">
+                                                <p className="font-black text-slate-800 text-[11px] uppercase italic tracking-tight">{r?.operadora || '---'}</p>
+                                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest italic">{r?.pad || '---'}</p>
+                                            </td>
+                                            <td className="px-6 py-5 text-right flex items-center justify-end gap-2">
+                                                <button onClick={(e) => { e.stopPropagation(); setSelectedRemito(r); }} className="bg-slate-100 hover:bg-red-600 hover:text-white text-slate-400 p-2.5 rounded-xl transition-all active-scale shadow-sm">
+                                                    <Icon name="chevron-right" size={16} />
+                                                </button>
+                                                <button onClick={(e) => { 
+                                                    e.stopPropagation(); 
+                                                    if(confirm(`¿Estás seguro de eliminar el remito ${r.remito}?`)) {
+                                                        const updated = recepciones.filter(rec => rec.remito !== r.remito);
+                                                        setRecepciones(updated);
+                                                        showToast("Remito eliminado");
+                                                    }
+                                                }} className="bg-slate-100 hover:bg-black hover:text-white text-slate-400 p-2.5 rounded-xl transition-all active-scale shadow-sm">
+                                                    <Icon name="trash-2" size={16} />
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div >
+            );
+        });
+
+        const VencimientosView = React.memo(({ recepciones, setSelectedLot }) => {
+            const [fLote, setFLote] = useState('');
+
+            const lots = useMemo(() => {
+                const map = {};
+                const searchLote = (fLote || '').toLowerCase();
+                const now = new Date();
+
+                const filteredRecepciones = recepciones.filter(r => {
+                    const loteVal = String(r.lote || '').toLowerCase();
+                    return !searchLote || loteVal.includes(searchLote);
+                });
+
+                filteredRecepciones.forEach(r => {
+                    const key = `${r.productoId}_${r.lote}`;
+                    if (!map[key]) {
+                        const days = Math.ceil((new Date(r.vencimiento) - now) / (1000 * 60 * 60 * 24));
+                        let status = { label: 'OK', color: 'bg-green-600', bg: 'bg-green-50', text: 'text-green-600' };
+                        if (days < 90) status = { label: 'Urgente', color: 'bg-red-600', bg: 'bg-red-50', text: 'text-red-600' };
+                        else if (days <= 365) status = { label: 'Próximo', color: 'bg-yellow-500', bg: 'bg-yellow-50', text: 'text-yellow-600' };
+
+                        map[key] = {
+                            producto: r.producto,
+                            lote: r.lote,
+                            vencimiento: r.vencimiento,
+                            cat: r.categoria,
+                            days,
+                            status,
+                            remitos: []
+                        };
+                    }
+                    map[key].remitos.push(r);
+                });
+
+                return Object.values(map).sort((a, b) => (a.days || 0) - (b.days || 0)).slice(0, 120);
+            }, [recepciones, fLote]);
+
+            const daysLeft = (date) => Math.ceil((new Date(date) - new Date()) / (1000 * 60 * 60 * 24));
+
+            return (
+                <div className="max-w-7xl mx-auto p-4 md:p-6 animate-in">
+
+
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                        <div>
+                            <h2 className="text-3xl font-black text-slate-900 uppercase italic tracking-tighter italic leading-none">Vencimientos (FEFO)</h2>
+                            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-2 italic">Gestión Prioritaria por Caducidad de Lote</p>
+                        </div>
+
+                        <div className="relative w-full md:w-80 group/field">
+                            <label className="text-[9px] font-black text-slate-400 uppercase ml-2 tracking-widest italic">Filtrar por Lote</label>
+                            <input
+                                type="text"
+                                placeholder="Buscar lote..."
+                                className="w-full p-4 bg-white rounded-2xl font-black text-xs border border-slate-100 shadow-sm focus:ring-1 focus:ring-red-600/20 pr-10 italic"
+                                value={fLote}
+                                onChange={e => setFLote(e.target.value)}
+                            />
+                            {fLote && (
+                                <button onClick={() => setFLote('')} className="absolute right-3 top-9 text-slate-400 hover:text-red-600 active-scale">
+                                    <Icon name="x" size={14} />
+                                </button>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        {lots.length === 0 ? (
+                            <div className="col-span-full py-20 bg-white rounded-5xl border-2 border-dashed border-slate-100 flex flex-col items-center justify-center opacity-30 italic">
+                                <Icon name="calendar-x" size={48} className="mb-4 text-slate-300" />
+                                <p className="font-black uppercase text-[10px] tracking-[0.3em]">Sin datos de vencimientos</p>
+                            </div>
+                        ) : (
+                            lots.map((l) => {
+                                return (
+                                    <div key={`${l.producto}-${l.lote}`} onClick={() => setSelectedLot(l)} className={`bg-white p-5 rounded-3xl border shadow-md transition-all hover:shadow-xl hover:-translate-y-1 group cursor-pointer active-scale flex flex-col justify-between h-[210px] ${l.days < 90 ? 'border-red-600 shadow-red-900/10' : 'border-slate-100'}`}>
+                                        <div>
+                                            <div className="flex justify-between items-start mb-3">
+                                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${l.status.color} text-white shadow-lg`}>
+                                                    <Icon name="clock" size={20} />
+                                                </div>
+                                                <span className={`text-[9px] font-black px-3 py-1.5 rounded-full uppercase italic ${l.status.color} text-white shadow-sm`}>
+                                                    {l.status.label}
+                                                </span>
+                                            </div>
+                                            <h4 className="font-black text-sm text-slate-900 uppercase italic mb-1 leading-tight group-hover:text-red-600 transition-colors line-clamp-2">{l.producto}</h4>
+                                            <p className="text-[8px] font-extrabold text-slate-400 uppercase tracking-[0.2em] italic">LOTE: {l.lote}</p>
+                                        </div>
+                                        <div className="pt-4 border-t border-slate-50 mt-auto flex justify-between items-end">
+                                            <div>
+                                                <p className="text-[8px] font-black text-slate-400 uppercase mb-0.5 italic tracking-widest">Vence en</p>
+                                                <p className={`text-2xl font-black italic shadow-text leading-none ${l.status.text}`}>{l.days} <span className="text-xs">días</span></p>
+                                            </div>
+                                            <Icon name="chevron-right" size={16} className="text-slate-300 group-hover:text-red-600 transition-colors" />
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        )}
+                    </div>
+                </div >
+            );
+        });
+
+        const App = () => {
+            const [currentUser] = useState({ username: 'Usuario Tracer', hNumber: 'TR-100', role: 'ingeniero' });
+            const [vista, setVista] = useState('menu');
+            const [notificaciones, setNotificaciones] = useState([]);
+            
+            // Listas Dinámicas
+            const [operadoras, setOperadoras] = useState(() => JSON.parse(localStorage.getItem('tracer_operadoras')) || OPERADORAS_INI);
+            const [productos, setProductos] = useState(() => JSON.parse(localStorage.getItem('tracer_productos')) || PRODUCTOS_INI);
+            const [pads, setPads] = useState(() => JSON.parse(localStorage.getItem('tracer_pads')) || PADS_INI);
+
+            const [recepciones, setRecepciones] = useState(() => {
+                const saved = localStorage.getItem('tracer_recepciones');
+                return saved ? JSON.parse(saved) : [];
+            });
+
+            const [selectedRemito, setSelectedRemito] = useState(null);
+            const [selectedLot, setSelectedLot] = useState(null);
+
+            useEffect(() => {
+                localStorage.setItem('tracer_operadoras', JSON.stringify(operadoras));
+            }, [operadoras]);
+
+            useEffect(() => {
+                localStorage.setItem('tracer_productos', JSON.stringify(productos));
+            }, [productos]);
+
+            useEffect(() => {
+                localStorage.setItem('tracer_pads', JSON.stringify(pads));
+            }, [pads]);
+
+            useEffect(() => {
+                localStorage.setItem('tracer_recepciones', JSON.stringify(recepciones));
+            }, [recepciones]);
+
+            useEffect(() => {
+                const handleEsc = (e) => {
+                    if (e.key === 'Escape') {
+                        setSelectedRemito(null);
+                        setSelectedLot(null);
+                    }
+                };
+                window.addEventListener('keydown', handleEsc);
+                if (selectedRemito || selectedLot) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+                return () => {
+                    window.removeEventListener('keydown', handleEsc);
+                    document.body.style.overflow = 'auto';
+                };
+            }, [selectedRemito, selectedLot]);
+
+            const showToast = (msg) => {
+                const id = Date.now();
+                setNotificaciones(prev => [...prev, { id, msg }]);
+                setTimeout(() => setNotificaciones(prev => prev.filter(n => n.id !== id)), 4000);
+            };
+
+            const renderContent = () => {
+                if (!currentUser) {
+                    return isRegistering
+                        ? <RegisterScreen onGoLogin={() => setIsRegistering(false)} onLogin={handleLogin} />
+                        : <LoginScreen onGoRegister={() => setIsRegistering(true)} onLogin={handleLogin} />;
+                }
+
+                switch (vista) {
+                    case 'menu':
+                        return (
+                            <div className="flex flex-col items-center justify-center min-h-[70vh] p-8 text-center animate-in">
+                                <div className="w-40 h-40 bg-white shadow-2xl rounded-[4rem] flex items-center justify-center mb-10 text-red-600 border border-slate-100 group cursor-pointer hover:rotate-6 transition-all active-scale" onClick={() => setVista('form')}>
+                                    <Icon name="plus" size={64} className="group-hover:scale-125 transition-transform" />
+                                </div>
+                                <h1 className="text-5xl font-black text-slate-900 tracking-tighter uppercase italic leading-none mb-4 italic">Tracer<span className="text-red-600">Pro</span></h1>
+                                <p className="text-slate-400 max-w-sm font-bold mb-12 uppercase text-[10px] tracking-widest opacity-60 italic">Fluids Services "control de logística y trazabilidad"</p>
+                                <div className="flex flex-col gap-4 w-full max-w-xs">
+                                    <button onClick={() => setVista('form')} className="p-6 bg-red-600 text-white font-black uppercase tracking-[0.3em] rounded-3xl shadow-xl shadow-red-900/30 active-scale text-xs italic">NUEVA RECEPCIÓN</button>
+                                    <button onClick={() => setVista('supervisor')} className="p-6 bg-slate-900 text-white font-black uppercase tracking-[0.3em] rounded-3xl active-scale text-xs italic">REMITOS</button>
+                                    <button onClick={() => setVista('settings')} className="p-4 bg-white text-slate-400 font-bold uppercase tracking-[0.2em] rounded-2xl active-scale text-[9px] flex items-center justify-center gap-2 border border-slate-100 italic">
+                                        <Icon name="settings" size={14} /> CONFIGURACIÓN
+                                    </button>
+                                </div>
+                            </div>
+                        );
+                    case 'form': return <IngenieroView recepciones={recepciones} setRecepciones={setRecepciones} onSetVista={setVista} showToast={showToast} operadoras={operadoras} productos={productos} pads={pads} setPads={setPads} />;
+                    case 'supervisor': return <SupervisorDashboard recepciones={recepciones} setRecepciones={setRecepciones} showToast={showToast} setSelectedRemito={setSelectedRemito} operadoras={operadoras} />;
+                    case 'vencimientos': return <VencimientosView recepciones={recepciones} setSelectedLot={setSelectedLot} />;
+                    case 'settings': return <SettingsView operadoras={operadoras} setOperadoras={setOperadoras} productos={productos} setProductos={setProductos} pads={pads} setPads={setPads} showToast={showToast} />;
+                    default: return null;
+                }
+            };
+
+            const renderModals = () => {
+                return (
+                    <>
+                        {selectedRemito && (
+                            <div className="fixed inset-0 z-[500] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in" onClick={() => setSelectedRemito(null)}>
+                                <div className="bg-white w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-[3.5rem] p-8 md:p-12 shadow-2xl relative italic flex flex-col text-slate-900 custom-scrollbar" onClick={e => e.stopPropagation()}>
+                                    <button onClick={() => setSelectedRemito(null)} className="absolute top-8 right-8 text-slate-300 hover:text-red-600 active-scale transition-colors"><Icon name="x" size={32} /></button>
+                                    <h3 className="text-3xl font-black text-slate-900 uppercase italic mb-2 tracking-tighter italic">Detalle de Remito</h3>
+                                    <p className="text-red-600 font-black text-xs uppercase tracking-widest mb-10 italic underline decoration-red-600/30 underline-offset-4 flex items-center gap-2">
+                                        {selectedRemito.remito} • {selectedRemito.operadora}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                copyToClipboard(selectedRemito.remito);
+                                                showToast("Remito copiado");
+                                            }}
+                                            className="ml-2 p-2 bg-slate-100 rounded-lg h-8 w-8 flex items-center justify-center text-slate-400 hover:text-red-600 transition-colors"
+                                            title="Copiar Nro de Remito"
+                                        >
+                                            <Icon name="copy" size={12} />
+                                        </button>
+                                    </p>
+
+                                    <div className="space-y-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex flex-col justify-center">
+                                                <p className="text-slate-400 font-bold uppercase mb-1 text-[10px] tracking-widest">Fecha de Recepción</p>
+                                                <p className="font-black text-slate-900 uppercase text-lg italic">{selectedRemito.fecha}</p>
+                                            </div>
+                                            <div className="bg-slate-900 p-6 rounded-3xl shadow-xl flex flex-col justify-center border border-white/5 relative group/so">
+                                                <p className="text-slate-500 font-bold uppercase mb-1 text-[10px] tracking-widest italic tracking-widest">Service Order (SO)</p>
+                                                <div className="flex items-center gap-3">
+                                                    <p className="font-black text-white uppercase text-2xl italic tracking-tight">{selectedRemito.soNumber}</p>
+                                                    <button 
+                                                        onClick={() => {
+                                                            const newSO = prompt("Editar Service Order (SO):", selectedRemito.soNumber);
+                                                            if(newSO !== null) {
+                                                                const updated = recepciones.map(r => r.remito === selectedRemito.remito ? {...r, soNumber: newSO} : r);
+                                                                setRecepciones(updated);
+                                                                setSelectedRemito({...selectedRemito, soNumber: newSO});
+                                                                showToast("SO actualizada");
+                                                            }
+                                                        }}
+                                                        className="p-1.5 bg-white/10 rounded-lg text-slate-400 hover:text-white transition-colors"
+                                                    >
+                                                        <Icon name="edit-3" size={14} />
+                                                    </button>
+                                                </div>
+                                                <button
+                                                    onClick={() => {
+                                                        copyToClipboard(selectedRemito.soNumber);
+                                                        showToast("SO copiada");
+                                                    }}
+                                                    className="absolute top-4 right-4 p-2 bg-white/10 rounded-lg text-slate-400 hover:text-white transition-colors opacity-0 group-hover/so:opacity-100"
+                                                    title="Copiar SO"
+                                                >
+                                                    <Icon name="copy" size={14} />
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-white p-6 rounded-3xl border border-slate-200 flex items-center justify-between group/txt">
+                                            <div>
+                                                <p className="text-slate-400 font-bold uppercase mb-1 text-[10px] tracking-widest italic">Texto para Software</p>
+                                                <p className="font-bold text-slate-900 uppercase text-[11px] italic">
+                                                    {selectedRemito.items.some(it => it.categoria === 'barita')
+                                                        ? `Recibe barita en locación - ${selectedRemito.operadora} - ${selectedRemito.pad}`
+                                                        : `Recibe productos químicos en locación - ${selectedRemito.operadora} - ${selectedRemito.pad}`}
+                                                </p>
+                                            </div>
+                                            <button
+                                                onClick={() => {
+                                                    const txt = selectedRemito.items.some(it => it.categoria === 'barita')
+                                                        ? `Recibe barita en locación - ${selectedRemito.operadora} - ${selectedRemito.pad}`
+                                                        : `Recibe productos químicos en locación - ${selectedRemito.operadora} - ${selectedRemito.pad}`;
+                                                    copyToClipboard(txt);
+                                                    showToast("Texto copiado");
+                                                }}
+                                                className="p-3 bg-slate-50 rounded-2xl text-slate-300 hover:text-red-600 transition-colors opacity-0 group-hover/txt:opacity-100"
+                                                title="Copiar texto para software"
+                                            >
+                                                <Icon name="copy" size={16} />
+                                            </button>
+                                        </div>
+
+                                        {(selectedRemito.items.some(it => it.file) || selectedRemito.hasStoredFile) && (
+                                            <div className="bg-green-50 p-6 rounded-3xl border border-green-100 flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p className="text-green-700 font-black text-[10px] uppercase tracking-widest mb-1 italic">Documentación Adjunta</p>
+                                                    <p className="text-xs font-bold text-green-900 uppercase italic">Remito Digitalizado Disponible</p>
+                                                </div>
+                                                <button onClick={async (e) => {
+                                                    e.stopPropagation();
+                                                    let fileToDownload = null;
+                                                    const itemWithFile = selectedRemito.items.find(it => it.file);
+                                                    if (itemWithFile && itemWithFile.file) {
+                                                        fileToDownload = itemWithFile.file;
+                                                    } else if (selectedRemito.hasStoredFile) {
+                                                        showToast("Recuperando archivo...");
+                                                        fileToDownload = await getFileFromDB(selectedRemito.remito);
+                                                    }
+
+                                                    if (fileToDownload) {
+                                                        const url = URL.createObjectURL(fileToDownload);
+                                                        const a = document.createElement('a');
+                                                        a.href = url;
+                                                        const finalName = selectedRemito.fileName || (fileToDownload.name) || `remito_${selectedRemito.remito}`;
+                                                        a.download = finalName;
+                                                        a.click();
+                                                        URL.revokeObjectURL(url);
+                                                        showToast("Descarga iniciada");
+                                                    } else {
+                                                        showToast("Error: Archivo no encontrado");
+                                                    }
+                                                }} className="bg-green-600 text-white p-4 rounded-2xl font-black uppercase text-[10px] flex items-center justify-center gap-3 active-scale shadow-lg hover:bg-black transition-all">
+                                                    <Icon name="download" size={18} /> DESCARGAR
+                                                </button>
+                                            </div>
+                                        )}
+
+                                        {selectedRemito.hasError && (
+                                            <div className="bg-red-50 p-8 rounded-4xl border border-red-100 mt-4 relative overflow-hidden group">
+                                                <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:scale-110 transition-transform"><Icon name="alert-triangle" size={80} className="text-red-600" /></div>
+                                                <div className="flex justify-between items-start relative z-10 mb-3">
+                                                    <p className="text-[10px] font-black text-red-600 uppercase tracking-widest italic flex items-center gap-2">
+                                                        <Icon name="file-warning" size={14} /> NOVEDAD / ERROR EN RECEPCIÓN
+                                                    </p>
+                                                    <button
+                                                        onClick={() => {
+                                                            copyToClipboard(selectedRemito.comentarios);
+                                                            showToast("Novedad copiada");
+                                                        }}
+                                                        className="p-2 bg-white rounded-lg text-red-300 hover:text-red-600 transition-colors shadow-sm"
+                                                        title="Copiar Novedad"
+                                                    >
+                                                        <Icon name="copy" size={14} />
+                                                    </button>
+                                                </div>
+                                                <div className="bg-white/80 p-5 rounded-2xl border border-red-100 text-sm font-black text-red-900 leading-relaxed uppercase italic relative z-10 group/comm">
+                                                    {selectedRemito.comentarios}
+                                                    <button 
+                                                        onClick={() => {
+                                                            const newComm = prompt("Editar Novedad / Comentario:", selectedRemito.comentarios);
+                                                            if(newComm !== null) {
+                                                                const updated = recepciones.map(r => r.remito === selectedRemito.remito ? {...r, comentarios: newComm} : r);
+                                                                setRecepciones(updated);
+                                                                setSelectedRemito({...selectedRemito, comentarios: newComm});
+                                                                showToast("Novedad actualizada");
+                                                            }
+                                                        }}
+                                                        className="absolute top-2 right-2 p-1.5 bg-red-100 rounded-lg text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-sm opacity-0 group-hover/comm:opacity-100"
+                                                    >
+                                                        <Icon name="edit-3" size={12} />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className="space-y-4 pt-6 border-t border-slate-100">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] ml-2 italic opacity-60">Items Recibidos ({selectedRemito.items.length})</p>
+                                            <div className="grid grid-cols-1 gap-3 pr-2">
+                                                {selectedRemito.items.map((it, idx) => (
+                                                    <div key={idx} className="flex justify-between items-center p-6 bg-slate-50 rounded-3xl border border-slate-100/50 text-sm font-black uppercase text-slate-800 italic group hover:bg-slate-100 transition-all">
+                                                        <span className="flex items-center gap-4">
+                                                            <div className="w-2.5 h-2.5 rounded-full bg-red-600 shadow-sm group-hover:scale-125 transition-transform"></div>
+                                                            <span className="tracking-tight">{it.producto}</span>
+                                                        </span>
+                                                        <span className="flex items-center gap-4 text-slate-400 bg-white px-5 py-2.5 rounded-2xl text-[11px] shadow-sm border border-slate-100 group/editq">
+                                                            <span>LOTE: <span className="text-slate-900">{it.lote}</span></span>
+                                                            <div className="flex items-center gap-2">
+                                                                <span className="text-red-600 text-sm">{it.cantidad} UN</span>
+                                                                <button 
+                                                                    onClick={() => {
+                                                                        const newQty = prompt(`Nueva cantidad para ${it.producto}:`, it.cantidad);
+                                                                        if (newQty !== null && !isNaN(newQty) && newQty !== "") {
+                                                                            const updatedRecepciones = recepciones.map(r => {
+                                                                                // Identify the specific row by date, remito AND product/lot
+                                                                                if (r.remito === selectedRemito.remito && r.fecha === it.fecha && r.producto === it.producto && r.lote === it.lote) {
+                                                                                    return { ...r, cantidad: parseFloat(newQty) };
+                                                                                }
+                                                                                return r;
+                                                                            });
+                                                                            setRecepciones(updatedRecepciones);
+                                                                            
+                                                                            // Update the local modal items state too
+                                                                            const updatedItems = selectedRemito.items.map((item, i) => 
+                                                                                i === idx ? {...item, cantidad: parseFloat(newQty)} : item
+                                                                            );
+                                                                            setSelectedRemito({...selectedRemito, items: updatedItems});
+                                                                            showToast("Cantidad actualizada");
+                                                                        }
+                                                                    }}
+                                                                    className="p-1 bg-red-50 text-red-600 rounded hover:bg-red-600 hover:text-white transition-all opacity-0 group-hover/editq:opacity-100"
+                                                                >
+                                                                    <Icon name="edit-2" size={12} />
+                                                                </button>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                                        <button onClick={() => setSelectedRemito(null)} className="bg-slate-900 text-white px-10 py-4 rounded-3xl font-black uppercase text-[10px] tracking-[0.3em] active-scale hover:bg-red-600 transition-all shadow-xl shadow-slate-900/10 italic">
+                                            Cerrar Detalle de Remito
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {selectedLot && (
+                            <div className="fixed inset-0 z-[500] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in" onClick={() => setSelectedLot(null)}>
+                                <div className="bg-white w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-[3.5rem] p-8 md:p-12 shadow-2xl relative italic flex flex-col text-slate-900 custom-scrollbar" onClick={e => e.stopPropagation()}>
+                                    <button onClick={() => setSelectedLot(null)} className="absolute top-8 right-8 text-slate-300 hover:text-red-600 active-scale z-50 transition-colors">
+                                        <Icon name="x" size={32} />
+                                    </button>
+
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pr-12">
+                                        <div className="flex-1">
+                                            <h3 className="text-3xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-2 italic">Historial del Lote</h3>
+                                            <p className="text-red-600 font-black text-xs uppercase tracking-widest italic">{selectedLot.lote || 'N/A'} • {selectedLot.producto || 'PRODUCTO DESCONOCIDO'}</p>
+                                        </div>
+                                        <button onClick={() => {
+                                            const headers = "Fecha,Operadora,Remito,Cantidad\n";
+                                            const rws = (selectedLot.remitos || []).map(r => `${r.fecha || ''},${r.operadora || ''},${r.remito || ''},${r.cantidad || 0}`).join("\n");
+                                            const blob = new Blob([headers + rws], { type: 'text/csv;charset=utf-8;' });
+                                            const url = window.URL.createObjectURL(blob);
+                                            const a = document.createElement('a');
+                                            a.href = url;
+                                            a.download = `Historial_Lote_${selectedLot.lote || 'LOG'}.csv`;
+                                            a.click();
+                                        }} className="bg-green-600 hover:bg-green-700 text-white py-4 px-8 rounded-3xl flex items-center justify-center gap-3 font-black text-xs uppercase active-scale shadow-xl shadow-green-900/20 transition-all shrink-0">
+                                            <Icon name="download" size={20} /> Exportar CSV
+                                        </button>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div className="bg-red-50 p-6 rounded-3xl border border-red-100 text-center mb-6">
+                                            <p className="text-[10px] font-black text-red-600 uppercase mb-1">Fecha de Vencimiento</p>
+                                            <p className="text-2xl font-black text-red-900 italic tracking-tighter">{selectedLot.vencimiento}</p>
+                                        </div>
+
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] ml-2 italic mb-4 opacity-60">Movimientos de Ingreso / Distribución</p>
+                                        <div className="space-y-3 pr-2">
+                                            {(selectedLot.remitos || []).length === 0 ? (
+                                                <div className="py-20 text-center opacity-20 italic uppercase font-black text-sm">Sin movimientos registrados</div>
+                                            ) : (
+                                                selectedLot.remitos.map((r, i) => (
+                                                    <div key={i} className="bg-slate-50 p-6 rounded-[2rem] flex justify-between items-center text-sm font-bold uppercase italic border border-slate-100 hover:bg-white transition-all shadow-sm">
+                                                        <div>
+                                                            <p className="text-slate-900 font-black mb-1 text-base">{r.operadora || 'OPERADORA'}</p>
+                                                            <p className="text-xs text-slate-400 font-bold tracking-widest uppercase">REMITO: {r.remito || 'N/A'}</p>
+                                                        </div>
+                                                        <div className="text-right shrink-0 ml-4 bg-white px-6 py-3 rounded-2xl border border-slate-100 shadow-sm">
+                                                            <p className="text-red-600 font-black text-2xl leading-none">{r.cantidad || 0} <span className="text-[10px]">UN</span></p>
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                                        <button onClick={() => setSelectedLot(null)} className="bg-slate-900 text-white px-10 py-4 rounded-3xl font-black uppercase text-[10px] tracking-[0.3em] active-scale hover:bg-red-600 transition-all shadow-xl shadow-slate-900/10 italic">
+                                            Cerrar Historial de Lote
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </>
+                );
+            };
+
+            return (
+                <div className="min-h-screen bg-tracer-slate font-sans overflow-x-hidden flex">
+                    {/* Sidebar Navigation */}
+                    <nav className="fixed left-0 top-0 bottom-0 w-16 bg-tracer-dark border-r border-white/5 flex flex-col items-center py-8 z-[100] shadow-2xl">
+                        <div className="mb-12">
+                            <button onClick={() => setVista('menu')} className="w-10 h-10 bg-tracer-red rounded flex items-center justify-center shadow-lg transform active-scale">
+                                <Icon name="truck" size={20} className="text-white" />
+                            </button>
+                        </div>
+                        
+                        <div className="flex-1 flex flex-col gap-8">
+                            <button onClick={() => setVista('menu')} className={`flex flex-col items-center gap-1 transition-all active-scale ${vista === 'menu' ? 'text-red-600' : 'text-slate-500 hover:text-slate-300'}`}>
+                                <Icon name="layout-grid" size={22} /><span className="text-[7px] font-black uppercase tracking-tighter italic">Inicio</span>
+                            </button>
+                            <button onClick={() => setVista('supervisor')} className={`flex flex-col items-center gap-1 transition-all active-scale ${vista === 'supervisor' ? 'text-red-600' : 'text-slate-500 hover:text-slate-300'}`}>
+                                <Icon name="list-checks" size={22} /><span className="text-[7px] font-black uppercase tracking-tighter italic">Remitos</span>
+                            </button>
+                            <button onClick={() => setVista('form')} className={`flex flex-col items-center gap-1 transition-all active-scale ${vista === 'form' ? 'text-red-600' : 'text-slate-500 hover:text-slate-300'}`}>
+                                <Icon name="plus-circle" size={22} /><span className="text-[7px] font-black uppercase tracking-tighter italic">Nueva</span>
+                            </button>
+                            <button onClick={() => setVista('vencimientos')} className={`flex flex-col items-center gap-1 transition-all active-scale ${vista === 'vencimientos' ? 'text-red-600' : 'text-slate-500 hover:text-slate-300'}`}>
+                                <Icon name="calendar-clock" size={22} /><span className="text-[7px] font-black uppercase tracking-tighter italic">Alertas</span>
+                            </button>
+                        </div>
+
+                        <div className="mt-auto">
+                            <button onClick={() => setVista('settings')} className={`flex flex-col items-center gap-1 transition-all active-scale ${vista === 'settings' ? 'text-red-600' : 'text-slate-500 hover:text-slate-300'}`}>
+                                <Icon name="settings" size={20} /><span className="text-[7px] font-black uppercase tracking-tighter italic">Ajustes</span>
+                            </button>
+                        </div>
+                    </nav>
+
+                    {/* Main Content Area */}
+                    <div className="flex-1 ml-16 flex flex-col min-h-screen">
+                        <HeaderComp onGoHome={() => setVista('menu')} />
+                        <div className="fixed top-24 right-6 z-[300] space-y-3 pointer-events-none">
+                            {notificaciones.map(n => (
+                                <div key={n.id} className="bg-tracer-dark text-white p-6 rounded-3xl shadow-2xl border-l-[10px] border-red-600 animate-in flex items-center gap-4 pointer-events-auto italic">
+                                    <Icon name="info" size={20} className="text-red-600 shrink-0" />
+                                    <p className="text-[10px] font-black uppercase tracking-widest italic">{n.msg}</p>
+                                </div>
+                            ))}
+                        </div>
+                        {renderModals()}
+                        <main className="p-4 md:p-8">{renderContent()}</main>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ErrorBoundary><App /></ErrorBoundary>);
+    </script>
+</body>
+
+</html>

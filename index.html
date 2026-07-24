@@ -8,6 +8,11 @@
   <title>Baroid Core Practice & Study Portal</title>
   <meta name="description" content="Interactive exam prep for Baroid Core Homework 8 and Homework 9. Play quizzes, practice math solvers, and memorize answers.">
   
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;950&display=swap" rel="stylesheet">
+  
   <!-- Theme & Styles -->
   <link rel="stylesheet" href="index.css">
 </head>
@@ -50,6 +55,10 @@
         <a class="nav-link" id="nav-hw11" onclick="switchTab('hw11')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           Homework 11 (Theory)
+        </a>
+        <a class="nav-link" id="nav-contaminants" onclick="switchTab('contaminants')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          Contaminants (15 Cases)
         </a>
         <a class="nav-link" id="nav-trainers" onclick="switchTab('trainers')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
@@ -120,7 +129,7 @@
             <h3 class="card-title">Homework 11: Contaminants (Theory)</h3>
             <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review drilling fluid contaminants (active/inactive solids, evaporite salts, cement, acid gases), diagnostic checks, and treatment chemical calculations.</p>
             <div class="task-info">
-              <span>30 theory questions</span>
+              <span>22 core questions</span>
               <span id="score-hw11">Record: --</span>
             </div>
           </div>
@@ -478,6 +487,100 @@
               <button class="btn btn-secondary" onclick="resetHoleInputs()">Generate New Wellbore</button>
               <button class="btn btn-primary" id="btn-hole-check" onclick="checkHoleAnswers()">Check Answers</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: Contaminants Simulator -->
+      <section id="view-contaminants" class="view-pane glass" style="display: none; padding: 32px;">
+        <h3 class="card-title" style="margin-bottom:16px;">WBF Contaminants Diagnostics Workspace</h3>
+        <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">
+          Analyze the mud check report comparing **Day 1** (fluid in specification) to **Day 2** (fluid affected).
+          Identify the contaminant, select the primary chemical treatment, and calculate the required dosage in lb/bbl (if applicable).
+        </p>
+
+        <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
+          <label class="input-label" for="preset-contaminants" style="font-weight:600;">Select Practice Case Study</label>
+          <select id="preset-contaminants" class="input-field" onchange="loadContaminantsPreset()" style="max-width:500px;">
+            <!-- Options loaded dynamically -->
+          </select>
+        </div>
+
+        <div class="trainer-section" style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Mud Check Comparison Table -->
+          <div class="params-board" style="padding: 16px; overflow-x: auto; border: 1px solid var(--border-glow); background: rgba(255,255,255,0.01);">
+            <div class="params-title" id="train-cont-title" style="margin-bottom:12px; font-weight:700;">Mud Properties Report (Day 1 vs Day 2)</div>
+            <table class="sheet-table" style="width:100%; border-collapse:collapse; text-align:left; font-size:13px;" id="table-cont-compare">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.05); border-bottom: 1px solid var(--border-glow);">
+                  <th style="padding:10px;">Mud Property</th>
+                  <th style="padding:10px; width:25%;">Day 1 (Base)</th>
+                  <th style="padding:10px; width:25%;">Day 2 (Afected)</th>
+                  <th style="padding:10px; width:20%;">Change</th>
+                </tr>
+              </thead>
+              <tbody id="table-cont-compare-body">
+                <!-- Loaded dynamically by app.js -->
+              </tbody>
+            </table>
+            <div id="train-cont-note" style="margin-top:12px; padding: 10px; border-radius: 6px; background: rgba(230,162,60,0.1); border: 1px solid rgba(230,162,60,0.2); font-size:13px; font-weight:600; color:#e6a23c; display:none;">
+              Field Note: <span id="train-cont-note-text"></span>
+            </div>
+          </div>
+
+          <!-- Analysis Form -->
+          <div class="inputs-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+            <div class="input-group">
+              <label class="input-label" for="input-cont-name" style="font-weight:600;">1. Identify the Contaminant</label>
+              <select id="input-cont-name" class="input-field">
+                <option value="">-- Select Contaminant --</option>
+                <option value="high_temperature">High Temperature</option>
+                <option value="salt_water_influx">Salt Water Influx</option>
+                <option value="fresh_water_influx">Fresh Water Influx</option>
+                <option value="cement">Cement</option>
+                <option value="anhydrite_gypsum">Anhydrite / Gypsum</option>
+                <option value="bicarbonates">Bicarbonates</option>
+                <option value="carbonates">Carbonates</option>
+                <option value="h2s_gas">Hydrogen Sulfide Gas (H2S)</option>
+                <option value="salt_nacl">Salt (NaCl)</option>
+                <option value="active_drilled_solids">Active Drilled Solids</option>
+                <option value="inactive_solids">Inactive Solids</option>
+                <option value="bacterial_contamination">Bacterial Contamination</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" for="input-cont-treatment" style="font-weight:600;">2. Primary Chemical Treatment</label>
+              <select id="input-cont-treatment" class="input-field">
+                <option value="">-- Select Treatment --</option>
+                <option value="dilute_base_fluid">Dilute system with base fluid</option>
+                <option value="increase_density_stop_influx">Increase density to stop influx, then dilute</option>
+                <option value="stop_influx_weight_up">Stop the influx weighting up</option>
+                <option value="sodium_bicarbonate">Add Sodium bicarbonate (NaHCO3)</option>
+                <option value="soda_ash">Add Soda ash (Na2CO3)</option>
+                <option value="lime">Add Lime (Ca(OH)2)</option>
+                <option value="gypsum_or_lime">Add Gypsum (CaSO4) or Lime</option>
+                <option value="h2s_scavenger">Add H2S Scavenger</option>
+                <option value="optimize_solids_control_dilute">Optimize solids control equipment, dilute</option>
+                <option value="add_biocide">Add biocide</option>
+              </select>
+            </div>
+
+            <div class="input-group" id="group-cont-dosage">
+              <label class="input-label" for="input-cont-dosage" style="font-weight:600;">3. Calculated Treatment Dosage (lb/bbl)</label>
+              <input type="number" step="0.0001" id="input-cont-dosage" class="input-field" placeholder="E.g. 1.5738 (Enter 0 if not applicable)">
+            </div>
+          </div>
+
+          <!-- Solution Explanation -->
+          <div class="explanation-card glass" id="train-cont-explanation" style="display:none;">
+            <h4 style="margin-bottom:8px; color:var(--primary);" id="train-cont-explanation-title">Diagnostic Results & Guidance:</h4>
+            <p id="train-cont-explanation-text" style="white-space: pre-line; line-height: 1.6; font-size:14px; color:var(--text-secondary);"></p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-secondary" onclick="resetContaminantsInputs()">Reset Inputs</button>
+            <button class="btn btn-primary" id="btn-cont-check" onclick="checkContaminantsAnswers()">Check Answers</button>
           </div>
         </div>
       </section>

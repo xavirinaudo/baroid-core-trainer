@@ -1,0 +1,64 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 18 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 8
+Assessment Feedback
+Congratulations, you passed.
+Total score: 77 out of 82, 94%
+Question Feedback
+Question
+4 Of 31
+The alkalinity of a drilling fluid filtrate measured down to a pH of 8.3 is?
+o
+m
+o
+Alkalinity
+o
+O pH
+O outof 1
+Question
+7 of31
+Which of the following variables can lower the pH of a drilling fluid? (select all applicable answers)
+Water
+Acid gas
+Formation pressure
+High temperature
+2 outof 3
+Question
+17 of 31
+--- PAGE 2 ---
+Mf shows the concentration of which alkalinity contributing ions?
+o
+o
+o
+o
+o
+o
+Hydroxide only
+Carbonate only
+Carbonate and bicarbonate
+Hydroxide and bicarbonate
+Bicarbonate only
+Hydroxide and carbonate ions
+0 outof I
+Question
+20 of31
+Calculate the alkalinity contributing ions using the API 13B-I guidelines:
+Given:
+Pf- 3.2mL
+OH, mg/L O
+6.8mL
+C03, mg/L 3840
+HC03, mg/L 122
+2 outof 3
+Question
+22 of31
+Calculate the alkalinity contributing ions using the API 13B-1 guidelines:
+Given:
+Pf- O.3mL
+OH, mg/L 689
+C03, mg/L 120
+HC03, mg/L O
+2 outof 3
+Mf- O.4mL

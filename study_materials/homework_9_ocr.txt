@@ -1,0 +1,410 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 18 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 9
+Assessment Feedback
+Congratulations, you passed.
+Total score: 108 out of III, 97%
+Question Feedback
+Question
+I of 46
+Which of the following are characteristics of montmorillonite clay?
+Commonly used in fresh water systems
+Used for viscosity
+Form gel structures in salt water
+a
+Produces Shear thinning fluid properties
+3 out of 3
+Question
+2 of 46
+What are the benefits to using a sodium-based montmorillonite Clay over a calcium-based montmorillonite Clay in your
+drilling fluid system?
+High hydration potential
+Encourages layer separation
+Low hydration potential
+Inhibits hydration potential
+2 out of 2
+Question
+3 of 46
+--- PAGE 2 ---
+Select the factors that affect polymer performance:
+a
+a
+a
+Biological attack
+Electrolytes in solution
+Polymer color
+Polymer molecular weight
+Turbidity of solution
+Polymer charge
+pH of water
+4 outof 4
+Question
+4 Of 46
+Natural organic polymers
+I outof I
+Question
+5 of 46
+Modified organic polymers
+I outof I
+Question
+6 of 46
+Synthetic polymers
+1 outof I
+Question
+7 of 46
+are proteins, carbohydrates and untreated cellulose that can be obtained from nature.
+v are usually natural polymers that have been chemically altered to improve specific propelties.
+are built from inorganic compounds including petrochemicals.
+What are some of the uses of the polymers added to drilling fluids?
+a
+Decrease viscosity
+Destabilize formations
+Increase viscosity
+Increase the amount of filtrate
+2 outof 2
+Question
+--- PAGE 3 ---
+8 of 46
+Which pH range gives excellent Clay hydration?
+O
+6.5 8.5
+0 9.5 10.5
+o
+12.5 — 14
+o
+2-4
+I outof I
+Question
+9 of 46
+Adding thinners to a flocculated drilling fluid result in the clays becoming?
+O
+Deflocculated
+o
+Hydrated
+o
+Flocculated
+o
+Aggregated
+I outof I
+Question
+10 of 46
+The Clay state of edge-to-edge or edge-to-face association of Clay particles is called?
+O
+Aggregated
+o
+Semi-dispersed
+o
+Hydrated
+o
+Dispersed
+O
+Flocculated
+o
+Deflocculated
+I outof I
+Question
+11 of46
+What Clay state is present after the break up of the Clay platelets, which results in a greater number of particles in the
+fluid, with an increase in surface area, and a rise of the plastic viscosity?
+o
+o
+o
+o
+Dispersed
+Flocculated
+Deflocculated
+Aggregated
+--- PAGE 4 ---
+I outof I
+Question
+12 of46
+When clays enter in contact water and the layers of the individual Clay particles swell, the condition is called?
+o
+Flocculation
+o
+Deflocculation
+o
+Hydration
+o
+Dispersion
+I outof I
+Question
+13 of 46
+The face-to-face stacking of layers in the Clay partlcles, (like in the sacks) is called?
+o
+Dispersed
+o
+Hydrated
+o
+Deflocculated
+o
+Aggregated
+o
+Flocculated
+I outof I
+Question
+14 Of 46
+The OH- or hydroxide ion or hydroxyl ion needs to be present for which of the following products to work?
+o
+Flocculants
+o
+Surfactants
+o
+Most Thinners (Lignosulfonates)
+1 outof I
+Question
+15 of 46
+High molecular weight polymers are used as?
+Deflocculants
+Viscosifiers
+Flocculants
+--- PAGE 5 ---
+Filtration Control
+2 outof 2
+Question
+16 of 46
+Low molecular weight polymers are used as?
+Thinners
+Shale Stabilizers
+Deflocculants
+Flocculants
+2 out of 2
+Question
+17 of46
+Select the reasons clays are added to drilling fluids?
+It is the best viscosifier in the market
+To provide some fluid loss control
+a
+It is the cheapest viscosifier
+TO provide density to drilling fluid
+To provide viscosity
+3 outof 3
+Question
+18 of 46
+Select the properties that can be affected by addition of clays to drilling fluids:
+% solids
+Alkalinity
+Oil water ratio
+Density
+Rheology
+Fluid Loss
+Total hardness
+4 out of 4
+Question
+--- PAGE 6 ---
+19 of 46
+When building a WBF, select which products you would use to increase the density of the system:
+BARACARB
+n BARAWEIGHT
+n BARMAN D PLUS
+e BAROID
+BARANEX
+n BARADEFOAM
+2 out of 2
+Question
+20 of 46
+When building a WBF, select which products you would use to increase the viscosity of the system:
+e BARAVIS
+PAC-L
+DEXTRID
+QUIK-THIN
+O THERMA-THIN
+BARAZAN D PLUS
+2 out of 2
+Question
+21 of46
+When building and treating WBF, select which products could be used to increase the pH:
+O NaOH
+KCl
+'2 KOH
+caC12
+NaCl
+NaCl
+2 outof 2
+Question
+22 of 46
+When treating a WBF, select which products you would use to decrease the fluid loss ofthe system:
+EZ-FILTER
+'D CARBONOX
+--- PAGE 7 ---
+n IMPERMUD
+DEXTRID
+e PAC-R
+FILTER-CHEK
+4 outof 4
+Question
+23 of 46
+When treating a WBF, select which products you would use to decrease the viscosity of the system:
+AQUAGEL GOLD SEAL
+BARO-THIN
+a
+THERMA-THIN
+e QUIK-THIN
+2 outof 2
+Question
+24 Of 46
+While maintaining 2900 bbls volume, increase the weight of a 12.0 ppg drilling fluid to 15.0 ppg
+For Mass Balance Exercise I, how many Sacks of barite (1001b/sack) are required? 5556
+3 outof 3
+Question
+25 of46
+For Mass Balance Exercise l, what is the volume of fluid to dump?
+Volume of fluid to dump = 377.44
+3 outof 3
+Question
+26 of 46
+905 bbl of 11.4 ppg drilling fluid Will be weighted up to 12.9 ppg with barite.
+For Mass Balance Exercise 2, how many sacks of barite (1001b/sack) are needed?
+3 outof 3
+= 903
+--- PAGE 8 ---
+Question
+27 of46
+For Mass Balance Exercise 2, what Will be the final volume of the system after increasing the density with barite?
+966.29
+3 outof 3
+Question
+28 of 46
+Calculate how much water and BARACARB (CaC03 ) are required to make 500 bbls of a WBF with a final density of
+13.0 ppg.
+The BARACARB (SG 2.7) comes in 501b/sack
+For Mass Balance Exercise 3, what is the volume of water needed in barrels — 335.94
+3 outof 3
+Question
+29 of 46
+For Mass Balance Exercise 3, how many sacks (501b/sack) of BARACARB are needed to build the system?
+Sacks of Baracarb needed = 3106
+3 outof 3
+Question
+30 of 46
+Weight up 2200 bbls of 16.5 ppg drilling fluid to 18.0 ppg and maintain exactly 2200 bbls.
+Evaluate how much barite (100 lb/sack) Will be needed and how much reduction in volume Will be required?
+Sacks of barite (1001b/sack) needed are — 2619
+3 outof 3
+Question
+31 of46
+For Mass Balance Exercise 4, how much of the 16.5ppg you need to dump in order to increase the density of the
+system?
+Reduction of volume in bbl
+= 177.9
+3 outof 3
+--- PAGE 9 ---
+Question
+32 of46
+For Mass Balance Exercise 4, how much of the original 16.5 ppg fluid are you keeping in the pits?
+The volume of the original 16.5ppg fluid to keep in bbl = 2022.1
+3 outof 3
+Question
+33 of 46
+Given the following results from a retort test, perform a complete a solids analysis.
+Retort results: %Water — 79.0
+% Oil = 1.0
+CEC = 5
+13.2 ppg
+The density of oil is 7ppg (SG = 0,84) and density of water is 8.345ppg (SG = I).
+What is the ASG? (3 decimals) 3.915
+3 outof 3
+Question
+34 Of 46
+For Solids Analysis Exercise l, calculate the percentage and concentration of Low gravity solids (LGS)
+(VOLGS
+= 3.56
+3 outof 3
+Question
+35 of 46
+LGSppb 32.44
+For Solids Analysis Exercise l, calculate the percentage and concentration of High Gravity Solids (HGS)
+%HGS - 16.44
+3 outof 3
+Question
+36 of 46
+HGS
+ppb= 242.01
+For Solids Analysis Exercise l, calculate the concentration of drill solids in ppb
+Drill solids ppb = 7.34
+O outof 3
+Drill Solids = 32.44 - (5x5) = 32.44 - 25
+= 7.44ppb
+--- PAGE 10 ---
+Question
+37 of 46
+Given the following results from a retort test, perform a solids analysis by calculating the requested values below.
+Fluid data: Water - 7.4m1 Oil = 0.7 mi CEC -6
+MW — II ppg
+The density of oil is 7ppg (SG = ().84) and density of water is 8.345ppg (SG — 1).
+What is the ASG? 3.236
+3 outof 3
+Question
+38 of 46
+For Solids Analysis Exercise 2, what is the percentage of low gravity solids?
+VOLGS = 11.45
+3 outof 3
+Question
+39 of46
+For Solids Analysis Exercise 2, calculate the concentration of High Gravity Solids in ppb
+HGS ppb — III. 14
+3 outof 3
+Question
+40 of 46
+--- PAGE 11 ---
+Using the information below, calculate all the volumes and circulation parameters:
+Parameters
+Liner
+Stroke
+Efficiency
+Stroke/minute (s m)
+Pump 1
+6.5"
+12"
+58
+Pump 2
+6.5"
+12"
+57
+13 3/8" surface casing set @ 5,000' MD/TVD
+8 5/8" intermediate casing set @ 14,000' MD/TVD
+5 1/2" liner @ 18,000' top of liner @ 13,000' MD/TVD
+4 3/4" open hole to 22,000'
+Drill pipe: 4.5" x 3.958"
+Drill pipe: 3.5" x 2.9" x 10,350'
+Drill collar: 3.5" x 1.5" x 2,000'
+Pit volume: 1,800bbl
+What is the pump output in bbl/stk? 0.1183
+3 outof 3
+Question
+Of 46
+For Hole Volume Exercise l, calculate the Annular Volume In bbl
+Annular Volume in bbl = 837.26
+3 outof 3
+Question
+42 Of 46
+For Hole Volume Exercise l, calculate the Drill String Volume in bbl
+Drill String Volume in bbl = 235.69
+3 outof 3
+Question
+--- PAGE 12 ---
+43 Of 46
+For Hole Volume Exercise l, calculate the total circulating Volume in bbl
+Circulating volume in bbl = 2873.05
+3 outof 3
+Question
+44 of 46
+For Hole Volume Exercise I, calculate the Bottoms up strokes and time in minutes
+Bottoms up strokes — 7078
+3 outof 3
+Question
+45 of 46
+Bottoms up time in min — 62
+For Hole Volume Exercise l, calculate the surface to bit strokes and time in minutes
+Surface to bit strokes
+= 1994
+3 out of 3
+Question
+46 of 46
+Surface to bit time in min 18
+For Hole Volume Exercise 1, calculate the Suction to suction strokes and time in minutes
+Suction to suction strokes = 24287
+I outof I
+Suction to suction time in min= 212

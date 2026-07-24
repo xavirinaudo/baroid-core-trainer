@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
   generateMassBalanceParams();
   generateSolidsParams();
   generateHoleParams();
+  populateContaminantsDropdown();
 });
 
 // Load and Save Stats
@@ -118,6 +119,12 @@ function switchTab(tabId) {
     document.getElementById('page-title').innerText = "Homework 11: Fluid Contaminants (Theory)";
     document.getElementById('page-subtitle').innerText = "Identify WBF contaminants, classify solids, and calculate treatment chemical dosages.";
     if (currentQuizId !== 'homework_11') startQuiz('homework_11');
+  } else if (tabId === 'contaminants') {
+    document.getElementById('view-contaminants').style.display = 'block';
+    document.getElementById('nav-contaminants').classList.add('active');
+    document.getElementById('page-title').innerText = "WBF Contaminants Diagnostics Workspace";
+    document.getElementById('page-subtitle').innerText = "Analyze fluid reports, identify contaminants, select chemical treatments, and calculate dosages.";
+    loadContaminantsPreset();
   } else if (tabId === 'trainers') {
     document.getElementById('view-trainers').style.display = 'flex';
     document.getElementById('nav-trainers').classList.add('active');
@@ -1134,3 +1141,160 @@ function filterCheatSheet() {
     div.style.display = text.includes(query) ? '' : 'none';
   });
 }
+
+// 5. WBF Contaminants Diagnostics Workspace
+function populateContaminantsDropdown() {
+  const select = document.getElementById('preset-contaminants');
+  if (!select) return;
+  select.innerHTML = '';
+  CALCULATIONS_DATA.contaminants.forEach((c) => {
+    const opt = document.createElement('option');
+    opt.value = c.id;
+    opt.innerText = c.name;
+    select.appendChild(opt);
+  });
+  loadContaminantsPreset();
+}
+
+function loadContaminantsPreset() {
+  const val = document.getElementById('preset-contaminants').value;
+  const entry = CALCULATIONS_DATA.contaminants.find(x => x.id === val);
+  if (!entry) return;
+
+  // Clear inputs
+  document.getElementById('input-cont-name').value = '';
+  document.getElementById('input-cont-treatment').value = '';
+  document.getElementById('input-cont-dosage').value = '';
+  document.getElementById('train-cont-explanation').style.display = 'none';
+
+  // Toggle dosage input visibility dynamically
+  const dosageGroup = document.getElementById('group-cont-dosage');
+  if (entry.answer.dosage > 0) {
+    dosageGroup.style.display = 'block';
+  } else {
+    dosageGroup.style.display = 'none';
+  }
+
+  // Update title
+  document.getElementById('train-cont-title').innerText = `Mud Properties Report: ${entry.name}`;
+
+  // Update field note
+  const noteEl = document.getElementById('train-cont-note');
+  if (entry.note) {
+    document.getElementById('train-cont-note-text').innerText = entry.note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // Render properties table
+  const tbody = document.getElementById('table-cont-compare-body');
+  tbody.innerHTML = '';
+  entry.properties.forEach(p => {
+    const tr = document.createElement('tr');
+    if (p.changed) {
+      tr.style.color = 'var(--warning)';
+      tr.style.fontWeight = '600';
+    }
+    tr.style.borderBottom = '1px solid var(--border-glow)';
+
+    const tdName = document.createElement('td');
+    tdName.style.padding = '10px';
+    tdName.innerText = p.name;
+
+    const tdDay1 = document.createElement('td');
+    tdDay1.style.padding = '10px';
+    tdDay1.innerText = p.day1;
+
+    const tdDay2 = document.createElement('td');
+    tdDay2.style.padding = '10px';
+    tdDay2.innerText = p.day2;
+
+    const tdChange = document.createElement('td');
+    tdChange.style.padding = '10px';
+    tdChange.innerText = p.changed ? 'Changed' : 'No Change';
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdDay1);
+    tr.appendChild(tdDay2);
+    tr.appendChild(tdChange);
+    tbody.appendChild(tr);
+  });
+
+  // Reset input styles
+  document.getElementById('input-cont-name').className = 'input-field';
+  document.getElementById('input-cont-treatment').className = 'input-field';
+  document.getElementById('input-cont-dosage').className = 'input-field';
+  document.getElementById('btn-cont-check').innerText = 'Check Answers';
+}
+
+function resetContaminantsInputs() {
+  document.getElementById('input-cont-name').value = '';
+  document.getElementById('input-cont-treatment').value = '';
+  document.getElementById('input-cont-dosage').value = '';
+  document.getElementById('train-cont-explanation').style.display = 'none';
+  document.getElementById('input-cont-name').className = 'input-field';
+  document.getElementById('input-cont-treatment').className = 'input-field';
+  document.getElementById('input-cont-dosage').className = 'input-field';
+  document.getElementById('btn-cont-check').innerText = 'Check Answers';
+}
+
+function checkContaminantsAnswers() {
+  const val = document.getElementById('preset-contaminants').value;
+  const entry = CALCULATIONS_DATA.contaminants.find(x => x.id === val);
+  if (!entry) return;
+
+  const userCont = document.getElementById('input-cont-name').value;
+  const userTreat = document.getElementById('input-cont-treatment').value;
+  const userDosageStr = document.getElementById('input-cont-dosage').value;
+  const userDosage = parseFloat(userDosageStr);
+
+  let isContCorrect = (userCont === entry.answer.contaminant);
+  let isTreatCorrect = (userTreat === entry.answer.treatment);
+  let isDosageCorrect = true;
+
+  if (entry.answer.dosage > 0) {
+    if (isNaN(userDosage)) {
+      isDosageCorrect = false;
+    } else {
+      isDosageCorrect = (Math.abs(userDosage - entry.answer.dosage) <= 0.01);
+    }
+  } else {
+    isDosageCorrect = (isNaN(userDosage) || userDosage === 0);
+  }
+
+  // Update input styles
+  const contEl = document.getElementById('input-cont-name');
+  const treatEl = document.getElementById('input-cont-treatment');
+  const dosageEl = document.getElementById('input-cont-dosage');
+
+  contEl.className = isContCorrect ? 'input-field correct' : 'input-field incorrect';
+  treatEl.className = isTreatCorrect ? 'input-field correct' : 'input-field incorrect';
+  dosageEl.className = isDosageCorrect ? 'input-field correct' : 'input-field incorrect';
+
+  let allCorrect = isContCorrect && isTreatCorrect && isDosageCorrect;
+
+  // Show detailed explanation
+  const expEl = document.getElementById('train-cont-explanation');
+  const expTextEl = document.getElementById('train-cont-explanation-text');
+  const expTitleEl = document.getElementById('train-cont-explanation-title');
+
+  if (allCorrect) {
+    expTitleEl.innerText = "Correct! Solutions & Chemistry:";
+    expTitleEl.style.color = 'var(--success)';
+  } else {
+    expTitleEl.innerText = "Incorrect. Let's Review the Diagnostics:";
+    expTitleEl.style.color = 'var(--error)';
+  }
+
+  expTextEl.innerText = entry.explanation;
+  expEl.style.display = 'block';
+
+  // Increment stats
+  stats.simulatorsRun += 1;
+  saveStats();
+  updateDashboardStats();
+
+  document.getElementById('btn-cont-check').innerText = "Checked";
+}
+

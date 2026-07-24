@@ -1,0 +1,827 @@
+import React, { useState, useMemo, useEffect } from 'react';
+import { 
+  Truck, Camera, ClipboardCheck, Package, AlertCircle, 
+  CheckCircle2, Users, Search, Plus, ArrowRight, 
+  LogOut, Clock, Scan, ShieldCheck, FileText, 
+  Copy, LayoutDashboard, History, ChevronRight, 
+  RefreshCw, Database, Filter, Factory, MapPin, 
+  Calendar as CalendarIcon, Trash2, CheckSquare, Square,
+  Download, Bookmark, XCircle, AlertTriangle, X,
+  Info, ArrowUpRight, Activity, User, Award, CalendarDays
+} from 'lucide-react';
+
+// --- Branding Corporativo Halliburton BAROID ---
+const BAROID_RED = "#E31837";
+const BAROID_DARK = "#121212";
+
+// --- Datos Maestros ---
+const OPERADORAS = [
+  { id: 'op1', nombre: 'YPF S.A.' },
+  { id: 'op2', nombre: 'Pan American Energy' },
+  { id: 'op3', nombre: 'Vista Energy' },
+  { id: 'op4', nombre: 'Pluspetrol' },
+  { id: 'op5', nombre: 'CHEVRON' },
+  { id: 'op6', nombre: 'SHELL S.A.' },
+  { id: 'op7', nombre: 'PHOENIX' }
+];
+
+const PADS = {
+  op1: [
+    { id: 'pad1', nombre: 'PAD 101 - Loma Campana' },
+    { id: 'pad2', nombre: 'PAD 202 - La Amarga Chica' },
+    { id: 'pad3', nombre: 'PAD 301 - Bandurria Sur' },
+    { id: 'pad4', nombre: 'PAD 402 - Aguada Pichana Este' }
+  ],
+  op2: [
+    { id: 'pad5', nombre: 'PAD 05 - Lindero Atravesado' },
+    { id: 'pad6', nombre: 'PAD 17 - Cerro Dragón' },
+    { id: 'pad7', nombre: 'PAD 12 - Estancia Vieja' }
+  ],
+  op3: [
+    { id: 'pad8', nombre: 'PAD V-01 - Bajada del Palo' },
+    { id: 'pad9', nombre: 'PAD V-02 - Bajada de Añelo' },
+    { id: 'pad10', nombre: 'PAD V-03 - Traful' }
+  ],
+  op4: [
+    { id: 'pad11', nombre: 'PAD P-10 - Aguada de la Arena' },
+    { id: 'pad12', nombre: 'PAD P-15 - Rincón de los Sauces' },
+    { id: 'pad13', nombre: 'PAD P-20 - Chihuidos' }
+  ],
+  op5: [
+    { id: 'pad14', nombre: 'PAD CH-01 - Loma Negra' },
+    { id: 'pad15', nombre: 'PAD CH-02 - Bandurria Norte' },
+    { id: 'pad16', nombre: 'PAD CH-03 - El Trapial' }
+  ],
+  op6: [
+    { id: 'pad17', nombre: 'PAD SH-01 - Cruz de Lorena' },
+    { id: 'pad18', nombre: 'PAD SH-02 - Sierras Blancas' },
+    { id: 'pad19', nombre: 'PAD SH-03 - La Yesera' }
+  ],
+  op7: [
+    { id: 'pad20', nombre: 'PAD PH-01 - Parva Negra' },
+    { id: 'pad21', nombre: 'PAD PH-02 - Puesto Hernández' },
+    { id: 'pad22', nombre: 'PAD PH-03 - Coirón Amargo' }
+  ]
+};
+
+const PRODUCTOS_BAROID = [
+  { id: 'p1', nombre: 'BARITA EN BOLSONES', cat: 'barita' },
+  { id: 'p2', nombre: 'BARITA EN SILO', cat: 'barita' },
+  { id: 'p4', nombre: 'LIME FG – Cal', cat: 'quimico' },
+  { id: 'p5', nombre: 'BARABLOK™ 400 NA', cat: 'quimico' },
+  { id: 'p6', nombre: 'BARACARB®-DF FINE', cat: 'quimico' },
+  { id: 'p7', nombre: 'BARACARB®-DF MEDIUM', cat: 'quimico' },
+  { id: 'p8', nombre: 'BARACARB®-DF COARSE', cat: 'quimico' },
+  { id: 'p9', nombre: 'GELTONE® II', cat: 'quimico' },
+  { id: 'p10', nombre: 'BDF™-965 FINE', cat: 'quimico' },
+  { id: 'p11', nombre: 'BDF™-965 MEDIUM', cat: 'quimico' },
+  { id: 'p12', nombre: 'BaraShield®-982', cat: 'quimico' },
+  { id: 'p13', nombre: 'BaraShield®-981', cat: 'quimico' },
+  { id: 'p14', nombre: 'BaraFLC®-903', cat: 'quimico' },
+  { id: 'p15', nombre: 'BaraSeal™-957', cat: 'quimico' },
+  { id: 'p16', nombre: 'STOPPIT™', cat: 'quimico' },
+  { id: 'p17', nombre: 'OBTURANTE MEZCLA', cat: 'quimico' },
+  { id: 'p18', nombre: 'EZ MUL® LA', cat: 'quimico' },
+  { id: 'p19', nombre: 'CLAY GRABBER®', cat: 'quimico' },
+  { id: 'p20', nombre: 'CLAY SYNC™ II', cat: 'quimico' },
+  { id: 'p21', nombre: 'BARA-DEFOAM® HP', cat: 'quimico' },
+  { id: 'p22', nombre: 'OMC® 3', cat: 'quimico' },
+  { id: 'p23', nombre: 'THERMA-THIN YPF', cat: 'quimico' },
+  { id: 'p24', nombre: 'XLR-RATE™', cat: 'quimico' },
+  { id: 'p25', nombre: 'DRILTREAT®', cat: 'quimico' },
+  { id: 'p26', nombre: 'INVERMUL® LA', cat: 'quimico' },
+  { id: 'p27', nombre: 'RM-63™', cat: 'quimico' },
+  { id: 'p28', nombre: 'BAROFIBRE®', cat: 'quimico' },
+  { id: 'p29', nombre: 'BARAZAN® D PLUS', cat: 'quimico' },
+  { id: 'p30', nombre: 'CARBONOX®', cat: 'quimico' },
+  { id: 'p31', nombre: 'PAC™-L', cat: 'quimico' },
+  { id: 'p32', nombre: 'BENTONITA BOLSÓN', cat: 'quimico' },
+  { id: 'p33', nombre: 'BENTONITA PALLET', cat: 'quimico' },
+  { id: 'p34', nombre: 'SODA ASH', cat: 'quimico' },
+  { id: 'p35', nombre: 'SODA CÁUSTICA', cat: 'quimico' },
+  { id: 'p36', nombre: 'Potassium chloride (KCl)', cat: 'quimico' },
+  { id: 'p37', nombre: 'BARAVIS W-637', cat: 'quimico' },
+  { id: 'p38', nombre: 'TS PLUS YPF', cat: 'quimico' },
+  { id: 'p39', nombre: 'CALCIUM CHLORIDE BRINE (YPF)', cat: 'quimico' },
+  { id: 'p40', nombre: 'Cloruro de Calcio', cat: 'quimico' },
+  { id: 'p41', nombre: 'INVERMUL®', cat: 'quimico' },
+  { id: 'p42', nombre: 'LE SUPERMUL™', cat: 'quimico' },
+  { id: 'p43', nombre: 'TAU-MOD®', cat: 'quimico' }
+];
+
+// --- HELPERS GLOBALES ---
+const copyToClipboard = (text, onSuccess) => {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    if (onSuccess) onSuccess();
+  } catch (err) {
+    console.error("No se pudo copiar", err);
+  }
+  document.body.removeChild(textArea);
+};
+
+const getSharedSO = (operadoraId) => {
+  const sharedData = JSON.parse(localStorage.getItem('baroid_shared_so') || '{}');
+  return sharedData[operadoraId] || '';
+};
+
+const setSharedSO = (operadoraId, soNumber) => {
+  const sharedData = JSON.parse(localStorage.getItem('baroid_shared_so') || '{}');
+  sharedData[operadoraId] = soNumber;
+  localStorage.setItem('baroid_shared_so', JSON.stringify(sharedData));
+};
+
+// --- Helper para recordar vencimientos por lote ---
+const getLoteVencimiento = (lote) => {
+  const vencimientos = JSON.parse(localStorage.getItem('baroid_vencimientos') || '{}');
+  return vencimientos[lote] || '';
+};
+
+const saveLoteVencimiento = (lote, vencimiento) => {
+  if (!lote || !vencimiento) return;
+  const vencimientos = JSON.parse(localStorage.getItem('baroid_vencimientos') || '{}');
+  vencimientos[lote] = vencimiento;
+  localStorage.setItem('baroid_vencimientos', JSON.stringify(vencimientos));
+};
+
+// --- COMPONENTES SECUNDARIOS ---
+
+const HeaderComp = ({ perfil, onLogout, currentUser }) => (
+  <header style={{ backgroundColor: BAROID_DARK }} className="border-b border-white/10 px-6 py-4 sticky top-0 z-50">
+    <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        <div style={{ backgroundColor: BAROID_RED }} className="w-10 h-10 rounded flex items-center justify-center shadow-lg transform -rotate-12">
+          <Truck size={20} className="text-white" />
+        </div>
+        <div>
+          <span className="font-black text-xl text-white tracking-tighter uppercase italic leading-none block">
+            BAROID <span className="text-slate-500 font-light text-sm">TRACER PRO</span>
+          </span>
+          <span className="text-[9px] font-bold text-red-500 uppercase tracking-[0.3em]">{perfil?.toUpperCase()} MODE</span>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="hidden md:flex flex-col items-end mr-4">
+          <span className="text-white text-[10px] font-black uppercase flex items-center gap-2"><User size={12} className="text-red-600"/> {currentUser.username}</span>
+          <span className="text-yellow-500 text-[9px] font-bold uppercase tracking-widest">{currentUser.points} PUNTOS</span>
+        </div>
+        <button onClick={onLogout} className="text-slate-500 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
+          <LogOut size={16} />
+        </button>
+      </div>
+    </div>
+  </header>
+);
+
+const LoginScreen = ({ onLogin }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
+  const [role, setRole] = useState('ingeniero');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError('');
+    if (!username || !password) {
+      setError('Completa usuario y contraseña');
+      return;
+    }
+    onLogin({ username, role, points: 0 });
+  };
+
+  return (
+    <div className="min-h-screen bg-[#0F0F0F] flex items-center justify-center p-6 bg-gradient-to-br from-red-950/30 via-black to-black">
+      <div className="w-full max-w-md bg-[#181818]/90 backdrop-blur-md border border-white/10 p-10 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+        <div className="flex justify-center mb-8">
+          <div className="relative">
+            <ShieldCheck size={80} className="text-red-600 drop-shadow-[0_0_20px_rgba(227,24,55,0.5)]" />
+          </div>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-black text-center text-white mb-1 tracking-tighter italic uppercase">
+          HALLIBURTON
+        </h1>
+        <p className="text-slate-400 text-center mb-10 text-xs md:text-sm font-black tracking-[0.4em] uppercase opacity-70">
+          Baroid Field Services
+        </p>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Usuario"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl text-white font-medium text-sm placeholder:text-slate-500 focus:outline-none focus:border-red-600/50 transition-all"
+            />
+          </div>
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl text-white font-medium text-sm placeholder:text-slate-500 focus:outline-none focus:border-red-600/50 transition-all pr-12"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+            >
+              {showPassword ? '🙈' : '👁️'}
+            </button>
+          </div>
+          {isRegister && (
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl text-white font-medium text-sm appearance-none focus:outline-none focus:border-red-600/50 transition-all"
+            >
+              <option value="ingeniero">Field Engineer</option>
+              <option value="supervisor">Operations Supervisor</option>
+              <option value="vencimientos">Gerente de Base</option>
+            </select>
+          )}
+          <button
+            type="submit"
+            disabled={!username || !password}
+            className="w-full bg-red-600 hover:bg-red-700 text-white p-5 rounded-3xl font-black uppercase text-sm tracking-wider shadow-xl shadow-red-900/30 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isRegister ? 'Crear Cuenta' : 'Ingresar al Sistema'}
+          </button>
+          <div className="text-center mt-4">
+            <button
+              type="button"
+              onClick={() => setIsRegister(!isRegister)}
+              className="text-slate-400 hover:text-red-400 text-sm font-medium transition-colors"
+            >
+              {isRegister ? '¿Ya tenés cuenta? Ingresá acá' : '¿Primera vez? Registrate'}
+            </button>
+          </div>
+          {error && <p className="text-red-500 text-center text-sm mt-2 font-medium">{error}</p>}
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const WellSightModal = ({ isOpen, onClose, header, items, onConfirm, showToast, imageData }) => {
+  if (!isOpen) return null;
+
+  const operadora = OPERADORAS.find(o => o.id === header.operadoraId)?.nombre || '---';
+  const padName = PADS[header.operadoraId]?.find(p => p.id === header.padId)?.nombre || "[Pozo]";
+  
+  const isBariteLoad = items.some(it => {
+    const p = PRODUCTOS_BAROID.find(x => x.id === it.productoId);
+    return p?.cat === 'barita';
+  });
+
+  const commentWS = isBariteLoad 
+    ? `Se recibió barita en locación ${padName}.` 
+    : `Se recibieron productos químicos en locación ${padName}.`;
+
+  const errorReportText = `REPORTE DE ERROR LOGÍSTICA
+Fecha: ${new Date().toLocaleDateString()}
+Operadora: ${operadora}
+PAD: ${padName}
+SO: ${header.soNumber}
+Remito: ${header.nroRemito}
+Error: ${header.comentarios}`;
+
+  const handleCopy = (text) => {
+    copyToClipboard(text, () => showToast("¡Copiado al portapapeles!"));
+  };
+
+  const downloadImage = () => {
+    if (imageData) {
+      const link = document.createElement('a');
+      link.href = imageData;
+      link.download = `remito_${header.nroRemito || 'sin_numero'}.jpg`;
+      link.click();
+      showToast("Foto descargada");
+    } else {
+      showToast("No hay foto cargada");
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/95 backdrop-blur-md animate-in fade-in">
+      <div className="bg-white w-full max-w-lg rounded-[2.5rem] p-10 shadow-2xl relative overflow-hidden">
+        <h3 className="text-2xl font-black text-slate-900 uppercase italic tracking-tighter mb-8 flex items-center gap-3">
+          <ClipboardCheck className="text-red-600" /> Preparar WellSight
+        </h3>
+        <div className="space-y-4">
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 relative group">
+            <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">SO Number</p>
+            <p className="font-bold text-slate-800">{header.soNumber || "---"}</p>
+            <button onClick={() => handleCopy(header.soNumber)} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-lg text-slate-400 hover:text-red-600 shadow-sm border border-slate-100 transition-colors">
+              <Copy size={14} />
+            </button>
+          </div>
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 relative group">
+            <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">Remito Number</p>
+            <p className="font-bold text-slate-800">{header.nroRemito}</p>
+            <button onClick={() => handleCopy(header.nroRemito)} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white rounded-lg text-slate-400 hover:text-red-600 shadow-sm border border-slate-100 transition-colors">
+              <Copy size={14} />
+            </button>
+          </div>
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 relative group">
+            <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">Comentario WS</p>
+            <p className="text-xs text-slate-600 font-bold leading-tight pr-10">{commentWS}</p>
+            <button onClick={() => handleCopy(commentWS)} className="absolute right-4 top-4 p-2 bg-white rounded-lg text-slate-400 hover:text-red-600 shadow-sm border border-slate-100">
+              <Copy size={14} />
+            </button>
+          </div>
+          {header.hasError && (
+            <div className="bg-red-50 p-5 rounded-2xl border border-red-100 relative group">
+              <p className="text-[8px] font-black text-red-600 uppercase tracking-widest mb-1">Bloque de Error para Mail</p>
+              <p className="text-[10px] text-red-700 font-bold leading-relaxed whitespace-pre-line">{errorReportText}</p>
+              <button onClick={() => handleCopy(errorReportText)} className="absolute right-4 top-4 p-2 bg-white rounded-lg text-red-600 shadow-sm border border-red-100">
+                <Copy size={14} />
+              </button>
+            </div>
+          )}
+          {imageData && (
+            <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100 text-center">
+              <p className="text-[8px] font-black text-blue-600 uppercase tracking-widest mb-2">Foto del Remito</p>
+              <button 
+                onClick={downloadImage}
+                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition-all"
+              >
+                Descargar Foto
+              </button>
+            </div>
+          )}
+        </div>
+        <div className="mt-10 pt-8 border-t border-slate-100 space-y-4">
+           <button 
+             onClick={onConfirm}
+             className="w-full bg-green-600 text-white p-5 rounded-3xl font-black uppercase text-[10px] tracking-[0.2em] hover:bg-green-700 transition-all shadow-xl flex items-center justify-center gap-3"
+           >
+             <CheckSquare size={18} /> CONFIRMAR REGISTRO
+           </button>
+           <button onClick={onClose} className="w-full text-slate-400 font-black uppercase text-[9px] tracking-widest hover:text-red-600">Volver a Revisión</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const IngenieroView = ({ recepciones, setRecepciones, onSetVista, showToast }) => {
+  const [header, setHeader] = useState({ 
+    operadoraId: '', 
+    padId: '', 
+    soNumber: '', 
+    nroRemito: '', 
+    hasPhoto: false, 
+    comentarios: '', 
+    hasError: false 
+  });
+  const [items, setItems] = useState([]);
+  const [current, setCurrent] = useState({ productoId: '', cantidad: '', lote: '', vencimiento: '' });
+  const [isWSModalOpen, setIsWSModalOpen] = useState(false);
+  const [step, setStep] = useState(1);
+  const [imageData, setImageData] = useState(null);
+
+  // Recordar última SO por operadora
+  useEffect(() => {
+    if (header.operadoraId) {
+      const ultimaSO = getSharedSO(header.operadoraId);
+      if (ultimaSO) {
+        setHeader(prev => ({ ...prev, soNumber: ultimaSO }));
+      }
+    }
+  }, [header.operadoraId]);
+
+  // Autocompletar vencimiento si el lote ya existe
+  const handleLoteChange = (e) => {
+    const lote = e.target.value.toUpperCase();
+    const vencimientoExistente = getLoteVencimiento(lote);
+    setCurrent(prev => ({
+      ...prev,
+      lote,
+      vencimiento: vencimientoExistente || prev.vencimiento
+    }));
+    if (vencimientoExistente) showToast(`Vencimiento auto-cargado para lote ${lote}: ${vencimientoExistente}`);
+  };
+
+  const addItem = () => {
+    if (!current.productoId || !current.cantidad || !current.lote) {
+      return showToast("Completa todos los campos del producto");
+    }
+    const p = PRODUCTOS_BAROID.find(x => x.id === current.productoId);
+    if (!p) return showToast("Producto no encontrado");
+
+    // Guardar vencimiento para este lote (si se ingresó)
+    if (current.vencimiento) {
+      saveLoteVencimiento(current.lote, current.vencimiento);
+    }
+
+    setItems([...items, { 
+      ...current, 
+      id: crypto.randomUUID(), 
+      nombre: p.nombre, 
+      categoria: p.cat 
+    }]);
+    setCurrent({ productoId: '', cantidad: '', lote: '', vencimiento: '' });
+  };
+
+  const handlePhoto = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setHeader(prev => ({ ...prev, hasPhoto: true }));
+      showToast("Foto cargada correctamente. Completa los campos manualmente.");
+
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        setImageData(ev.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const syncAll = () => {
+    if (!header.nroRemito) return showToast("El número de remito es obligatorio");
+    if (!header.hasPhoto) return showToast("Carga la foto del remito");
+
+    const opName = OPERADORAS.find(o => o.id === header.operadoraId)?.nombre || '---';
+    const padName = PADS[header.operadoraId]?.find(p => p.id === header.padId)?.nombre || '---';
+
+    const nuevas = items.map(it => ({
+      ...header,
+      ...it,
+      id: crypto.randomUUID(),
+      producto: it.nombre,
+      categoria: it.categoria,
+      operadora: opName,
+      pad: padName,
+      remito: header.nroRemito,
+      estadoWellSight: true,
+      fecha: new Date().toISOString().split('T')[0]
+    }));
+
+    setRecepciones([...nuevas, ...recepciones]);
+    setItems([]);
+    setHeader({ operadoraId: '', padId: '', soNumber: '', nroRemito: '', hasPhoto: false, comentarios: '', hasError: false });
+    setIsWSModalOpen(false);
+    onSetVista('menu');
+
+    // Guardar última SO
+    if (header.soNumber && header.operadoraId) {
+      setSharedSO(header.operadoraId, header.soNumber);
+    }
+
+    showToast("¡Registro sincronizado con éxito!");
+  };
+
+  return (
+    <div className="max-w-6xl mx-auto p-4 md:p-10 animate-in slide-in-from-bottom-8">
+      <WellSightModal 
+        isOpen={isWSModalOpen} 
+        onClose={() => setIsWSModalOpen(false)} 
+        header={header} 
+        items={items} 
+        onConfirm={syncAll} 
+        showToast={showToast} 
+        imageData={imageData}
+      />
+
+      <div className="flex items-center gap-4 mb-10">
+        <h2 className="text-3xl font-black text-slate-950 uppercase italic tracking-tighter">Entrada de Insumos</h2>
+        <div className="flex-1 h-[2px] bg-slate-100"></div>
+        <span className="text-[10px] font-black text-slate-400">PASO {step}/2</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="lg:col-span-2 space-y-8">
+          {step === 1 ? (
+            <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 space-y-8 animate-in fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Operadora</label>
+                  <select 
+                    className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none text-sm appearance-none" 
+                    value={header.operadoraId} 
+                    onChange={e => setHeader({...header, operadoraId: e.target.value})}
+                  >
+                    <option value="">Seleccione Operadora</option>
+                    {OPERADORAS.map(o => <option key={o.id} value={o.id}>{o.nombre}</option>)}
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">PAD / Locación</label>
+                  <select 
+                    className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none text-sm appearance-none disabled:opacity-50" 
+                    disabled={!header.operadoraId} 
+                    value={header.padId} 
+                    onChange={e => setHeader({...header, padId: e.target.value})}
+                  >
+                    <option value="">Seleccione PAD</option>
+                    {header.operadoraId && PADS[header.operadoraId]?.map(p => <option key={p.id} value={p.id}>{p.nombre}</option>)}
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Número de SO</label>
+                  <input 
+                    type="text" 
+                    className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none" 
+                    placeholder="SO-XXXX" 
+                    value={header.soNumber} 
+                    onChange={e => setHeader({...header, soNumber: e.target.value})} 
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Nro de Remito</label>
+                  <input 
+                    type="text" 
+                    className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none" 
+                    placeholder="Ej: R-0001-XXXXXX" 
+                    value={header.nroRemito} 
+                    onChange={e => setHeader({...header, nroRemito: e.target.value})} 
+                  />
+                </div>
+                <div className="col-span-1 md:col-span-2">
+                  <input type="file" accept="image/*" onChange={handlePhoto} className="hidden" id="photoUpload" />
+                  <label htmlFor="photoUpload" className={`w-full p-6 rounded-3xl font-black text-[11px] uppercase tracking-[0.3em] flex items-center justify-center gap-4 transition-all cursor-pointer ${header.hasPhoto ? 'bg-green-100 text-green-700 border-2 border-green-200' : 'bg-slate-900 text-white hover:bg-black shadow-xl'}`}>
+                    <Camera size={20} />
+                    {header.hasPhoto ? "FOTO CARGADA OK" : "CAPTURAR FOTO REMITO (obligatorio)"}
+                  </label>
+                </div>
+              </div>
+              <button 
+                onClick={() => setStep(2)}
+                disabled={!header.operadoraId || !header.padId || !header.soNumber || !header.nroRemito || !header.hasPhoto}
+                className="w-full bg-red-600 text-white p-6 rounded-[2rem] font-black uppercase text-[11px] tracking-widest disabled:opacity-50"
+              >
+                Siguiente: Cargar Productos
+              </button>
+            </div>
+          ) : (
+            <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 space-y-8 animate-in fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="col-span-1 md:col-span-2 space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Producto</label>
+                  <select className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none text-sm appearance-none" value={current.productoId} onChange={e => setCurrent({...current, productoId: e.target.value})}>
+                    <option value="">Seleccione Producto</option>
+                    {PRODUCTOS_BAROID.map(p => <option key={p.id} value={p.id}>{p.nombre}</option>)}
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Cantidad</label>
+                  <input type="number" className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none" placeholder="0" value={current.cantidad} onChange={e => setCurrent({...current, cantidad: e.target.value})} />
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Nro de Lote</label>
+                  <input type="text" className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none uppercase" placeholder="LOT-XXX" value={current.lote} onChange={handleLoteChange} />
+                </div>
+                <div className="col-span-1 md:col-span-2 space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase ml-2 tracking-widest">Vencimiento</label>
+                  <input type="date" className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none" value={current.vencimiento} onChange={e => setCurrent({...current, vencimiento: e.target.value})} />
+                </div>
+              </div>
+              <button onClick={addItem} className="w-full p-6 border-2 border-dashed border-slate-200 text-slate-400 hover:text-red-600 font-black rounded-3xl transition-all flex items-center justify-center gap-4 uppercase text-[11px] tracking-widest">
+                <Plus size={20} /> AGREGAR AL REMITO
+              </button>
+              <div className="pt-6 border-t border-slate-100 space-y-4">
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" checked={header.hasError} onChange={e => setHeader({...header, hasError: e.target.checked})} className="w-5 h-5 rounded accent-red-600" id="hasError" />
+                  <label htmlFor="hasError" className="text-xs font-black text-slate-600 uppercase">¿Remito con Error?</label>
+                </div>
+                <textarea className="w-full p-5 bg-slate-50 rounded-2xl font-black border-none text-sm" placeholder="Observaciones..." value={header.comentarios} onChange={e => setHeader({...header, comentarios: e.target.value})}></textarea>
+                <div className="flex gap-4">
+                  <button onClick={() => setStep(1)} className="flex-1 bg-slate-100 text-slate-500 p-6 rounded-[2rem] font-black uppercase text-[11px]">Volver</button>
+                  <button onClick={() => setIsWSModalOpen(true)} disabled={items.length === 0} className="flex-1 bg-red-600 text-white p-6 rounded-[2rem] font-black uppercase text-[11px] tracking-widest disabled:opacity-50">Finalizar y Validar</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="space-y-6">
+          <div className="bg-[#121212] rounded-[3.5rem] p-10 text-white min-h-[500px] flex flex-col shadow-2xl">
+            <h3 className="text-[10px] font-black uppercase text-slate-500 tracking-[0.4em] mb-10 italic">Borrador Remito</h3>
+            <div className="flex-1 space-y-4 overflow-y-auto max-h-[450px] pr-2 custom-scrollbar">
+              {items.length === 0 ? (
+                <div className="text-center mt-20 opacity-10">
+                  <Truck size={80} className="mx-auto"/><p className="mt-4 font-black italic uppercase">Sin Carga</p>
+                </div>
+              ) : (
+                items.map((it) => (
+                  <div key={it.id} className="bg-white/5 p-5 rounded-2xl border border-white/5 flex justify-between items-center group">
+                    <div>
+                      <p className="font-black text-[11px] uppercase text-red-500 mb-1 leading-none">{it.nombre}</p>
+                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">LOTE: {it.lote} • CANT: {it.cantidad}</p>
+                    </div>
+                    <button onClick={() => setItems(items.filter(x => x.id !== it.id))} className="text-slate-600 hover:text-red-500 transition-colors"><Trash2 size={16}/></button>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SupervisorDashboard = ({ recepciones, currentUser }) => {
+  const [fOp, setFOp] = useState('');
+  const [fPad, setFPad] = useState('');
+  const [fCat, setFCat] = useState('todos');
+  const [fStartDate, setFStartDate] = useState('');
+  const [fEndDate, setFEndDate] = useState('');
+  const [selectedRemito, setSelectedRemito] = useState(null);
+
+  const filteredRemitos = useMemo(() => {
+    const remitoMap = new Map();
+    recepciones.forEach(r => {
+      if (!remitoMap.has(r.remito)) {
+        remitoMap.set(r.remito, {
+          ...r,
+          productos: []
+        });
+      }
+      remitoMap.get(r.remito).productos.push({
+        producto: r.producto,
+        cantidad: r.cantidad,
+        lote: r.lote,
+        vencimiento: r.vencimiento
+      });
+    });
+
+    let remitos = Array.from(remitoMap.values());
+    remitos = remitos.filter(r => {
+      const matchOp = fOp === '' || r.operadoraId === fOp;
+      const matchPad = fPad === '' || r.padId === fPad;
+      const matchCat = fCat === 'todos' || r.productos.some(p => p.categoria === fCat);
+      let matchDate = true;
+      if (fStartDate) matchDate = matchDate && r.fecha >= fStartDate;
+      if (fEndDate) matchDate = matchDate && r.fecha <= fEndDate;
+      return matchOp && matchPad && matchCat && matchDate;
+    });
+
+    return remitos;
+  }, [recepciones, fOp, fPad, fCat, fStartDate, fEndDate]);
+
+  const handleLastMonth = () => {
+    const today = new Date();
+    const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+    setFStartDate(firstDay.toISOString().split('T')[0]);
+    setFEndDate(today.toISOString().split('T')[0]);
+  };
+
+  const downloadReport = () => {
+    let csv = "Fecha,Operadora,PAD,SO,Remito,Productos,Estado\n";
+    filteredRemitos.forEach(r => {
+      csv += `${r.fecha},${r.operadora},${r.pad},${r.soNumber},${r.remito},"${r.productos.map(p => p.producto).join('; ')}",${r.estadoWellSight ? 'CARGADO' : 'PENDIENTE'}\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `BAROID_REMITOS_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto p-4 md:p-10 space-y-10 animate-in fade-in">
+      <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 space-y-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 tracking-tighter uppercase italic mb-1">Auditoría de Recepciones</h3>
+          </div>
+          <div className="flex gap-2">
+            <button onClick={handleLastMonth} className="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl text-[9px] font-black uppercase hover:bg-slate-200 transition-colors">
+              Último Mes
+            </button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="space-y-1">
+            <label className="text-[9px] font-black text-slate-400 uppercase ml-1">Desde</label>
+            <input type="date" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" value={fStartDate} onChange={e => setFStartDate(e.target.value)} />
+          </div>
+          <div className="space-y-1">
+            <label className="text-[9px] font-black text-slate-400 uppercase ml-1">Hasta</label>
+            <input type="date" className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs" value={fEndDate} onChange={e => setFEndDate(e.target.value)} />
+          </div>
+          <div className="space-y-1">
+            <label className="text-[9px] font-black text-slate-400 uppercase ml-1">Operadora</label>
+            <select className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs appearance-none" value={fOp} onChange={e => {setFOp(e.target.value); setFPad('');}}>
+              <option value="">Todas</option>
+              {OPERADORAS.map(o => <option key={o.id} value={o.id}>{o.nombre}</option>)}
+            </select>
+          </div>
+          <div className="space-y-1">
+            <label className="text-[9px] font-black text-slate-400 uppercase ml-1">Categoría</label>
+            <select className="w-full p-4 bg-slate-50 rounded-2xl font-black border-none text-xs appearance-none" value={fCat} onChange={e => setFCat(e.target.value)}>
+              <option value="todos">Todos</option>
+              <option value="barita">Barita</option>
+              <option value="quimico">Químicos</option>
+            </select>
+          </div>
+          <div className="flex items-end">
+            <button onClick={downloadReport} className="w-full flex items-center justify-center gap-3 p-4 bg-green-600 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-green-700 transition-all active:scale-95">
+              <Download size={16} /> Descargar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-[3.5rem] shadow-2xl border border-slate-100 overflow-hidden">
+        <div className="p-10 bg-slate-50/50 border-b border-slate-100 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <CalendarDays className="text-red-600" />
+            <span className="bg-slate-900 text-white text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest italic">
+              {filteredRemitos.length} REMITOS ENCONTRADOS
+            </span>
+          </div>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] border-b border-slate-100">
+                <th className="px-10 py-8">Fecha</th>
+                <th className="px-10 py-8">Operadora / PAD</th>
+                <th className="px-10 py-8">SO / Remito</th>
+                <th className="px-10 py-8">Productos</th>
+                <th className="px-10 py-8 text-center">Estatus</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-50">
+              {filteredRemitos.map(r => (
+                <tr 
+                  key={r.remito} 
+                  className="hover:bg-slate-50 transition-all cursor-pointer" 
+                  onClick={() => setSelectedRemito(r)}
+                >
+                  <td className="px-10 py-8">
+                    <p className="font-black text-slate-900 text-sm">{r.fecha}</p>
+                  </td>
+                  <td className="px-10 py-8">
+                    <p className="font-black text-slate-900 text-sm uppercase">{r.operadora}</p>
+                    <p className="text-[9px] font-bold text-slate-400 italic">{r.pad}</p>
+                  </td>
+                  <td className="px-10 py-8">
+                    <p className="text-xs font-bold text-slate-800">SO: {r.soNumber || 'S/N'}</p>
+                    <p className="text-[9px] font-black text-slate-400">REM: {r.remito}</p>
+                  </td>
+                  <td className="px-10 py-8">
+                    <p className="text-sm font-medium">{r.productos.length} productos</p>
+                  </td>
+                  <td className="px-10 py-8 text-center">
+                    <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full font-black text-[9px] uppercase tracking-[0.2em] ${r.estadoWellSight ? 'bg-green-100 text-green-700' : 'bg-red-50 text-red-600 animate-pulse'}`}>
+                      {r.estadoWellSight ? <CheckCircle2 size={12}/> : <XCircle size={12}/>}
+                      {r.estadoWellSight ? 'Validado' : 'Pendiente'}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Modal de detalle de remito */}
+      {selectedRemito && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-black">Detalle Remito {selectedRemito.remito}</h3>
+              <button onClick={() => setSelectedRemito(null)} className="text-slate-600 hover:text-red-600">
+                <X size={28} />
+              </button>
+            </div>
+            <div className="space-y-4">
+              <p><strong>Fecha:</strong> {selectedRemito.fecha}</p>
+              <p><strong>Operadora:</strong> {selectedRemito.operadora}</p>
+              <p><strong>PAD:</strong> {selectedRemito.pad}</p>
+              <p><strong>SO:</strong> {selectedRemito.soNumber}</p>
+              <h4 className="font-bold mt-6">Productos:</h4>
+              <div className="grid grid-cols-1 gap-4">
+                {selectedRemito.productos.map((prod, idx) => (
+                  <div key={idx} className="p-4 bg-slate-50 rounded-xl">
+                    <p className="font-medium">{prod.producto}</p>
+                    <p className="text-sm">Cantidad: {prod.cantidad}</p>
+                    <p className="text-sm">Lote: {prod.lote}</p>
+                    <p className="text-sm">Vencimiento: {prod.vencimiento || 'No cargado'}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// El resto del código (VencimientosView, App, etc.) se mantiene igual
+// ...
+
+export default App;

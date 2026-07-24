@@ -865,7 +865,7 @@ const QUIZ_DATA = {
     questions: [
       {
         id: "hw11_q1",
-        number: "1 of 30",
+        number: "1 of 22",
         type: "single",
         question: "A contaminant is defined as:",
         options: [
@@ -879,7 +879,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q2",
-        number: "2 of 30",
+        number: "2 of 22",
         type: "single",
         question: "The primary indication of contamination is a change in:",
         options: [
@@ -893,7 +893,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q3",
-        number: "3 of 30",
+        number: "3 of 22",
         type: "multiple",
         question: "Which of the following are the most common contaminants encountered in drilling fluid systems while drilling? (select all applicable answers)",
         options: [
@@ -912,7 +912,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q4",
-        number: "4 of 30",
+        number: "4 of 22",
         type: "single",
         question: "The severity of the problems experienced in the drilling fluids due to contaminants depends on:",
         options: [
@@ -926,7 +926,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q5",
-        number: "5 of 30",
+        number: "5 of 22",
         type: "matching",
         question: "Match the type of drilled solids with their correct classifications:",
         pairs: {
@@ -937,7 +937,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q6",
-        number: "6 of 30",
+        number: "6 of 22",
         type: "multiple",
         question: "What are the most common Acid Gases that are encountered while drilling? (select all applicable answers)",
         options: [
@@ -951,7 +951,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q7",
-        number: "7 of 30",
+        number: "7 of 22",
         type: "single",
         question: "Pilot testing can be defined as:",
         options: [
@@ -965,7 +965,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q8",
-        number: "8 of 30",
+        number: "8 of 22",
         type: "single",
         question: "What is the chemical formula for Bicarbonate of Soda?",
         options: [
@@ -979,7 +979,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q9",
-        number: "9 of 30",
+        number: "9 of 22",
         type: "single",
         question: "What is the primary function of Bicarbonate of Soda in drilling fluids?",
         options: [
@@ -993,7 +993,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q10",
-        number: "10 of 30",
+        number: "10 of 22",
         type: "single",
         question: "What is the chemical formula for Lime?",
         options: [
@@ -1007,7 +1007,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q11",
-        number: "11 of 30",
+        number: "11 of 22",
         type: "single",
         question: "What is the chemical formula for Soda Ash?",
         options: [
@@ -1021,7 +1021,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q12",
-        number: "12 of 30",
+        number: "12 of 22",
         type: "single",
         question: "What is the primary function of Soda Ash in drilling fluids?",
         options: [
@@ -1035,7 +1035,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q13",
-        number: "13 of 30",
+        number: "13 of 22",
         type: "single",
         question: "What is the chemical formula for Caustic Soda?",
         options: [
@@ -1048,7 +1048,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q14",
-        number: "14 of 30",
+        number: "14 of 22",
         type: "single",
         question: "What is the primary function of Caustic Soda in drilling fluids?",
         options: [
@@ -1062,7 +1062,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q15",
-        number: "15 of 30",
+        number: "15 of 22",
         type: "single",
         question: "What is the chemical formula for Gypsum?",
         options: [
@@ -1076,7 +1076,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q16",
-        number: "16 of 30",
+        number: "16 of 22",
         type: "single",
         question: "What is the primary function of Gypsum in drilling fluids?",
         options: [
@@ -1090,7 +1090,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q17",
-        number: "17 of 30",
+        number: "17 of 22",
         type: "matching",
         question: "Match the Pf/Mf alkalinity relationship with the ions present:",
         pairs: {
@@ -1104,124 +1104,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q18",
-        number: "18 of 30",
-        type: "multiple",
-        question: "Given a mud check where pH drops from 10.0 to 8.3, Pm drops from 1.5 to 0.4, Pf/Mf drops from 1.0/1.8 to 0.1/0.2, chlorides remain at 300, hardness drops to 17, and rheology/gels increase with H2S gas present:\nWhat is the contamination and its primary treatment? (select all applicable answers)",
-        options: [
-          { value: "h2s_scavenger", label: "Contamination: Hydrogen sulfide (H2S) gas | Treatment: H2S Scavenger" },
-          { value: "temp_dilution", label: "Contamination: High Temperature | Treatment: Dilution" },
-          { value: "salt_dilution", label: "Contamination: Salt | Treatment: Dilution" },
-          { value: "anh_soda", label: "Contamination: Anhydrite | Treatment: Soda ash" }
-        ],
-        answer: ["h2s_scavenger"],
-        explanation: "H2S gas reacts with water and mud components, causing pH/alkalinity/hardness to drop and gels to rise. The primary treatment is adding an H2S scavenger (zinc carbonate or zinc oxide)."
-      },
-      {
-        id: "hw11_q19",
-        number: "19 of 30",
-        type: "multiple",
-        question: "Given a mud check where flow line temperature increases from 120 to 185, weight remains 14.0, rheology/gels increase, API filtrate increases, pH drops from 10.0 to 9.1, and Pf/Mf drops from 1.0/1.8 to 0.7/1.1:\nWhat is the contamination and its primary treatment? (select all applicable answers)",
-        options: [
-          { value: "temp_dilution", label: "Contamination: High temperature | Treatment: Dilution" },
-          { value: "salt_dilution", label: "Contamination: Salt | Treatment: Dilution" },
-          { value: "anh_soda", label: "Contamination: Anhydrite | Treatment: Soda ash" },
-          { value: "cement_bicarb", label: "Contamination: Cement | Treatment: Sodium bicarbonate" }
-        ],
-        answer: ["temp_dilution"],
-        explanation: "High flow line temperature causes thermal flocculation of clays, resulting in increased rheology and fluid loss. Treatment is dilution with base fluid to compensate evaporation."
-      },
-      {
-        id: "hw11_q20",
-        number: "20 of 30",
-        type: "multiple",
-        question: "Given a mud check where chlorides jump from 300 to 11000 mg/L, hardness increases to 150, pH drops from 10.0 to 9.9, Pm drops from 1.5 to 1.3, Pf/Mf drops from 1.0/1.8 to 0.7/1.4, and rheology/gels/filtrate increase:\nWhat is the contamination and its primary treatment? (select all applicable answers)",
-        options: [
-          { value: "salt_dilution", label: "Contamination: Salt (NaCl) | Treatment: Dilution with base fluid" },
-          { value: "temp_dilution", label: "Contamination: High temperature | Treatment: Dilution" },
-          { value: "anh_soda", label: "Contamination: Anhydrite | Treatment: Soda ash" },
-          { value: "fresh_weight", label: "Contamination: Fresh water | Treatment: Weight up" }
-        ],
-        answer: ["salt_dilution"],
-        explanation: "A massive increase in chlorides and filtrate loss accompanied by flocculation indicates salt contamination. The recommended treatment is dilution with fresh water and polymers."
-      },
-      {
-        id: "hw11_q21",
-        number: "21 of 30",
-        type: "multiple",
-        question: "Given a mud check where hardness increases from 100 to 800 mg/L, pH drops from 10.0 to 8.3, Pm/Pf drop, and rheology/gels/filtrate increase:\nWhat is the contamination and its primary treatment? (select all applicable answers)",
-        options: [
-          { value: "anh_soda", label: "Contamination: Anhydrite (CaSO4) | Treatment: Soda ash" },
-          { value: "cement_bicarb", label: "Contamination: Cement | Treatment: Sodium bicarbonate" },
-          { value: "salt_dilution", label: "Contamination: Salt | Treatment: Dilution" },
-          { value: "temp_dilution", label: "Contamination: High temperature | Treatment: Dilution" }
-        ],
-        answer: ["anh_soda"],
-        explanation: "Anhydrite yields calcium and sulfate ions, raising hardness to 800 mg/L, dropping pH to 8.3, and causing flocculation. Soda ash (Na2CO3) precipitates calcium as CaCO3."
-      },
-      {
-        id: "hw11_q22",
-        number: "22 of 30",
-        type: "multiple",
-        question: "Given a mud check where mud weight drops from 14.0 to 13.6, MBT drops from 17 to 13, chlorides increase to 6000 mg/L, pH drops to 8.3, and filtrate increases:\nWhat is the contamination and its primary treatment? (select all applicable answers)",
-        options: [
-          { value: "saltwater_treatment", label: "Contamination: Salt water influx | Treatment: Dilute system with water or swap to a salt saturated system" },
-          { value: "freshwater_weight", label: "Contamination: Fresh water influx | Treatment: Stop the influx weighting up" },
-          { value: "anh_soda", label: "Contamination: Anhydrite | Treatment: Soda ash" },
-          { value: "cement_bicarb", label: "Contamination: Cement | Treatment: Sodium bicarbonate" }
-        ],
-        answer: ["saltwater_treatment"],
-        explanation: "Drop in mud weight, drop in MBT (dilution of clay), increase in chlorides to 6000, and drop in pH indicates a salt water flow. The treatment is increasing density to stop the flow and diluting."
-      },
-      {
-        id: "hw11_q23",
-        number: "23 of 30",
-        type: "calculation_direct",
-        inputs: {
-          "Day 1 Pf / Mf": "1.0 / 1.8",
-          "Day 2 Pf / Mf": "2.2 / 7.4",
-          "Day 2 pH / Hardness": "8.3 / 200 mg/L",
-          "Lime Factor": "0.00043 (Lime)"
-        },
-        answer: {
-          contaminant: "Bicarbonates",
-          chemical: "Lime",
-          concentration: 1.5738
-        },
-        explanation: "Pf/Mf Day 2 has 2Pf = 4.4 < Mf = 7.4. Carbonate = 1200 * Pf = 2640 mg/L, Bicarbonate = 1220 * (Mf - 2Pf) = 1220 * 3 = 3660 mg/L. Original bicarbonate was 0 (2Pf = 2.0 > Mf = 1.8). Bicarbonate contaminated = 3660 mg/L. Treat with Lime (factor 0.00043): Lime = 3660 * 0.00043 = 1.5738 lb/bbl."
-      },
-      {
-        id: "hw11_q24",
-        number: "24 of 30",
-        type: "calculation_direct",
-        inputs: {
-          "Day 1 pH / Hardness": "10.0 / 100 mg/L",
-          "Day 2 pH / Hardness": "12.1 / 800 mg/L",
-          "Day 2 Pf / Mf": "4.4 / 4.5",
-          "Soda Bicarb Factor": "0.000734"
-        },
-        answer: {
-          contaminant: "Cement",
-          chemical: "Sodium bicarbonate",
-          concentration: 0.5138
-        },
-        explanation: "High pH (12.1), Pm (6.7), and hardness (800) indicates cement contamination. The calcium to be treated is 800 - 100 = 700 mg/L. Treat with Sodium bicarbonate (NaHCO3) with conversion factor 0.000734: Conc = 700 * 0.000734 = 0.5138 lb/bbl."
-      },
-      {
-        id: "hw11_q25",
-        number: "25 of 30",
-        type: "multiple",
-        question: "Given a mud check where mud weight drops from 14.0 to 13.6, viscosity/gels drop, chlorides drop from 1200 to 600, hardness drops from 100 to 80, and pH drops from 10.0 to 9.3:\nWhat is the contamination and the first action/chemical that should be added to control it? (select all applicable answers)",
-        options: [
-          { value: "fresh_weight", label: "Contamination: Fresh water influx | Action: Stop the influx weighting up" },
-          { value: "salt_dilution", label: "Contamination: Salt water influx | Action: Dilution" },
-          { value: "cement_bicarb", label: "Contamination: Cement | Action: Add sodium bicarbonate" }
-        ],
-        answer: ["fresh_weight"],
-        explanation: "Drops in weight, rheology, chlorides, hardness, and pH indicates fresh water dilution (leaks or water flow). The first step is to increase density (weight up) to stop the influx."
-      },
-      {
-        id: "hw11_q26",
-        number: "26 of 30",
+        number: "18 of 22",
         type: "calculation_alkalinity",
         inputs: {
           Pf: 1.5,
@@ -1235,8 +1118,8 @@ const QUIZ_DATA = {
         explanation: "2Pf = 3.0 < Mf = 3.7. OH- = 0. CO3(2-) = 1200 * Pf = 1200 * 1.5 = 1800 mg/L. HCO3- = 1220 * (Mf - 2Pf) = 1220 * 0.7 = 854 mg/L."
       },
       {
-        id: "hw11_q27",
-        number: "27 of 30",
+        id: "hw11_q19",
+        number: "19 of 22",
         type: "calculation_alkalinity",
         inputs: {
           Pf: 3.2,
@@ -1250,8 +1133,8 @@ const QUIZ_DATA = {
         explanation: "Pf = Mf = 3.2. OH- = 340 * Pf = 340 * 3.2 = 1088 mg/L. CO3(2-) = 0. HCO3- = 0."
       },
       {
-        id: "hw11_q28",
-        number: "28 of 30",
+        id: "hw11_q20",
+        number: "20 of 22",
         type: "calculation_alkalinity",
         inputs: {
           Pf: 5.4,
@@ -1265,8 +1148,8 @@ const QUIZ_DATA = {
         explanation: "2Pf = 10.8 > Mf = 7.1. OH- = 340 * (2Pf - Mf) = 340 * 3.7 = 1258 mg/L. CO3(2-) = 1200 * (Mf - Pf) = 1200 * 1.7 = 2040 mg/L. HCO3- = 0."
       },
       {
-        id: "hw11_q29",
-        number: "29 of 30",
+        id: "hw11_q21",
+        number: "21 of 22",
         type: "calculation_alkalinity",
         inputs: {
           Pf: 2.8,
@@ -1280,8 +1163,8 @@ const QUIZ_DATA = {
         explanation: "2Pf = 5.6 = Mf. OH- = 0. CO3(2-) = 1200 * Pf = 1200 * 2.8 = 3360 mg/L. HCO3- = 0."
       },
       {
-        id: "hw11_q30",
-        number: "30 of 30",
+        id: "hw11_q22",
+        number: "22 of 22",
         type: "calculation_alkalinity",
         inputs: {
           Pf: 0.0,
@@ -1315,5 +1198,338 @@ const CALCULATIONS_DATA = {
   ],
   hole: [
     { id: "hw9_q40_46", name: "Homework 9, Q40-46 (Casing/Liner/DP/DC Wellbore)", pump_liner: 6.5, pump_stroke: 12, pump_eff: 0.96, TD: 22000, pit_vol: 1800, spm_pump1: 58, spm_pump2: 57 }
+  ]
+,
+  contaminants: [
+    {
+      id: "case1",
+      name: "Case 1: High Temperature",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "185", changed: true },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "14.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "45 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.1", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "9.1 / 0.7", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "0.7 / 1.1", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "300", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "100", changed: false }
+      ],
+      answer: {
+        contaminant: "high_temperature",
+        treatment: "dilute_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. FL Temp: Increases significantly from 120°F to 185°F.\n2. Weight & Chlorides: Unchanged (no influx).\n3. Solids & MBT: Unchanged (no active solids buildup).\n4. pH & Hardness: Hardness remains constant. pH and Pf/Mf drop slightly due to temperature-induced water dissociation.\n5. Rheology: Viscosity (PV) and Yield Point (YP) increase, and API filtrate increases (6.0 to 11.1 ml) due to thermal flocculation of clays.\n\nRecommended Treatment:\nDilute the system with base fluid to compensate for evaporation and temperature-related viscosity increase."
+    },
+    {
+      id: "case2",
+      name: "Case 2: Salt Water Influx",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "13.6", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "27 / 18", changed: true },
+        { name: "Retort (Solids/Water %)", day1: "17 / 83", day2: "13 / 87", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.0 / Tr", changed: true },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "8.3 / 0.5", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "0.2 / 1.3", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "6000", changed: true },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "150", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_water_influx",
+        treatment: "increase_density_stop_influx",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Weight & Retort: Weight drops from 14.0 to 13.6 ppg, retort solids drop (17% to 13%), and water increases (83% to 87%). This indicates water dilution.\n2. Chlorides: Explosive jump from 300 to 6,000 mg/L, indicating the entering water is salty (salt water flow).\n3. MBT: Drops from 2.5 to 2.0 lb/bbl (clay concentration diluted).\n4. pH & Hardness: pH drops to 8.3. Hardness increases slightly due to ion exchange displacing calcium from clays.\n5. Rheology: PV drops (solids dilution) but YP increases (flocculation from high salt concentration screening clay charge double layers).\n\nRecommended Treatment:\n1. Increase mud weight (density) to stop the influx.\n2. Dilute system with fresh water and polymers to restore proper rheology and fluid loss control."
+    },
+    {
+      id: "case3",
+      name: "Case 3: Fresh Water Influx",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "13.6", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "24 / 7", changed: true },
+        { name: "Retort (Solids/Water %)", day1: "17 / 83", day2: "13 / 87", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.0 / Tr", changed: true },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "9.3 / 1.0", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.1", day2: "0.8 / 0.9", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1200", day2: "600", changed: true },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "80", changed: true }
+      ],
+      answer: {
+        contaminant: "fresh_water_influx",
+        treatment: "stop_influx_weight_up",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Weight & Retort: Weight drops from 14.0 to 13.6 ppg, and solids drop from 17% to 13% (water increases from 83% to 87%). This indicates water dilution.\n2. Chlorides: Drop from 1,200 to 600 mg/L (diluted by fresh water).\n3. Hardness & pH: Hardness drops from 100 to 80 mg/L. pH drops from 10.0 to 9.3.\n4. Rheology: Both PV (30 to 24) and YP (10 to 7) drop because there is no flocculation (salts did not increase); it is a pure dilution effect.\n\nRecommended Treatment:\nIncrease mud weight to stop the influx, check surface lines for water leaks, and add bentonite/polymers to restore mud properties."
+    },
+    {
+      id: "case4",
+      name: "Case 4: Cement",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "123", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "14.1", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "45 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "28.8", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "12.1 / 6.7", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "4.4 / 4.5", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "300", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "800", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "sodium_bicarbonate",
+        dosage: 0.5138
+      },
+      explanation: "Diagnostic Workflow:\n1. pH & Pm: Spikes masively (pH 12.1, Pm 6.7). The Pf/Mf becomes 4.4/4.5 (Pf is close to Mf, showing 2Pf > Mf, which indicates high hydroxide OH- ions).\n2. Hardness: Jumps from 100 to 800 mg/L (calcium source).\n3. Rheology & Fluid Loss: Flocculation causes PV/YP to rise, and API filtrate spikes to 28.8 ml (bentonite is flocculated by calcium and high pH).\n\nChemical Treatment & Calculation:\nTreat with Sodium Bicarbonate (NaHCO3) to precipitate Calcium as CaCO3:\nCa(OH)2 + NaHCO3 -> CaCO3 v + NaOH + H2O\n\nDosage calculation:\n- Calcium increase = 800 - 100 = 700 mg/L.\n- NaHCO3 Factor = 0.000734 lb/bbl per mg/L Ca\n- Dosage = 700 * 0.000734 = 0.5138 lb/bbl."
+    },
+    {
+      id: "case5",
+      name: "Case 5: Anhydrite / Gypsum",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "14.1", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "45 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.1", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "8.3 / 0.5", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "0.2 / 1.3", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "300", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "800", changed: true }
+      ],
+      answer: {
+        contaminant: "anhydrite_gypsum",
+        treatment: "soda_ash",
+        dosage: 0.6475
+      },
+      explanation: "Diagnostic Workflow:\n1. Hardness: Jumps from 100 to 800 mg/L (calcium source).\n2. pH & Alkalinity: pH drops from 10.0 to 8.3. Pf/Mf drops from 1.0/1.8 to 0.2/1.3 (2Pf < Mf, showing bicarbonate buildup). This is because anhydrite (CaSO4) doesn't release OH- ions; calcium consumes carbonate buffers, driving down pH.\n3. Rheology: Flocculation increases PV/YP and fluid loss.\n\nChemical Treatment & Calculation:\nTreat with Soda Ash (Na2CO3) to precipitate Calcium as CaCO3:\nCa++ + Na2CO3 -> CaCO3 v + 2Na+\n\nDosage calculation (Baroid Handbook p. 327):\n- Calcium increase = 800 - 100 = 700 mg/L.\n- Soda Ash Factor = 0.000925 lb/bbl per mg/L Ca\n- Dosage = 700 * 0.000925 = 0.6475 lb/bbl."
+    },
+    {
+      id: "case6",
+      name: "Case 6: Bicarbonates",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "14.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "55 / 34", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.1", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "8.8 / 3.3", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "2.2 / 7.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "300", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "100", changed: false }
+      ],
+      answer: {
+        contaminant: "bicarbonates",
+        treatment: "lime",
+        dosage: 1.5738
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Pf increases slightly (1.0 to 2.2) but Mf increases masively (1.8 to 7.4). The ratio 2Pf = 4.4 < Mf = 7.4 indicates high Bicarbonates (HCO3-).\n2. pH & Hardness: pH drops from 10.0 to 8.8. Hardness remains constant at 100 mg/L.\n3. Rheology: Carbonate flocculation spikes YP from 10 to 34 lb/100ft².\n\nChemical Treatment & Calculation:\nTreat with Lime (Ca(OH)2) to convert bicarbonates into carbonates and precipitate them as CaCO3:\nCa(OH)2 + HCO3- -> CaCO3 v + H2O + OH-\n\nDosage calculation:\n- Day 2 Bicarbonate = 1220 * (Mf - 2Pf) = 1220 * (7.4 - 4.4) = 3660 mg/L.\n- Day 1 Bicarbonate = 0 mg/L (2Pf > Mf in Day 1).\n- Bicarbonate increase = 3660 mg/L.\n- Lime Factor = 0.00043 lb/bbl per mg/L HCO3-\n- Dosage = 3660 * 0.00043 = 1.5738 lb/bbl."
+    },
+    {
+      id: "case7",
+      name: "Case 7: Carbonates",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "15.0", day2: "15.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "33 / 11", day2: "55 / 32", changed: true },
+        { name: "API Filtrate (ml)", day1: "8.0", day2: "16.8", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "20 / Tr", day2: "20 / Tr", changed: false },
+        { name: "pH / Pm", day1: "9.5 / 2.6", day2: "10.8 / 8.7", changed: true },
+        { name: "Pf / Mf", day1: "2.2 / 3.1", day2: "8.2 / 16.3", changed: true },
+        { name: "Chlorides (mg/L)", day1: "4000", day2: "4000", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "200", day2: "0", changed: true }
+      ],
+      answer: {
+        contaminant: "carbonates",
+        treatment: "gypsum_or_lime",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Both Pf (8.2) and Mf (16.3) increase significantly. The ratio 2Pf = 16.4 is approximately equal to Mf = 16.3, indicating Carbonates (CO3=) are the primary alkalinity ion.\n2. pH & Hardness: pH rises from 9.5 to 10.8 (due to carbonate hydrolysis). Hardness drops to 0 mg/L because the massive carbonate presence precipitates all free calcium as CaCO3.\n3. Rheology: Flocculation increases YP (11 to 32) and fluid loss.\n\nRecommended Treatment:\nAdd Gypsum (CaSO4) or Lime (Ca(OH)2) to supply Calcium and precipitate CaCO3. Gypsum is preferred when pH is already high (10.8) to prevent further pH buildup."
+    },
+    {
+      id: "case8",
+      name: "Case 8: Hydrogen Sulfide Gas (H2S)",
+      note: "Field Note: Rotten egg odor detected at the shakers.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "13.7", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "45 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.1", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "8.3 / 0.4", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "0.1 / 0.2", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "300", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "0", changed: true }
+      ],
+      answer: {
+        contaminant: "h2s_gas",
+        treatment: "h2s_scavenger",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Field note: Rotten egg odor is a classic indicator of H2S gas.\n2. pH & Alkalinity: Drops drastically (pH from 10.0 to 8.3, Pf/Mf to 0.1/0.2) because acidic H2S gas reacts with and consumes hydroxyl (OH-) buffers.\n3. Hardness: Drops to 0 mg/L as sulfides precipitate calcium/metals as insoluble sulfides.\n\nRecommended Treatment:\nAdd H2S Scavenger (Zinc Carbonate or Zinc Oxide) to precipitate sulfides, and Caustic Soda (NaOH) to raise pH above 10.0 for safety buffer."
+    },
+    {
+      id: "case9",
+      name: "Case 9: Salt (NaCl)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.0", day2: "14.1", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "30 / 10", day2: "45 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.1", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "2.5 / Tr", day2: "2.5 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.5", day2: "9.9 / 1.3", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.8", day2: "0.7 / 1.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "300", day2: "11000", changed: true },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "150", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_nacl",
+        treatment: "dilute_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Chlorides: Spikes from 300 to 11,000 mg/L (NaCl dissolution).\n2. Weight: Does NOT drop (remains 14.0-14.1 ppg), which distinguishes this from a salt water influx. This indicates drilling through a solid salt evaporite formation.\n3. Rheology & Fluid Loss: High salt concentration compresses clay electrical double layers, causing clay flocculation (PV/YP and API filtrate rise).\n\nRecommended Treatment:\nDilute system with fresh water and add salt-tolerant polymers to restore rheology and filtration control."
+    },
+    {
+      id: "case10",
+      name: "Case 10: Active Drilled Solids",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "12.0", day2: "12.4", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "20 / 8", day2: "35 / 22", changed: true },
+        { name: "Retort (Solids/Water %)", day1: "10 / 90", day2: "15 / 85", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "15.0 / Tr", day2: "25.0 / Tr", changed: true },
+        { name: "pH / Pm", day1: "9.5 / 1.2", day2: "9.2 / 0.9", changed: true },
+        { name: "Pf / Mf", day1: "0.8 / 1.5", day2: "0.6 / 1.2", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1500", day2: "1500", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "120", day2: "140", changed: false }
+      ],
+      answer: {
+        contaminant: "active_drilled_solids",
+        treatment: "optimize_solids_control_dilute",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. MBT: Spikes from 15.0 to 25.0 lb/bbl bentonite eq. This is the key diagnostic for active solids (hydratable clays/shales).\n2. Solids & Weight: Weight increases (12.0 to 12.4 ppg), and retort solids increase from 10% to 15%.\n3. Rheology: Viscosity (PV) and Yield Point (YP) increase significantly due to high active clay surface area.\n4. Chemistry: Chlorides, hardness, and pH remain stable.\n\nRecommended Treatment:\nOptimize shakers and centrifuges, dilute mud with base fluid, and add PHPA (encapsulator) to inhibit clay dispersion."
+    },
+    {
+      id: "case11",
+      name: "Case 11: Inactive Solids",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "12.0", day2: "12.5", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "20 / 8", day2: "32 / 15", changed: true },
+        { name: "Retort (Solids/Water %)", day1: "10 / 90", day2: "16 / 84", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "15.0 / Tr", day2: "15.0 / 3.5%", changed: true },
+        { name: "pH / Pm", day1: "9.5 / 1.2", day2: "9.3 / 1.0", changed: true },
+        { name: "Pf / Mf", day1: "0.8 / 1.5", day2: "0.7 / 1.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1500", day2: "1500", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "120", day2: "160", changed: true }
+      ],
+      answer: {
+        contaminant: "inactive_solids",
+        treatment: "optimize_solids_control_dilute",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. MBT: Remains constant at 15.0. This indicates the new solids are NOT active clays.\n2. Sand content: Increases from trace to 3.5%, confirming accumulation of inactive, abrasive solids (quartz, sand, limestone).\n3. Solids & Weight: Weight increases to 12.5 ppg, retort solids increase to 16%.\n4. Rheology: PV rises (mechanical solids friction) but YP remains relatively low compared to the active solids case.\n\nRecommended Treatment:\nOptimize mechanical solids control (desanders, desilters, shakers) and dilute to lower sand content."
+    },
+    {
+      id: "case12",
+      name: "Case 12: Bacterial Contamination",
+      note: "Field Note: Foul odor reported at the shakers.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
+        { name: "Weight (lb/gal)", day1: "15.0", day2: "15.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "33 / 8", day2: "47 / 17", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "16.8", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "4.0 / Tr", day2: "4.0 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.5 / 1.6", day2: "8.5 / 0.8", changed: true },
+        { name: "Pf / Mf", day1: "1.2 / 3.1", day2: "0.2 / 0.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "4000", day2: "4000", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "200", day2: "150", changed: true }
+      ],
+      answer: {
+        contaminant: "bacterial_contamination",
+        treatment: "add_biocide",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Field note: Foul odor indicates bacterial fermentation of organic polymers.\n2. API Filtrate: Spikes from 6.0 to 16.8 ml because bacteria degrade starch, CMC, and other fluid loss polymers.\n3. pH & Alkalinity: Drop sharply (pH from 10.5 to 8.5) due to acidic byproducts. Clays flocculate at lower pH, causing YP to rise.\n\nRecommended Treatment:\nAdd biocide to kill bacteria, add caustic to restore alkaline pH, and replenish fluid loss polymers."
+    },
+    {
+      id: "case13",
+      name: "Case 13: Cement (Case 2)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "130", day2: "132", changed: false },
+        { name: "Weight (lb/gal)", day1: "11.5", day2: "11.6", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "18 / 6", day2: "32 / 20", changed: true },
+        { name: "API Filtrate (ml)", day1: "4.5", day2: "15.0", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "12.0 / Tr", day2: "12.0 / Tr", changed: false },
+        { name: "pH / Pm", day1: "9.2 / 0.8", day2: "12.2 / 5.5", changed: true },
+        { name: "Pf / Mf", day1: "0.5 / 1.2", day2: "4.1 / 4.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "2500", day2: "2500", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "80", day2: "950", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "sodium_bicarbonate",
+        dosage: 0.6386
+      },
+      explanation: "Diagnostic Workflow:\n1. pH & Pm: Spike massively (pH 12.2, Pm 5.5), and 2Pf = 8.2 > Mf = 4.4 (high OH- ions).\n2. Hardness: Jumps from 80 to 950 mg/L (calcium source).\n3. Rheology & Fluid Loss: Cement flocculation increases YP (6 to 20) and filtrate (4.5 to 15.0 ml).\n\nChemical Treatment & Calculation:\nTreat with Sodium Bicarbonate (NaHCO3) to precipitate Calcium:\nCa(OH)2 + NaHCO3 -> CaCO3 v + NaOH + H2O\n\nDosage calculation:\n- Calcium increase = 950 - 80 = 870 mg/L.\n- NaNaHCO3 Factor = 0.000734 lb/bbl per mg/L Ca\n- Dosage = 870 * 0.000734 = 0.6386 lb/bbl."
+    },
+    {
+      id: "case14",
+      name: "Case 14: Salt Water Influx (Case 2)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "140", day2: "142", changed: false },
+        { name: "Weight (lb/gal)", day1: "16.0", day2: "15.3", changed: true },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "40 / 15", day2: "58 / 28", changed: true },
+        { name: "Retort (Solids/Water %)", day1: "30 / 70", day2: "23 / 77", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "20.0 / Tr", day2: "16.0 / Tr", changed: true },
+        { name: "pH / Pm", day1: "10.5 / 2.0", day2: "9.0 / 0.8", changed: true },
+        { name: "Pf / Mf", day1: "1.5 / 2.8", day2: "0.5 / 1.2", changed: true },
+        { name: "Chlorides (mg/L)", day1: "15000", day2: "45000", changed: true },
+        { name: "Hardness Ca++ (mg/L)", day1: "250", day2: "600", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_water_influx",
+        treatment: "increase_density_stop_influx",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Weight & Retort: Mud Weight drops significantly from 16.0 to 15.3 ppg, and retort solids drop from 30% to 23%. This indicates high water influx.\n2. Chlorides: Spikes from 15,000 to 45,000 mg/L (extremely salty formation brine influx).\n3. MBT: Drops from 20.0 to 16.0 lb/bbl (clay dilution).\n4. Rheology: Flocculation causes PV (40 to 58) and YP (15 to 28) to rise.\n\nRecommended Treatment:\n1. Increase density (weight up) to stop the influx.\n2. Dilute and treat with salt-tolerant polymers."
+    },
+    {
+      id: "case15",
+      name: "Case 15: Anhydrite / Gypsum (Case 2)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "110", day2: "115", changed: false },
+        { name: "Weight (lb/gal)", day1: "10.5", day2: "10.6", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "15 / 5", day2: "25 / 14", changed: true },
+        { name: "API Filtrate (ml)", day1: "5.0", day2: "18.0", changed: true },
+        { name: "MBT (lb/bbl) / Sand (%)", day1: "10.0 / Tr", day2: "10.0 / Tr", changed: false },
+        { name: "pH / Pm", day1: "10.2 / 1.8", day2: "8.6 / 0.5", changed: true },
+        { name: "Pf / Mf", day1: "1.2 / 2.1", day2: "0.3 / 0.9", changed: true },
+        { name: "Chlorides (mg/L)", day1: "800", day2: "800", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "60", day2: "1200", changed: true }
+      ],
+      answer: {
+        contaminant: "anhydrite_gypsum",
+        treatment: "soda_ash",
+        dosage: 1.0545
+      },
+      explanation: "Diagnostic Workflow:\n1. Hardness: Jumps from 60 to 1,200 mg/L (calcium source).\n2. pH & Alkalinity: pH drops from 10.2 to 8.6, Pf/Mf drops to 0.3/0.9. Bicarbonates are present (2Pf < Mf).\n3. Rheology & Fluid loss: Clay flocculation increases YP (5 to 14) and API filtrate spikes to 18.0 ml.\n\nChemical Treatment & Calculation:\nTreat with Soda Ash (Na2CO3) to precipitate Calcium:\nCa++ + Na2CO3 -> CaCO3 v + 2Na+\n\nDosage calculation:\n- Calcium increase = 1200 - 60 = 1140 mg/L.\n- Soda Ash Factor = 0.000925 lb/bbl per mg/L Ca\n- Dosage = 1140 * 0.000925 = 1.0545 lb/bbl."
+    }
   ]
 };

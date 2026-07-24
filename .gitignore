@@ -1,0 +1,12 @@
+# Compiled & Consolidated Files
+Baroid_Core_Trainer.html
+Baroid_Core_Trainer.zip
+
+# OCR Outputs
+homework_11_ocr.txt
+ocr_all.txt
+
+# Temp & System Files
+.DS_Store
+Thumbs.db
+*.log
