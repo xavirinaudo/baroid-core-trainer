@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
   generateMassBalanceParams();
   generateSolidsParams();
   generateHoleParams();
-  populateContaminantsDropdown();
+  loadRandomContaminantCase();
 });
 
 // Load and Save Stats
@@ -124,7 +124,11 @@ function switchTab(tabId) {
     document.getElementById('nav-contaminants').classList.add('active');
     document.getElementById('page-title').innerText = "WBF Contaminants Diagnostics Workspace";
     document.getElementById('page-subtitle').innerText = "Analyze fluid reports, identify contaminants, select chemical treatments, and calculate dosages.";
-    loadContaminantsPreset();
+    if (!currentContaminantCase) {
+      loadRandomContaminantCase();
+    } else {
+      loadContaminantCase(currentContaminantCase);
+    }
   } else if (tabId === 'trainers') {
     document.getElementById('view-trainers').style.display = 'flex';
     document.getElementById('nav-trainers').classList.add('active');
@@ -1143,22 +1147,28 @@ function filterCheatSheet() {
 }
 
 // 5. WBF Contaminants Diagnostics Workspace
-function populateContaminantsDropdown() {
-  const select = document.getElementById('preset-contaminants');
-  if (!select) return;
-  select.innerHTML = '';
-  CALCULATIONS_DATA.contaminants.forEach((c) => {
-    const opt = document.createElement('option');
-    opt.value = c.id;
-    opt.innerText = c.name;
-    select.appendChild(opt);
-  });
-  loadContaminantsPreset();
+let currentContaminantCase = null;
+
+function loadRandomContaminantCase() {
+  const cases = CALCULATIONS_DATA.contaminants;
+  if (!cases || cases.length === 0) return;
+  
+  // Select a random case, avoiding consecutive duplicates if possible
+  let newCase = null;
+  if (cases.length > 1) {
+    do {
+      const rIndex = Math.floor(Math.random() * cases.length);
+      newCase = cases[rIndex];
+    } while (currentContaminantCase && newCase.id === currentContaminantCase.id);
+  } else {
+    newCase = cases[0];
+  }
+  
+  currentContaminantCase = newCase;
+  loadContaminantCase(newCase);
 }
 
-function loadContaminantsPreset() {
-  const val = document.getElementById('preset-contaminants').value;
-  const entry = CALCULATIONS_DATA.contaminants.find(x => x.id === val);
+function loadContaminantCase(entry) {
   if (!entry) return;
 
   // Clear inputs
@@ -1175,8 +1185,8 @@ function loadContaminantsPreset() {
     dosageGroup.style.display = 'none';
   }
 
-  // Update title
-  document.getElementById('train-cont-title').innerText = `Mud Properties Report: ${entry.name}`;
+  // Update title generically to hide the case name
+  document.getElementById('train-cont-title').innerText = "Mud Properties Report (Day 1 vs Day 2)";
 
   // Update field note
   const noteEl = document.getElementById('train-cont-note');
@@ -1187,15 +1197,11 @@ function loadContaminantsPreset() {
     noteEl.style.display = 'none';
   }
 
-  // Render properties table
+  // Render properties table (Exactly 3 columns, no color highlighting)
   const tbody = document.getElementById('table-cont-compare-body');
   tbody.innerHTML = '';
   entry.properties.forEach(p => {
     const tr = document.createElement('tr');
-    if (p.changed) {
-      tr.style.color = 'var(--warning)';
-      tr.style.fontWeight = '600';
-    }
     tr.style.borderBottom = '1px solid var(--border-glow)';
 
     const tdName = document.createElement('td');
@@ -1210,14 +1216,9 @@ function loadContaminantsPreset() {
     tdDay2.style.padding = '10px';
     tdDay2.innerText = p.day2;
 
-    const tdChange = document.createElement('td');
-    tdChange.style.padding = '10px';
-    tdChange.innerText = p.changed ? 'Changed' : 'No Change';
-
     tr.appendChild(tdName);
     tr.appendChild(tdDay1);
     tr.appendChild(tdDay2);
-    tr.appendChild(tdChange);
     tbody.appendChild(tr);
   });
 
@@ -1240,8 +1241,7 @@ function resetContaminantsInputs() {
 }
 
 function checkContaminantsAnswers() {
-  const val = document.getElementById('preset-contaminants').value;
-  const entry = CALCULATIONS_DATA.contaminants.find(x => x.id === val);
+  const entry = currentContaminantCase;
   if (!entry) return;
 
   const userCont = document.getElementById('input-cont-name').value;
@@ -1280,10 +1280,10 @@ function checkContaminantsAnswers() {
   const expTitleEl = document.getElementById('train-cont-explanation-title');
 
   if (allCorrect) {
-    expTitleEl.innerText = "Correct! Solutions & Chemistry:";
+    expTitleEl.innerText = `Correct! Solution & Chemistry (This was ${entry.name}):`;
     expTitleEl.style.color = 'var(--success)';
   } else {
-    expTitleEl.innerText = "Incorrect. Let's Review the Diagnostics:";
+    expTitleEl.innerText = `Incorrect. Solution & Chemistry (This was ${entry.name}):`;
     expTitleEl.style.color = 'var(--error)';
   }
 

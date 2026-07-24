@@ -499,11 +499,11 @@
           Identify the contaminant, select the primary chemical treatment, and calculate the required dosage in lb/bbl (if applicable).
         </p>
 
-        <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
-          <label class="input-label" for="preset-contaminants" style="font-weight:600;">Select Practice Case Study</label>
-          <select id="preset-contaminants" class="input-field" onchange="loadContaminantsPreset()" style="max-width:500px;">
-            <!-- Options loaded dynamically -->
-          </select>
+        <div style="margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap: wrap;">
+          <div>
+            <span style="font-size: 16px; font-weight: 600; color: var(--primary);">Exam Practice: Random Case Study</span>
+          </div>
+          <button class="btn btn-secondary" onclick="loadRandomContaminantCase()" style="padding: 10px 20px;">Load Random Case</button>
         </div>
 
         <div class="trainer-section" style="display: flex; flex-direction: column; gap: 24px;">
@@ -514,9 +514,8 @@
               <thead>
                 <tr style="background:rgba(255,255,255,0.05); border-bottom: 1px solid var(--border-glow);">
                   <th style="padding:10px;">Mud Property</th>
-                  <th style="padding:10px; width:25%;">Day 1 (Base)</th>
-                  <th style="padding:10px; width:25%;">Day 2 (Afected)</th>
-                  <th style="padding:10px; width:20%;">Change</th>
+                  <th style="padding:10px; width:45%;">Day 1 (Base)</th>
+                  <th style="padding:10px; width:45%;">Day 2 (Affected)</th>
                 </tr>
               </thead>
               <tbody id="table-cont-compare-body">
