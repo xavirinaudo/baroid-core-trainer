@@ -25,7 +25,7 @@ def build():
     # Find link tag for index.css and replace with style block
     link_regex = re.compile(r'<link\s+rel="stylesheet"\s+href="index\.css"\s*\/?>')
     style_block = f"<style>\n{css}\n</style>"
-    html, count = link_regex.subn(style_block, html)
+    html, count = link_regex.subn(lambda m: style_block, html)
     if count == 0:
         print("Warning: Could not find <link rel=\"stylesheet\" href=\"index.css\"> in index.html")
         
@@ -33,7 +33,7 @@ def build():
     # Find script tag for quiz_data.js and replace with script block
     script1_regex = re.compile(r'<script\s+src="quiz_data\.js"\s*><\/script>')
     script1_block = f"<script>\n{quiz_data}\n</script>"
-    html, count = script1_regex.subn(script1_block, html)
+    html, count = script1_regex.subn(lambda m: script1_block, html)
     if count == 0:
         print("Warning: Could not find <script src=\"quiz_data.js\"></script> in index.html")
         
@@ -41,7 +41,7 @@ def build():
     # Find script tag for app.js and replace with script block
     script2_regex = re.compile(r'<script\s+src="app\.js"\s*><\/script>')
     script2_block = f"<script>\n{app}\n</script>"
-    html, count = script2_regex.subn(script2_block, html)
+    html, count = script2_regex.subn(lambda m: script2_block, html)
     if count == 0:
         print("Warning: Could not find <script src=\"app.js\"></script> in index.html")
         

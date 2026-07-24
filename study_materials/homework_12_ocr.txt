@@ -1,0 +1,31 @@
+=== PAGE 0 ===
+HALLIBURTON Apr 23 2023 | Logged in as : Goytia, Renzo Nicolas NicolÄis Introduction Baroid Core Homework 12 Assessment Feedback Congratulations, you passed. Total score: 73 out of 73, 100% Question Feedback Question 1 of33 The study of fluid flow is called: o Plastic Viscosity o Gel strength Rheology o Yield Point I out of I Question 2 of 33 The fluid pumped through the bit nozzles while drilling is in transitional flow: O True False I out of I Question 3 0f33 What are the three basic types of flow regimes? Capillary flow Transitional flow
+
+
+=== PAGE 1 ===
+Lammar flow 9 Turbulent flow Stagnant flow 3 out of 3 Question 4 Of 33 When the fluid moves in laminar flow, the motion is parallel to the walls of the channel and layers do not cross each Other True o False 1 out of I Question 5 of 33 In the pits, the fluid moves about 6 to 300 rpm o True e False 1 out of I Question 6 of 33 Viscosity can be understood as the relationship between a shear stress and a shear rate e True o False 1 out of I Question 7 0f33 The main difference between a newtonian a non-newtonian fluid, is that newtonian fluids always exhibit a proportional relationship between shear stress and shear rate, and non-newtonian fluids also exhibit a non-proportional behavior e True o False I out of I
+
+
+=== PAGE 2 ===
+Question 8 of 33 Non-Newtonian fluids react in different ways under shear. For shear thinning fluids (also known as pseudoplastic) viscosity is time dependant o True False 1 out of I Question 9 of 33 When the three most widely used rheological models are compared, which one provides the most accurate estimations of pressure/ECD? o Bingham model o Power Law model Herschel-Bulkley model I out of I Question 10 of 33 The Bingham plastic rheological model usually over predicts the pressures of the system True o False I out of I Question 11 of 33 The Power law rheological model usually over predicts the pressures of the system o True • False I out of I Question
+
+
+=== PAGE 3 ===
+12 of 33 From the following list, select all the different parameters that have an effect on the distribution of hydraulic energy on a drilling system Rate of fluid loss of the drilling fluid Wellbore geometry Mineralogy of the rock Bottom hole temperature Hardness of the rock Rig pumps Bit selection and design Eccentricity of the pipe Rheological properties of the drilling fluid 5 out of 5 Question 13 of33 Eccentricity is a dimensionless term that refers to the position of a pipe inside another pipe. In the oil field it usually refers to the position of the drillpipe in an annulus. True O False I out of 1 Question 14 of 33 The Fluid Jet Velocity 1 out of 1 Question 15 of 33 v is the average velocity of a drilling fluid passing through a bit's jet nozzles The Bit Hydraulic Horsepower v is the Bit hydraulic energy is the energy needed to counteract frictional energy (loss) at the bit. 1 out of I Question 16 of 33 What is the tubular pressure loss I (inside drill pipe)? Tubular Pressure Loss 1 in psi = 2124
+
+
+=== PAGE 4 ===
+3 out of 3 Question 17 of33 What is the tubular pressure loss 2 (inside drill collar)? Tubular pressure loss 2 in psi = 665 3 out of 3 Question 18 of 33 What is the annular I pressure loss? (OH-DP) Pressure loss annular I in psi = 62 3 out of 3 Question 19 of33 What is the annular 2 pressure loss? (Casing-DP) Pressure loss annular 2 in psi = 30 3 out of 3 Question 20 of 33 What is the annular 3 pressure loss? (Casing-DC) Pressure loss annular 3 in psi 8 3 out of 3 Question 21 0f33 What is the jet velocity in ft/s? Jet velocity in ft/s = 150.94 3 out of 3
+
+
+=== PAGE 5 ===
+Question 22 of 33 What is the jet impact force? Jet impact force in lb = 574.74 3 out of 3 Question 23 of 33 What is the bit pressure loss? Bit pressure loss in psi= (2 decimals) 248.17 3 out of 3 Question 24 of 33 What is the bit hydraulic horsepower? Bit hydraulic horsepower — 87.31 3 out of 3 Question 25 of 33 What is the bit horsepower per in ? Bit HPP/in - 0.74 3 out of 3 Question 26 of 33 What is the total system pressure loss? Total pressure loss in psi - 3252 3 out of 3 Question
+
+
+=== PAGE 6 ===
+27 of 33 What is the ECD at the drill bit? ECDbit in ppg= 12.4 3 out of 3 Question 28 of 33 What is the ECD at the last casing shoe? ECDshoe in ppg — 12.39 3 out of 3 Question 29 of33 What is the annular volume of the system in barrels? Annular volume in bbl = 1222.69 3 out of 3 Question 30 of 33 What is the drill string volume? Drill string volume in bbl = 151.47 3 out of 3 Question 31 of33 What is the hole volume? Hole volume in bbl = 1374.16 3 out of 3 Question 32 of 33 What is the total circulating volume? Total circulating volume = 2574.16
+
+
+=== PAGE 7 ===
+3 out of 3 Question 33 of33 What are the suction to suction strokes and time in minutes? Strokes = 21542 I out of 1 Time in min= 180
+
