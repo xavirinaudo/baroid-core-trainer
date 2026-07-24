@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Baroid Core Practice & Study Portal</title>
+  <meta name="description" content="Interactive exam prep for Baroid Core Homework 8 and Homework 9. Play quizzes, practice math solvers, and memorize answers.">
+  
+  <!-- Theme & Styles -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body data-theme="dark">
+  
+  <!-- Background Glowing Orbs -->
+  <div class="glow-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass">
+      <div class="brand">
+        <div>
+          <h2 class="brand-logo" id="main-brand-logo">BAROID CORE</h2>
+          <p class="brand-subtitle">Exam Prep Simulator</p>
+        </div>
+      </div>
+      
+      <nav class="nav-links">
+        <a class="nav-link active" id="nav-dashboard" onclick="switchTab('dashboard')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"/></svg>
+          Dashboard
+        </a>
+        <a class="nav-link" id="nav-hw8" onclick="switchTab('hw8')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Homework 8 (Theory)
+        </a>
+        <a class="nav-link" id="nav-hw9" onclick="switchTab('hw9')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          Homework 9 (Theory)
+        </a>
+        <a class="nav-link" id="nav-bp" onclick="switchTab('bp')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Business Processes
+        </a>
+        <a class="nav-link" id="nav-hw11" onclick="switchTab('hw11')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          Homework 11 (Theory)
+        </a>
+        <a class="nav-link" id="nav-trainers" onclick="switchTab('trainers')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          Practice Math Simulators
+        </a>
+        <a class="nav-link" id="nav-cheatsheet" onclick="switchTab('cheatsheet')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          Cheat Sheet / Formulas
+        </a>
+      </nav>
+      
+      <div class="footer-nav">
+        <button class="theme-toggle-btn" id="theme-toggle-button" onclick="toggleTheme()">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m14.071-4.071l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.072 0l-.707.707M16.243 17.657l-.707-.707"/></svg>
+          Toggle Theme
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Header Dashboard bar -->
+      <header class="header-card glass">
+        <div class="header-title">
+          <h1 id="page-title">Welcome to Baroid Core Trainer</h1>
+          <p id="page-subtitle">Track your scores and practice dynamically.</p>
+        </div>
+        <div class="progress-widget">
+          <div>
+            <p style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:700; text-align:right;">Average Accuracy</p>
+            <p style="font-size:14px; font-weight:600; text-align:right;" id="stat-accuracy-text">0% correct</p>
+          </div>
+          <div class="circular-progress" id="accuracy-progress-ring">
+            <span class="progress-value" id="stat-accuracy-value">0%</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW: Dashboard -->
+      <section id="view-dashboard" class="view-pane" style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));">
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_8')">
+            <h3 class="card-title">Homework 8: Alkalinity (Theory)</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review pH concepts, filtrate alkalinity titrations (Pf, Mf, Pm) and interpret ionic concentrations based on API 13B-1 guidelines.</p>
+            <div class="task-info">
+              <span>17 theory questions</span>
+              <span id="score-hw8">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_9')">
+            <h3 class="card-title">Homework 9: Chemistry & Clays (Theory)</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Study clay hydration states, polymer classifications, and specific product functions in water-based fluids.</p>
+            <div class="task-info">
+              <span>24 theory questions</span>
+              <span id="score-hw9">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('business_processes')">
+            <h3 class="card-title">Baroid Business Processes</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions about Baroid's 5 Mainstays, Value Proposition, Technical Process, Black Book, Hard Stops, and focus areas.</p>
+            <div class="task-info">
+              <span>15 core questions</span>
+              <span id="score-bp">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_11')">
+            <h3 class="card-title">Homework 11: Contaminants (Theory)</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review drilling fluid contaminants (active/inactive solids, evaporite salts, cement, acid gases), diagnostic checks, and treatment chemical calculations.</p>
+            <div class="task-info">
+              <span>30 theory questions</span>
+              <span id="score-hw11">Record: --</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass" style="padding: 24px;">
+          <h3 class="card-title" style="margin-bottom:16px;">Your Learning Statistics</h3>
+          <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div style="padding:16px; background:rgba(255,255,255,0.02); border-radius:12px; border:1px solid var(--border-glow);">
+              <p style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Total Questions Answered</p>
+              <h2 style="font-size:32px; font-family:var(--font-title);" id="stats-total-answered">0</h2>
+            </div>
+            <div style="padding:16px; background:rgba(255,255,255,0.02); border-radius:12px; border:1px solid var(--border-glow);">
+              <p style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Correct Answers</p>
+              <h2 style="font-size:32px; font-family:var(--font-title); color:var(--success);" id="stats-correct-count">0</h2>
+            </div>
+            <div style="padding:16px; background:rgba(255,255,255,0.02); border-radius:12px; border:1px solid var(--border-glow);">
+              <p style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Simulators Practiced</p>
+              <h2 style="font-size:32px; font-family:var(--font-title); color:var(--primary);" id="stats-simulators-run">0</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: Quiz -->
+      <section id="view-quiz" class="view-pane glass" style="display: none; padding: 32px;">
+        <div id="quiz-container">
+          <div class="quiz-header">
+            <span class="question-counter" id="quiz-question-counter">Question 1 of 10</span>
+            <span class="quiz-badge" id="quiz-badge-id">Homework 9</span>
+          </div>
+          
+          <div class="question-text" id="quiz-question-text">
+            Loading question...
+          </div>
+          
+          <div class="options-list" id="quiz-options-list">
+            <!-- Rendered by JS -->
+          </div>
+          
+          <div class="explanation-card glass" id="quiz-explanation-card" style="display: none;">
+            <h4>Explanation & Reference:</h4>
+            <p id="quiz-explanation-text">Explanation text here.</p>
+          </div>
+          
+          <div class="btn-group" style="margin-top: 32px;">
+            <button class="btn btn-secondary" id="btn-quiz-prev" onclick="quizPrevQuestion()" disabled>Previous</button>
+            <div>
+              <button class="btn btn-secondary" id="btn-quiz-retry" onclick="quizRetryQuestion()" style="display:inline-flex; margin-right:8px;">Retry</button>
+              <button class="btn btn-secondary" id="btn-quiz-skip" onclick="quizSkipQuestion()" style="display:inline-flex; margin-right:8px;">Skip</button>
+              <button class="btn btn-primary" id="btn-quiz-action" onclick="quizActionSubmit()">Check Answer</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Results Screen -->
+        <div id="quiz-results-container" style="display: none; text-align: center; padding: 40px 0;">
+          <h2 style="font-family:var(--font-title); font-size:36px; margin-bottom:16px;">Quiz Completed!</h2>
+          <p style="color:var(--text-secondary); font-size:18px; margin-bottom:24px;" id="quiz-results-summary">You answered X out of Y questions correctly.</p>
+          <div style="display:inline-block; font-size:48px; font-family:var(--font-title); font-weight:800; color:var(--primary); margin-bottom:32px;" id="quiz-results-score">80%</div>
+          
+          <div class="btn-group" style="justify-content: center;">
+            <button class="btn btn-secondary" onclick="switchTab('dashboard')">Back to Dashboard</button>
+            <button class="btn btn-primary" id="btn-quiz-restart" onclick="restartCurrentQuiz()">Practice Again</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: Math Trainers Selection & Workspace -->
+      <section id="view-trainers" class="view-pane" style="display: none; flex-direction: column; gap: 24px;">
+        <div class="glass" style="padding: 16px 24px;">
+          <div class="search-container" style="margin-bottom:0;">
+            <button class="btn btn-secondary nav-link active" id="btn-train-alkalinity" onclick="switchTrainer('alkalinity')" style="padding:10px 16px;">Alkalinity API</button>
+            <button class="btn btn-secondary nav-link" id="btn-train-massbalance" onclick="switchTrainer('massbalance')" style="padding:10px 16px;">Mass Balance</button>
+            <button class="btn btn-secondary nav-link" id="btn-train-solids" onclick="switchTrainer('solids')" style="padding:10px 16px;">Solids Analysis</button>
+            <button class="btn btn-secondary nav-link" id="btn-train-hole" onclick="switchTrainer('hole')" style="padding:10px 16px;">Hydraulics & Volumes</button>
+          </div>
+        </div>
+
+        <!-- SUB-VIEW: Alkalinity Trainer -->
+        <div id="trainer-alkalinity" class="trainer-pane glass" style="padding: 32px;">
+          <h3 class="card-title" style="margin-bottom:16px;">Alkalinity Concentration Simulator (API 13B-1)</h3>
+          <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">Using measured <b>Pf</b> and <b>Mf</b> filtrate titration volumes, calculate the concentration of Hydroxide (OH⁻), Carbonate (CO₃²⁻), and Bicarbonate (HCO₃⁻) in mg/L.</p>
+          
+          <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
+            <label class="input-label" for="preset-alkalinity" style="font-weight:600;">Practice Mode / Homework Scenario</label>
+            <select id="preset-alkalinity" class="input-field" onchange="loadAlkalinityPreset()" style="max-width:400px;">
+              <option value="random">Random Values (Dynamic Practice)</option>
+              <option value="hw8_q20">Homework 8, Q20 (Pf: 3.2 mL, Mf: 6.8 mL)</option>
+              <option value="hw8_q22">Homework 8, Q22 (Pf: 0.3 mL, Mf: 0.4 mL)</option>
+            </select>
+          </div>
+
+          <div class="trainer-section">
+            <div class="params-board">
+              <div class="params-title">Lab Titration Results (Input)</div>
+              <div class="params-grid">
+                <div class="param-item">
+                  <span class="param-label">Pf (Phenolphthalein Filtrate)</span>
+                  <span class="param-value" id="train-alk-pf">3.2 mL</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Mf (Methyl Orange Filtrate)</span>
+                  <span class="param-value" id="train-alk-mf">6.8 mL</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="inputs-grid">
+              <div class="input-group">
+                <label class="input-label" for="input-alk-oh">Hydroxide (OH⁻), mg/L</label>
+                <input type="number" id="input-alk-oh" class="input-field" placeholder="E.g. 0">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-alk-co3">Carbonate (CO₃²⁻), mg/L</label>
+                <input type="number" id="input-alk-co3" class="input-field" placeholder="E.g. 3840">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-alk-hco3">Bicarbonate (HCO₃⁻), mg/L</label>
+                <input type="number" id="input-alk-hco3" class="input-field" placeholder="E.g. 480">
+              </div>
+            </div>
+            
+            <div class="explanation-card glass" id="train-alk-explanation" style="display:none;">
+              <h4>Step-by-step Solution:</h4>
+              <p id="train-alk-explanation-text">Detailed explanation...</p>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-secondary" onclick="resetAlkalinityInputs()">Generate New Parameters</button>
+              <button class="btn btn-primary" id="btn-alk-check" onclick="checkAlkalinityAnswers()">Check Answers</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-VIEW: Mass Balance Trainer -->
+        <div id="trainer-massbalance" class="trainer-pane glass" style="padding: 32px; display:none;">
+          <h3 class="card-title" style="margin-bottom:16px;">Mass Balance Practice Simulator</h3>
+          <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">Solve mass balance problems by calculating sacks of weighting agents required and the volume adjustments (dump/keep).</p>
+          
+          <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
+            <label class="input-label" for="preset-massbalance" style="font-weight:600;">Practice Mode / Homework Scenario</label>
+            <select id="preset-massbalance" class="input-field" onchange="loadMassBalancePreset()" style="max-width:400px;">
+              <option value="random">Random Values (Dynamic Practice)</option>
+              <option value="hw9_q24_25">Homework 9, Q24-25 (Constant Volume: 2900 bbl, 12 to 15 ppg)</option>
+              <option value="hw9_q26_27">Homework 9, Q26-27 (Weight Up Only: 905 bbl, 11.4 to 12.9 ppg)</option>
+              <option value="hw9_q28_29">Homework 9, Q28-29 (BARACARB Build: 500 bbl, 13.0 ppg)</option>
+              <option value="hw9_q30_32">Homework 9, Q30-32 (Constant Volume: 2200 bbl, 16.5 to 18.0 ppg)</option>
+            </select>
+          </div>
+
+          <div class="trainer-section">
+            <div class="params-board">
+              <div class="params-title">Exercise Scenario</div>
+              <p style="font-weight: 500; font-size:15px; margin-bottom:16px;" id="train-mb-description">Loading scenario...</p>
+              <div class="params-grid">
+                <div class="param-item">
+                  <span class="param-label">Initial / Target Volume</span>
+                  <span class="param-value" id="train-mb-vol">2900 bbl</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Initial Mud Weight (W1)</span>
+                  <span class="param-value" id="train-mb-w1">12.0 ppg</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Target Mud Weight (W2)</span>
+                  <span class="param-value" id="train-mb-w2">15.0 ppg</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="inputs-grid" id="train-mb-inputs-container">
+              <!-- Rendered dynamically by JS -->
+            </div>
+            
+            <div class="explanation-card glass" id="train-mb-explanation" style="display:none;">
+              <h4>Step-by-step Solution:</h4>
+              <p id="train-mb-explanation-text">Detailed explanation...</p>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-secondary" onclick="resetMassBalanceInputs()">Generate New Exercise</button>
+              <button class="btn btn-primary" id="btn-mb-check" onclick="checkMassBalanceAnswers()">Check Answers</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-VIEW: Solids Analysis Trainer -->
+        <div id="trainer-solids" class="trainer-pane glass" style="padding: 32px; display:none;">
+          <h3 class="card-title" style="margin-bottom:16px;">Solids Analysis Simulator</h3>
+          <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">Calculate the average specific gravity of solids (ASG), solids percentages, and low/high gravity solids concentrations in ppb.</p>
+          
+          <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
+            <label class="input-label" for="preset-solids" style="font-weight:600;">Practice Mode / Homework Scenario</label>
+            <select id="preset-solids" class="input-field" onchange="loadSolidsPreset()" style="max-width:400px;">
+              <option value="random">Random Values (Dynamic Practice)</option>
+              <option value="hw9_q33_36">Homework 9, Q33-36 (13.2 ppg, Water: 79%, Oil: 1%, CEC: 5)</option>
+              <option value="hw9_q37_39">Homework 9, Q37-39 (11.0 ppg, Water: 74%, Oil: 7%, CEC: 6)</option>
+            </select>
+          </div>
+
+          <div class="trainer-section">
+            <div class="params-board">
+              <div class="params-title">Retort & Mud Parameters</div>
+              <div class="params-grid">
+                <div class="param-item">
+                  <span class="param-label">Retort Water % / mL</span>
+                  <span class="param-value" id="train-sol-water">79.0%</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Retort Oil % / mL</span>
+                  <span class="param-value" id="train-sol-oil">1.0%</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Mud Weight</span>
+                  <span class="param-value" id="train-sol-mw">13.2 ppg</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">CEC (cation exchange capacity)</span>
+                  <span class="param-value" id="train-sol-cec">5</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="inputs-grid">
+              <div class="input-group">
+                <label class="input-label" for="input-sol-asg">ASG (3 decimals)</label>
+                <input type="number" step="0.001" id="input-sol-asg" class="input-field" placeholder="E.g. 3.915">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-sol-lgspct">% LGS (low gravity solids)</label>
+                <input type="number" step="0.01" id="input-sol-lgspct" class="input-field" placeholder="E.g. 3.56">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-sol-lgsppb">LGS concentration, ppb</label>
+                <input type="number" step="0.01" id="input-sol-lgsppb" class="input-field" placeholder="E.g. 32.44">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-sol-hgspct">% HGS (high gravity solids)</label>
+                <input type="number" step="0.01" id="input-sol-hgspct" class="input-field" placeholder="E.g. 16.44">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-sol-hgsppb">HGS concentration, ppb</label>
+                <input type="number" step="0.01" id="input-sol-hgsppb" class="input-field" placeholder="E.g. 242.01">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-sol-drillppb">Drill solids concentration, ppb</label>
+                <input type="number" step="0.01" id="input-sol-drillppb" class="input-field" placeholder="E.g. 7.44">
+              </div>
+            </div>
+            
+            <div class="explanation-card glass" id="train-sol-explanation" style="display:none;">
+              <h4>Step-by-step Solution:</h4>
+              <p id="train-sol-explanation-text">Detailed explanation...</p>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-secondary" onclick="resetSolidsInputs()">Generate New Parameters</button>
+              <button class="btn btn-primary" id="btn-sol-check" onclick="checkSolidsAnswers()">Check Answers</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-VIEW: Hole Volume & Hydraulics Trainer -->
+        <div id="trainer-hole" class="trainer-pane glass" style="padding: 32px; display:none;">
+          <h3 class="card-title" style="margin-bottom:16px;">Well Volume & Circulation Simulator</h3>
+          <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">Calculate triplex pump output, annular capacities, drill string volumes, circulating metrics, strokes, and transits.</p>
+          
+          <div style="margin-bottom:20px; display:flex; flex-direction:column; gap:8px;">
+            <label class="input-label" for="preset-hole" style="font-weight:600;">Practice Mode / Homework Scenario</label>
+            <select id="preset-hole" class="input-field" onchange="loadHolePreset()" style="max-width:400px;">
+              <option value="random">Random Values (Dynamic Practice)</option>
+              <option value="hw9_q40_46">Homework 9, Q40-46 (Casing/Liner/DP/DC Wellbore)</option>
+            </select>
+          </div>
+
+          <div class="trainer-section">
+            <div class="params-board">
+              <div class="params-title">Wellbore & Pump Dimensions</div>
+              <div class="params-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="param-item">
+                  <span class="param-label">Triplex Pump / Efficiency</span>
+                  <span class="param-value" id="train-hole-pump">6.5" x 12" @ 96%</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Pump Rates (SPM1 / SPM2)</span>
+                  <span class="param-value" id="train-hole-spm">58 spm / 57 spm</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Total Depth (TD)</span>
+                  <span class="param-value" id="train-hole-td">22,000 ft</span>
+                </div>
+                <div class="param-item">
+                  <span class="param-label">Active Pits Volume</span>
+                  <span class="param-value" id="train-hole-pit">1,800 bbl</span>
+                </div>
+              </div>
+              <div style="margin-top:12px; font-size:13px; color:var(--text-secondary);" id="train-hole-details">
+                - Surface Casing: 13 3/8" set @ 5,000 ft<br>
+                - Intermediate Casing: 8 5/8" set @ 14,000 ft<br>
+                - Liner: 5 1/2" (13,000 ft to 18,000 ft)<br>
+                - Open Hole: 4 3/4" (18,000 ft to 22,000 ft)
+              </div>
+            </div>
+            
+            <div class="inputs-grid">
+              <div class="input-group">
+                <label class="input-label" for="input-hole-pumpout">Pump Output (bbl/stk)</label>
+                <input type="number" step="0.0001" id="input-hole-pumpout" class="input-field" placeholder="E.g. 0.1183">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-annvol">Annular Volume (bbl)</label>
+                <input type="number" step="0.01" id="input-hole-annvol" class="input-field" placeholder="E.g. 837.26">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-dpvol">Drill String Volume (bbl)</label>
+                <input type="number" step="0.01" id="input-hole-dpvol" class="input-field" placeholder="E.g. 235.69">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-circvol">Total Circulating Volume (bbl)</label>
+                <input type="number" step="0.01" id="input-hole-circvol" class="input-field" placeholder="E.g. 2873.05">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-bustk">Bottoms Up strokes (stk)</label>
+                <input type="number" id="input-hole-bustk" class="input-field" placeholder="E.g. 7078">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-bumin">Bottoms Up time (min)</label>
+                <input type="number" id="input-hole-bumin" class="input-field" placeholder="E.g. 62">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-bitstk">Surface to Bit strokes (stk)</label>
+                <input type="number" id="input-hole-bitstk" class="input-field" placeholder="E.g. 1994">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-bitmin">Surface to Bit time (min)</label>
+                <input type="number" id="input-hole-bitmin" class="input-field" placeholder="E.g. 18">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-totstk">Suction to Suction strokes (stk)</label>
+                <input type="number" id="input-hole-totstk" class="input-field" placeholder="E.g. 24287">
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-hole-totmin">Suction to Suction time (min)</label>
+                <input type="number" id="input-hole-totmin" class="input-field" placeholder="E.g. 212">
+              </div>
+            </div>
+            
+            <div class="explanation-card glass" id="train-hole-explanation" style="display:none;">
+              <h4>Step-by-step Solution:</h4>
+              <p id="train-hole-explanation-text">Detailed explanation...</p>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-secondary" onclick="resetHoleInputs()">Generate New Wellbore</button>
+              <button class="btn btn-primary" id="btn-hole-check" onclick="checkHoleAnswers()">Check Answers</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: Cheat Sheets / References -->
+      <section id="view-cheatsheet" class="view-pane glass" style="display: none; padding: 32px;">
+        <h3 class="card-title" style="margin-bottom:16px;">Baroid Core Knowledge Base</h3>
+        
+        <div class="search-container">
+          <input type="text" id="cheat-search" class="search-field" placeholder="Search Baroid products (e.g. barazan, pac-r) or formulas..." oninput="filterCheatSheet()">
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h4 style="font-family:var(--font-title); margin-bottom:12px; color:var(--primary);">Homework 9 Products</h4>
+          <table class="sheet-table" id="table-products">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Primary Function</th>
+                <th>Technical Notes / Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-product">BAROID</span></td>
+                <td>Weighting agent (Barite)</td>
+                <td>High quality barite (SG 4.2). Used to increase mud weight in water-based or oil-based muds.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">BARACARB</span></td>
+                <td>Weighting & Bridging agent</td>
+                <td>Ground calcium carbonate (SG 2.7). Adds density and acts as a bridging agent. Acid soluble.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">BARAWEIGHT</span></td>
+                <td>Heavy weighting agent (Hematite)</td>
+                <td>High specific gravity hematite (SG 5.0). Used for extremely high-density mud systems.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">BARAVIS</span></td>
+                <td>Mineral viscosifier</td>
+                <td>Premium sodium bentonite clay. Provides viscosity in fresh water and primary filtration control.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">BARAZAN D PLUS</span></td>
+                <td>Polymer viscosifier</td>
+                <td>Dispersible modified xanthan gum. Provides excellent viscosity and high yield point at low shear rates.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">PAC-R / PAC-L</span></td>
+                <td>Filtration control / Viscosifier</td>
+                <td>Polyanionic cellulose. PAC-R increases viscosity and lowers filtrate. PAC-L reduces filtration with minimal viscosity effect.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">DEXTRID</span></td>
+                <td>Filtration control (Starch)</td>
+                <td>Bacterially stable modified starch. Seals cake pores to control fluid loss in sensitive formations.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">CARBONOX</span></td>
+                <td>Thinner / Filtration control</td>
+                <td>Alkali-treated lignite. Thins mud and controls filtration in WBF at high temperatures.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">IMPERMUD</span></td>
+                <td>Filtration control</td>
+                <td>High performance organic dispersant and fluid loss control polymer.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">EZ-FILTER</span></td>
+                <td>Filtration control</td>
+                <td>Highly thermal-stable synthetic polymer for high temperature water loss control.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">QUIK-THIN</span></td>
+                <td>Thinner / Deflocculant</td>
+                <td>Modified ferrochrome lignosulfonate. Disperses clays, reducing yield points and gel strengths. Requires alkaline pH.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-product">THERMA-THIN</span></td>
+                <td>HT Thinner</td>
+                <td>Thermal-stable synthetic copolymer thinner designed to deflocculate WBF in extreme environments.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h4 style="font-family:var(--font-title); margin-bottom:12px; color:var(--primary);">Exam Formulas & API Rules</h4>
+          <div style="display: flex; flex-direction:column; gap:16px;" id="formula-list">
+            <div class="glass" style="padding:16px;">
+              <h5 style="font-family:var(--font-title); margin-bottom:6px; font-weight:600;">1. Alkalinity Ionic Tables (API 13B-1)</h5>
+              <p style="font-size:13px; color:var(--text-secondary); line-height:1.5;">
+                - <b>Pf = 0</b>: OH⁻ = 0 | CO₃²⁻ = 0 | HCO₃⁻ = 1200 * Mf<br>
+                - <b>Pf = Mf</b>: OH⁻ = 340 * Pf | CO₃²⁻ = 0 | HCO₃⁻ = 0<br>
+                - <b>2Pf = Mf</b>: OH⁻ = 0 | CO₃²⁻ = 1200 * Pf | HCO₃⁻ = 0<br>
+                - <b>2Pf > Mf</b>: OH⁻ = 340 * (2*Pf - Mf) | CO₃²⁻ = 1200 * (Mf - Pf) | HCO₃⁻ = 0<br>
+                - <b>2Pf < Mf</b>: OH⁻ = 0 | CO₃²⁻ = 1200 * Pf | HCO₃⁻ = 1200 * (Mf - 2*Pf)
+              </p>
+            </div>
+            <div class="glass" style="padding:16px;">
+              <h5 style="font-family:var(--font-title); margin-bottom:6px; font-weight:600;">2. Barite Mass Balance (100 lb/sack)</h5>
+              <p style="font-size:13px; color:var(--text-secondary); line-height:1.5;">
+                - <b>Weight-up only (Volume increases)</b>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sacks = V1 * 14.7 * (W2 - W1) / (35 - W2) (Field approximation)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Final Volume V2 = V1 * (35.05 - W1) / (35.05 - W2) (Exact Volume)<br>
+                - <b>Weight-up keeping final volume V_final constant</b>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Mud volume to keep V_keep = V_final * (35.05 - W2) / (35.05 - W1)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Mud volume to dump V_dump = V_final - V_keep<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Sacks = V_keep * 14.72 * (W2 - W1) / (35.05 - W2) (Exact Sacks)
+              </p>
+            </div>
+            <div class="glass" style="padding:16px;">
+              <h5 style="font-family:var(--font-title); margin-bottom:6px; font-weight:600;">3. Triplex Pump Performance</h5>
+              <p style="font-size:13px; color:var(--text-secondary); line-height:1.5;">
+                - <b>Formula</b>: Output (bbl/stk) = 0.000243 * (Liner diameter)² * Stroke length * Efficiency<br>
+                - <i>Example</i>: 6.5" Liner, 12" Stroke, 96% Efficiency:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Output = 0.000243 * (6.5)² * 12 * 0.96 = 0.1183 bbl/stk
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Application Logic -->
+  <script src="quiz_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
