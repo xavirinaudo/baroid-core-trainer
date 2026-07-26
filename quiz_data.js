@@ -297,8 +297,8 @@ const QUIZ_DATA = {
           { value: "charge", label: "Polymer charge" },
           { value: "ph", label: "pH of water" }
         ],
-        answer: ["bio_attack", "electrolytes", "mw", "charge", "ph"],
-        explanation: "Polymer performance depends on molecular weight, polymer charge, water pH, temperature, electrolytes (salts shield polymer charges, causing chains to coil), and biological attack by bacteria. Color and turbidity do not affect performance."
+        answer: ["electrolytes", "mw", "charge", "ph"],
+        explanation: "Polymer performance depends on molecular weight, polymer charge, water pH, temperature, and electrolytes in solution (salts shield polymer charges, causing chains to coil). Biological attack degrade polymers over time but is not considered a primary performance factor here. Color and turbidity do not affect performance."
       },
       {
         id: "hw9_q4",
