@@ -865,7 +865,7 @@ const QUIZ_DATA = {
     questions: [
       {
         id: "hw11_q1",
-        number: "1 of 22",
+        number: "1 of 17",
         type: "single",
         question: "A contaminant is defined as:",
         options: [
@@ -879,7 +879,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q2",
-        number: "2 of 22",
+        number: "2 of 17",
         type: "single",
         question: "The primary indication of contamination is a change in:",
         options: [
@@ -893,7 +893,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q3",
-        number: "3 of 22",
+        number: "3 of 17",
         type: "multiple",
         question: "Which of the following are the most common contaminants encountered in drilling fluid systems while drilling? (select all applicable answers)",
         options: [
@@ -912,7 +912,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q4",
-        number: "4 of 22",
+        number: "4 of 17",
         type: "single",
         question: "The severity of the problems experienced in the drilling fluids due to contaminants depends on:",
         options: [
@@ -926,7 +926,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q5",
-        number: "5 of 22",
+        number: "5 of 17",
         type: "matching",
         question: "Match the type of drilled solids with their correct classifications:",
         pairs: {
@@ -937,7 +937,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q6",
-        number: "6 of 22",
+        number: "6 of 17",
         type: "multiple",
         question: "What are the most common Acid Gases that are encountered while drilling? (select all applicable answers)",
         options: [
@@ -951,7 +951,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q7",
-        number: "7 of 22",
+        number: "7 of 17",
         type: "single",
         question: "Pilot testing can be defined as:",
         options: [
@@ -965,7 +965,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q8",
-        number: "8 of 22",
+        number: "8 of 17",
         type: "single",
         question: "What is the chemical formula for Bicarbonate of Soda?",
         options: [
@@ -979,7 +979,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q9",
-        number: "9 of 22",
+        number: "9 of 17",
         type: "single",
         question: "What is the primary function of Bicarbonate of Soda in drilling fluids?",
         options: [
@@ -993,7 +993,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q10",
-        number: "10 of 22",
+        number: "10 of 17",
         type: "single",
         question: "What is the chemical formula for Lime?",
         options: [
@@ -1007,7 +1007,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q11",
-        number: "11 of 22",
+        number: "11 of 17",
         type: "single",
         question: "What is the chemical formula for Soda Ash?",
         options: [
@@ -1021,7 +1021,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q12",
-        number: "12 of 22",
+        number: "12 of 17",
         type: "single",
         question: "What is the primary function of Soda Ash in drilling fluids?",
         options: [
@@ -1035,7 +1035,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q13",
-        number: "13 of 22",
+        number: "13 of 17",
         type: "single",
         question: "What is the chemical formula for Caustic Soda?",
         options: [
@@ -1048,7 +1048,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q14",
-        number: "14 of 22",
+        number: "14 of 17",
         type: "single",
         question: "What is the primary function of Caustic Soda in drilling fluids?",
         options: [
@@ -1062,21 +1062,21 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q15",
-        number: "15 of 22",
+        number: "15 of 17",
         type: "single",
         question: "What is the chemical formula for Gypsum?",
         options: [
           { value: "ca2so4", label: "Ca2SO4" },
           { value: "caso4_2h2o", label: "CaSO4.2H2O" },
           { value: "caso3", label: "CaSO3" },
-          { value: "caso4", label: "CaSO4 (Anhydrite)" }
+          { value: "caso4", label: "CaSO4" }
         ],
         answer: "caso4_2h2o",
         explanation: "Gypsum is Calcium Sulfate dihydrate, represented by the formula CaSO4.2H2O."
       },
       {
         id: "hw11_q16",
-        number: "16 of 22",
+        number: "16 of 17",
         type: "single",
         question: "What is the primary function of Gypsum in drilling fluids?",
         options: [
@@ -1090,7 +1090,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw11_q17",
-        number: "17 of 22",
+        number: "17 of 17",
         type: "matching",
         question: "Match the Pf/Mf alkalinity relationship with the ions present:",
         pairs: {
@@ -1101,81 +1101,6 @@ const QUIZ_DATA = {
           "When Pf = Mf": "Hydroxides only"
         },
         explanation: "Standard API 13B-1 alkalinity rules map titration ratios to specific water soluble ions."
-      },
-      {
-        id: "hw11_q18",
-        number: "18 of 22",
-        type: "calculation_alkalinity",
-        inputs: {
-          Pf: 1.5,
-          Mf: 3.7
-        },
-        answer: {
-          OH: 0,
-          CO3: 1800,
-          HCO3: 854
-        },
-        explanation: "2Pf = 3.0 < Mf = 3.7. OH- = 0. CO3(2-) = 1200 * Pf = 1200 * 1.5 = 1800 mg/L. HCO3- = 1220 * (Mf - 2Pf) = 1220 * 0.7 = 854 mg/L."
-      },
-      {
-        id: "hw11_q19",
-        number: "19 of 22",
-        type: "calculation_alkalinity",
-        inputs: {
-          Pf: 3.2,
-          Mf: 3.2
-        },
-        answer: {
-          OH: 1088,
-          CO3: 0,
-          HCO3: 0
-        },
-        explanation: "Pf = Mf = 3.2. OH- = 340 * Pf = 340 * 3.2 = 1088 mg/L. CO3(2-) = 0. HCO3- = 0."
-      },
-      {
-        id: "hw11_q20",
-        number: "20 of 22",
-        type: "calculation_alkalinity",
-        inputs: {
-          Pf: 5.4,
-          Mf: 7.1
-        },
-        answer: {
-          OH: 1258,
-          CO3: 2040,
-          HCO3: 0
-        },
-        explanation: "2Pf = 10.8 > Mf = 7.1. OH- = 340 * (2Pf - Mf) = 340 * 3.7 = 1258 mg/L. CO3(2-) = 1200 * (Mf - Pf) = 1200 * 1.7 = 2040 mg/L. HCO3- = 0."
-      },
-      {
-        id: "hw11_q21",
-        number: "21 of 22",
-        type: "calculation_alkalinity",
-        inputs: {
-          Pf: 2.8,
-          Mf: 5.6
-        },
-        answer: {
-          OH: 0,
-          CO3: 3360,
-          HCO3: 0
-        },
-        explanation: "2Pf = 5.6 = Mf. OH- = 0. CO3(2-) = 1200 * Pf = 1200 * 2.8 = 3360 mg/L. HCO3- = 0."
-      },
-      {
-        id: "hw11_q22",
-        number: "22 of 22",
-        type: "calculation_alkalinity",
-        inputs: {
-          Pf: 0.0,
-          Mf: 2.5
-        },
-        answer: {
-          OH: 0,
-          CO3: 0,
-          HCO3: 3050
-        },
-        explanation: "Pf = 0. OH- = 0. CO3(2-) = 0. HCO3- = 1220 * Mf = 1220 * 2.5 = 3050 mg/L."
       }
     ]
   },
