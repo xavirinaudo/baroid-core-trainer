@@ -53,9 +53,9 @@ $$\text{Treatment Dosage (ppb)} = (\text{Affected Concentration} - \text{Origina
 
 ---
 
-# The 14 Study Cases in Detail
+# The 22 Study Cases in Detail
 
-Here is the complete reference of all 14 cases included in the simulator.
+Here is the complete reference of all 22 cases included in the simulator.
 
 ---
 
@@ -380,3 +380,201 @@ Here is the complete reference of all 14 cases included in the simulator.
 * **Calculation:**
   $$\Delta Ca^{++} = 1200 - 60 = 1140\text{ mg/L}$$
   $$\text{Dosage} = 1140 \times 0.000925 = \mathbf{1.0545\text{ lb/bbl}}$$
+
+---
+
+### Case 15: Cement (Case 3)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 115 | 120 | No Change |
+| Weight (lb/gal) | 12.5 | 12.6 | No Change |
+| PV (cP) / YP (lb/100ft²) | 22 / 8 | 36 / 24 | Viscosity & YP spike (Cement Flocculation) |
+| API Filtrate (ml) | 5.2 | 18.5 | Filtrate increases (clay flocculation) |
+| MBT (lb/bbl) | 14.0 | 14.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 9.6 / 0.9 | **12.0 / 4.8** | **pH & Pm spike (OH- buildup)** |
+| **Pf / Mf** | 0.6 / 1.1 | **3.5 / 3.8** | **Alkalinity increases ($2Pf > Mf$)** |
+| Chlorides (mg/L) | 1800 | 1800 | No Change |
+| **Hardness Ca++ (mg/L)** | 80 | **680** | **Calcium spikes** |
+
+* **Contaminant:** Cement
+* **Primary Treatment:** Add Sodium bicarbonate (NaHCO3)
+* **Dosage:** **0.4404 lb/bbl**
+* **Diagnostic Rationale:** High pH (12.0) and high calcium hardness (680 mg/L) diagnose cement. The alkalinity ratio $2Pf = 7.0 > Mf = 3.8$ indicates coexisting carbonates and hydroxides ($OH^-$). Flocculation increases rheology and fluid loss.
+* **Calculation:**
+  $$\Delta Ca^{++} = 680 - 80 = 600\text{ mg/L}$$
+  $$\text{Dosage} = 600 \times 0.000734 = \mathbf{0.4404\text{ lb/bbl}}$$
+
+---
+
+### Case 16: Cement (Case 4)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 125 | 127 | No Change |
+| Weight (lb/gal) | 10.8 | 10.9 | No Change |
+| PV (cP) / YP (lb/100ft²) | 16 / 5 | 28 / 18 | Viscosity & YP spike (Cement Flocculation) |
+| API Filtrate (ml) | 4.8 | 14.2 | Filtrate increases |
+| MBT (lb/bbl) | 12.0 | 12.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 9.4 / 0.7 | **11.9 / 3.9** | **pH & Pm spike** |
+| **Pf / Mf** | 0.4 / 0.9 | **2.8 / 3.0** | **Alkalinity increases ($2Pf > Mf$)** |
+| Chlorides (mg/L) | 1200 | 1200 | No Change |
+| **Hardness Ca++ (mg/L)** | 60 | **510** | **Calcium spikes** |
+
+* **Contaminant:** Cement
+* **Primary Treatment:** Add Sodium bicarbonate (NaHCO3)
+* **Dosage:** **0.3303 lb/bbl**
+* **Diagnostic Rationale:** High pH and Calcium hardness spike. $2Pf > Mf$ indicates high OH- ions.
+* **Calculation:**
+  $$\Delta Ca^{++} = 510 - 60 = 450\text{ mg/L}$$
+  $$\text{Dosage} = 450 \times 0.000734 = \mathbf{0.3303\text{ lb/bbl}}$$
+
+---
+
+### Case 17: Anhydrite / Gypsum (Case 3)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 110 | 114 | No Change |
+| Weight (lb/gal) | 11.8 | 11.9 | No Change |
+| PV (cP) / YP (lb/100ft²) | 24 / 9 | 35 / 22 | Viscosity & YP spike (Clay Flocculation) |
+| API Filtrate (ml) | 5.5 | 12.5 | Filtrate increases |
+| MBT (lb/bbl) | 15.0 | 15.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 10.1 / 1.6 | **8.4 / 0.4** | **pH and Pm drop sharply** |
+| **Pf / Mf** | 1.1 / 2.0 | **0.2 / 1.1** | **Alkalinity drops ($2Pf < Mf$)** |
+| Chlorides (mg/L) | 1000 | 1000 | No Change |
+| **Hardness Ca++ (mg/L)** | 80 | **480** | **Calcium spikes** |
+
+* **Contaminant:** Anhydrite / Gypsum
+* **Primary Treatment:** Add Soda ash (Na2CO3)
+* **Dosage:** **0.3700 lb/bbl**
+* **Diagnostic Rationale:** Calcium spikes while pH and Pm drop. $2Pf < Mf$ indicates bicarbonate buildup from carbonate depletion.
+* **Calculation:**
+  $$\Delta Ca^{++} = 480 - 80 = 400\text{ mg/L}$$
+  $$\text{Dosage} = 400 \times 0.000925 = \mathbf{0.3700\text{ lb/bbl}}$$
+
+---
+
+### Case 18: Anhydrite / Gypsum (Case 4)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 120 | 122 | No Change |
+| Weight (lb/gal) | 13.5 | 13.6 | No Change |
+| PV (cP) / YP (lb/100ft²) | 28 / 11 | 42 / 26 | Flocculated rheology |
+| API Filtrate (ml) | 6.2 | 14.8 | Spiked fluid loss |
+| MBT (lb/bbl) | 18.0 | 18.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 9.8 / 1.3 | **8.5 / 0.5** | **pH and Pm drop** |
+| **Pf / Mf** | 0.9 / 1.6 | **0.3 / 1.4** | **Alkalinity drops ($2Pf < Mf$)** |
+| Chlorides (mg/L) | 200 | 200 | No Change |
+| **Hardness Ca++ (mg/L)** | 100 | **960** | **Calcium hardness spikes** |
+
+* **Contaminant:** Anhydrite / Gypsum
+* **Primary Treatment:** Add Soda ash (Na2CO3)
+* **Dosage:** **0.7955 lb/bbl**
+* **Diagnostic Rationale:** Calcium spikes while pH and Pm drop. $2Pf < Mf$ indicates bicarbonate buildup.
+* **Calculation:**
+  $$\Delta Ca^{++} = 960 - 100 = 860\text{ mg/L}$$
+  $$\text{Dosage} = 860 \times 0.000925 = \mathbf{0.7955\text{ lb/bbl}}$$
+
+---
+
+### Case 19: Bicarbonates (Case 2)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 110 | 114 | No Change |
+| Weight (lb/gal) | 12.0 | 12.0 | No Change |
+| PV (cP) / YP (lb/100ft²) | 20 / 7 | 40 / 22 | Rheology increases (flocculation) |
+| API Filtrate (ml) | 5.0 | 9.8 | Filtrate increases |
+| MBT (lb/bbl) | 12.0 | 12.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 10.2 / 1.5 | **8.9 / 2.5** | **pH drops, Pm rises** |
+| **Pf / Mf** | 1.0 / 1.6 | **1.5 / 5.2** | **Mf spikes ($2Pf < Mf$)** |
+| Chlorides (mg/L) | 800 | 800 | No Change |
+| Hardness Ca++ (mg/L) | 60 | 60 | No Change |
+
+* **Contaminant:** Bicarbonates
+* **Primary Treatment:** Add Lime
+* **Dosage:** **1.1541 lb/bbl**
+* **Diagnostic Rationale:** Pf increases slightly, but Mf spikes. $2Pf = 3.0 < Mf = 5.2$ diagnoses Bicarbonate ($HCO_3^-$). pH drops to 8.9 while hardness is constant.
+* **Calculation:**
+  $$\text{Day 2 } HCO_3^- = 1220 \times (5.2 - 2 \times 1.5) = 2684\text{ mg/L}$$
+  $$\text{Day 1 } HCO_3^- = 0\text{ mg/L}\quad (\text{since } 2Pf = 2.0 \ge Mf = 1.6)$$
+  $$\Delta HCO_3^- = 2684 - 0 = 2684\text{ mg/L}$$
+  $$\text{Dosage} = 2684 \times 0.00043 = \mathbf{1.1541\text{ lb/bbl}}$$
+
+---
+
+### Case 20: Bicarbonates (Case 3)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 120 | 123 | No Change |
+| Weight (lb/gal) | 14.5 | 14.5 | No Change |
+| PV (cP) / YP (lb/100ft²) | 32 / 12 | 54 / 35 | Rheology increases |
+| API Filtrate (ml) | 6.0 | 11.5 | Filtrate increases |
+| MBT (lb/bbl) | 16.0 | 16.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 10.0 / 1.8 | **8.7 / 3.8** | **pH drops, Pm rises** |
+| **Pf / Mf** | 1.2 / 2.0 | **2.0 / 8.4** | **Mf spikes ($2Pf < Mf$)** |
+| Chlorides (mg/L) | 1500 | 1500 | No Change |
+| Hardness Ca++ (mg/L) | 80 | 80 | No Change |
+
+* **Contaminant:** Bicarbonates
+* **Primary Treatment:** Add Lime
+* **Dosage:** **2.3082 lb/bbl**
+* **Diagnostic Rationale:** Mf spikes to 8.4 while Pf is 2.0 ($2Pf = 4.0 < Mf = 8.4$). pH drops to 8.7.
+* **Calculation:**
+  $$\text{Day 2 } HCO_3^- = 1220 \times (8.4 - 2 \times 2.0) = 5368\text{ mg/L}$$
+  $$\text{Day 1 } HCO_3^- = 0\text{ mg/L}\quad (\text{since } 2Pf = 2.4 \ge Mf = 2.0)$$
+  $$\Delta HCO_3^- = 5368 - 0 = 5368\text{ mg/L}$$
+  $$\text{Dosage} = 5368 \times 0.00043 = \mathbf{2.3082\text{ lb/bbl}}$$
+
+---
+
+### Case 21: Carbonates (Case 2)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 115 | 117 | No Change |
+| Weight (lb/gal) | 13.0 | 13.0 | No Change |
+| PV (cP) / YP (lb/100ft²) | 25 / 10 | 45 / 28 | Rheology increases |
+| API Filtrate (ml) | 6.5 | 13.2 | Filtrate increases |
+| MBT (lb/bbl) | 14.0 | 14.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 9.8 / 2.0 | **10.9 / 6.5** | **pH & Pm rise** |
+| **Pf / Mf** | 1.5 / 2.2 | **6.0 / 12.1** | **Pf & Mf spike ($2Pf \approx Mf$)** |
+| Chlorides (mg/L) | 2000 | 2000 | No Change |
+| **Hardness Ca++ (mg/L)** | 120 | **0** | **Calcium drops to zero** |
+
+* **Contaminant:** Carbonates
+* **Primary Treatment:** Add Gypsum (CaSO4) or Lime
+* **Dosage:** 0 lb/bbl (Not applicable)
+* **Diagnostic Rationale:** Pf (6.0) and Mf (12.1) spike. $2Pf = 12.0 \approx Mf = 12.1$ indicating Carbonates ($CO_3^{2-}$). Calcium drops to 0 mg/L as it precipitates out as $CaCO_3$. Gypsum is preferred due to high pH (10.9).
+
+---
+
+### Case 22: Carbonates (Case 3)
+
+| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
+| :--- | :---: | :---: | :--- |
+| FL Temp (°F) | 120 | 122 | No Change |
+| Weight (lb/gal) | 12.2 | 12.2 | No Change |
+| PV (cP) / YP (lb/100ft²) | 22 / 8 | 38 / 23 | Rheology increases |
+| API Filtrate (ml) | 5.8 | 11.2 | Filtrate increases |
+| MBT (lb/bbl) | 12.0 | 12.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
+| **pH / Pm** | 9.7 / 1.8 | **10.7 / 5.8** | **pH & Pm rise** |
+| **Pf / Mf** | 1.2 / 1.9 | **5.2 / 10.5** | **Pf & Mf spike ($2Pf \approx Mf$)** |
+| Chlorides (mg/L) | 1500 | 1500 | No Change |
+| **Hardness Ca++ (mg/L)** | 100 | **0** | **Calcium drops to zero** |
+
+* **Contaminant:** Carbonates
+* **Primary Treatment:** Add Gypsum (CaSO4) or Lime
+* **Dosage:** 0 lb/bbl (Not applicable)
+* **Diagnostic Rationale:** Both Pf and Mf spike, and $2Pf = 10.4 \approx Mf = 10.5$. Hardness drops to 0 mg/L. High pH (10.7) makes Gypsum the preferred treatment.

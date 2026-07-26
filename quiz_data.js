@@ -1726,5 +1726,190 @@ const CALCULATIONS_DATA = {
       },
       explanation: "Diagnostic Workflow:\n1. Hardness: Jumps from 60 to 1,200 mg/L (calcium source).\n2. pH & Alkalinity: pH drops from 10.2 to 8.6, Pf/Mf drops to 0.3/0.9. Bicarbonates are present (2Pf < Mf).\n3. Rheology & Fluid loss: Clay flocculation increases YP (5 to 14) and API filtrate spikes to 18.0 ml.\n\nChemical Treatment & Calculation:\nTreat with Soda Ash (Na2CO3) to precipitate Calcium:\nCa++ + Na2CO3 -> CaCO3 v + 2Na+\n\nDosage calculation:\n- Calcium increase = 1200 - 60 = 1140 mg/L.\n- Soda Ash Factor = 0.000925 lb/bbl per mg/L Ca\n- Dosage = 1140 * 0.000925 = 1.0545 lb/bbl."
     }
+,
+    {
+      id: "case15",
+      name: "Case 15: Cement (Case 3)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "115", day2: "120", changed: false },
+        { name: "Weight (lb/gal)", day1: "12.5", day2: "12.6", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "22 / 8", day2: "36 / 24", changed: true },
+        { name: "API Filtrate (ml)", day1: "5.2", day2: "18.5", changed: true },
+        { name: "MBT (lb/bbl)", day1: "14.0", day2: "14.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "9.6 / 0.9", day2: "12.0 / 4.8", changed: true },
+        { name: "Pf / Mf", day1: "0.6 / 1.1", day2: "3.5 / 3.8", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1800", day2: "1800", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "80", day2: "680", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "sodium_bicarbonate",
+        dosage: 0.4404
+      },
+      explanation: "Diagnostic Workflow:\n1. pH & Pm: Spikes massively (pH 12.0, Pm 4.8), and $2Pf = 7.0 > Mf = 3.8$ (high hydroxyl OH- ions from cement dissolution).\n2. Hardness: Jumps from 80 to 680 mg/L (massive calcium source).\n3. Rheology & Fluid Loss: High pH and calcium flocculate active clays, spiking PV/YP and increasing filtrate to 18.5 ml.\n\nChemical Treatment & Calculation:\nTreat with Sodium Bicarbonate (NaHCO3) to precipitate Calcium as CaCO3:\nCa(OH)2 + NaHCO3 -> CaCO3 v + NaOH + H2O\n\nDosage calculation:\n- Calcium increase = 680 - 80 = 600 mg/L.\n- NaHCO3 Factor = 0.000734 lb/bbl per mg/L Ca\n- Dosage = 600 * 0.000734 = 0.4404 lb/bbl."
+    },
+    {
+      id: "case16",
+      name: "Case 16: Cement (Case 4)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "125", day2: "127", changed: false },
+        { name: "Weight (lb/gal)", day1: "10.8", day2: "10.9", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "16 / 5", day2: "28 / 18", changed: true },
+        { name: "API Filtrate (ml)", day1: "4.8", day2: "14.2", changed: true },
+        { name: "MBT (lb/bbl)", day1: "12.0", day2: "12.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "9.4 / 0.7", day2: "11.9 / 3.9", changed: true },
+        { name: "Pf / Mf", day1: "0.4 / 0.9", day2: "2.8 / 3.0", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1200", day2: "1200", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "60", day2: "510", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "sodium_bicarbonate",
+        dosage: 0.3303
+      },
+      explanation: "Diagnostic Workflow:\n1. pH & Pm: Spikes massively (pH 11.9, Pm 3.9), and $2Pf = 5.6 > Mf = 3.0$ (high hydroxyl OH- ions from cement dissolution).\n2. Hardness: Jumps from 60 to 510 mg/L (calcium source).\n3. Rheology & Fluid Loss: Flocculation increases PV/YP and fluid loss.\n\nChemical Treatment & Calculation:\nTreat with Sodium Bicarbonate (NaHCO3) to precipitate Calcium as CaCO3:\nCa(OH)2 + NaHCO3 -> CaCO3 v + NaOH + H2O\n\nDosage calculation:\n- Calcium increase = 510 - 60 = 450 mg/L.\n- NaNaHCO3 Factor = 0.000734 lb/bbl per mg/L Ca\n- Dosage = 450 * 0.000734 = 0.3303 lb/bbl."
+    },
+    {
+      id: "case17",
+      name: "Case 17: Anhydrite / Gypsum (Case 3)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "110", day2: "114", changed: false },
+        { name: "Weight (lb/gal)", day1: "11.8", day2: "11.9", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "24 / 9", day2: "35 / 22", changed: true },
+        { name: "API Filtrate (ml)", day1: "5.5", day2: "12.5", changed: true },
+        { name: "MBT (lb/bbl)", day1: "15.0", day2: "15.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "10.1 / 1.6", day2: "8.4 / 0.4", changed: true },
+        { name: "Pf / Mf", day1: "1.1 / 2.0", day2: "0.2 / 1.1", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1000", day2: "1000", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "80", day2: "480", changed: true }
+      ],
+      answer: {
+        contaminant: "anhydrite_gypsum",
+        treatment: "soda_ash",
+        dosage: 0.37
+      },
+      explanation: "Diagnostic Workflow:\n1. Hardness: Jumps from 80 to 480 mg/L (calcium source).\n2. pH & Alkalinity: pH drops from 10.1 to 8.4. Pf/Mf drops to 0.2/1.1 ($2Pf = 0.4 < Mf = 1.1$, bicarbonate buffer forms). Free calcium precipitates carbonates, depleting pH buffers.\n3. Rheology & Fluid loss: Clay flocculation increases YP (9 to 22) and API filtrate.\n\nChemical Treatment & Calculation:\nTreat with Soda Ash (Na2CO3) to precipitate Calcium as CaCO3:\nCa++ + Na2CO3 -> CaCO3 v + 2Na+\n\nDosage calculation:\n- Calcium increase = 480 - 80 = 400 mg/L.\n- Soda Ash Factor = 0.000925 lb/bbl per mg/L Ca\n- Dosage = 400 * 0.000925 = 0.37 lb/bbl."
+    },
+    {
+      id: "case18",
+      name: "Case 18: Anhydrite / Gypsum (Case 4)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "122", changed: false },
+        { name: "Weight (lb/gal)", day1: "13.5", day2: "13.6", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "28 / 11", day2: "42 / 26", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.2", day2: "14.8", changed: true },
+        { name: "MBT (lb/bbl)", day1: "18.0", day2: "18.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "9.8 / 1.3", day2: "8.5 / 0.5", changed: true },
+        { name: "Pf / Mf", day1: "0.9 / 1.6", day2: "0.3 / 1.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "200", day2: "200", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "960", changed: true }
+      ],
+      answer: {
+        contaminant: "anhydrite_gypsum",
+        treatment: "soda_ash",
+        dosage: 0.7955
+      },
+      explanation: "Diagnostic Workflow:\n1. Hardness: Jumps from 100 to 960 mg/L (calcium source).\n2. pH & Alkalinity: pH and Pm drop. $2Pf = 0.6 < Mf = 1.4$ indicates bicarbonate buildup from carbonate depletion.\n3. Rheology & Fluid loss: Clay flocculation increases viscosity and fluid loss.\n\nChemical Treatment & Calculation:\nTreat with Soda Ash (Na2CO3) to precipitate Calcium:\nCa++ + Na2CO3 -> CaCO3 v + 2Na+\n\nDosage calculation:\n- Calcium increase = 960 - 100 = 860 mg/L.\n- Soda Ash Factor = 0.000925 lb/bbl per mg/L Ca\n- Dosage = 860 * 0.000925 = 0.7955 lb/bbl."
+    },
+    {
+      id: "case19",
+      name: "Case 19: Bicarbonates (Case 2)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "110", day2: "114", changed: false },
+        { name: "Weight (lb/gal)", day1: "12.0", day2: "12.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "20 / 7", day2: "40 / 22", changed: true },
+        { name: "API Filtrate (ml)", day1: "5.0", day2: "9.8", changed: true },
+        { name: "MBT (lb/bbl)", day1: "12.0", day2: "12.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "10.2 / 1.5", day2: "8.9 / 2.5", changed: true },
+        { name: "Pf / Mf", day1: "1.0 / 1.6", day2: "1.5 / 5.2", changed: true },
+        { name: "Chlorides (mg/L)", day1: "800", day2: "800", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "60", day2: "60", changed: false }
+      ],
+      answer: {
+        contaminant: "bicarbonates",
+        treatment: "lime",
+        dosage: 1.1541
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Pf increases slightly (1.0 to 1.5) but Mf spikes significantly (1.6 to 5.2). The ratio $2Pf = 3.0 < Mf = 5.2$ diagnoses Bicarbonate (HCO3-) contamination.\n2. pH & Hardness: pH drops from 10.2 to 8.9. Hardness is stable at 60 mg/L.\n3. Rheology: Carbonate flocculation spikes YP from 7 to 22 lb/100ft².\n\nChemical Treatment & Calculation:\nTreat with Lime (Ca(OH)2) to precipitate carbonates as CaCO3:\nCa(OH)2 + HCO3- -> CaCO3 v + H2O + OH-\n\nDosage calculation:\n- Day 2 Bicarbonate = 1220 * (Mf - 2Pf) = 1220 * (5.2 - 2 * 1.5) = 2684 mg/L.\n- Day 1 Bicarbonate = 0 mg/L (since $2Pf = 2.0 >= Mf = 1.6$).\n- Bicarbonate increase = 2684 mg/L.\n- Lime Factor = 0.00043 lb/bbl per mg/L HCO3-\n- Dosage = 2684 * 0.00043 = 1.1541 lb/bbl."
+    },
+    {
+      id: "case20",
+      name: "Case 20: Bicarbonates (Case 3)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "123", changed: false },
+        { name: "Weight (lb/gal)", day1: "14.5", day2: "14.5", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "32 / 12", day2: "54 / 35", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.0", day2: "11.5", changed: true },
+        { name: "MBT (lb/bbl)", day1: "16.0", day2: "16.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "10.0 / 1.8", day2: "8.7 / 3.8", changed: true },
+        { name: "Pf / Mf", day1: "1.2 / 2.0", day2: "2.0 / 8.4", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1500", day2: "1500", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "80", day2: "80", changed: false }
+      ],
+      answer: {
+        contaminant: "bicarbonates",
+        treatment: "lime",
+        dosage: 2.3082
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Mf spikes significantly (2.0 to 8.4) while Pf rises slightly (1.2 to 2.0). $2Pf = 4.0 < Mf = 8.4$ diagnoses Bicarbonate (HCO3-) contamination.\n2. pH & Hardness: pH drops from 10.0 to 8.7. Hardness is stable at 80 mg/L.\n3. Rheology: Flocculation spikes YP from 12 to 35 lb/100ft².\n\nChemical Treatment & Calculation:\nTreat with Lime (Ca(OH)2) to convert and precipitate carbonates:\nCa(OH)2 + HCO3- -> CaCO3 v + H2O + OH-\n\nDosage calculation:\n- Day 2 Bicarbonate = 1220 * (Mf - 2Pf) = 1220 * (8.4 - 2 * 2.0) = 5368 mg/L.\n- Day 1 Bicarbonate = 0 mg/L (since $2Pf = 2.4 >= Mf = 2.0$).\n- Bicarbonate increase = 5368 mg/L.\n- Lime Factor = 0.00043 lb/bbl per mg/L HCO3-\n- Dosage = 5368 * 0.00043 = 2.3082 lb/bbl."
+    },
+    {
+      id: "case21",
+      name: "Case 21: Carbonates (Case 2)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "115", day2: "117", changed: false },
+        { name: "Weight (lb/gal)", day1: "13.0", day2: "13.0", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "25 / 10", day2: "45 / 28", changed: true },
+        { name: "API Filtrate (ml)", day1: "6.5", day2: "13.2", changed: true },
+        { name: "MBT (lb/bbl)", day1: "14.0", day2: "14.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "9.8 / 2.0", day2: "10.9 / 6.5", changed: true },
+        { name: "Pf / Mf", day1: "1.5 / 2.2", day2: "6.0 / 12.1", changed: true },
+        { name: "Chlorides (mg/L)", day1: "2000", day2: "2000", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "120", day2: "0", changed: true }
+      ],
+      answer: {
+        contaminant: "carbonates",
+        treatment: "gypsum_or_lime",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Both Pf (6.0) and Mf (12.1) spike. The ratio $2Pf = 12.0 \approx Mf = 12.1$ indicates Carbonates (CO3=) are the primary alkalinity ion.\n2. pH & Hardness: pH rises to 10.9. Hardness drops to 0 mg/L because the massive carbonate presence precipitates all free calcium as CaCO3.\n3. Rheology: Flocculation increases viscosity and fluid loss.\n\nRecommended Treatment:\nAdd Gypsum (CaSO4) or Lime (Ca(OH)2) to supply Calcium and precipitate CaCO3. Gypsum is preferred when pH is already high (10.9) to prevent further pH buildup."
+    },
+    {
+      id: "case22",
+      name: "Case 22: Carbonates (Case 3)",
+      note: "",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "122", changed: false },
+        { name: "Weight (lb/gal)", day1: "12.2", day2: "12.2", changed: false },
+        { name: "PV (cP) / YP (lb/100ft²)", day1: "22 / 8", day2: "38 / 23", changed: true },
+        { name: "API Filtrate (ml)", day1: "5.8", day2: "11.2", changed: true },
+        { name: "MBT (lb/bbl)", day1: "12.0", day2: "12.0", changed: false },
+        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
+        { name: "pH / Pm", day1: "9.7 / 1.8", day2: "10.7 / 5.8", changed: true },
+        { name: "Pf / Mf", day1: "1.2 / 1.9", day2: "5.2 / 10.5", changed: true },
+        { name: "Chlorides (mg/L)", day1: "1500", day2: "1500", changed: false },
+        { name: "Hardness Ca++ (mg/L)", day1: "100", day2: "0", changed: true }
+      ],
+      answer: {
+        contaminant: "carbonates",
+        treatment: "gypsum_or_lime",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Pf & Mf: Both Pf and Mf spike, and $2Pf = 10.4 \approx Mf = 10.5$, indicating Carbonates (CO3=) are the primary alkalinity ion.\n2. pH & Hardness: pH rises from 9.7 to 10.7. Hardness drops to 0 mg/L as carbonates precipitate all free calcium.\n3. Rheology: Flocculation increases PV/YP and fluid loss.\n\nRecommended Treatment:\nAdd Gypsum (CaSO4) or Lime to precipitate carbonates. Gypsum is preferred due to high pH (10.7)."
+    }
   ]
 };
