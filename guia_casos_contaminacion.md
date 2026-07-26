@@ -238,11 +238,10 @@ Here is the complete reference of all 14 cases included in the simulator.
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **0** | **Calcium drops to zero** |
 
-* **Field Note:** Rotten egg odor detected at the shakers.
 * **Contaminant:** Hydrogen Sulfide Gas (H2S)
 * **Primary Treatment:** Add H2S Scavenger
 * **Dosage:** 0 lb/bbl (Not applicable)
-* **Diagnostic Rationale:** Rotten egg odor is a pathognomonic field indicator for H2S. Acidic H2S gas reacts with hydroxyl (OH-) buffers, destroying pH and alkalinity. Sulfides precipitate calcium/metals as black insoluble metal sulfides.
+* **Diagnostic Rationale:** Acidic H2S gas reacts with hydroxyl ($OH^-$) buffers, destroying pH (down to 8.3) and Pm (down to 0.4). Sulfides precipitate calcium as black insoluble sulfides, dropping calcium hardness to 0 mg/L.
 
 ---
 

@@ -53,9 +53,9 @@ $$\text{Treatment Dosage (ppb)} = (\text{Affected Concentration} - \text{Origina
 
 ---
 
-# The 15 Study Cases in Detail
+# The 14 Study Cases in Detail
 
-Here is the complete reference of all 15 cases included in the simulator.
+Here is the complete reference of all 14 cases included in the simulator.
 
 ---
 
@@ -67,7 +67,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 14.0 | No Change |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity & YP increase (Thermal Flocculation) |
 | API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases (polymer degradation) |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | pH / Pm | 10.0 / 1.5 | 9.1 / 0.7 | Drop slightly due to water dissociation |
 | Pf / Mf | 1.0 / 1.8 | 0.7 / 1.1 | Decline in alkalinity buffer |
 | Chlorides (mg/L) | 300 | 300 | No Change |
@@ -88,7 +89,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | **Weight (lb/gal)** | 14.0 | **13.6** | **Decrease** (diluted by water) |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 27 / 18 | PV drops (solids dilution), YP increases |
 | Retort (Solids / Water %) | 17 / 83 | **13 / 87** | Solids decrease, water volume increases |
-| MBT (lb/bbl eq) | 2.5 | **2.0** | Clay concentration diluted |
+| MBT (lb/bbl) | 2.5 | **2.0** | Clay concentration diluted |
+| **Sand Content (%)** | Tr | Tr | No Change |
 | pH / Pm | 10.0 / 1.5 | 8.3 / 0.5 | Severe pH and alkalinity drop |
 | Pf / Mf | 1.0 / 1.8 | 0.2 / 1.3 | Alkalinity drop |
 | **Chlorides (mg/L)** | 300 | **6000** | **Massive salting/chlorides spike** |
@@ -109,7 +111,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | **Weight (lb/gal)** | 14.0 | **13.6** | **Decrease** (diluted by water) |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | **24 / 7** | Both decrease (pure mechanical dilution) |
 | Retort (Solids / Water %) | 17 / 83 | **13 / 87** | Total solids volume drops |
-| MBT (lb/bbl eq) | 2.5 | **2.0** | Clay concentration diluted |
+| MBT (lb/bbl) | 2.5 | **2.0** | Clay concentration diluted |
+| **Sand Content (%)** | Tr | Tr | No Change |
 | pH / Pm | 10.0 / 1.5 | 9.3 / 1.0 | Diluted pH and alkalinity |
 | Pf / Mf | 1.0 / 1.1 | 0.8 / 0.9 | Proportional decrease |
 | **Chlorides (mg/L)** | 1200 | **600** | **Chlorides drop to half** |
@@ -130,7 +133,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Flocculated rheology |
 | API Filtrate (ml) | 6.0 | **28.8** | **Massive fluid loss spike** |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 10.0 / 1.5 | **12.1 / 6.7** | **Massive pH & Mud Alkalinity spike** |
 | Pf / Mf | 1.0 / 1.8 | **4.4 / 4.5** | Pf matches Mf ($2Pf > Mf$, high OH-) |
 | Chlorides (mg/L) | 300 | 300 | No Change |
@@ -154,7 +158,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Clay flocculation increases rheology |
 | API Filtrate (ml) | 6.0 | 11.1 | Flocculation increases fluid loss |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.5** | **pH and alkalinity drop** |
 | Pf / Mf | 1.0 / 1.8 | **0.2 / 1.3** | Depressed alkalinity ($2Pf < Mf$, high HCO3-) |
 | Chlorides (mg/L) | 300 | 300 | No Change |
@@ -178,7 +183,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 14.0 | No Change |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 55 / 34 | High carbonate flocculation |
 | API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | pH / Pm | 10.0 / 1.5 | 8.8 / 3.3 | pH drops; Pm rises due to dissolved salts |
 | **Pf / Mf** | 1.0 / 1.8 | **2.2 / 7.4** | **Massive Mf spike**, Pf rises slightly |
 | Chlorides (mg/L) | 300 | 300 | No Change |
@@ -203,7 +209,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 15.0 | 15.0 | No Change |
 | PV (cP) / YP (lb/100ft²) | 33 / 11 | 55 / 32 | Massive rheological thickening |
 | API Filtrate (ml) | 8.0 | 16.8 | Filtrate control degraded |
-| MBT (lb/bbl eq) | 20 | 20 | No Change |
+| MBT (lb/bbl) | 20 | 20 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 9.5 / 2.6 | **10.8 / 8.7** | **pH spikes, Mud alkalinity rises** |
 | **Pf / Mf** | 2.2 / 3.1 | **8.2 / 16.3** | **Alkalinities jump** ($2Pf \approx Mf$) |
 | Chlorides (mg/L) | 4000 | 4000 | No Change |
@@ -224,17 +231,17 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 13.7 | Slightly drops |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity increases |
 | API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.4** | **Severe drop in pH and Pm** |
 | **Pf / Mf** | 1.0 / 1.8 | **0.1 / 0.2** | **Alkalinity buffer is destroyed** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **0** | **Calcium drops to zero** |
 
-* **Field Note:** Rotten egg odor detected at the shakers.
 * **Contaminant:** Hydrogen Sulfide Gas (H2S)
 * **Primary Treatment:** Add H2S Scavenger
 * **Dosage:** 0 lb/bbl (Not applicable)
-* **Diagnostic Rationale:** Rotten egg odor is a pathognomonic field indicator for H2S. Acidic H2S gas reacts with hydroxyl (OH-) buffers, destroying pH and alkalinity. Sulfides precipitate calcium/metals as black insoluble metal sulfides.
+* **Diagnostic Rationale:** Acidic H2S gas reacts with hydroxyl ($OH^-$) buffers, destroying pH (down to 8.3) and Pm (down to 0.4). Sulfides precipitate calcium as black insoluble sulfides, dropping calcium hardness to 0 mg/L.
 
 ---
 
@@ -246,7 +253,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
 | PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity & YP increase (Salt flocculation) |
 | API Filtrate (ml) | 6.0 | 11.1 | Fluid loss control degraded |
-| MBT (lb/bbl eq) | 2.5 | 2.5 | No Change |
+| MBT (lb/bbl) | 2.5 | 2.5 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | pH / Pm | 10.0 / 1.5 | 9.9 / 1.3 | Slight dilution drop |
 | Pf / Mf | 1.0 / 1.8 | 0.7 / 1.4 | Slight drop |
 | **Chlorides (mg/L)** | 300 | **11000** | **Massive Chlorides Spike** |
@@ -267,7 +275,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | **Weight (lb/gal)** | 12.0 | **12.4** | **Mud Weight increases** |
 | PV (cP) / YP (lb/100ft²) | 20 / 8 | 35 / 22 | Rheology jumps from high surface area |
 | **Retort Solids (%)** | 10 | **15** | **Solids volume increases** |
-| **MBT (lb/bbl eq)** | 15.0 | **25.0** | **MBT spikes (active clays)** |
+| **MBT (lb/bbl)** | 15.0 | **25.0** | **MBT spikes (active clays)** |
+| **Sand Content (%)** | Tr | Tr | No Change |
 | pH / Pm | 9.5 / 1.2 | 9.2 / 0.9 | Stable |
 | Pf / Mf | 0.8 / 1.5 | 0.6 / 1.2 | Stable |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
@@ -288,8 +297,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | **Weight (lb/gal)** | 12.0 | **12.5** | **Mud Weight increases** |
 | PV (cP) / YP (lb/100ft²) | 20 / 8 | 32 / 15 | PV increases from solids friction |
 | **Retort Solids (%)** | 10 | **16** | **Solids volume increases** |
-| MBT (lb/bbl eq) | 15.0 | 15.0 | No Change |
-| **Sand (%)** | Tr | **3.5%** | **Sand content accumulation** |
+| MBT (lb/bbl) | 15.0 | 15.0 | No Change |
+| **Sand Content (%)** | Tr | **3.5%** | **Sand content accumulation** |
 | pH / Pm | 9.5 / 1.2 | 9.3 / 1.0 | Stable |
 | Pf / Mf | 0.8 / 1.5 | 0.7 / 1.4 | Stable |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
@@ -302,29 +311,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 12: Bacterial Contamination
-
-| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
-| :--- | :---: | :---: | :--- |
-| FL Temp (°F) | 120 | 125 | No Change |
-| Weight (lb/gal) | 15.0 | 15.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 33 / 8 | 47 / 17 | Rheology rises due to clay flocculation |
-| **API Filtrate (ml)** | 6.0 | **16.8** | **Filtrate spikes from polymer degradation** |
-| MBT (lb/bbl eq) | 4.0 | 4.0 | No Change |
-| **pH / Pm** | 10.5 / 1.6 | **8.5 / 0.8** | **pH and Pm drop sharply** |
-| Pf / Mf | 1.2 / 3.1 | 0.2 / 0.4 | Alkalinity depleted |
-| Chlorides (mg/L) | 4000 | 4000 | No Change |
-| Hardness Ca++ (mg/L) | 200 | 150 | Slight decrease |
-
-* **Field Note:** Foul odor reported at the shakers.
-* **Contaminant:** Bacterial Contamination
-* **Primary Treatment:** Add biocide
-* **Dosage:** 0 lb/bbl (Not applicable)
-* **Diagnostic Rationale:** A foul, fermenting odor combined with a massive filtrate spike (6.0 to 16.8 ml) indicates bacteria are digesting organic fluid loss polymers (starch, starch-derivatives, polymers). Acidic bacterial byproducts drop pH, which flocculates clays, rising YP.
-
----
-
-### Case 13: Cement (Case 2)
+### Case 12: Cement (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
@@ -332,7 +319,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 11.5 | 11.6 | No Change |
 | PV (cP) / YP (lb/100ft²) | 18 / 6 | 32 / 20 | Flocculation thickening |
 | API Filtrate (ml) | 4.5 | 15.0 | Fluid loss control degraded |
-| MBT (lb/bbl eq) | 12.0 | 12.0 | No Change |
+| MBT (lb/bbl) | 12.0 | 12.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 9.2 / 0.8 | **12.2 / 5.5** | **Massive pH and Mud Alkalinity spike** |
 | Pf / Mf | 0.5 / 1.2 | **4.1 / 4.4** | Pf approaches Mf ($2Pf > Mf$, high OH-) |
 | Chlorides (mg/L) | 2500 | 2500 | No Change |
@@ -348,7 +336,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 14: Salt Water Influx (Case 2)
+### Case 13: Salt Water Influx (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
@@ -356,7 +344,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | **Weight (lb/gal)** | 16.0 | **15.3** | **Mud Weight decreases** |
 | PV (cP) / YP (lb/100ft²) | 40 / 15 | 58 / 28 | PV rises (viscosified by salt), YP doubles |
 | **Retort Solids (%)** | 30 | **23** | **Sols drop due to water volume dilution** |
-| MBT (lb/bbl eq) | 20.0 | **16.0** | Clay concentration diluted |
+| MBT (lb/bbl) | 20.0 | **16.0** | Clay concentration diluted |
+| **Sand Content (%)** | Tr | Tr | No Change |
 | pH / Pm | 10.5 / 2.0 | 9.0 / 0.8 | Alkalinity depleted |
 | Pf / Mf | 1.5 / 2.8 | 0.5 / 1.2 | Alkalinity drop |
 | **Chlorides (mg/L)** | 15000 | **45000** | **Chlorides spike massively (x3)** |
@@ -369,7 +358,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 15: Anhydrite / Gypsum (Case 2)
+### Case 14: Anhydrite / Gypsum (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
@@ -377,7 +366,8 @@ Here is the complete reference of all 15 cases included in the simulator.
 | Weight (lb/gal) | 10.5 | 10.6 | No Change |
 | PV (cP) / YP (lb/100ft²) | 15 / 5 | 25 / 14 | Flocculated rheology |
 | API Filtrate (ml) | 5.0 | 18.0 | Spiked fluid loss |
-| MBT (lb/bbl eq) | 10.0 | 10.0 | No Change |
+| MBT (lb/bbl) | 10.0 | 10.0 | No Change |
+| Sand Content (%) | Tr | Tr | No Change |
 | **pH / Pm** | 10.2 / 1.8 | **8.6 / 0.5** | **pH and Pm drop sharply** |
 | Pf / Mf | 1.2 / 2.1 | **0.3 / 0.9** | Alkalinity drops ($2Pf < Mf$, high HCO3-) |
 | Chlorides (mg/L) | 800 | 800 | No Change |

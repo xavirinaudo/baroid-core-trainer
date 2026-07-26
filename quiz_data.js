@@ -1568,7 +1568,7 @@ const CALCULATIONS_DATA = {
     {
       id: "case8",
       name: "Case 8: Hydrogen Sulfide Gas (H2S)",
-      note: "Field Note: Rotten egg odor detected at the shakers.",
+      note: "",
       properties: [
         { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
         { name: "Weight (lb/gal)", day1: "14.0", day2: "13.7", changed: true },
@@ -1586,7 +1586,7 @@ const CALCULATIONS_DATA = {
         treatment: "h2s_scavenger",
         dosage: 0
       },
-      explanation: "Diagnostic Workflow:\n1. Field note: Rotten egg odor is a classic indicator of H2S gas.\n2. pH & Alkalinity: Drops drastically (pH from 10.0 to 8.3, Pf/Mf to 0.1/0.2) because acidic H2S gas reacts with and consumes hydroxyl (OH-) buffers.\n3. Hardness: Drops to 0 mg/L as sulfides precipitate calcium/metals as insoluble sulfides.\n\nRecommended Treatment:\nAdd H2S Scavenger (Zinc Carbonate or Zinc Oxide) to precipitate sulfides, and Caustic Soda (NaOH) to raise pH above 10.0 for safety buffer."
+      explanation: "Diagnostic Workflow:\n1. pH & Alkalinity: Drops drastically (pH from 10.0 to 8.3, Pm from 1.5 to 0.4, Pf/Mf to 0.1/0.2) because acidic H2S gas reacts with and consumes hydroxyl (OH-) buffers.\n2. Hardness: Drops to 0 mg/L as sulfides precipitate calcium/metals as insoluble sulfides.\n3. Rheology: Viscosity (PV/YP) and API fluid loss increase due to clay flocculation under depressed pH.\n\nRecommended Treatment:\nAdd H2S Scavenger (Zinc Carbonate or Zinc Oxide) to precipitate sulfides, and Caustic Soda (NaOH) to raise pH above 10.0 for safety buffer."
     },
     {
       id: "case9",
