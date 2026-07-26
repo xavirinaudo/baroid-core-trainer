@@ -63,14 +63,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
-| **FL Temp (°F)** | 120 | **185** | **Extreme Temperature Spike** |
+| **FL Temp (°F)** | 120 | **185** | **Temperature Spike** |
 | Weight (lb/gal) | 14.0 | 14.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity & YP increase (Thermal Flocculation) |
-| API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases (polymer degradation) |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **45 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.1** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| pH / Pm | 10.0 / 1.5 | 9.1 / 0.7 | Drop slightly due to water dissociation |
-| Pf / Mf | 1.0 / 1.8 | 0.7 / 1.1 | Decline in alkalinity buffer |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **9.1 / 0.7** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **0.7 / 1.1** | **Alkalinity changes** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | Hardness Ca++ (mg/L) | 100 | 100 | No Change |
 
@@ -86,15 +88,17 @@ Here is the complete reference of all 22 cases included in the simulator.
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
-| **Weight (lb/gal)** | 14.0 | **13.6** | **Decrease** (diluted by water) |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 27 / 18 | PV drops (solids dilution), YP increases |
-| Retort (Solids / Water %) | 17 / 83 | **13 / 87** | Solids decrease, water volume increases |
-| MBT (lb/bbl) | 2.5 | **2.0** | Clay concentration diluted |
-| **Sand Content (%)** | Tr | Tr | No Change |
-| pH / Pm | 10.0 / 1.5 | 8.3 / 0.5 | Severe pH and alkalinity drop |
-| Pf / Mf | 1.0 / 1.8 | 0.2 / 1.3 | Alkalinity drop |
-| **Chlorides (mg/L)** | 300 | **6000** | **Massive salting/chlorides spike** |
-| Hardness Ca++ (mg/L) | 100 | 150 | Slight increase from influx salts |
+| **Weight (lb/gal)** | 14.0 | **13.6** | **Mud Weight decreases** |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **27 / 18** | **Viscosity increases** |
+| API Filtrate (ml) | N/A | N/A | No Change |
+| **MBT (lb/bbl)** | 2.5 | **2.0** | **Clay content drops** |
+| Sand Content (%) | Tr | Tr | No Change |
+| **Retort Water (%)** | 83 | **87** | **Water % increases** |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.5** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **0.2 / 1.3** | **Alkalinity changes** |
+| **Chlorides (mg/L)** | 300 | **6000** | **Chlorides spike** |
+| **Hardness Ca++ (mg/L)** | 100 | **150** | **Calcium hardness spikes** |
 
 * **Contaminant:** Salt Water Influx
 * **Primary Treatment:** Increase density to stop influx, then dilute
@@ -108,15 +112,17 @@ Here is the complete reference of all 22 cases included in the simulator.
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
-| **Weight (lb/gal)** | 14.0 | **13.6** | **Decrease** (diluted by water) |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | **24 / 7** | Both decrease (pure mechanical dilution) |
-| Retort (Solids / Water %) | 17 / 83 | **13 / 87** | Total solids volume drops |
-| MBT (lb/bbl) | 2.5 | **2.0** | Clay concentration diluted |
-| **Sand Content (%)** | Tr | Tr | No Change |
-| pH / Pm | 10.0 / 1.5 | 9.3 / 1.0 | Diluted pH and alkalinity |
-| Pf / Mf | 1.0 / 1.1 | 0.8 / 0.9 | Proportional decrease |
-| **Chlorides (mg/L)** | 1200 | **600** | **Chlorides drop to half** |
-| Hardness Ca++ (mg/L) | 100 | 80 | Diluted calcium hardness |
+| **Weight (lb/gal)** | 14.0 | **13.6** | **Mud Weight decreases** |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **24 / 7** | **Viscosity increases** |
+| API Filtrate (ml) | N/A | N/A | No Change |
+| **MBT (lb/bbl)** | 2.5 | **2.0** | **Clay content drops** |
+| Sand Content (%) | Tr | Tr | No Change |
+| **Retort Water (%)** | 83 | **87** | **Water % increases** |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **9.3 / 1.0** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.1 | **0.8 / 0.9** | **Alkalinity changes** |
+| **Chlorides (mg/L)** | 1200 | **600** | **Chlorides spike** |
+| **Hardness Ca++ (mg/L)** | 100 | **80** | **Calcium drops to zero** |
 
 * **Contaminant:** Fresh Water Influx
 * **Primary Treatment:** Stop the influx weighting up
@@ -131,12 +137,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 123 | No Change |
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Flocculated rheology |
-| API Filtrate (ml) | 6.0 | **28.8** | **Massive fluid loss spike** |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **45 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **28.8** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.0 / 1.5 | **12.1 / 6.7** | **Massive pH & Mud Alkalinity spike** |
-| Pf / Mf | 1.0 / 1.8 | **4.4 / 4.5** | Pf matches Mf ($2Pf > Mf$, high OH-) |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **12.1 / 6.7** | **pH & Pm rise** |
+| **Pf / Mf** | 1.0 / 1.8 | **4.4 / 4.5** | **Alkalinity changes** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **800** | **Calcium hardness spikes** |
 
@@ -156,12 +164,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Clay flocculation increases rheology |
-| API Filtrate (ml) | 6.0 | 11.1 | Flocculation increases fluid loss |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **45 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.1** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.5** | **pH and alkalinity drop** |
-| Pf / Mf | 1.0 / 1.8 | **0.2 / 1.3** | Depressed alkalinity ($2Pf < Mf$, high HCO3-) |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.5** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **0.2 / 1.3** | **Alkalinity changes** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **800** | **Calcium hardness spikes** |
 
@@ -181,12 +191,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | Weight (lb/gal) | 14.0 | 14.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 55 / 34 | High carbonate flocculation |
-| API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **55 / 34** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.1** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| pH / Pm | 10.0 / 1.5 | 8.8 / 3.3 | pH drops; Pm rises due to dissolved salts |
-| **Pf / Mf** | 1.0 / 1.8 | **2.2 / 7.4** | **Massive Mf spike**, Pf rises slightly |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **8.8 / 3.3** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **2.2 / 7.4** | **Alkalinity changes** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | Hardness Ca++ (mg/L) | 100 | 100 | No Change |
 
@@ -207,14 +219,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | Weight (lb/gal) | 15.0 | 15.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 33 / 11 | 55 / 32 | Massive rheological thickening |
-| API Filtrate (ml) | 8.0 | 16.8 | Filtrate control degraded |
+| **PV (cP) / YP (lb/100ft²)** | 33 / 11 | **55 / 32** | **Viscosity increases** |
+| **API Filtrate (ml)** | 8.0 | **16.8** | **Filtrate increases** |
 | MBT (lb/bbl) | 20 | 20 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 9.5 / 2.6 | **10.8 / 8.7** | **pH spikes, Mud alkalinity rises** |
-| **Pf / Mf** | 2.2 / 3.1 | **8.2 / 16.3** | **Alkalinities jump** ($2Pf \approx Mf$) |
+| Retort Water (%) | 75 | 75 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.5 / 2.6 | **10.8 / 8.7** | **pH & Pm rise** |
+| **Pf / Mf** | 2.2 / 3.1 | **8.2 / 16.3** | **Alkalinity changes** |
 | Chlorides (mg/L) | 4000 | 4000 | No Change |
-| **Hardness Ca++ (mg/L)** | 200 | **0** | **Calcium precipitates to zero** |
+| **Hardness Ca++ (mg/L)** | 200 | **0** | **Calcium drops to zero** |
 
 * **Contaminant:** Carbonates
 * **Primary Treatment:** Add Gypsum (CaSO4) or Lime
@@ -228,13 +242,15 @@ Here is the complete reference of all 22 cases included in the simulator.
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
-| Weight (lb/gal) | 14.0 | 13.7 | Slightly drops |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity increases |
-| API Filtrate (ml) | 6.0 | 11.1 | Filtrate increases |
+| **Weight (lb/gal)** | 14.0 | **13.7** | **Mud Weight decreases** |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **45 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.1** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.4** | **Severe drop in pH and Pm** |
-| **Pf / Mf** | 1.0 / 1.8 | **0.1 / 0.2** | **Alkalinity buffer is destroyed** |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **8.3 / 0.4** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **0.1 / 0.2** | **Alkalinity changes** |
 | Chlorides (mg/L) | 300 | 300 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **0** | **Calcium drops to zero** |
 
@@ -251,14 +267,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | Weight (lb/gal) | 14.0 | 14.1 | No Change |
-| PV (cP) / YP (lb/100ft²) | 30 / 10 | 45 / 18 | Viscosity & YP increase (Salt flocculation) |
-| API Filtrate (ml) | 6.0 | 11.1 | Fluid loss control degraded |
+| **PV (cP) / YP (lb/100ft²)** | 30 / 10 | **45 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.1** | **Filtrate increases** |
 | MBT (lb/bbl) | 2.5 | 2.5 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| pH / Pm | 10.0 / 1.5 | 9.9 / 1.3 | Slight dilution drop |
-| Pf / Mf | 1.0 / 1.8 | 0.7 / 1.4 | Slight drop |
-| **Chlorides (mg/L)** | 300 | **11000** | **Massive Chlorides Spike** |
-| Hardness Ca++ (mg/L) | 100 | 150 | Slight increase |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.5 | **9.9 / 1.3** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.8 | **0.7 / 1.4** | **Alkalinity changes** |
+| **Chlorides (mg/L)** | 300 | **11000** | **Chlorides spike** |
+| **Hardness Ca++ (mg/L)** | 100 | **150** | **Calcium hardness spikes** |
 
 * **Contaminant:** Salt (NaCl)
 * **Primary Treatment:** Dilute system with base fluid
@@ -273,14 +291,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | **Weight (lb/gal)** | 12.0 | **12.4** | **Mud Weight increases** |
-| PV (cP) / YP (lb/100ft²) | 20 / 8 | 35 / 22 | Rheology jumps from high surface area |
-| **Retort Solids (%)** | 10 | **15** | **Solids volume increases** |
-| **MBT (lb/bbl)** | 15.0 | **25.0** | **MBT spikes (active clays)** |
-| **Sand Content (%)** | Tr | Tr | No Change |
-| pH / Pm | 9.5 / 1.2 | 9.2 / 0.9 | Stable |
-| Pf / Mf | 0.8 / 1.5 | 0.6 / 1.2 | Stable |
+| **PV (cP) / YP (lb/100ft²)** | 20 / 8 | **35 / 22** | **Viscosity increases** |
+| API Filtrate (ml) | N/A | N/A | No Change |
+| **MBT (lb/bbl)** | 15.0 | **25.0** | **Clay content increases** |
+| Sand Content (%) | Tr | Tr | No Change |
+| **Retort Water (%)** | 90 | **85** | **Water % decreases** |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.5 / 1.2 | **9.2 / 0.9** | **pH and Pm drop** |
+| **Pf / Mf** | 0.8 / 1.5 | **0.6 / 1.2** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
-| Hardness Ca++ (mg/L) | 120 | 140 | Stable |
+| Hardness Ca++ (mg/L) | 120 | 140 | No Change |
 
 * **Contaminant:** Active Drilled Solids
 * **Primary Treatment:** Optimize solids control equipment, dilute
@@ -295,14 +315,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 125 | No Change |
 | **Weight (lb/gal)** | 12.0 | **12.5** | **Mud Weight increases** |
-| PV (cP) / YP (lb/100ft²) | 20 / 8 | 32 / 15 | PV increases from solids friction |
-| **Retort Solids (%)** | 10 | **16** | **Solids volume increases** |
+| **PV (cP) / YP (lb/100ft²)** | 20 / 8 | **32 / 15** | **Viscosity increases** |
+| API Filtrate (ml) | N/A | N/A | No Change |
 | MBT (lb/bbl) | 15.0 | 15.0 | No Change |
-| **Sand Content (%)** | Tr | **3.5%** | **Sand content accumulation** |
-| pH / Pm | 9.5 / 1.2 | 9.3 / 1.0 | Stable |
-| Pf / Mf | 0.8 / 1.5 | 0.7 / 1.4 | Stable |
+| **Sand Content (%)** | Tr | **3.5%** | **Property changed** |
+| **Retort Water (%)** | 90 | **84** | **Water % decreases** |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.5 / 1.2 | **9.3 / 1.0** | **pH and Pm drop** |
+| **Pf / Mf** | 0.8 / 1.5 | **0.7 / 1.4** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
-| Hardness Ca++ (mg/L) | 120 | 160 | Stable |
+| **Hardness Ca++ (mg/L)** | 120 | **160** | **Calcium hardness spikes** |
 
 * **Contaminant:** Inactive Solids
 * **Primary Treatment:** Optimize solids control equipment, dilute
@@ -317,12 +339,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 130 | 132 | No Change |
 | Weight (lb/gal) | 11.5 | 11.6 | No Change |
-| PV (cP) / YP (lb/100ft²) | 18 / 6 | 32 / 20 | Flocculation thickening |
-| API Filtrate (ml) | 4.5 | 15.0 | Fluid loss control degraded |
+| **PV (cP) / YP (lb/100ft²)** | 18 / 6 | **32 / 20** | **Viscosity increases** |
+| **API Filtrate (ml)** | 4.5 | **15.0** | **Filtrate increases** |
 | MBT (lb/bbl) | 12.0 | 12.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 9.2 / 0.8 | **12.2 / 5.5** | **Massive pH and Mud Alkalinity spike** |
-| Pf / Mf | 0.5 / 1.2 | **4.1 / 4.4** | Pf approaches Mf ($2Pf > Mf$, high OH-) |
+| Retort Water (%) | 86 | 86 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.2 / 0.8 | **12.2 / 5.5** | **pH & Pm rise** |
+| **Pf / Mf** | 0.5 / 1.2 | **4.1 / 4.4** | **Alkalinity changes** |
 | Chlorides (mg/L) | 2500 | 2500 | No Change |
 | **Hardness Ca++ (mg/L)** | 80 | **950** | **Calcium hardness spikes** |
 
@@ -342,14 +366,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 140 | 142 | No Change |
 | **Weight (lb/gal)** | 16.0 | **15.3** | **Mud Weight decreases** |
-| PV (cP) / YP (lb/100ft²) | 40 / 15 | 58 / 28 | PV rises (viscosified by salt), YP doubles |
-| **Retort Solids (%)** | 30 | **23** | **Sols drop due to water volume dilution** |
-| MBT (lb/bbl) | 20.0 | **16.0** | Clay concentration diluted |
-| **Sand Content (%)** | Tr | Tr | No Change |
-| pH / Pm | 10.5 / 2.0 | 9.0 / 0.8 | Alkalinity depleted |
-| Pf / Mf | 1.5 / 2.8 | 0.5 / 1.2 | Alkalinity drop |
-| **Chlorides (mg/L)** | 15000 | **45000** | **Chlorides spike massively (x3)** |
-| Hardness Ca++ (mg/L) | 250 | 600 | High hardness from formation brine |
+| **PV (cP) / YP (lb/100ft²)** | 40 / 15 | **58 / 28** | **Viscosity increases** |
+| API Filtrate (ml) | N/A | N/A | No Change |
+| **MBT (lb/bbl)** | 20.0 | **16.0** | **Clay content drops** |
+| Sand Content (%) | Tr | Tr | No Change |
+| **Retort Water (%)** | 70 | **77** | **Water % increases** |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.5 / 2.0 | **9.0 / 0.8** | **pH and Pm drop** |
+| **Pf / Mf** | 1.5 / 2.8 | **0.5 / 1.2** | **Alkalinity changes** |
+| **Chlorides (mg/L)** | 15000 | **45000** | **Chlorides spike** |
+| **Hardness Ca++ (mg/L)** | 250 | **600** | **Calcium hardness spikes** |
 
 * **Contaminant:** Salt Water Influx
 * **Primary Treatment:** Increase density to stop influx, then dilute
@@ -364,12 +390,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 110 | 115 | No Change |
 | Weight (lb/gal) | 10.5 | 10.6 | No Change |
-| PV (cP) / YP (lb/100ft²) | 15 / 5 | 25 / 14 | Flocculated rheology |
-| API Filtrate (ml) | 5.0 | 18.0 | Spiked fluid loss |
+| **PV (cP) / YP (lb/100ft²)** | 15 / 5 | **25 / 14** | **Viscosity increases** |
+| **API Filtrate (ml)** | 5.0 | **18.0** | **Filtrate increases** |
 | MBT (lb/bbl) | 10.0 | 10.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.2 / 1.8 | **8.6 / 0.5** | **pH and Pm drop sharply** |
-| Pf / Mf | 1.2 / 2.1 | **0.3 / 0.9** | Alkalinity drops ($2Pf < Mf$, high HCO3-) |
+| Retort Water (%) | 88 | 88 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.2 / 1.8 | **8.6 / 0.5** | **pH and Pm drop** |
+| **Pf / Mf** | 1.2 / 2.1 | **0.3 / 0.9** | **Alkalinity changes** |
 | Chlorides (mg/L) | 800 | 800 | No Change |
 | **Hardness Ca++ (mg/L)** | 60 | **1200** | **Calcium hardness spikes** |
 
@@ -389,14 +417,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 115 | 120 | No Change |
 | Weight (lb/gal) | 12.5 | 12.6 | No Change |
-| PV (cP) / YP (lb/100ft²) | 22 / 8 | 36 / 24 | Viscosity & YP spike (Cement Flocculation) |
-| API Filtrate (ml) | 5.2 | 18.5 | Filtrate increases (clay flocculation) |
+| **PV (cP) / YP (lb/100ft²)** | 22 / 8 | **36 / 24** | **Viscosity increases** |
+| **API Filtrate (ml)** | 5.2 | **18.5** | **Filtrate increases** |
 | MBT (lb/bbl) | 14.0 | 14.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 9.6 / 0.9 | **12.0 / 4.8** | **pH & Pm spike (OH- buildup)** |
-| **Pf / Mf** | 0.6 / 1.1 | **3.5 / 3.8** | **Alkalinity increases ($2Pf > Mf$)** |
+| Retort Water (%) | 83 | 83 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.6 / 0.9 | **12.0 / 4.8** | **pH & Pm rise** |
+| **Pf / Mf** | 0.6 / 1.1 | **3.5 / 3.8** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1800 | 1800 | No Change |
-| **Hardness Ca++ (mg/L)** | 80 | **680** | **Calcium spikes** |
+| **Hardness Ca++ (mg/L)** | 80 | **680** | **Calcium hardness spikes** |
 
 * **Contaminant:** Cement
 * **Primary Treatment:** Add Sodium bicarbonate (NaHCO3)
@@ -414,14 +444,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 125 | 127 | No Change |
 | Weight (lb/gal) | 10.8 | 10.9 | No Change |
-| PV (cP) / YP (lb/100ft²) | 16 / 5 | 28 / 18 | Viscosity & YP spike (Cement Flocculation) |
-| API Filtrate (ml) | 4.8 | 14.2 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 16 / 5 | **28 / 18** | **Viscosity increases** |
+| **API Filtrate (ml)** | 4.8 | **14.2** | **Filtrate increases** |
 | MBT (lb/bbl) | 12.0 | 12.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 9.4 / 0.7 | **11.9 / 3.9** | **pH & Pm spike** |
-| **Pf / Mf** | 0.4 / 0.9 | **2.8 / 3.0** | **Alkalinity increases ($2Pf > Mf$)** |
+| Retort Water (%) | 88 | 88 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 9.4 / 0.7 | **11.9 / 3.9** | **pH & Pm rise** |
+| **Pf / Mf** | 0.4 / 0.9 | **2.8 / 3.0** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1200 | 1200 | No Change |
-| **Hardness Ca++ (mg/L)** | 60 | **510** | **Calcium spikes** |
+| **Hardness Ca++ (mg/L)** | 60 | **510** | **Calcium hardness spikes** |
 
 * **Contaminant:** Cement
 * **Primary Treatment:** Add Sodium bicarbonate (NaHCO3)
@@ -439,14 +471,16 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 110 | 114 | No Change |
 | Weight (lb/gal) | 11.8 | 11.9 | No Change |
-| PV (cP) / YP (lb/100ft²) | 24 / 9 | 35 / 22 | Viscosity & YP spike (Clay Flocculation) |
-| API Filtrate (ml) | 5.5 | 12.5 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 24 / 9 | **35 / 22** | **Viscosity increases** |
+| **API Filtrate (ml)** | 5.5 | **12.5** | **Filtrate increases** |
 | MBT (lb/bbl) | 15.0 | 15.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.1 / 1.6 | **8.4 / 0.4** | **pH and Pm drop sharply** |
-| **Pf / Mf** | 1.1 / 2.0 | **0.2 / 1.1** | **Alkalinity drops ($2Pf < Mf$)** |
+| Retort Water (%) | 86 | 86 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.1 / 1.6 | **8.4 / 0.4** | **pH and Pm drop** |
+| **Pf / Mf** | 1.1 / 2.0 | **0.2 / 1.1** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1000 | 1000 | No Change |
-| **Hardness Ca++ (mg/L)** | 80 | **480** | **Calcium spikes** |
+| **Hardness Ca++ (mg/L)** | 80 | **480** | **Calcium hardness spikes** |
 
 * **Contaminant:** Anhydrite / Gypsum
 * **Primary Treatment:** Add Soda ash (Na2CO3)
@@ -464,12 +498,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 122 | No Change |
 | Weight (lb/gal) | 13.5 | 13.6 | No Change |
-| PV (cP) / YP (lb/100ft²) | 28 / 11 | 42 / 26 | Flocculated rheology |
-| API Filtrate (ml) | 6.2 | 14.8 | Spiked fluid loss |
+| **PV (cP) / YP (lb/100ft²)** | 28 / 11 | **42 / 26** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.2 | **14.8** | **Filtrate increases** |
 | MBT (lb/bbl) | 18.0 | 18.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
+| Retort Water (%) | 80 | 80 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
 | **pH / Pm** | 9.8 / 1.3 | **8.5 / 0.5** | **pH and Pm drop** |
-| **Pf / Mf** | 0.9 / 1.6 | **0.3 / 1.4** | **Alkalinity drops ($2Pf < Mf$)** |
+| **Pf / Mf** | 0.9 / 1.6 | **0.3 / 1.4** | **Alkalinity changes** |
 | Chlorides (mg/L) | 200 | 200 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **960** | **Calcium hardness spikes** |
 
@@ -489,12 +525,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 110 | 114 | No Change |
 | Weight (lb/gal) | 12.0 | 12.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 20 / 7 | 40 / 22 | Rheology increases (flocculation) |
-| API Filtrate (ml) | 5.0 | 9.8 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 20 / 7 | **40 / 22** | **Viscosity increases** |
+| **API Filtrate (ml)** | 5.0 | **9.8** | **Filtrate increases** |
 | MBT (lb/bbl) | 12.0 | 12.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.2 / 1.5 | **8.9 / 2.5** | **pH drops, Pm rises** |
-| **Pf / Mf** | 1.0 / 1.6 | **1.5 / 5.2** | **Mf spikes ($2Pf < Mf$)** |
+| Retort Water (%) | 86 | 86 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.2 / 1.5 | **8.9 / 2.5** | **pH and Pm drop** |
+| **Pf / Mf** | 1.0 / 1.6 | **1.5 / 5.2** | **Alkalinity changes** |
 | Chlorides (mg/L) | 800 | 800 | No Change |
 | Hardness Ca++ (mg/L) | 60 | 60 | No Change |
 
@@ -516,12 +554,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 123 | No Change |
 | Weight (lb/gal) | 14.5 | 14.5 | No Change |
-| PV (cP) / YP (lb/100ft²) | 32 / 12 | 54 / 35 | Rheology increases |
-| API Filtrate (ml) | 6.0 | 11.5 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 32 / 12 | **54 / 35** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.0 | **11.5** | **Filtrate increases** |
 | MBT (lb/bbl) | 16.0 | 16.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.0 / 1.8 | **8.7 / 3.8** | **pH drops, Pm rises** |
-| **Pf / Mf** | 1.2 / 2.0 | **2.0 / 8.4** | **Mf spikes ($2Pf < Mf$)** |
+| Retort Water (%) | 75 | 75 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
+| **pH / Pm** | 10.0 / 1.8 | **8.7 / 3.8** | **pH and Pm drop** |
+| **Pf / Mf** | 1.2 / 2.0 | **2.0 / 8.4** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
 | Hardness Ca++ (mg/L) | 80 | 80 | No Change |
 
@@ -543,12 +583,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 115 | 117 | No Change |
 | Weight (lb/gal) | 13.0 | 13.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 25 / 10 | 45 / 28 | Rheology increases |
-| API Filtrate (ml) | 6.5 | 13.2 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 25 / 10 | **45 / 28** | **Viscosity increases** |
+| **API Filtrate (ml)** | 6.5 | **13.2** | **Filtrate increases** |
 | MBT (lb/bbl) | 14.0 | 14.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
+| Retort Water (%) | 83 | 83 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
 | **pH / Pm** | 9.8 / 2.0 | **10.9 / 6.5** | **pH & Pm rise** |
-| **Pf / Mf** | 1.5 / 2.2 | **6.0 / 12.1** | **Pf & Mf spike ($2Pf \approx Mf$)** |
+| **Pf / Mf** | 1.5 / 2.2 | **6.0 / 12.1** | **Alkalinity changes** |
 | Chlorides (mg/L) | 2000 | 2000 | No Change |
 | **Hardness Ca++ (mg/L)** | 120 | **0** | **Calcium drops to zero** |
 
@@ -565,12 +607,14 @@ Here is the complete reference of all 22 cases included in the simulator.
 | :--- | :---: | :---: | :--- |
 | FL Temp (°F) | 120 | 122 | No Change |
 | Weight (lb/gal) | 12.2 | 12.2 | No Change |
-| PV (cP) / YP (lb/100ft²) | 22 / 8 | 38 / 23 | Rheology increases |
-| API Filtrate (ml) | 5.8 | 11.2 | Filtrate increases |
+| **PV (cP) / YP (lb/100ft²)** | 22 / 8 | **38 / 23** | **Viscosity increases** |
+| **API Filtrate (ml)** | 5.8 | **11.2** | **Filtrate increases** |
 | MBT (lb/bbl) | 12.0 | 12.0 | No Change |
 | Sand Content (%) | Tr | Tr | No Change |
+| Retort Water (%) | 83 | 83 | No Change |
+| Retort Oil (%) | 0 | 0 | No Change |
 | **pH / Pm** | 9.7 / 1.8 | **10.7 / 5.8** | **pH & Pm rise** |
-| **Pf / Mf** | 1.2 / 1.9 | **5.2 / 10.5** | **Pf & Mf spike ($2Pf \approx Mf$)** |
+| **Pf / Mf** | 1.2 / 1.9 | **5.2 / 10.5** | **Alkalinity changes** |
 | Chlorides (mg/L) | 1500 | 1500 | No Change |
 | **Hardness Ca++ (mg/L)** | 100 | **0** | **Calcium drops to zero** |
 
