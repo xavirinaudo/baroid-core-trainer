@@ -53,9 +53,9 @@ $$\text{Treatment Dosage (ppb)} = (\text{Affected Concentration} - \text{Origina
 
 ---
 
-# The 15 Study Cases in Detail
+# The 14 Study Cases in Detail
 
-Here is the complete reference of all 15 cases included in the simulator.
+Here is the complete reference of all 14 cases included in the simulator.
 
 ---
 
@@ -312,30 +312,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 12: Bacterial Contamination
-
-| Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
-| :--- | :---: | :---: | :--- |
-| FL Temp (°F) | 120 | 125 | No Change |
-| Weight (lb/gal) | 15.0 | 15.0 | No Change |
-| PV (cP) / YP (lb/100ft²) | 33 / 8 | 47 / 17 | Rheology rises due to clay flocculation |
-| **API Filtrate (ml)** | 6.0 | **16.8** | **Filtrate spikes from polymer degradation** |
-| MBT (lb/bbl) | 4.0 | 4.0 | No Change |
-| Sand Content (%) | Tr | Tr | No Change |
-| **pH / Pm** | 10.5 / 1.6 | **8.5 / 0.8** | **pH and Pm drop sharply** |
-| Pf / Mf | 1.2 / 3.1 | 0.2 / 0.4 | Alkalinity depleted |
-| Chlorides (mg/L) | 4000 | 4000 | No Change |
-| Hardness Ca++ (mg/L) | 200 | 150 | Slight decrease |
-
-* **Field Note:** Foul odor reported at the shakers.
-* **Contaminant:** Bacterial Contamination
-* **Primary Treatment:** Add biocide
-* **Dosage:** 0 lb/bbl (Not applicable)
-* **Diagnostic Rationale:** A foul, fermenting odor combined with a massive filtrate spike (6.0 to 16.8 ml) indicates bacteria are digesting organic fluid loss polymers (starch, starch-derivatives, polymers). Acidic bacterial byproducts drop pH, which flocculates clays, rising YP.
-
----
-
-### Case 13: Cement (Case 2)
+### Case 12: Cement (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
@@ -360,7 +337,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 14: Salt Water Influx (Case 2)
+### Case 13: Salt Water Influx (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
@@ -382,7 +359,7 @@ Here is the complete reference of all 15 cases included in the simulator.
 
 ---
 
-### Case 15: Anhydrite / Gypsum (Case 2)
+### Case 14: Anhydrite / Gypsum (Case 2)
 
 | Mud Property | Day 1 (Base) | Day 2 (Affected) | Change Status |
 | :--- | :---: | :---: | :--- |
