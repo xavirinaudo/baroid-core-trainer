@@ -1163,24 +1163,40 @@ function filterCheatSheet() {
 
 // 5. WBF Contaminants Diagnostics Workspace
 let currentContaminantCase = null;
+let contaminantCasesOrder = [];
+let currentContaminantIndex = 0;
+let contaminantsChecked = false;
 
-function loadRandomContaminantCase() {
+function startContaminantsSession() {
   const cases = CALCULATIONS_DATA.contaminants;
   if (!cases || cases.length === 0) return;
   
-  // Select a random case, avoiding consecutive duplicates if possible
-  let newCase = null;
-  if (cases.length > 1) {
-    do {
-      const rIndex = Math.floor(Math.random() * cases.length);
-      newCase = cases[rIndex];
-    } while (currentContaminantCase && newCase.id === currentContaminantCase.id);
-  } else {
-    newCase = cases[0];
+  // Shuffle cases
+  contaminantCasesOrder = [...cases].sort(() => Math.random() - 0.5);
+  currentContaminantIndex = 0;
+  
+  loadContaminantIndex(0);
+}
+
+function loadContaminantIndex(index) {
+  if (!contaminantCasesOrder || contaminantCasesOrder.length === 0) return;
+  if (index < 0 || index >= contaminantCasesOrder.length) return;
+  
+  currentContaminantIndex = index;
+  currentContaminantCase = contaminantCasesOrder[index];
+  contaminantsChecked = false;
+  
+  // Update progress text
+  const counterEl = document.getElementById('train-cont-counter');
+  if (counterEl) {
+    counterEl.innerText = `${index + 1} of ${contaminantCasesOrder.length}`;
   }
   
-  currentContaminantCase = newCase;
-  loadContaminantCase(newCase);
+  loadContaminantCase(currentContaminantCase);
+}
+
+function loadRandomContaminantCase() {
+  startContaminantsSession();
 }
 
 function loadContaminantCase(entry) {
@@ -1237,14 +1253,24 @@ function loadContaminantCase(entry) {
     tbody.appendChild(tr);
   });
 
-  // Reset input styles
-  document.getElementById('input-cont-name').className = 'input-field';
-  document.getElementById('input-cont-treatment').className = 'input-field';
-  document.getElementById('input-cont-dosage').className = 'input-field';
+  // Reset input styles and enable them
+  const contEl = document.getElementById('input-cont-name');
+  const treatEl = document.getElementById('input-cont-treatment');
+  const dosageEl = document.getElementById('input-cont-dosage');
+  
+  contEl.className = 'input-field';
+  treatEl.className = 'input-field';
+  dosageEl.className = 'input-field';
+  
+  contEl.disabled = false;
+  treatEl.disabled = false;
+  dosageEl.disabled = false;
+
   document.getElementById('btn-cont-check').innerText = 'Check Answers';
 }
 
 function resetContaminantsInputs() {
+  if (contaminantsChecked) return;
   document.getElementById('input-cont-name').value = '';
   document.getElementById('input-cont-treatment').value = '';
   document.getElementById('input-cont-dosage').value = '';
@@ -1258,6 +1284,18 @@ function resetContaminantsInputs() {
 function checkContaminantsAnswers() {
   const entry = currentContaminantCase;
   if (!entry) return;
+
+  if (contaminantsChecked) {
+    // If already checked, this button click should take us to the next case!
+    if (currentContaminantIndex < contaminantCasesOrder.length - 1) {
+      loadContaminantIndex(currentContaminantIndex + 1);
+    } else {
+      // Completed all cases!
+      alert("¡Enhorabuena! Has completado los " + contaminantCasesOrder.length + " casos de contaminación.");
+      startContaminantsSession(); // Restart session
+    }
+    return;
+  }
 
   const userCont = document.getElementById('input-cont-name').value;
   const userTreat = document.getElementById('input-cont-treatment').value;
@@ -1287,6 +1325,11 @@ function checkContaminantsAnswers() {
   treatEl.className = isTreatCorrect ? 'input-field correct' : 'input-field incorrect';
   dosageEl.className = isDosageCorrect ? 'input-field correct' : 'input-field incorrect';
 
+  // Disable inputs so they cannot change after checking
+  contEl.disabled = true;
+  treatEl.disabled = true;
+  dosageEl.disabled = true;
+
   let allCorrect = isContCorrect && isTreatCorrect && isDosageCorrect;
 
   // Show detailed explanation
@@ -1310,6 +1353,13 @@ function checkContaminantsAnswers() {
   saveStats();
   updateDashboardStats();
 
-  document.getElementById('btn-cont-check').innerText = "Checked";
+  contaminantsChecked = true;
+  
+  // Set button text for next step
+  const btn = document.getElementById('btn-cont-check');
+  if (currentContaminantIndex < contaminantCasesOrder.length - 1) {
+    btn.innerText = "Next Case";
+  } else {
+    btn.innerText = "Finish Session";
+  }
 }
-

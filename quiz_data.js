@@ -1659,30 +1659,7 @@ const CALCULATIONS_DATA = {
     },
     {
       id: "case12",
-      name: "Case 12: Bacterial Contamination",
-      note: "Field Note: Foul odor reported at the shakers.",
-      properties: [
-        { name: "FL Temp (°F)", day1: "120", day2: "125", changed: false },
-        { name: "Weight (lb/gal)", day1: "15.0", day2: "15.0", changed: false },
-        { name: "PV (cP) / YP (lb/100ft²)", day1: "33 / 8", day2: "47 / 17", changed: true },
-        { name: "API Filtrate (ml)", day1: "6.0", day2: "16.8", changed: true },
-        { name: "MBT (lb/bbl)", day1: "4.0", day2: "4.0", changed: false },
-        { name: "Sand Content (%)", day1: "Tr", day2: "Tr", changed: false },
-        { name: "pH / Pm", day1: "10.5 / 1.6", day2: "8.5 / 0.8", changed: true },
-        { name: "Pf / Mf", day1: "1.2 / 3.1", day2: "0.2 / 0.4", changed: true },
-        { name: "Chlorides (mg/L)", day1: "4000", day2: "4000", changed: false },
-        { name: "Hardness Ca++ (mg/L)", day1: "200", day2: "150", changed: true }
-      ],
-      answer: {
-        contaminant: "bacterial_contamination",
-        treatment: "add_biocide",
-        dosage: 0
-      },
-      explanation: "Diagnostic Workflow:\n1. Field note: Foul odor indicates bacterial fermentation of organic polymers.\n2. API Filtrate: Spikes from 6.0 to 16.8 ml because bacteria degrade starch, CMC, and other fluid loss polymers.\n3. pH & Alkalinity: Drop sharply (pH from 10.5 to 8.5) due to acidic byproducts. Clays flocculate at lower pH, causing YP to rise.\n\nRecommended Treatment:\nAdd biocide to kill bacteria, add caustic to restore alkaline pH, and replenish fluid loss polymers."
-    },
-    {
-      id: "case13",
-      name: "Case 13: Cement (Case 2)",
+      name: "Case 12: Cement (Case 2)",
       note: "",
       properties: [
         { name: "FL Temp (°F)", day1: "130", day2: "132", changed: false },
@@ -1704,8 +1681,8 @@ const CALCULATIONS_DATA = {
       explanation: "Diagnostic Workflow:\n1. pH & Pm: Spike massively (pH 12.2, Pm 5.5), and 2Pf = 8.2 > Mf = 4.4 (high OH- ions).\n2. Hardness: Jumps from 80 to 950 mg/L (calcium source).\n3. Rheology & Fluid Loss: Cement flocculation increases YP (6 to 20) and filtrate (4.5 to 15.0 ml).\n\nChemical Treatment & Calculation:\nTreat with Sodium Bicarbonate (NaHCO3) to precipitate Calcium:\nCa(OH)2 + NaHCO3 -> CaCO3 v + NaOH + H2O\n\nDosage calculation:\n- Calcium increase = 950 - 80 = 870 mg/L.\n- NaNaHCO3 Factor = 0.000734 lb/bbl per mg/L Ca\n- Dosage = 870 * 0.000734 = 0.6386 lb/bbl."
     },
     {
-      id: "case14",
-      name: "Case 14: Salt Water Influx (Case 2)",
+      id: "case13",
+      name: "Case 13: Salt Water Influx (Case 2)",
       note: "",
       properties: [
         { name: "FL Temp (°F)", day1: "140", day2: "142", changed: false },
@@ -1727,8 +1704,8 @@ const CALCULATIONS_DATA = {
       explanation: "Diagnostic Workflow:\n1. Weight & Retort: Mud Weight drops significantly from 16.0 to 15.3 ppg, and retort solids drop from 30% to 23%. This indicates high water influx.\n2. Chlorides: Spikes from 15,000 to 45,000 mg/L (extremely salty formation brine influx).\n3. MBT: Drops from 20.0 to 16.0 lb/bbl (clay dilution).\n4. Rheology: Flocculation causes PV (40 to 58) and YP (15 to 28) to rise.\n\nRecommended Treatment:\n1. Increase density (weight up) to stop the influx.\n2. Dilute and treat with salt-tolerant polymers."
     },
     {
-      id: "case15",
-      name: "Case 15: Anhydrite / Gypsum (Case 2)",
+      id: "case14",
+      name: "Case 14: Anhydrite / Gypsum (Case 2)",
       note: "",
       properties: [
         { name: "FL Temp (°F)", day1: "110", day2: "115", changed: false },

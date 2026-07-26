@@ -513,9 +513,9 @@
 
         <div style="margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap: wrap;">
           <div>
-            <span style="font-size: 16px; font-weight: 600; color: var(--primary);">Exam Practice: Random Case Study</span>
+            <span style="font-size: 16px; font-weight: 600; color: var(--primary);" id="train-cont-label">Exam Practice: Case <span id="train-cont-counter">1 of 14</span></span>
           </div>
-          <button class="btn btn-secondary" onclick="loadRandomContaminantCase()" style="padding: 10px 20px;">Load Random Case</button>
+          <button class="btn btn-secondary" id="btn-cont-restart" onclick="startContaminantsSession()" style="padding: 10px 20px;">Restart Session</button>
         </div>
 
         <div class="trainer-section" style="display: flex; flex-direction: column; gap: 24px;">
@@ -556,7 +556,6 @@
                 <option value="salt_nacl">Salt (NaCl)</option>
                 <option value="active_drilled_solids">Active Drilled Solids</option>
                 <option value="inactive_solids">Inactive Solids</option>
-                <option value="bacterial_contamination">Bacterial Contamination</option>
               </select>
             </div>
 
@@ -573,7 +572,6 @@
                 <option value="gypsum_or_lime">Add Gypsum (CaSO4) or Lime</option>
                 <option value="h2s_scavenger">Add H2S Scavenger</option>
                 <option value="optimize_solids_control_dilute">Optimize solids control equipment, dilute</option>
-                <option value="add_biocide">Add biocide</option>
               </select>
             </div>
 
