@@ -182,7 +182,7 @@ body[data-theme="light"] .orb {
 
 /* Sidebar Navigation (Large Rounded) */
 .sidebar {
-  padding: 32px 24px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -191,9 +191,9 @@ body[data-theme="light"] .orb {
 
 @media (min-width: 1025px) {
   .sidebar {
-    height: calc(100vh - 144px);
+    height: calc(100vh - 80px);
     position: sticky;
-    top: 72px;
+    top: 40px;
   }
 }
 
@@ -201,8 +201,9 @@ body[data-theme="light"] .orb {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   padding-left: 8px;
+  flex-shrink: 0;
 }
 
 .brand-logo {
@@ -228,15 +229,33 @@ body[data-theme="light"] .orb {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   flex-grow: 1;
+}
+
+@media (min-width: 1025px) {
+  .nav-links {
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    width: 4px;
+  }
+  .nav-links::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .nav-links::-webkit-scrollbar-thumb {
+    background: var(--border-glow);
+    border-radius: 4px;
+  }
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 20px;
+  padding: 10px 16px;
   color: var(--text-secondary);
   text-decoration: none;
   border-radius: 18px;
@@ -266,10 +285,11 @@ body[data-theme="light"] .orb {
 
 .footer-nav {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn {
@@ -446,6 +466,11 @@ select.input-field {
   background-position: right 16px center;
   background-size: 16px;
   padding-right: 48px;
+}
+
+select.input-field option {
+  background-color: var(--h-card-bg);
+  color: var(--h-text);
 }
 
 .input-style:focus, .input-field:focus, .search-field:focus {
