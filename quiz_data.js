@@ -1478,7 +1478,7 @@ const QUIZ_DATA = {
         id: "hw13_q12",
         number: "12 of 26",
         type: "single",
-        question: "The "salt" in an NAF is contained in which of the following?",
+        question: "The \"salt\" in an NAF is contained in which of the following?",
         options: [
           { value: "continuous_phase", label: "The continuous phase" },
           { value: "oil_phase", label: "The oil phase" },

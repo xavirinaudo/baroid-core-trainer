@@ -231,6 +231,7 @@ body[data-theme="light"] .orb {
   flex-direction: column;
   gap: 6px;
   flex-grow: 1;
+  min-height: 0;
 }
 
 @media (min-width: 1025px) {
@@ -776,8 +777,31 @@ select.input-field option {
 /* Cheat Sheet Table & References */
 .search-container {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-container .nav-link {
+  border-left: none !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--h-border) !important;
+  padding: 10px 18px !important;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.search-container .nav-link:hover {
+  background: rgba(204, 0, 0, 0.08) !important;
+  border-color: var(--h-red) !important;
+}
+
+.search-container .nav-link.active {
+  background: var(--h-red) !important;
+  color: white !important;
+  border-color: var(--h-red) !important;
+  box-shadow: 0 4px 14px rgba(204, 0, 0, 0.3) !important;
 }
 
 .sheet-table {
