@@ -1,0 +1,2191 @@
+=== PAGE 200 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 200 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+ 
+Plastic Viscosity 
+A fluid’s shear stress is divided by the corresponding shear rate, or μ = τ /γ. Fluid viscosity can be measured at 
+a certain point or over a wide range of shear stress/shear rate measurements. 
+ 
+ 
+Yield Point 
+The force required to initiate flow; the calculated value of the fluid’s shear stress when the rheogram is 
+extrapolated to the y-axis at γ=0 sec-1.  
+Note: The YP is a time-independent measurement and is usually associated with the Bingham model.   
+ 
+Graphical approach on the rheogram 
+ 
+Figure 192 - Bingham plastic rheogram 
+Plastic Viscosity= calculated from the 
+rheogram as the difference between the 
+600rpm and the 300rpm reading. 
+ 
+Yield Point= calculated from the rheogram, 
+as the difference between the 300rpm 
+reading and the plastic viscosity. 
+ 
+ 
+Highlights 
+ 
+Bingham method over estimates hydraulics.  
+ 
+Calculated pressure losses and hydraulic horsepower are always higher than what actually they are. 
+ 
+This method works fine in simple and shallow wells. 
+ 
+Not recommended in Horizontal and ER wells, since those wells need more complex and accurate 
+hydraulic predictions 
+ 
+ 
+
+=== PAGE 201 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 201 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Power Law Rheological Model 
+ 
+Governing equation: 
+ 
+ t = K gn 
+ 
+Model parameters: 
+–  τ =  shear stress, lb/100ft2 
+– K  =  consistency index  
+–  γ  = shear rate 
+– N   = flow index  
+ 
+ 
+K Consistency index  
+– A term used to determine the “viscosity “effects of a flowing fluid used in the power law and 
+Herschel-Bulkley models. It is similar in concept to the PV in the Bingham model but the units 
+are not viscosity units in the true sense. 
+– The higher “K” value the higher the shear stress and consequently the higher the viscosity. 
+ 
+N Flow index  
+– The numerical relation between a fluid’s shear stress and shear rate on a log/log plot. This value 
+describes a fluid’s degree of shear-thinning behavior. 
+• 
+In Newtonian fluids N=1 
+• 
+In Non-Newtonian fluids N < 1 
+ 
+ 
+Power Law method tries to overcome the 
+Bingham method flaws by providing the low 
+shear rate spectrum analysis with an 
+exponential profile. 
+ 
+Hydraulic analysis with this method is more 
+accurate at low shear rates 
+ 
+This rheological model always will under 
+estimate the hydraulic impact on an 
+operation, since it assumes the force to 
+initiate flow is 0 (which is not realistic). 
+ 
+ 
+ 
+ 
+ 
+Figure 193 - Power law rheogram 
+
+=== PAGE 202 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 202 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Herschel and Bulkley Rheological Model 
+ 
+Governing equation: 
+ 
+ t = t0 + K gn 
+ 
+Model parameters: 
+–  τ shear stress, lb/100ft2 
+–  τ0 yield stress, lb/100ft2 
+– K  =  consistency index  
+–  γ  = shear rate, sec-1 
+– N   = flow index 
+ 
+ 
+Shear Rate (g) 
+– This term is appropriate for laminar flow only. In a flowing fluid, numerically it is the change in 
+fluid velocity from one streamline to another divided by the distance between them. 
+ 
+Shear Stress (t) 
+– The force per unit area required to shear a fluid at a given shear rate. Shear stress is measured 
+on oil field viscometers by the deflection of the FANN 35 meter’s dial at a given shear speed. 
+The rheometer dial reading is 
+– sometimes incorrectly referred to as shear stress. 
+ 
+Yield Stress (t0) 
+– The force required to initiate flow. Yield stress is a time-independent measurement and is 
+usually denoted in the Heshchel-Bulkley (yield-power law [YPL]) model as Tau0 and in the 
+Bingham model as YP. 
+ 
+The Hershel-Bulkley rheological model fits Bingham plastic fluids, power 
+law fluids, and everything else in between. 
+ 
+To calculate is required: 
+ 
+A computer algorithm to obtain solutions.  
+ 
+A minimum of three shear-stress/shear-rate measurements for 
+solution.  
+ 
+Model accuracy is improved with additional data input.  
+ 
+We can calculate Tau0 using DFG and WELLSIGHT Express 
+Figure 194 - Hershel-Bulkley rheological 
+model 
+
+=== PAGE 203 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 203 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Comparison of the Rheological models 
+Using a Pressure While Drilling tool, we can measure the pressure inside the well above the bit. 
+Then we can compare actual measurements from the tool vs the predictions made by the rheological models. 
+ 
+ 
+As seen from the results above: 
+- 
+Bingham model over estimated hydraulic pressure by 90%+ 
+- 
+Power Law model under estimated hydraulic pressure by 50%+ 
+- 
+The Herschel and Bulkley is the closest to the PWD results, with differences <20% 
+ 
+Graphical Comparison of the models 
+ 
+Figure 195 - Rheogram comparing different rheological models 
+ 
+
+=== PAGE 204 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 204 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Well Hydraulics 
+Is the optimal distribution of the hydraulic energy in the circulation system with the optimum down hole 
+cleaning. 
+It involves: 
+❶ Pump and circulating 
+system profile 
+The pumping activity is important since it provides the hydraulic energy necessary 
+to move the drilling fluid. 
+There is synergy between how fast the pumps are pumping and the fluid 
+rheology/density as well. An increase on any of this parameters will increase the 
+pressure generated in the system. 
+Important parameters: 
+ 
+Pump output in Gallons per stroke (GPS) 
+ 
+Circulation Rate in the annular / riser in gallons per minute (GPM) 
+❷ Wellbore geometry  
+and fluid annular 
+velocities 
+The geometry of the wellbore and the different annular spaces will dictate, along 
+with the pump settings how fast the fluid will move.  
+ 
+In narrow sections the annular velocity will increase 
+ 
+The greater the fluid velocity, the greater the friction and pressure 
+generated 
+𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴 𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉𝑉= (1029.4 × 𝑃𝑃𝑃𝑃× 𝑆𝑆𝑆𝑆𝑆𝑆)
+(𝐼𝐼𝐼𝐼2 −𝑂𝑂𝑂𝑂2) × 42
+      [𝑓𝑓𝑓𝑓/𝑚𝑚𝑚𝑚𝑚𝑚] 
+ 
+The geometry of the toolstring is also important, the narrower internal 
+diameters will generate a faster velocity of the fluid inside the pipes / BHA. 
+ 
+The greatest annular pressure losses in the system are associated with 
+the narrow area and extended length of the tubulars  
+❸ Pressure losses 
+associated with friction 
+a) Surface Connections: from pump to drill pipe. Pressure losses are minimized 
+by large internal diameters.  
+b) Drill Pipe: large ID and internal plastic coating reduce pressure drop.  
+c) Drill Collars: Large ID reduces pressure loss, but also reduces the useful 
+weight per unit length.  
+d) Annulus: Pressure losses depends on the ratio of the drill string outside 
+diameter and the hole size. It is desirable to reduce the back pressure on the 
+formations, but annular losses are usually small.  
+As the rate of volume pumped varies, pressure losses in the system change. 
+
+=== PAGE 205 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 205 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+❹ Rheological 
+properties and density 
+of the drilling fluid 
+There is a direct relationship between rheology, density and pressure. 
+The higher the viscosity and the higher the density the higher the pressure in the 
+entire circulating system. 
+ 
+Figure 196 - Effects of viscosity and density on pressure 
+Equivalent Circulating Density: Is the pressure exerted downhole by the fluid, 
+choke pressure, transported cuttings and the hydraulics losses in the annulus.  It 
+can be calculated at any vertical depth.  
+𝐸𝐸𝐸𝐸𝐸𝐸= ൤𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴 𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃 𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿
+(0.052 × 𝑇𝑇𝑇𝑇𝑇𝑇)
+൨+ 𝑂𝑂𝑂𝑂𝑂𝑂 
+❺ Bit Design 
+Bit Nozzles and Total Flow Area will change the way hydraulic energy is build up 
+inside the bit and coming out of the nozzles. 
+𝑻𝑻𝑻𝑻𝑻𝑻𝑻𝑻𝑻𝑻 𝑭𝑭𝑭𝑭𝑭𝑭𝑭𝑭 𝑨𝑨𝑨𝑨𝑨𝑨𝑨𝑨= 𝟎𝟎. 𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎×ൣ𝑱𝑱𝟏𝟏𝟐𝟐+ 𝑱𝑱𝟐𝟐𝟐𝟐+ 𝑱𝑱𝑱𝑱𝟐𝟐+ ⋯+ 𝑱𝑱𝑱𝑱𝟐𝟐൧   𝑖𝑖𝑖𝑖2 
+ 
+Figure 197 - Bit nozzles 
+Example.  This bit has: 
+7 nozzles of 14/32” (green) and 2 nozzles of 16/32” 
+(yellow) 
+𝑻𝑻𝑻𝑻𝑻𝑻= 𝟎𝟎. 𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎 ×ൣ൫𝟕𝟕× 𝟏𝟏𝟏𝟏𝟐𝟐൯+ ൫𝟐𝟐× 𝟏𝟏𝟏𝟏𝟐𝟐൯൧ 
+𝑻𝑻𝑻𝑻𝑻𝑻= 𝟏𝟏. 𝟒𝟒𝟒𝟒𝟒𝟒 𝑖𝑖𝑖𝑖2  
+❻ Eccentricity 
+This dimensionless term refers to the position of a pipe inside another pipe. In the 
+oil field it usually refers to the position of the drill pipe in an annulus.  
+ 
+Figure 198 - Pipe eccentricity 
+A fully concentric pipe will generate a higher pressure drop because there’s more 
+surface area in contact with the fluid and therefore it generates more friction 
+losses. 
+
+=== PAGE 206 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 206 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Hydraulic Performance Results 
+❶ Fluid Jet Velocity 
+The average velocity of a drilling fluid passing through a bit’s jet nozzles is:  
+𝑱𝑱𝑱𝑱𝑱𝑱 𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽=
+(𝟎𝟎. 𝟑𝟑𝟑𝟑𝟑𝟑× 𝑮𝑮𝑮𝑮𝑮𝑮)
+𝑻𝑻𝑻𝑻𝑻𝑻
+      𝒇𝒇𝒇𝒇𝒔𝒔
+ൗ 
+ 
+❷ Jet Impact Force 
+The Jet Impact Force of the drilling fluid with a given Jet Velocity can be 
+derived from Newton’s Second Law of Motion: force equals mass times 
+acceleration.  
+𝑱𝑱𝑱𝑱𝑱𝑱 𝑰𝑰𝑰𝑰𝑰𝑰𝑰𝑰𝑰𝑰𝑰𝑰 𝑭𝑭𝑭𝑭𝑭𝑭𝑭𝑭𝑭𝑭=
+(𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫 × 𝑮𝑮𝑮𝑮𝑮𝑮× 𝑱𝑱𝑱𝑱𝑱𝑱 𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽)
+𝟏𝟏𝟏𝟏𝟏𝟏𝟐𝟐
+    𝒍𝒍𝒍𝒍 
+❸ Bit Pressure Loss 
+The fluid coming out of the bit nozzles will generate an increase in pressure 
+due high jet velocities, narrow flow area and will depend on the fluid density. 
+The greater the density the greater the pressure. 
+𝑩𝑩𝑩𝑩𝑩𝑩 𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷 𝑳𝑳𝑳𝑳𝑳𝑳𝑳𝑳=
+(𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫𝑫 × 𝑱𝑱𝑱𝑱𝑱𝑱 𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝑽𝟐𝟐)
+𝟏𝟏𝟏𝟏𝟏𝟏𝟏𝟏
+    𝒑𝒑𝒑𝒑𝒑𝒑 
+❹ Bit Hydraulic 
+Horsepower 
+Bit hydraulic energy is the energy needed to counteract frictional energy (loss) 
+at the bit. 
+The basic equation for hydraulic horsepower of the bit is: 
+𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯 𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝒃𝒃𝒃𝒃𝒃𝒃=
+(𝑩𝑩𝑩𝑩𝑩𝑩 𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑𝒑 𝒍𝒍𝒍𝒍𝒍𝒍𝒍𝒍 × 𝑮𝑮𝑮𝑮𝑮𝑮)
+𝟏𝟏𝟏𝟏𝟏𝟏𝟏𝟏
+    𝒉𝒉𝒉𝒉 
+In can also be calculated per square inch with the following formula: 
+𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯 𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯/𝒊𝒊𝒊𝒊𝟐𝟐
+𝒃𝒃𝒃𝒃𝒃𝒃=
+(𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝒍𝒍𝒊𝒊𝒊𝒊 𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯𝑯 𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝑷𝒃𝒃𝒃𝒃𝒃𝒃× 𝟏𝟏. 𝟐𝟐𝟐𝟐𝟐𝟐)
+𝒃𝒃𝒃𝒃𝒃𝒃 𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅𝒅
+    𝒉𝒉𝒉𝒉
+𝒊𝒊𝒊𝒊𝟐𝟐
+ൗ
+ 
+ 
+ 
+Important hydraulic terms 
+- 
+Reynolds number (NRe)  
+A dimensionless, numerical term governs whether a flowing fluid will be in laminar or turbulent flow. Often, a 
+Reynolds number greater than 2,100 will mark the onset of turbulent flow, but this is not always so.  
+ 
+- 
+Critical Reynolds number (NRec) or Critical Velocity 
+This value corresponds to the Reynolds number at which laminar flow turns to turbulent flow.  
+- 
+Critical Flow Rate (Qc)  
+Flow rate at which the flow changes from laminar to turbulent. 
+
+=== PAGE 207 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 207 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+- 
+Annular Velocity (Av) 
+The average velocity of a fluid as it moves through an annular section in the wellbore. Increasing the pump rate 
+increases the annular velocity. Increasing the pump rate tends to improve cuttings transport but also increases 
+down hole pressure or ECD.  
+ 
+- 
+Slip Velocity (Vs) 
+Slip velocity is relevant for vertical holes only when referring to cuttings Transport. It is characterized as the 
+difference in the average annular velocity of the fluid and the cuttings that are being transported by the fluid. It 
+can be represented by the following equation. 
+ 
+- 
+Pressure Drop (ΔP/ΔL)  
+Frictional forces develop when fluids flow through a pipe or an annulus. As a result, fluid energy dissipates. 
+These frictional forces are referred to as pressure drops, and are usually referred to as a pressure per unit 
+length. The longer a pipe or annulus, the greater is the pressure drop. 
+ 
+- 
+Equivalent circulating density (ECD) 
+Equivalent Circulating Density, ECD is the pressure exerted downhole by the fluid(s), choke pressure, 
+transported cuttings and the hydraulics losses in the annulus. It can be calculated at any vertical depth. It is a 
+pressure expressed in terms of a fluid density that is required to get an equivalent pressure at a given depth.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 208 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 208 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Unit 22 – Intro to Non Aqueous Fluids (NAF) 
+Objectives 
+ 
+Define non aqueous drilling fluid systems 
+ 
+Describe the Baroid family of NAF 
+ 
+Review Invert Emulsion Fluids (IEF) 
+ 
+Analyze physical properties of IEF 
+ 
+Recognize IEF Typical products and additives 
+ 
+Overview 
+Water based drilling fluids were formulated using native clays at the beginning of rotary drilling, and became the 
+standard for the industry.  As reservoirs got deeper, new challenges were faced with abnormally pressurized, 
+reactive or naturally fractured formations. 
+In order to overcome the challenges from WBF, Baroid engineered and release to the industry the first invert 
+emulsion fluid in the 1960’s, the INVERMUL drilling system using organophilic clays 
+The system provided considerable advantages over WBF, such as: 
+– Better hole stability than water fluids 
+– More tolerant to contaminants 
+– Superior temperature stability 
+– Excellent Lubricity 
+– Provides corrosion resistance 
+ 
+ 
+What are Non Aqueous Drilling fluids (NAF)? 
+Type of drilling fluid systems where the continuous phase is a non-aqueous phase base fluid, normally called 
+NAP 
+ 
+Types of Non-Aqueous Base Fluid (NAP) 
+ 
+Diesel Oil
+Refined crude oil
+Aromatic content (18 to 24 
+percent)
+Volatile and hazardous 
+components
+Mineral Oil
+Refined petroleum oil
+Low to zero aromatic content
+Low toxicity rating
+Lower Environmental impact
+Non Petroleum Oil
+Esters (vegetable oil) or 
+Isomerized Olefins
+No petroleum-derived 
+hydrocarbons
+No aromatics
+Biodegradable
+Figure 199 - WBF challenges 
+
+=== PAGE 209 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 209 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+NAF Fluid Systems 
+Classification based on Function 
+ 
+ 
+ 
+Classification based on Family 
+ 
+Conventional Non-Aqueous Fluid Systems 
+– Either diesel, mineral oil or synthetic is used as the based fluid. 
+– They contain in the formulation organophilic clays and lignites 
+ 
+ 
+ 
+Conventional NAF Systems 
+System 
+Diesel 
+Mineral Oil 
+Application & Base oil 
+Tight-
+emulsion 
+INVERMUL 
+ENVIROMUL 
+It is an invert emulsion fluid. For general use as well as high 
+temperature. This type of fluid systems contain high 
+concentration of emulsifiers 
+Relaxed-
+filtrate (RF) 
+INVERMUL 
+RF 
+ENVIROMUL 
+RF 
+Invert emulsion fluid, designed to provide increased drilling 
+rates.  
+100% NAP 
+BAROID 100 
+ENVIROMUL 
+100 
+ 
+For use as non-damaging coring and drilling fluid 
+ 
+For use as a high-temperature invert emulsion 
+system 
+High water 
+ratio 
+INVERMUL 
+50/50 
+ENVIROMUL 
+50/50 
+To minimize oil retention on cuttings; used primarily in 
+offshore areas that are environmentally sensitive 
+ 
+ 
+ 
+N A F
+Drilling Fluid Systems
+100% NAP
+Invert Emulsion
+Conventional
+High 
+Performance
+Reservoir Drilling Systems
+100% NAP
+High 
+Performance
+
+=== PAGE 210 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 210 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+ 
+High-Performance Invert Emulsion Fluids 
+– They are free of organophilic clays and also free of organophilic lignites. 
+– Their solid content is as low as possible, using Polymer technology for suspension and filtration 
+control. 
+– The continuous phase is a non-aqueous base fluid called (NAP) such as ester, paraffin, mineral 
+oil, diesel or combination of these. 
+– High-performance clay-free IEF technology provides significant benefits over conventional IEF 
+systems. 
+– Baroid’s clay-free IEF design and performance remain unduplicated in the industry. 
+– Traditional organophilic clay, used for controlling rheological properties, and organophilic lignite, 
+used for filtration control, have been replaced with innovative products resulting from advances 
+in fatty acid, tall oil and co-polymer chemistry. 
+– This change resulted in major improvements in performance and has been adopted in a wide 
+range of base fluids 
+ 
+High Performance NAF Systems 
+ 
+ 
+Since these fluid systems can be built using different types of based fluids, there is a nomenclature that helps 
+to identify the system and it’s NAP.  
+1 – Diesel 
+2 - Low toxicity mineral oils 
+3 - Synthetic paraffins 
+4 – Olefins 
+5 - Esters, ester blends 
+Example: BaraXcel™ 1 is a high performance invert emulsion fluid (HPIEF) made out of diesel. 
+BaraXcel™
+•Different Base fluids (diesel, 
+olefins, esters and ester 
+blends)
+•Polymer technology
+BaraECD
+•Different base fluids
+•Enhanced suspension 
+package
+BaraPure
+•Salt free
+•Lower environmental impact
+•Reduced waste
+
+=== PAGE 211 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 211 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Invert Emulsion Fluids (IEF) 
+Invert emulsions are defined as systems where the continuous phase or external phase is a non-aqueous 
+based fluid and water/brine is the internal phase.  
+The reason these systems exist is to lower the overall cost on the fluid (less NAP required per barrel of drilling 
+fluid) 
+Invert emulsion means, water emulsified into a non-aqueous based fluid. It is composed of: 
+– Continuous phase 
+ 
+• 
+Base Fluids 
+– Discontinuous phase 
+• 
+Water / Brine 
+• 
+Solids 
+ 
+Environmental Considerations with NAF 
+In most regions in the world, land and offshore drilling locations are regulated regarding: 
+– Disposal of whole mud 
+– Drilled cuttings and solids 
+– Water used at rigsite 
+– Runoff generated by rain 
+Furthermore, the makeup of the fluid itself might be restricted due the presence of several components such 
+as: 
+– Chlorides 
+– Base oil 
+– Toxic products 
+As we extend drilling into new areas, environmental responsibility and sustainability is becoming a critical 
+factor in drilling practices. Minimizing environmental impact is now a significant challenge for operators and 
+usually considered when designing the service. 
+When dealing with NAF and environmental challenges, there are several aspects to consider: 
+ 
+Figure 200 - NAF environmental challenges aspects 
+Fluid 
+performance
+Regulations
+Risk 
+Mitigation
+Waste 
+management 
+& Expenses
+
+=== PAGE 212 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 212 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Common Properties of IEF systems 
+Analog to WBF, non aqueous fluid systems are evaluated in terms of their physical and chemical properties.  
+Although most of the testing equipment and procedures are similar, there will be certain differences.  
+NAF are tested following the American Petroleum Institute recommended practice 13B-2.  
+Highlighted in yellow below we have the tests that belong exclusively to NAF. The specific testing procedures 
+performed on NAF will be explained in upcoming units in this manual. 
+ 
+Physical Properties 
+ 
+Density (Mud weight) 
+ 
+Rheological properties 
+ 
+Solids analysis 
+ 
+NAP/Water Ratio 
+ 
+API Filtrate HTHP (high temperature, high 
+pressure) 
+ 
+Electrical Stability 
+ 
+Chemical Properties 
+ 
+Whole-drilling-fluid alkalinity 
+ 
+Whole-drilling-fluid chloride content 
+ 
+Whole-drilling-fluid calcium content 
+– Excess Lime 
+ 
+Water phase salinity 
+ 
+ 
+NAP/Water ratio 
+The NAP/Water ratio, also known as Oil/water ratio (OWR), is the oil fraction compared to the water fraction in 
+the drilling fluid.  
+Generally speaking, it is a ratio between the percent oil in liquid phase and the percent water in liquid phase. 
+Formulas: 
+𝑵𝑵𝑵𝑵𝑵𝑵(𝑶𝑶𝑶𝑶𝑶𝑶) 𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹= 100 ×
+𝑉𝑉𝑉𝑉𝑉𝑉 𝑜𝑜𝑜𝑜𝑜𝑜(𝑚𝑚𝑚𝑚)
+(𝑉𝑉𝑉𝑉𝑉𝑉 𝑜𝑜𝑜𝑜𝑜𝑜(𝑚𝑚𝑚𝑚) + 𝑉𝑉𝑉𝑉𝑉𝑉 𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤(𝑚𝑚𝑚𝑚)) 
+Example: 
+If Retort Water: 2 ml and Retort Oil: 6 ml  
+ 
+What is the OWR? 
+𝑁𝑁𝑁𝑁𝑁𝑁 (𝑂𝑂𝑂𝑂𝑂𝑂) 𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅= 100 ×
+6
+(6+2) = 75%  
+𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊 𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅= 100 ×
+2
+(6+2) = 25%  
+ 
+Note: round ratios to whole number 
+ 
+Answer 
+The OWR is 75/25 
+ 
+Figure 201 - 
+NAF retort 
+results 
+ 
+𝑾𝑾𝑾𝑾𝑾𝑾𝑾𝑾𝑾𝑾 𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹𝑹= 100 ×
+𝑉𝑉𝑉𝑉𝑉𝑉 𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤(𝑚𝑚𝑚𝑚)
+(𝑉𝑉𝑉𝑉𝑉𝑉 𝑜𝑜𝑜𝑜𝑜𝑜(𝑚𝑚𝑚𝑚) + 𝑉𝑉𝑉𝑉𝑉𝑉 𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤(𝑚𝑚𝑚𝑚)) 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 213 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 213 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Mixing Oil and Water? 
+Simply put, by nature water and oil do not mix. 
+That being said, with the use of certain chemicals, namely emulsifiers, the 
+two can work together in the same fluid.   
+The continuous phase (NAP) will emulsify the water (brine) in what is 
+described as an invert emulsion. 
+Because the water is part of the discontinuous phase, and it has to be 
+carried by the NAP, it will react as a solid from a rheological standpoint, 
+increasing the viscosity and ECD of the fluid system. 
+ 
+Typical Products/additives in a Non Aqueous Fluid 
+ 
+Category 
+Function 
+Product Examples 
+Conventional IEF 
+High Performance 
+IEF 
+Emulsifiers 
+The emulsifiers are a generations of product or 
+additive used in the drilling fluids to help emulsify 
+one liquid in other when both liquids are 
+immiscible, like oil and water. 
+In the case of invert emulsion fluids, we want to 
+create an emulsification of water into the non-
+aqueous base fluid. 
+The emulsifier reduces the interfacial tension 
+between the two fluids so that they look and flow 
+as one fluid. 
+They are soluble in both water and oil. 
+ 
+Figure 203 - Water in oil invert emulsion 
+ 
+INVERMUL® 
+EZ MUL® 
+EZ-CORE® 
+LE SUPERMUL™ 
+FACTANT™ 
+ 
+ 
+ 
+Figure 202 - Mix of oil and water 
+
+=== PAGE 214 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 214 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Category 
+Function 
+Product Examples 
+Conventional IEF 
+High Performance 
+IEF 
+Wetting 
+Agents 
+Wettability is defined as the adhesive forces 
+between molecules of the solid and liquid 
+phases.   
+A wetting agent is substance added to a liquid to 
+lower its surface tension and thus increase its 
+ability to spread across or penetrate into a solid. 
+ 
+DRILTREAT® 
+DEEP-TREAT™ 
+DRILTREAT® 
+Viscosifier 
+Used to improve the fluid’s ability to remove 
+cuttings  
+Suspend cuttings and weight materials 
+They could be clays or polymers, depending of 
+the type of fluid. 
+ 
+Organophilic clays reacted with certain 
+amines to yield “oil swelling” compounds 
+ 
+ 
+Polymeric fatty acids are ‘oil dispersible” 
+materials that enhance low shear rate 
+viscosities and minimize settling and 
+SAG in high angle holes 
+ 
+GELTONE® II  
+GELTONE®  V 
+TEMPERUS™ 
+RHEMOD™ L 
+LIQUITONE® 
+TAU-MOD® 
+Rheology 
+modifiers 
+Enhance low shear rheology and therefore 
+cutting suspension 
+RM-63™ 
+BaraVis® IE-489 
+Thinners 
+Oil soluble” petroleum sulfonates and polymeric 
+fatty acid derivatives 
+Effective in lowering rheologyReduce yield point 
+and gel strengths 
+ 
+COLDTROL™ 
+OMC® 
+ATC® 
+COLDTROL™ 
+OMC® 42 
+ 
+ 
+ 
+
+=== PAGE 215 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 215 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+ 
+Category 
+Function 
+Product Examples 
+Conventional IEF 
+High Performance 
+IEF 
+Filtration 
+control 
+agents 
+Filtration control agent is a product with the 
+primary function of filtration control.  
+ 
+They could be clays or polymers, depending of 
+the type of fluid. 
+ 
+Organophilic lignite, various asphaltic 
+materials such as oxidized asphalt, and 
+gilsonite additives 
+ 
+Cross Linked Polymers 
+ 
+BARABLOCK™ 
+DURATONE® 
+ 
+ADAPTA® 
+BDF™-610 
+ 
+Weighting 
+Materials 
+or Densifier 
+Used to increase the density of the drilling fluid 
+to control the pressure from the formation 
+BAROID® (Barite) 
+BARODENSE® (Hematite) 
+Salinity 
+Agents 
+Are Required to avoid water transfer to the 
+formation and subsequent swelling of formation 
+clays 
+ 
+Calcium Chloride (CaCl2) is the most common 
+source of salinity in the IEF systems and it is 
+normally added to the fluid as a brine. 
+ 
+Salt is normally dissolved in the water portion of 
+the fluid and it is called Water Phase Salinity 
+(WPS). 
+ 
+The WPS is a measure of the osmotic 
+dehydration/hydration potential of water in a 
+mud or shale. 
+Usually CaCl2 
+Other types of salts can be used 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 216 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 216 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Unit 23 – Non Aqueous Fluids Physical Properties 
+Objectives 
+ 
+Differentiate physical testing between WBF and NAF 
+ 
+Evaluate the effects of contaminants on NAF physical properties 
+Overview 
+The physical properties of drilling fluids are one of the most important parameters used to ensure the safety of 
+drilling operations; fluids have to be compatible with the formation being drilled. 
+As described on Unit 22, the physical testing performed on NAF are analog to the ones performed on WBF, 
+with a few variances. 
+ 
+Variations between IEF and WBF physical testing 
+Mud Property 
+WBF 
+NAF / IEF 
+API RP 13B-2 
+Section 
+Density 
+Same measure definition and equipment 
+5.3 
+Funnel Viscosity 
+Same measure definition and equipment 
+7.2 
+Rheology using 
+Rheometer 
+Test performed at 120°F 
+Test performed at either 
+120°F or 150°F. 
+7.3 
+Filtration 
+ API – LTLP At ambient 
+temperature and 100 psi 
+ API – HTHP 300°F (150°C) and 
+500 psi 
+300°F (150°C) and 500 psi of 
+differential 
+8.2 
+Retort Analysis 
+Same measure definition and equipment 
+9.3 
+Sand Content 
+Same measure definition and equipment, but instead of using water 
+to dilute the fluid, we need to use the non-aqueous based fluid. 
+- 
+Electrical 
+Stability 
+Not applicable 
+Required 
+11.4 
+Electrical Stability 
+Measure of emulsion stability and oil-wetting capability. 
+Electrical stability is determine by applying a voltage-ramped, sinusoidal electrical 
+signal across a pair of parallel, flat-plate electrodes immersed in the drilling fluid. 
+This electrical current will eventually breakdown the emulsion. 
+To measure the Electrical Stability, Baroid uses Fann Electrical Stability Tester 
+(EST) model 23E. 
+ 
+ 
+Figure 204 - FANN ES meter 23E 
+
+=== PAGE 217 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 217 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Changes in physical properties while drilling 
+While drilling, the fluids will be in contact with different materials that have the ability of changing its physical 
+properties.  
+If left unattended, the changes could have a negative impact on the fluid performance. 
+ 
+Intro to NAF Contaminants 
+So let’s analyze how drilling fluid properties are affected by all the different materials that we encounter while 
+drilling:  
+• 
+Gases: acid gases from the formation 
+• 
+Liquids: such as fresh water, salt water, crude oil 
+• 
+Solids: such as clays, limestones, sandstones, etc 
+ 
+As we can see, gas is the material that generates less changes in NAF properties, followed by liquids. 
+However, we can also observe that solids are consistent in changing all the DF physical properties and that’s 
+why is too important to understand the effects of solids affecting fluid properties and all the mitigation 
+mechanisms available to avoid such issues. 
+ 
+Contamination by gases and liquids 
+ 
+Some gases and liquids will incorporate into the NAF while drilling. 
+– The primary reason this might happen is due insufficient hydrostatic pressure generated by the 
+column of drilling fluid 
+– Most common gasses are CO2 and H2S 
+– Most common liquids are water, formation water or hydrocarbons 
+ 
+Some liquids might incorporate into the NAF at surface due 
+– Rain 
+– Errors in surface fluid management 
+ 
+ 
+
+=== PAGE 218 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 218 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Contamination by solids 
+Even though NAF systems are more stable than WBF, and they’re less affected by solid contaminants, 
+effective solids separation is crucial to enhance fluid performance 
+Based on the type of drilling system and the parameters set by the operator, engineers will have to optimize 
+the mechanical separation solutions available at the rig site to ensure that all the particles deemed detrimental 
+to the NAF are removed 
+Special care will be required when dealing with the waste generated by NAFs. 
+ 
+General contamination management strategies 
+Gases and Liquids 
+Solids 
+Stop the influx. 
+Increase the system density 
+Remove solids with mechanical separation 
+Restore fluid properties adding the 
+appropriate additives 
+Dilute the system if required 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 219 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 219 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Unit 24 – Non Aqueous Fluids Chemical Properties 
+Objectives 
+ 
+Review the chemical properties of NAF 
+ 
+Explain the uses of the chemical properties of NAF 
+Overview 
+The chemical properties of NAF and the way these dictate the interactions between the drilling fluid and the 
+formations drilled is extremely important. 
+Although in NAF chemical reactions are limited due the absence of “free water”, the management of the 
+chemistry of the fluid will allow to: 
+ 
+Identify contaminants 
+ 
+Optimize treatments 
+ 
+Ensure control of osmotic exchange (with the water phase salinity). 
+Chemical tests for NAF are performed using the guidelines from the American Petroleum Institute 
+recommended practice 13B-2. 
+Chemical Analysis of Non Aqueous Fluids 
+In order to measure the concentration of chemicals in the drilling fluid, the first step required is to break the 
+emulsion between the non-aqueous phase and the water/brine; to separate them a solvent has to be used.  
+Per API guidelines, the solvent used in chemical testing of NAF should be propylene glycol normal-propyl ether 
+(PNP) 
+ 
+ 
+Base Alkalinity Demand 
+(BAD) 
+Alkalinity 
+Chlorides 
+Calcium 
+Scope 
+It is an optional test and 
+the purpose of 
+conducting this analysis 
+is to calculate the 
+amount of alkalinity 
+reduction attributed to 
+the titrating chemicals 
+utilized during the whole 
+drilling fluid alkalinity 
+test.  
+ 
+The BAD correction 
+cannot be applied to 
+fluids which do not 
+exhibit any alkalinity. 
+The whole-drilling fluid 
+alkalinity analysis is 
+used to find the 
+concentration of non-
+reacted lime in the fluid, 
+also called “Excess 
+Lime” 
+ 
+The whole-drilling fluid 
+chloride test is a titration 
+method which measure 
+the volume of standard 
+silver nitrate required to 
+react with the chloride 
+ions to form insoluble 
+silver chloride nitrate 
+salts. 
+Measures the volume of 
+a standard calcium-
+chelating agent (THTS, 
+EDTA) required to react 
+with all the calcium 
+released from the fluid. 
+ 
+The calcium measured 
+in this test can come 
+from the calcium 
+chloride used to prepare 
+the fluid, or from drilled 
+up gypsum or anhydrite. 
+ 
+Reagents 
+PNP, DI water, 
+Phenolphthalein, 
+Sodium hydroxide 0.1N 
+PNP, DI water, 
+Phenolphthalein, 
+Sulfuric acid 0.1N 
+Continuation of 
+alkalinity, plus silver 
+nitrate 0.282N and 
+Potassium chromate 
+PNP, DI water, Calcium 
+buffer solution, Calver II 
+powder, EDTA solution 
+200EPM 
+ 
+
+=== PAGE 220 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 220 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Unit 25 – Non Aqueous Fluids Water Phase Salinity 
+Objectives 
+ 
+Explain the concept of water phase salinity and its importance 
+ 
+Measure the water phase salinity of non-aqueous fluid samples 
+Overview 
+As mentioned in Unit 23, the water phase salinity is a measure of the osmotic dehydration/hydration potential 
+of water in a mud or shale, and it’s dictated by the concentration of salts in the drilling fluid. 
+An invert emulsion fluid at minimum will contain one type of salt, usually calcium chloride CaCl2, however, as 
+different layers of rock are drilled it’s possible that other salts incorporate into the drilling fluid, such as sodium 
+chloride (NaCl). 
+To calculate the water phase salinity (WPS), it is necessary to know the following: 
+– Whole-drilling fluid calcium content  
+– Whole-drilling fluid chloride content 
+– Retort fraction of water 
+Importance of Water Phase Salinity 
+ 
+The salt will try to balance the exchange of water between the fluid and the formation 
+ 
+Required to avoid formation instability due the water transfer to/from the formation 
+ 
+The water phase salinity analysis helps identify if undissolved salt is present the system. It can 
+generate an increase in the solids of the fluid 
+ 
+Variations in the water phase salinity can help to identify if we have contaminations with fresh water or 
+brine from the formation 
+Osmotic Exchange explained 
+❶ NAF and Formation have 
+the same salinity 
+❷ NAF has a lower salinity 
+than the Formation 
+ 
+❸ NAF has a salinity higher 
+than the Formation 
+ 
+❹ NAF has a salinity much 
+higher than the Formation 
+ 
+No Exchange of water 
+Shale Swelling. 
+Formation is weakened 
+Tight hole, stuck pipe, etc. 
+Some water leaves the shale 
+Shale Compaction 
+Shale strengthening 
+Too much water leaves the 
+shale 
+Shale Desiccation 
+Shale weakening 
+  
+Figure 205 - Osmotic exchange with shales based on WPS 
+
+=== PAGE 221 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 221 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Calculations of Water Phase Salinity 
+To calculate the WPS of a NAF sample, it will be needed to know: 
+ 
+Whole drilling fluid calcium content 
+ 
+Whole drilling fluid chlorides content 
+ 
+Water fraction from retort 
+Once the WPS has been calculated, it’s also possible to perform a corrected solids analysis of the fluid. In that 
+case, it will also be required to know: 
+ 
+Fluid density 
+ 
+Oil fraction from retort 
+ 
+Specific gravity of base fluid (NAP) 
+ 
+The calculations required to perform the test per API guideline 13B-2 are: 
+1. Chloride ion associated with the CaCl2 [mg/l] 
+ 
+API 13B-2 Section 12.3.2.2 - Formula # 32 
+2. Comparison of CaCl2 [mg/l] vs NaCl 
+ 
+   
+API 13B-2 Section 12.3.2.3 - Formula # 33 
+3. Concentration of CaCl2 [mg/l] 
+ 
+ 
+ 
+API 13B-2 Section 12.3.2.4 - Formula # 34 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Or API 13B-2 Section 12.3.2.5 - Formula # 37 
+4. Chloride ion associated with NaCl [mg/l]  
+ 
+API 13B-2 Section 12.3.2.3 - Formula # 33 
+5. Concentration of NaCl [mg/l] 
+ 
+ 
+ 
+API 13B-2 Section 12.3.2.6 - Formula # 40 
+6. Mass fraction of CaCl2 [%weight]  
+ 
+ 
+API 13B-2 Section 12.4.2 - Formula # 43 
+7. Mass fraction of NaCl [%weight]  
+ 
+ 
+API 13B-2 Section 12.4.3 - Formula # 44 
+8. Parts per Million of CaCl2 [ppm] 
+ 
+ 
+ 
+Result of Step # 6 x 10000 
+9. Parts per Million of NaCl [ppm] 
+ 
+ 
+ 
+Result of Step # 7 x 10000 
+10. Water Phase Salinity 
+ 
+ 
+ 
+ 
+Addition of the results of Steps 8 + Steps 9 
+ 
+In order to minimize errors when performing the calculations, we can obtain 
+them using software or by hand calculations with the Aqueous Phase 
+calculations sheet. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 206 - WPS sheet 
+
+=== PAGE 222 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 222 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Example of Calculations.  
+Calculate the WPS for a fluid sample with a density of 11.3ppg, a calcium Content of 24000m/gl, a 
+chlorides content of 37000 mg/l, %Retort water 23%, %Retort oil 60%, SGNAP 0.8.  
+Results using the Aqueous Phase calculations sheet 
+ 
+ 
+Calculations for Water Phase Salinity
+API 13B-2 (2014) Reference
+Result
+1. Chloride ion associated with the CaCl2 [mg/l]
+Section 12.3.2.2 - Formula # 32
+42456
+mg/l
+2. Comparison of CaCl2 [mg/l] vs NaCl
+Section 12.3.2.3 - Formula # 33
+If NaCl > 0
+NaCl Present
+If NaCl < 0
+No NaCl
+3. Concentration of CaCl2 [mg/l]
+Section 12.3.2.4 - Formula # 34
+57905
+Section 12.3.2.5 - Formula # 37
+0.00
+4. Chloride ion associated with NaCl [mg/l]
+Section 12.3.2.3 - Formula # 33
+0
+mg/l
+5. Concentration of NaCl [mg/l]
+Section 12.3.2.6 - Formula # 40
+0.00
+mg/l
+6. Mass fraction of CaCl2 [%weight]
+WC
+Section 12.4.2 - Formula # 43
+20.11
+%Weight
+7. Mass fraction of NaCl [%weight]
+WN
+Section 12.4.3 - Formula # 44
+0
+%Weight
+8. Parts per Million of CaCl2 [ppm]
+Step # 6 x 10000
+201100
+ppm
+9. Parts per Million of NaCl [ppm]
+Step # 7 x 10000
+0
+ppm
+10. Water Phase Salinity
+Step 8 + Step 9
+201100
+ppm
+11. Specific Gravity of the Brine
+ρB
+Section 12.4.5 - Formula # 48
+1.17648
+SG
+Solids Calculations
+12. Volume Fraction of the Brine
+ϕB
+Section 12.6.1.1 - Formula # 56
+24.47
+%Volume
+13. Corrected Volume Fraction of Solids
+ϕSo
+Section 12.6.1.2 - Formula # 57
+15.53
+%Volume
+14.
+3.772
+SG
+15.
+4.15
+%
+11.38
+%
+16.
+37.82
+lb / bbl
+167.52
+lb / bbl
+mg/l
+𝐴𝐴𝑆𝑆𝐺𝐺= 11.98 𝑅𝑅𝐻𝐻−𝑇𝑇𝑠𝑠𝑏𝑏𝑃𝑃𝑑𝑑𝐷𝐷 %𝑂𝑂𝐷𝐷𝑏𝑏𝐷𝐷𝑙𝑙 𝑂𝑂𝐷𝐷𝑏𝑏−(𝑇𝑇𝑠𝑠𝑏𝑏𝑃𝑃𝑑𝑑𝐷𝐷 %𝑏𝑏𝑑𝑑𝐷𝐷𝐷𝐷𝐷𝐷)(𝐷𝐷𝑙𝑙 𝐵𝐵𝑑𝑑𝐷𝐷𝐷𝐷𝐷𝐷)
+𝑇𝑇𝑠𝑠𝑏𝑏𝑃𝑃𝑑𝑑𝐷𝐷 % 𝐷𝐷𝑠𝑠𝑑𝑑𝑑𝑑𝐷𝐷𝑠𝑠𝐷𝐷𝐷𝐷𝑤𝑤 𝐷𝐷𝑠𝑠𝑏𝑏𝐷𝐷𝑤𝑤𝐷𝐷
+% 𝐿𝐿𝐺𝐺𝑆𝑆=
+𝐻𝐻𝐷𝐷𝐷𝐷𝑙𝑙ℎ𝐷𝐷𝐷𝐷𝐷𝐷𝑙𝑙 𝑑𝑑𝑑𝑑𝐷𝐷𝐷𝐷𝑑𝑑𝐷𝐷𝑑𝑑𝑏𝑏𝑆𝑆𝐿𝐿−𝐴𝐴𝑆𝑆𝐺𝐺) (𝐻𝐻𝐷𝐷𝐷𝐷𝑙𝑙ℎ𝐷𝐷𝐷𝐷𝐷𝐷𝑙𝑙 𝑑𝑑𝑑𝑑𝐷𝐷𝐷𝐷𝑑𝑑𝐷𝐷𝑑𝑑𝑏𝑏𝑆𝑆𝐿𝐿−𝐿𝐿𝐺𝐺𝑆𝑆𝑆𝑆𝐿𝐿
+⁄
+× %𝐷𝐷𝑆𝑆
+% 𝐻𝐻𝐺𝐺𝑆𝑆= %𝐷𝐷𝑠𝑠𝑑𝑑𝑑𝑑𝐷𝐷𝑠𝑠𝐷𝐷𝐷𝐷𝑤𝑤 𝑆𝑆𝑠𝑠𝑏𝑏𝐷𝐷𝑤𝑤𝐷𝐷−%𝐿𝐿𝐺𝐺𝑆𝑆
+% 𝐿𝐿𝐺𝐺𝑆𝑆𝑃𝑃𝑃𝑃𝑏𝑏= 𝐿𝐿𝐺𝐺𝑆𝑆𝑆𝑆𝐿𝐿× %𝐿𝐿𝐺𝐺𝑆𝑆× 3.505
+% 𝐻𝐻𝐺𝐺𝑆𝑆𝑃𝑃𝑃𝑃𝑏𝑏= 𝐻𝐻𝐺𝐺𝑆𝑆𝑆𝑆𝐿𝐿× %𝐻𝐻𝐺𝐺𝑆𝑆× 3.505
+
+=== PAGE 223 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 223 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Unit 26 – Non Aqueous Fluids Formulation 
+Objectives 
+ 
+Learn the steps to calculate materials to build a NAF 
+ 
+Perform calculations to build NAF 
+Overview 
+When we formulate an IEF, we must remember that it is composed of different materials and it has different 
+properties than a water base fluid (WBF). 
+These different materials behave different in the fluid and thus there is an order of addition that must be 
+adhered to. 
+We must know the correct quantities of base fluid, water, salt and weighting material. 
+ 
+Material Mass Balance for NAF/IEF  
+To perform the material balance for NAF is important to know: 
+1. Desired volume of fluid to 
+2. Desired NAP/Water ratio 
+3. Desired final density of fluid 
+4. Desired water phase salinity(WPS) of fluid 
+5. Concentrations and specific gravities of various entities – including base fluid, weighting material, and 
+chemical additives 
+ 
+Calculation procedure 
+Calculation needed 
+Description 
+Prerequisite 
+Before you proceed to calculate the quantities required of base fluid and 
+weighting material, it’s important to know the volume and density of all the 
+additives. (Calculate using ABC chart). You will need the concentration and 
+SG of each product. 
+❶ Density of the fluid phase 
+The density of the fluid phase refers to the final density obtained when the 
+base fluid (NAP), and the brine are mixed following percentages dictated by 
+OWR.  
+It can be obtained directly by using the following simplified mass balance 
+equation: 
+𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓ℎ𝑎𝑎𝑎𝑎𝑎𝑎= (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝑁𝑁𝑁𝑁𝑁𝑁× %𝑁𝑁𝑁𝑁𝑁𝑁) + (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝑖𝑖𝑖𝑖𝑖𝑖𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× %𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑝𝑝𝑝𝑝𝑝𝑝 
+Note: %NAP and %Brine come from the desired OWR and densities in ppg. 
+
+=== PAGE 224 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 224 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+❷ Weight up the fluid phase 
+In this step, a mass balance will be performed between the fluid phase 
+(mixture of NAP and brine), the weighting agent and the fluid additives –if 
+known- to obtain the desired final density and volume. 
+൫𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓൯+ (𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝐷𝐷𝑤𝑤𝑤𝑤) + 𝐺𝐺= ൫𝑉𝑉𝑓𝑓× 𝐷𝐷𝑓𝑓൯ 
+And 𝑉𝑉𝑉𝑉= 𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓+ 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤+ 𝐹𝐹 
+ 
+Once the volume of weighting material is obtained (Volwm), it will be possible 
+to convert the volume into a measurable mass in pounds and from there 
+change into sacks, big bags, tons, etc. 
+❸ Break down the fluid 
+phase 
+Using the volume substitution, once the volume of weighting material is 
+known (Volwm) it will be possible to calculate the volume of the fluid phase 
+(Volfluidp). 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= 𝑉𝑉𝑓𝑓−𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤−𝐹𝐹 
+When the total volume of fluid phase is known, you can proceed to break it 
+down using the desired oil to water ratio (OWR), which should be the same 
+used to calculate the density of the fluid phase. 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= (𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 × %𝑁𝑁𝑁𝑁𝑁𝑁)
+100
+  [𝑏𝑏𝑏𝑏𝑏𝑏 ] 
+𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵= (𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 × %𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+[𝑏𝑏𝑏𝑏𝑏𝑏 ] 
+Note: %NAP and %Brine come from the desired OWR. 
+❹ Break down the brine 
+When the total volume of the brine is calculated on step 3, it will be possible 
+to break it down into its constituent parts: water and salt. To know the 
+amount of these materials needed for the brine, it will be necessary to 
+reference the salt table for the brine being built. Once the values are 
+obtained from the table, it’s possible to calculate the amount of water and 
+salt. 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤= 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏   [𝑏𝑏𝑏𝑏𝑏𝑏] 
+To find 𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏 go to the Salt Table, 
+find the brine you need based on its 
+WPS and from there look for barrels of 
+water needed to prepare 1bbl of brine, 
+column VI 
+𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀 𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶2 = 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑝𝑝𝑝𝑝𝑝𝑝   [𝑙𝑙𝑙𝑙] 
+ 
+To find 𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑝𝑝𝑝𝑝𝑝𝑝 go to the Salt Table, find 
+the brine you need based on its WPS 
+and from there look for pound of salt 
+needed to prepare 1bbl of brine, column 
+VII 
+Once the mass of salt is known, it can be converted into sacks, big bags, 
+etc. 
+ 
+
+=== PAGE 225 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 225 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Order of Product Additions 
+1. Add the base fluid  
+2. Next, add the emulsifiers 
+3. Add the alkalinity source 
+4. Add brine 
+5. Next, viscosifier agents 
+6. Next, filtration control agents 
+7. Wetting agent 
+8. Last add, the weighting material 
+ 
+There are a variety of specific mixing procedures for the mixing order of the fluid systems.  
+Please check the design of service for the mixing process of a specific system being built/diluted in the field. 
+ 
+Basic Calculations (no additives) 
+ 
+Example 1 - Build 200 bbl of 16.5 ppg invert emulsion fluid with a NAP/Water ratio 78/22 and WPS 250000 
+ppm. NAP density = 7.0 ppg.  Weighting material = Barite 100 lb/sxs.  CaCl2 80 lb/sxs.  
+Calculate: Amount of weighting material (total pounds and sxs), Amount of base fluid (bbl), Amount of water 
+(bbl), Total CaCl2 (pounds and sxs). 
+ 
+Solution 
+Step 1.  
+Calculate Weight of the 
+Fluid Phase 
+Formula to 
+use 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝑁𝑁𝑁𝑁𝑁𝑁× %𝑁𝑁𝑁𝑁𝑁𝑁) + (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× %𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑝𝑝𝑝𝑝𝑝𝑝 
+ 
+𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (7.0 𝑝𝑝𝑝𝑝𝑝𝑝× 78) + (10.25 𝑝𝑝𝑝𝑝𝑝𝑝× 22)
+100
+= 𝟕𝟕. 𝟕𝟕𝟕𝟕 𝒑𝒑𝒑𝒑𝒑𝒑  
+Step 2.  
+Weight up the Fluid 
+Phase 
+൫𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓൯+ (𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝐷𝐷𝑤𝑤𝑤𝑤) + 𝐺𝐺= ൫𝑉𝑉𝑓𝑓× 𝐷𝐷𝑓𝑓൯ 
+(𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝟕𝟕. 𝟕𝟕𝟕𝟕)+(𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝟑𝟑𝟑𝟑. 𝟎𝟎𝟎𝟎)+0=(200 × 16.5)  and 𝑉𝑉𝑓𝑓= 𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓+ 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤+ 𝐹𝐹  
+Find the Volume of weighting material 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤= 64.25173802 𝑏𝑏𝑏𝑏l (keep all decimals) 
+Convert Weighting material in volume into pounds 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝑝𝑝𝑝𝑝𝑝𝑝𝑤𝑤𝑤𝑤 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 64.25173802 𝑏𝑏𝑏𝑏𝑏𝑏× 1472 𝑝𝑝𝑝𝑝𝑝𝑝= 94578.55836 lb 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤(𝑠𝑠𝑠𝑠𝑠𝑠) =
+94578.55836 𝑙𝑙𝑙𝑙
+100𝑙𝑙𝑙𝑙
+= 𝟗𝟗𝟗𝟗𝟗𝟗 𝒔𝒔𝒔𝒔𝒔𝒔 
+ 
+
+=== PAGE 226 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 226 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Step 3. Break Down the 
+Fluid Phase 
+Use the volume substitution to find the volume of the fluid phase 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= ൫𝑉𝑉𝑓𝑓 − 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤−F൯= 𝑏𝑏𝑏𝑏𝑏𝑏 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= (200 𝑏𝑏𝑏𝑏𝑏𝑏−64.25173802𝑏𝑏𝑏𝑏𝑏𝑏−0) = 135.74826 𝑏𝑏𝑏𝑏𝑏𝑏   
+(keep all decimals) 
+Break down the fluid phase using the desired OWR 
+Volume of NAP 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 ×%𝑁𝑁𝑁𝑁𝑁𝑁)
+100
+= 𝑏𝑏𝑏𝑏𝑏𝑏 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(135.74826 𝑏𝑏𝑏𝑏𝑏𝑏 ×78)
+100
+= 𝟏𝟏𝟏𝟏𝟏𝟏. 𝟖𝟖𝟖𝟖 𝑏𝑏𝑏𝑏𝑏𝑏      (Final answer, round 2 
+decimals) 
+Volume of Brine 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵= 
+(𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 ×%𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑏𝑏𝑏𝑏𝑏𝑏 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵= 
+(135.74826𝑏𝑏b𝑙𝑙×22)
+100
+= 𝟐𝟐𝟐𝟐. 𝟖𝟖𝟖𝟖𝟖𝟖𝟖𝟖𝟖𝟖𝟖𝟖 bbl  (keep all decimals) 
+ 
+Step 4. Break Down 
+Brine 
+Once the volume of the brine is known, break it down into water and salt. 
+Water Calculation 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤= 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏= 𝑏𝑏𝑏𝑏𝑏𝑏 
+𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏, Go to the Salt Table and find the bbl of water to prepare 1 bbl of 
+brine, based on the brine concentration (ppm) - (column VI) 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤= 29.864618 𝑏𝑏𝑏𝑏𝑏𝑏 × 0.910 𝑏𝑏𝑏𝑏𝑏𝑏/𝑏𝑏𝑏𝑏𝑏𝑏= 𝟐𝟐𝟐𝟐. 𝟏𝟏𝟏𝟏 𝒃𝒃𝒃𝒃𝒃𝒃 
+Salt Calculation 
+Salt  
+𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶2 = 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑆𝑆𝑆𝑆𝑆𝑆𝑡𝑡𝑝𝑝𝑝𝑝𝑝𝑝= 𝑙𝑙𝑙𝑙 
+𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑝𝑝𝑝𝑝𝑝𝑝, Go to the Salt Table and find the ppb of salt to prepare 1 bbl of 
+brine, based on the brine concentration (ppm) - (column VII) 
+𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶2 = 29.864618 𝑏𝑏𝑏𝑏𝑏𝑏× 111.01 𝑙𝑙𝑙𝑙𝑏𝑏𝑏𝑏𝑏𝑏
+ൗ
+= 3315.271244 𝑙𝑙𝑙𝑙 = 3315.27lb or divided 
+by 80lb/sack, 
+Total sacks of Salt = 42sxs 
+ 
+Summary of Results 
+Barrels of NAP 
+105.88bbl 
+Barrels of water 
+27.18bbl 
+Sacks of Barite (100lb/sxs) 
+946sxs 
+Sacks of salt (80lb/sxs) 
+42sxs 
+ 
+
+=== PAGE 227 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 227 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Example 2 - Build 500 bbl of 14.5 ppg invert emulsion fluid with a NAP/Water ratio 75/25 and WPS 200000 
+ppm. NAP density = 7.0 ppg. Weighting material = CaCO3 50 lb/sxs (2.7 sg). CaCl2 80 lb/sxs.  
+Calculate: Amount of weighting material (total pounds and sxs), Amount of base fluid (bbl), Amount of water 
+(bbl), Total CaCl2 (pounds and sxs). 
+ 
+Solution 
+Step 1.  
+Calculate Weight of the 
+Fluid Phase 
+Formula to 
+use 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝑁𝑁𝑁𝑁𝑁𝑁× %𝑁𝑁𝑁𝑁𝑁𝑁) + (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× %𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑝𝑝𝑝𝑝𝑝𝑝 
+ 
+𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (7.0 𝑝𝑝𝑝𝑝𝑝𝑝× 75) + (9.83 𝑝𝑝𝑝𝑝𝑝𝑝× 25)
+100
+= 𝟕𝟕. 𝟕𝟕𝟕𝟕 𝒑𝒑𝒑𝒑𝒑𝒑  
+Step 2.  
+Weight up the Fluid 
+Phase 
+൫𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓൯+ (𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝐷𝐷𝑤𝑤𝑤𝑤) + 𝐺𝐺= ൫𝑉𝑉𝑓𝑓× 𝐷𝐷𝑓𝑓൯ 
+(𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝟕𝟕. 𝟕𝟕𝟕𝟕)+(𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝟐𝟐𝟐𝟐. 𝟓𝟓𝟓𝟓𝟓𝟓𝟓𝟓)+0=(500 × 14.5)  and 𝑉𝑉𝑓𝑓= 𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓+ 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤+ 𝐹𝐹  
+Find the Volume of weighting material 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤= 229.0591371 𝑏𝑏𝑏𝑏l (keep all decimals) 
+Convert Weighting material in volume into pounds 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝑝𝑝𝑝𝑝𝑝𝑝𝑤𝑤𝑤𝑤 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 64.25173802 𝑏𝑏𝑏𝑏𝑏𝑏× 946.323 𝑝𝑝𝑝𝑝𝑝𝑝= 216763.9298 lb 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤(𝑠𝑠𝑠𝑠𝑠𝑠) =
+216763.9298 𝑙𝑙𝑙𝑙
+50𝑙𝑙𝑙𝑙
+= 𝟒𝟒𝟒𝟒𝟒𝟒𝟒𝟒 𝒔𝒔𝒔𝒔𝒔𝒔 
+ 
+Step 3. Break Down the 
+Fluid Phase 
+Use the volume substitution to find the volume of the fluid phase 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= ൫𝑉𝑉𝑓𝑓 − 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤−F൯= 𝑏𝑏𝑏𝑏𝑏𝑏 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= (500 𝑏𝑏𝑏𝑏𝑏𝑏−229.0591371𝑏𝑏𝑏𝑏𝑏𝑏−0) = 270.9408629 𝑏𝑏𝑏𝑏𝑏𝑏   
+(keep all decimals) 
+Break down the fluid phase using the desired OWR 
+Volume of NAP 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 ×%𝑁𝑁𝑁𝑁𝑁𝑁)
+100
+= 𝑏𝑏𝑏𝑏𝑏𝑏 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(270.9408629𝑏𝑏𝑏𝑏𝑙𝑙 ×75)
+100
+= 𝟐𝟐𝟐𝟐𝟐𝟐. 𝟐𝟐𝟐𝟐 𝑏𝑏𝑏𝑏𝑏𝑏    (Final answer, round 2 
+decimals) 
+Volume of Brine 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵= 
+(𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 ×%𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑏𝑏𝑏𝑏𝑏𝑏 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵= 
+(270.9408629 𝑏𝑏b𝑙𝑙×25)
+100
+= 𝟔𝟔𝟔𝟔. 𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕𝟕 bbl  (keep all decimals) 
+
+=== PAGE 228 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 228 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Step 4. Break Down 
+Brine 
+Once the volume of the brine is known, break it down into water and salt. 
+Water Calculation 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤= 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏= 𝑏𝑏𝑏𝑏𝑏𝑏 
+𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝑏𝑏𝑏𝑏𝑏𝑏, Go to the Salt Table and find the bbl of water to prepare 1 bbl of 
+brine, based on the brine concentration (ppm) - (column VI) 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤𝑤= 67.73521573 𝑏𝑏𝑏𝑏𝑏𝑏 × 0.936 𝑏𝑏𝑏𝑏𝑏𝑏/𝑏𝑏𝑏𝑏𝑏𝑏= 𝟔𝟔𝟔𝟔. 𝟒𝟒𝟒𝟒 𝒃𝒃𝒃𝒃𝒃𝒃 
+Salt Calculation 
+𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶2 = 𝑉𝑉𝑉𝑉𝑉𝑉𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× 𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑝𝑝𝑝𝑝𝑝𝑝= 𝑙𝑙𝑙𝑙 
+𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑝𝑝𝑝𝑝𝑝𝑝, Go to the Salt Table and find the ppb of salt to prepare 1 bbl of 
+brine, based on the brine concentration (ppm) - (column VII) 
+𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶2 = 67.73521573 𝑏𝑏𝑏𝑏𝑏𝑏× 85.10 𝑙𝑙𝑙𝑙𝑏𝑏𝑏𝑏𝑏𝑏
+ൗ
+= 5764.266858 𝑙𝑙𝑙𝑙 = 5764.27lb or divided 
+by 80lb/sack, 
+Total sacks of Salt = 73sxs 
+Summary of Results 
+Barrels of NAP 
+203.21bbl 
+Barrels of water 
+63.4bbl 
+Sacks of Barite (100lb/sxs) 
+4336sxs 
+Sacks of salt (80lb/sxs) 
+73 
+ 
+ 
+Calculations with additives 
+ 
+Example 3 - Given the following information, build 100 bbl of 12.0 ppg invert emulsion fluid (NAP/Water = 
+80/20, NAP SG = 0.84, WPS = 220000 ppm).   
+Calculate: Amount of weighting material (total pounds and sxs), Amount of base fluid (bbl), Amount of water 
+(bbl), Total CaCl2 (pounds and sxs), and sacks of all the products needed. 
+Formulation per design of service (DOS) or mud program: 
+Product 
+Package 
+SG 
+ppb 
+Diesel 
+0.84 
+As needed 
+INVERMUL 
+55 gal drum 0.94 
+6  
+lime 
+50lb/sack 
+2.4 
+3 
+Brine, (220000 ppm of CaCl2) 
+ - 
+As needed 
+DURATONE® HT 
+50lb/sack 
+1.8 
+8 
+GELTONE® II 
+50lb/sack 
+1.7 
+3 
+Barite 
+100lb/sack 
+4.2 
+As needed 
+
+=== PAGE 229 ===
+Baroid Core 
+Participant Guide 
+ 
+FOR INTERNAL USE ONLY 
+Page 229 of 347 
+© Copyright 2020, Halliburton 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Solution 
+Prerequisite  
+Solve the ABC chart with all the applicable products (no base fluid, no water, no salt, no 
+weighting agent). (Use 5 decimals) 
+ 
+Step 1.  
+Calculate Weight 
+of the Fluid Phase 
+Formula to use 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝑁𝑁𝑁𝑁𝑁𝑁× %𝑁𝑁𝑁𝑁𝑁𝑁) + (𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐷𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵× %𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵𝐵)
+100
+= 𝑝𝑝𝑝𝑝𝑝𝑝 
+ 
+𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓= (7.0 𝑝𝑝𝑝𝑝𝑝𝑝× 80) + (9.99 𝑝𝑝𝑝𝑝𝑝𝑝× 20)
+100
+= 𝟕𝟕. 𝟔𝟔𝟔𝟔 𝒑𝒑𝒑𝒑𝒑𝒑  
+Step 2.  
+Weight up the 
+Fluid Phase 
+൫𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝐷𝐷𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓൯+ (𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝐷𝐷𝑤𝑤𝑤𝑤) + 𝐺𝐺= ൫𝑉𝑉𝑓𝑓× 𝐷𝐷𝑓𝑓൯ 
+(𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓× 𝟕𝟕. 𝟔𝟔𝟔𝟔)+(𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝟑𝟑𝟑𝟑. 𝟎𝟎𝟎𝟎)+0=(100 × 12)  and 𝑉𝑉𝑓𝑓= 𝑉𝑉𝑉𝑉𝑉𝑉𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓𝑓+ 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤+ 𝐹𝐹  
+Find the Volume of weighting material 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤= 15.3878365𝑏𝑏𝑏𝑏l (keep all decimals) 
+Convert Weighting material in volume into pounds 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤× 𝑝𝑝𝑝𝑝𝑝𝑝𝑤𝑤𝑤𝑤 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤, 𝑙𝑙𝑙𝑙= 15.3878365 𝑏𝑏𝑏𝑏𝑏𝑏× 1472 𝑝𝑝𝑝𝑝𝑝𝑝= 22650.89533 lb 
+ 
+𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑇𝑤𝑤𝑤𝑤(𝑠𝑠𝑠𝑠𝑠𝑠) =
+22650.89533 𝑙𝑙𝑙𝑙
+100𝑙𝑙𝑙𝑙
+= 𝟐𝟐𝟐𝟐𝟐𝟐𝒔𝒔𝒔𝒔𝒔𝒔 
+ 
+Step 3. Break 
+Down the Fluid 
+Phase 
+Use the volume substitution to find the volume of the fluid phase 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= ൫𝑉𝑉𝑓𝑓 − 𝑉𝑉𝑉𝑉𝑉𝑉𝑤𝑤𝑤𝑤−F൯= 𝑏𝑏𝑏𝑏𝑏𝑏 
+𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉= (100 𝑏𝑏𝑏𝑏𝑏𝑏−15.3878365𝑏𝑏𝑏𝑏𝑏𝑏−3.94937) = 80.6627935 𝑏𝑏𝑏𝑏𝑏𝑏   
+(keep all decimals) 
+Break down the fluid phase using the desired OWR 
+Volume of NAP 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹𝐹 𝑃𝑃h𝑎𝑎𝑎𝑎𝑎𝑎 𝑉𝑉𝑉𝑉𝑉𝑉 ×%𝑁𝑁𝑁𝑁𝑁𝑁)
+100
+= 𝑏𝑏𝑏𝑏𝑏𝑏 
+ 
+𝑉𝑉𝑉𝑉𝑉𝑉𝑁𝑁𝑁𝑁𝑁𝑁= 
+(80.6627935𝑏𝑏𝑏𝑏 ×80)
+100
+= 𝟔𝟔𝟔𝟔. 𝟓𝟓𝟓𝟓 𝑏𝑏𝑏𝑏𝑏𝑏    (Final answer, round 2 decimals) 
+ 
+ 
+

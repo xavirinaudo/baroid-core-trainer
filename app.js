@@ -24,6 +24,7 @@ let stats = {
   bp_highScore: null,
   hw11_highScore: null,
   hw12_highScore: null,
+  hw13_highScore: null,
   theme: 'dark'
 };
 
@@ -129,6 +130,13 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Practice questions about flow regimes, shear rates, rheological models, and bit energy distribution based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_12' || isFinished) startQuiz('homework_12');
+  } else if (tabId === 'hw13') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw13').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 13: Non-Aqueous Fluids (NAF)";
+    document.getElementById('page-subtitle').innerText = "Practice questions about NAF and IEF chemistry, retort calculations, and waste management based on the Baroid Core guide.";
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_13' || isFinished) startQuiz('homework_13');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -168,6 +176,8 @@ function updateDashboardStats() {
   if (scoreHw11El) scoreHw11El.innerText = stats.hw11_highScore !== null ? `Record: ${stats.hw11_highScore}%` : "Record: --";
   const scoreHw12El = document.getElementById('score-hw12');
   if (scoreHw12El) scoreHw12El.innerText = stats.hw12_highScore !== null ? `Record: ${stats.hw12_highScore}%` : "Record: --";
+  const scoreHw13El = document.getElementById('score-hw13');
+  if (scoreHw13El) scoreHw13El.innerText = stats.hw13_highScore !== null ? `Record: ${stats.hw13_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -214,6 +224,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_12') {
     navId = 'nav-hw12';
     badgeName = "Homework 12";
+  } else if (quizId === 'homework_13') {
+    navId = 'nav-hw13';
+    badgeName = "Homework 13";
   }
   
   const navEl = document.getElementById(navId);
@@ -571,6 +584,8 @@ function showQuizResults() {
     if (stats.hw11_highScore === null || scorePercent > stats.hw11_highScore) stats.hw11_highScore = scorePercent;
   } else if (currentQuizId === 'homework_12') {
     if (stats.hw12_highScore === null || scorePercent > stats.hw12_highScore) stats.hw12_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_13') {
+    if (stats.hw13_highScore === null || scorePercent > stats.hw13_highScore) stats.hw13_highScore = scorePercent;
   }
   saveStats();
 }

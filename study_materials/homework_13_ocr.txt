@@ -1,0 +1,245 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 24 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 13
+Assessment Feedback
+Congratulations, you passed.
+Total score: 37 out of 37, 100%
+Question Feedback
+Question
+1 of26
+Select the advantages of Non-aqueous fluids over water based fluids:
+a
+a
+Better hole instability
+Better tolerance to contaminants
+Environmentally friendly
+Excellent lubricity
+Better hole gauge
+Superior temperature stability
+Promotes corrosion
+3 outof 3
+Question
+2 of 26
+What is the major difference between High Performance NAF's and Conventional NAF's?
+o
+Extreme temperature stability
+o
+No diesel in the base fluid
+o
+No commercial clays or lignites added to the system
+o
+Less water content in the fluid
+I outof I
+Question
+--- PAGE 2 ---
+3 26
+The most common types of base fluids of Non Aqueous fluids are:
+Diesel Oil
+Filtered brines
+Non Petroleum oil
+Mineral Oil
+3 outof 3
+Question
+4 of 26
+Which of the following contributes to the discontinuous phase of an NAF (select all applicable answers)?
+a
+Organophilic lignites
+Drilled solids
+Oil
+a
+Water
+a
+Commercial clays
+4 out of 4
+Question
+5 of 26
+Isomerized Olefin base fluids outperform oil, ester, and ester blend base fluids in extreme temperatures.
+O True
+CD False
+I outof I
+Question
+6 of 26
+The Baroid Family of Non Aqueous Fluids consist of conventional NAF v and high performance IEF v
+2 outof 2
+Question
+7 of 26
+Emulsifiers are used in NAF's for which of the following purposes?
+o
+Limiting sand content
+O
+Creating and maintaining a water in oil emulsion
+--- PAGE 3 ---
+o
+Lowering your ASG
+1 outof I
+Question
+8 of 26
+A product is considered organophillic when it has been treated with amines to make them oil-dispersible.
+O
+True
+O False
+1 outof I
+Question
+9 of 26
+The whole fluid chloride and whole fluid calcium content are maintained to directly affect which NAF property?
+o
+Water phase salinity
+o
+Oil to water ratio
+o
+Solids content
+1 out of I
+Question
+10 of26
+Ifthe content by volume of water increases, the viscosity of the fluid decreases causing the fluid to be thinner.
+o
+True
+O
+False
+I outof I
+Question
+11 of 26
+Emulsifiers target the interfacial tension between
+o
+Two immiscible fluids
+o
+Solids and Other solids
+o
+The wellbore and the drilling fluid
+O
+Solids and fluids
+1 outof I
+--- PAGE 4 ---
+Question
+12 of26
+The "salt" in an NAF is contained in which of the following?
+o
+The continuous phase
+o
+The oil phase
+o
+The solids phase
+O
+The water phase
+I outof I
+Question
+13 of26
+Wetting Agents target the interfacial tension between solids
+2 out of 2
+Question
+14 of26
+and liquid
+According to the API guidelines, rheological test on an NAF are performed at which temperatures? (select all
+applicable answers)
+Room temperature
+49 F
+Bottom hole temperature
+a
+120 F
+0 150F
+66 F
+2 outof 2
+Question
+15 of26
+Invert Emulsion means:
+o
+Water emulsified into a non-aqueous based fluid
+o
+Oil emulsified in water
+o
+Solids emulsified in water
+1 outof I
+--- PAGE 5 ---
+Question
+16 of26
+Organophillic clays and lignites are not used in clay-free fluids because they can negatively impact drilling
+performance and reservoir producibility.
+O
+True
+o
+False
+1 outof I
+Question
+17 of26
+When working with Non-Aqueous fluids, one of the main concerns is the enwronmental impact of the systems.
+Environmental responsibility and sustainability is becoming a critical factor in drilling practices.
+O
+True
+O False
+1 outof I
+Question
+18 of26
+When dealing with NAF and environmental challenges, there are several aspects to consider:
+o
+Fluid performance, regulations, cost management and risk mitigation
+o
+Fluid performance, regulations, cost management and waste volume
+O
+Fluid performance, regulations, waste management and risk mitigation
+I outof I
+Question
+19 of26
+Drilling Waste Management v is a strategy of maximizing drilling efficiency while mimmizing environmental liability for the
+customer.
+1 outof I
+Question
+20 of 26
+--- PAGE 6 ---
+Given the following results from a retort analysis, calculate the NAP/Water ratio:
+Retort Oil = 6.4ml
+NAP ratio 80
+2 outof 2
+Question
+21 of26
+Retort Water 1.6ml
+Water ratio 20
+The content of Low gravity solids is not a concern in non aqueous fluids.
+O True
+o
+False
+I outof I
+Question
+22 of 26
+One of the best advantages of the BaraPure@ system is that it has a lower environmental impact that Other NAF
+because it does not contain added salts.
+o
+True
+o
+False
+1 outof I
+Question
+23 of26
+All High performance fluids are stable up to 4500F.
+O True
+o
+False
+I outof I
+Question
+24 of 26
+The Non-Aqueous fluid system that contains an enhanced suspension package and has superior rheological properties
+is called:
+o
+BaraPure@
+O BaraECD@
+o
+ENCORE@
+--- PAGE 7 ---
+o
+BaraNext
+1 outof I
+Question
+25 of26
+In non-aqueous systems a Iow alkalinity is desired, to avoid corrosion.
+O
+True
+o
+False
+1 outof I
+Question
+26 of26
+Non-Aqueous fluids are usually built in the rigsite without mayor logistical concerns.
+O True
+O False
+I outof I
