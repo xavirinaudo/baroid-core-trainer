@@ -1085,8 +1085,8 @@ const QUIZ_DATA = {
           { value: "viscosifier", label: "Viscosifier" },
           { value: "calcium", label: "Calcium source" }
         ],
-        answer: "calcium",
-        explanation: "Gypsum is used as a calcium source to inhibit swelling shales or to convert freshwater mud to a gyp mud system."
+        answer: "carbonates",
+        explanation: "Gypsum (CaSO4) is used to treat out carbonate (CO32-) contamination by supplying calcium to precipitate calcium carbonate (CaCO3)."
       },
       {
         id: "hw11_q17",
