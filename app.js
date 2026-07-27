@@ -388,6 +388,8 @@ function renderCalculationInputs(q) {
     else if (key === 'contaminant') labelText = 'Contaminant to be removed';
     else if (key === 'chemical') labelText = 'Treatment Chemical';
     else if (key === 'concentration') labelText = 'Concentration of treatment (lb/bbl)';
+    else if (key === 'nap_ratio') labelText = 'NAP Ratio (%)';
+    else if (key === 'water_ratio') labelText = 'Water Ratio (%)';
     
     const isString = typeof q.answer[key] === 'string';
     group.innerHTML = `

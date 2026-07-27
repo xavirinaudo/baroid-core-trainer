@@ -1325,7 +1325,7 @@ const QUIZ_DATA = {
           { value: "environmentally_friendly", label: "Environmentally friendly" },
           { value: "promotes_corrosion", label: "Promotes corrosion" }
         ],
-        answers: [
+        answer: [
           "better_tolerance_to_contaminants",
           "excellent_lubricity",
           "better_hole_gauge",
@@ -1358,7 +1358,7 @@ const QUIZ_DATA = {
           { value: "non_petroleum_oil", label: "Non Petroleum oil" },
           { value: "mineral_oil", label: "Mineral Oil" }
         ],
-        answers: [
+        answer: [
           "diesel_oil",
           "non_petroleum_oil",
           "mineral_oil"
@@ -1377,7 +1377,7 @@ const QUIZ_DATA = {
           { value: "water", label: "Water" },
           { value: "commercial_clays", label: "Commercial clays" }
         ],
-        answers: [
+        answer: [
           "organophilic_lignites",
           "drilled_solids",
           "water",
@@ -1400,30 +1400,14 @@ const QUIZ_DATA = {
       {
         id: "hw13_q6",
         number: "6 of 26",
-        type: "dropdown",
-        question: "The Baroid Family of Non Aqueous Fluids consist of conventional [blank1] and high performance [blank2].",
-        dropdowns: [
-          {
-            id: "blank1",
-            placeholder: "Select fluid type...",
-            options: [
-              { value: "wbf", label: "WBF" },
-              { value: "naf", label: "NAF" },
-              { value: "ief", label: "IEF" }
-            ],
-            answer: "naf"
-          },
-          {
-            id: "blank2",
-            placeholder: "Select fluid type...",
-            options: [
-              { value: "wbf", label: "WBF" },
-              { value: "naf", label: "NAF" },
-              { value: "ief", label: "IEF" }
-            ],
-            answer: "ief"
-          }
-        ],
+        type: "matching",
+        question: "Select the correct fluid categories for each type:",
+        pairs: {
+          "Conventional": "NAF",
+          "High performance": "IEF"
+        },
+        options: ["NAF", "IEF", "WBF"],
+        keepKeysOrder: true,
         explanation: "The Baroid Family of Non-Aqueous Fluids comprises conventional Non-Aqueous Fluids (NAF) and high-performance Invert Emulsion Fluids (IEF)."
       },
       {
@@ -1507,28 +1491,14 @@ const QUIZ_DATA = {
       {
         id: "hw13_q13",
         number: "13 of 26",
-        type: "dropdown",
-        question: "Wetting Agents target the interfacial tension between [blank1] and [blank2].",
-        dropdowns: [
-          {
-            id: "blank1",
-            placeholder: "Select...",
-            options: [
-              { value: "solids", label: "solids" },
-              { value: "liquids", label: "liquid" }
-            ],
-            answer: "solids"
-          },
-          {
-            id: "blank2",
-            placeholder: "Select...",
-            options: [
-              { value: "solids", label: "solids" },
-              { value: "liquids", label: "liquid" }
-            ],
-            answer: "liquids"
-          }
-        ],
+        type: "matching",
+        question: "Match Wetting Agent phases to their tension targets:",
+        pairs: {
+          "First phase": "solids",
+          "Second phase": "liquid"
+        },
+        options: ["solids", "liquid", "gas", "brine"],
+        keepKeysOrder: true,
         explanation: "Wetting agents are surfactants that reduce the interfacial tension between solids and liquids, ensuring weighting agents and drilled solids remain oil-wet."
       },
       {
@@ -1544,7 +1514,7 @@ const QUIZ_DATA = {
           { value: "150f", label: "150F" },
           { value: "66f", label: "66 F" }
         ],
-        answers: [
+        answer: [
           "120f",
           "150f"
         ],
@@ -1603,31 +1573,29 @@ const QUIZ_DATA = {
       {
         id: "hw13_q19",
         number: "19 of 26",
-        type: "dropdown",
-        question: "[blank1] is a strategy of maximizing drilling efficiency while minimizing environmental liability for the customer.",
-        dropdowns: [
-          {
-            id: "blank1",
-            placeholder: "Select definition...",
-            options: [
-              { value: "solids_control", label: "Solids Control" },
-              { value: "drilling_waste_management", label: "Drilling Waste Management" },
-              { value: "fluid_conditioning", label: "Fluid Conditioning" }
-            ],
-            answer: "drilling_waste_management"
-          }
+        type: "single",
+        question: "Select the strategy that fits the definition: 'maximizing drilling efficiency while minimizing environmental liability for the customer'",
+        options: [
+          { value: "solids_control", label: "Solids Control" },
+          { value: "drilling_waste_management", label: "Drilling Waste Management" },
+          { value: "fluid_conditioning", label: "Fluid Conditioning" }
         ],
+        answer: "drilling_waste_management",
         explanation: "Drilling Waste Management is the strategy of maximizing drilling efficiency while minimizing environmental liability for the customer through solids control, cuttings treatment, and disposal."
       },
       {
         id: "hw13_q20",
         number: "20 of 26",
-        type: "retort",
+        type: "calculation",
         question: "Given the following results from a retort analysis, calculate the NAF/Water ratio: Retort Oil = 6.4ml, Retort Water = 1.6ml",
-        inputs: [
-          { id: "nap", label: "NAP Ratio (%)", answer: "80" },
-          { id: "water", label: "Water Ratio (%)", answer: "20" }
-        ],
+        inputs: {
+          "Retort Oil": "6.4 ml",
+          "Retort Water": "1.6 ml"
+        },
+        answer: {
+          "nap_ratio": 80,
+          "water_ratio": 20
+        },
         explanation: "Total liquid = 6.4 mL + 1.6 mL = 8.0 mL.\nOil % = (6.4 / 8.0) * 100 = 80%\nWater % = (1.6 / 8.0) * 100 = 20%\nTherefore, the Non-Aqueous Phase (NAP) to Water ratio is 80 / 20."
       },
       {
