@@ -1336,6 +1336,7 @@ function checkContaminantsAnswers() {
   const expEl = document.getElementById('train-cont-explanation');
   const expTextEl = document.getElementById('train-cont-explanation-text');
   const expTitleEl = document.getElementById('train-cont-explanation-title');
+  const badgesEl = document.getElementById('train-cont-summary-badges');
 
   if (allCorrect) {
     expTitleEl.innerText = `Correct! Solution & Chemistry (This was ${entry.name}):`;
@@ -1343,6 +1344,48 @@ function checkContaminantsAnswers() {
   } else {
     expTitleEl.innerText = `Incorrect. Solution & Chemistry (This was ${entry.name}):`;
     expTitleEl.style.color = 'var(--error)';
+  }
+
+  // Get pretty option labels for memory visual aid
+  const getOptionLabel = (selectId, val) => {
+    const select = document.getElementById(selectId);
+    if (!select) return val;
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === val) return select.options[i].text;
+    }
+    return val;
+  };
+
+  const prettyCont = getOptionLabel('input-cont-name', entry.answer.contaminant);
+  const prettyTreat = getOptionLabel('input-cont-treatment', entry.answer.treatment);
+  const prettyDosage = entry.answer.dosage > 0 ? `${entry.answer.dosage} lb/bbl` : '0 lb/bbl (N/A)';
+
+  // Build the badges HTML (bold & highlighted)
+  let badgesHtml = `
+    <div style="background: rgba(230,162,60,0.15); border: 1px solid rgba(230,162,60,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #e6a23c; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(230,162,60,0.05);">
+      Contaminant: <span style="text-transform: uppercase; color: #f39c12; filter: drop-shadow(0 0 4px rgba(243,156,18,0.2));">${prettyCont}</span>
+    </div>
+    <div style="background: rgba(103,194,58,0.15); border: 1px solid rgba(103,194,58,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #67c23a; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(103,194,58,0.05);">
+      Treatment: <span style="text-transform: uppercase; color: #2ecc71; filter: drop-shadow(0 0 4px rgba(46,204,113,0.2));">${prettyTreat}</span>
+    </div>
+  `;
+
+  if (entry.answer.dosage > 0) {
+    badgesHtml += `
+      <div style="background: rgba(64,158,255,0.15); border: 1px solid rgba(64,158,255,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #409eff; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(64,158,255,0.05);">
+        Dosage: <span style="text-transform: uppercase; color: #3498db; filter: drop-shadow(0 0 4px rgba(52,152,219,0.2));">${prettyDosage}</span>
+      </div>
+    `;
+  } else {
+    badgesHtml += `
+      <div style="background: rgba(144,147,153,0.15); border: 1px solid rgba(144,147,153,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #909399; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(144,147,153,0.05);">
+        Dosage: <span style="text-transform: uppercase; color: #b2bec3;">${prettyDosage}</span>
+      </div>
+    `;
+  }
+
+  if (badgesEl) {
+    badgesEl.innerHTML = badgesHtml;
   }
 
   expTextEl.innerText = entry.explanation;
