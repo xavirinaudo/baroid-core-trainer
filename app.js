@@ -25,6 +25,7 @@ let stats = {
   hw11_highScore: null,
   hw12_highScore: null,
   hw13_highScore: null,
+  hw14_highScore: null,
   theme: 'dark'
 };
 
@@ -137,6 +138,13 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Practice questions about NAF and IEF chemistry, retort calculations, and waste management based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_13' || isFinished) startQuiz('homework_13');
+  } else if (tabId === 'hw14') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw14').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 14: WPS & Solids (Theory)";
+    document.getElementById('page-subtitle').innerText = "Practice questions about Water Phase Salinity (WPS) salts, excess lime, and retort solids definitions based on the Baroid Core guide.";
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_14' || isFinished) startQuiz('homework_14');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -178,6 +186,8 @@ function updateDashboardStats() {
   if (scoreHw12El) scoreHw12El.innerText = stats.hw12_highScore !== null ? `Record: ${stats.hw12_highScore}%` : "Record: --";
   const scoreHw13El = document.getElementById('score-hw13');
   if (scoreHw13El) scoreHw13El.innerText = stats.hw13_highScore !== null ? `Record: ${stats.hw13_highScore}%` : "Record: --";
+  const scoreHw14El = document.getElementById('score-hw14');
+  if (scoreHw14El) scoreHw14El.innerText = stats.hw14_highScore !== null ? `Record: ${stats.hw14_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -227,6 +237,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_13') {
     navId = 'nav-hw13';
     badgeName = "Homework 13";
+  } else if (quizId === 'homework_14') {
+    navId = 'nav-hw14';
+    badgeName = "Homework 14";
   }
   
   const navEl = document.getElementById(navId);
@@ -588,6 +601,8 @@ function showQuizResults() {
     if (stats.hw12_highScore === null || scorePercent > stats.hw12_highScore) stats.hw12_highScore = scorePercent;
   } else if (currentQuizId === 'homework_13') {
     if (stats.hw13_highScore === null || scorePercent > stats.hw13_highScore) stats.hw13_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_14') {
+    if (stats.hw14_highScore === null || scorePercent > stats.hw14_highScore) stats.hw14_highScore = scorePercent;
   }
   saveStats();
 }

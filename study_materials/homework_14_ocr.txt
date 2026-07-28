@@ -1,0 +1,82 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 25 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 14
+Assessment Feedback
+Congratulations, you passed.
+Total score: 33 out of 33, 100%
+Question Feedback
+Question
+I of 6
+What are the types of salts that can be found in the water phase salinity of the fluid?
+cach
+NaOH
+NaCl
+caC03
+PbC12
+AgCl
+2 outof 2
+Question
+2 of6
+What is Excess Lime?
+o
+Slight excess of water added to hydrate quicklime
+Total alkalinity of the whole drilling fluids
+o
+Extra lime added into drilling fluid to convert bicarbonates to carbonates
+o
+Lime concentration in whole drilling fluids exceeding formulation concentration
+I outof I
+Question
+--- PAGE 2 ---
+3 of6
+Select all the importance of Water Phase Salinity (WPS):
+a
+a
+Balance the exchange of water to/from the formation
+Avoid formation instability
+Identify contaminants
+To provide hydrostatic pressure for wellbore control
+Balance the exchange of salt to/from the formation
+To help determine the amount of active solids in drilling fluid
+Identify the presence of undissolved salts
+4 outof 4
+Question
+Select the correct definition for the terms below:
+Corrected solids Solids without the dissolved solids
+Retort solids
+All solids (including the dissolved solids left behind after heating) v
+2 outof 2
+Question
+5 of 6
+The calcium content of drilling fluid can come from:
+NaCl
+Drilled up Gypsum or anhydrite
+Lime
+caC12
+a
+Water
+3 outof 3
+Question
+--- PAGE 3 ---
+Using the following data, complete the Water Phase Salinity analysis for a sample of ENCORE@ IEF:
+• Mud weight (ppg) — 15
+• Calcium content (mg/L) — 16500
+• Chlorides (mg/L) = 25000
+• Fraction of water ((Pw) from retort
+• Oil from retort = 50%
+Specific gravity of Oil = 0.84
+Calculate:
+Water Phase Salinity, ppm
+196500
+Specific gravity of brine, sg 1.17192
+ASG, Sg 3.568
+Low gravity solids,
+0/'0 13.04
+Low gravity solids, ppb 118.83
+High gravity solids, % 19.97
+High gravity solids,
+ppb 293.98
+21 outof 21
+= 16%
