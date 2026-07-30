@@ -11,6 +11,10 @@ def build():
     output_html_path = os.path.join(workspace, 'Baroid_Core_Trainer.html')
     output_zip_path = os.path.join(workspace, 'Baroid_Core_Trainer.zip')
     
+    import subprocess
+    import datetime
+    import json
+
     print("Reading source files...")
     with open(html_path, 'r', encoding='utf-8') as f:
         html = f.read()
@@ -20,7 +24,33 @@ def build():
         quiz_data = f.read()
     with open(app_path, 'r', encoding='utf-8') as f:
         app = f.read()
-        
+
+    # Obtener el Git commit hash de forma síncrona
+    commit_hash = 'dev'
+    try:
+        commit_hash = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('utf-8').strip()
+    except Exception as e:
+        print(f"Warning: No se pudo obtener el commit hash de Git: {e}")
+        commit_hash = 'v-' + str(int(datetime.datetime.now().timestamp()))
+
+    build_time = datetime.datetime.now().isoformat()
+
+    # Generar el archivo version.json
+    try:
+        version_data = {
+            "version": commit_hash,
+            "releaseDate": build_time,
+            "description": "Auto-generated trainer build version"
+        }
+        with open(os.path.join(workspace, 'version.json'), 'w', encoding='utf-8') as vf:
+            json.dump(version_data, vf, indent=2)
+        print(f"Generado version.json con versión: {commit_hash}")
+    except Exception as e:
+        print(f"Warning: No se pudo escribir version.json: {e}")
+
+    # Reemplazar el marcador en el código de app.js
+    app = app.replace('{{VERSION_PLACEHOLDER}}', commit_hash)
+    
     print("Inlining index.css...")
     # Find link tag for index.css and replace with style block
     link_regex = re.compile(r'<link\s+rel="stylesheet"\s+href="index\.css"\s*\/?>')

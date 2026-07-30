@@ -1,3 +1,6 @@
+// Version & Update Management
+const CURRENT_TRAINER_VERSION = '{{VERSION_PLACEHOLDER}}';
+
 // State Management
 let currentTab = 'dashboard';
 let currentQuizId = null;
@@ -26,6 +29,7 @@ let stats = {
   hw12_highScore: null,
   hw13_highScore: null,
   hw14_highScore: null,
+  hw15_highScore: null,
   theme: 'dark'
 };
 
@@ -42,6 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
   generateSolidsParams();
   generateHoleParams();
   loadRandomContaminantCase();
+
+  // Check for trainer updates after initialization
+  setTimeout(checkUpdates, 3000);
 });
 
 // Load and Save Stats
@@ -145,6 +152,13 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Practice questions about Water Phase Salinity (WPS) salts, excess lime, and retort solids definitions based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_14' || isFinished) startQuiz('homework_14');
+  } else if (tabId === 'hw15') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw15').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 15: NAF Formulations (Theory)";
+    document.getElementById('page-subtitle').innerText = "Practice questions about NAF mixing sequences, product functions (INVERMUL, GELTONE II), and formulation parameters based on the Baroid Core guide.";
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_15' || isFinished) startQuiz('homework_15');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -188,6 +202,8 @@ function updateDashboardStats() {
   if (scoreHw13El) scoreHw13El.innerText = stats.hw13_highScore !== null ? `Record: ${stats.hw13_highScore}%` : "Record: --";
   const scoreHw14El = document.getElementById('score-hw14');
   if (scoreHw14El) scoreHw14El.innerText = stats.hw14_highScore !== null ? `Record: ${stats.hw14_highScore}%` : "Record: --";
+  const scoreHw15El = document.getElementById('score-hw15');
+  if (scoreHw15El) scoreHw15El.innerText = stats.hw15_highScore !== null ? `Record: ${stats.hw15_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -240,6 +256,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_14') {
     navId = 'nav-hw14';
     badgeName = "Homework 14";
+  } else if (quizId === 'homework_15') {
+    navId = 'nav-hw15';
+    badgeName = "Homework 15";
   }
   
   const navEl = document.getElementById(navId);
@@ -603,6 +622,8 @@ function showQuizResults() {
     if (stats.hw13_highScore === null || scorePercent > stats.hw13_highScore) stats.hw13_highScore = scorePercent;
   } else if (currentQuizId === 'homework_14') {
     if (stats.hw14_highScore === null || scorePercent > stats.hw14_highScore) stats.hw14_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_15') {
+    if (stats.hw15_highScore === null || scorePercent > stats.hw15_highScore) stats.hw15_highScore = scorePercent;
   }
   saveStats();
 }
@@ -1438,3 +1459,115 @@ function checkContaminantsAnswers() {
     btn.innerText = "Finish Session";
   }
 }
+
+// Version check & Update banner logic
+function checkUpdates() {
+  if (CURRENT_TRAINER_VERSION.startsWith('{{')) {
+    console.log('[Trainer Updates] Ejecutando en modo desarrollo. Ignorando chequeo de actualizaciones.');
+    return;
+  }
+
+  const versionUrl = 'https://xavirinaudo.github.io/baroid-core-trainer/version.json';
+  fetch(`${versionUrl}?t=${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
+    .then(data => {
+      if (data.version && data.version !== CURRENT_TRAINER_VERSION) {
+        showUpdateBanner(data.version);
+      }
+    })
+    .catch(err => console.warn('[Trainer Updates] Error al consultar version.json:', err));
+}
+
+function showUpdateBanner(newVersion) {
+  if (document.getElementById('update-notification-banner')) return;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .update-banner {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(25, 30, 45, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      padding: 16px 20px;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 320px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+    .update-banner-title {
+      font-weight: 700;
+      color: #e50914;
+      font-size: 14px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .update-banner-text {
+      font-size: 13px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.4;
+    }
+    .update-banner-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .update-banner-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .update-banner-btn-primary {
+      background: #e50914;
+      color: #fff;
+    }
+    .update-banner-btn-primary:hover {
+      background: #b2070f;
+    }
+    .update-banner-btn-secondary {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .update-banner-btn-secondary:hover {
+      color: #fff;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const banner = document.createElement('div');
+  banner.id = 'update-notification-banner';
+  banner.className = 'update-banner';
+  
+  banner.innerHTML = `
+    <h4 class="update-banner-title">¡Actualización Disponible!</h4>
+    <p class="update-banner-text">Hay una nueva versión del simulador disponible. Actualiza para obtener las últimas correcciones y mejoras.</p>
+    <div class="update-banner-actions">
+      <button class="update-banner-btn update-banner-btn-secondary" onclick="document.getElementById('update-notification-banner').remove()">Descartar</button>
+      <button class="update-banner-btn update-banner-btn-primary" onclick="window.location.reload(true)">Actualizar</button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+}
+

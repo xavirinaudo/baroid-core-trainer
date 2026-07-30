@@ -1,0 +1,310 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 27 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 15
+Assessment Feedback
+Congratulations, you passed.
+Total score: 138 out of 144, 96%
+Question Feedback
+Question
+1 of 51
+Organize in the right order the steps to perform the calculation of materials required to build a Non Aqueous Fluid
+Calculate density of the fluid phase
+Calculate the volume and quantity of the weighting agent 3 v
+Calculate volume and ratio mass of all additives
+Calculate the volume of base fluid
+Calculate the volume of water and pounds/sacks of salt
+5 outof 5
+Question
+2 of 51
+What is the function of BARABLOKTM in a NAF?
+O
+o
+o
+o
+o
+o
+o
+O
+o
+Viscosifier
+Weighting agent
+Rheology modifier
+Emulsifier
+Wetting agent
+Thinner
+Suspension agent
+Filtration control agent
+Alkalinity source
+--- PAGE 2 ---
+I outof I
+Question
+3 of 51
+What is the function of GELTONE@ 11 in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Weighting agent
+Emulsifier
+Viscosifier
+Filtration control agent
+Thinner
+Wetting agent
+Rheology modifier
+Suspension agent
+Alkalinity source
+I outof I
+Question
+4 of 51
+What is the function of RM-63TM in a NAF?
+o
+o
+o
+O
+o
+o
+O
+o
+o
+Thinner
+Alkalinity source
+Weighting agent
+Filtration control agent
+Suspension agent
+Viscosifier
+Emulsifier
+Wetting agent
+Rheology modifier
+I outof I
+Question
+5 of 51
+What is the function of INVERMUL@ in a NAF?
+o
+O
+o
+o
+Alkalinity source
+Filtration control agent
+Weighting agent
+Viscosifier
+--- PAGE 3 ---
+o
+o
+o
+o
+o
+Suspension agent
+Thinner
+Rheology modifier
+Emulsifier
+Wetting agent
+1 outof I
+Question
+6 of 51
+What is the function of DURATONE@ HT in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Rheology modifier
+Alkalinity source
+Emulsifier
+Weighting agent
+Wetting agent
+Viscosifier
+Filtration control agent
+Suspension agent
+Thinner
+I outof I
+Question
+7 of 51
+What is the function of EZ MULO NT in a NAF?
+O
+o
+o
+o
+o
+o
+o
+O
+o
+Filtration control agent
+Viscosifier
+Emulsifier
+Weighting agent
+Alkalinity source
+Rheology modifier
+Suspension agent
+Thinner
+Wetting agent
+1 outof I
+Question
+8 of51
+--- PAGE 4 ---
+What is the function of SUSPENTONETM in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Wetting agent
+Thinner
+Viscosifier
+Filtration control agent
+Rheology modifier
+Suspension agent
+Weighting agent
+Alkalinity source
+Emulsifier
+I outof I
+Question
+9 of 51
+What is the function of DRILTREAT@ in a NAF?
+o
+O
+o
+o
+o
+o
+o
+o
+Suspension agent
+Wetting agent
+Viscosifier
+Rheology modifier
+Emulsifier
+Thinner
+Alkalinity source
+Filtration control agent
+Weighting agent
+1 outof 1
+Question
+10 of 51
+What is the function of OMC@ 42TM in a NAF?
+o
+o
+o
+o
+O
+o
+o
+o
+o
+Wetting agent
+Filtration control agent
+Viscosifier
+Suspension agent
+Emulsifier
+Weighting agent
+Rheology modifier
+Thinner
+Alkalinity source
+--- PAGE 5 ---
+I outof I
+Question
+11 of 51
+What is the function of RHEMODTML in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Weighting agent
+Viscosifier
+Rheology modifier
+Suspension agent
+Alkalinity source
+Filtration control agent
+Thinner
+Wetting agent
+Emulsifier
+I outof I
+Question
+12 of 51
+Why is lime added into Non Aqueous fluids?
+a
+a
+To increase the alkalinity
+To decrease the alkalinity
+To activate some viscosifiers
+To increase the salinity
+To increase the content of calcium
+To activate some emulsifiers
+2 outof 2
+Question
+13 of 51
+Why is calcium chloride added into Non Aqueous fluids?
+Lower the fluid Ioss into the formation
+a
+To increase the salinity
+Activate some thinners
+Control osmotic exchange with the formation
+To increase the alkalinity
+2 out of 2
+--- PAGE 6 ---
+Question
+14 of 51
+Which of the following options are true about the properties of premium diesel
+o
+SG= 0.80; density = 6.7ppg
+0.84; density = 7ppg
+o
+SG= 0,86; density = 7.18ppg
+o
+0,82; density = 6.84ppg
+I outof I
+Question
+15 of 51
+Which of the following products is recommended to be added into NAF, when extra barite is added to a NAF?
+O OMC@ 42TM
+o
+Lime
+DRILTREAT@
+o
+BARABLOKTM
+o
+All of the above
+o
+None of the above
+1 outof 1
+Question
+16 of 51
+List in chronological order how the products/materials should be mixed to build a NAF
+5 th
+7th
+2nd
+Ist
+6 th
+8 th
+4 th
+Viscosifiers
+Wetting agent
+Emulsifiers
+Base Fluid
+Filtration control agents v
+Alkalinity source
+Weighting agents
+Brine
+8 outof 8
+Question
+17 of 51
