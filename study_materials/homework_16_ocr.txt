@@ -1,0 +1,136 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 28 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 16
+Assessment Feedback
+Congratulations, you passed.
+Total score: 56 out of 64, 88%
+Question Feedback
+Question
+I of 16
+In order to Change the NAP/Water ratio from 70/30 to 85/15, we need to add water.
+o
+True
+False
+I outof I
+Question
+2 of 16
+When you Change the NAP/Water ratio, Will the fluid density increase?
+O Yes
+O
+No
+I outof I
+Question
+3 of 16
+In order to increase the WPS of an IEF fluid, which value(s) do we need know? (select all applicable options)
+Desired concentration of salt
+Current NAP/Water ratio
+Current water phase salinity
+--- PAGE 2 ---
+Density of the base fluid
+2 outof 2
+Question
+4 of 16
+Calculate the oil, water, calcium chloride (801b/sack), and barite (1001b/sack) required to mix 200 bbl of a 15.5 ppg
+invert emulsion drilling fluid with a WPS of 220,000ppm and NAP/water ratio of 75/25. The density of the base oil is
+How many barrels of base fluid are needed? = 107.38
+3 out of 3
+Question
+5 of 16
+For Non aqueous fluid build I, how many barrels of water are required?
+Barrels of water = 33.22
+3 outof 3
+Question
+6 of 16
+For Non aqueous fluid build l, how many sacks of barite(1001b/sack) are needed?
+Sacks of barite(1001b/sack) = 837
+3 outof 3
+Question
+7 of 16
+For Non aqueous fluid build 1, how many Sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack)
+= 43
+3 outof 3
+Question
+8 of 16
+For OWR adjustment 1, how many barrels of non aqueous phase (base oil) are needed?
+Barrels ofNAP = 560
+--- PAGE 3 ---
+3 outof 3
+Question
+9 of 16
+For OWR adjustment I, how many barrels of water are needed?
+Barrels of water = 0
+3 out of 3
+Question
+10 of 16
+For OWR adjustment 1, how many sacks of barite (1001b/sack) are needed?
+Sacks of barite (1001b/sack) = 3120
+3 outof 3
+Question
+11 of 16
+For OWR adjustment 2, how many barrels of NAP are needed?
+Barrels ofNAP O
+I outof I
+Question
+12 of 16
+For OWR adjustment 2, how many barrels of water are needed?
+Barrels of water 192
+3 outof 3
+Question
+13 of 16
+For OWR adjustment 2, how many sacks of barite (1001b/sack) are required?
+Sacks of barite (1001b/sack) = 420
+3 out of 3
+--- PAGE 4 ---
+Question
+14 of 16
+Given the following data for 1000 bbl of a 10.5ppg IEF drilling fluid:
+NAP: Water: Solids:
+WPS: 230,OOOppm
+Calculate how much 97% pure CaC12 (801b/sack) must be added to adjust the WPS to 280,000ppm.
+Sacks of calcium chloride (801b/sack) = 82
+3 out of 3
+Question
+15 of 16
+Given the following data for 1500bbl of a 14.0ppg IEF drilling fluid:
+NAP: 63% Water: Solids: 22%
+WPS: 270,000ppm.
+Calculate how much water must be added to adjust the WPS to 220,000ppm.
+Barrels of water = 152.36
+O outof 3
+Water - 63.14bb1
+Question
+16 of 16
+Results of the WPS Analysis
+What is the NAP ratio in %? (whole number) 81
+What is the Water ratio in % (whole number) —
+Specific gravity of the brine (5 decimals) =
+19
+1.25557
+6.3
+Water Phase Salinity in ppm = 278100
+%Volume fraction of the brine = 14.34
+ASG (3 decimals) = 3.774
+HGSppb = 255.56
+%LGS -
+LGSppb = 57.41
+21 out of 26
+AP/Water ratio
+s
+Specific Gravity of brine
+% Volume fraction of the brine
+%HGS = 17.36
+83/17 %
+78100 ppm
+1.25554 sg
+14.34 %
+--- PAGE 5 ---
+SG
+ow gravity Solids
+igh gravity Solids
+.774
+17.36 0/
+57.41 ppb
+55.56 ppb
