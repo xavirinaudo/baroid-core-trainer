@@ -1328,7 +1328,6 @@ const QUIZ_DATA = {
         answer: [
           "better_tolerance_to_contaminants",
           "excellent_lubricity",
-          "better_hole_gauge",
           "superior_temperature_stability"
         ],
         explanation: "According to the Baroid Core Participant Guide Page 208, the considerable advantages of NAF over WBF are: Better hole stability (resulting in better hole gauge), more tolerant to contaminants, superior temperature stability, excellent lubricity, and provides corrosion resistance."
@@ -1491,14 +1490,13 @@ const QUIZ_DATA = {
       {
         id: "hw13_q13",
         number: "13 of 26",
-        type: "matching",
-        question: "Match Wetting Agent phases to their tension targets:",
-        pairs: {
-          "First phase": "solids",
-          "Second phase": "liquid"
-        },
-        options: ["solids", "liquid", "gas", "brine"],
-        keepKeysOrder: true,
+        type: "single",
+        question: "Wetting Agents target the interfacial tension between solids and liquid.",
+        options: [
+          { value: "true", label: "True" },
+          { value: "false", label: "False" }
+        ],
+        answer: "true",
         explanation: "Wetting agents are surfactants that reduce the interfacial tension between solids and liquids, ensuring weighting agents and drilled solids remain oil-wet."
       },
       {
@@ -1966,8 +1964,8 @@ const QUIZ_DATA = {
           { value: "filtration_control", label: "Filtration control agent" },
           { value: "alkalinity", label: "Alkalinity source" }
         ],
-        answer: "rheology_modifier",
-        explanation: "RHEMOD™ L is a liquid rheology modifier that provides viscosity and gel strength adjustments for low-shear-rate viscosity improvements."
+        answer: "viscosifier",
+        explanation: "RHEMOD™ L is a liquid viscosifier that provides viscosity and gel strength adjustments for low-shear-rate viscosity improvements."
       },
       {
         id: "hw15_q12",

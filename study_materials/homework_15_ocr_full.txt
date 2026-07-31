@@ -1,0 +1,567 @@
+--- PAGE 1 ---
+HALLIBURTON
+Apr 27 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 15
+Assessment Feedback
+Congratulations, you passed.
+Total score: 138 out of 144, 96%
+Question Feedback
+Question
+1 of 51
+Organize in the right order the steps to perform the calculation of materials required to build a Non Aqueous Fluid
+Calculate density of the fluid phase
+Calculate the volume and quantity of the weighting agent 3 v
+Calculate volume and ratio mass of all additives
+Calculate the volume of base fluid
+Calculate the volume of water and pounds/sacks of salt
+5 outof 5
+Question
+2 of 51
+What is the function of BARABLOKTM in a NAF?
+O
+o
+o
+o
+o
+o
+o
+O
+o
+Viscosifier
+Weighting agent
+Rheology modifier
+Emulsifier
+Wetting agent
+Thinner
+Suspension agent
+Filtration control agent
+Alkalinity source
+--- PAGE 2 ---
+I outof I
+Question
+3 of 51
+What is the function of GELTONE@ 11 in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Weighting agent
+Emulsifier
+Viscosifier
+Filtration control agent
+Thinner
+Wetting agent
+Rheology modifier
+Suspension agent
+Alkalinity source
+I outof I
+Question
+4 of 51
+What is the function of RM-63TM in a NAF?
+o
+o
+o
+O
+o
+o
+O
+o
+o
+Thinner
+Alkalinity source
+Weighting agent
+Filtration control agent
+Suspension agent
+Viscosifier
+Emulsifier
+Wetting agent
+Rheology modifier
+I outof I
+Question
+5 of 51
+What is the function of INVERMUL@ in a NAF?
+o
+O
+o
+o
+Alkalinity source
+Filtration control agent
+Weighting agent
+Viscosifier
+--- PAGE 3 ---
+o
+o
+o
+o
+o
+Suspension agent
+Thinner
+Rheology modifier
+Emulsifier
+Wetting agent
+1 outof I
+Question
+6 of 51
+What is the function of DURATONE@ HT in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Rheology modifier
+Alkalinity source
+Emulsifier
+Weighting agent
+Wetting agent
+Viscosifier
+Filtration control agent
+Suspension agent
+Thinner
+I outof I
+Question
+7 of 51
+What is the function of EZ MULO NT in a NAF?
+O
+o
+o
+o
+o
+o
+o
+O
+o
+Filtration control agent
+Viscosifier
+Emulsifier
+Weighting agent
+Alkalinity source
+Rheology modifier
+Suspension agent
+Thinner
+Wetting agent
+1 outof I
+Question
+8 of51
+--- PAGE 4 ---
+What is the function of SUSPENTONETM in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Wetting agent
+Thinner
+Viscosifier
+Filtration control agent
+Rheology modifier
+Suspension agent
+Weighting agent
+Alkalinity source
+Emulsifier
+I outof I
+Question
+9 of 51
+What is the function of DRILTREAT@ in a NAF?
+o
+O
+o
+o
+o
+o
+o
+o
+Suspension agent
+Wetting agent
+Viscosifier
+Rheology modifier
+Emulsifier
+Thinner
+Alkalinity source
+Filtration control agent
+Weighting agent
+1 outof 1
+Question
+10 of 51
+What is the function of OMC@ 42TM in a NAF?
+o
+o
+o
+o
+O
+o
+o
+o
+o
+Wetting agent
+Filtration control agent
+Viscosifier
+Suspension agent
+Emulsifier
+Weighting agent
+Rheology modifier
+Thinner
+Alkalinity source
+--- PAGE 5 ---
+I outof I
+Question
+11 of 51
+What is the function of RHEMODTML in a NAF?
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Weighting agent
+Viscosifier
+Rheology modifier
+Suspension agent
+Alkalinity source
+Filtration control agent
+Thinner
+Wetting agent
+Emulsifier
+I outof I
+Question
+12 of 51
+Why is lime added into Non Aqueous fluids?
+a
+a
+To increase the alkalinity
+To decrease the alkalinity
+To activate some viscosifiers
+To increase the salinity
+To increase the content of calcium
+To activate some emulsifiers
+2 outof 2
+Question
+13 of 51
+Why is calcium chloride added into Non Aqueous fluids?
+Lower the fluid Ioss into the formation
+a
+To increase the salinity
+Activate some thinners
+Control osmotic exchange with the formation
+To increase the alkalinity
+2 out of 2
+--- PAGE 6 ---
+Question
+14 of 51
+Which of the following options are true about the properties of premium diesel
+o
+SG= 0.80; density = 6.7ppg
+0.84; density = 7ppg
+o
+SG= 0,86; density = 7.18ppg
+o
+0,82; density = 6.84ppg
+I outof I
+Question
+15 of 51
+Which of the following products is recommended to be added into NAF, when extra barite is added to a NAF?
+O OMC@ 42TM
+o
+Lime
+DRILTREAT@
+o
+BARABLOKTM
+o
+All of the above
+o
+None of the above
+1 outof 1
+Question
+16 of 51
+List in chronological order how the products/materials should be mixed to build a NAF
+5 th
+7th
+2nd
+Ist
+6 th
+8 th
+4 th
+Viscosifiers
+Wetting agent
+Emulsifiers
+Base Fluid
+Filtration control agents v
+Alkalinity source
+Weighting agents
+Brine
+8 outof 8
+Question
+17 of 51
+--- PAGE 7 ---
+Select all the parameters that are needed to calculate the materials required to build a NAF
+a
+a
+Volume of the fluid
+N AP/Water ratio
+Flow line temperature
+Water phase salinity
+Mixing time of the fluid
+All of the above
+3 outof 3
+Question
+18 of 51
+How many barrels of oil (SG 0.79), barrels of water, sacks of CaC12 salt (801b/sack), and sacks of barite (1001b/sack)
+are needed to build 2,300 bbl of 13.6 ppg invert emulsion fluid with a NAP/water ratio of 80/20 and 260,000ppm
+salinity?
+How many barrels of NAP are needed? 1424.32
+3 out of 3
+Question
+19 of 51
+For NAF Build l, how many barrels of water are needed?
+Barrels of water = 323.32
+3 outof 3
+Question
+20 of 51
+For NAF Build l, how many sacks of barite (1001b/sack) are needed?
+Sacks of barite (1001b/sack) = 7649
+3 outof 3
+Question
+21 of51
+For NAF Build l, how many sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack) — 519
+3 out of 3
+--- PAGE 8 ---
+Question
+22 of 51
+Build 4,000 bbl of a 13.2 invert emulsion fluid with an NAP/water ratio of 70/30, a WPS of 260,000ppm. Calculate
+how many tons of barite (20001b/ton), sacks ofCaC12 (801b/sack), barrels of water, and barrels of oil (7.0 ppg) Will be
+needed to build the drilling fluid
+How many barrels of NAP are needed? = 2261.76
+3 outof 3
+Question
+23 of 51
+For NAF Build 2, how many barrels of water are needed?
+Barrels of water = 880.14
+3 outof 3
+Question
+24 of 51
+For NAF Build 2, how many tons of barite (20001b/ton) are needed?
+Tons of barite (20001b/ton)
+— 565.95
+3 outof 3
+Question
+25 of 51
+For NAF Build 2, how many sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack)
+= 1411
+3 outof 3
+Question
+26 of 51
+Build 1,750 bbl of an invert emulsion fluid with a density of 13.4ppg, NAP/water ratio of 95/05, a WPS of 340,000
+ppm and the non aqueous phase of 7.09ppg, Calculate how much oil, water, Barite (1 ()()lb/sack), and CaC12 salt
+(801b/sack) Will be needed
+How many barrels of NAP are needed? = 1297.99
+0 outof 3
+NAP - 1296.58bbl
+--- PAGE 9 ---
+Question
+27 of51
+For NAF build 3, how many barrels of water are needed?
+Barrels of water = 58.96
+3 outof 3
+Question
+28 of 51
+For NAF build 3, how many sacks of barite (1001b/sack) are needed?
+Sacks of barite (1001b/sack) = 5649
+O outof 3
+Barite = 5670sxs
+Question
+29 of 51
+For NAF build 3, how many sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack)
+= 140
+3 outof 3
+Question
+30 of 51
+Calculate the oil, water, calcium chloride (801b/sack), and barite (1001b/sack) required to mix 1,050 bbl of a 13.2 ppg
+invert emulsion drilling fluid with a WPS of 260,000ppm and NAP/water ratio of 85/15. The density of the oil is
+How many barrels of NAP are needed? = 707.84
+3 outof 3
+Question
+31 of51
+For NAF build 4, how many barrels of water are needed?
+Barrels of water 113.42
+3 outof 3
+--- PAGE 10 ---
+Question
+32 of 51
+For NAF build 4, how many sacks of barite (1001b/sack) are needed?
+3198
+3 outof 3
+Question
+33 of 51
+For NAF build 4, how many sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack)
+= 182
+3 outof 3
+Question
+34 of 51
+Calculate all the materials required to build 1 ,000bbl of an IEF system of 1 1.3ppg with a NAP/Water ratio of 75/25,
+WPS of 210,OOOppm.
+The density of the NAP base fluid is 7ppg. Weighting material is barite (1001b/sack).
+The formulation to use is:
+roduct
+ackage size Specific
+avity
+ERMUL NT 55 gal/drum
+Ime
+ELTONE V
+50 lb/sack
+50 lb/sack
+URATONE HT 50 lb/sack
+RILTREAT 55 gal/drum
+.94
+1.70
+1.80
+1.00
+oncentration
+lb/bbl)
+5.0
+.o
+5.0
+.o
+1.5
+How many barrels of NAP are needed? —
+- 628.14
+3 outof 3
+Question
+35 of 51
+For NAF build 5,
+how many barrels of water are needed?
+Barrels of water
+= 195.14
+--- PAGE 11 ---
+3 outof 3
+Question
+36 of 51
+For NAF build 5, how many Sacks of barite (I are needed?
+Sacks of barite (1001b/sack) = 1842
+3 out of 3
+Question
+37 of 51
+For NAF build 5, how many sacks of calcium chloride (801b/sack) are needed?
+Sacks of calcium chloride (801b/sack) = 236
+3 outof 3
+Question
+38 of 51
+For NAF build 5, how many drums (55 gal/drum) of INVERMUL are needed?
+Drums of INVERMUL 12
+3 outof 3
+Question
+39 of 51
+For NAF build 5, how many Sacks of lime (501b/sack) are needed?
+Sacks of lime 80
+3 outof 3
+Question
+40 of 51
+For NAF build 5, how many sacks of GELTONE V are needed?
+Sacks of GELTONE V = 100
+3 out of 3
+--- PAGE 12 ---
+Question
+41 of51
+For NAF build 5, how many sacks of DURATONE HT (501b/sack) are needed?
+Sacks of DURATONE HT = 60
+3 outof 3
+Question
+42 of 51
+For NAF build 5, how many drums (55 gal/drum) of DRILTREAT are needed?
+Drums of DRILTREAT - 4
+3 outof 3
+Question
+43 of 51
+Given the following data from a NAF fluid:
+Retort oil: 54% (SG 0.84) and Retort water: 17%
+Chloride: 38,OOOmg/L Calcium: 15,OOOmg/L MW: 14.5ppg.
+Calculate the Water Phase salinity in parts per million
+WPS (ppm) = 262300
+5 outof 5
+Question
+44 of 51
+Using the following data, complete the Water Phase Salinity analysis for a sample of BaraXcelTM NAF IEF:
+Fluid Density [ppg] — 11.8
+Calcium Content [mg/l] = 16,000
+Chlorides [mg/l] = 22,000
+Water from retort = 9%
+Oil from retort = 72%
+Specific Gravity of Oil — 0.84
+What is the Water phase salinity in parts per million?
+. = 276700
+3 out of 3
+--- PAGE 13 ---
+Question
+45 of 51
+What is the specific gravity of the brine?
+SG
+= 1.25431
+brine
+3 out of 3
+Question
+46 of 51
+What is the ASG of the fluid system?
+ASG = 3.785
+3 out of 3
+Question
+47 of 51
+For WPS analysis 3, what is the percentage and concentration of Low gravity solids?
+4.69
+6 out of 6
+LGSppb=42.74ppb
+Question
+48 of 51
+LGS
+ppb = 42.74
+For WPS analysis 3, what is the percentage and concentration of High gravity solids?
+%HGS = 13.39
+6 outof 6
+HGSppb=197.1 Ippb
+Question
+49 of 51
+HGSppb = 197.11
+--- PAGE 14 ---
+Given the following information about a NAF containing a calcium chloride-based brine and the information from
+the CaC12 brine table:
+Retort oil: (SG 0.82)
+WPS: 230,OOOppm
+Water: 16%
+MW: 15.9ppg
+Calculate the information requested below.
+What is the oil ratio? 76
+1.21
+5 outof 5
+OWR= 76/24
+SGbrine=1.21
+Question
+50 of 51
+What is the water ratio? 24
+What is the SG of the brine?
+What is the percentage volume fraction of the brine?
+(Refer toAP113B-2, Section 12.6.1.1, Formula # 56)
+%Volume of the brine (%) = 17.17
+3 outof 3
+Question
+51 of 51
+What is the ASG of the fluid system?
+ASG (3 decimals) = 4.122
+3 outof 3
