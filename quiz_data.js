@@ -3220,6 +3220,398 @@ const CALCULATIONS_DATA = {
         dosage: 0
       },
       explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 18% to 28%, and oil decreases from 54% to 47%. Density drops from 12.0 to 11.6 ppg. This indicates massive water entry.\n2. Viscosity Spike: PV spikes from 32 to 53 cP, and Funnel Vis spikes from 65 to 97s, due to internal phase expansion (emulsion thickening).\n3. Salinity Drops (Moderate): Chlorides drop from 31,500 to 23,000 mg/L, Calcium drops from 22,000 to 12,000 mg/L, and WPS drops from 215,000 to 167,200 ppm. The drop is less severe than Case 4 (fresh water to 101,500 ppm) because the incoming formation water contains dissolved salt.\n4. ES Drops: ES drops severely from 485 to 136 due to emulsion dilution and lowered salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers to re-stabilize, and add CaCl2 to restore design WPS."
+    },
+{
+      id: "naf_case1_v1",
+      name: "Case 1: Drilled Solids (Variation A)",
+      note: "Viscosity and retort solids increase while chemical properties remain stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.5", day2: "11.6", changed: true },
+        { name: "Funnel Vis (sec)", day1: "62", day2: "69", changed: true },
+        { name: "PV (cP)", day1: "28", day2: "37", changed: true },
+        { name: "YP (lb/100ft²)", day1: "15", day2: "16", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/10", day2: "12/23", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "5.2", changed: true },
+        { name: "Retort Oil (%)", day1: "56", day2: "55", changed: true },
+        { name: "Retort Water (%)", day1: "19", day2: "18", changed: true },
+        { name: "Retort Solids (%)", day1: "25", day2: "27", changed: true },
+        { name: "Lime (ppb)", day1: "2.50", day2: "2.40", changed: true },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "28000", changed: false },
+        { name: "Calcium (mg/L)", day1: "18000", day2: "18000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "190000", day2: "190000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "620", day2: "502", changed: true }
+      ],
+      answer: {
+        contaminant: "drilled_solids",
+        treatment: "mechanical_separation_dilution",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Solids & Weight: Retort solids increase from 25% to 27%, indicating solids build-up. Density rises from 11.5 to 11.6 ppg.\n2. Rheology: Funnel Viscosity spikes (62 to 69s), PV spikes (28 to 37 cP), and Gels double (6/10 to 12/23) due to the addition of drill solids.\n3. Salinity: Chlorides, Calcium, and WPS remain completely constant, confirming no influx of fresh water or brine, nor solid salt dissolution.\n4. ES Drop: ES drops from 620 to 502 because drill solids absorb emulsifiers from the system.\n\nRecommended Treatment:\nOptimize solid control equipment (mechanical separation) and dilute with fresh base oil (NAP)."
+    },
+    {
+      id: "naf_case1_v2",
+      name: "Case 1: Drilled Solids (Variation B)",
+      note: "Viscosity and retort solids increase while chemical properties remain stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "13.0", day2: "13.1", changed: true },
+        { name: "Funnel Vis (sec)", day1: "72", day2: "80", changed: true },
+        { name: "PV (cP)", day1: "38", day2: "49", changed: true },
+        { name: "YP (lb/100ft²)", day1: "22", day2: "23", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "8/14", day2: "16/32", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.5", day2: "4.8", changed: true },
+        { name: "Retort Oil (%)", day1: "50", day2: "49", changed: true },
+        { name: "Retort Water (%)", day1: "16", day2: "15", changed: true },
+        { name: "Retort Solids (%)", day1: "34", day2: "36", changed: true },
+        { name: "Lime (ppb)", day1: "1.80", day2: "1.70", changed: true },
+        { name: "Chlorides (mg/L)", day1: "35000", day2: "35000", changed: false },
+        { name: "Calcium (mg/L)", day1: "25000", day2: "25000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "240000", day2: "240000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "550", day2: "440", changed: true }
+      ],
+      answer: {
+        contaminant: "drilled_solids",
+        treatment: "mechanical_separation_dilution",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Solids & Weight: Retort solids increase from 34% to 36%, indicating solids build-up. Density rises from 13.0 to 13.1 ppg.\n2. Rheology: Funnel Viscosity spikes (72 to 80s), PV spikes (38 to 49 cP), and Gels double (8/14 to 16/32) due to the addition of drill solids.\n3. Salinity: Chlorides, Calcium, and WPS remain completely constant, confirming no influx of fresh water or brine, nor solid salt dissolution.\n4. ES Drop: ES drops from 550 to 440 because drill solids absorb emulsifiers from the system.\n\nRecommended Treatment:\nOptimize solid control equipment (mechanical separation) and dilute with fresh base oil (NAP)."
+    },
+    {
+      id: "naf_case2_v1",
+      name: "Case 2: Acid Gas (CO2) (Variation A)",
+      note: "Weight and electrical stability drop significantly while lime reserve is completely depleted.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.8", day2: "11.6", changed: true },
+        { name: "Funnel Vis (sec)", day1: "58", day2: "59", changed: true },
+        { name: "PV (cP)", day1: "26", day2: "28", changed: true },
+        { name: "YP (lb/100ft²)", day1: "14", day2: "15", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "5/9", day2: "5/9", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "3.6", day2: "6.8", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "58", changed: false },
+        { name: "Retort Water (%)", day1: "17", day2: "17", changed: false },
+        { name: "Retort Solids (%)", day1: "25", day2: "25", changed: false },
+        { name: "Lime (ppb)", day1: "2.80", day2: "0.00", changed: true },
+        { name: "Chlorides (mg/L)", day1: "27000", day2: "27000", changed: false },
+        { name: "Calcium (mg/L)", day1: "19000", day2: "18000", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "185000", day2: "185000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "590", day2: "375", changed: true }
+      ],
+      answer: {
+        contaminant: "acid_gas_co2",
+        treatment: "lime",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Lime Reserve: Excess Lime drops from 2.80 ppb to 0.00 ppb. This is the primary indicator of CO2 contamination, which consumes lime to form CaCO3.\n2. Emulsion Destabilization: Without excess lime to maintain soap emulsifiers, the emulsion destabilizes, dropping ES from 590 to 375 and spiking HTHP fluid loss from 3.6 to 6.8 mL.\n3. Density: Density drops from 11.8 to 11.6 ppg due to gas entry (gas-cut mud).\n\nRecommended Treatment:\nAdd lime (Ca(OH)2) to neutralize the CO2, re-establish the alkaline buffer, and stabilize the emulsifiers."
+    },
+    {
+      id: "naf_case2_v2",
+      name: "Case 2: Acid Gas (CO2) (Variation B)",
+      note: "Weight and electrical stability drop significantly while lime reserve is completely depleted.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "12.5", day2: "12.3", changed: true },
+        { name: "Funnel Vis (sec)", day1: "70", day2: "71", changed: true },
+        { name: "PV (cP)", day1: "40", day2: "42", changed: true },
+        { name: "YP (lb/100ft²)", day1: "24", day2: "25", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "9/15", day2: "9/15", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "4.2", day2: "8.2", changed: true },
+        { name: "Retort Oil (%)", day1: "48", day2: "48", changed: false },
+        { name: "Retort Water (%)", day1: "18", day2: "18", changed: false },
+        { name: "Retort Solids (%)", day1: "34", day2: "34", changed: false },
+        { name: "Lime (ppb)", day1: "3.50", day2: "0.00", changed: true },
+        { name: "Chlorides (mg/L)", day1: "33000", day2: "33000", changed: false },
+        { name: "Calcium (mg/L)", day1: "24000", day2: "22500", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "225000", day2: "225000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "520", day2: "328", changed: true }
+      ],
+      answer: {
+        contaminant: "acid_gas_co2",
+        treatment: "lime",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Lime Reserve: Excess Lime drops from 3.50 ppb to 0.00 ppb. This is the primary indicator of CO2 contamination, which consumes lime to form CaCO3.\n2. Emulsion Destabilization: Without excess lime to maintain soap emulsifiers, the emulsion destabilizes, dropping ES from 520 to 328 and spiking HTHP fluid loss from 4.2 to 8.2 mL.\n3. Density: Density drops from 12.5 to 12.3 ppg due to gas entry (gas-cut mud).\n\nRecommended Treatment:\nAdd lime (Ca(OH)2) to neutralize the CO2, re-establish the alkaline buffer, and stabilize the emulsifiers."
+    },
+    {
+      id: "naf_case3_v1",
+      name: "Case 3: Hydrocarbons (Variation A)",
+      note: "Density and viscosities decrease while retort oil percentage increases.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.8", day2: "11.7", changed: true },
+        { name: "Funnel Vis (sec)", day1: "60", day2: "57", changed: true },
+        { name: "PV (cP)", day1: "28", day2: "26", changed: true },
+        { name: "YP (lb/100ft²)", day1: "14", day2: "13", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/9", day2: "5/8", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "6.0", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "60", changed: true },
+        { name: "Retort Water (%)", day1: "16", day2: "15", changed: true },
+        { name: "Retort Solids (%)", day1: "26", day2: "25", changed: true },
+        { name: "Lime (ppb)", day1: "2.00", day2: "4.20", changed: true },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "28000", changed: false },
+        { name: "Calcium (mg/L)", day1: "20000", day2: "20000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "195000", day2: "195000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "520", day2: "540", changed: true }
+      ],
+      answer: {
+        contaminant: "hydrocarbons",
+        treatment: "dilution_brine",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Oil Phase Build-up: Retort oil percentage rises from 58% to 60%, while water and solids decrease. This indicates hydrocarbon influx.\n2. Viscosity Drop: PV, YP, Funnel Vis, and Gels all decrease because incoming crude oil/hydrocarbons dilute the mud and act as a thinner.\n3. Density Drop: Density drops from 11.8 to 11.7 ppg (crude is lighter than the mud).\n4. ES & HTHP: ES remains stable or increases (520 to 540) since the oil is oil-miscible, but HTHP increases (3.8 to 6.0 mL) due to the changing chemistry of the oil phase.\n\nRecommended Treatment:\nDilute with brine to restore the original oil-water ratio (OWR) and adjust viscosity using viscosifiers/emulsifiers if necessary."
+    },
+    {
+      id: "naf_case3_v2",
+      name: "Case 3: Hydrocarbons (Variation B)",
+      note: "Density and viscosities decrease while retort oil percentage increases.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "13.2", day2: "13.1", changed: true },
+        { name: "Funnel Vis (sec)", day1: "75", day2: "72", changed: true },
+        { name: "PV (cP)", day1: "42", day2: "40", changed: true },
+        { name: "YP (lb/100ft²)", day1: "25", day2: "24", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "8/14", day2: "7/13", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.5", day2: "5.8", changed: true },
+        { name: "Retort Oil (%)", day1: "46", day2: "48", changed: true },
+        { name: "Retort Water (%)", day1: "18", day2: "17", changed: true },
+        { name: "Retort Solids (%)", day1: "36", day2: "35", changed: true },
+        { name: "Lime (ppb)", day1: "2.20", day2: "4.90", changed: true },
+        { name: "Chlorides (mg/L)", day1: "34000", day2: "34000", changed: false },
+        { name: "Calcium (mg/L)", day1: "26000", day2: "26000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "235000", day2: "235000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "460", day2: "475", changed: true }
+      ],
+      answer: {
+        contaminant: "hydrocarbons",
+        treatment: "dilution_brine",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Oil Phase Build-up: Retort oil percentage rises from 46% to 48%, while water and solids decrease. This indicates hydrocarbon influx.\n2. Viscosity Drop: PV, YP, Funnel Vis, and Gels all decrease because incoming crude oil/hydrocarbons dilute the mud and act as a thinner.\n3. Density Drop: Density drops from 13.2 to 13.1 ppg (crude is lighter than the mud).\n4. ES & HTHP: ES remains stable or increases (460 to 475) since the oil is oil-miscible, but HTHP increases (3.5 to 5.8 mL) due to the changing chemistry of the oil phase.\n\nRecommended Treatment:\nDilute with brine to restore the original oil-water ratio (OWR) and adjust viscosity using viscosifiers/emulsifiers if necessary."
+    },
+    {
+      id: "naf_case4_v1",
+      name: "Case 4: Fresh Water (Variation A)",
+      note: "Retort water percentage and viscosities spike while salinity and electrical stability collapse.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.6", day2: "11.2", changed: true },
+        { name: "Funnel Vis (sec)", day1: "60", day2: "88", changed: true },
+        { name: "PV (cP)", day1: "28", day2: "46", changed: true },
+        { name: "YP (lb/100ft²)", day1: "16", day2: "26", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/10", day2: "8/17", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "6.2", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "51", changed: true },
+        { name: "Retort Water (%)", day1: "16", day2: "26", changed: true },
+        { name: "Retort Solids (%)", day1: "26", day2: "23", changed: true },
+        { name: "Lime (ppb)", day1: "2.30", day2: "1.90", changed: true },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "11500", changed: true },
+        { name: "Calcium (mg/L)", day1: "19000", day2: "8000", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "195000", day2: "92000", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "510", day2: "142", changed: true }
+      ],
+      answer: {
+        contaminant: "fresh_water",
+        treatment: "dilution_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 16% to 26%, and oil decreases from 58% to 51%. Density drops from 11.6 to 11.2 ppg.\n2. Viscosity Spike: PV spikes from 28 to 46 cP, and Funnel Vis spikes from 60 to 88s. The fresh water entry increases the internal phase volume, creating a highly packed, high-friction emulsion (emulsion thickening).\n3. Salinity Drops: Chlorides drop from 28,000 to 11,500 mg/L, Calcium drops from 19,000 to 8,000 mg/L, and WPS drops from 195,000 to 92,000 ppm due to massive fresh water dilution.\n4. ES Drops: ES drops severely from 510 to 142 due to emulsion dilution and drop in salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers/wetting agents to stabilize the additional water, and add CaCl2 to restore design WPS."
+    },
+    {
+      id: "naf_case4_v2",
+      name: "Case 4: Fresh Water (Variation B)",
+      note: "Retort water percentage and viscosities spike while salinity and electrical stability collapse.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "12.5", day2: "12.1", changed: true },
+        { name: "Funnel Vis (sec)", day1: "70", day2: "105", changed: true },
+        { name: "PV (cP)", day1: "38", day2: "60", changed: true },
+        { name: "YP (lb/100ft²)", day1: "22", day2: "35", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "8/13", day2: "11/24", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.5", day2: "6.0", changed: true },
+        { name: "Retort Oil (%)", day1: "48", day2: "41", changed: true },
+        { name: "Retort Water (%)", day1: "18", day2: "28", changed: true },
+        { name: "Retort Solids (%)", day1: "34", day2: "31", changed: true },
+        { name: "Lime (ppb)", day1: "1.90", day2: "1.60", changed: true },
+        { name: "Chlorides (mg/L)", day1: "36000", day2: "15000", changed: true },
+        { name: "Calcium (mg/L)", day1: "24000", day2: "10000", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "240000", day2: "115000", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "460", day2: "128", changed: true }
+      ],
+      answer: {
+        contaminant: "fresh_water",
+        treatment: "dilution_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 18% to 28%, and oil decreases from 48% to 41%. Density drops from 12.5 to 12.1 ppg.\n2. Viscosity Spike: PV spikes from 38 to 60 cP, and Funnel Vis spikes from 70 to 105s. The fresh water entry increases the internal phase volume, creating a highly packed, high-friction emulsion (emulsion thickening).\n3. Salinity Drops: Chlorides drop from 36,000 to 15,000 mg/L, Calcium drops from 24,000 to 10,000 mg/L, and WPS drops from 240,000 to 115,000 ppm due to massive fresh water dilution.\n4. ES Drops: ES drops severely from 460 to 128 due to emulsion dilution and drop in salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers/wetting agents to stabilize the additional water, and add CaCl2 to restore design WPS."
+    },
+    {
+      id: "naf_case5_v1",
+      name: "Case 5: Salt (Formation) (Variation A)",
+      note: "Water phase salinity and chlorides spike while calcium remains stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.5", day2: "11.6", changed: true },
+        { name: "Funnel Vis (sec)", day1: "58", day2: "59", changed: true },
+        { name: "PV (cP)", day1: "26", day2: "28", changed: true },
+        { name: "YP (lb/100ft²)", day1: "14", day2: "15", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/9", day2: "6/9", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "3.6", day2: "6.0", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "57.5", changed: true },
+        { name: "Retort Water (%)", day1: "17", day2: "16.5", changed: true },
+        { name: "Retort Solids (%)", day1: "25", day2: "26", changed: true },
+        { name: "Lime (ppb)", day1: "2.30", day2: "2.3", changed: false },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "37500", changed: true },
+        { name: "Calcium (mg/L)", day1: "18000", day2: "18000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "190000", day2: "228000", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "610", day2: "440", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_formation",
+        treatment: "dilution_fresh_water",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Chlorides & WPS Spike: Chlorides increase from 28,000 to 37,500 mg/L, and WPS spikes from 190,000 to 228,000 ppm. Calcium remains completely stable at 18,000 mg/L. This confirms NaCl (solid salt formation) is dissolving into the brine phase.\n2. ES & HTHP: ES drops from 610 to 440, and HTHP increases from 3.6 to 6.0 mL, as high concentrations of monovalent sodium ions compete with divalent calcium emulsifiers, destabilizing the emulsion.\n\nRecommended Treatment:\nDilute the water phase with fresh water (or a lower salinity brine) to lower the salt concentration and prevent salt crystals from wetting solids. Add emulsifiers to restore ES."
+    },
+    {
+      id: "naf_case5_v2",
+      name: "Case 5: Salt (Formation) (Variation B)",
+      note: "Water phase salinity and chlorides spike while calcium remains stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "12.8", day2: "12.9", changed: true },
+        { name: "Funnel Vis (sec)", day1: "72", day2: "73", changed: true },
+        { name: "PV (cP)", day1: "40", day2: "42", changed: true },
+        { name: "YP (lb/100ft²)", day1: "24", day2: "25", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "9/14", day2: "9/14", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "6.2", changed: true },
+        { name: "Retort Oil (%)", day1: "48", day2: "47.5", changed: true },
+        { name: "Retort Water (%)", day1: "18", day2: "17.5", changed: true },
+        { name: "Retort Solids (%)", day1: "34", day2: "35", changed: true },
+        { name: "Lime (ppb)", day1: "1.80", day2: "1.8", changed: false },
+        { name: "Chlorides (mg/L)", day1: "35000", day2: "46000", changed: true },
+        { name: "Calcium (mg/L)", day1: "26000", day2: "26000", changed: false },
+        { name: "Water Phase Salinity (mg/L)", day1: "245000", day2: "285000", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "540", day2: "385", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_formation",
+        treatment: "dilution_fresh_water",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Chlorides & WPS Spike: Chlorides increase from 35,000 to 46,000 mg/L, and WPS spikes from 245,000 to 285,000 ppm. Calcium remains completely stable at 26,000 mg/L. This confirms NaCl (solid salt formation) is dissolving into the brine phase.\n2. ES & HTHP: ES drops from 540 to 385, and HTHP increases from 3.8 to 6.2 mL, as high concentrations of monovalent sodium ions compete with divalent calcium emulsifiers, destabilizing the emulsion.\n\nRecommended Treatment:\nDilute the water phase with fresh water (or a lower salinity brine) to lower the salt concentration and prevent salt crystals from wetting solids. Add emulsifiers to restore ES."
+    },
+    {
+      id: "naf_case6_v1",
+      name: "Case 6: Cement (Variation A)",
+      note: "Lime content and calcium spike while water phase salinity remains stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.5", day2: "11.6", changed: true },
+        { name: "Funnel Vis (sec)", day1: "58", day2: "59", changed: true },
+        { name: "PV (cP)", day1: "26", day2: "28", changed: true },
+        { name: "YP (lb/100ft²)", day1: "14", day2: "15", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/9", day2: "6/9", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "3.6", day2: "5.8", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "57.5", changed: true },
+        { name: "Retort Water (%)", day1: "17", day2: "16.5", changed: true },
+        { name: "Retort Solids (%)", day1: "25", day2: "26", changed: true },
+        { name: "Lime (ppb)", day1: "2.30", day2: "5.2", changed: true },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "28000", changed: false },
+        { name: "Calcium (mg/L)", day1: "18000", day2: "20500", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "190000", day2: "190000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "520", day2: "545", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "mechanical_separation_dilution",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Lime & Calcium Increase: Measured Excess Lime spikes from 2.30 to 5.2 ppb, and Calcium increases from 18,000 to 20,500 mg/L. Active cement releases calcium hydroxide, which registers as alkalinity (lime) and calcium in our titrations.\n2. Solids and Rheology: Solids increase slightly (25% to 26%), and HTHP increases from 3.6 to 5.8 mL due to fine cement solids.\n3. Salinity: WPS and Chlorides remain stable (190,000 ppm and 28,000 mg/L), ruling out brine/salt water entry.\n\nRecommended Treatment:\nOptimize solid control equipment (mechanical separation) to remove cement solids and dilute the system to reduce alkalinity."
+    },
+    {
+      id: "naf_case6_v2",
+      name: "Case 6: Cement (Variation B)",
+      note: "Lime content and calcium spike while water phase salinity remains stable.",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "12.8", day2: "12.9", changed: true },
+        { name: "Funnel Vis (sec)", day1: "72", day2: "73", changed: true },
+        { name: "PV (cP)", day1: "40", day2: "42", changed: true },
+        { name: "YP (lb/100ft²)", day1: "24", day2: "25", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "9/14", day2: "9/14", changed: false },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "6.0", changed: true },
+        { name: "Retort Oil (%)", day1: "48", day2: "47.5", changed: true },
+        { name: "Retort Water (%)", day1: "18", day2: "17.5", changed: true },
+        { name: "Retort Solids (%)", day1: "34", day2: "35", changed: true },
+        { name: "Lime (ppb)", day1: "1.80", day2: "4.5", changed: true },
+        { name: "Chlorides (mg/L)", day1: "35000", day2: "35000", changed: false },
+        { name: "Calcium (mg/L)", day1: "26000", day2: "28500", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "245000", day2: "245000", changed: false },
+        { name: "Electrical Stability (Volts)", day1: "460", day2: "480", changed: true }
+      ],
+      answer: {
+        contaminant: "cement",
+        treatment: "mechanical_separation_dilution",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Lime & Calcium Increase: Measured Excess Lime spikes from 1.80 to 4.5 ppb, and Calcium increases from 26,000 to 28,500 mg/L. Active cement releases calcium hydroxide, which registers as alkalinity (lime) and calcium in our titrations.\n2. Solids and Rheology: Solids increase slightly (34% to 35%), and HTHP increases from 3.8 to 6.0 mL due to fine cement solids.\n3. Salinity: WPS and Chlorides remain stable (245,000 ppm and 35,000 mg/L), ruling out brine/salt water entry.\n\nRecommended Treatment:\nOptimize solid control equipment (mechanical separation) to remove cement solids and dilute the system to reduce alkalinity."
+    },
+    {
+      id: "naf_case7_v1",
+      name: "Case 7: Salt Water (Variation A)",
+      note: "Water percentage spikes while salinity and electrical stability drop (less severe salinity drop than fresh water).",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "11.6", day2: "11.2", changed: true },
+        { name: "Funnel Vis (sec)", day1: "60", day2: "88", changed: true },
+        { name: "PV (cP)", day1: "28", day2: "46", changed: true },
+        { name: "YP (lb/100ft²)", day1: "16", day2: "26", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "6/10", day2: "8/17", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.8", day2: "6.2", changed: true },
+        { name: "Retort Oil (%)", day1: "58", day2: "51", changed: true },
+        { name: "Retort Water (%)", day1: "16", day2: "26", changed: true },
+        { name: "Retort Solids (%)", day1: "26", day2: "23", changed: true },
+        { name: "Lime (ppb)", day1: "2.3", day2: "1.9", changed: true },
+        { name: "Chlorides (mg/L)", day1: "28000", day2: "20500", changed: true },
+        { name: "Calcium (mg/L)", day1: "19000", day2: "10500", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "195000", day2: "153000", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "510", day2: "142", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_water",
+        treatment: "dilution_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 16% to 26%, and oil decreases from 58% to 51%. Density drops from 11.6 to 11.2 ppg. This indicates massive water entry.\n2. Viscosity Spike: PV spikes from 28 to 46 cP, and Funnel Vis spikes from 60 to 88s, due to internal phase expansion (emulsion thickening).\n3. Salinity Drops (Moderate): Chlorides drop from 28,000 to 20,500 mg/L, Calcium drops from 19,000 to 10,500 mg/L, and WPS drops from 195,000 to 153,000 ppm. The drop is less severe than Fresh Water (to 92,000 ppm) because the incoming formation water contains dissolved salt.\n4. ES Drops: ES drops severely from 510 to 142 due to emulsion dilution and lowered salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers to re-stabilize, and add CaCl2 to restore design WPS."
+    },
+    {
+      id: "naf_case7_v2",
+      name: "Case 7: Salt Water (Variation B)",
+      note: "Water percentage spikes while salinity and electrical stability drop (less severe salinity drop than fresh water).",
+      properties: [
+        { name: "FL Temp (°F)", day1: "120", day2: "128", changed: true },
+        { name: "Density (ppg)", day1: "12.5", day2: "12.1", changed: true },
+        { name: "Funnel Vis (sec)", day1: "70", day2: "105", changed: true },
+        { name: "PV (cP)", day1: "38", day2: "60", changed: true },
+        { name: "YP (lb/100ft²)", day1: "22", day2: "35", changed: true },
+        { name: "Gels 10s/10m (lb/100ft²)", day1: "8/13", day2: "11/24", changed: true },
+        { name: "HTHP Filtrate (mL)", day1: "3.5", day2: "6.0", changed: true },
+        { name: "Retort Oil (%)", day1: "48", day2: "41", changed: true },
+        { name: "Retort Water (%)", day1: "18", day2: "28", changed: true },
+        { name: "Retort Solids (%)", day1: "34", day2: "31", changed: true },
+        { name: "Lime (ppb)", day1: "1.9", day2: "1.6", changed: true },
+        { name: "Chlorides (mg/L)", day1: "36000", day2: "26000", changed: true },
+        { name: "Calcium (mg/L)", day1: "24000", day2: "13200", changed: true },
+        { name: "Water Phase Salinity (mg/L)", day1: "240000", day2: "184500", changed: true },
+        { name: "Electrical Stability (Volts)", day1: "460", day2: "128", changed: true }
+      ],
+      answer: {
+        contaminant: "salt_water",
+        treatment: "dilution_base_fluid",
+        dosage: 0
+      },
+      explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 18% to 28%, and oil decreases from 48% to 41%. Density drops from 12.5 to 12.1 ppg. This indicates massive water entry.\n2. Viscosity Spike: PV spikes from 38 to 60 cP, and Funnel Vis spikes from 70 to 105s, due to internal phase expansion (emulsion thickening).\n3. Salinity Drops (Moderate): Chlorides drop from 36,000 to 26,000 mg/L, Calcium drops from 24,000 to 13,200 mg/L, and WPS drops from 240,000 to 184,500 ppm. The drop is less severe than Fresh Water (to 115,000 ppm) because the incoming formation water contains dissolved salt.\n4. ES Drops: ES drops severely from 460 to 128 due to emulsion dilution and lowered salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers to re-stabilize, and add CaCl2 to restore design WPS."
     }
   ]
 };
