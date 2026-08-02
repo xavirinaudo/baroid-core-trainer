@@ -1313,7 +1313,7 @@ const QUIZ_DATA = {
     questions: [
       {
         id: "hw13_q1",
-        number: "1 of 26",
+        number: "1 of 34",
         type: "multiple",
         question: "Select the advantages of Non-aqueous fluids over water based fluids:",
         options: [
@@ -1334,7 +1334,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q2",
-        number: "2 of 26",
+        number: "2 of 34",
         type: "single",
         question: "What is the major difference between High Performance NAF's and Conventional NAF's?",
         options: [
@@ -1348,7 +1348,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q3",
-        number: "3 of 26",
+        number: "3 of 34",
         type: "multiple",
         question: "The most common types of base fluids of Non Aqueous fluids are:",
         options: [
@@ -1366,7 +1366,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q4",
-        number: "4 of 26",
+        number: "4 of 34",
         type: "multiple",
         question: "Which of the following contributes to the discontinuous phase of an NAF (select all applicable answers)?",
         options: [
@@ -1386,7 +1386,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q5",
-        number: "5 of 26",
+        number: "5 of 34",
         type: "single",
         question: "Isomerized Olefin base fluids outperform oil, ester, and ester blend base fluids in extreme temperatures.",
         options: [
@@ -1398,7 +1398,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q6",
-        number: "6 of 26",
+        number: "6 of 34",
         type: "matching",
         question: "Select the correct fluid categories for each type:",
         pairs: {
@@ -1411,7 +1411,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q7",
-        number: "7 of 26",
+        number: "7 of 34",
         type: "single",
         question: "Emulsifiers are used in NAF's for which of the following purposes?",
         options: [
@@ -1424,7 +1424,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q8",
-        number: "8 of 26",
+        number: "8 of 34",
         type: "single",
         question: "A product is considered organophillic when it has been treated with amines to make them oil-dispersible.",
         options: [
@@ -1436,7 +1436,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q9",
-        number: "9 of 26",
+        number: "9 of 34",
         type: "single",
         question: "The whole fluid chloride and whole fluid calcium content are maintained to directly affect which NAF property?",
         options: [
@@ -1449,7 +1449,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q10",
-        number: "10 of 26",
+        number: "10 of 34",
         type: "single",
         question: "If the content by volume of water increases, the viscosity of the fluid decreases causing the fluid to be thinner.",
         options: [
@@ -1461,7 +1461,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q11",
-        number: "11 of 26",
+        number: "11 of 34",
         type: "single",
         question: "Emulsifiers target the interfacial tension between:",
         options: [
@@ -1475,7 +1475,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q12",
-        number: "12 of 26",
+        number: "12 of 34",
         type: "single",
         question: "The \"salt\" in an NAF is contained in which of the following?",
         options: [
@@ -1489,7 +1489,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q13",
-        number: "13 of 26",
+        number: "13 of 34",
         type: "single",
         question: "Wetting Agents target the interfacial tension between solids and liquid.",
         options: [
@@ -1501,7 +1501,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q14",
-        number: "14 of 26",
+        number: "14 of 34",
         type: "multiple",
         question: "According to the API guidelines, rheological test on an NAF are performed at which temperatures? (select all applicable answers)",
         options: [
@@ -1520,7 +1520,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q15",
-        number: "15 of 26",
+        number: "15 of 34",
         type: "single",
         question: "Invert Emulsion means:",
         options: [
@@ -1533,7 +1533,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q16",
-        number: "16 of 26",
+        number: "16 of 34",
         type: "single",
         question: "Organophillic clays and lignites are not used in clay-free fluids because they can negatively impact drilling performance and reservoir producibility.",
         options: [
@@ -1545,7 +1545,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q17",
-        number: "17 of 26",
+        number: "17 of 34",
         type: "single",
         question: "When working with Non-Aqueous fluids, one of the main concerns is the environmental impact of the systems. Environmental responsibility and sustainability is becoming a critical factor in drilling practices.",
         options: [
@@ -1557,7 +1557,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q18",
-        number: "18 of 26",
+        number: "18 of 34",
         type: "single",
         question: "When dealing with NAF and environmental challenges, there are several aspects to consider:",
         options: [
@@ -1570,7 +1570,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q19",
-        number: "19 of 26",
+        number: "19 of 34",
         type: "single",
         question: "Select the strategy that fits the definition: 'maximizing drilling efficiency while minimizing environmental liability for the customer'",
         options: [
@@ -1583,7 +1583,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q20",
-        number: "20 of 26",
+        number: "20 of 34",
         type: "calculation",
         question: "Given the following results from a retort analysis, calculate the NAF/Water ratio: Retort Oil = 6.4ml, Retort Water = 1.6ml",
         inputs: {
@@ -1598,7 +1598,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q21",
-        number: "21 of 26",
+        number: "21 of 34",
         type: "single",
         question: "The content of Low gravity solids is not a concern in non aqueous fluids.",
         options: [
@@ -1610,7 +1610,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q22",
-        number: "22 of 26",
+        number: "22 of 34",
         type: "single",
         question: "One of the best advantages of the BaraPure® system is that it has a lower environmental impact that Other NAF because it does not contain added salts.",
         options: [
@@ -1622,7 +1622,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q23",
-        number: "23 of 26",
+        number: "23 of 34",
         type: "single",
         question: "All High performance fluids are stable up to 450F.",
         options: [
@@ -1634,7 +1634,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q24",
-        number: "24 of 26",
+        number: "24 of 34",
         type: "single",
         question: "The Non-Aqueous fluid system that contains an enhanced suspension package and has superior rheological properties is called:",
         options: [
@@ -1648,7 +1648,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q25",
-        number: "25 of 26",
+        number: "25 of 34",
         type: "single",
         question: "In non-aqueous systems a low alkalinity is desired, to avoid corrosion.",
         options: [
@@ -1660,7 +1660,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw13_q26",
-        number: "26 of 26",
+        number: "26 of 34",
         type: "single",
         question: "Non-Aqueous fluids are usually built in the rigsite without mayor logistical concerns.",
         options: [
@@ -1669,16 +1669,147 @@ const QUIZ_DATA = {
         ],
         answer: "false",
         explanation: "Preparing NAFs requires high-shear mixing equipment to properly emulsify the water phase into oil. They are almost always built at a dedicated Liquid Mud Plant (LMP) and shipped to the rig site, requiring substantial logistical planning."
+      },
+      {
+        id: "hw13_q27",
+        number: "27 of 34",
+        type: "single",
+        question: "What do conventional non-aqueous fluids (NAF) contain in their formulation?",
+        options: [
+          { value: "organophilic_clays_lignites", label: "Organophilic clays and lignites" },
+          { value: "water_soluble_polymers", label: "Water-soluble polymers and starches" },
+          { value: "synthetic_polymers_only", label: "Synthetic polymers and silica" },
+          { value: "glycols_and_salts", label: "Glycols and inorganic salts" }
+        ],
+        answer: "organophilic_clays_lignites",
+        explanation: "According to the Baroid Family guide, Conventional Non-Aqueous Fluid Systems contain organophilic clays and lignites in their formulation."
+      },
+      {
+        id: "hw13_q28",
+        number: "28 of 34",
+        type: "single",
+        question: "High-Performance Invert Emulsion Fluids (HPIEF) do NOT contain which of the following in their formulation?",
+        options: [
+          { value: "organophilic_clays_lignites", label: "Organophilic clay and organophilic lignite" },
+          { value: "base_fluids", label: "Non-aqueous base fluids" },
+          { value: "emulsifiers", label: "Emulsifiers and wetting agents" },
+          { value: "weighting_materials", label: "Barite and weighting materials" }
+        ],
+        answer: "organophilic_clays_lignites",
+        explanation: "High-Performance Invert Emulsion Fluids (HPIEF) are clay-free systems, meaning they are formulated to be free of organophilic clay and organophilic lignite, utilizing polymer technology instead."
+      },
+      {
+        id: "hw13_q29",
+        number: "29 of 34",
+        type: "multiple",
+        question: "According to the Baroid Oil-Based Fluid Systems classification, which trade names correspond to Conventional systems?",
+        options: [
+          { value: "enviromul", label: "ENVIROMUL®" },
+          { value: "invermul", label: "INVERMUL®" },
+          { value: "xp07", label: "XP-07®" },
+          { value: "baraxcel", label: "BaraXcel™" },
+          { value: "baraecd", label: "BaraECD®" }
+        ],
+        answer: [
+          "enviromul",
+          "invermul",
+          "xp07"
+        ],
+        explanation: "Based on the Baroid Oil-Based Fluid Systems chart, Conventional systems include ENVIROMUL®, INVERMUL®, and XP-07®."
+      },
+      {
+        id: "hw13_q30",
+        number: "30 of 34",
+        type: "multiple",
+        question: "According to the Baroid Oil-Based Fluid Systems classification, which trade names correspond to High Performance systems?",
+        options: [
+          { value: "enviromul", label: "ENVIROMUL®" },
+          { value: "invermul", label: "INVERMUL®" },
+          { value: "xp07", label: "XP-07®" },
+          { value: "baraxcel", label: "BaraXcel™" },
+          { value: "baraecd", label: "BaraECD®" }
+        ],
+        answer: [
+          "baraxcel",
+          "baraecd"
+        ],
+        explanation: "Based on the Baroid Oil-Based Fluid Systems chart, High Performance systems include BaraXcel™ and BaraECD®."
+      },
+      {
+        id: "hw13_q31",
+        number: "31 of 34",
+        type: "matching",
+        question: "Match the High-Performance fluid level with the type of barite used in its formulation:",
+        pairs: {
+          "Level 1": "Barite API",
+          "Level 2": "Fine Barite",
+          "Level 3": "Micronized barite"
+        },
+        options: ["Barite API", "Fine Barite", "Micronized barite"],
+        keepKeysOrder: true,
+        explanation: "High-Performance drilling fluids are categorized into levels based on the type/size of barite utilized: Level 1 uses standard API Barite, Level 2 utilizes Fine Barite, and Level 3 is formulated with Micronized Barite."
+      },
+      {
+        id: "hw13_q32",
+        number: "32 of 34",
+        type: "multiple",
+        question: "What are the environmental considerations when dealing with Non-Aqueous Fluids (NAF)?",
+        options: [
+          { value: "fluid_performance", label: "Fluid performance" },
+          { value: "regulations", label: "Regulations" },
+          { value: "risk_mitigation", label: "Risk mitigation" },
+          { value: "waste_management_expenses", label: "Waste Management and Expenses" },
+          { value: "fluid_formulation_viscosity", label: "Fluid formulation chemistry and polymer viscosity" },
+          { value: "rig_capacity_procedures", label: "Operator preferences and standard rig procedures" },
+          { value: "borehole_stabilization", label: "Borehole stabilization and mechanical cleaning" }
+        ],
+        answer: [
+          "fluid_performance",
+          "regulations",
+          "risk_mitigation",
+          "waste_management_expenses"
+        ],
+        explanation: "According to the Baroid guide, the key aspects to balance when addressing environmental challenges with NAFs are: fluid performance, discharge regulations, waste management and expenses, and environmental risk mitigation."
+      },
+      {
+        id: "hw13_q33",
+        number: "33 of 34",
+        type: "matching",
+        question: "Match each surfactant component term with its correct definition:",
+        pairs: {
+          "Hydrophilic": "Having an affinity for water (water-loving)",
+          "Hydrophobic": "Lacking affinity for water (water-fearing / oil-loving)"
+        },
+        options: [
+          "Having an affinity for water (water-loving)",
+          "Lacking affinity for water (water-fearing / oil-loving)",
+          "Dissolving completely in both water and oil without phase separation",
+          "Attracting metal surfaces to promote rust and corrosion"
+        ],
+        keepKeysOrder: true,
+        explanation: "Surfactants (emulsifiers and wetting agents) contain a hydrophilic (water-loving) polar head group and a hydrophobic (water-fearing / lipophilic) non-polar tail group to stabilize the oil-water interface."
+      },
+      {
+        id: "hw13_q34",
+        number: "34 of 34",
+        type: "single",
+        question: "Select the correct definition of a wetting agent:",
+        options: [
+          { value: "correct_def", label: "A wetting agent is substance added to a liquid to lower its surface tension and thus increase its ability to spread across or penetrate into a solid." },
+          { value: "flocculant_def", label: "A wetting agent is a polymer added to a fluid to encapsulate and flocculate colloidal clays, preventing hydration and dispersion." },
+          { value: "salt_def", label: "A wetting agent is an inorganic salt added to the continuous phase of an emulsion to match the water phase activity of the shales." }
+        ],
+        answer: "correct_def",
+        explanation: "According to the definition, a wetting agent is a substance added to a liquid to lower its surface tension, thereby increasing its ability to spread across or penetrate into a solid (making the solid oil-wet in NAF systems)."
       }
     ]
-  },
-  homework_14: {
+  },homework_14: {
     title: "Homework 14: Water Phase Salinity & Solids (Theory)",
     description: "Practice questions about Water Phase Salinity (WPS) salts, excess lime reserve, retort solids definitions, and calcium sources based on the Baroid Core guide.",
     questions: [
       {
         id: "hw14_q1",
-        number: "1 of 5",
+        number: "1 of 6",
         type: "multiple",
         question: "What are the types of salts that can be found in the water phase salinity of the fluid?",
         options: [
@@ -1694,7 +1825,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw14_q2",
-        number: "2 of 5",
+        number: "2 of 6",
         type: "single",
         question: "What is Excess Lime?",
         options: [
@@ -1708,7 +1839,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw14_q3",
-        number: "3 of 5",
+        number: "3 of 6",
         type: "multiple",
         question: "Select all the importance of Water Phase Salinity (WPS):",
         options: [
@@ -1725,7 +1856,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw14_q4",
-        number: "4 of 5",
+        number: "4 of 6",
         type: "matching",
         question: "Select the correct definition for the terms below:",
         pairs: {
@@ -1743,7 +1874,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw14_q5",
-        number: "5 of 5",
+        number: "5 of 6",
         type: "multiple",
         question: "The calcium content of drilling fluid can come from:",
         options: [
@@ -1755,16 +1886,28 @@ const QUIZ_DATA = {
         ],
         answer: ["gypsum", "lime", "cacl2"],
         explanation: "Calcium ions in non-aqueous fluids are introduced deliberately via CaCl2 (salinity control) and lime (alkalinity). They can also enter as contaminants from drilling calcium-rich formations like Gypsum or Anhydrite."
+      },
+      {
+        id: "hw14_q6",
+        number: "6 of 6",
+        type: "single",
+        question: "Select the correct definition of Water Phase Salinity (WPS):",
+        options: [
+          { value: "correct_def", label: "It is a measure of the osmotic dehydration/hydration potential of water in a mud or shale." },
+          { value: "solids_def", label: "It is the ratio of low gravity solids to high gravity solids suspended in the continuous non-aqueous phase." },
+          { value: "clay_def", label: "It is the concentration of active organophilic clay required to maintain water-in-oil emulsion stability." }
+        ],
+        answer: "correct_def",
+        explanation: "Water Phase Salinity (WPS) measures the salinity of the emulsified water droplets in an invert emulsion fluid. It determines the water activity of the fluid, acting as a control for the osmotic hydration or dehydration of formation shales."
       }
     ]
-  },
-  homework_15: {
+  },homework_15: {
     title: "Homework 15: NAF Formulations & Product Functions",
     description: "Practice questions about NAF mixing sequences, product functions (INVERMUL, GELTONE II, etc.), alkalinity additions, salinity, and calculations step order.",
     questions: [
       {
         id: "hw15_q1",
-        number: "1 of 17",
+        number: "1 of 20",
         type: "matching",
         question: "Organize in the right order the steps to perform the calculation of materials required to build a Non Aqueous Fluid",
         pairs: {
@@ -1779,7 +1922,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q2",
-        number: "2 of 17",
+        number: "2 of 20",
         type: "single",
         question: "What is the function of BARABLOK™ in a NAF?",
         options: [
@@ -1798,7 +1941,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q3",
-        number: "3 of 17",
+        number: "3 of 20",
         type: "single",
         question: "What is the function of GELTONE® II in a NAF?",
         options: [
@@ -1817,7 +1960,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q4",
-        number: "4 of 17",
+        number: "4 of 20",
         type: "single",
         question: "What is the function of RM-63™ in a NAF?",
         options: [
@@ -1836,7 +1979,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q5",
-        number: "5 of 17",
+        number: "5 of 20",
         type: "single",
         question: "What is the function of INVERMUL® in a NAF?",
         options: [
@@ -1855,7 +1998,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q6",
-        number: "6 of 17",
+        number: "6 of 20",
         type: "single",
         question: "What is the function of DURATONE® HT in a NAF?",
         options: [
@@ -1874,7 +2017,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q7",
-        number: "7 of 17",
+        number: "7 of 20",
         type: "single",
         question: "What is the function of EZ MUL® NT in a NAF?",
         options: [
@@ -1893,7 +2036,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q8",
-        number: "8 of 17",
+        number: "8 of 20",
         type: "single",
         question: "What is the function of SUSPENTONE™ in a NAF?",
         options: [
@@ -1912,7 +2055,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q9",
-        number: "9 of 17",
+        number: "9 of 20",
         type: "single",
         question: "What is the function of DRILTREAT® in a NAF?",
         options: [
@@ -1931,7 +2074,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q10",
-        number: "10 of 17",
+        number: "10 of 20",
         type: "single",
         question: "What is the function of OMC® 42™ in a NAF?",
         options: [
@@ -1950,7 +2093,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q11",
-        number: "11 of 17",
+        number: "11 of 20",
         type: "single",
         question: "What is the function of RHEMOD™ L in a NAF?",
         options: [
@@ -1969,7 +2112,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q12",
-        number: "12 of 17",
+        number: "12 of 20",
         type: "multiple",
         question: "Why is lime added into Non Aqueous fluids?",
         options: [
@@ -1985,7 +2128,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q13",
-        number: "13 of 17",
+        number: "13 of 20",
         type: "multiple",
         question: "Why is calcium chloride added into Non Aqueous fluids?",
         options: [
@@ -2000,7 +2143,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q14",
-        number: "14 of 17",
+        number: "14 of 20",
         type: "single",
         question: "Which of the following options are true about the properties of premium diesel",
         options: [
@@ -2014,7 +2157,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q15",
-        number: "15 of 17",
+        number: "15 of 20",
         type: "single",
         question: "Which of the following products is recommended to be added into NAF, when extra barite is added to a NAF?",
         options: [
@@ -2030,7 +2173,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q16",
-        number: "16 of 17",
+        number: "16 of 20",
         type: "matching",
         question: "List in chronological order how the products/materials should be mixed to build a NAF",
         pairs: {
@@ -2048,7 +2191,7 @@ const QUIZ_DATA = {
       },
       {
         id: "hw15_q17",
-        number: "17 of 17",
+        number: "17 of 20",
         type: "multiple",
         question: "Select all the parameters that are needed to calculate the materials required to build a NAF",
         options: [
@@ -2061,10 +2204,66 @@ const QUIZ_DATA = {
         ],
         answer: ["volume_fluid", "water_salinity", "nap_water_ratio"],
         explanation: "To calculate NAF formulation volumes, the three fundamental parameters required are the total fluid volume, the target Non-Aqueous Phase to Water ratio (OWR), and the brine water phase salinity (WPS)."
+      },
+      {
+        id: "hw15_q18",
+        number: "18 of 20",
+        type: "single",
+        question: "What is the function of TAU-MOD® in a NAF?",
+        options: [
+          { value: "viscosifier", label: "Viscosifier" },
+          { value: "weighting_agent", label: "Weighting agent" },
+          { value: "rheology_modifier", label: "Rheology modifier" },
+          { value: "emulsifier", label: "Emulsifier" },
+          { value: "wetting_agent", label: "Wetting agent" },
+          { value: "thinner", label: "Thinner" },
+          { value: "suspension_agent", label: "Suspension agent" },
+          { value: "filtration_control", label: "Filtration control agent" },
+          { value: "alkalinity", label: "Alkalinity source" }
+        ],
+        answer: "viscosifier",
+        explanation: "TAU-MOD® is a synthetic polymer viscosifier designed to provide high-shear-rate viscosity and excellent suspension characteristics in clay-free invert emulsion fluids."
+      },
+      {
+        id: "hw15_q19",
+        number: "19 of 20",
+        type: "single",
+        question: "What is the function of BaraVis® in a NAF?",
+        options: [
+          { value: "viscosifier", label: "Viscosifier" },
+          { value: "weighting_agent", label: "Weighting agent" },
+          { value: "rheology_modifier", label: "Rheology modifier" },
+          { value: "emulsifier", label: "Emulsifier" },
+          { value: "wetting_agent", label: "Wetting agent" },
+          { value: "thinner", label: "Thinner" },
+          { value: "suspension_agent", label: "Suspension agent" },
+          { value: "filtration_control", label: "Filtration control agent" },
+          { value: "alkalinity", label: "Alkalinity source" }
+        ],
+        answer: "rheology_modifier",
+        explanation: "BaraVis® is a synthetic polymer rheology modifier used to optimize low-shear-rate viscosity, improve hole cleaning, and stabilize fluid rheology across a wide range of temperatures."
+      },
+      {
+        id: "hw15_q20",
+        number: "20 of 20",
+        type: "single",
+        question: "What is the function of ADAPTA® in a NAF?",
+        options: [
+          { value: "viscosifier", label: "Viscosifier" },
+          { value: "weighting_agent", label: "Weighting agent" },
+          { value: "rheology_modifier", label: "Rheology modifier" },
+          { value: "emulsifier", label: "Emulsifier" },
+          { value: "wetting_agent", label: "Wetting agent" },
+          { value: "thinner", label: "Thinner" },
+          { value: "suspension_agent", label: "Suspension agent" },
+          { value: "filtration_control", label: "Filtration control agent" },
+          { value: "alkalinity", label: "Alkalinity source" }
+        ],
+        answer: "filtration_control",
+        explanation: "ADAPTA® is a copolymer filtration control agent designed for high-temperature, high-pressure (HTHP) filtration control in non-aqueous fluids."
       }
     ]
-  },
-  homework_16: {
+  },homework_16: {
     title: "Homework 16: OWR & Salinity Adjustments (Theory)",
     description: "Practice questions about OWR changes, salinity adjustments, and density effects based on the Baroid Core guide.",
     questions: [
