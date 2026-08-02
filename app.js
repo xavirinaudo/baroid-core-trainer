@@ -641,6 +641,16 @@ function showQuizResults() {
   
   const scorePercent = Math.round((sessionCorrectCount / currentQuestions.length) * 100);
   
+  const congratsEl = document.getElementById('quiz-results-congrats');
+  if (congratsEl) {
+    if (scorePercent >= 80) {
+      congratsEl.innerText = "Congrats Habibi!";
+      congratsEl.style.display = 'block';
+    } else {
+      congratsEl.style.display = 'none';
+    }
+  }
+  
   document.getElementById('quiz-results-summary').innerText = `You answered ${sessionCorrectCount} out of ${currentQuestions.length} questions correctly.`;
   document.getElementById('quiz-results-score').innerText = `${scorePercent}%`;
   
@@ -1657,12 +1667,9 @@ function loadNafCase(entry) {
   // Update title generically to hide the case name
   document.getElementById('train-cont-naf-title').innerText = "Mud Properties Report (Day 1 vs Day 2)";
 
-  // Update field note
+  // Update field note (NAF notes hidden to prevent exam help)
   const noteEl = document.getElementById('train-cont-naf-note');
-  if (entry.note) {
-    document.getElementById('train-cont-naf-note-text').innerText = entry.note;
-    noteEl.style.display = 'block';
-  } else {
+  if (noteEl) {
     noteEl.style.display = 'none';
   }
 

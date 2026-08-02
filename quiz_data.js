@@ -2446,8 +2446,8 @@ const QUIZ_DATA = {
           { value: "barite", label: "Barite" },
           { value: "alkalinity_source", label: "Alkalinity source" }
         ],
-        answer: "saturated_brine",
-        explanation: "To treat a system experiencing salt dissolution or salt contamination while drilling a salt layer, pre-saturating the water phase using a saturated salt brine helps prevent further salt dissolution and stabilizes the fluid."
+        answer: "fresh_water",
+        explanation: "If there is salt contamination from drilling a salt layer, the salinity (WPS) and chloride concentration in the water phase will spike too high. Adding fresh water dilutes the system, helping to lower the WPS and chlorides back to target specifications."
       }
     ]
   }
