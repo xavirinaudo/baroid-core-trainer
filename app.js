@@ -31,6 +31,7 @@ let stats = {
   hw14_highScore: null,
   hw15_highScore: null,
   hw16_highScore: null,
+  hw17_highScore: null,
   theme: 'dark'
 };
 
@@ -166,7 +167,14 @@ function switchTab(tabId) {
     document.getElementById('page-title').innerText = "Homework 16: OWR & Salinity Adjustments (Theory)";
     document.getElementById('page-subtitle').innerText = "Practice questions about OWR changes, salinity adjustments, and density effects based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
-    if (currentQuizId !== 'homework_16' || isFinished) startQuiz('homework_16');
+    if (currentQuizId !== 'homework_16' || isFinished) startQuiz('homework_16'); else if (tabId === 'hw17') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw17').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 17: NAF Contaminants (Theory)";
+    document.getElementById('page-subtitle').innerText = "Practice questions about Non-Aqueous Fluid (NAF) contaminants and their treatments based on the Baroid Core guide.";
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_17' || isFinished) startQuiz('homework_17');
+  }
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -214,6 +222,8 @@ function updateDashboardStats() {
   if (scoreHw15El) scoreHw15El.innerText = stats.hw15_highScore !== null ? `Record: ${stats.hw15_highScore}%` : "Record: --";
   const scoreHw16El = document.getElementById('score-hw16');
   if (scoreHw16El) scoreHw16El.innerText = stats.hw16_highScore !== null ? `Record: ${stats.hw16_highScore}%` : "Record: --";
+  const scoreHw17El = document.getElementById('score-hw17');
+  if (scoreHw17El) scoreHw17El.innerText = stats.hw17_highScore !== null ? Record: % : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -272,6 +282,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_16') {
     navId = 'nav-hw16';
     badgeName = "Homework 16";
+  } else if (quizId === 'homework_17') {
+    navId = 'nav-hw17';
+    badgeName = "Homework 17";
   }
   
   const navEl = document.getElementById(navId);
@@ -639,6 +652,8 @@ function showQuizResults() {
     if (stats.hw15_highScore === null || scorePercent > stats.hw15_highScore) stats.hw15_highScore = scorePercent;
   } else if (currentQuizId === 'homework_16') {
     if (stats.hw16_highScore === null || scorePercent > stats.hw16_highScore) stats.hw16_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_17') {
+    if (stats.hw17_highScore === null || scorePercent > stats.hw17_highScore) stats.hw17_highScore = scorePercent;
   }
   saveStats();
 }
