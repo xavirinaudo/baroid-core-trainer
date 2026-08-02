@@ -167,14 +167,14 @@ function switchTab(tabId) {
     document.getElementById('page-title').innerText = "Homework 16: OWR & Salinity Adjustments (Theory)";
     document.getElementById('page-subtitle').innerText = "Practice questions about OWR changes, salinity adjustments, and density effects based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
-    if (currentQuizId !== 'homework_16' || isFinished) startQuiz('homework_16'); else if (tabId === 'hw17') {
+    if (currentQuizId !== 'homework_16' || isFinished) startQuiz('homework_16');
+  } else if (tabId === 'hw17') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw17').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 17: NAF Contaminants (Theory)";
     document.getElementById('page-subtitle').innerText = "Practice questions about Non-Aqueous Fluid (NAF) contaminants and their treatments based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_17' || isFinished) startQuiz('homework_17');
-  }
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -195,6 +195,16 @@ function switchTab(tabId) {
     document.getElementById('nav-cheatsheet').classList.add('active');
     document.getElementById('page-title').innerText = "Baroid Core Knowledge Base";
     document.getElementById('page-subtitle').innerText = "Reference sheets for Baroid products and exam equations.";
+  } else if (tabId === 'contaminants-naf') {
+    document.getElementById('view-contaminants-naf').style.display = 'block';
+    document.getElementById('nav-contaminants-naf').classList.add('active');
+    document.getElementById('page-title').innerText = "NAF Contaminants Diagnostics Workspace";
+    document.getElementById('page-subtitle').innerText = "Analyze fluid reports, identify contaminants, and select chemical treatments based on Homework 17.";
+    if (!currentNafCase) {
+      startNafSession();
+    } else {
+      loadNafCase(currentNafCase);
+    }
   }
 }
 
@@ -1601,3 +1611,398 @@ function showUpdateBanner(newVersion) {
   document.body.appendChild(banner);
 }
 
+
+// 6. NAF Contaminants Diagnostics Workspace
+let currentNafCase = null;
+let nafCasesOrder = [];
+let currentNafIndex = 0;
+let nafChecked = false;
+
+function startNafSession() {
+  const cases = CALCULATIONS_DATA.contaminants_naf;
+  if (!cases || cases.length === 0) return;
+  
+  // Shuffle cases
+  nafCasesOrder = [...cases].sort(() => Math.random() - 0.5);
+  currentNafIndex = 0;
+  
+  loadNafIndex(0);
+}
+
+function loadNafIndex(index) {
+  if (!nafCasesOrder || nafCasesOrder.length === 0) return;
+  if (index < 0 || index >= nafCasesOrder.length) return;
+  
+  currentNafIndex = index;
+  currentNafCase = nafCasesOrder[index];
+  nafChecked = false;
+  
+  // Update progress text
+  const counterEl = document.getElementById('train-cont-naf-counter');
+  if (counterEl) {
+    counterEl.innerText = `${index + 1} of ${nafCasesOrder.length}`;
+  }
+  
+  loadNafCase(currentNafCase);
+}
+
+function loadNafCase(entry) {
+  if (!entry) return;
+
+  // Clear inputs
+  document.getElementById('input-cont-naf-name').value = '';
+  document.getElementById('input-cont-naf-treatment').value = '';
+  document.getElementById('train-cont-naf-explanation').style.display = 'none';
+
+  // Update title generically to hide the case name
+  document.getElementById('train-cont-naf-title').innerText = "Mud Properties Report (Day 1 vs Day 2)";
+
+  // Update field note
+  const noteEl = document.getElementById('train-cont-naf-note');
+  if (entry.note) {
+    document.getElementById('train-cont-naf-note-text').innerText = entry.note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // Render properties table (Exactly 3 columns, always show all properties)
+  const tbody = document.getElementById('table-cont-naf-compare-body');
+  tbody.innerHTML = '';
+  entry.properties.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid var(--border-glow)';
+
+    const tdName = document.createElement('td');
+    tdName.style.padding = '10px';
+    tdName.innerText = p.name;
+
+    const tdDay1 = document.createElement('td');
+    tdDay1.style.padding = '10px';
+    tdDay1.innerText = p.day1;
+
+    const tdDay2 = document.createElement('td');
+    tdDay2.style.padding = '10px';
+    tdDay2.innerText = p.day2;
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdDay1);
+    tr.appendChild(tdDay2);
+    tbody.appendChild(tr);
+  });
+
+  // Reset input styles and enable them
+  const contEl = document.getElementById('input-cont-naf-name');
+  const treatEl = document.getElementById('input-cont-naf-treatment');
+  
+  contEl.className = 'input-field';
+  treatEl.className = 'input-field';
+  
+  contEl.disabled = false;
+  treatEl.disabled = false;
+
+  document.getElementById('btn-cont-naf-check').innerText = 'Check Answers';
+}
+
+function resetNafInputs() {
+  if (nafChecked) return;
+  document.getElementById('input-cont-naf-name').value = '';
+  document.getElementById('input-cont-naf-treatment').value = '';
+  document.getElementById('train-cont-naf-explanation').style.display = 'none';
+  document.getElementById('input-cont-naf-name').className = 'input-field';
+  document.getElementById('input-cont-naf-treatment').className = 'input-field';
+  document.getElementById('btn-cont-naf-check').innerText = 'Check Answers';
+}
+
+function checkNafAnswers() {
+  const entry = currentNafCase;
+  if (!entry) return;
+
+  if (nafChecked) {
+    // If already checked, this button click should take us to the next case!
+    if (currentNafIndex < nafCasesOrder.length - 1) {
+      loadNafIndex(currentNafIndex + 1);
+    } else {
+      // Completed all cases!
+      alert("¡Enhorabuena! Has completado los " + nafCasesOrder.length + " casos de contaminación de NAF.");
+      startNafSession(); // Restart session
+    }
+    return;
+  }
+
+  const userCont = document.getElementById('input-cont-naf-name').value;
+  const userTreat = document.getElementById('input-cont-naf-treatment').value;
+
+  let isContCorrect = (userCont === entry.answer.contaminant);
+  let isTreatCorrect = (userTreat === entry.answer.treatment);
+
+  // Update input styles
+  const contEl = document.getElementById('input-cont-naf-name');
+  const treatEl = document.getElementById('input-cont-naf-treatment');
+
+  contEl.className = isContCorrect ? 'input-field correct' : 'input-field incorrect';
+  treatEl.className = isTreatCorrect ? 'input-field correct' : 'input-field incorrect';
+
+  // Disable inputs so they cannot change after checking
+  contEl.disabled = true;
+  treatEl.disabled = true;
+
+  let allCorrect = isContCorrect && isTreatCorrect;
+
+  // Show detailed explanation
+  const expEl = document.getElementById('train-cont-naf-explanation');
+  const expTextEl = document.getElementById('train-cont-naf-explanation-text');
+  const expTitleEl = document.getElementById('train-cont-naf-explanation-title');
+  const badgesEl = document.getElementById('train-cont-naf-summary-badges');
+
+  if (allCorrect) {
+    expTitleEl.innerText = `Correct! Solution & Chemistry (This was ${entry.name}):`;
+    expTitleEl.style.color = 'var(--success)';
+  } else {
+    expTitleEl.innerText = `Incorrect. Solution & Chemistry (This was ${entry.name}):`;
+    expTitleEl.style.color = 'var(--error)';
+  }
+
+  // Get pretty option labels for memory visual aid
+  const getOptionLabel = (selectId, val) => {
+    const select = document.getElementById(selectId);
+    if (!select) return val;
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === val) return select.options[i].text;
+    }
+    return val;
+  };
+
+  const prettyCont = getOptionLabel('input-cont-naf-name', entry.answer.contaminant);
+  const prettyTreat = getOptionLabel('input-cont-naf-treatment', entry.answer.treatment);
+
+  // Build the badges HTML (bold & highlighted)
+  let badgesHtml = `
+    <div style="background: rgba(230,162,60,0.15); border: 1px solid rgba(230,162,60,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #e6a23c; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(230,162,60,0.05);">
+      Contaminant: <span style="text-transform: uppercase; color: #f39c12; filter: drop-shadow(0 0 4px rgba(243,156,18,0.2));">${prettyCont}</span>
+    </div>
+    <div style="background: rgba(103,194,58,0.15); border: 1px solid rgba(103,194,58,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #67c23a; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(103,194,58,0.05);">
+      Treatment: <span style="text-transform: uppercase; color: #2ecc71; filter: drop-shadow(0 0 4px rgba(46,204,113,0.2));">${prettyTreat}</span>
+    </div>
+  `;
+
+  if (badgesEl) {
+    badgesEl.innerHTML = badgesHtml;
+  }
+
+  expTextEl.innerText = entry.explanation;
+  expEl.style.display = 'block';
+
+  // Increment stats
+  stats.simulatorsRun += 1;
+  saveStats();
+  updateDashboardStats();
+
+  nafChecked = true;
+  
+  // Set button text for next step
+  const btn = document.getElementById('btn-cont-naf-check');
+  if (currentNafIndex < nafCasesOrder.length - 1) {
+    btn.innerText = "Next Case";
+  } else {
+    btn.innerText = "Finish Session";
+  }
+}
+
+
+// 6. NAF Contaminants Diagnostics Workspace
+let currentNafCase = null;
+let nafCasesOrder = [];
+let currentNafIndex = 0;
+let nafChecked = false;
+
+function startNafSession() {
+  const cases = CALCULATIONS_DATA.contaminants_naf;
+  if (!cases || cases.length === 0) return;
+  
+  // Shuffle cases
+  nafCasesOrder = [...cases].sort(() => Math.random() - 0.5);
+  currentNafIndex = 0;
+  
+  loadNafIndex(0);
+}
+
+function loadNafIndex(index) {
+  if (!nafCasesOrder || nafCasesOrder.length === 0) return;
+  if (index < 0 || index >= nafCasesOrder.length) return;
+  
+  currentNafIndex = index;
+  currentNafCase = nafCasesOrder[index];
+  nafChecked = false;
+  
+  // Update progress text
+  const counterEl = document.getElementById('train-cont-naf-counter');
+  if (counterEl) {
+    counterEl.innerText = `${index + 1} of ${nafCasesOrder.length}`;
+  }
+  
+  loadNafCase(currentNafCase);
+}
+
+function loadNafCase(entry) {
+  if (!entry) return;
+
+  // Clear inputs
+  document.getElementById('input-cont-naf-name').value = '';
+  document.getElementById('input-cont-naf-treatment').value = '';
+  document.getElementById('train-cont-naf-explanation').style.display = 'none';
+
+  // Update title generically to hide the case name
+  document.getElementById('train-cont-naf-title').innerText = "Mud Properties Report (Day 1 vs Day 2)";
+
+  // Update field note
+  const noteEl = document.getElementById('train-cont-naf-note');
+  if (entry.note) {
+    document.getElementById('train-cont-naf-note-text').innerText = entry.note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // Render properties table (Exactly 3 columns, always show all properties)
+  const tbody = document.getElementById('table-cont-naf-compare-body');
+  tbody.innerHTML = '';
+  entry.properties.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid var(--border-glow)';
+
+    const tdName = document.createElement('td');
+    tdName.style.padding = '10px';
+    tdName.innerText = p.name;
+
+    const tdDay1 = document.createElement('td');
+    tdDay1.style.padding = '10px';
+    tdDay1.innerText = p.day1;
+
+    const tdDay2 = document.createElement('td');
+    tdDay2.style.padding = '10px';
+    tdDay2.innerText = p.day2;
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdDay1);
+    tr.appendChild(tdDay2);
+    tbody.appendChild(tr);
+  });
+
+  // Reset input styles and enable them
+  const contEl = document.getElementById('input-cont-naf-name');
+  const treatEl = document.getElementById('input-cont-naf-treatment');
+  
+  contEl.className = 'input-field';
+  treatEl.className = 'input-field';
+  
+  contEl.disabled = false;
+  treatEl.disabled = false;
+
+  document.getElementById('btn-cont-naf-check').innerText = 'Check Answers';
+}
+
+function resetNafInputs() {
+  if (nafChecked) return;
+  document.getElementById('input-cont-naf-name').value = '';
+  document.getElementById('input-cont-naf-treatment').value = '';
+  document.getElementById('train-cont-naf-explanation').style.display = 'none';
+  document.getElementById('input-cont-naf-name').className = 'input-field';
+  document.getElementById('input-cont-naf-treatment').className = 'input-field';
+  document.getElementById('btn-cont-naf-check').innerText = 'Check Answers';
+}
+
+function checkNafAnswers() {
+  const entry = currentNafCase;
+  if (!entry) return;
+
+  if (nafChecked) {
+    // If already checked, this button click should take us to the next case!
+    if (currentNafIndex < nafCasesOrder.length - 1) {
+      loadNafIndex(currentNafIndex + 1);
+    } else {
+      // Completed all cases!
+      alert("¡Enhorabuena! Has completado los " + nafCasesOrder.length + " casos de contaminación de NAF.");
+      startNafSession(); // Restart session
+    }
+    return;
+  }
+
+  const userCont = document.getElementById('input-cont-naf-name').value;
+  const userTreat = document.getElementById('input-cont-naf-treatment').value;
+
+  let isContCorrect = (userCont === entry.answer.contaminant);
+  let isTreatCorrect = (userTreat === entry.answer.treatment);
+
+  // Update input styles
+  const contEl = document.getElementById('input-cont-naf-name');
+  const treatEl = document.getElementById('input-cont-naf-treatment');
+
+  contEl.className = isContCorrect ? 'input-field correct' : 'input-field incorrect';
+  treatEl.className = isTreatCorrect ? 'input-field correct' : 'input-field incorrect';
+
+  // Disable inputs so they cannot change after checking
+  contEl.disabled = true;
+  treatEl.disabled = true;
+
+  let allCorrect = isContCorrect && isTreatCorrect;
+
+  // Show detailed explanation
+  const expEl = document.getElementById('train-cont-naf-explanation');
+  const expTextEl = document.getElementById('train-cont-naf-explanation-text');
+  const expTitleEl = document.getElementById('train-cont-naf-explanation-title');
+  const badgesEl = document.getElementById('train-cont-naf-summary-badges');
+
+  if (allCorrect) {
+    expTitleEl.innerText = `Correct! Solution & Chemistry (This was ${entry.name}):`;
+    expTitleEl.style.color = 'var(--success)';
+  } else {
+    expTitleEl.innerText = `Incorrect. Solution & Chemistry (This was ${entry.name}):`;
+    expTitleEl.style.color = 'var(--error)';
+  }
+
+  // Get pretty option labels for memory visual aid
+  const getOptionLabel = (selectId, val) => {
+    const select = document.getElementById(selectId);
+    if (!select) return val;
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === val) return select.options[i].text;
+    }
+    return val;
+  };
+
+  const prettyCont = getOptionLabel('input-cont-naf-name', entry.answer.contaminant);
+  const prettyTreat = getOptionLabel('input-cont-naf-treatment', entry.answer.treatment);
+
+  // Build the badges HTML (bold & highlighted)
+  let badgesHtml = `
+    <div style="background: rgba(230,162,60,0.15); border: 1px solid rgba(230,162,60,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #e6a23c; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(230,162,60,0.05);">
+      Contaminant: <span style="text-transform: uppercase; color: #f39c12; filter: drop-shadow(0 0 4px rgba(243,156,18,0.2));">${prettyCont}</span>
+    </div>
+    <div style="background: rgba(103,194,58,0.15); border: 1px solid rgba(103,194,58,0.3); padding: 8px 12px; border-radius: 6px; font-weight: 700; color: #67c23a; font-size: 13px; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px; box-shadow: 0 0 10px rgba(103,194,58,0.05);">
+      Treatment: <span style="text-transform: uppercase; color: #2ecc71; filter: drop-shadow(0 0 4px rgba(46,204,113,0.2));">${prettyTreat}</span>
+    </div>
+  `;
+
+  if (badgesEl) {
+    badgesEl.innerHTML = badgesHtml;
+  }
+
+  expTextEl.innerText = entry.explanation;
+  expEl.style.display = 'block';
+
+  // Increment stats
+  stats.simulatorsRun += 1;
+  saveStats();
+  updateDashboardStats();
+
+  nafChecked = true;
+  
+  // Set button text for next step
+  const btn = document.getElementById('btn-cont-naf-check');
+  if (currentNafIndex < nafCasesOrder.length - 1) {
+    btn.innerText = "Next Case";
+  } else {
+    btn.innerText = "Finish Session";
+  }
+}

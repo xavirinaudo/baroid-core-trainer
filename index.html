@@ -84,6 +84,10 @@
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           Contaminants WBM
         </a>
+        <a class="nav-link" id="nav-contaminants-naf" onclick="switchTab('contaminants-naf')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          Contaminants NAF
+        </a>
         <a class="nav-link" id="nav-trainers" onclick="switchTab('trainers')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
           Practice Math Simulators
@@ -651,6 +655,85 @@
           <div class="btn-group">
             <button class="btn btn-secondary" onclick="resetContaminantsInputs()">Reset Inputs</button>
             <button class="btn btn-primary" id="btn-cont-check" onclick="checkContaminantsAnswers()">Check Answers</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: NAF Contaminants Simulator -->
+      <section id="view-contaminants-naf" class="view-pane glass" style="display: none; padding: 32px;">
+        <h3 class="card-title" style="margin-bottom:16px;">NAF Contaminants Diagnostics Workspace</h3>
+        <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px;">
+          Analyze the mud check report comparing **Day 1** (fluid in specification) to **Day 2** (fluid affected).
+          Identify the contaminant and select the primary chemical treatment based on Homework 17 cases.
+        </p>
+
+        <div style="margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap: wrap;">
+          <div>
+            <span style="font-size: 16px; font-weight: 600; color: var(--primary);" id="train-cont-naf-label">Exam Practice: Case <span id="train-cont-naf-counter">1 of 7</span></span>
+          </div>
+          <button class="btn btn-secondary" id="btn-cont-naf-restart" onclick="startNafSession()" style="padding: 10px 20px;">Restart Session</button>
+        </div>
+
+        <div class="trainer-section" style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Mud Check Comparison Table -->
+          <div class="params-board" style="padding: 16px; overflow-x: auto; border: 1px solid var(--border-glow); background: rgba(255,255,255,0.01);">
+            <div class="params-title" id="train-cont-naf-title" style="margin-bottom:12px; font-weight:700;">Mud Properties Report (Day 1 vs Day 2)</div>
+            <table class="sheet-table" style="width:100%; max-width:650px; border-collapse:collapse; text-align:left; font-size:13px;" id="table-cont-naf-compare">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.05); border-bottom: 1px solid var(--border-glow);">
+                  <th style="padding:10px; width:50%;">Mud Property</th>
+                  <th style="padding:10px; width:25%;">Day 1 (Base)</th>
+                  <th style="padding:10px; width:25%;">Day 2 (Affected)</th>
+                </tr>
+              </thead>
+              <tbody id="table-cont-naf-compare-body">
+                <!-- Loaded dynamically by app.js -->
+              </tbody>
+            </table>
+            <div id="train-cont-naf-note" style="margin-top:12px; padding: 10px; border-radius: 6px; background: rgba(230,162,60,0.1); border: 1px solid rgba(230,162,60,0.2); font-size:13px; font-weight:600; color:#e6a23c; display:none;">
+              Field Note: <span id="train-cont-naf-note-text"></span>
+            </div>
+          </div>
+
+          <!-- Analysis Form -->
+          <div class="inputs-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+            <div class="input-group">
+              <label class="input-label" for="input-cont-naf-name" style="font-weight:600;">1. Identify the Contaminant</label>
+              <select id="input-cont-naf-name" class="input-field">
+                <option value="">-- Select Contaminant --</option>
+                <option value="drilled_solids">Drilled Solids</option>
+                <option value="acid_gas_co2">Acid Gas (CO2)</option>
+                <option value="hydrocarbons">Hydrocarbons</option>
+                <option value="fresh_water">Fresh water</option>
+                <option value="salt_formation">Salt (formation)</option>
+                <option value="cement">Cement</option>
+                <option value="salt_water">Salt Water</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" for="input-cont-naf-treatment" style="font-weight:600;">2. Primary Chemical Treatment</label>
+              <select id="input-cont-naf-treatment" class="input-field">
+                <option value="">-- Select Treatment --</option>
+                <option value="mechanical_separation_dilution">Mechanical Separation/Dilution</option>
+                <option value="lime">Lime</option>
+                <option value="dilution_brine">Dilution with brine</option>
+                <option value="dilution_base_fluid">Dilution with base fluid</option>
+                <option value="dilution_fresh_water">Dilution with fresh water</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Solution Explanation -->
+          <div class="explanation-card glass" id="train-cont-naf-explanation" style="display:none;">
+            <h4 style="margin-bottom:12px; color:var(--primary);" id="train-cont-naf-explanation-title">Diagnostic Results & Guidance:</h4>
+            <div id="train-cont-naf-summary-badges" style="margin-bottom: 16px; display: flex; gap: 12px; flex-wrap: wrap;"></div>
+            <p id="train-cont-naf-explanation-text" style="white-space: pre-line; line-height: 1.6; font-size:14px; color:var(--text-secondary);"></p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-secondary" onclick="resetNafInputs()">Reset Inputs</button>
+            <button class="btn btn-primary" id="btn-cont-naf-check" onclick="checkNafAnswers()">Check Answers</button>
           </div>
         </div>
       </section>
