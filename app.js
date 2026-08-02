@@ -233,7 +233,7 @@ function updateDashboardStats() {
   const scoreHw16El = document.getElementById('score-hw16');
   if (scoreHw16El) scoreHw16El.innerText = stats.hw16_highScore !== null ? `Record: ${stats.hw16_highScore}%` : "Record: --";
   const scoreHw17El = document.getElementById('score-hw17');
-  if (scoreHw17El) scoreHw17El.innerText = stats.hw17_highScore !== null ? Record: % : "Record: --";
+  if (scoreHw17El) scoreHw17El.innerText = stats.hw17_highScore !== null ? `Record: ${stats.hw17_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
