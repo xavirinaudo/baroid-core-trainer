@@ -1,0 +1,210 @@
+--- PAGE 1 ---
+Question Feedback
+Introduction
+Baroid Core Homework 19
+Assessment Feedback
+Congratulations, you passed.
+Total score: 49  out of 49, 100%
+Question
+1 of 30Reservoir fluids can be defined as Fluids we expose to the reservoir, that help prepare, repair, cleanout and completethe wellbore
+True
+False
+1  out of  1
+Question
+2 of 30The goal of completion fluids is to allow a controlled production of the well, maximizing both the flow ofhydrocarbons and safety
+True
+False
+1  out of  1
+Question
+3 of 30Completions fluids need to provide overbalance to control pressures from the wellbore, and transport solids into thereservoir
+True
+False
+May 02 2023 |Logged in as : Arias Sepulveda, Nicolas Fernando
+--- PAGE 2 ---
+1  out of  1
+Question
+4 of 30The displacement from drilling fluid to completion fluid is done by using a series of specially designed spacers
+True
+False
+1  out of  1
+Question
+5 of 30During the completion process, the lower completion assembly is run into the well to the payzone
+True
+False
+1  out of  1
+Question
+6 of 30Hydrocarbons will flow to surface during a cased and perforated production within the last casing cemented in thewellbore
+True
+False
+1  out of  1
+Question
+7 of 30The anchors the tubing, and seals the space between the tubing and the casing
+1  out of  1
+p a c k e r
+Question
+8 of 30Select the types of completions mentioned in class
+Sand control screen
+--- PAGE 3 ---
+Uncemented liner
+Cased and perforated
+Gravel pack
+Floating collar
+Bareleg completion
+4  out of  4
+Question
+9 of 30Cased and perforated is the most common type of completion for oil wells
+True
+False
+1  out of  1
+Question
+10 of 30Brines can be classified based on their source. Provide examples of each type of them
+Naturally occurring
+By-product of commercial processes
+Made from natural minerals
+3  out of  3
+N a C l ,  N a B r
+C a C l 2
+C s C O O H
+Question
+11 of 30In general, monovalent salts are usually mixed from sacks
+Yes
+No
+1  out of  1
+Question
+12 of 30In general, divalent salts are usually mixed from sacks
+True
+False
+--- PAGE 4 ---
+1  out of  1
+Question
+13 of 30The is used to measure the density of clear brine with no viscosity
+1  out of  1
+h y d r o m e t e r
+Question
+14 of 30The Turbidimeter (NTU) provides a value that can be used as reference to establish how cline a brine is
+True
+False
+1  out of  1
+Question
+15 of 30The higher the NTU reading from the turbidity meter, the cleaner the brine will be
+True
+False
+1  out of  1
+Question
+16 of 30
+The results from a NTU meter can be used to calculate the concentration of solids in suspension in the brine.
+True
+False
+1  out of  1
+Question
+17 of 30All brines are the same and can be handled using the basic PPE
+True
+--- PAGE 5 ---
+False
+1  out of  1
+Question
+18 of 30The “Process of removing from the wellbore one fluid (usually a drilling fluid), and replacing it with another (usually aclean completion fluid)" is called:
+Completion
+Displacement
+Dewatering
+Stimulation
+1  out of  1
+Question
+19 of 30Select all the applicable drilling fluid displacement objectives:
+Oil wet all well surfaces
+Establish a clean, non damaging environment for completion
+Water wet all well surfaces
+Maximizing the recovery of drilling fluid;
+Maximize the production of fluid waste
+Minimize the volume of fluid recovered
+3  out of  3
+Question
+20 of 30What are the five main requirements to plan a successful completion job?
+Lab data
+Hydraulic data
+Well data
+Financial data
+Installation data
+Logistic data
+Fluid data
+All of the above
+None of the above
+--- PAGE 6 ---
+5  out of  5
+Question
+21 of 30
+What are the two types of displacement available?
+Bypassed and indirect
+Direct and indirect
+Tandem and indirect
+Direct and tandem
+Direct and bypassed
+1  out of  1
+Question
+22 of 30In order to maximize the success of a displacement, completion tools are used
+True
+False
+1  out of  1
+Question
+23 of 30What are the main applications for completion tools?
+Spudding the well
+Displacing of the well
+Post perforation runs
+Fishing applications
+All of the above
+None of the above
+3  out of  3
+Question
+24 of 30
+--- PAGE 7 ---
+Select from the following list, the main four categories of completion tools using during the displacement forcompletion
+Other specialty tools
+Casing milling and bypass tools
+Casing and riser cleaning tools
+Hole openers and reamers
+Jetting and bypass tools
+Perforating and bypass tools
+Debris extraction tools
+4  out of  4
+Question
+25 of 30The consists of a series of pills and spacers that are pumped in a clearly defined sequence, and under-
+controlled flowrate
+1  out of  1
+d i s p l a c e m e n t  t r a i n
+Question
+26 of 30The use of a base fluid pill is a requirement exclusive for the displacement of:
+High density brines
+High performance water based fluids
+Conventional water based fluids
+Non Aqueous fluids
+1  out of  1
+Question
+27 of 30Push pill characteristics are:
+Low density, low viscosity
+High density, low viscosity
+High density, high viscosity
+Low density, high viscosity
+1  out of  1
+Question
+--- PAGE 8 ---
+28 of 30Wash pill characteristics are:
+High density, low viscosity
+Low density, low viscosity
+Low density, high viscosity
+High density, high viscosity
+1  out of  1
+Question
+29 of 30Select all the displacement success metrics
+Time
+Number of samples
+Cost
+Torque
+Final volumes
+Cleanliness
+HSE
+4  out of  4
+Question
+30 of 30Current well cleaners are using surfactants that are more compatible with environmental regulations and have a lowerimpact than solvent cleaners
+True
+False
+1  out of  1

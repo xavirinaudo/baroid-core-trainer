@@ -1,0 +1,331 @@
+--- PAGE 1 ---
+HALLIBURTON
+May 01 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 18
+Assessment Feedback
+Congratulations, you passed.
+Total score: 49 out of 58, 84%
+Question Feedback
+Question
+1 of38
+Select the correct definition of formation damage:
+o
+Any process that increases the natural porosity of a formation/rock
+o
+Any process that reduces the natural permeability of a formation/rock
+o
+Any process that maintains the natural permeability of a formation/rock
+o
+Any process that changes the natural structure of a formation/rock
+I outof I
+Question
+2 of38
+Formation damage can be caused by two types Of mechanisms, they are physical
+2 out of 2
+Question
+3 of38
+The reservoir v is the rock that contains the hydrocarbons.
+I out of I
+Question
+and chemical v mechanisms.
+--- PAGE 2 ---
+4 of 38
+Formation fluids are specially engmeered fluids that are used to drill through the payzone.
+True
+o
+False
+O outof I
+Question
+5 of 38
+The occurrence of formation damage Will lower the production rate of a reservoir.
+O True
+o
+False
+I outof I
+Question
+6 of 38
+Porosity
+1 outof 1
+v is the volume of the rock which can be filled by formation fluids.
+Question
+7 of38
+The larger the porosity of a formation, the more resistant it Will be to formation damage.
+O True
+False
+O outof I
+Question
+8 of 38
+Select the main causes of limited production rate
+a
+a
+Formation damage
+Low formation salinity
+Low formation permeability
+High oil viscosity
+Low formation pressure
+High oil API gravity
+Low formation temperature
+--- PAGE 3 ---
+I outof I
+Question
+9 of 38
+Radial flow of the produced fluids (into the wellbore) creates an increase v of the flow velocity near the wellbore
+1 outof I
+Question
+10 of 38
+Select from the following options, all the relevant formation damage mechanisms
+Clay inhibition
+Emulsion blockage
+Polymer adhesion
+Fluid density
+Particle size distribution (PSD)
+Clay migration and dispersion
+Particle plugging
+O outof 4
+Question
+11 of 38
+From the following list, select all the different particles than can cause damage inside the reservoir:
+a
+Polymers not soluble in acid
+Barite
+Calcium carbonate
+Perforation debris
+Polymers soluble in acid
+All of the above
+3 out of 3
+Question
+12 of38
+Regarding clays, list the clays discussed in Class and what is the behavior expected for each one of them and how to
+prevent it
+Smectite Takes water and swell, prevent with potassium
+--- PAGE 4 ---
+migration and dispersion
+Kaolinite Prone to svrek"-i$-peeessimm-is-preseat, avoid using >3% VIV of potassium
+lilite
+Prone to migration and dispersion, avoid dispersants and stabilize with potassium
+2 outof 3
+Question
+13 of38
+The way polymers are mixed in the fluid system is not important since they cannot generate any formation damage
+because they are very small.
+o
+True
+O
+False
+1 outof I
+Question
+14 of38
+The filtrate from drilling fluids needs to be compatible with the water from the formation, to avoid the formation of
+precipitates.
+o
+True
+o
+False
+1 outof I
+Question
+15 of38
+The excessive use of emulsifiers
+into formation damage
+1 outof 1
+Question
+16 of38
+v can lead to the formation of crude-brine emulsions that ultimately Will translate
+One of the ways to protect the reservoir from damage is the buildup of a thick filter cake that can increase the invasion
+around the wellbore
+o
+True
+o
+False
+I outof I
+--- PAGE 5 ---
+Question
+17 of38
+Which is probably more damaging to a payzone?
+o
+A dirty mud with 20% solids
+A dirty brine with 10% solids
+1 outof I
+Question
+18 of 38
+Reservoir fluids can be defined as Fluids we expose to the reservoir, that help prepare, repair, cleanout and complete
+the wellbore
+True
+o
+False
+1 out of I
+Question
+19 of 38
+Which of the following fluids can be used in reservoir while drilling and completing (select all applicable answers)?
+a
+Workover fluids
+Completion brines
+Reservoir drilling fluids
+Payzone hydrocarbons
+Unfiltered sea water
+>KPayzone water
+3 outof 3
+Question
+20 of 38
+Which products might you want to use in reservoir fluids, for as long as they're compatible with the payzone?
+a
+Bactericides
+Clays
+Pipe dopes X
+Lubricants
+Sticky polymers (PAC)
+Viscosifiers
+--- PAGE 6 ---
+3 outof 3
+Question
+21 of38
+Completion fluids are always Clear brines with no viscosity
+O True
+O
+False
+I outof I
+Question
+22 of 38
+The goal of a displacement is to remove all the products/by products of the drilling process before production
+o
+True
+o
+False
+1 outof I
+Question
+23 of 38
+Reservoir fluids are specifically designed to:
+Minimize formation damage
+Increase the pH of the formation
+Maintain well producibility
+All of the above
+2 outof 2
+Question
+24 of 38
+Completions and workovers require clean fluids for maximum effectiveness, and that is the goal of the filtration
+servwes
+O True
+o
+False
+1 outof I
+--- PAGE 7 ---
+Question
+25 of 38
+A filtration unit can help to recover clean potable water (free of solids and chemicals) from completion and workover
+fluids
+o
+True
+o
+False
+1 outof I
+Question
+26 of 38
+Which of the following are characteristics of a reservoir drlll-in fluid?
+Efflciently transports cuttings to the surface
+Minimizes potential formation damage
+Maintains hydrostatic overbalance to control the well
+Minimizes ROP and increases costs
+Same characteristics as any top hole drilling fluid
+3 outof 3
+Question
+27 of38
+When using a Dril-N fluid system, we know we have preserved the reservoir's producibility ifthe near wellbore rock
+flows the same after the well is completed as it did prior to the drilling/completion
+True
+o
+False
+1 outof I
+Question
+28 of38
+What are characteristics of a poorly-designed reservoir fluid?
+a
+Controls bottom hole pressures
+Optimizes cuttings carrying capacity
+Allows large quantities of foreign material to pass into the payzone
+Is not tested and potential damage prior use is unknown
+Maximizes ROP by employing high filtrate losses
+--- PAGE 8 ---
+3 outof 3
+Question
+29 of38
+Does a fracked completion normally require a specially engineered drill-in fluid?
+O Yes
+I outof I
+Question
+30 of 38
+Does an open hole completion normally require a specially-engineered drill-in fluid?
+O Yes
+1 outof I
+Question
+31 of 38
+Which of the following are potentially damaging to the payzone?
+Unfiltered Seawater
+All of the above
+Filtered brine
+Drill solids
+RMud filtrate
+Mud products
+3 outof 4
+Question
+32 of 38
+We prefer to use ground marble for drill-in fluid bridging because
+o
+o
+O
+o
+It is less costly than ground limestone
+It looks clean and white
+It is harder than limestone
+All of the above
+--- PAGE 9 ---
+I outof I
+Question
+33 of38
+Kozeny's Equation estimates a reservoir's pore throat diameter in microns when the rock permeability is known.
+O True
+CD False
+I outof I
+Question
+34 of 38
+On a particle size distribution, what is the meaning of the D50 value of a bridging material analysis?
+50% of the particles are larger than the D90 value
+O
+5()% of the particles are smaller than the 1)50 value
+o
+o
+5()% of the particles are pure marble
+o
+None of the above
+I outof I
+Question
+35 of38
+What concentration of bridging material has been found to be most effective for drill-in fluids?
+o
+20% by volume
+Between 20 and 30 lb/bbl
+Between 30 and 45 lb/bbl
+o
+Between 35 and 50 lb/bbl
+O outof I
+Question
+36 of 38
+Which return permeability value would be considered to be good by most operators?
+o
+85%
+--- PAGE 10 ---
+1 outof I
+Question
+37 of 38
+High Performance Invert Emulsion Fluids can make excellent drill-in fluids, given that the appropriate solids content is
+achieved
+o
+True
+O False
+1 outof 1
+Question
+38 of 38
+Any type ofLCM can be used if there are losses in the payzone
+o
+True
+False
+1 outof I

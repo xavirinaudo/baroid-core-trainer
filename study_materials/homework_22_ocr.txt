@@ -1,0 +1,153 @@
+--- PAGE 1 ---
+Close the browser
+Question Feedback
+Introduction
+Baroid Core Homework 22
+Assessment Feedback
+Congratulations, you passed.
+Total score: 20  out of 20, 100%
+Question
+1 of 20Which of the following best describes abnormal (sur-normal) pore pressure?
+Pore pressure greater than the defined normal
+Pore pressure less than the defined normal
+Pore pressure equal to the defined normal
+None of the above
+1  out of  1
+Question
+2 of 20Which of the following best describes sub-normal pore pressure?
+Pore pressure less than the defined normal
+Pore pressure equal to the defined normal
+Pore pressure greater than the defined normal
+None of the above
+1  out of  1
+Question
+3 of 20Which of the following can cause abnormal (sur-normal) pore pressure?
+Tectonic movement
+Rapid deposition
+Reservoir length
+Clay diagenesis
+Reservoir structure
+May 03 2023 |Logged in as : Liyana, Hafizah
+--- PAGE 2 ---
+Clay mineralogy
+Slow deposition
+1  out of  1
+Question
+4 of 20Which of the following can lead to wellbore instability?
+Drill string
+Drilling fluids
+Drilling operations
+Formation properties
+All of the above
+None of the above
+1  out of  1
+Question
+5 of 20How can frequent tripping lead to well bore instability?
+Surge and swab pressures
+Not enough circulating time
+Not cleaning the hole
+None of the above
+1  out of  1
+Question
+6 of 20What is the most common formation type that causes wellbore instability?
+Shale
+Sandstone
+Limestone
+None of the above
+1  out of  1
+Question
+7 of 20Which of the following can cause a key seat?
+Thick sticky wall cake
+Under-gauge bit
+Water sensitive shale
+--- PAGE 3 ---
+Crooked hole with short dog-legs
+1  out of  1
+Question
+8 of 20Which of the following can cause differentially stuck pipe?
+Thick sticky wall cake across a sand
+Under-gauge bit
+Water sensitive shale
+Crooked hole with short dog-legs
+1  out of  1
+Question
+9 of 20Which of the following can lead to an under gauge hole?
+Thick sticky wall cake
+Crooked hole with short dog-legs
+Water sensitive shale
+Under-gauge bit
+1  out of  1
+Question
+10 of 20What is the minimal amount of annular footage a spacer should cover in a vertical well?
+500ft
+250ft
+300ft
+400ft
+1  out of  1
+Question
+11 of 20When displacing a water based fluid with a Non Aqueous fluid. Which fluid should be used as a base for the spacer?
+Fresh Water
+Base oil
+Non Aqueous fluid
+Water based fluid
+1  out of  1
+--- PAGE 4 ---
+Question
+12 of 20When displacing the wellbore the weight of the spacer should be?
+Equal to the new fluid
+Less than the new fluid
+Greater than the new fluid
+An average of the two fluids
+1  out of  1
+Question
+13 of 20The fluid pumped through the bit nozzles while drilling is in transitional flow:
+True
+False
+1  out of  1
+Question
+14 of 20Which of the following problems can be caused by poor hole cleaning?
+Formation damage
+Tight hole
+Stuck pipe
+All of the above
+1  out of  1
+Question
+15 of 20In a high angle wellbore which of the following sweeps could be used to indicate effectiveness of hole cleaning?
+LCM sweep
+High viscosity
+Weighted
+None of the above
+1  out of  1
+Question
+16 of 20
+--- PAGE 5 ---
+In general, how much over current mud weight should a weighted sweep weight?
+1.0 ppg over
+1.5 ppg over
+2.0 ppg over
+2.5 ppg over
+None of the above
+1  out of  1
+Question
+17 of 20At the same flow rate, a fully concentric drill pipe has a higher pressure drop than does an eccentric pipe in the samehole section
+True
+False
+1  out of  1
+Question
+18 of 20The frictional pressure which causes the wellbore pressure to be lower when the BHA and drill string are withdrawnfrom the hole is called
+Swab
+Surge
+Slip
+Avalanche
+1  out of  1
+Question
+19 of 20Surpassing the formation fracture pressure can lead to wellbore instability and loss circulation events
+True
+False
+1  out of  1
+Question
+20 of 20The chemistry of the drilling fluid is important, because it can cause wellbore instability
+True
+False
+--- PAGE 6 ---
+1  out of  1

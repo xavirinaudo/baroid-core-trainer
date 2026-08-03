@@ -1,0 +1,244 @@
+--- PAGE 1 ---
+HALLIBURTON
+May 03 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 21
+Assessment Feedback
+Congratulations, you passed.
+Total score: 40 out of 40, 100%
+Question Feedback
+Question
+1 of27
+Hole cleaning can be defined as the ability of the drilling fluid to transport drilled cuttings / cavings to surface or to
+keep them suspended during a static state
+o
+True
+o
+False
+1 outof I
+Question
+2 of 27
+What are some of the good practices that can aid in hole cleaning?
+a
+Increase circulation
+Avoid tripping
+3 High ROP
+Control fluid parameters
+a
+Optimize mechanical separation equipment
+3 outof 3
+Question
+3 of 27
+An evidence of good hole cleaning is a buildup in solids inside the annular space, that leads to a stuck pipe situation
+--- PAGE 2 ---
+False
+I outof I
+Question
+4 of 27
+Select some of the signs of inadequate hole cleaning
+a
+Widely-fluctuating rotating torque
+Issues maintaining angle when sliding
+Stuck pipe
+Quick increase of ECD when pipe rotation is initiated
+Tight hole and /or pack-offs
+Decreased drag after connections
+All of the above
+5 outof 5
+Question
+5 of 27
+Inadequate hole cleaning can affect the drilling process, especially when building directional wells. The development
+of cutting beds can deviate the angle of the well while sliding
+O
+True
+o
+False
+I outof I
+Question
+6 of 27
+Indicate all the factors that can affect hole cleaning efficiency:
+a
+Flow rate
+Drill pipe rotation
+Drilling rate (ROP)
+Drill pipe eccentricity
+Flow line temperature
+Drilling fluid density
+Angle of well
+Drilling fluid rheological properties
+Formation salinity
+Density, size & shape of cuttings
+--- PAGE 3 ---
+Formation alkalinity
+Bottom hole pressures
+8 out of 8
+Question
+7 of27
+As the angle of deviation of the wells increases, so does the difficulty in transporting the cuttings
+o
+True
+o
+False
+1 outof I
+Question
+8 of 27
+In general, vertical wells are the hardest to clean due the effect of slip velocity
+O True
+o
+False
+I out of I
+Question
+9 of 27
+The formation of a cuttings bed is more pronounced when the angle of inclination of the well is greater than 30 degrees
+o
+True
+O False
+I outof 1
+Question
+10 of27
+For angles between 400 - 600, a turbulent or transition flow and a low rheology fluid is the most effective combination
+for minimwing the formation of cuttings beds, removing cuttings beds, and cleaning high angle wells
+O True
+o
+False
+1 outof I
+--- PAGE 4 ---
+Question
+11 of27
+Cuttings and cuttings beds Will be removed more effectively under laminar flow
+o
+True
+False
+1 outof I
+Question
+12 of27
+It has been demonstrated that in angles between 600 - 900, high viscosity Pills do not increase the hole cleaning
+efficiency, and can actually reduce the flow rates below the drill pipe, where bed cuttmgs accumulate
+O
+True
+o
+False
+I out of I
+Question
+13 of27
+Flow rate can impact hole cleaning efficiency; however it needs to be controlled to avoid issues, such as? (select all
+that apply)
+a
+Exceed capacity of the pumps
+Lead to stuck pipe
+Generate hole washout
+Maximize transportation of cuttings
+o High ECD
+1 outof I
+Question
+14 of27
+An increase in fluid density
+any inclination.
+I outof I
+Question
+15 of27
+v Will cause an increase in the buoyancy, thus improving the hole cleaning characteristics at
+--- PAGE 5 ---
+The rheology of the drilling fluid should be carefully adjusted to maximize the transport capacity, minimize friction
+losses and minimize the impact on downhole pressures
+True
+o
+False
+I outof I
+Question
+16 of27
+The density, size and shape of the cuttings do not affect hole cleaning efficiency
+O True
+False
+I outof I
+Question
+17 of27
+Which of the following is harder to remove from the well?
+o
+Lighter, medium, squared cutting
+o
+Heavy, longer, rounder cutting
+o
+Lighter, smaller, Sharp cutting
+o
+Heavy, longer, squared cutting
+I outof I
+Question
+18 of27
+An increase in the rate of penetration Will result in a greater concentration of cuttings in the annulus, which Will
+improve the hole cleaning emciency
+o
+True
+o
+False
+I outof I
+Question
+19 of27
+Drill pipe rotation can have a pronounced effect upon cuttings transport by mechanically agitating a cuttings bed
+o
+True
+o
+False
+--- PAGE 6 ---
+I outof I
+Question
+20 of27
+When drilling a directional well, for hole cleaning purposes it's recommended to try to rotate the drill string as much as
+possible
+O True
+o
+False
+I outof I
+Question
+21 of27
+The principal negative effect of drill pipe eccentricity in high-angle drilling is to sharply reduce fluid flow under the
+drill pipe where the annular gap is narrow
+o
+True
+O False
+I outof I
+Question
+22 of27
+Experience has shown that a maximum average percentage of cuttings of 3% v
+(for the entire well) should remain in the
+annulus, to avoid drilling issues
+1 outof I
+Question
+23 of27
+For each interval (diameter section) of the wellbore, a maximum of 10% v may be handled without compromising the
+cleaning of the hole
+I outof I
+Question
+24 of27
+Field studies indicate that the rotating the pipe while drilling improves the hole cleaning efficiency by approximately
+5%.
+o
+True
+--- PAGE 7 ---
+O
+False
+1 outof I
+Question
+25 of 27
+For hole cleaning purposes, short trip while pumping are not recommended because they increase the time to drill the
+well and could disturb the cuttings beds in the wellbore
+o
+True
+O False
+1 outof 1
+Question
+26 of27
+Sweeps are a primary tool to provide effective hole cleaning
+O
+True
+O False
+I outof I
+Question
+27 of27
+It is recommended to pump only 2ppg over high density sweeps in deviated wells to avoid exceeding the fracture
+gradient of the wellbore?
+o
+True
+O
+False
+1 outof I

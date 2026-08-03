@@ -1,0 +1,149 @@
+--- PAGE 1 ---
+HALLIBURTON
+May 03 2023 | Logged in as : Goytia, Renzo Nicolas NicolÃis
+Introduction
+Baroid Core Homework 20
+Assessment Feedback
+Congratulations, you passed.
+Total score: 21 out of 21, 100%
+Question Feedback
+Question
+I of 16
+Breaker systems aid in the removal of filtercake and potential causes of formation damage to the reservoir, in order to
+improve productivity or injectivity of treated wells.
+o
+True
+o
+False
+I outof I
+Question
+2 of 16
+Fill the list, explaining the capabilities of the different breaker systems used in the oil industry
+Acids
+Can remove both polymers and calcium carbonate v
+Chelating Agents Can remove only calcium carbonate
+Enzymes
+3 outof 3
+Question
+3 of 16
+Can remove only polymers
+--- PAGE 2 ---
+Acids can be placed in the reservoir to remove the damage caused by drilling and completion fluids
+O True
+o
+False
+1 outof I
+Question
+4 of 16
+The most commonly used acid in the oil industry as cake breaker is:
+o
+Boric acid
+o
+Acetic acid
+o
+Lactic acid
+O
+Hydrochloric acid
+o
+Formic acid
+1 outof I
+Question
+5 of 16
+Select some of the disadvantages of using traditional acid breakers
+Uneven distribution in the wellbore
+Risky operation from HSE perspective
+Requires special equipment
+Potential wormholing
+All of the above
+I outof I
+Question
+6 of 16
+Traditional acid breakers can ensure the complete removal of the filtercake
+o
+True
+o
+False
+I outof I
+Question
+--- PAGE 3 ---
+7 of 16
+The BaraNFlowTM breakers Offer a delayed reaction, providing uniform distribution, reducing HSE risks, and
+preventing the threat of corrosion and formation damage
+O True
+o
+False
+I outof I
+Question
+8 of 16
+The BaraNFlowTM breaker can only be used with water based fluid filtercakes
+O True
+O
+False
+I outof I
+Question
+9 of 16
+From the HSE perspective, one of the advantages of the BaraNFlowTM system is that it does not require special
+handling equipment on surface
+o
+True
+o
+False
+I outof I
+Question
+10 of 16
+The BaraNFlowTM reaction time is always the same, which limits it's range of application
+O
+True
+o
+False
+1 outof I
+Question
+11 of 16
+are fluids that are deposited in the annular section between the outer casing and production pipe (tubing)
+Packer fluids
+of a well above a packer.
+1 outof I
+--- PAGE 4 ---
+Question
+12 of 16
+One of the functions of packer fluids is to minimize the hydrostatic pressure necessary to control the well in case of a
+packer failure or leaks
+o
+True
+o
+False
+1 outof I
+Question
+13 of 16
+List the mam packer fluid characteristics:
+Must not cause corrosion
+Must not damage the producing formation
+Must promote differential pressures
+Must remain pumpable
+Must deteriorate packer elastomers
+Must degrade with time or temperature
+Must be chemically and mechanically stable
+4 out of 4
+Question
+14 of 16
+Drilling fluids are desirable as packer fluids
+O True
+O
+False
+I outof I
+Question
+15 of 16
+Given the right conditions, a completion fluid can be used as a packer fluid
+o
+True
+o
+False
+1 outof I
+--- PAGE 5 ---
+Question
+16 of 16
+1. The
+N-SOLATE v
+I. packer system are unique high performance insulating packer fluids designed to reduce undesired heat flow by
+controlling both conduction and convection.
+I outof I
