@@ -32,6 +32,11 @@ let stats = {
   hw15_highScore: null,
   hw16_highScore: null,
   hw17_highScore: null,
+  hw18_highScore: null,
+  hw19_highScore: null,
+  hw20_highScore: null,
+  hw21_highScore: null,
+  hw22_highScore: null,
   theme: 'dark'
 };
 
@@ -175,6 +180,41 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Practice questions about Non-Aqueous Fluid (NAF) contaminants and their treatments based on the Baroid Core guide.";
     const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_17' || isFinished) startQuiz('homework_17');
+  } else if (tabId === 'hw18') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw18').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 18: Formation Damage & Reservoir Fluids";
+    document.getElementById('page-subtitle').innerText = "Review formation damage mechanisms, reservoir characteristics, drill-in fluids, and completion brines.";
+    const isFinished18 = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_18' || isFinished18) startQuiz('homework_18');
+  } else if (tabId === 'hw19') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw19').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 19: Wellbore Displacements & Brines";
+    document.getElementById('page-subtitle').innerText = "Practice questions on wellbore displacement procedures, completion brines, and fluid selection criteria.";
+    const isFinished19 = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_19' || isFinished19) startQuiz('homework_19');
+  } else if (tabId === 'hw20') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw20').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 20: Breakers & Packer Fluids";
+    document.getElementById('page-subtitle').innerText = "Practice questions on filter cake breakers, packer fluid design, and completion fluid applications.";
+    const isFinished20 = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_20' || isFinished20) startQuiz('homework_20');
+  } else if (tabId === 'hw21') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw21').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 21: Hole Cleaning & Sweeps";
+    document.getElementById('page-subtitle').innerText = "Review hole cleaning concepts, cuttings transport by angle, sweep design, and drilling parameter optimization.";
+    const isFinished21 = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_21' || isFinished21) startQuiz('homework_21');
+  } else if (tabId === 'hw22') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw22').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 22: Pore Pressures & Wellbore Instability";
+    document.getElementById('page-subtitle').innerText = "Review pore pressure regimes, wellbore instability causes, stuck pipe mechanisms, spacer design, and hydraulics.";
+    const isFinished22 = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_22' || isFinished22) startQuiz('homework_22');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -234,6 +274,16 @@ function updateDashboardStats() {
   if (scoreHw16El) scoreHw16El.innerText = stats.hw16_highScore !== null ? `Record: ${stats.hw16_highScore}%` : "Record: --";
   const scoreHw17El = document.getElementById('score-hw17');
   if (scoreHw17El) scoreHw17El.innerText = stats.hw17_highScore !== null ? `Record: ${stats.hw17_highScore}%` : "Record: --";
+  const scoreHw18El = document.getElementById('score-hw18');
+  if (scoreHw18El) scoreHw18El.innerText = stats.hw18_highScore !== null ? `Record: ${stats.hw18_highScore}%` : "Record: --";
+  const scoreHw19El = document.getElementById('score-hw19');
+  if (scoreHw19El) scoreHw19El.innerText = stats.hw19_highScore !== null ? `Record: ${stats.hw19_highScore}%` : "Record: --";
+  const scoreHw20El = document.getElementById('score-hw20');
+  if (scoreHw20El) scoreHw20El.innerText = stats.hw20_highScore !== null ? `Record: ${stats.hw20_highScore}%` : "Record: --";
+  const scoreHw21El = document.getElementById('score-hw21');
+  if (scoreHw21El) scoreHw21El.innerText = stats.hw21_highScore !== null ? `Record: ${stats.hw21_highScore}%` : "Record: --";
+  const scoreHw22El = document.getElementById('score-hw22');
+  if (scoreHw22El) scoreHw22El.innerText = stats.hw22_highScore !== null ? `Record: ${stats.hw22_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -295,6 +345,21 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_17') {
     navId = 'nav-hw17';
     badgeName = "Homework 17";
+  } else if (quizId === 'homework_18') {
+    navId = 'nav-hw18';
+    badgeName = "Homework 18";
+  } else if (quizId === 'homework_19') {
+    navId = 'nav-hw19';
+    badgeName = "Homework 19";
+  } else if (quizId === 'homework_20') {
+    navId = 'nav-hw20';
+    badgeName = "Homework 20";
+  } else if (quizId === 'homework_21') {
+    navId = 'nav-hw21';
+    badgeName = "Homework 21";
+  } else if (quizId === 'homework_22') {
+    navId = 'nav-hw22';
+    badgeName = "Homework 22";
   }
   
   const navEl = document.getElementById(navId);
@@ -674,6 +739,16 @@ function showQuizResults() {
     if (stats.hw16_highScore === null || scorePercent > stats.hw16_highScore) stats.hw16_highScore = scorePercent;
   } else if (currentQuizId === 'homework_17') {
     if (stats.hw17_highScore === null || scorePercent > stats.hw17_highScore) stats.hw17_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_18') {
+    if (stats.hw18_highScore === null || scorePercent > stats.hw18_highScore) stats.hw18_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_19') {
+    if (stats.hw19_highScore === null || scorePercent > stats.hw19_highScore) stats.hw19_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_20') {
+    if (stats.hw20_highScore === null || scorePercent > stats.hw20_highScore) stats.hw20_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_21') {
+    if (stats.hw21_highScore === null || scorePercent > stats.hw21_highScore) stats.hw21_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_22') {
+    if (stats.hw22_highScore === null || scorePercent > stats.hw22_highScore) stats.hw22_highScore = scorePercent;
   }
   saveStats();
 }

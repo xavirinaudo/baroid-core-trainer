@@ -80,6 +80,26 @@
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           Homework 17 (NAF Contam)
         </a>
+        <a class="nav-link" id="nav-hw18" onclick="switchTab('hw18')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          Homework 18 (Formation Damage)
+        </a>
+        <a class="nav-link" id="nav-hw19" onclick="switchTab('hw19')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M10 3v18M14 3v18"/></svg>
+          Homework 19 (Displacements)
+        </a>
+        <a class="nav-link" id="nav-hw20" onclick="switchTab('hw20')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          Homework 20 (Breakers/Packers)
+        </a>
+        <a class="nav-link" id="nav-hw21" onclick="switchTab('hw21')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          Homework 21 (Hole Cleaning)
+        </a>
+        <a class="nav-link" id="nav-hw22" onclick="switchTab('hw22')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Homework 22 (Pore Pressures)
+        </a>
         <a class="nav-link" id="nav-contaminants" onclick="switchTab('contaminants')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           Contaminants WBM
@@ -207,6 +227,46 @@
             <div class="task-info">
               <span>10 core questions</span>
               <span id="score-hw17">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_18')">
+            <h3 class="card-title">Homework 18: Formation Damage &amp; Reservoir Fluids</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review formation damage mechanisms, reservoir characteristics, drill-in fluids, and completion brines.</p>
+            <div class="task-info">
+              <span>38 questions</span>
+              <span id="score-hw18">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_19')">
+            <h3 class="card-title">Homework 19: Wellbore Displacements &amp; Brines</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions on wellbore displacement procedures, completion brines, and fluid selection criteria.</p>
+            <div class="task-info">
+              <span>30 questions</span>
+              <span id="score-hw19">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_20')">
+            <h3 class="card-title">Homework 20: Breakers &amp; Packer Fluids</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions on filter cake breakers, packer fluid design, and completion fluid applications.</p>
+            <div class="task-info">
+              <span>16 questions</span>
+              <span id="score-hw20">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_21')">
+            <h3 class="card-title">Homework 21: Hole Cleaning &amp; Sweeps</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review hole cleaning concepts, cuttings transport by angle, sweep design, and drilling parameter optimization.</p>
+            <div class="task-info">
+              <span>27 questions</span>
+              <span id="score-hw21">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_22')">
+            <h3 class="card-title">Homework 22: Pore Pressures &amp; Wellbore Instability</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review pore pressure regimes, wellbore instability causes, stuck pipe mechanisms, spacer design, and hydraulics.</p>
+            <div class="task-info">
+              <span>20 questions</span>
+              <span id="score-hw22">Record: --</span>
             </div>
           </div>
         </div>

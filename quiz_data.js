@@ -4578,3 +4578,1006 @@ const CALCULATIONS_DATA = {
     }
   ]
 };
+
+// ============================================================
+// HOMEWORK 18 – Formation Damage & Reservoir Fluids
+// ============================================================
+const homework_18 = {
+  title: "Homework 18: Formation Damage & Reservoir Fluids",
+  description: "Review formation damage mechanisms, reservoir characteristics, drill-in fluids, and completion brines based on Baroid Core Participant Guide.",
+  questions: [
+    {
+      id: "hw18_q1", number: "1 of 38", type: "single",
+      question: "Select the correct definition of formation damage:",
+      options: [
+        { value: "increases_porosity", label: "Any process that increases the natural porosity of a formation/rock" },
+        { value: "reduces_permeability", label: "Any process that reduces the natural permeability of a formation/rock" },
+        { value: "maintains_permeability", label: "Any process that maintains the natural permeability of a formation/rock" },
+        { value: "changes_structure", label: "Any process that changes the natural structure of a formation/rock" }
+      ],
+      answer: "reduces_permeability",
+      explanation: "Formation Damage is defined as any process that reduces the natural permeability of a formation (Participant Guide, Page 244)."
+    },
+    {
+      id: "hw18_q2", number: "2 of 38", type: "single",
+      question: "Formation damage can be caused by two types of mechanisms, they are:",
+      options: [
+        { value: "physical_chemical", label: "physical and chemical" },
+        { value: "pressure_temperature", label: "pressure and temperature" },
+        { value: "acidic_basic", label: "acidic and basic" },
+        { value: "organic_inorganic", label: "organic and inorganic" }
+      ],
+      answer: "physical_chemical",
+      explanation: "Formation damage may be caused by physical and/or chemical events that restrict the flow of hydrocarbons (Participant Guide, Page 244)."
+    },
+    {
+      id: "hw18_q3", number: "3 of 38", type: "single",
+      question: "The ________ is the rock that contains the hydrocarbons.",
+      options: [
+        { value: "reservoir", label: "reservoir" },
+        { value: "aquifer", label: "aquifer" },
+        { value: "seal", label: "seal" },
+        { value: "source_rock", label: "source rock" }
+      ],
+      answer: "reservoir",
+      explanation: "The reservoir is the rock that contains the hydrocarbons (Participant Guide, Page 244)."
+    },
+    {
+      id: "hw18_q4", number: "4 of 38", type: "single",
+      question: "Formation fluids are specially engineered fluids that are used to drill through the payzone.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Formation fluids are the fluids naturally present in the formation (oil, water, gas). Specially engineered fluids used to drill through the payzone are called drill-in fluids or reservoir drilling fluids (Participant Guide, Page 244, 251)."
+    },
+    {
+      id: "hw18_q5", number: "5 of 38", type: "single",
+      question: "The occurrence of formation damage will lower the production rate of a reservoir.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Reducing permeability (formation damage) directly restricts fluid flow, thereby lowering the production rate (Participant Guide, Page 244-245)."
+    },
+    {
+      id: "hw18_q6", number: "6 of 38", type: "single",
+      question: "________ is the volume of the rock which can be filled by formation fluids.",
+      options: [
+        { value: "porosity", label: "Porosity" },
+        { value: "permeability", label: "Permeability" },
+        { value: "viscosity", label: "Viscosity" },
+        { value: "saturation", label: "Saturation" }
+      ],
+      answer: "porosity",
+      explanation: "Porosity is defined as the space within the reservoir not filled with rock, representing the volume that can be filled by formation fluids (Participant Guide, Page 244)."
+    },
+    {
+      id: "hw18_q7", number: "7 of 38", type: "single",
+      question: "The larger the porosity of a formation, the more resistant it will be to formation damage.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Reservoirs with larger porosity (lots of empty space) are highly prone to lost returns and fluid invasion if not bridged properly, making them susceptible to damage (Participant Guide, Page 244)."
+    },
+    {
+      id: "hw18_q8", number: "8 of 38", type: "multiple",
+      question: "Select the main causes of limited production rate",
+      options: [
+        { value: "formation_damage", label: "Formation damage" },
+        { value: "low_salinity", label: "Low formation salinity" },
+        { value: "low_permeability", label: "Low formation permeability" },
+        { value: "high_oil_viscosity", label: "High oil viscosity" },
+        { value: "low_pressure", label: "Low formation pressure" },
+        { value: "high_api_gravity", label: "High oil API gravity" },
+        { value: "low_temperature", label: "Low formation temperature" }
+      ],
+      answer: ["formation_damage", "low_permeability", "high_oil_viscosity", "low_pressure"],
+      explanation: "The main factors causing limited production rates are low reservoir pressure, low reservoir permeability, high oil viscosity, and formation damage (Participant Guide, Page 245)."
+    },
+    {
+      id: "hw18_q9", number: "9 of 38", type: "single",
+      question: "Radial flow of the produced fluids (into the wellbore) creates an ________ of the flow velocity near the wellbore.",
+      options: [
+        { value: "increase", label: "increase" },
+        { value: "decrease", label: "decrease" },
+        { value: "stabilization", label: "stabilization" },
+        { value: "equalization", label: "equalization" }
+      ],
+      answer: "increase",
+      explanation: "As produced fluids approach the wellbore in a radial flow pattern, the cross-sectional flow area narrows, which increases flow velocity near the wellbore (Participant Guide, Page 245)."
+    },
+    {
+      id: "hw18_q10", number: "10 of 38", type: "multiple",
+      question: "Select from the following options, all the relevant formation damage mechanisms",
+      options: [
+        { value: "clay_inhibition", label: "Clay inhibition" },
+        { value: "emulsion_blockage", label: "Emulsion blockage" },
+        { value: "polymer_adhesion", label: "Polymer adhesion" },
+        { value: "fluid_density", label: "Fluid density" },
+        { value: "psd", label: "Particle size distribution (PSD)" },
+        { value: "clay_migration_dispersion", label: "Clay migration and dispersion" },
+        { value: "particle_plugging", label: "Particle plugging" }
+      ],
+      answer: ["emulsion_blockage", "polymer_adhesion", "clay_migration_dispersion", "particle_plugging"],
+      explanation: "The recognized formation damage mechanisms while drilling include: clay swelling, clay and mineral dispersion and migration, particle plugging, polymer adhesion and fragments, fluid incompatibility, and emulsion blockage (Participant Guide, Page 245)."
+    },
+    {
+      id: "hw18_q11", number: "11 of 38", type: "single",
+      question: "From the following list, select all the different particles than can cause damage inside the reservoir:",
+      options: [
+        { value: "polymers_insoluble", label: "Polymers not soluble in acid" },
+        { value: "barite", label: "Barite" },
+        { value: "calcium_carbonate", label: "Calcium carbonate" },
+        { value: "perforation_debris", label: "Perforation debris" },
+        { value: "polymers_soluble", label: "Polymers soluble in acid" },
+        { value: "all_of_the_above", label: "All of the above" }
+      ],
+      answer: "all_of_the_above",
+      explanation: "Particles from products (barite, polymers, LCM), by-products (drilled solids, rust, scale), and perforating debris (metal shards, cement) can all migrate and plug pore spaces (Participant Guide, Page 247)."
+    },
+    {
+      id: "hw18_q12", number: "12 of 38", type: "matching",
+      question: "Regarding clays, list the clays discussed in Class and what is the behavior expected for each one of them and how to prevent it",
+      pairs: {
+        "Smectite": "Takes water and swell, prevent with potassium",
+        "Kaolinite": "Prone to dispersion when potassium is present, avoid using >3% V/V of potassium",
+        "Illite": "Prone to migration and dispersion, avoid dispersants and stabilize with potassium"
+      },
+      explanation: "Smectite takes on water and swells (stabilized with potassium). Kaolinite is subject to dispersion and migration and is sensitive to potassium ions (avoid using >3%). Illite is sensitive to dispersive environments (avoid dispersants) and stabilizes with potassium (Participant Guide, Page 245-246)."
+    },
+    {
+      id: "hw18_q13", number: "13 of 38", type: "single",
+      question: "The way polymers are mixed in the fluid system is not important since they cannot generate any formation damage because they are very small.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Mixing is critical. Adding polymers too fast can cause clumps (fisheyes) that plug the pore throats, creating non-removable blockages (Participant Guide, Page 248)."
+    },
+    {
+      id: "hw18_q14", number: "14 of 38", type: "single",
+      question: "The filtrate from drilling fluids needs to be compatible with the water from the formation, to avoid the formation of precipitates.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Fluid filtrate chemistry must be compatible with formation water to avoid precipitation of minerals (like carbonates or sulfates) that plug pore space (Participant Guide, Page 248)."
+    },
+    {
+      id: "hw18_q15", number: "15 of 38", type: "single",
+      question: "The excessive use of emulsifiers ________ into formation damage",
+      options: [
+        { value: "emulsions_damage", label: "can lead to the formation of crude-brine emulsions that ultimately will translate" },
+        { value: "prevent_damage", label: "will prevent the formation of oil-in-water emulsions that translate" },
+        { value: "stabilize_damage", label: "helps stabilize the formation to prevent clay swelling which translates" },
+        { value: "none_damage", label: "None of the above" }
+      ],
+      answer: "emulsions_damage",
+      explanation: "Excessive emulsifiers promote viscous water-in-oil (crude-brine) emulsions inside the reservoir rock, leading to emulsion blockage and formation damage (Participant Guide, Page 248)."
+    },
+    {
+      id: "hw18_q16", number: "16 of 38", type: "single",
+      question: "One of the ways to protect the reservoir from damage is the buildup of a thick filter cake that can increase the invasion around the wellbore",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "To protect the reservoir, we require a thin, impermeable filter cake to minimize fluid invasion. A thick filter cake increases invasion, differential sticking risk, and reservoir damage (Participant Guide, Page 247, 254)."
+    },
+    {
+      id: "hw18_q17", number: "17 of 38", type: "single",
+      question: "Which is probably more damaging to a payzone?",
+      options: [
+        { value: "dirty_mud", label: "A dirty mud with 20% solids" },
+        { value: "dirty_brine", label: "A dirty brine with 10% solids" }
+      ],
+      answer: "dirty_brine",
+      explanation: "Dirty brines are more damaging than dirty mud. Mud builds up a filter cake at the wellbore face, limiting depth of invasion. Since brines cannot build a filter cake, suspended solids travel deep into the reservoir to plug pore throats (Participant Guide, Page 247)."
+    },
+    {
+      id: "hw18_q18", number: "18 of 38", type: "single",
+      question: "Reservoir fluids can be defined as Fluids we expose to the reservoir, that help prepare, repair, cleanout and complete the wellbore",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "This matches the exact definition of reservoir fluids in the training manual (Participant Guide, Page 250)."
+    },
+    {
+      id: "hw18_q19", number: "19 of 38", type: "multiple",
+      question: "Which of the following fluids can be used in reservoir while drilling and completing (select all applicable answers)?",
+      options: [
+        { value: "workover_fluids", label: "Workover fluids" },
+        { value: "completion_brines", label: "Completion brines" },
+        { value: "reservoir_drilling_fluids", label: "Reservoir drilling fluids" },
+        { value: "payzone_hydrocarbons", label: "Payzone hydrocarbons" },
+        { value: "unfiltered_seawater", label: "Unfiltered sea water" },
+        { value: "payzone_water", label: "Payzone water" }
+      ],
+      answer: ["workover_fluids", "completion_brines", "reservoir_drilling_fluids"],
+      explanation: "Drill-in fluids, completion fluids/brines, and workover fluids are specially engineered reservoir fluids designed to minimize formation damage (Participant Guide, Page 250)."
+    },
+    {
+      id: "hw18_q20", number: "20 of 38", type: "multiple",
+      question: "Which products might you want to use in reservoir fluids, for as long as they're compatible with the payzone?",
+      options: [
+        { value: "bactericides", label: "Bactericides" },
+        { value: "clays", label: "Clays" },
+        { value: "pipe_dopes", label: "Pipe dopes" },
+        { value: "lubricants", label: "Lubricants" },
+        { value: "sticky_polymers", label: "Sticky polymers (PAC)" },
+        { value: "viscosifiers", label: "Viscosifiers" }
+      ],
+      answer: ["bactericides", "lubricants", "viscosifiers"],
+      explanation: "Clays and PAC are avoided to prevent plugging. Pipe dope is a contaminant. Bactericides, lubricants, and viscosifiers are acceptable if compatible and tested (Participant Guide, Page 248, 250, 288)."
+    },
+    {
+      id: "hw18_q21", number: "21 of 38", type: "single",
+      question: "Completion fluids are always Clear brines with no viscosity",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Completion fluids are often viscosified (e.g. using HEC or Xanthan) to carry materials, run tools, or control fluid losses (Participant Guide, Page 250, 261)."
+    },
+    {
+      id: "hw18_q22", number: "22 of 38", type: "single",
+      question: "The goal of a displacement is to remove all the products/by products of the drilling process before production",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Displacement is designed to clean the wellbore by removing drilling mud, residues, and cuttings before completion and production (Participant Guide, Page 250)."
+    },
+    {
+      id: "hw18_q23", number: "23 of 38", type: "multiple",
+      question: "Reservoir fluids are specifically designed to:",
+      options: [
+        { value: "minimize_formation_damage", label: "Minimize formation damage" },
+        { value: "increase_ph", label: "Increase the pH of the formation" },
+        { value: "maintain_well_producibility", label: "Maintain well producibility" },
+        { value: "all_of_the_above", label: "All of the above" }
+      ],
+      answer: ["minimize_formation_damage", "maintain_well_producibility"],
+      explanation: "Reservoir fluids are engineered to minimize formation damage and preserve well producibility. Increasing formation pH is not a design objective (Participant Guide, Page 250)."
+    },
+    {
+      id: "hw18_q24", number: "24 of 38", type: "single",
+      question: "Completions and workovers require clean fluids for maximum effectiveness, and that is the goal of the filtration services",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Filtration services aim to reduce suspended solids and contaminants in completion and workover fluids to prevent formation damage and optimize production (Participant Guide, Page 288)."
+    },
+    {
+      id: "hw18_q25", number: "25 of 38", type: "single",
+      question: "A filtration unit can help to recover clean potable water (free of solids and chemicals) from completion and workover fluids",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "A filtration unit removes suspended particulates down to a specific size but does not remove soluble salts, polymers, or chemicals from the brine to produce potable water (Participant Guide, Page 288)."
+    },
+    {
+      id: "hw18_q26", number: "26 of 38", type: "multiple",
+      question: "Which of the following are characteristics of a reservoir drill-in fluid?",
+      options: [
+        { value: "transports_cuttings", label: "Efficiently transports cuttings to the surface" },
+        { value: "minimizes_damage", label: "Minimizes potential formation damage" },
+        { value: "maintains_overbalance", label: "Maintains hydrostatic overbalance to control the well" },
+        { value: "minimizes_rop", label: "Minimizes ROP and increases costs" },
+        { value: "same_as_top_hole", label: "Same characteristics as any top hole drilling fluid" }
+      ],
+      answer: ["transports_cuttings", "minimizes_damage", "maintains_overbalance"],
+      explanation: "A reservoir drill-in fluid must carry cuttings and maintain well control like any drilling fluid, but is specialized to minimize potential formation damage (Participant Guide, Page 251)."
+    },
+    {
+      id: "hw18_q27", number: "27 of 38", type: "single",
+      question: "When using a Dril-N fluid system, we know we have preserved the reservoir's producibility if the near wellbore rock flows the same after the well is completed as it did prior to the drilling/completion",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Preserved producibility means the near-wellbore rock flows the same after drilling/completion as it did before (Participant Guide, Page 250)."
+    },
+    {
+      id: "hw18_q28", number: "28 of 38", type: "multiple",
+      question: "What are characteristics of a poorly-designed reservoir fluid?",
+      options: [
+        { value: "controls_pressures", label: "Controls bottom hole pressures" },
+        { value: "optimizes_carrying_capacity", label: "Optimizes cuttings carrying capacity" },
+        { value: "allows_foreign_material", label: "Allows large quantities of foreign material to pass into the payzone" },
+        { value: "not_tested", label: "Is not tested and potential damage prior use is unknown" },
+        { value: "maximizes_rop_high_filtrate", label: "Maximizes ROP by employing high filtrate losses" }
+      ],
+      answer: ["allows_foreign_material", "not_tested", "maximizes_rop_high_filtrate"],
+      explanation: "Poorly designed reservoir fluids permit solid/fluid invasion into the payzone, lack testing, or employ high filtrate losses, risking severe formation damage (Participant Guide, Page 251)."
+    },
+    {
+      id: "hw18_q29", number: "29 of 38", type: "single",
+      question: "Does a fracked completion normally require a specially engineered drill-in fluid?",
+      options: [
+        { value: "yes", label: "Yes" },
+        { value: "no", label: "No" }
+      ],
+      answer: "no",
+      explanation: "Fracked completions bypass the near-wellbore zone. Therefore, low-permeability reservoirs (like shales) do not require a specialized drill-in fluid (Participant Guide, Page 251)."
+    },
+    {
+      id: "hw18_q30", number: "30 of 38", type: "single",
+      question: "Does an open hole completion normally require a specially-engineered drill-in fluid?",
+      options: [
+        { value: "yes", label: "Yes" },
+        { value: "no", label: "No" }
+      ],
+      answer: "yes",
+      explanation: "Open hole completions keep the hole open without casing or perforation to bypass damage, thus requiring a drill-in fluid to protect permeability (Participant Guide, Page 251)."
+    },
+    {
+      id: "hw18_q31", number: "31 of 38", type: "multiple",
+      question: "Which of the following are potentially damaging to the payzone?",
+      options: [
+        { value: "unfiltered_seawater", label: "Unfiltered Seawater" },
+        { value: "filtered_brine", label: "Filtered brine" },
+        { value: "drill_solids", label: "Drill solids" },
+        { value: "mud_filtrate", label: "Mud filtrate" },
+        { value: "mud_products", label: "Mud products" }
+      ],
+      answer: ["unfiltered_seawater", "drill_solids", "mud_filtrate", "mud_products"],
+      explanation: "Mud products, drill solids, mud filtrate, and unfiltered seawater are foreign to the reservoir and are all potentially damaging (Participant Guide, Page 254)."
+    },
+    {
+      id: "hw18_q32", number: "32 of 38", type: "single",
+      question: "We prefer to use ground marble for drill-in fluid bridging because",
+      options: [
+        { value: "less_costly", label: "It is less costly than ground limestone" },
+        { value: "clean_white", label: "It looks clean and white" },
+        { value: "harder_than_limestone", label: "It is harder than limestone" },
+        { value: "all_of_the_above", label: "All of the above" }
+      ],
+      answer: "harder_than_limestone",
+      explanation: "Ground marble (BARACARB) consists of harder crystals than limestone, meaning it resists degradation and grinding in the wellbore, keeping the designed sizes longer (Participant Guide, Page 254)."
+    },
+    {
+      id: "hw18_q33", number: "33 of 38", type: "single",
+      question: "Kozeny's Equation estimates a reservoir's pore throat diameter in microns when the rock permeability is known.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Kozeny's equation estimates pore throat diameter using both permeability AND porosity, not just permeability alone (Participant Guide, Page 255)."
+    },
+    {
+      id: "hw18_q34", number: "34 of 38", type: "single",
+      question: "On a particle size distribution, what is the meaning of the D50 value of a bridging material analysis?",
+      options: [
+        { value: "larger_than_d90", label: "50% of the particles are larger than the D90 value" },
+        { value: "smaller_than_d50", label: "50% of the particles are smaller than the D50 value" },
+        { value: "pure_marble", label: "50% of the particles are pure marble" },
+        { value: "none_of_the_above", label: "None of the above" }
+      ],
+      answer: "smaller_than_d50",
+      explanation: "The D50 value represents the median particle size on a PSD curve, meaning exactly 50% of the particles are smaller than this value (Participant Guide, Page 255)."
+    },
+    {
+      id: "hw18_q35", number: "35 of 38", type: "single",
+      question: "What concentration of bridging material has been found to be most effective for drill-in fluids?",
+      options: [
+        { value: "20_percent_vol", label: "20% by volume" },
+        { value: "between_20_30_lbbbl", label: "Between 20 and 30 lb/bbl" },
+        { value: "between_30_45_lbbbl", label: "Between 30 and 45 lb/bbl" },
+        { value: "between_35_50_lbbbl", label: "Between 35 and 50 lb/bbl" }
+      ],
+      answer: "between_30_45_lbbbl",
+      explanation: "Successful bridging requires an optimum concentration; too little causes high spurt loss, too much causes high ECDs. The most effective concentration is between 30 and 45 lb/bbl (Participant Guide, Page 255)."
+    },
+    {
+      id: "hw18_q36", number: "36 of 38", type: "single",
+      question: "Which return permeability value would be considered to be good by most operators?",
+      options: [
+        { value: "85", label: "85%" },
+        { value: "90", label: "90%" },
+        { value: "80", label: "80%" },
+        { value: "95", label: "95%" }
+      ],
+      answer: "90",
+      explanation: "Most operators accept return permeability values of 90% or greater as indicating a fluid that is fit for the reservoir (Participant Guide, Page 259)."
+    },
+    {
+      id: "hw18_q37", number: "37 of 38", type: "single",
+      question: "High Performance Invert Emulsion Fluids can make excellent drill-in fluids, given that the appropriate solids content is achieved",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "HPIEF can serve as excellent drill-in fluids when properly processed to remove drilled solids and adjusted with sized bridging material (Participant Guide, Page 254)."
+    },
+    {
+      id: "hw18_q38", number: "38 of 38", type: "single",
+      question: "Any type of LCM can be used if there are losses in the payzone",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Conventional LCM can permanently seal flow channels and cause severe damage. Reservoir loss circulation treatments must be degradable or acid-soluble (Participant Guide, Page 261)."
+    }
+  ]
+};
+
+// ============================================================
+// HOMEWORK 21 – Hole Cleaning & Sweeps
+// ============================================================
+const homework_21 = {
+  title: "Homework 21: Hole Cleaning",
+  description: "Review hole cleaning concepts, signs of inadequate cleaning, factors influencing cleaning efficiency, cuttings transport by hole angle, and modeling tools.",
+  questions: [
+    {
+      id: "hw21_q1", number: "1 of 27", type: "single",
+      question: "Hole cleaning can be defined as the ability of the drilling fluid to transport drilled cuttings / cavings to surface or to keep them suspended during a static state",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "According to the Baroid Core Participant Guide (Unit 35 - Hole Cleaning, page 295), hole cleaning is defined as the ability of the drilling fluid to transport drilled cuttings to the surface or to keep them suspended during a static state."
+    },
+    {
+      id: "hw21_q2", number: "2 of 27", type: "multiple",
+      question: "What are some of the good practices that can aid in hole cleaning?",
+      options: [
+        { value: "increase_circulation", label: "Increase circulation" },
+        { value: "avoid_tripping", label: "Avoid tripping" },
+        { value: "high_rop", label: "High ROP" },
+        { value: "control_fluid_parameters", label: "Control fluid parameters" },
+        { value: "optimize_separation_equipment", label: "Optimize mechanical separation equipment" }
+      ],
+      answer: ["increase_circulation", "control_fluid_parameters", "optimize_separation_equipment"],
+      explanation: "According to the Baroid Core Participant Guide (page 295), good drilling practices that aid in hole cleaning include increasing circulation, controlling fluid parameters, and optimizing mechanical separation equipment. High ROP increases cutting beds and reduces hole cleaning efficiency, and avoiding tripping is not a hole cleaning practice."
+    },
+    {
+      id: "hw21_q3", number: "3 of 27", type: "single",
+      question: "An evidence of good hole cleaning is a buildup in solids inside the annular space, that leads to a stuck pipe situation",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "A buildup of solids in the annular space leading to stuck pipe is evidence of inadequate hole cleaning, not good hole cleaning."
+    },
+    {
+      id: "hw21_q4", number: "4 of 27", type: "multiple",
+      question: "Select some of the signs of inadequate hole cleaning",
+      options: [
+        { value: "torque", label: "Widely-fluctuating rotating torque" },
+        { value: "sliding", label: "Issues maintaining angle when sliding" },
+        { value: "stuck_pipe", label: "Stuck pipe" },
+        { value: "ecd_increase", label: "Quick increase of ECD when pipe rotation is initiated" },
+        { value: "tight_hole", label: "Tight hole and /or pack-offs" },
+        { value: "decreased_drag", label: "Decreased drag after connections" },
+        { value: "all_above", label: "All of the above" }
+      ],
+      answer: ["torque", "sliding", "stuck_pipe", "ecd_increase", "tight_hole"],
+      explanation: "Signs of inadequate hole cleaning listed on page 295 of the Baroid Core Participant Guide include widely-fluctuating rotating torque, tight hole and/or pack-offs, increased drag after connections (not decreased drag), rapid increase of ECD when pipe rotation is initiated, problems maintaining angle when sliding, and stuck pipe."
+    },
+    {
+      id: "hw21_q5", number: "5 of 27", type: "single",
+      question: "Inadequate hole cleaning can affect the drilling process, especially when building directional wells. The development of cutting beds can deviate the angle of the well while sliding",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "In directional wells, cuttings beds form on the low side of the hole. When sliding (drilling with a motor without drill pipe rotation), the bottom hole assembly can ride on top of these beds, causing deviation of the wellbore angle and difficulty maintaining the target direction."
+    },
+    {
+      id: "hw21_q6", number: "6 of 27", type: "multiple",
+      question: "Indicate all the factors that can affect hole cleaning efficiency:",
+      options: [
+        { value: "flow_rate", label: "Flow rate" },
+        { value: "drill_pipe_rotation", label: "Drill pipe rotation" },
+        { value: "rop", label: "Drilling rate (ROP)" },
+        { value: "eccentricity", label: "Drill pipe eccentricity" },
+        { value: "temperature", label: "Flow line temperature" },
+        { value: "fluid_density", label: "Drilling fluid density" },
+        { value: "well_angle", label: "Angle of well" },
+        { value: "rheology", label: "Drilling fluid rheological properties" },
+        { value: "salinity", label: "Formation salinity" },
+        { value: "cuttings_density_size_shape", label: "Density, size & shape of cuttings" },
+        { value: "alkalinity", label: "Formation alkalinity" },
+        { value: "bhp", label: "Bottom hole pressures" }
+      ],
+      answer: ["flow_rate", "drill_pipe_rotation", "rop", "eccentricity", "fluid_density", "well_angle", "rheology", "cuttings_density_size_shape"],
+      explanation: "Hole cleaning efficiency is influenced by: wellbore angle of deviation, flow rate, drilling fluid density and rheological properties, density, size and shape of cuttings, drilling rate (ROP), drill pipe rotation, and drill pipe eccentricity (Baroid Core Participant Guide, page 296). Flow line temperature, formation salinity, bottom hole pressure, and formation alkalinity are not listed as factors."
+    },
+    {
+      id: "hw21_q7", number: "7 of 27", type: "single",
+      question: "As the angle of deviation of the wells increases, so does the difficulty in transporting the cuttings",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "As the angle of deviation increases, gravity acts perpendicular to the wellbore axis rather than parallel to it, causing cuttings to settle to the low side of the hole and form cuttings beds, thereby increasing transport difficulty (page 296)."
+    },
+    {
+      id: "hw21_q8", number: "8 of 27", type: "single",
+      question: "In general, vertical wells are the hardest to clean due the effect of slip velocity",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Vertical wells are generally the easiest to clean because slip velocity acts in the opposite direction of fluid flow, which is easily overcome by maintaining adequate annular velocity. In contrast, deviated wells (inclined between 45° and 60°) are the hardest to clean because gravity causes cuttings to settle sideways to form cuttings beds."
+    },
+    {
+      id: "hw21_q9", number: "9 of 27", type: "single",
+      question: "The formation of a cuttings bed is more pronounced when the angle of inclination of the well is greater than 30 degrees",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "According to page 296 of the Baroid Core Participant Guide, the formation of a cuttings bed on the low side of the hole becomes more pronounced when the angle of inclination of the well is greater than 30°."
+    },
+    {
+      id: "hw21_q10", number: "10 of 27", type: "single",
+      question: "For angles between 400 - 600, a turbulent or transition flow and a low rheology fluid is the most effective combination for minimwing the formation of cuttings beds, removing cuttings beds, and cleaning high angle wells",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "For inclination angles between 40° and 60°, a turbulent or transition flow regime combined with a low-rheology fluid is the most effective combination to erode, minimize, and remove cuttings beds (page 296)."
+    },
+    {
+      id: "hw21_q11", number: "11 of 27", type: "single",
+      question: "Cuttings and cuttings beds Will be removed more effectively under laminar flow",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Laminar flow is less effective at removing cuttings beds because the fluid tends to flow over the top of the bed in the wider gap. Turbulent flow is preferable because it provides the necessary kinetic energy and mechanical erosion to lift and suspend the bed cuttings (page 296)."
+    },
+    {
+      id: "hw21_q12", number: "12 of 27", type: "single",
+      question: "It has been demonstrated that in angles between 600 - 900, high viscosity Pills do not increase the hole cleaning efficiency, and can actually reduce the flow rates below the drill pipe, where bed cuttmgs accumulate",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "At high angles (60° to 90°), high-viscosity pills are ineffective. Because the drill pipe lies on the bottom of the well (eccentricity), high-viscosity fluids will take the path of least resistance above the pipe, reducing flow velocity beneath the pipe where cuttings beds accumulate (page 296)."
+    },
+    {
+      id: "hw21_q13", number: "13 of 27", type: "multiple",
+      question: "Flow rate can impact hole cleaning efficiency; however it needs to be controlled to avoid issues, such as? (select all that apply)",
+      options: [
+        { value: "exceed_capacity", label: "Exceed capacity of the pumps" },
+        { value: "stuck_pipe", label: "Lead to stuck pipe" },
+        { value: "hole_washout", label: "Generate hole washout" },
+        { value: "maximize_transport", label: "Maximize transportation of cuttings" },
+        { value: "high_ecd", label: "High ECD" }
+      ],
+      answer: ["exceed_capacity", "hole_washout", "high_ecd"],
+      explanation: "Flow rate must be controlled to prevent exceeding rig pump capacities, generating hole washouts due to mechanical erosion of the wellbore, and causing excessively high equivalent circulating density (ECD) which could exceed the formation fracture gradient."
+    },
+    {
+      id: "hw21_q14", number: "14 of 27", type: "single",
+      question: "An increase in fluid density",
+      options: [
+        { value: "will_cause_buoyancy", label: "Will cause an increase in the buoyancy, thus improving the hole cleaning characteristics at any inclination." },
+        { value: "will_not_cause_buoyancy", label: "Will not cause an increase in the buoyancy, thus improving the hole cleaning characteristics at any inclination." }
+      ],
+      answer: "will_cause_buoyancy",
+      explanation: "An increase in drilling fluid density increases the buoyant force acting on cuttings, thereby reducing their relative weight downhole and improving hole cleaning and transportation characteristics at any inclination (page 298)."
+    },
+    {
+      id: "hw21_q15", number: "15 of 27", type: "single",
+      question: "The rheology of the drilling fluid should be carefully adjusted to maximize the transport capacity, minimize friction losses and minimize the impact on downhole pressures",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "According to page 297 of the Baroid Core Participant Guide, the rheology of the drilling fluid must be carefully balanced and adjusted to maximize transport capacity, minimize friction losses, and minimize impact on equivalent circulating density (ECD)."
+    },
+    {
+      id: "hw21_q16", number: "16 of 27", type: "single",
+      question: "The density, size and shape of the cuttings do not affect hole cleaning efficiency",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Cuttings characteristics like density, size, and shape do affect transport efficiency. Heavier, larger, and rounder cuttings have higher settling velocities and are more difficult to transport out of the hole (page 298)."
+    },
+    {
+      id: "hw21_q17", number: "17 of 27", type: "single",
+      question: "Which of the following is harder to remove from the well?",
+      options: [
+        { value: "lighter_medium_squared", label: "Lighter, medium, squared cutting" },
+        { value: "heavy_longer_rounder", label: "Heavy, longer, rounder cutting" },
+        { value: "lighter_smaller_sharp", label: "Lighter, smaller, Sharp cutting" },
+        { value: "heavy_longer_squared", label: "Heavy, longer, squared cutting" }
+      ],
+      answer: "heavy_longer_rounder",
+      explanation: "Heavier, longer, and rounder cuttings have higher slip velocities (settle faster) and present a smaller surface area relative to their weight compared to flat/sharp cuttings, making them the most difficult to lift and remove from the wellbore (page 298)."
+    },
+    {
+      id: "hw21_q18", number: "18 of 27", type: "single",
+      question: "An increase in the rate of penetration Will result in a greater concentration of cuttings in the annulus, which Will improve the hole cleaning emciency",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "An increase in ROP generates more cuttings per unit time, resulting in a higher concentration of cuttings in the annulus. This reduces hole cleaning efficiency, increases ECD, and increases cuttings bed heights (page 298)."
+    },
+    {
+      id: "hw21_q19", number: "19 of 27", type: "single",
+      question: "Drill pipe rotation can have a pronounced effect upon cuttings transport by mechanically agitating a cuttings bed",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Pipe rotation mechanically stirs up cuttings beds that settle on the bottom of deviated wells, lifting them into the high-velocity fluid flow stream above the pipe (page 299)."
+    },
+    {
+      id: "hw21_q20", number: "20 of 27", type: "single",
+      question: "When drilling a directional well, for hole cleaning purposes it's recommended to try to rotate the drill string as much as possible",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "Drill pipe rotation is one of the most effective ways to mechanically disturb cuttings beds and keep them suspended in the flow stream. Thus, rotating as much as possible and minimizing sliding is key for hole cleaning (pages 299, 301)."
+    },
+    {
+      id: "hw21_q21", number: "21 of 27", type: "single",
+      question: "The principal negative effect of drill pipe eccentricity in high-angle drilling is to sharply reduce fluid flow under the drill pipe where the annular gap is narrow",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "In highly deviated wells, the drill pipe rests near the bottom of the hole (high eccentricity). This restricts flow in the narrow gap below the pipe, causing fluid velocity to drop significantly in the exact area where cuttings accumulate (page 299)."
+    },
+    {
+      id: "hw21_q22", number: "22 of 27", type: "single",
+      question: "Experience has shown that a maximum average percentage of cuttings of ___________ (for the entire well) should remain in the annulus, to avoid drilling issues",
+      options: [
+        { value: "3_percent", label: "3%" },
+        { value: "5_percent", label: "5%" },
+        { value: "10_percent", label: "10%" },
+        { value: "1_percent", label: "1%" }
+      ],
+      answer: "3_percent",
+      explanation: "Experience shows that keeping the total cuttings concentration to a maximum average of 3% by volume for the entire wellbore annulus helps avoid drilling issues such as stuck pipe and packs-offs (page 300)."
+    },
+    {
+      id: "hw21_q23", number: "23 of 27", type: "single",
+      question: "For each interval (diameter section) of the wellbore, a maximum of ___________ may be handled without compromising the cleaning of the hole",
+      options: [
+        { value: "3_percent", label: "3%" },
+        { value: "5_percent", label: "5%" },
+        { value: "10_percent", label: "10%" },
+        { value: "15_percent", label: "15%" }
+      ],
+      answer: "10_percent",
+      explanation: "While the well average should not exceed 3% cuttings by volume, any single diameter interval can handle up to 10% cuttings concentration without compromising hole cleaning, as long as the overall wellbore average is low (page 300)."
+    },
+    {
+      id: "hw21_q24", number: "24 of 27", type: "single",
+      question: "Field studies indicate that the rotating the pipe while drilling improves the hole cleaning efficiency by approximately 5%.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Field studies show that rotating the drill pipe while drilling improves hole cleaning efficiency by approximately 25%, not 5% (pages 299, 301)."
+    },
+    {
+      id: "hw21_q25", number: "25 of 27", type: "single",
+      question: "For hole cleaning purposes, short trip while pumping are not recommended because they increase the time to drill the well and could disturb the cuttings beds in the wellbore",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Short trips while pumping are actually recommended because pumping while tripping/reaming helps stir up and remove cuttings beds mechanically (page 301)."
+    },
+    {
+      id: "hw21_q26", number: "26 of 27", type: "single",
+      question: "Sweeps are a primary tool to provide effective hole cleaning",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "Sweeps are secondary tools, not primary tools. Effective hole cleaning is achieved through optimized continuous hydraulics, drill string rotation, and proper mud properties (page 302)."
+    },
+    {
+      id: "hw21_q27", number: "27 of 27", type: "single",
+      question: "It is recommended to pump only 2ppg over high density sweeps in deviated wells to avoid exceeding the fracture gradient of the wellbore?",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "There is no set rule that high-density sweeps should be limited to 2 ppg over the active mud density. Instead, the density of a high-density sweep must be decided using the well's specific fracture gradient and modeled in DFG to ensure the fracture pressure is not exceeded (BAROID - Handbook, page 129)."
+    }
+  ]
+};
+
+// ============================================================
+// HOMEWORK 22 – Pore Pressures & Wellbore Instability
+// ============================================================
+const homework_22 = {
+  title: "Homework 22: Pore Pressures & Wellbore Instability",
+  description: "Review pore pressure regimes, causes of wellbore instability, stuck pipe mechanisms, spacer design, hole cleaning flow regimes, and hydraulics concepts.",
+  questions: [
+    {
+      id: "hw22_q1", number: "1 of 20", type: "single",
+      question: "Which of the following best describes abnormal (sur-normal) pore pressure?",
+      options: [
+        { value: "greater_than_normal", label: "Pore pressure greater than the defined normal" },
+        { value: "less_than_normal", label: "Pore pressure less than the defined normal" },
+        { value: "equal_to_normal", label: "Pore pressure equal to the defined normal" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "greater_than_normal",
+      explanation: "Abnormal (sur-normal) pore pressure refers to pore pressure that is greater than the defined normal (hydrostatic) gradient for the given depth. Normal pore pressure corresponds to a full column of formation water (~0.465 psi/ft). Anything above this is abnormal (Participant Guide, Pore Pressure section)."
+    },
+    {
+      id: "hw22_q2", number: "2 of 20", type: "single",
+      question: "Which of the following best describes sub-normal pore pressure?",
+      options: [
+        { value: "less_than_normal", label: "Pore pressure less than the defined normal" },
+        { value: "equal_to_normal", label: "Pore pressure equal to the defined normal" },
+        { value: "greater_than_normal", label: "Pore pressure greater than the defined normal" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "less_than_normal",
+      explanation: "Sub-normal pore pressure refers to pore pressure that is less than the defined normal (hydrostatic) gradient for the given depth. This can occur in depleted reservoirs or in areas with artesian effects (Participant Guide, Pore Pressure section)."
+    },
+    {
+      id: "hw22_q3", number: "3 of 20", type: "multiple",
+      question: "Which of the following can cause abnormal (sur-normal) pore pressure?",
+      options: [
+        { value: "tectonic_movement", label: "Tectonic movement" },
+        { value: "rapid_deposition", label: "Rapid deposition" },
+        { value: "reservoir_length", label: "Reservoir length" },
+        { value: "clay_diagenesis", label: "Clay diagenesis" },
+        { value: "reservoir_structure", label: "Reservoir structure" },
+        { value: "clay_mineralogy", label: "Clay mineralogy" },
+        { value: "slow_deposition", label: "Slow deposition" }
+      ],
+      answer: ["tectonic_movement", "rapid_deposition", "clay_diagenesis"],
+      explanation: "Abnormal pore pressure can be caused by: rapid burial/deposition (undercompaction), tectonic stresses (compression), and clay diagenesis (montmorillonite to illite conversion releasing bound water). Reservoir structure, clay mineralogy, and slow deposition are not primary causes of abnormal pressure (Participant Guide, Pore Pressure section)."
+    },
+    {
+      id: "hw22_q4", number: "4 of 20", type: "single",
+      question: "Which of the following can lead to wellbore instability?",
+      options: [
+        { value: "drill_string", label: "Drill string" },
+        { value: "drilling_fluids", label: "Drilling fluids" },
+        { value: "drilling_operations", label: "Drilling operations" },
+        { value: "formation_properties", label: "Formation properties" },
+        { value: "all_of_the_above", label: "All of the above" },
+        { value: "none_of_the_above", label: "None of the above" }
+      ],
+      answer: "all_of_the_above",
+      explanation: "Wellbore instability can be caused by all four factors: formation properties (natural fractures, reactive shales), drilling fluid (chemistry, density), drilling operations (ECD, tripping speed), and the drill string itself (vibrations, whirl) (Participant Guide, Wellbore Instability section)."
+    },
+    {
+      id: "hw22_q5", number: "5 of 20", type: "single",
+      question: "How can frequent tripping lead to well bore instability?",
+      options: [
+        { value: "surge_swab", label: "Surge and swab pressures" },
+        { value: "not_enough_circulating", label: "Not enough circulating time" },
+        { value: "not_cleaning_hole", label: "Not cleaning the hole" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "surge_swab",
+      explanation: "Frequent tripping generates surge pressures (pipe running in) and swab pressures (pipe pulling out). Swab can reduce the wellbore pressure below pore pressure causing an influx, while surge can exceed the fracture gradient causing losses—both leading to wellbore instability (Participant Guide, Wellbore Instability section)."
+    },
+    {
+      id: "hw22_q6", number: "6 of 20", type: "single",
+      question: "What is the most common formation type that causes wellbore instability?",
+      options: [
+        { value: "shale", label: "Shale" },
+        { value: "sandstone", label: "Sandstone" },
+        { value: "limestone", label: "Limestone" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "shale",
+      explanation: "Shale is the most common formation type causing wellbore instability. Shales are water-sensitive clays that can swell when exposed to water-based mud, leading to borehole enlargement, tight hole, and cavings (Participant Guide, Wellbore Instability / Shale section)."
+    },
+    {
+      id: "hw22_q7", number: "7 of 20", type: "single",
+      question: "Which of the following can cause a key seat?",
+      options: [
+        { value: "thick_sticky_wall_cake", label: "Thick sticky wall cake" },
+        { value: "under_gauge_bit", label: "Under-gauge bit" },
+        { value: "water_sensitive_shale", label: "Water sensitive shale" },
+        { value: "crooked_hole_dogleg", label: "Crooked hole with short dog-legs" }
+      ],
+      answer: "crooked_hole_dogleg",
+      explanation: "Key seats are formed by the drill string cutting a groove into the borehole wall at doglegs. This occurs in crooked holes with short, severe dog-legs where the drill pipe contacts and mechanically erodes the rock as it rotates (Participant Guide, Wellbore Instability section)."
+    },
+    {
+      id: "hw22_q8", number: "8 of 20", type: "single",
+      question: "Which of the following can cause differentially stuck pipe?",
+      options: [
+        { value: "thick_sticky_wall_cake", label: "Thick sticky wall cake across a sand" },
+        { value: "under_gauge_bit", label: "Under-gauge bit" },
+        { value: "water_sensitive_shale", label: "Water sensitive shale" },
+        { value: "crooked_hole_dogleg", label: "Crooked hole with short dog-legs" }
+      ],
+      answer: "thick_sticky_wall_cake",
+      explanation: "Differential sticking occurs when the hydrostatic pressure of the mud column significantly exceeds the formation pore pressure across a permeable zone, and a thick, sticky filter cake allows the drill string to become embedded and held fast (Participant Guide, Wellbore Instability section)."
+    },
+    {
+      id: "hw22_q9", number: "9 of 20", type: "single",
+      question: "Which of the following can lead to an under gauge hole?",
+      options: [
+        { value: "thick_sticky_wall_cake", label: "Thick sticky wall cake" },
+        { value: "crooked_hole_dogleg", label: "Crooked hole with short dog-legs" },
+        { value: "water_sensitive_shale", label: "Water sensitive shale" },
+        { value: "under_gauge_bit", label: "Under-gauge bit" }
+      ],
+      answer: "water_sensitive_shale",
+      explanation: "Water-sensitive shales absorb water from water-based drilling fluids, causing them to swell into the wellbore. This reduces the borehole diameter below gauge, creating a tight hole / under-gauge condition (Participant Guide, Wellbore Instability section)."
+    },
+    {
+      id: "hw22_q10", number: "10 of 20", type: "single",
+      question: "What is the minimal amount of annular footage a spacer should cover in a vertical well?",
+      options: [
+        { value: "500ft", label: "500ft" },
+        { value: "250ft", label: "250ft" },
+        { value: "300ft", label: "300ft" },
+        { value: "400ft", label: "400ft" }
+      ],
+      answer: "500ft",
+      explanation: "Spacers should cover a minimum of 500 ft of annular length in a vertical well to provide adequate separation and cleaning between the two incompatible fluids and ensure effective contact time with the wellbore surfaces (Participant Guide, Displacements section)."
+    },
+    {
+      id: "hw22_q11", number: "11 of 20", type: "single",
+      question: "When displacing a water based fluid with a Non Aqueous fluid. Which fluid should be used as a base for the spacer?",
+      options: [
+        { value: "fresh_water", label: "Fresh Water" },
+        { value: "base_oil", label: "Base oil" },
+        { value: "non_aqueous_fluid", label: "Non Aqueous fluid" },
+        { value: "water_based_fluid", label: "Water based fluid" }
+      ],
+      answer: "base_oil",
+      explanation: "When displacing a water-based fluid with a Non-Aqueous Fluid (NAF), the spacer base should be base oil. The first pill in a NAF displacement train is base fluid, to begin the wettability transition and ensure compatibility with the incoming OBM/SBM (Participant Guide, page 268 – Displacement train for NAF)."
+    },
+    {
+      id: "hw22_q12", number: "12 of 20", type: "single",
+      question: "When displacing the wellbore the weight of the spacer should be?",
+      options: [
+        { value: "equal_new_fluid", label: "Equal to the new fluid" },
+        { value: "less_new_fluid", label: "Less than the new fluid" },
+        { value: "greater_new_fluid", label: "Greater than the new fluid" },
+        { value: "average_two_fluids", label: "An average of the two fluids" }
+      ],
+      answer: "average_two_fluids",
+      explanation: "The spacer density must fall between the density of the mud being displaced and the new fluid. The spacer weight should be an average of the two fluids (old mud and new completion fluid) to maintain stable hydrostatics and prevent mixing by density inversion (Baroid Fluids Handbook, Cementing – Spacers section; density margin of 1 to 1.5 lb/gal each way)."
+    },
+    {
+      id: "hw22_q13", number: "13 of 20", type: "single",
+      question: "The fluid pumped through the bit nozzles while drilling is in transitional flow:",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "The fluid pumped through bit nozzles is in turbulent flow, not transitional. Bit jet nozzles operate at shear rates of 100,000 to 500,000 RPM equivalent. Transitional flow is typical in drill pipe and collars while circulating. Turbulent flow occurs at high shear rates (Participant Guide, page 197 – Shear Rates in the Mud System)."
+    },
+    {
+      id: "hw22_q14", number: "14 of 20", type: "single",
+      question: "Which of the following problems can be caused by poor hole cleaning?",
+      options: [
+        { value: "formation_damage", label: "Formation damage" },
+        { value: "tight_hole", label: "Tight hole" },
+        { value: "stuck_pipe", label: "Stuck pipe" },
+        { value: "all_of_the_above", label: "All of the above" }
+      ],
+      answer: "all_of_the_above",
+      explanation: "Poor hole cleaning leads to cuttings bed accumulation which can cause: tight hole (restricts pipe movement), stuck pipe (cuttings pack around string), and formation damage (cuttings forced back into the reservoir during surges) (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "hw22_q15", number: "15 of 20", type: "single",
+      question: "In a high angle wellbore which of the following sweeps could be used to indicate effectiveness of hole cleaning?",
+      options: [
+        { value: "lcm_sweep", label: "LCM sweep" },
+        { value: "high_viscosity", label: "High viscosity" },
+        { value: "weighted", label: "Weighted" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "weighted",
+      explanation: "In high-angle wellbores, weighted (high-density) sweeps are recommended to clean cuttings beds. The Participant Guide (page 302) states: 'Use high-density sweeps to clean high-angled sections, high-viscosity sweeps for vertical sections.' The return of cuttings when a weighted sweep surfaces indicates effectiveness."
+    },
+    {
+      id: "hw22_q16", number: "16 of 20", type: "single",
+      question: "In general, how much over current mud weight should a weighted sweep weight?",
+      options: [
+        { value: "1_0_ppg_over", label: "1.0 ppg over" },
+        { value: "1_5_ppg_over", label: "1.5 ppg over" },
+        { value: "2_0_ppg_over", label: "2.0 ppg over" },
+        { value: "2_5_ppg_over", label: "2.5 ppg over" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "2_0_ppg_over",
+      explanation: "As indicated in homework_21_ocr.txt: 'It is recommended to pump only 2ppg over high density sweeps in deviated wells to avoid exceeding the fracture gradient.' The standard practice for weighted sweeps is 2.0 ppg over the current mud weight to maximize lifting force while respecting the ECD/fracture gradient limits."
+    },
+    {
+      id: "hw22_q17", number: "17 of 20", type: "single",
+      question: "At the same flow rate, a fully concentric drill pipe has a higher pressure drop than does an eccentric pipe in the samehole section",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "A fully concentric drill pipe has a lower pressure drop than an eccentric pipe. When the pipe is eccentric (resting on the low side), the fluid must squeeze through the narrow gap on one side, increasing friction and pressure drop compared to a concentric configuration (Participant Guide, Hydraulics section)."
+    },
+    {
+      id: "hw22_q18", number: "18 of 20", type: "single",
+      question: "The frictional pressure which causes the wellbore pressure to be lower when the BHA and drill string are withdrawnfrom the hole is called",
+      options: [
+        { value: "swab", label: "Swab" },
+        { value: "surge", label: "Surge" },
+        { value: "slip", label: "Slip" },
+        { value: "avalanche", label: "Avalanche" }
+      ],
+      answer: "swab",
+      explanation: "Swab is the frictional pressure that causes the wellbore pressure to be lower when the BHA and drill string are withdrawn (pulled out) from the hole. This pressure reduction can cause an underbalanced condition and kick. Surge is the opposite effect when running pipe into the hole (Handbook, page 15 – Swab definition)."
+    },
+    {
+      id: "hw22_q19", number: "19 of 20", type: "single",
+      question: "Surpassing the formation fracture pressure can lead to wellbore instability and loss circulation events",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "When the bottomhole pressure (BHP or ECD) exceeds the formation fracture gradient, the formation fractures, creating pathways for the drilling fluid to escape into the formation. This results in lost circulation and can induce borehole breakout or wellbore instability (Participant Guide, Pore Pressure & Fracture Gradient section)."
+    },
+    {
+      id: "hw22_q20", number: "20 of 20", type: "single",
+      question: "The chemistry of the drilling fluid is important, because it can cause wellbore instability",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "The chemistry of the drilling fluid directly affects wellbore stability. For example, using a water-based mud with insufficient inhibition in a shale section can cause clay swelling, borehole enlargement, and wellbore instability. Fluid chemistry (pH, salt concentration, inhibition additives) must be matched to the formation (Participant Guide, Wellbore Instability section)."
+    }
+  ]
+};
+
+// Register new homeworks into QUIZ_DATA
+QUIZ_DATA.homework_18 = homework_18;
+QUIZ_DATA.homework_21 = homework_21;
+QUIZ_DATA.homework_22 = homework_22;
