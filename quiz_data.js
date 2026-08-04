@@ -2456,24 +2456,6 @@ const QUIZ_DATA = {
   "description": "Practice questions on completion fluids, brines classifications, displacement planning, objectives, spacer train design, completion tools, and success metrics based on the Baroid Core guide.",
   "questions": [
     {
-      "id": "hw19_q1",
-      "number": "1 of 30",
-      "type": "single",
-      "question": "Reservoir fluids can be defined as Fluids we expose to the reservoir, that help prepare, repair, cleanout and completethe wellbore",
-      "options": [
-        {
-          "value": "true",
-          "label": "True"
-        },
-        {
-          "value": "false",
-          "label": "False"
-        }
-      ],
-      "answer": "true",
-      "explanation": "According to the Baroid Core Participant Guide, Unit 30 (page 250), Reservoir Fluids are defined as: 'Fluids we expose to the reservoir, that help prepare, repair, cleanout and complete the wellbore.'"
-    },
-    {
       "id": "hw19_q2",
       "number": "2 of 30",
       "type": "single",
