@@ -37,6 +37,8 @@ let stats = {
   hw20_highScore: null,
   hw21_highScore: null,
   hw22_highScore: null,
+  vcf_highScore: null,
+  vfd_highScore: null,
   theme: 'dark'
 };
 
@@ -215,6 +217,20 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Review pore pressure regimes, wellbore instability causes, stuck pipe mechanisms, spacer design, and hydraulics.";
     const isFinished22 = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'homework_22' || isFinished22) startQuiz('homework_22');
+  } else if (tabId === 'vcf') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-vcf').classList.add('active');
+    document.getElementById('page-title').innerText = "Video Quiz: Completion Fluids";
+    document.getElementById('page-subtitle').innerText = "Practice questions from the Completion Fluids video: categories, hydrates, overbalance, polymers, brine tools, and PPE.";
+    const isFinishedVcf = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'video_completions' || isFinishedVcf) startQuiz('video_completions');
+  } else if (tabId === 'vfd') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-vfd').classList.add('active');
+    document.getElementById('page-title').innerText = "Video Quiz: Formation Damage";
+    document.getElementById('page-subtitle').innerText = "Practice questions from the Formation Damage video: production causes, damage mechanisms, clay behavior, scaling, skin, and wettability.";
+    const isFinishedVfd = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'video_formation_damage' || isFinishedVfd) startQuiz('video_formation_damage');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -284,6 +300,10 @@ function updateDashboardStats() {
   if (scoreHw21El) scoreHw21El.innerText = stats.hw21_highScore !== null ? `Record: ${stats.hw21_highScore}%` : "Record: --";
   const scoreHw22El = document.getElementById('score-hw22');
   if (scoreHw22El) scoreHw22El.innerText = stats.hw22_highScore !== null ? `Record: ${stats.hw22_highScore}%` : "Record: --";
+  const scoreVcfEl = document.getElementById('score-vcf');
+  if (scoreVcfEl) scoreVcfEl.innerText = stats.vcf_highScore !== null ? `Record: ${stats.vcf_highScore}%` : "Record: --";
+  const scoreVfdEl = document.getElementById('score-vfd');
+  if (scoreVfdEl) scoreVfdEl.innerText = stats.vfd_highScore !== null ? `Record: ${stats.vfd_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -360,6 +380,12 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_22') {
     navId = 'nav-hw22';
     badgeName = "Homework 22";
+  } else if (quizId === 'video_completions') {
+    navId = 'nav-vcf';
+    badgeName = "Video: Completions";
+  } else if (quizId === 'video_formation_damage') {
+    navId = 'nav-vfd';
+    badgeName = "Video: Formation Damage";
   }
   
   const navEl = document.getElementById(navId);
@@ -749,6 +775,10 @@ function showQuizResults() {
     if (stats.hw21_highScore === null || scorePercent > stats.hw21_highScore) stats.hw21_highScore = scorePercent;
   } else if (currentQuizId === 'homework_22') {
     if (stats.hw22_highScore === null || scorePercent > stats.hw22_highScore) stats.hw22_highScore = scorePercent;
+  } else if (currentQuizId === 'video_completions') {
+    if (stats.vcf_highScore === null || scorePercent > stats.vcf_highScore) stats.vcf_highScore = scorePercent;
+  } else if (currentQuizId === 'video_formation_damage') {
+    if (stats.vfd_highScore === null || scorePercent > stats.vfd_highScore) stats.vfd_highScore = scorePercent;
   }
   saveStats();
 }

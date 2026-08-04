@@ -5555,3 +5555,238 @@ const homework_22 = {
 QUIZ_DATA.homework_18 = homework_18;
 QUIZ_DATA.homework_21 = homework_21;
 QUIZ_DATA.homework_22 = homework_22;
+
+// ============================================================
+// VIDEO QUIZ: Completion Fluids (Video Questions)
+// ============================================================
+const video_completions = {
+  title: "Video Quiz: Completion Fluids",
+  description: "Practice questions from the Completion Fluids video. Topics include fluid categories, hydrate formation, overbalance margins, polymer selection, brine quality tools, and PPE.",
+  questions: [
+    {
+      id: "vcf_q1", number: "1 of 8", type: "multiple",
+      question: "What are the two categories of Completion Fluids? (Select all that apply)",
+      options: [
+        { value: "base", label: "Base" },
+        { value: "non_aqueous", label: "Non-aqueous Solution" },
+        { value: "aqueous", label: "Aqueous Solution" },
+        { value: "acidic", label: "Acidic" }
+      ],
+      answer: ["non_aqueous", "aqueous"],
+      explanation: "Completion fluids are classified into two broad categories based on their continuous phase:\n\n• Aqueous Solutions: Water-based fluids (brines) such as NaCl, KCl, CaCl2, CaBr2, and ZnBr2. These are the most common completion fluids.\n• Non-Aqueous Solutions: Oil-based or synthetic-based fluids used when water sensitivity of the formation is a concern.\n\nBrines are the primary completion fluid type and are selected by density, compatibility, and formation requirements (Participant Guide, Unit 30 – Completion Fluids, Page 261)."
+    },
+    {
+      id: "vcf_q2", number: "2 of 8", type: "multiple",
+      question: "What are the four elements needed to form Hydrates? (Select all that apply)",
+      options: [
+        { value: "sea_salt", label: "Sea Salt" },
+        { value: "cold_temperature", label: "Cold Temperature" },
+        { value: "water", label: "Water" },
+        { value: "hydrocarbons", label: "Hydrocarbons" },
+        { value: "high_pressure", label: "High Pressure" },
+        { value: "low_pressure", label: "Low Pressure" }
+      ],
+      answer: ["cold_temperature", "water", "hydrocarbons", "high_pressure"],
+      explanation: "Gas hydrates (clathrates) are ice-like solids that form when four specific conditions are met simultaneously:\n\n1. Water – A source of water molecules is required as the host structure.\n2. Hydrocarbons (gas) – Light hydrocarbon gases (methane, ethane, propane) act as the guest molecules.\n3. High Pressure – Elevated pressures favor hydrate stability by compressing gas into the water lattice.\n4. Cold Temperature – Low temperatures thermodynamically favor hydrate formation.\n\nSea Salt actually INHIBITS hydrate formation (thermodynamic inhibitor effect). Low Pressure destabilizes hydrates.\n\nHydrate formation is a critical concern during well completions, especially in deepwater environments where cold temperatures and high pressures are naturally present (Participant Guide, Completion Fluids section; Baroid Fluids Handbook – Hydrate Inhibition)."
+    },
+    {
+      id: "vcf_q3", number: "3 of 8", type: "single",
+      question: "Completion Fluids are used to ____________ the production of a WELL.",
+      options: [
+        { value: "increase", label: "Increase" },
+        { value: "viscosify", label: "Viscosify" },
+        { value: "frac", label: "Frac" },
+        { value: "decrease", label: "Decrease" }
+      ],
+      answer: "increase",
+      explanation: "The primary purpose of completion fluids is to maximize and increase well production. They achieve this by:\n\n• Minimizing formation damage to preserve or restore reservoir permeability.\n• Providing wellbore pressure control during completion operations (perforating, gravel packing, running screens).\n• Enabling clean, undamaged pathways for hydrocarbons to flow from the reservoir to the wellbore.\n\nA well-designed completion fluid program directly translates to higher production rates and better long-term well performance (Participant Guide, Unit 30 – Completion Fluids, Page 261)."
+    },
+    {
+      id: "vcf_q4", number: "4 of 8", type: "single",
+      question: "Completion Fluids mitigate skin damage in low permeability rock.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Skin damage refers to a reduction in near-wellbore permeability caused by invasion of foreign solids or fluids during drilling and completion operations. Completion fluids are specifically engineered to mitigate (reduce) skin damage by:\n\n• Using clean, filtered brines that do not introduce external solids.\n• Matching brine chemistry to formation water to avoid precipitation.\n• Controlling filtrate invasion with appropriate fluid properties.\n\nIn low-permeability rock, every unit of permeability is critical. Even minor skin damage can disproportionately reduce production, making the use of properly designed completion fluids essential (Participant Guide, Unit 30 – Completion Fluids, Page 261)."
+    },
+    {
+      id: "vcf_q5", number: "5 of 8", type: "single",
+      question: "Which polymer used in Completion Fluids gives the best suspension?",
+      options: [
+        { value: "hec", label: "HEC" },
+        { value: "xc", label: "XC" }
+      ],
+      answer: "xc",
+      explanation: "XC Polymer (Xanthan Gum) provides superior suspension compared to HEC (Hydroxyethyl Cellulose) due to its unique rheological profile:\n\n• XC Polymer exhibits strong shear-thinning behavior and forms a strong three-dimensional gel structure at rest (high static gel strength). This means it can suspend solids (e.g., gravel, weighting agents) effectively during static conditions.\n• HEC is a non-ionic cellulose polymer that provides viscosity but has much weaker gel strength, making it less effective for particle suspension.\n\nXC is preferred when suspension of solids is the primary requirement. HEC is often chosen when cleaner, more filterable fluids are needed (e.g., in sensitive carbonate formations where HEC can be removed with acid) (Participant Guide, Unit 30 – Completion Fluids, Page 261-262)."
+    },
+    {
+      id: "vcf_q6", number: "6 of 8", type: "single",
+      question: "What is the typical safe margin for overbalance during a completion?",
+      options: [
+        { value: "300_700", label: "300-700 psi" },
+        { value: "200_600", label: "200-600 psi" },
+        { value: "400_800", label: "400-800 psi" },
+        { value: "500_900", label: "500-900 psi" }
+      ],
+      answer: "200_600",
+      explanation: "The typical safe overbalance margin during a completion is 200–600 psi above formation pore pressure.\n\nThis range balances two competing risks:\n• Too low overbalance (<200 psi): Risk of underbalance, allowing formation fluids to flow uncontrolled into the wellbore (kick/blowout hazard).\n• Too high overbalance (>600 psi): Excessive fluid invasion into the formation, causing formation damage, filtrate invasion, and reduced productivity.\n\nMaintaining the fluid column within this 200–600 psi window provides well control safety while minimizing the driving force for fluid loss and formation damage during completion operations (Participant Guide, Completion Fluids section; Baroid Fluids Handbook)."
+    },
+    {
+      id: "vcf_q7", number: "7 of 8", type: "multiple",
+      question: "What two tools provide a picture of how clean the brine is? (Select all that apply)",
+      options: [
+        { value: "filter_unit", label: "Filter Unit" },
+        { value: "pump_truck", label: "Pump Truck" },
+        { value: "centrifuge", label: "Centrifuge" },
+        { value: "ntu_meter", label: "NTU Meter" }
+      ],
+      answer: ["centrifuge", "ntu_meter"],
+      explanation: "Two tools are used to assess brine cleanliness:\n\n• Centrifuge: Spins the brine sample at high RPM to separate and quantify suspended solids by volume. Results are expressed as volume percent solids. This gives a direct measure of the total solid particle load in the brine.\n• NTU Meter (Nephelometric Turbidity Unit): Measures light scattering caused by suspended particles in the fluid. The higher the NTU reading, the cloudier and more contaminated the brine. NTU meters detect very fine particles that may not be visible to the naked eye.\n\nThe Filter Unit and Pump Truck are operational equipment used to clean brine, not measurement tools (Participant Guide, Unit 34 – Filtration Services, Page 288)."
+    },
+    {
+      id: "vcf_q8", number: "8 of 8", type: "multiple",
+      question: "List four forms of PPE needed when working with brine. (Select all that apply)",
+      options: [
+        { value: "face_mask", label: "Face Mask" },
+        { value: "safety_glasses", label: "Safety Glasses" },
+        { value: "latex_gloves", label: "Latex Gloves" },
+        { value: "plastic_shield", label: "Plastic Shield" },
+        { value: "safety_enclosure", label: "Safety Enclosure" },
+        { value: "steel_toe_boots", label: "Steel-toe rubber Boots" }
+      ],
+      answer: ["safety_glasses", "latex_gloves", "plastic_shield", "steel_toe_boots"],
+      explanation: "When handling brines (especially high-density brines containing CaBr2 or ZnBr2, which can be corrosive and hazardous), the following PPE is required:\n\n• Safety Glasses: Protect eyes from brine splashes, which can cause serious irritation or chemical burns.\n• Latex Gloves: Protect skin from prolonged contact with concentrated brine salts, which can cause dryness, irritation, or chemical burns.\n• Plastic Shield (Face Shield): Provides full-face protection from splashes during brine mixing, transfer, or sampling operations.\n• Steel-toe rubber Boots: Protect feet from heavy containers and from brine spills on the floor, which can be slippery and corrosive.\n\nA standard Face Mask (respiratory protection) is not typically required for brine handling under normal ventilated conditions. A Safety Enclosure is not standard PPE for brine work (Participant Guide, Completion Fluids / HSE section)."
+    }
+  ]
+};
+
+QUIZ_DATA.video_completions = video_completions;
+
+// ============================================================
+// VIDEO QUIZ: Formation Damage (Video Questions)
+// ============================================================
+const video_formation_damage = {
+  title: "Video Quiz: Formation Damage",
+  description: "Practice questions from the Formation Damage video. Topics include causes of low production, damage mechanisms, clay behavior, scaling, skin calculation, and wettability.",
+  questions: [
+    {
+      id: "vfd_q1", number: "1 of 10", type: "multiple",
+      question: "Identify some of the causes of low hydrocarbon production rates. (Select the three that apply)",
+      options: [
+        { value: "high_oil_viscosity", label: "High oil viscosity" },
+        { value: "formation_damage", label: "Formation damage" },
+        { value: "casing_design", label: "Casing design" },
+        { value: "low_overbalance", label: "Low overbalance" },
+        { value: "low_permeability", label: "Low reservoir permeability" }
+      ],
+      answer: ["high_oil_viscosity", "formation_damage", "low_permeability"],
+      explanation: "The three primary causes of low hydrocarbon production rates are:\n\n• High oil viscosity: Heavy, viscous oil has high resistance to flow through pore channels, directly reducing production rate (Darcy's Law — flow rate is inversely proportional to viscosity).\n• Formation damage: Any process that reduces the natural permeability of the reservoir restricts hydrocarbon flow.\n• Low reservoir permeability: Low-permeability formations (tight sands, shales) inherently restrict fluid flow.\n\nCasing design is a mechanical/completion engineering decision that does not directly cause low production rates. Low overbalance during drilling is actually desirable to minimize invasion — it does not cause low production rates (Participant Guide, Page 244-245)."
+    },
+    {
+      id: "vfd_q2", number: "2 of 10", type: "single",
+      question: "Reducing a reservoir's permeability can lead to formation damage.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Formation damage is defined precisely as any process that reduces the natural permeability of a formation. Permeability is the reservoir's ability to transmit fluids. When any physical or chemical mechanism reduces this property — whether through particle plugging, clay swelling, emulsion blockage, or scale deposition — the result is formation damage and impaired hydrocarbon recovery (Participant Guide, Page 244)."
+    },
+    {
+      id: "vfd_q3", number: "3 of 10", type: "multiple",
+      question: "Identify the causes of formation damage. (Select all that apply)",
+      options: [
+        { value: "clay_swelling", label: "Clay swelling" },
+        { value: "bit_selection", label: "Bit selection" },
+        { value: "fluid_incompatibility", label: "Fluid incompatibility" },
+        { value: "emulsion_blockage", label: "Emulsion blockage" },
+        { value: "all_of_the_above", label: "All of the above" }
+      ],
+      answer: ["clay_swelling", "fluid_incompatibility", "emulsion_blockage"],
+      explanation: "The recognized causes of formation damage include:\n\n• Clay swelling: Water-sensitive clays (especially Smectite) absorb water from the drilling or completion fluid, swell into the pore throats, and block hydrocarbon flow.\n• Fluid incompatibility: Mixing of incompatible fluids (e.g., filtrate with formation water) creates chemical precipitates (scales) that plug pores.\n• Emulsion blockage: Excessive emulsifiers can promote crude-brine emulsions inside the reservoir, drastically increasing apparent viscosity and blocking pore channels.\n\nBit selection is a mechanical drilling parameter that affects ROP and wellbore trajectory but does not directly cause formation damage. 'All of the above' is incorrect because Bit selection is included (Participant Guide, Page 245)."
+    },
+    {
+      id: "vfd_q4", number: "4 of 10", type: "single",
+      question: "As long as particles in the reservoir fluid are smaller than the pore throats, no damage will occur.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Even particles smaller than the pore throats can cause significant formation damage through several mechanisms:\n\n• Bridging: Multiple fine particles can accumulate simultaneously at a pore throat opening, forming a stable bridge that restricts flow even though each individual particle is smaller than the throat.\n• Particle migration: Once inside the porous medium, fine particles (fines) can migrate deep into the formation and accumulate in constrictions far from the wellbore.\n• Log-jamming: A cascade of fine particles can progressively restrict a pore throat over time.\n\nThis is why a properly designed Particle Size Distribution (PSD) for bridging agents must place particles at or slightly larger than the pore throat diameter — not just 'smaller than' (Participant Guide, Page 247)."
+    },
+    {
+      id: "vfd_q5", number: "5 of 10", type: "single",
+      question: "Formation damage from reservoir fluids is the only cause of a high skin.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Skin (S) is a dimensionless number that quantifies the total near-wellbore pressure drop beyond what would be expected from an undamaged reservoir. Formation damage is one cause, but high skin values can result from multiple sources:\n\n• Mechanical skin: Partial penetration of the reservoir, incomplete perforations, or deviated wellbore effects.\n• Turbulence / non-Darcy flow: At very high production rates, inertial effects near the wellbore add a rate-dependent pseudo-skin (especially in gas wells).\n• Drilling damage: Solids and filtrate invasion during drilling.\n• Completion damage: Cement filtrate invasion, scale deposition, or fines migration during production.\n\nA negative skin value actually indicates stimulation (e.g., after a hydraulic fracture or acid job), further demonstrating that skin is not solely caused by formation damage from reservoir fluids (Participant Guide, Formation Damage section)."
+    },
+    {
+      id: "vfd_q6", number: "6 of 10", type: "single",
+      question: "Smectite usually breaks free of the sand grains and migrates into the reservoir, causing formation damage.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. This statement describes the behavior of Kaolinite and Illite, not Smectite.\n\n• Smectite (Montmorillonite): When exposed to fresh water or low-salinity fluid, Smectite absorbs water molecules between its clay platelets and SWELLS (expands in place). It typically remains bonded to the sand grain surfaces and causes damage by reducing pore throat diameter through swelling — it does not migrate.\n• Kaolinite: Exists as booklets loosely attached to grain surfaces. It is easily dislodged by fluid flow turbulence and migrates into pore throats.\n• Illite: Exists as fine filaments/fibers that can detach and migrate, bridging pore throats and causing severe permeability reduction.\n\nTherefore, migration is the primary damage mechanism of Kaolinite and Illite, while swelling is the primary damage mechanism of Smectite (Participant Guide, Page 245-246)."
+    },
+    {
+      id: "vfd_q7", number: "7 of 10", type: "single",
+      question: "What is another common term for chemical precipitation in the reservoir?",
+      options: [
+        { value: "carbonizing", label: "Carbonizing" },
+        { value: "tct", label: "TCT" },
+        { value: "scaling", label: "Scaling" },
+        { value: "rusting", label: "Rusting" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "scaling",
+      explanation: "Scaling is the industry term for chemical precipitation inside the reservoir or wellbore. Scale forms when incompatible fluids mix and soluble ions exceed their solubility limits, precipitating as solid mineral deposits.\n\nCommon scales include:\n• Calcium carbonate (CaCO₃): Precipitates when pH rises or CO₂ partial pressure drops.\n• Calcium sulfate / Gypsum (CaSO₄): Forms when calcium-rich and sulfate-rich fluids mix.\n• Barium sulfate (BaSO₄): One of the hardest scales to remove, forms from barium/sulfate mixing.\n• Iron sulfide / hydroxide: Forms from iron-rich brines at elevated pH.\n\nScaling is a major cause of formation damage and wellbore impairment in production operations (Participant Guide, Page 248)."
+    },
+    {
+      id: "vfd_q8", number: "8 of 10", type: "single",
+      question: "How can soluble iron be removed from brine?",
+      options: [
+        { value: "sodium_chloride", label: "Add sodium chloride" },
+        { value: "calcium_carbonate", label: "Add calcium carbonate" },
+        { value: "citric_acid", label: "Add citric acid" },
+        { value: "raise_ph", label: "Raise pH above 9.5" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "raise_ph",
+      explanation: "Raising the pH of the brine above 9.5 causes soluble iron (Fe²⁺, ferrous iron) to oxidize and precipitate out of solution as iron hydroxide [Fe(OH)₃], which can then be filtered out:\n\nFe²⁺ → Fe³⁺ (oxidation) → Fe(OH)₃ ↓ (precipitation at pH > 9.5)\n\nThis is the standard procedure for iron removal from completion brines:\n1. Raise pH above 9.5 (using NaOH or KOH).\n2. Allow iron to precipitate as Fe(OH)₃.\n3. Filter through the filtration unit to remove the precipitate.\n\nNote: Citric acid is used as an iron-sequestering agent in acid stimulation jobs (to prevent iron sludge during acidizing), but is not the correct answer for removing soluble iron from clear brine. Adding NaCl or CaCO₃ does not precipitate iron (Participant Guide, Completion Fluids / Filtration section)."
+    },
+    {
+      id: "vfd_q9", number: "9 of 10", type: "single",
+      question: "Most reservoir rocks are naturally oil-wet.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Most reservoir rocks are naturally water-wet (strongly water-wet). This is because:\n\n• Reservoir rocks (sandstones, carbonates) were originally deposited in aqueous environments. The mineral surfaces are initially in contact with formation water and have a high affinity for water.\n• Water-wet rocks have a water film coating the grain surfaces, with oil occupying the center of the pore space. This configuration is more favorable for oil production (water can displace oil efficiently during waterflooding).\n\nOil-wet reservoirs are less common and typically result from asphaltene or resin deposition from the crude oil onto the grain surfaces over geological time. Wettability alteration from oil-wet to water-wet conditions is an important EOR (Enhanced Oil Recovery) consideration.\n\nMaintaining or restoring water-wet conditions is a key objective of completion fluid design (Participant Guide, Formation Damage section)."
+    },
+    {
+      id: "vfd_q10", number: "10 of 10", type: "multiple",
+      question: "Skin is calculated using: (Select all that apply)",
+      options: [
+        { value: "perm_altered", label: "Permeability of the altered zone" },
+        { value: "perm_unaltered", label: "Permeability of the unaltered zone" },
+        { value: "radius_wellbore", label: "Radius of the wellbore" },
+        { value: "radius_altered", label: "Radius of the altered zone" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: ["perm_altered", "perm_unaltered", "radius_wellbore", "radius_altered"],
+      explanation: "Skin (S) is calculated using the Hawkins formula:\n\nS = (k/ks − 1) × ln(rs/rw)\n\nWhere:\n• k = Permeability of the unaltered (undamaged) reservoir zone\n• ks = Permeability of the altered (damaged) zone\n• rs = Radius of the altered zone (depth of damage from wellbore center)\n• rw = Radius of the wellbore\n\nPhysical interpretation:\n• If ks < k (damage): S > 0 (positive skin — damage, restricted production)\n• If ks = k (no damage): S = 0 (no skin)\n• If ks > k (stimulation, e.g., acid job): S < 0 (negative skin — enhanced production)\n\nAll four variables are required to quantify skin. A larger skin value indicates more severe near-wellbore damage and greater production impairment (Participant Guide, Formation Damage section)."
+    }
+  ]
+};
+
+QUIZ_DATA.video_formation_damage = video_formation_damage;
