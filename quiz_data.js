@@ -3175,6 +3175,20 @@ const QUIZ_DATA = {
       ],
       "answer": "true",
       "explanation": "Environmental regulations have led to the wide adoption of non-ionic surfactants (such as the BARAKLEAN family) which offer low toxicity and high environmental compatibility compared to traditional pure solvent cleaners (page 271)."
+    },
+    {
+      "id": "hw19_q31",
+      "number": "30 of 30",
+      "type": "single",
+      "question": "The __________ is used to measure the density of a drilling fluid with high viscosity",
+      "options": [
+        { "value": "viscometer", "label": "Viscometer" },
+        { "value": "hydrometer", "label": "Hydrometer" },
+        { "value": "turbidimeter", "label": "Turbidimeter" },
+        { "value": "mud_balance", "label": "Mud balance" }
+      ],
+      "answer": "mud_balance",
+      "explanation": "The mud balance (also called a mud scale or drilling fluid balance) is the standard tool used to measure the density (weight) of a drilling fluid, regardless of its viscosity.\n\n• The mud balance works by filling a fixed-volume cup with the fluid sample and balancing it on a knife-edge pivot. It measures mass per unit volume (e.g., lb/gal, lb/ft³, SG, or ppg).\n• It is specifically designed for drilling fluids, which can range from thin water-based muds to very high-viscosity, weighted NAF systems.\n\nWhy not the others?\n• Viscometer (e.g., Fann VG meter): Measures rheological properties — viscosity (PV, YP, gel strengths) — NOT density.\n• Hydrometer: Measures density/specific gravity of low-viscosity Newtonian fluids (like brines or water). It is not practical for high-viscosity or non-Newtonian drilling fluids because the float cannot settle properly.\n• Turbidimeter: Measures turbidity (cloudiness/particle suspension) of a liquid in NTU units — NOT density.\n\nThe mud balance is the only tool in this list appropriate for measuring density of high-viscosity drilling fluids (Participant Guide, API RP 13B – Drilling Fluid Testing)."
     }
   ]
 },
@@ -4984,7 +4998,7 @@ const homework_18 = {
       explanation: "HPIEF can serve as excellent drill-in fluids when properly processed to remove drilled solids and adjusted with sized bridging material (Participant Guide, Page 254)."
     },
     {
-      id: "hw18_q38", number: "38 of 38", type: "single",
+      id: "hw18_q38", number: "38 of 45", type: "single",
       question: "Any type of LCM can be used if there are losses in the payzone",
       options: [
         { value: "true", label: "True" },
@@ -4992,6 +5006,98 @@ const homework_18 = {
       ],
       answer: "false",
       explanation: "Conventional LCM can permanently seal flow channels and cause severe damage. Reservoir loss circulation treatments must be degradable or acid-soluble (Participant Guide, Page 261)."
+    },
+    {
+      id: "hw18_q39", number: "39 of 45", type: "single",
+      question: "According to current industry theories for reservoir bridging, what is the minimum bridging particle size required to effectively seal a pore throat and prevent deep invasion?",
+      options: [
+        { value: "equal_max", label: "Equal to the maximum pore throat size" },
+        { value: "one_third", label: "One-third (1/3) of the maximum pore throat size" },
+        { value: "twice_avg", label: "Twice the average pore throat size" },
+        { value: "half_min", label: "Half (1/2) of the minimum pore throat size" }
+      ],
+      answer: "one_third",
+      explanation: "According to the Abrams' rule (1/3 rule) for reservoir bridging, the ideal median particle size (D50) of the bridging material should be equal to or slightly greater than one-third (1/3) of the median pore throat diameter (D50 pore throat). This ensures that the bridging particles are large enough to form a stable bridge at the pore throat entrance without invading deep into the reservoir matrix.\n\nBridging at the pore throat face is critical because it creates a thin, low-permeability filtercake at the surface of the reservoir rather than allowing particles to migrate deep and permanently plug pore channels (Participant Guide, Page 255-256; Abrams' Bridging Theory)."
+    },
+    {
+      id: "hw18_q40", number: "40 of 45", type: "single",
+      question: "True or False: To minimize permanent damage to the payzone, the concentration of reactive solids (clays) in the reservoir drilling fluid should be strictly kept below 3 lb/bbl.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. The Baroid Participant Guide specifies that reactive solids (formation clays) in a reservoir drilling fluid must be kept below 3 lb/bbl. If reactive solids exceed this limit:\n\n• They become incorporated into the filter cake structure.\n• The filter cake becomes increasingly impermeable and mechanically tough.\n• The filter cake becomes extremely difficult or impossible to remove chemically with breaker systems prior to production.\n\nThis is why Low-Gravity Solids (LGS) control is critical when drilling through the payzone with a drill-in fluid. Centrifuges and dilution are key tools to maintain reactive solids below the 3 lb/bbl threshold (Participant Guide, Formation Damage / Drill-in Fluids section)."
+    },
+    {
+      id: "hw18_q41", number: "41 of 45", type: "single",
+      question: "Which of the following operational risks is NOT a direct consequence of high filtrate volumes (fluid loss) into the reservoir?",
+      options: [
+        { value: "clay_swelling", label: "Swelling of water-sensitive clays like smectites" },
+        { value: "dehydration", label: "Dehydration of drilling fluid during trips (stuck pipe)" },
+        { value: "thin_hard_cake", label: "Creation of a thin, hard, and impermeable filter cake" },
+        { value: "torque_drag", label: "Torque and drag increases due to a tight hole" }
+      ],
+      answer: "thin_hard_cake",
+      explanation: "A thin, hard, and impermeable filter cake is NOT a consequence of high fluid loss — it is the opposite.\n\n• HIGH fluid loss produces a THICK and SOFT filter cake. The high filtrate volumes carry large amounts of solids into the cake rapidly, creating a bulky, poorly consolidated structure. This thick soft cake is associated with differential sticking, tight hole, and poor wellbore stability.\n\n• LOW fluid loss (well-controlled) produces a THIN, HARD, and IMPERMEABLE filter cake — which is the DESIRED outcome of proper drill-in fluid design.\n\nThe other options ARE direct consequences of high filtrate volumes:\n• Clay swelling: Excess water filtrate entering the reservoir triggers smectite swelling.\n• Dehydration / stuck pipe: During trips, the thick, soft cake shrinks and grips the drillstring.\n• Torque and drag: Thick cake reduces the annular clearance, increasing friction (Participant Guide, Page 254)."
+    },
+    {
+      id: "hw18_q42", number: "42 of 45", type: "single",
+      question: "When circulating a drill-in fluid, why is an API 270 shaker screen generally NOT recommended on the shakers?",
+      options: [
+        { value: "coarse_solids", label: "It allows too many coarse drill solids to return to the well" },
+        { value: "discard_bridging", label: "It would discard approximately half of the desirable bridging material" },
+        { value: "chemical_inhibition", label: "It causes the mud to lose chemical inhibition" },
+        { value: "water_oil_ratio", label: "It increases the water-to-oil ratio of the fluid" }
+      ],
+      answer: "discard_bridging",
+      explanation: "An API 270 screen (approximately 53 micron opening) is too fine for drill-in fluid applications. The bridging agents used in drill-in fluids — such as BARACARB (calcium carbonate) — are sized according to Abrams' 1/3 rule to match the reservoir pore throats.\n\nA 270 mesh screen would capture and discard a significant portion (approximately half) of the designed bridging particles along with the drill solids. This would continuously remove the critical bridging material from the system, destroying the particle size distribution and leaving the reservoir unprotected against deep filtrate invasion.\n\nRecommended screen sizes for drill-in fluid applications are API 120 to 170 (approximately 88–105 micron openings), which retain the bridging material while still removing coarser drill cuttings (Participant Guide, Drill-in Fluids / Solids Control section)."
+    },
+    {
+      id: "hw18_q43", number: "43 of 45", type: "single",
+      question: "Which Baroid reservoir drilling fluid system utilizes saturated NaCl brine with sized salt as its bridging agent, making the filter cake soluble in water?",
+      options: [
+        { value: "baradril_n", label: "BARADRIL-N" },
+        { value: "soludril_n", label: "SOLUDRIL-N" },
+        { value: "clay_free", label: "Clay-Free WBM" },
+        { value: "diphasix", label: "DIPHASIX" }
+      ],
+      answer: "soludril_n",
+      explanation: "SOLUDRIL-N is the Baroid drill-in fluid system that uses saturated NaCl (sodium chloride) brine as the base fluid and sized salt crystals as the bridging agent.\n\nKey advantage: Because both the base fluid and the bridging agent are salt-based, the filter cake formed is inherently water-soluble. When the well is put on production and contacted with produced formation water or injected fresh water, the salt cake simply dissolves, eliminating the need for chemical breakers or acid treatments.\n\nContrast with other systems:\n• BARADRIL-N: Uses calcium carbonate (CaCO₃) as the bridging agent. The filter cake requires acid (HCl) or BaraNFlow™ enzymatic/chemical breakers to dissolve.\n• DIPHASIX: A non-aqueous (oil-based) drill-in fluid system.\n\nSOLUDRIL-N is particularly suited for formations that are highly water-sensitive or where acid treatments are not preferred (Participant Guide, Reservoir Drilling Fluids section)."
+    },
+    {
+      id: "hw18_q44", number: "44 of 45", type: "single",
+      question: "True or False: BaraNFlow™ technology is a delayed-reaction chemical breaker system designed to dissolve both polymers and calcium carbonate filter cakes uniformly across the payzone.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. BaraNFlow™ is Baroid's proprietary delayed-action filter cake breaker technology. It works through a thermally-activated mechanism:\n\n• The BaraNFlow treatment is placed across the payzone (pumped into the reservoir section).\n• Heat from the formation activates the system over time, generating organic acid in-situ.\n• The generated acid simultaneously dissolves the calcium carbonate bridging material AND degrades the polymer network of the filter cake.\n• Because the reaction is slow and distributed, the breaker acts uniformly across the entire payzone — avoiding the problem of near-wellbore over-break and far-wellbore incomplete break that occurs with conventional acid treatments.\n\nThis uniform, controlled dissolution maximizes the return permeability across the full reservoir section before production begins (Participant Guide, Unit 32 – Breaker Systems, Page 281)."
+    },
+    {
+      id: "hw18_q45", number: "45 of 46", type: "single",
+      question: "What is the name of the laboratory testing protocol used to evaluate reservoir damage by exposing a real core sample to drill-in fluids and measuring the percentage of original flow capacity restored?",
+      options: [
+        { value: "return_perm", label: "Return Permeability Test" },
+        { value: "mud_check", label: "Standard Mud Check (API RP 13B)" },
+        { value: "capillary_pressure", label: "Capillary Pressure Test (MICP)" },
+        { value: "core_flood_tracer", label: "Tracer Core Flood Test" }
+      ],
+      answer: "return_perm",
+      explanation: "The Return Permeability Test (also called the Regain Permeability Test) is the industry-standard laboratory protocol for quantifying formation damage caused by drill-in fluids.\n\nTest procedure:\n1. Measure the initial permeability (Ki) of a real reservoir core plug using a neutral brine.\n2. Flow the drill-in fluid through the core under simulated downhole conditions (temperature, overbalance pressure) to form a filter cake.\n3. Attempt to clean up the damage by flowing back with breaker fluid, brine, or crude oil.\n4. Measure the final (returned) permeability (Kf).\n5. Calculate Return Permeability % = (Kf / Ki) × 100.\n\nResults interpretation:\n• >80-90% return: Excellent — minimal formation damage.\n• ~70% return: Acceptable — moderate damage.\n• <50% return: Poor — significant damage, reassess fluid design.\n• ~7% return or 'Reservoir Destroyed': Catastrophic damage — fluid is incompatible with the formation.\n\nContrast with incorrect options:\n• API RP 13B mud check: Measures drilling fluid properties (rheology, filtration), not formation damage.\n• MICP (Mercury Injection Capillary Pressure): Characterizes pore throat size distribution, not fluid damage.\n• Tracer Core Flood: Used for EOR studies and fluid displacement efficiency, not drill-in fluid damage evaluation (Participant Guide, Page 256-257)."
+    },
+    {
+      id: "hw18_q46", number: "46 of 46", type: "single",
+      question: "On a particle size distribution, what is the meaning of the D90 value of a bridging material analysis?",
+      options: [
+        { value: "90_larger", label: "90% of the particles are larger than the D90 value" },
+        { value: "90_smaller", label: "90% of the particles are smaller than the D90 value" },
+        { value: "90_equal", label: "90% of the particles are equal in size to the D90 value" },
+        { value: "90_weight", label: "The D90 value represents the 90th percentile of particle weight" }
+      ],
+      answer: "90_smaller",
+      explanation: "The D90 value on a Particle Size Distribution (PSD) curve means that 90% of the particles in the sample have a diameter SMALLER than (or equal to) the D90 value. Only 10% of the particles are coarser (larger) than D90.\n\nKey PSD percentile values — full summary:\n• D10: 10% of particles have sizes smaller than this diameter. This represents the fine end of the distribution — most particles are larger than D10.\n• D50: 50% of particles have sizes smaller than this diameter. This is the median particle size — half the particles are smaller, half are larger. D50 is the most important value for bridging design (Abrams' 1/3 Rule).\n• D90: 90% of particles have sizes smaller than this diameter. This represents the coarse end of the distribution — only 10% of particles exceed D90.\n\nPractical application for bridging design:\n• D50 targets the median pore throat to initiate bridging.\n• D90 controls the coarsest particles — ensures no oversized particles are present that could cause screen damage or flow restriction at surface.\n• D10 ensures sufficient fine particles are present to seal the filter cake after bridging is established.\n\nThis three-point (D10/D50/D90) characterization gives a complete picture of the bridging agent's particle size distribution and its suitability for a given reservoir (Participant Guide, Page 255)."
     }
   ]
 };
@@ -5785,6 +5891,107 @@ const video_formation_damage = {
       ],
       answer: ["perm_altered", "perm_unaltered", "radius_wellbore", "radius_altered"],
       explanation: "Skin (S) is calculated using the Hawkins formula:\n\nS = (k/ks − 1) × ln(rs/rw)\n\nWhere:\n• k = Permeability of the unaltered (undamaged) reservoir zone\n• ks = Permeability of the altered (damaged) zone\n• rs = Radius of the altered zone (depth of damage from wellbore center)\n• rw = Radius of the wellbore\n\nPhysical interpretation:\n• If ks < k (damage): S > 0 (positive skin — damage, restricted production)\n• If ks = k (no damage): S = 0 (no skin)\n• If ks > k (stimulation, e.g., acid job): S < 0 (negative skin — enhanced production)\n\nAll four variables are required to quantify skin. A larger skin value indicates more severe near-wellbore damage and greater production impairment (Participant Guide, Formation Damage section)."
+    },
+    {
+      id: "vfd_q11", number: "11 of 19", type: "single",
+      question: "Skin is a description of a membrane which forms over the wellbore.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Skin is NOT a physical membrane or material layer. Skin (S) is a dimensionless mathematical number used in reservoir engineering to quantify the total additional pressure drop near the wellbore beyond what would be expected from an undamaged formation.\n\n• Positive skin (S > 0): Indicates damage — there is more resistance to flow than expected. Could be caused by formation damage, partial penetration, or turbulence.\n• Zero skin (S = 0): Ideal — no damage or stimulation.\n• Negative skin (S < 0): Indicates stimulation — hydraulic fracturing or acid jobs create enhanced flow paths beyond the natural formation.\n\nThe term 'skin' is borrowed from the analogy of a skin over the wellbore restricting flow, but it is purely a mathematical/engineering concept, not a physical deposit or membrane (Participant Guide, Formation Damage section; Hawkins' Formula)."
+    },
+    {
+      id: "vfd_q12", number: "12 of 19", type: "single",
+      question: "Which filtering equipment would be the most practical for a deepwater well?",
+      options: [
+        { value: "dual_filter_pods", label: "Dual filter pods" },
+        { value: "small_de_press", label: "Small DE press" },
+        { value: "high_flow_de", label: "High-flow DE press" },
+        { value: "high_flow_de_polish", label: "High-flow DE press with polishing filter pods" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "high_flow_de_polish",
+      explanation: "For deepwater completion operations, the recommended filtration equipment is a High-flow DE (Diatomaceous Earth) press combined with polishing filter pods. This combination is the most practical because:\n\n• High-flow DE press: Handles the large volume flow rates required during deepwater displacement operations efficiently. DE filtration removes the bulk of suspended solids down to 2-5 microns.\n• Polishing filter pods: Provide a final polishing stage to capture any remaining fine particles that pass through the DE press, ensuring the brine reaches the required NTU cleanliness specification (typically < 5-10 NTU for sensitive reservoirs).\n\nWhy not the others?\n• Dual filter pods alone: Insufficient flow rate capacity for deepwater volumes; would clog rapidly under high solid loading.\n• Small DE press: Adequate flow rate but lacks polishing capability for the strictest cleanliness requirements.\n• High-flow DE press alone: Good flow rate but may not achieve the finest NTU specification without a polishing stage.\n\nSpace constraints on deepwater vessels also make the compact combination system preferable (Participant Guide, Unit 34 – Filtration Services, Page 288)."
+    },
+    {
+      id: "vfd_q13", number: "13 of 19", type: "multiple",
+      question: "Which areas should be very clean prior to exposing to clean brine? (Select all that apply)",
+      options: [
+        { value: "suction_pit", label: "Suction pit" },
+        { value: "return_pit", label: "Return pit" },
+        { value: "flowline", label: "Flowline" },
+        { value: "transport_vessel", label: "Transport vessel" },
+        { value: "waste_pit", label: "Waste pit" },
+        { value: "flare_pit", label: "Flare pit" },
+        { value: "all_above", label: "All of the above" }
+      ],
+      answer: ["suction_pit", "return_pit", "flowline", "transport_vessel"],
+      explanation: "Before introducing clean completion brine into the system, all surfaces and containers that will come into direct contact with the brine must be thoroughly cleaned and inspected:\n\n• Suction pit: Where the clean brine is stored and drawn from. Any contamination here directly contaminates the entire brine volume.\n• Return pit: Receives the fluid returning from the wellbore during displacement. Must be clean to avoid re-contaminating the return brine samples used for quality verification.\n• Flowline: The pipe carrying brine to and from the wellbore. Residual drilling fluid, rust, scale, or solids in the flowline will contaminate the brine.\n• Transport vessel (e.g., brine tank/ship): Must be thoroughly cleaned and certified before loading clean brine. Any contamination from previous cargoes (crude oil, mud) will compromise brine quality.\n\nWaste pit and Flare pit are segregated disposal systems that do not come into contact with the clean brine circuit and therefore do not require cleaning for brine quality purposes (Participant Guide, Unit 34 – Filtration Services / Displacement Operations)."
+    },
+    {
+      id: "vfd_q14", number: "14 of 19", type: "multiple",
+      question: "When we design a non-damaging reservoir fluid, identify the steps we should take. (Select all that apply)",
+      options: [
+        { value: "sensitivity_testing", label: "Sensitivity testing" },
+        { value: "return_perm_testing", label: "Return perm testing" },
+        { value: "insensitivity_testing", label: "Insensitivity testing" },
+        { value: "filtration_cut_point", label: "Filtration cut point" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: ["sensitivity_testing", "return_perm_testing", "filtration_cut_point"],
+      explanation: "When designing a non-damaging reservoir fluid, three key laboratory steps are performed:\n\n1. Sensitivity Testing: Exposes the formation core/rock samples to candidate fluids under simulated downhole conditions. Determines how the formation reacts to different fluid chemistries (clay swelling, mineral dissolution, fines migration). Identifies which fluid types are compatible with the specific reservoir mineralogy.\n\n2. Return Permeability Testing: Measures the percentage of original permeability (Ki) recovered (Kf) after the core has been exposed to the drill-in or completion fluid and subsequently cleaned up with breaker systems. This directly quantifies the formation damage caused by the fluid design. Formula: Return Perm % = (Kf/Ki) × 100.\n\n3. Filtration Cut Point: Determines the correct filter pore size (micron rating) required to remove all potentially damaging particles from the brine before it contacts the reservoir. Ensures that no particles above the critical size enter the formation.\n\n'Insensitivity testing' is not a recognized industry test or procedure (Participant Guide, Formation Damage / Laboratory Testing section)."
+    },
+    {
+      id: "vfd_q15", number: "15 of 19", type: "single",
+      question: "The estimated annual cost to the oil industry due to formation damage is one hundred billion dollars.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Industry estimates consistently place the annual cost of formation damage to the global oil and gas industry in the range of one hundred billion dollars (US$100 billion) per year. This enormous figure includes:\n\n• Lost production revenue from wells producing below their potential.\n• Workover and stimulation costs (acid jobs, hydraulic fracturing) to restore damaged permeability.\n• Well abandonment costs when damage is irreversible.\n• Delayed production startup due to filter cake cleanup problems.\n\nThis figure underscores why proper drill-in fluid design, reservoir-compatible completion fluids, and filter cake removal are critical economic priorities — not just technical concerns (Participant Guide, Formation Damage Overview section)."
+    },
+    {
+      id: "vfd_q16", number: "16 of 19", type: "single",
+      question: "Low permeability wells are more prone to damage than are high permeability wells.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Low permeability formations are disproportionately more sensitive to formation damage for the following reasons:\n\n• Proportional impact: In a low permeability formation (e.g., 1 mD), even a modest reduction (e.g., to 0.5 mD) represents a 50% loss in productivity. In a high permeability formation (e.g., 1000 mD), the same absolute reduction is negligible.\n• Narrower pore throats: Low permeability rocks have smaller pore throat diameters. Fewer solid particles are needed to bridge and plug them completely.\n• Less tolerance for fines: The smaller pore throats in tight formations are easily blocked by even sub-micron fines that would pass harmlessly through a high permeability formation.\n• Skin effect amplification: The Hawkins equation shows that for low permeability formations, the skin effect (pressure drop penalty) per unit of damage is much higher.\n\nThis is why tight gas, tight oil, and HPHT reservoirs require extreme care in drill-in fluid design and execution (Participant Guide, Page 244)."
+    },
+    {
+      id: "vfd_q17", number: "17 of 19", type: "single",
+      question: "Formation damage is always caused by chemical incompatibilities between the reservoir fluid and the formation minerals or fluids.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Formation damage is NOT always caused by chemical incompatibilities. It has multiple root causes spanning physical, chemical, mechanical, and biological categories:\n\n• Physical damage: Fines migration (clay particles dislodged by flow velocity), particle plugging (solids bridging pore throats), and relative permeability changes (water blocking).\n• Chemical damage: Fluid incompatibility (scale precipitation when incompatible fluids mix), clay swelling (smectite + fresh water), and wettability alteration.\n• Mechanical damage: Perforation tunnel collapse, compaction near the wellbore, and cement filtrate invasion.\n• Biological damage: Bacterial plugging from introduced microorganisms that grow and form biofilms in the pore network.\n• Thermal damage: Asphaltene and paraffin deposition as temperature changes during production alter fluid stability.\n\nTherefore, while chemical incompatibility is a major cause, formation damage encompasses a broad range of physical and mechanical mechanisms as well (Participant Guide, Page 245)."
+    },
+    {
+      id: "vfd_q18", number: "18 of 19", type: "single",
+      question: "Reducing the porosity of a reservoir usually also reduces the permeability.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Porosity and permeability are generally positively correlated in most reservoir rocks. When porosity decreases:\n\n• Fewer and smaller pore spaces are available for fluid storage and flow.\n• The pore throats (connections between pores) also tend to become narrower, reducing the rock's ability to transmit fluids.\n• The Kozeny-Carman equation mathematically links permeability to the square of porosity divided by specific surface area, demonstrating the direct relationship.\n\nPractical examples:\n• A clean sandstone with 30% porosity will generally have much higher permeability than the same rock compacted to 10% porosity.\n• Cementation and compaction (which reduce porosity) also reduce permeability.\n\nImportant caveat: The relationship is not perfect — fractures can create high permeability in low-porosity rock (fracture permeability), and some high-porosity rocks (like chalk) can have low permeability due to poorly connected pores. But as a general rule, reducing porosity reduces permeability (Participant Guide, Formation Damage / Reservoir Characterization section)."
+    },
+    {
+      id: "vfd_q19", number: "19 of 19", type: "single",
+      question: "If a particle is small enough it is not likely to cause formation damage.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Particle size relative to pore throat diameter is the critical factor in determining whether a particle causes formation damage:\n\n• Particles much smaller than the pore throat diameter (typically less than 1/7 of the pore throat diameter) will pass freely through the pore network without bridging or plugging. They flow through with the reservoir fluid and exit the system.\n• Particles in the critical range (approximately 1/3 to 1/7 of the pore throat diameter) are the most dangerous — they are neither small enough to pass through nor large enough to bridge immediately at the surface. They migrate deep into the formation before eventually bridging, causing deep, irreversible damage.\n• Particles larger than the pore throat diameter bridge immediately at the face, forming a protective external filter cake.\n\nThis is the scientific basis for the 1/3 Rule in bridging agent design: by sizing bridging particles to be approximately 1/3 of the median pore throat diameter, they bridge at the formation face rather than invading deep (Participant Guide, Page 247; Abrams' Bridging Theory)."
     }
   ]
 };
