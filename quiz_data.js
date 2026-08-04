@@ -4661,8 +4661,8 @@ const homework_18 = {
         { value: "true", label: "True" },
         { value: "false", label: "False" }
       ],
-      answer: "false",
-      explanation: "Reservoirs with larger porosity (lots of empty space) are highly prone to lost returns and fluid invasion if not bridged properly, making them susceptible to damage (Participant Guide, Page 244)."
+      answer: "true",
+      explanation: "TRUE. A formation with higher porosity has much more storage space and, generally, wider pore throats. This makes it more resistant to damage by plugging because the porous system has greater physical capacity and tolerance to accommodate fine particles before they restrict or choke the free flow of hydrocarbons.\n\nIn contrast, formations with low porosity ('Little empty space') can be damaged easily. Because there is very little space and extremely narrow pore throats, even a minimal invasion of fine solids, polymers, or dispersed clays is enough to restrict or completely block the flow channels. There is no physical margin of tolerance.\n\n(Participant Guide, Page 244)"
     },
     {
       id: "hw18_q8", number: "8 of 38", type: "multiple",
@@ -4677,7 +4677,7 @@ const homework_18 = {
         { value: "low_temperature", label: "Low formation temperature" }
       ],
       answer: ["formation_damage", "low_permeability", "high_oil_viscosity", "low_pressure"],
-      explanation: "The main factors causing limited production rates are low reservoir pressure, low reservoir permeability, high oil viscosity, and formation damage (Participant Guide, Page 245)."
+      explanation: "The main factors causing limited production rates are low reservoir pressure, low reservoir permeability, high oil viscosity, and formation damage (Participant Guide, Page 245).\n\nWhy does High API gravity NOT limit production?\nHigh API gravity (light/sweet crude): Oil with high API values (e.g., above 30° or 40° API) is very light, has low viscosity, and flows with extreme ease through the rock pores toward the wellbore. Therefore, high API gravity is a favorable condition that helps maximize production, not limit it.\nLow API gravity (heavy crude): Oil with low API values is dense, viscous, and thick (heavy oil). This is directly associated with High oil viscosity, which IS one of the causes that restricts and limits production."
     },
     {
       id: "hw18_q9", number: "9 of 38", type: "single",
@@ -4701,13 +4701,15 @@ const homework_18 = {
         { value: "fluid_density", label: "Fluid density" },
         { value: "psd", label: "Particle size distribution (PSD)" },
         { value: "clay_migration_dispersion", label: "Clay migration and dispersion" },
-        { value: "particle_plugging", label: "Particle plugging" }
+        { value: "particle_plugging", label: "Particle plugging" },
+        { value: "clay_swelling", label: "Clay swelling" },
+        { value: "fluid_incompatibility", label: "Fluid incompatibility" }
       ],
-      answer: ["emulsion_blockage", "polymer_adhesion", "clay_migration_dispersion", "particle_plugging"],
+      answer: ["emulsion_blockage", "polymer_adhesion", "clay_migration_dispersion", "particle_plugging", "clay_swelling", "fluid_incompatibility"],
       explanation: "The recognized formation damage mechanisms while drilling include: clay swelling, clay and mineral dispersion and migration, particle plugging, polymer adhesion and fragments, fluid incompatibility, and emulsion blockage (Participant Guide, Page 245)."
     },
     {
-      id: "hw18_q11", number: "11 of 38", type: "single",
+      id: "hw18_q11", number: "11 of 38", type: "multiple",
       question: "From the following list, select all the different particles than can cause damage inside the reservoir:",
       options: [
         { value: "polymers_insoluble", label: "Polymers not soluble in acid" },
@@ -4717,8 +4719,8 @@ const homework_18 = {
         { value: "polymers_soluble", label: "Polymers soluble in acid" },
         { value: "all_of_the_above", label: "All of the above" }
       ],
-      answer: "all_of_the_above",
-      explanation: "Particles from products (barite, polymers, LCM), by-products (drilled solids, rust, scale), and perforating debris (metal shards, cement) can all migrate and plug pore spaces (Participant Guide, Page 247)."
+      answer: ["polymers_insoluble", "barite", "perforation_debris"],
+      explanation: "The particles that can cause permanent, non-removable damage inside the reservoir are: Polymers not soluble in acid (cannot be cleaned up with acid), Barite (insoluble in acid, remains lodged in pores), and Perforation debris (metal fragments, cement, cannot be dissolved).\n\nCalcium carbonate is acid-soluble and can be removed with an HCl treatment, making it formation-friendly when properly sized. Polymers soluble in acid can also be cleaned up with acid treatment. Therefore, only the non-removable/non-soluble particles represent truly damaging materials (Participant Guide, Page 247)."
     },
     {
       id: "hw18_q12", number: "12 of 38", type: "matching",
@@ -4781,16 +4783,6 @@ const homework_18 = {
       ],
       answer: "dirty_brine",
       explanation: "Dirty brines are more damaging than dirty mud. Mud builds up a filter cake at the wellbore face, limiting depth of invasion. Since brines cannot build a filter cake, suspended solids travel deep into the reservoir to plug pore throats (Participant Guide, Page 247)."
-    },
-    {
-      id: "hw18_q18", number: "18 of 38", type: "single",
-      question: "Reservoir fluids can be defined as Fluids we expose to the reservoir, that help prepare, repair, cleanout and complete the wellbore",
-      options: [
-        { value: "true", label: "True" },
-        { value: "false", label: "False" }
-      ],
-      answer: "true",
-      explanation: "This matches the exact definition of reservoir fluids in the training manual (Participant Guide, Page 250)."
     },
     {
       id: "hw18_q19", number: "19 of 38", type: "multiple",
@@ -4960,8 +4952,8 @@ const homework_18 = {
         { value: "true", label: "True" },
         { value: "false", label: "False" }
       ],
-      answer: "false",
-      explanation: "Kozeny's equation estimates pore throat diameter using both permeability AND porosity, not just permeability alone (Participant Guide, Page 255)."
+      answer: "true",
+      explanation: "TRUE. According to the theory, Kozeny's equation only requires the reservoir permeability value (K) to estimate the pore throat diameter in microns. The calculation depends on the value of K alone, allowing engineers to estimate pore throat size without needing a porosity measurement (Participant Guide, Page 255)."
     },
     {
       id: "hw18_q34", number: "34 of 38", type: "single",
@@ -4973,7 +4965,7 @@ const homework_18 = {
         { value: "none_of_the_above", label: "None of the above" }
       ],
       answer: "smaller_than_d50",
-      explanation: "The D50 value represents the median particle size on a PSD curve, meaning exactly 50% of the particles are smaller than this value (Participant Guide, Page 255)."
+      explanation: "The D50 value represents the median particle size on a PSD (Particle Size Distribution) curve, meaning exactly 50% of the particles are smaller than this value (Participant Guide, Page 255).\n\nKey PSD percentile values:\n• D10: 10% of particles have sizes smaller than this diameter (very fine end of the distribution).\n• D50: 50% of particles have sizes smaller than this diameter (the median — half are smaller, half are larger).\n• D90: 90% of particles have sizes smaller than this diameter. In other words, in a given powder, particles smaller than D90 represent 90% of the total particle count (coarse end of the distribution)."
     },
     {
       id: "hw18_q35", number: "35 of 38", type: "single",
