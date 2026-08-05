@@ -5997,3 +5997,169 @@ const video_formation_damage = {
 };
 
 QUIZ_DATA.video_formation_damage = video_formation_damage;
+
+// ============================================================
+// VIDEO QUIZ: Hole Cleaning (Video Questions)
+// ============================================================
+const video_hole_cleaning = {
+  title: "Video Quiz: Hole Cleaning",
+  description: "Practice questions from the Hole Cleaning video. Topics include primary vs secondary methods, indicators of poor hole cleaning, drilling fluid properties, sweeps, annular velocity, and slip velocity.",
+  questions: [
+    {
+      id: "vhc_q1", number: "1 of 10", type: "single",
+      question: "A primary method for preventing stuck pipe is effective hole cleaning by using an adequate flow rate.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Primary hole cleaning methods are PROACTIVE — they are designed to prevent problems from ever developing. The most critical primary method is maintaining an adequate flow rate, which generates sufficient annular velocity (AV) to carry cuttings to surface continuously during drilling.\n\nOther primary methods include:\n• Optimizing drilling fluid rheology (yield point, viscosity) for the specific hole angle.\n• Maintaining drill string rotation (RPM) to agitate cuttings off the low side.\n• Controlling ROP (rate of penetration) to avoid generating more cuttings than the annulus can transport.\n\nWhen primary methods are properly applied, reactive secondary methods (sweeps, pills) should rarely be needed. Stuck pipe is one of the most expensive NPT (Non-Productive Time) events in drilling, so proactive hole cleaning is the preferred approach (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q2", number: "2 of 10", type: "single",
+      question: "Secondary methods for effective hole cleaning are reactive in nature, and include sweeps and pills.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Secondary hole cleaning methods are REACTIVE — they are used in response to signs that primary methods have not adequately cleaned the wellbore. Examples include:\n\n• High viscosity sweeps: Viscous pills pumped to physically carry accumulated cuttings to surface. Effective in vertical and near-vertical wells.\n• High density (weighted) sweeps: Dense pills pumped in high angle and horizontal wells. The higher density stirs up the cuttings bed and helps 'float' the cuttings out of the wellbore.\n• Mechanical sweeps: Wiper trips or short trips designed to agitate cuttings beds before drilling deeper.\n\nImportant note from Baroid: Viscous sweeps are NOT recommended in horizontal wells because viscous fluids do not efficiently penetrate cuttings beds — they flow over the bed rather than disturbing it. High density sweeps are preferred in horizontal applications (Participant Guide, Hole Cleaning / Sweeps section)."
+    },
+    {
+      id: "vhc_q3", number: "3 of 10", type: "single",
+      question: "Secondary methods for effective hole cleaning should be used when the primary methods do not provide adequate hole cleaning.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. The correct hierarchy for hole cleaning is:\n\n1. PRIMARY methods first (flow rate, RPM, fluid rheology, ROP control): These are optimized before drilling begins and maintained throughout the well. They are the preferred approach because they are proactive and continuous.\n\n2. SECONDARY methods second (sweeps, pills, wiper trips): Applied when real-time monitoring indicates that primary methods are insufficient — for example, when elevated torque, drag, or ECD signals indicate cuttings accumulation.\n\nRelying on secondary methods as a substitute for poor primary hole cleaning is not best practice, as sweeps and pills only address accumulated cuttings rather than preventing their buildup. A well-planned primary hole cleaning strategy minimizes the need for reactive interventions (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q4", number: "4 of 10", type: "single",
+      question: "The following are indications of inadequate hole cleaning: stuck pipe, packing off, and increasing drag after connections.",
+      options: [
+        { value: "all_above", label: "All of the above" },
+        { value: "stuck_pipe_only", label: "Stuck pipe only" },
+        { value: "drag_only", label: "Increasing drag only" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "all_above",
+      explanation: "All three are classic indicators of inadequate hole cleaning:\n\n• Stuck pipe: Cuttings accumulating around the drill string form a cuttings bed or a cuttings avalanche (a pack-off) that traps the drill string. This is the most severe and costly consequence of poor hole cleaning.\n\n• Packing off: A sudden surge of cuttings that were not transported continuously reaches a point in the annulus and bridges across it, preventing fluid circulation. This can cause a well control event if the annulus becomes completely plugged.\n\n• Increasing drag after connections: During a connection (pump-off), annular velocity drops to zero and cuttings settle. When circulation resumes, the accumulated cuttings cause increased drag on the drill string when pick-up. This is often the first early warning sign of hole cleaning problems and should trigger immediate action (Participant Guide, Hole Cleaning / Indicators section)."
+    },
+    {
+      id: "vhc_q5", number: "5 of 10", type: "single",
+      question: "Good hole cleaning is indicated by:",
+      options: [
+        { value: "drilling_problems", label: "Drilling problems" },
+        { value: "all_cuttings", label: "All cuttings and cavings are efficiently transported to surface" },
+        { value: "excess_fragments", label: "Excess rock fragments are left in the wellbore" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "all_cuttings",
+      explanation: "Good hole cleaning is defined as the efficient transport of ALL drilled cuttings and any cavings from the wellbore to surface. The criteria for adequate hole cleaning include:\n\n• Consistent, representative cuttings returns at the shakers — the volume and size of cuttings at surface should match the calculated volume based on ROP and bit size.\n• Stable torque and drag — no sudden spikes or increasing trends that indicate cuttings accumulation.\n• Stable ECD (Equivalent Circulating Density) — no rising ECD that suggests cuttings loading the annulus.\n• Clean wellbore confirmed during wiper trips — the bit picks up and lays down without resistance.\n\nWhen all of the above conditions are met, the wellbore is considered clean and safe to drill ahead or run casing (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q6", number: "6 of 10", type: "single",
+      question: "In vertical and near-vertical wells, increasing the yield point of the drilling fluid will usually increase hole cleaning effectiveness.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. In vertical and near-vertical wells (inclination < ~30°), cuttings fall directly downward due to gravity and must be suspended and transported upward by the drilling fluid. In this geometry:\n\n• Higher yield point (YP): Improves the fluid's ability to suspend cuttings when circulation is stopped (e.g., during connections) and increases the carrying capacity of the fluid while circulating. A higher YP means the fluid can hold cuttings in suspension rather than letting them fall back.\n• Gel strengths: Also critical in vertical wells — sufficient gel strength prevents cuttings from settling during static periods.\n\nContrast with horizontal wells: In horizontal wells (inclination > ~60°), cuttings do not fall to bottom — they fall to the low side of the annulus, forming a cuttings bed. Here, HIGH viscosity actually reduces hole cleaning because viscous fluids flow OVER the cuttings bed rather than penetrating and disturbing it. Baroid therefore recommends LOWER yield point and higher flow rate (annular velocity) for horizontal hole cleaning (Participant Guide, Hole Cleaning / Drilling Fluid Properties section)."
+    },
+    {
+      id: "vhc_q7", number: "7 of 10", type: "single",
+      question: "In which situation would you use a high density (weighted) sweep rather than a high viscosity sweep to improve hole cleaning?",
+      options: [
+        { value: "vertical_well", label: "In a vertical well with a clean gauge hole" },
+        { value: "high_angle", label: "In a high angle or horizontal wellbore with a cuttings bed on the low side" },
+        { value: "shallow_well", label: "In a shallow well with low annular pressure" },
+        { value: "water_based", label: "When switching from oil-based to water-based mud" }
+      ],
+      answer: "high_angle",
+      explanation: "High density (weighted) sweeps are specifically designed for HIGH ANGLE and HORIZONTAL wellbores where cuttings accumulate as beds on the low side of the annulus.\n\nHow a weighted sweep works:\n• The dense pill (higher density than the base fluid) drops to the low side of the wellbore under gravity.\n• This dense fluid STIRS UP the cuttings bed through its higher hydrostatic pressure and turbulent contact.\n• The disturbed cuttings are re-suspended into the annular flow and carried to surface — they are effectively 'floated' out by the combination of the sweep's density and the returning flow.\n\nWhy NOT a high viscosity sweep in horizontal wells:\nBaroid's research has shown that viscous pills flow OVER the top of cuttings beds in horizontal wells rather than penetrating them. The viscous fluid takes the path of least resistance (the open annulus above the bed) and never contacts or disturbs the cuttings bed.\n\nHigh viscosity sweeps remain effective in VERTICAL wells where cuttings are suspended in the fluid column rather than settled in a bed (Participant Guide, Hole Cleaning / Sweeps section)."
+    },
+    {
+      id: "vhc_q8", number: "8 of 10", type: "single",
+      question: "Baroid's software can predict hole cleaning problems days before they occur.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Baroid has developed advanced hole cleaning modeling and simulation software (part of the VIRTUAL HYDRAULICS™ / CLEAN-SENSE™ platform and associated tools) that integrates real-time drilling data with predictive algorithms to identify hole cleaning risks before they become operational problems.\n\nThe software uses inputs such as:\n• Drill string geometry and trajectory (inclination, azimuth profile).\n• Drilling fluid rheological properties (PV, YP, gel strengths).\n• Flow rate, ROP, RPM, and WOB.\n• Calculated annular velocity profiles at different points in the wellbore.\n\nBy modeling the cuttings transport ratio (CTR) and cuttings concentration throughout the annulus, the software can identify sections where cuttings are accumulating and alert the drilling team to take corrective action BEFORE stuck pipe or packing off occurs — potentially days ahead of when the problem would manifest (Participant Guide, Hole Cleaning / Software Tools section)."
+    },
+    {
+      id: "vhc_q9", number: "9 of 10", type: "single",
+      question: "Annular velocity is only a minor contributor to overall hole cleaning effectiveness.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. Annular velocity (AV) is one of the MOST IMPORTANT — arguably the single most critical — factor in hole cleaning effectiveness, particularly in horizontal and high-angle wells.\n\nAnnular velocity is determined by:\nAV = Flow Rate / Annular Area = Q / (D_hole² - D_pipe²) × constant\n\nWhy AV is critical:\n• In horizontal wells, it is the primary mechanism for eroding and transporting cuttings beds. A minimum AV threshold must be exceeded to initiate bed erosion.\n• In all well geometries, insufficient AV means cuttings travel velocity (AV - slip velocity) is too low to keep cuttings moving upward.\n• Increasing flow rate (and therefore AV) is often the first and most effective corrective action when hole cleaning indicators deteriorate.\n\nOther important factors include drill string rotation (RPM), fluid rheology, and ROP — but annular velocity is fundamental to all hole cleaning calculations and is never a 'minor' contributor (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q10", number: "10 of 14", type: "single",
+      question: "What is the term used to describe the rate at which a rock fragment falls (settles) through the drilling fluid while the fluid is carrying it upward toward surface?",
+      options: [
+        { value: "annular_vel", label: "Annular velocity" },
+        { value: "slip_vel", label: "Slip velocity" },
+        { value: "transport_ratio", label: "Cuttings transport ratio" },
+        { value: "net_rise_vel", label: "Net rise velocity" }
+      ],
+      answer: "slip_vel",
+      explanation: "The term is SLIP VELOCITY. It describes the rate at which a rock fragment (cutting) falls or settles through the drilling fluid due to gravity, while the fluid itself is moving upward.\n\nThe three key velocity concepts in cuttings transport:\n\n• Annular Velocity (AV): The upward velocity of the drilling fluid in the annulus. Determined by flow rate and annular geometry.\n\n• Slip Velocity (Vs): The downward settling rate of the cutting through the fluid. Depends on:\n  - Cutting size and shape (larger, rounder cuttings slip faster)\n  - Cutting density vs. fluid density (greater density difference = higher slip)\n  - Fluid viscosity (higher viscosity = lower slip velocity)\n\n• Net Rise Velocity (or Cuttings Velocity): The actual upward velocity of the cutting = AV − Vs\n  - If AV > Vs: The cutting moves upward (good hole cleaning)\n  - If AV = Vs: The cutting stays stationary in the annulus (no cleaning)\n  - If AV < Vs: The cutting falls downward (cuttings accumulate)\n\nThis is why increasing flow rate (AV) and increasing fluid viscosity (reducing Vs) both improve hole cleaning — both actions increase the net rise velocity of cuttings (Participant Guide, Hole Cleaning / Slip Velocity section)."
+    },
+    {
+      id: "vhc_q11", number: "11 of 14", type: "single",
+      question: "In which hole angle range is cuttings transport generally considered the most challenging?",
+      options: [
+        { value: "near_vertical", label: "0° – 15° (near-vertical)" },
+        { value: "intermediate", label: "30° – 60° (intermediate angle)" },
+        { value: "near_horizontal", label: "75° – 90° (near-horizontal)" },
+        { value: "no_effect", label: "The angle has no effect on hole cleaning" }
+      ],
+      answer: "intermediate",
+      explanation: "The intermediate angle range of 30° – 60° is generally considered the most challenging for cuttings transport. Here is why each range behaves differently:\n\n• 0° – 15° (Near-vertical): Cuttings fall directly downward under gravity. The fluid's yield point and gel strength keep them suspended while circulating. Relatively predictable and manageable with standard rheology.\n\n• 30° – 60° (Intermediate — MOST DIFFICULT): Cuttings neither fall straight to bottom nor form a stable flat bed like in horizontal wells. Instead, they tend to roll and slide downhill along the low side of the wellbore. This creates 'cuttings avalanches' — sudden slides of accumulated cuttings that can cause packing off, erratic torque, and drag spikes. The gravitational component is strong but oblique, making transport unpredictable.\n\n• 75° – 90° (Near-horizontal): Cuttings settle on the low side and form a cuttings bed. The bed behavior is more predictable and can be managed with high flow rates (AV), drill string rotation (RPM), and weighted sweeps. While challenging, the problem is well-understood and the solutions are established.\n\nThis is why trajectory planning and anti-collision software pay special attention to the dogleg sections passing through intermediate angles (Participant Guide, Hole Cleaning / Hole Angle Effects section)."
+    },
+    {
+      id: "vhc_q12", number: "12 of 14", type: "single",
+      question: "How does drill string rotation (RPM) improve hole cleaning in horizontal wells?",
+      options: [
+        { value: "fluid_density", label: "It increases the density of the drilling fluid" },
+        { value: "turbulence_lift", label: "It creates turbulence and agitation that helps lift cuttings off the low side of the annulus" },
+        { value: "yield_point", label: "It reduces the yield point of the fluid" },
+        { value: "no_effect", label: "It has no effect in horizontal wells" }
+      ],
+      answer: "turbulence_lift",
+      explanation: "Drill string rotation (RPM) is one of the most effective PRIMARY hole cleaning tools in horizontal and high-angle wells. It works through two main mechanisms:\n\n1. Turbulence generation: The rotating drill pipe creates turbulent flow patterns in the annulus — even when the bulk annular flow is laminar. This turbulence disturbs and erodes the cuttings bed on the low side of the annulus, re-suspending cuttings into the fluid flow.\n\n2. Mechanical agitation and eccentric effect: The drill string rotates eccentrically within the wellbore (it cannot be perfectly centered in a large horizontal hole). This eccentric rotation physically contacts and sweeps the cuttings bed periodically, providing a mechanical lifting action on the settled cuttings.\n\n3. Taylor vortices: At moderate RPM, the rotation generates Taylor vortices in the annular fluid — helical flow patterns that create periodic high-velocity zones near the low side of the wellbore, further eroding the cuttings bed.\n\nPractical guidance: In horizontal drilling, maintaining minimum recommended RPM (often 60–120 RPM depending on hole size and fluid) is critical, especially when ROP is high or flow rate is limited by ECD constraints (Participant Guide, Hole Cleaning / Drill String Rotation section)."
+    },
+    {
+      id: "vhc_q13", number: "13 of 14", type: "single",
+      question: "In horizontal wells, increasing flow rate is generally more effective for improving hole cleaning than increasing fluid viscosity.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. In horizontal and high-angle wells, flow rate (annular velocity) is the primary driver of hole cleaning effectiveness — significantly more so than fluid viscosity.\n\nWhy high flow rate works in horizontal wells:\n• Higher annular velocity creates turbulent flow regimes near the cuttings bed.\n• The increased velocity gradient at the bed interface generates shear stress that erodes and re-suspends the settled cuttings.\n• Even in laminar flow, higher AV increases the transport capacity of the fluid above the bed.\n\nWhy high viscosity does NOT work well in horizontal wells:\n• Viscous fluids are pseudoplastic (shear-thinning). They flow more easily through the open annulus above the cuttings bed rather than penetrating and disturbing the bed itself.\n• High viscosity also increases annular pressure losses (ECD), which may force a reduction in flow rate — counterproductive to hole cleaning.\n• Baroid's research, and the broader industry consensus, specifically advises against high viscosity sweeps in horizontal wells for this reason.\n\nThe recommended approach in horizontal wells: Maximize flow rate within ECD limits, maintain RPM, and use weighted sweeps when reactive intervention is needed (Participant Guide, Hole Cleaning / Drilling Fluid Properties section)."
+    },
+    {
+      id: "vhc_q14", number: "14 of 14", type: "single",
+      question: "Which type of sweep is recommended for a vertical well showing signs of cuttings accumulation?",
+      options: [
+        { value: "weighted_sweep", label: "High density (weighted) sweep" },
+        { value: "viscous_sweep", label: "High viscosity sweep" },
+        { value: "spacer_pill", label: "Spacer pill" },
+        { value: "no_sweep", label: "No sweeps are needed in vertical wells" }
+      ],
+      answer: "viscous_sweep",
+      explanation: "HIGH VISCOSITY sweeps are the correct choice for vertical wells showing signs of cuttings accumulation.\n\nWhy viscous sweeps work in vertical wells:\n• In a vertical well, cuttings are distributed throughout the fluid column — they are suspended in the drilling fluid, not settled into a bed on the low side.\n• A high viscosity slug (higher YP and gel strength than the base mud) increases the suspension capacity and carrying capacity of the fluid, lifting and transporting cuttings that have started to slip back downward.\n• The higher apparent viscosity also reduces the slip velocity (Vs) of the cuttings, increasing their net rise velocity.\n\nWhy weighted (high density) sweeps are NOT ideal for vertical wells:\n• A dense pill in a vertical well is heavier, not more viscous. The additional weight does not help suspend or carry cuttings — in fact, the denser fluid may cause cuttings to re-settle faster relative to the heavier base fluid once the sweep passes.\n• Weighted sweeps are designed for horizontal wells where their density causes them to drop to the low side and stir up the cuttings bed — a mechanism that simply doesn't apply in vertical geometry.\n\nSweep strategy summary:\n• Vertical wells → High viscosity sweeps\n• Horizontal / high-angle wells → High density (weighted) sweeps\n(Participant Guide, Hole Cleaning / Sweeps section)."
+    }
+  ]
+};
+
+QUIZ_DATA.video_hole_cleaning = video_hole_cleaning;
