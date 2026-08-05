@@ -112,6 +112,10 @@
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
           Video: Hole Cleaning
         </a>
+        <a class="nav-link" id="nav-vpd" onclick="switchTab('vpd')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          Video: Pills & Displacement
+        </a>
         <a class="nav-link" id="nav-contaminants" onclick="switchTab('contaminants')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           Contaminants WBM
@@ -301,8 +305,16 @@
             <h3 class="card-title">Video Quiz: Hole Cleaning</h3>
             <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions from the Hole Cleaning video: primary vs secondary methods, indicators, drilling fluid properties, sweeps, annular velocity, and slip velocity.</p>
             <div class="task-info">
-              <span>14 questions</span>
+              <span>21 questions</span>
               <span id="score-vhc">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('video_pills_displacement')">
+            <h3 class="card-title">Video Quiz: Pills & Displacement</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions from the Pills and Displacement video: recommended practices, sweep pills, pill types, dry jobs, displacement objectives, and CFG modeling.</p>
+            <div class="task-info">
+              <span>6 questions</span>
+              <span id="score-vpd">Record: --</span>
             </div>
           </div>
         </div>

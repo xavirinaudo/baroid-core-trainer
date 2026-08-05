@@ -6148,7 +6148,7 @@ const video_hole_cleaning = {
       explanation: "TRUE. In horizontal and high-angle wells, flow rate (annular velocity) is the primary driver of hole cleaning effectiveness — significantly more so than fluid viscosity.\n\nWhy high flow rate works in horizontal wells:\n• Higher annular velocity creates turbulent flow regimes near the cuttings bed.\n• The increased velocity gradient at the bed interface generates shear stress that erodes and re-suspends the settled cuttings.\n• Even in laminar flow, higher AV increases the transport capacity of the fluid above the bed.\n\nWhy high viscosity does NOT work well in horizontal wells:\n• Viscous fluids are pseudoplastic (shear-thinning). They flow more easily through the open annulus above the cuttings bed rather than penetrating and disturbing the bed itself.\n• High viscosity also increases annular pressure losses (ECD), which may force a reduction in flow rate — counterproductive to hole cleaning.\n• Baroid's research, and the broader industry consensus, specifically advises against high viscosity sweeps in horizontal wells for this reason.\n\nThe recommended approach in horizontal wells: Maximize flow rate within ECD limits, maintain RPM, and use weighted sweeps when reactive intervention is needed (Participant Guide, Hole Cleaning / Drilling Fluid Properties section)."
     },
     {
-      id: "vhc_q14", number: "14 of 14", type: "single",
+      id: "vhc_q14", number: "14 of 22", type: "single",
       question: "Which type of sweep is recommended for a vertical well showing signs of cuttings accumulation?",
       options: [
         { value: "weighted_sweep", label: "High density (weighted) sweep" },
@@ -6158,8 +6158,170 @@ const video_hole_cleaning = {
       ],
       answer: "viscous_sweep",
       explanation: "HIGH VISCOSITY sweeps are the correct choice for vertical wells showing signs of cuttings accumulation.\n\nWhy viscous sweeps work in vertical wells:\n• In a vertical well, cuttings are distributed throughout the fluid column — they are suspended in the drilling fluid, not settled into a bed on the low side.\n• A high viscosity slug (higher YP and gel strength than the base mud) increases the suspension capacity and carrying capacity of the fluid, lifting and transporting cuttings that have started to slip back downward.\n• The higher apparent viscosity also reduces the slip velocity (Vs) of the cuttings, increasing their net rise velocity.\n\nWhy weighted (high density) sweeps are NOT ideal for vertical wells:\n• A dense pill in a vertical well is heavier, not more viscous. The additional weight does not help suspend or carry cuttings — in fact, the denser fluid may cause cuttings to re-settle faster relative to the heavier base fluid once the sweep passes.\n• Weighted sweeps are designed for horizontal wells where their density causes them to drop to the low side and stir up the cuttings bed — a mechanism that simply doesn't apply in vertical geometry.\n\nSweep strategy summary:\n• Vertical wells → High viscosity sweeps\n• Horizontal / high-angle wells → High density (weighted) sweeps\n(Participant Guide, Hole Cleaning / Sweeps section)."
+    },
+    {
+      id: "vhc_q15", number: "15 of 22", type: "single",
+      question: "In a high angle wellbore, the annular velocity of the fluid is:",
+      options: [
+        { value: "slower_below", label: "Slower below the drill pipe" },
+        { value: "slower_above", label: "Slower above the drill pipe" },
+        { value: "same_vertical", label: "The same as in a vertical wellbore" },
+        { value: "none_above", label: "None of the above" }
+      ],
+      answer: "slower_below",
+      explanation: "In a high angle or horizontal wellbore, the drill string sags and rests on the LOW SIDE of the wellbore due to gravity. This creates two very different annular zones:\n\n• BELOW the drill pipe (low side): The gap between the drill pipe and the wellbore wall is extremely narrow — or even zero where the pipe makes contact. Fluid velocity here is very low or essentially zero. This is the 'dead zone' where cuttings settle and accumulate into a cuttings bed.\n\n• ABOVE the drill pipe (high side): The annular space is larger and open. The bulk of the fluid flows through this zone at higher velocity, bypassing the cuttings bed below.\n\nThis flow asymmetry is one of the primary reasons horizontal hole cleaning is so challenging:\n• The fluid 'short-circuits' over the cuttings bed on the high side rather than sweeping through the bed.\n• Cuttings on the low side experience very little fluid shear force to mobilize them.\n• This is why drill string rotation (RPM) is so critical — it physically disturbs the bed and creates turbulence in the low-side dead zone that the axial fluid flow cannot reach (Participant Guide, Hole Cleaning / High Angle Wells section)."
+    },
+    {
+      id: "vhc_q16", number: "16 of 21", type: "multiple",
+      question: "Which of the following practices help optimize hole cleaning efficiency? (Select all that apply)",
+      options: [
+        { value: "higher_pump", label: "Higher pump rate" },
+        { value: "higher_rpm", label: "Higher drill string rotation (RPM)" },
+        { value: "lower_rop", label: "Lower Rate of Penetration (ROP)" },
+        { value: "circulate_time", label: "Increasing circulating time to clean wellbore" },
+        { value: "backreaming", label: "Performing backreaming (considering potential filter cake damage)" },
+        { value: "sliding_time", label: "Increasing sliding time" },
+        { value: "fluid_sweeps", label: "Pumping fluid sweeps" },
+        { value: "decrease_av", label: "Decreasing annular velocity" },
+        { value: "high_rop_low_flow", label: "Higher ROP with low flow rate" }
+      ],
+      answer: ["higher_pump", "higher_rpm", "lower_rop", "circulate_time", "backreaming", "fluid_sweeps"],
+      explanation: "Six practices that optimize hole cleaning efficiency:\n\n✅ Higher pump rate: Increases annular velocity (AV), the primary driver of cuttings transport, especially in horizontal wells.\n\n✅ Higher drill string rotation (RPM): Creates turbulence and mechanical agitation that erodes cuttings beds in high-angle wells.\n\n✅ Lower ROP: Reduces the rate at which new cuttings are generated. Slower drilling gives the annulus time to transport existing cuttings before adding more. The cuttings concentration in the annulus stays manageable.\n\n✅ Increasing circulating time: Allows more time for cuttings already generated to be transported to surface. Especially important before connections and before tripping out.\n\n✅ Backreaming: Rotating and reciprocating the drill string while pulling out of hole disturbs cuttings beds and helps transport them upward. Caveat: may damage filter cake in reservoir sections.\n\n✅ Pumping fluid sweeps: Weighted or viscous pills (appropriate to the hole angle) mobilize accumulated cuttings beds.\n\n❌ Increasing sliding time: Sliding means drilling without rotation (motor drilling). No rotation = no turbulence = cuttings beds form rapidly in high-angle wells. More sliding = worse hole cleaning.\n\n❌ Decreasing annular velocity: Lower AV means less carrying capacity. Always detrimental to hole cleaning.\n\n❌ Higher ROP with low flow rate: The worst combination — generating cuttings faster than the system can transport them guarantees cuttings accumulation and potential stuck pipe (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q17", number: "17 of 21", type: "multiple",
+      question: "As cuttings beds develop in high angle wells: (Select all that apply)",
+      options: [
+        { value: "stuck_pipe_risk", label: "The risk of stuck pipe increases" },
+        { value: "pipe_rotation", label: "Increasing pipe rotation can help" },
+        { value: "bit_wear", label: "The bit will wear out faster" },
+        { value: "high_visc_sweep", label: "High viscosity sweeps should be pumped" },
+        { value: "higher_rop", label: "Increasing the ROP would help" }
+      ],
+      answer: ["stuck_pipe_risk", "pipe_rotation"],
+      explanation: "As cuttings beds develop in high angle wells:\n\n✅ The risk of stuck pipe increases: A growing cuttings bed progressively narrows the annular clearance. Eventually the drill string becomes embedded in the bed (differential sticking) or the bed avalanches around the drill string during a connection or trip, trapping it. This is the most common cause of stuck pipe in horizontal wells.\n\n✅ Increasing pipe rotation can help: As discussed, RPM creates turbulence and mechanical agitation that erodes the bed and re-suspends cuttings. It is one of the most effective tools to address a developing cuttings bed without requiring a pill or wiper trip.\n\n❌ The bit will wear out faster: Cuttings beds do not significantly accelerate bit wear. Bit wear is primarily related to formation abrasiveness and WOB/RPM parameters — not cuttings bed accumulation.\n\n❌ High viscosity sweeps should be pumped: In HIGH ANGLE wells, weighted (high density) sweeps are recommended — NOT high viscosity sweeps. Viscous pills bypass the cuttings bed on the high side without disturbing it. This is a common mistake.\n\n❌ Increasing the ROP would help: Higher ROP generates more cuttings per unit time, which is the opposite of what is needed. Reducing ROP to allow transport catch-up is the correct response to a developing cuttings bed (Participant Guide, Hole Cleaning / High Angle Wells section)."
+    },
+    {
+      id: "vhc_q18", number: "18 of 21", type: "single",
+      question: "Large bit cutters produce smaller cuttings, simplifying hole cleaning.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. The relationship between bit cutter size and cutting size is the OPPOSITE of what this statement claims.\n\n• Large bit cutters (PDC cutters with large blade count or larger cutter diameter): Produce LARGER cuttings per revolution. Each cutter removes a bigger chip of rock with each rotation, generating coarser, flatter cuttings.\n\n• Smaller bit cutters (more cutters, finer blades): Produce finer, smaller cuttings per revolution, similar to a finer grinding action.\n\nWhy larger cuttings are MORE challenging for hole cleaning:\n• Higher slip velocity: Larger, heavier cuttings settle faster through the fluid (higher Vs), requiring higher AV to transport them.\n• Shaker management: Oversized cuttings can overwhelm shale shaker screens.\n• Bed formation: Larger cuttings tend to pack more densely in high-angle cuttings beds.\n\nThe bit selection and cutting size must be considered as part of the overall hole cleaning design — the fluid system, flow rate, and sweep program need to be matched to the cuttings size the bit will produce (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q19", number: "19 of 21", type: "multiple",
+      question: "Before tripping out of a highly deviated well: (Select all that apply)",
+      options: [
+        { value: "circulate_bottoms_up", label: "Circulate bottoms up at least twice" },
+        { value: "turn_off_shakers", label: "Turn off the shale shakers" },
+        { value: "count_inventory", label: "Count your inventory" },
+        { value: "clean_wellbore", label: "Make certain the shakers indicate a clean wellbore" }
+      ],
+      answer: ["circulate_bottoms_up", "clean_wellbore"],
+      explanation: "Before tripping out of a highly deviated well, two critical hole cleaning verification steps must be completed:\n\n✅ Circulate bottoms up at least twice: One bottoms-up cycle ensures that all cuttings currently in the annulus have theoretically reached surface. However, in highly deviated wells, cuttings beds may not be mobilized in a single circulation — the recommendation of at least TWO full bottoms-up circulations accounts for the progressive mobilization and transport of settled cuttings beds that require multiple passes to clean up.\n\n✅ Make certain the shakers indicate a clean wellbore: The shale shakers are the real-time monitor for cuttings returns. A clean wellbore is confirmed when the volume and size of cuttings returning to the shakers drops to near-zero. Do NOT begin tripping until the shakers confirm clean returns — tripping through a cuttings-loaded annulus is a primary cause of swabbing and stuck pipe.\n\n❌ Turn off the shale shakers: This would eliminate the only real-time indicator of cuttings returns. Shakers must remain running during all hole cleaning operations before a trip.\n\n❌ Count your inventory: While inventory counts (pipe tally) are important for other operational reasons, they are not a hole cleaning verification step and do not confirm whether the wellbore is clean enough to trip safely (Participant Guide, Hole Cleaning / Pre-Trip Procedures section)."
+    },
+    {
+      id: "vhc_q20", number: "20 of 21", type: "single",
+      question: "Inadequate pump rate means that the mud's annular velocity is too low to transport the cuttings efficiently.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Annular velocity (AV) is directly proportional to pump rate (flow rate):\n\nAV = Q / (0.000971 × (D_h² − D_p²))\n\nWhere Q = flow rate (gal/min), D_h = hole diameter (in), D_p = drill pipe OD (in).\n\nWhen the pump rate is inadequate:\n• AV falls below the minimum threshold required to erode the cuttings bed (in horizontal wells) or keep cuttings suspended (in vertical wells).\n• The net rise velocity (AV − Vs) becomes insufficient to transport cuttings upward faster than they settle.\n• Cuttings accumulate in the annulus, forming beds in high-angle sections or settling back to bottom in vertical sections.\n\nMinimum AV guidelines vary by well geometry:\n• Vertical wells: Typically 100–150 ft/min minimum AV.\n• Horizontal wells: Typically 150–200+ ft/min, with some recommendations up to 250 ft/min for effective bed erosion.\n\nIf ECD constraints limit pump rate in a horizontal well, other compensating measures (higher RPM, weighted sweeps, reduced ROP) become even more critical (Participant Guide, Hole Cleaning section)."
+    },
+    {
+      id: "vhc_q21", number: "21 of 21", type: "single",
+      question: "Comparing the actual PWD annular pressure with the DFG annular pressure prediction can help the mud engineer to identify changes in the wellbore.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. Comparing Pressure While Drilling (PWD) measurements against the Drilling Fluid Gradient (DFG) model prediction is a powerful diagnostic tool for wellbore condition monitoring.\n\nThe DFG model predicts the expected annular pressure based on:\n• Fluid density and rheology.\n• Flow rate and wellbore geometry.\n• Calculated ECD at various depths.\n\nWhen the actual PWD reading DIVERGES from the DFG prediction, it signals a wellbore change:\n\n• PWD > DFG prediction (higher than expected pressure):\n  - Increasing cuttings loading in the annulus (poor hole cleaning).\n  - Cuttings bed avalanche or pack-off developing.\n  - Wellbore breathing or ballooning.\n\n• PWD < DFG prediction (lower than expected pressure):\n  - Losses to the formation (partial or full losses).\n  - Wellbore connection or fracture opening.\n\nThis comparison allows the mud engineer and drilling engineer to detect hole cleaning problems, losses, and instability events BEFORE they become critical — enabling proactive intervention such as adjusting pump rate, increasing RPM, or circulating sweeps. It is part of the integrated VIRTUAL HYDRAULICS™ monitoring approach used by Baroid (Participant Guide, Hole Cleaning / Monitoring section)."
     }
   ]
 };
 
 QUIZ_DATA.video_hole_cleaning = video_hole_cleaning;
+
+// ============================================================
+// VIDEO QUIZ: Pills and Displacement (Video Questions)
+// ============================================================
+const video_pills_displacement = {
+  title: "Video Quiz: Pills and Displacement",
+  description: "Practice questions from the Pills and Displacement video. Topics include recommended displacement practices, cleaning sweep pills, pill definitions, dry jobs, displacement objectives, and pre-displacement modeling.",
+  questions: [
+    {
+      id: "vpd_q1", number: "1 of 6", type: "multiple",
+      question: "Recommended practices for a successful displacement include: (Select all that apply)",
+      options: [
+        { value: "ready", label: "Everyone and everything is ready" },
+        { value: "never_stop", label: "Never stop pumping during the displacement" },
+        { value: "rotate_recip", label: "Rotate and reciprocate the string" },
+        { value: "av_150", label: "Maintain annular velocities over 150 ft/min" }
+      ],
+      answer: ["ready", "never_stop", "rotate_recip", "av_150"],
+      explanation: "All four practices are critical for a successful fluid displacement:\n\n✅ Everyone and everything is ready: Before pumping begins, all personnel must be briefed, all equipment (pumps, tanks, lines) must be lined up and tested, and all contingency plans must be in place. Stopping a displacement mid-way is one of the worst outcomes — it creates mixing zones and contamination of both fluids.\n\n✅ Never stop pumping during the displacement: Stopping pumps allows the contact zone between the two fluids to stagnate and intermix, creating a contaminated interface zone. Pressure differentials can also cause u-tubing, which reverses flow and further contaminates both fluids. Continuous pumping maintains a sharp displacement front.\n\n✅ Rotate and reciprocate the string: Drill string movement (rotation and axial reciprocation) breaks up gelled mud, reduces the thickness of the mud film on the wellbore wall, and ensures the displacing fluid contacts the entire circumference of the annulus — not just the high side in deviated wells.\n\n✅ Maintain annular velocities over 150 ft/min: AV > 150 ft/min helps create turbulent flow conditions in the annulus, which are significantly more efficient at displacing viscous mud and removing wall cake than laminar flow. Turbulent flow creates lateral mixing that erodes mud channels (Participant Guide, Displacement section)."
+    },
+    {
+      id: "vpd_q2", number: "2 of 6", type: "single",
+      question: "The success of a cleaning sweep pill can be indicated by monitoring the sweep when it returns across the shakers.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. The shale shakers provide a real-time visual and physical monitoring point for what is returning from the wellbore. When a cleaning sweep pill is pumped:\n\n• As the pill travels down the drill string and back up the annulus, it picks up accumulated cuttings, cavings, and mud solids.\n• When the sweep returns across the shakers, the volume and nature of the solids it carries tells you how effective the sweep was:\n  - Heavy returns of cuttings = the sweep was needed and was effective at mobilizing accumulated debris.\n  - Clean returns = the sweep returned relatively clean, suggesting the wellbore may already be in good condition, or the sweep did not effectively contact the cuttings beds.\n\n• Multiple consecutive sweeps may be pumped until the shakers show consistently clean returns, confirming a clean wellbore.\n\nThis monitoring method is simple, immediate, and does not require downhole instrumentation — the shakers function as the primary filter and observation point for all material returning from the wellbore (Participant Guide, Pills section / Displacement Monitoring)."
+    },
+    {
+      id: "vpd_q3", number: "3 of 6", type: "single",
+      question: "A 'pill' is a relatively small volume of fluid used for a specific purpose during drilling operations.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "true",
+      explanation: "TRUE. In drilling operations, a 'pill' is defined as a discrete, relatively small volume of specially formulated fluid that is pumped into the wellbore to accomplish a specific task. Pills are distinct from the base drilling fluid circulating system.\n\nCommon types of pills and their purposes:\n\n• Viscous (high viscosity) sweeps: Carry accumulated cuttings to surface in vertical wells.\n• Weighted (high density) sweeps: Disturb cuttings beds in horizontal/high-angle wells.\n• Lost circulation material (LCM) pills: Seal fractures or vugs causing fluid losses.\n• Spotting/lubricating pills (\"dry jobs\"): Free differentially stuck pipe by reducing the pressure differential across the stuck point.\n• Acid pills: Dissolve carbonate scale or damage near the wellbore.\n• Cement plugs: Isolate specific zones.\n• Spacer pills: Separate two incompatible fluids during a displacement to prevent chemical contamination of either fluid.\n\nThe key characteristics of a pill are:\n1. Small, defined volume (not the full system volume).\n2. Specific formulation different from the base mud.\n3. Targeted application for a specific wellbore problem (Participant Guide, Pills and Displacement section)."
+    },
+    {
+      id: "vpd_q4", number: "4 of 6", type: "single",
+      question: "A 'dry job' is used to control _____________.",
+      options: [
+        { value: "lost_circ", label: "Lost circulation" },
+        { value: "stuck_pipe", label: "Stuck pipe" },
+        { value: "pipe_conn", label: "Pipe on connections" },
+        { value: "poor_hole", label: "Poor hole cleaning" }
+      ],
+      answer: "stuck_pipe",
+      explanation: "A 'dry job' (also known as a spotting pill job) is specifically used to free DIFFERENTIALLY STUCK PIPE.\n\nDifferential sticking occurs when:\n• The drill string becomes embedded in the mud filter cake on the wellbore wall opposite a permeable formation.\n• The high differential pressure between the wellbore fluid column and the pore pressure pushes the drill string against the cake, creating a suction/pressure force that holds it in place.\n• The stuck section has no annular flow — hence 'dry' — it is isolated from circulation.\n\nHow a 'dry job' works:\n• A spotting fluid (typically a highly lubricated oil-based pill, or a specialized product like Baroid's SPOTASEAL) is pumped and 'spotted' (positioned) across the stuck point.\n• The pill soaks into the filter cake, reducing the differential pressure sticking force by:\n  1. Lowering the coefficient of friction between the drill string and filter cake.\n  2. Reducing the contact area between the pipe and the cake.\n  3. Potentially breaking down the cake structure.\n• After soaking time (typically 1–4+ hours), attempts are made to free the pipe with controlled pulling force and rotation.\n\nWhy not the other options:\n• Lost circulation: Controlled with LCM pills, cement plugs, or loss control materials — not a dry job.\n• Pipe on connections: Managed through string weight and slips, not pills.\n• Poor hole cleaning: Addressed with viscous or weighted sweeps (Participant Guide, Pills section / Stuck Pipe)."
+    },
+    {
+      id: "vpd_q5", number: "5 of 6", type: "multiple",
+      question: "The two primary objectives of a displacement are:",
+      options: [
+        { value: "reduce_npt", label: "To reduce NPT" },
+        { value: "replace_fluid", label: "To replace one fluid in the wellbore with another" },
+        { value: "clean_wellbore", label: "To clean out the wellbore" },
+        { value: "maintain_props", label: "To maintain the properties of both fluids" }
+      ],
+      answer: ["replace_fluid", "maintain_props"],
+      explanation: "The two primary objectives of a well fluid displacement are:\n\n✅ To replace one fluid in the wellbore with another: This is the fundamental purpose of any displacement operation. Examples include:\n• Displacing drilling mud with completion brine before running completion equipment.\n• Displacing water-based mud with oil-based mud (or vice versa) when changing fluid systems.\n• Displacing brine with cement during casing cementing.\n• Displacing kill fluid with production fluid during well startup.\n\n✅ To maintain the properties of both fluids: A poorly executed displacement allows the two fluids to mix, contaminating both:\n• The old fluid may contaminate the new fluid, altering its density, pH, or chemical properties.\n• The new fluid may react with the old fluid chemically (e.g., calcium brine reacting with bicarbonate-containing mud to form scale).\n• A well-designed displacement with properly designed spacers keeps the two fluid systems separated, maintaining the integrity of both.\n\nWhy not the others:\n• Reducing NPT: A consequence of good planning, but not an objective of the displacement itself.\n• Cleaning out the wellbore: May occur as a secondary benefit of some displacements, but the primary objectives are fluid replacement and property maintenance (Participant Guide, Displacement section)."
+    },
+    {
+      id: "vpd_q6", number: "6 of 6", type: "single",
+      question: "One of the most important things to insure a successful displacement is to model the displacement in CFG software after the displacement begins.",
+      options: [
+        { value: "true", label: "True" },
+        { value: "false", label: "False" }
+      ],
+      answer: "false",
+      explanation: "FALSE. The CFG (Computational Fluid Geometry / displacement modeling) software must be used BEFORE the displacement begins — not after.\n\nWhy pre-displacement modeling is critical:\n\n• Optimize spacer design: The model predicts whether the chosen spacer volume, density, and rheology will create a clean interface between the two fluids or allow channeling and mixing.\n• Predict flow regime: Determines whether the displacement will be turbulent (preferred for efficiency) or laminar at the planned pump rates. If laminar flow is unavoidable, the model helps design the fluid hierarchy (density steps, viscosity ratios) to promote stable displacement.\n• Identify risk zones: Flags sections of the wellbore where the planned annular velocities fall below minimum thresholds, indicating where channeling or incomplete displacement may occur.\n• Verify pump schedule: Confirms the sequence of spacer pills, pump rates, and volumes needed to achieve a clean displacement.\n\nModeling AFTER the displacement has begun means:\n• The optimization opportunity has already been missed.\n• Any problems identified cannot be corrected without stopping or altering the displacement mid-way — which violates the recommendation to never stop pumping.\n• The damage (fluid contamination, mixed zones) may already be done.\n\nProper workflow: Model → Optimize → Execute → Monitor (Participant Guide, Displacement section / CFG Modeling)."
+    }
+  ]
+};
+
+QUIZ_DATA.video_pills_displacement = video_pills_displacement;

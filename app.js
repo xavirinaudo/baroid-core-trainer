@@ -40,6 +40,7 @@ let stats = {
   vcf_highScore: null,
   vfd_highScore: null,
   vhc_highScore: null,
+  vpd_highScore: null,
   theme: 'dark'
 };
 
@@ -239,6 +240,13 @@ function switchTab(tabId) {
     document.getElementById('page-subtitle').innerText = "Practice questions from the Hole Cleaning video: primary vs secondary methods, indicators, fluid properties, sweeps, annular velocity, and slip velocity.";
     const isFinishedVhc = document.getElementById('quiz-results-container').style.display === 'block';
     if (currentQuizId !== 'video_hole_cleaning' || isFinishedVhc) startQuiz('video_hole_cleaning');
+  } else if (tabId === 'vpd') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-vpd').classList.add('active');
+    document.getElementById('page-title').innerText = "Video Quiz: Pills and Displacement";
+    document.getElementById('page-subtitle').innerText = "Practice questions from the Pills and Displacement video: recommended practices, sweep pills, pill types, dry jobs, objectives, and CFG modeling.";
+    const isFinishedVpd = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'video_pills_displacement' || isFinishedVpd) startQuiz('video_pills_displacement');
   } else if (tabId === 'contaminants') {
     document.getElementById('view-contaminants').style.display = 'block';
     document.getElementById('nav-contaminants').classList.add('active');
@@ -314,6 +322,8 @@ function updateDashboardStats() {
   if (scoreVfdEl) scoreVfdEl.innerText = stats.vfd_highScore !== null ? `Record: ${stats.vfd_highScore}%` : "Record: --";
   const scoreVhcEl = document.getElementById('score-vhc');
   if (scoreVhcEl) scoreVhcEl.innerText = stats.vhc_highScore !== null ? `Record: ${stats.vhc_highScore}%` : "Record: --";
+  const scoreVpdEl = document.getElementById('score-vpd');
+  if (scoreVpdEl) scoreVpdEl.innerText = stats.vpd_highScore !== null ? `Record: ${stats.vpd_highScore}%` : "Record: --";
 
   // Calculate Accuracy
   const accuracy = stats.totalAnswered > 0 ? Math.round((stats.correctCount / stats.totalAnswered) * 100) : 0;
@@ -399,6 +409,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'video_hole_cleaning') {
     navId = 'nav-vhc';
     badgeName = "Video: Hole Cleaning";
+  } else if (quizId === 'video_pills_displacement') {
+    navId = 'nav-vpd';
+    badgeName = "Video: Pills & Displacement";
   }
   
   const navEl = document.getElementById(navId);
@@ -794,6 +807,8 @@ function showQuizResults() {
     if (stats.vfd_highScore === null || scorePercent > stats.vfd_highScore) stats.vfd_highScore = scorePercent;
   } else if (currentQuizId === 'video_hole_cleaning') {
     if (stats.vhc_highScore === null || scorePercent > stats.vhc_highScore) stats.vhc_highScore = scorePercent;
+  } else if (currentQuizId === 'video_pills_displacement') {
+    if (stats.vpd_highScore === null || scorePercent > stats.vpd_highScore) stats.vpd_highScore = scorePercent;
   }
   saveStats();
 }
