@@ -5607,7 +5607,7 @@ const homework_22 = {
         { value: "false", label: "False" }
       ],
       answer: "true",
-      explanation: "True. Al mismo caudal, una tubería de perforación totalmente concéntrica presenta una mayor caída de presión que una tubería excéntrica en la misma sección del pozo, debido a que en la configuración concéntrica el espacio anular es menor en comparación con la zona de mayor espacio de la tubería excéntrica, resultando en una mayor velocidad del fluido y mayor fricción."
+      explanation: "True. At the same flow rate, a fully concentric drillpipe exhibits a higher frictional pressure drop than an eccentric drillpipe in the same hole section. In an eccentric annulus, fluid preferentially flows through the wider annular clearance (the path of least resistance), resulting in a lower overall frictional pressure loss compared to a concentric configuration where the flow area is uniform and experiences higher average shear rates and velocity."
     },
     {
       id: "hw22_q18", number: "17 of 19", type: "single",
