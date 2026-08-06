@@ -5452,8 +5452,8 @@ const homework_22 = {
         { value: "clay_mineralogy", label: "Clay mineralogy" },
         { value: "slow_deposition", label: "Slow deposition" }
       ],
-      answer: ["tectonic_movement", "rapid_deposition", "clay_diagenesis"],
-      explanation: "Abnormal pore pressure can be caused by: rapid burial/deposition (undercompaction), tectonic stresses (compression), and clay diagenesis (montmorillonite to illite conversion releasing bound water). Reservoir structure, clay mineralogy, and slow deposition are not primary causes of abnormal pressure (Participant Guide, Pore Pressure section)."
+      answer: ["tectonic_movement", "rapid_deposition", "clay_diagenesis", "reservoir_structure"],
+      explanation: "Abnormal pore pressure can be caused by: tectonic movement, rapid deposition, clay diagenesis, and reservoir structure (Participant Guide, Pore Pressure section)."
     },
     {
       id: "hw22_q4", number: "4 of 20", type: "single",
@@ -5503,7 +5503,7 @@ const homework_22 = {
         { value: "crooked_hole_dogleg", label: "Crooked hole with short dog-legs" }
       ],
       answer: "crooked_hole_dogleg",
-      explanation: "Key seats are formed by the drill string cutting a groove into the borehole wall at doglegs. This occurs in crooked holes with short, severe dog-legs where the drill pipe contacts and mechanically erodes the rock as it rotates (Participant Guide, Wellbore Instability section)."
+      explanation: "Mecanismo de Formación:\n¿Cómo ocurre? Se presenta con frecuencia en pozos desviados, torcidos o con cambios bruscos de ángulo (severidad de pata de perro o dogleg severity). La rotación normal y la tensión de la sarta de perforación hacen que la tubería ejerza una fuerte presión lateral y fricción contra la pared de la formación, especialmente si esta es relativamente blanda.\n\nEl canal: Con el paso del tiempo y a lo largo de varias carreras de perforación (bit runs), la sarta cava físicamente un canal o ranura estrecha que tiene un diámetro muy similar al de la tubería de perforación (drillpipe) o de las conexiones (tool joints).\n\nEl atascamiento: Al momento de sacar la tubería del pozo (maniobra de salida o tripping out), la tubería de perforación y las juntas de conexión delgadas pasan sin problema a través de este canal angosto. Sin embargo, cuando los componentes de mayor diámetro de la sarta —como los portamechas (drill collars) o la barrena— llegan a esa sección, se acuñan y quedan mecánicamente atrapados al no poder pasar por la ranura."
     },
     {
       id: "hw22_q8", number: "8 of 20", type: "single",
