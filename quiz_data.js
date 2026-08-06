@@ -5219,7 +5219,7 @@ const homework_21 = {
     },
     {
       id: "hw21_q10", number: "10 of 27", type: "single",
-      question: "For angles between 400 - 600, a turbulent or transition flow and a low rheology fluid is the most effective combination for minimwing the formation of cuttings beds, removing cuttings beds, and cleaning high angle wells",
+      question: "For angles between 40º - 60º, a turbulent or transition flow and a low rheology fluid is the most effective combination for minimizing the formation of cuttings beds, removing cuttings beds, and cleaning high angle wells",
       options: [
         { value: "true", label: "True" },
         { value: "false", label: "False" }
@@ -5229,7 +5229,7 @@ const homework_21 = {
     },
     {
       id: "hw21_q11", number: "11 of 27", type: "single",
-      question: "Cuttings and cuttings beds Will be removed more effectively under laminar flow",
+      question: "Cuttings and cuttings beds will be removed more effectively under laminar flow",
       options: [
         { value: "true", label: "True" },
         { value: "false", label: "False" }
@@ -5239,7 +5239,7 @@ const homework_21 = {
     },
     {
       id: "hw21_q12", number: "12 of 27", type: "single",
-      question: "It has been demonstrated that in angles between 600 - 900, high viscosity Pills do not increase the hole cleaning efficiency, and can actually reduce the flow rates below the drill pipe, where bed cuttmgs accumulate",
+      question: "It has been demonstrated that in angles between 60º - 90º, high viscosity pills do not increase the hole cleaning efficiency, and can actually reduce the flow rates below the drill pipe, where bed cuttings accumulate",
       options: [
         { value: "true", label: "True" },
         { value: "false", label: "False" }
@@ -5304,7 +5304,7 @@ const homework_21 = {
     },
     {
       id: "hw21_q18", number: "18 of 27", type: "single",
-      question: "An increase in the rate of penetration Will result in a greater concentration of cuttings in the annulus, which Will improve the hole cleaning emciency",
+      question: "An increase in the rate of penetration will result in a greater concentration of cuttings in the annulus, which will improve the hole cleaning efficiency",
       options: [
         { value: "true", label: "True" },
         { value: "false", label: "False" }
