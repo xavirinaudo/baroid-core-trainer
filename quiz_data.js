@@ -5526,8 +5526,8 @@ const homework_22 = {
         { value: "water_sensitive_shale", label: "Water sensitive shale" },
         { value: "under_gauge_bit", label: "Under-gauge bit" }
       ],
-      answer: "water_sensitive_shale",
-      explanation: "Water-sensitive shales absorb water from water-based drilling fluids, causing them to swell into the wellbore. This reduces the borehole diameter below gauge, creating a tight hole / under-gauge condition (Participant Guide, Wellbore Instability section)."
+      answer: "under_gauge_bit",
+      explanation: "An under-gauge bit drills a borehole with a diameter smaller than nominal gauge, leading directly to an under-gauge hole section."
     },
     {
       id: "hw22_q10", number: "10 of 20", type: "single",
@@ -5600,30 +5600,17 @@ const homework_22 = {
       explanation: "In high-angle wellbores, weighted (high-density) sweeps are recommended to clean cuttings beds. The Participant Guide (page 302) states: 'Use high-density sweeps to clean high-angled sections, high-viscosity sweeps for vertical sections.' The return of cuttings when a weighted sweep surfaces indicates effectiveness."
     },
     {
-      id: "hw22_q16", number: "16 of 20", type: "single",
-      question: "In general, how much over current mud weight should a weighted sweep weight?",
-      options: [
-        { value: "1_0_ppg_over", label: "1.0 ppg over" },
-        { value: "1_5_ppg_over", label: "1.5 ppg over" },
-        { value: "2_0_ppg_over", label: "2.0 ppg over" },
-        { value: "2_5_ppg_over", label: "2.5 ppg over" },
-        { value: "none_above", label: "None of the above" }
-      ],
-      answer: "2_0_ppg_over",
-      explanation: "As indicated in homework_21_ocr.txt: 'It is recommended to pump only 2ppg over high density sweeps in deviated wells to avoid exceeding the fracture gradient.' The standard practice for weighted sweeps is 2.0 ppg over the current mud weight to maximize lifting force while respecting the ECD/fracture gradient limits."
-    },
-    {
-      id: "hw22_q17", number: "17 of 20", type: "single",
-      question: "At the same flow rate, a fully concentric drill pipe has a higher pressure drop than does an eccentric pipe in the samehole section",
+      id: "hw22_q17", number: "16 of 19", type: "single",
+      question: "At the same flow rate, a fully concentric drill pipe has a higher pressure drop than does an eccentric pipe in the same hole section",
       options: [
         { value: "true", label: "True" },
         { value: "false", label: "False" }
       ],
-      answer: "false",
-      explanation: "A fully concentric drill pipe has a lower pressure drop than an eccentric pipe. When the pipe is eccentric (resting on the low side), the fluid must squeeze through the narrow gap on one side, increasing friction and pressure drop compared to a concentric configuration (Participant Guide, Hydraulics section)."
+      answer: "true",
+      explanation: "True. Al mismo caudal, una tubería de perforación totalmente concéntrica presenta una mayor caída de presión que una tubería excéntrica en la misma sección del pozo, debido a que en la configuración concéntrica el espacio anular es menor en comparación con la zona de mayor espacio de la tubería excéntrica, resultando en una mayor velocidad del fluido y mayor fricción."
     },
     {
-      id: "hw22_q18", number: "18 of 20", type: "single",
+      id: "hw22_q18", number: "17 of 19", type: "single",
       question: "The frictional pressure which causes the wellbore pressure to be lower when the BHA and drill string are withdrawnfrom the hole is called",
       options: [
         { value: "swab", label: "Swab" },
@@ -5635,7 +5622,7 @@ const homework_22 = {
       explanation: "Swab is the frictional pressure that causes the wellbore pressure to be lower when the BHA and drill string are withdrawn (pulled out) from the hole. This pressure reduction can cause an underbalanced condition and kick. Surge is the opposite effect when running pipe into the hole (Handbook, page 15 – Swab definition)."
     },
     {
-      id: "hw22_q19", number: "19 of 20", type: "single",
+      id: "hw22_q19", number: "18 of 19", type: "single",
       question: "Surpassing the formation fracture pressure can lead to wellbore instability and loss circulation events",
       options: [
         { value: "true", label: "True" },
@@ -5645,7 +5632,7 @@ const homework_22 = {
       explanation: "When the bottomhole pressure (BHP or ECD) exceeds the formation fracture gradient, the formation fractures, creating pathways for the drilling fluid to escape into the formation. This results in lost circulation and can induce borehole breakout or wellbore instability (Participant Guide, Pore Pressure & Fracture Gradient section)."
     },
     {
-      id: "hw22_q20", number: "20 of 20", type: "single",
+      id: "hw22_q20", number: "19 of 19", type: "single",
       question: "The chemistry of the drilling fluid is important, because it can cause wellbore instability",
       options: [
         { value: "true", label: "True" },
