@@ -5257,8 +5257,8 @@ const homework_21 = {
         { value: "maximize_transport", label: "Maximize transportation of cuttings" },
         { value: "high_ecd", label: "High ECD" }
       ],
-      answer: ["exceed_capacity", "hole_washout", "high_ecd"],
-      explanation: "Flow rate must be controlled to prevent exceeding rig pump capacities, generating hole washouts due to mechanical erosion of the wellbore, and causing excessively high equivalent circulating density (ECD) which could exceed the formation fracture gradient."
+      answer: ["exceed_capacity", "stuck_pipe", "hole_washout", "high_ecd"],
+      explanation: "Flow rate must be controlled to prevent exceeding rig pump capacities, leading to stuck pipe, generating hole washouts due to mechanical erosion of the wellbore, and causing excessively high equivalent circulating density (ECD) which could exceed the formation fracture gradient."
     },
     {
       id: "hw21_q14", number: "14 of 27", type: "single",
