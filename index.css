@@ -284,6 +284,67 @@ body[data-theme="light"] .orb {
   height: 20px;
 }
 
+/* Navigation Categories (Accordions) */
+.nav-category {
+  margin-bottom: 4px;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  list-style: none; /* Hide default arrow */
+  user-select: none;
+  transition: color var(--transition-speed);
+}
+
+.category-title::-webkit-details-marker {
+  display: none; /* Hide default arrow in Safari */
+}
+
+.category-title:hover {
+  color: var(--text-secondary);
+}
+
+.category-title .cat-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform var(--transition-speed) ease;
+}
+
+/* Rotate icon when details is open */
+.nav-category[open] .category-title .cat-icon {
+  transform: rotate(180deg);
+}
+
+.category-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 12px;
+  margin-top: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.category-content .nav-link {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+.badge-error-count {
+  transition: all 0.3s ease;
+}
+
 .footer-nav {
   margin-top: auto;
   padding-top: 16px;
@@ -904,3 +965,241 @@ select.input-field option {
     height: 46px;
   }
 }
+
+/* ==========================================
+   USABILITY & FLUID NAVIGATION UPGRADES
+   ========================================== */
+
+/* Quiz Progress Ribbon (Grid) */
+.quiz-progress-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 4px 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.progress-chip {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+  border: 1px solid var(--border-glow);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.progress-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--h-red);
+  transform: translateY(-1px);
+}
+
+.progress-chip.current {
+  border-color: var(--h-red);
+  color: #ffffff;
+  background: rgba(204, 0, 0, 0.15);
+  box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
+  transform: scale(1.08);
+}
+
+.progress-chip.correct {
+  border-color: var(--success);
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.progress-chip.incorrect {
+  border-color: var(--error);
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--error);
+}
+
+.progress-chip.skipped {
+  border-color: var(--warning);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+/* Keyboard Shortcut Hints in Option Cards */
+.option-card {
+  position: relative;
+}
+
+.shortcut-badge {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: monospace;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.option-card:hover .shortcut-badge {
+  opacity: 1;
+  border-color: var(--h-red);
+  color: var(--h-red);
+  background: rgba(204, 0, 0, 0.05);
+}
+
+/* Command Palette Overlay & Modal */
+.cmd-palette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+.cmd-palette-modal {
+  width: 90%;
+  max-width: 580px;
+  border-radius: 14px;
+  border: 1px solid var(--border-glow);
+  background: rgba(21, 28, 44, 0.85);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Light Mode overrides */
+body[data-theme="light"] .cmd-palette-modal {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cmd-palette-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-glow);
+  gap: 12px;
+}
+
+#cmd-palette-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.cmd-palette-esc-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.cmd-palette-results {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+
+.cmd-item.selected, .cmd-item:hover {
+  background: rgba(204, 0, 0, 0.1);
+  color: #ffffff;
+  border-left: 3px solid var(--h-red);
+  padding-left: 11px;
+}
+
+body[data-theme="light"] .cmd-item.selected, body[data-theme="light"] .cmd-item:hover {
+  background: rgba(204, 0, 0, 0.05);
+  color: var(--h-red);
+}
+
+.cmd-item-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--h-red);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-left: auto;
+  background: rgba(204, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cmd-palette-footer {
+  padding: 10px 20px;
+  border-top: 1px solid var(--border-glow);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body[data-theme="light"] .cmd-palette-footer {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.cmd-palette-footer kbd {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-size: 9px;
+  font-family: monospace;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px) scale(0.97); }
+  to { transform: translateY(0) scale(1); }
+}
+

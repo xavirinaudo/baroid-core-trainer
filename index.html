@@ -40,98 +40,96 @@
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"/></svg>
           Dashboard
         </a>
-        <a class="nav-link" id="nav-hw8" onclick="switchTab('hw8')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          Homework 8 (Theory)
-        </a>
-        <a class="nav-link" id="nav-hw9" onclick="switchTab('hw9')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-          Homework 9 (Theory)
-        </a>
-        <a class="nav-link" id="nav-bp" onclick="switchTab('bp')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          Business Processes
-        </a>
-        <a class="nav-link" id="nav-hw11" onclick="switchTab('hw11')">
+        
+        <!-- Active Error Log -->
+        <a class="nav-link" id="nav-errors" onclick="switchTab('errors')" style="border-left: 4px solid var(--h-red, #cc0000); margin-bottom: 8px;">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-          Homework 11 (Theory)
+          Active Error Log
+          <span class="badge-error-count" id="nav-error-count" style="display: none; background: var(--h-red, #cc0000); color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; margin-left: auto;">0</span>
         </a>
-        <a class="nav-link" id="nav-hw12" onclick="switchTab('hw12')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Homework 12 (Hydraulics)
-        </a>
-        <a class="nav-link" id="nav-hw13" onclick="switchTab('hw13')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-          Homework 13 (NAF)
-        </a>
-        <a class="nav-link" id="nav-hw14" onclick="switchTab('hw14')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Homework 14 (Salinity)
-        </a>
-        <a class="nav-link" id="nav-hw15" onclick="switchTab('hw15')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"/></svg>
-          Homework 15 (Formulation)
-        </a>
-        <a class="nav-link" id="nav-hw16" onclick="switchTab('hw16')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-          Homework 16 (OWR/Salinity)
-        </a>
-        <a class="nav-link" id="nav-hw17" onclick="switchTab('hw17')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          Homework 17 (NAF Contam)
-        </a>
-        <a class="nav-link" id="nav-hw18" onclick="switchTab('hw18')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          Homework 18 (Formation Damage)
-        </a>
-        <a class="nav-link" id="nav-hw19" onclick="switchTab('hw19')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M10 3v18M14 3v18"/></svg>
-          Homework 19 (Displacements)
-        </a>
-        <a class="nav-link" id="nav-hw20" onclick="switchTab('hw20')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          Homework 20 (Breakers/Packers)
-        </a>
-        <a class="nav-link" id="nav-hw21" onclick="switchTab('hw21')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-          Homework 21 (Hole Cleaning)
-        </a>
-        <a class="nav-link" id="nav-hw22" onclick="switchTab('hw22')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Homework 22 (Pore Pressures)
-        </a>
-        <a class="nav-link" id="nav-vcf" onclick="switchTab('vcf')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Video: Completion Fluids
-        </a>
-        <a class="nav-link" id="nav-vfd" onclick="switchTab('vfd')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          Video: Formation Damage
-        </a>
-        <a class="nav-link" id="nav-vhc" onclick="switchTab('vhc')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          Video: Hole Cleaning
-        </a>
-        <a class="nav-link" id="nav-vpd" onclick="switchTab('vpd')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          Video: Pills & Displacement
-        </a>
-        <a class="nav-link" id="nav-contaminants" onclick="switchTab('contaminants')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          Contaminants WBM
-        </a>
-        <a class="nav-link" id="nav-contaminants-naf" onclick="switchTab('contaminants-naf')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          Contaminants NAF
-        </a>
-        <a class="nav-link" id="nav-trainers" onclick="switchTab('trainers')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Practice Math Simulators
-        </a>
-        <a class="nav-link" id="nav-cheatsheet" onclick="switchTab('cheatsheet')">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          Cheat Sheet / Formulas
-        </a>
+
+        <!-- Category: Water-Based Fluids -->
+        <details class="nav-category" id="cat-wbf" open>
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Water-Based Fluids
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-hw8" onclick="switchTab('hw8')">Homework 8 (Theory)</a>
+            <a class="nav-link" id="nav-hw9" onclick="switchTab('hw9')">Homework 9 (Theory)</a>
+            <a class="nav-link" id="nav-hw11" onclick="switchTab('hw11')">Homework 11 (Theory)</a>
+            <a class="nav-link" id="nav-contaminants" onclick="switchTab('contaminants')">Contaminants WBM</a>
+          </div>
+        </details>
+
+        <!-- Category: Non-Aqueous Fluids -->
+        <details class="nav-category" id="cat-naf">
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Non-Aqueous Fluids
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-hw13" onclick="switchTab('hw13')">Homework 13 (NAF)</a>
+            <a class="nav-link" id="nav-hw14" onclick="switchTab('hw14')">Homework 14 (Salinity)</a>
+            <a class="nav-link" id="nav-hw15" onclick="switchTab('hw15')">Homework 15 (Formulation)</a>
+            <a class="nav-link" id="nav-hw16" onclick="switchTab('hw16')">Homework 16 (OWR/Salinity)</a>
+            <a class="nav-link" id="nav-hw17" onclick="switchTab('hw17')">Homework 17 (NAF Contam)</a>
+            <a class="nav-link" id="nav-contaminants-naf" onclick="switchTab('contaminants-naf')">Contaminants NAF</a>
+          </div>
+        </details>
+
+        <!-- Category: Engineering & Hydraulics -->
+        <details class="nav-category" id="cat-hydraulics">
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Engineering & Hydraulics
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-hw12" onclick="switchTab('hw12')">Homework 12 (Hydraulics)</a>
+            <a class="nav-link" id="nav-hw21" onclick="switchTab('hw21')">Homework 21 (Hole Cleaning)</a>
+            <a class="nav-link" id="nav-hw22" onclick="switchTab('hw22')">Homework 22 (Pore Pressures)</a>
+          </div>
+        </details>
+
+        <!-- Category: Reservoir & Completion -->
+        <details class="nav-category" id="cat-completion">
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Reservoir & Completion
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-hw18" onclick="switchTab('hw18')">Homework 18 (Reservoirs)</a>
+            <a class="nav-link" id="nav-hw19" onclick="switchTab('hw19')">Homework 19 (Displacements)</a>
+            <a class="nav-link" id="nav-hw20" onclick="switchTab('hw20')">Homework 20 (Breakers/Packers)</a>
+          </div>
+        </details>
+
+        <!-- Category: Video Quizzes -->
+        <details class="nav-category" id="cat-videos">
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Video Quizzes
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-vcf" onclick="switchTab('vcf')">Completion Fluids</a>
+            <a class="nav-link" id="nav-vfd" onclick="switchTab('vfd')">Formation Damage</a>
+            <a class="nav-link" id="nav-vhc" onclick="switchTab('vhc')">Hole Cleaning</a>
+            <a class="nav-link" id="nav-vpd" onclick="switchTab('vpd')">Pills & Displacement</a>
+          </div>
+        </details>
+
+        <!-- Category: Tools & References -->
+        <details class="nav-category" id="cat-tools" open>
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Tools & References
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-bp" onclick="switchTab('bp')">Business Processes</a>
+            <a class="nav-link" id="nav-trainers" onclick="switchTab('trainers')">Math Simulators</a>
+            <a class="nav-link" id="nav-cheatsheet" onclick="switchTab('cheatsheet')">Cheat Sheet & Glossary</a>
+          </div>
+        </details>
       </nav>
       
       <div class="footer-nav">
@@ -343,8 +341,17 @@
         <div id="quiz-container">
           <div class="quiz-header">
             <span class="question-counter" id="quiz-question-counter">Question 1 of 10</span>
-            <span class="quiz-badge" id="quiz-badge-id">Homework 9</span>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <label class="speedrun-toggle" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text-secondary); user-select: none;">
+                <input type="checkbox" id="speedrun-mode-checkbox" style="cursor: pointer; width: 14px; height: 14px; accent-color: var(--primary);">
+                ⚡ Speedrun Mode
+              </label>
+              <span class="quiz-badge" id="quiz-badge-id">Homework 9</span>
+            </div>
           </div>
+          
+          <!-- Interactive progress ribbon -->
+          <div class="quiz-progress-grid" id="quiz-progress-grid"></div>
           
           <div class="question-text" id="quiz-question-text">
             Loading question...
@@ -853,76 +860,18 @@
         </div>
 
         <div style="margin-bottom: 24px;">
-          <h4 style="font-family:var(--font-title); margin-bottom:12px; color:var(--primary);">Homework 9 Products</h4>
+          <h4 style="font-family:var(--font-title); margin-bottom:12px; color:var(--primary);">Baroid Product Glossary (WBF & NAF)</h4>
           <table class="sheet-table" id="table-products">
             <thead>
               <tr>
-                <th>Product</th>
-                <th>Primary Function</th>
-                <th>Technical Notes / Type</th>
+                <th style="width: 180px;">Product</th>
+                <th style="width: 150px;">Category</th>
+                <th style="width: 180px;">Primary Function</th>
+                <th>Technical Notes (Baroid Participant Guide)</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td><span class="badge-product">BAROID</span></td>
-                <td>Weighting agent (Barite)</td>
-                <td>High quality barite (SG 4.2). Used to increase mud weight in water-based or oil-based muds.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">BARACARB</span></td>
-                <td>Weighting & Bridging agent</td>
-                <td>Ground calcium carbonate (SG 2.7). Adds density and acts as a bridging agent. Acid soluble.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">BARAWEIGHT</span></td>
-                <td>Heavy weighting agent (Hematite)</td>
-                <td>High specific gravity hematite (SG 5.0). Used for extremely high-density mud systems.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">BARAVIS</span></td>
-                <td>Mineral viscosifier</td>
-                <td>Premium sodium bentonite clay. Provides viscosity in fresh water and primary filtration control.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">BARAZAN D PLUS</span></td>
-                <td>Polymer viscosifier</td>
-                <td>Dispersible modified xanthan gum. Provides excellent viscosity and high yield point at low shear rates.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">PAC-R / PAC-L</span></td>
-                <td>Filtration control / Viscosifier</td>
-                <td>Polyanionic cellulose. PAC-R increases viscosity and lowers filtrate. PAC-L reduces filtration with minimal viscosity effect.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">DEXTRID</span></td>
-                <td>Filtration control (Starch)</td>
-                <td>Bacterially stable modified starch. Seals cake pores to control fluid loss in sensitive formations.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">CARBONOX</span></td>
-                <td>Thinner / Filtration control</td>
-                <td>Alkali-treated lignite. Thins mud and controls filtration in WBF at high temperatures.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">IMPERMUD</span></td>
-                <td>Filtration control</td>
-                <td>High performance organic dispersant and fluid loss control polymer.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">EZ-FILTER</span></td>
-                <td>Filtration control</td>
-                <td>Highly thermal-stable synthetic polymer for high temperature water loss control.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">QUIK-THIN</span></td>
-                <td>Thinner / Deflocculant</td>
-                <td>Modified ferrochrome lignosulfonate. Disperses clays, reducing yield points and gel strengths. Requires alkaline pH.</td>
-              </tr>
-              <tr>
-                <td><span class="badge-product">THERMA-THIN</span></td>
-                <td>HT Thinner</td>
-                <td>Thermal-stable synthetic copolymer thinner designed to deflocculate WBF in extreme environments.</td>
-              </tr>
+            <tbody id="table-products-body">
+              <!-- Rendered dynamically by JS -->
             </tbody>
           </table>
         </div>
@@ -964,12 +913,93 @@
         </div>
       </section>
 
+      <!-- VIEW: Active Error Log -->
+      <section id="view-errors" class="view-pane glass" style="display: none; padding: 32px;">
+        <div id="errors-intro-container" style="text-align: center; padding: 40px 0;">
+          <h2 style="font-family:var(--font-title); font-size:36px; margin-bottom:16px;">Active Error Log</h2>
+          <p style="color:var(--text-secondary); font-size:16px; margin-bottom:32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Review and practice the questions you answered incorrectly. The goal is to clear all errors and achieve 100% mastery.
+          </p>
+          <div class="glass" style="display: inline-block; padding: 24px; border-radius: 16px; min-width: 250px; margin-bottom: 32px;">
+            <p style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Failed Questions Pending</p>
+            <h2 style="font-size:48px; font-family:var(--font-title); color:var(--h-red);" id="errors-pending-count">0</h2>
+          </div>
+          <div class="btn-group" style="justify-content: center;">
+            <button class="btn btn-secondary" onclick="switchTab('dashboard')">Back to Dashboard</button>
+            <button class="btn btn-primary" id="btn-practice-errors" onclick="startErrorPractice()" disabled>Practice Errors</button>
+          </div>
+        </div>
+
+        <div id="errors-practice-container" style="display: none;">
+          <div class="quiz-header">
+            <span class="question-counter" id="errors-question-counter">Error 1 of 5</span>
+            <span class="quiz-badge" style="background: var(--h-red, #cc0000); color: white;" id="errors-badge-id">Error Practice</span>
+          </div>
+          
+          <div class="question-text" id="errors-question-text">
+            Loading error question...
+          </div>
+          
+          <div class="options-list" id="errors-options-list">
+            <!-- Rendered by JS -->
+          </div>
+          
+          <div class="explanation-card glass" id="errors-explanation-card" style="display: none;">
+            <h4>Explanation & Reference:</h4>
+            <p id="errors-explanation-text">Explanation text here.</p>
+          </div>
+          
+          <div class="btn-group" style="margin-top: 32px;">
+            <button class="btn btn-secondary" id="btn-errors-exit" onclick="exitErrorPractice()">Exit Practice</button>
+            <div>
+              <button class="btn btn-secondary" id="btn-errors-retry" onclick="retryErrorQuestion()" style="display:none; margin-right:8px;">Retry</button>
+              <button class="btn btn-primary" id="btn-errors-action" onclick="submitErrorAnswer()">Check Answer</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
   </div>
 
+  <!-- Command Palette Modal -->
+  <div id="command-palette" class="cmd-palette-overlay" style="display: none;" onclick="closeCommandPalette(event)">
+    <div class="cmd-palette-modal glass" onclick="event.stopPropagation()">
+      <div class="cmd-palette-header">
+        <svg class="cmd-palette-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--text-muted);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="cmd-palette-input" placeholder="Search homeworks, simulators or sections... (e.g. 'hw 8', 'solids')" oninput="filterCommandPalette()" onkeydown="handleCommandPaletteKey(event)">
+        <span class="cmd-palette-esc-badge">ESC</span>
+      </div>
+      <div class="cmd-palette-results" id="cmd-palette-results-list">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="cmd-palette-footer">
+        <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select, <kbd>ESC</kbd> to close.</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Application Logic -->
-  <script src="quiz_data.js"></script>
+  <script src="data/init.js"></script>
+  <script src="data/homework_8.js"></script>
+  <script src="data/homework_9.js"></script>
+  <script src="data/business_processes.js"></script>
+  <script src="data/homework_11.js"></script>
+  <script src="data/homework_12.js"></script>
+  <script src="data/homework_13.js"></script>
+  <script src="data/homework_14.js"></script>
+  <script src="data/homework_15.js"></script>
+  <script src="data/homework_16.js"></script>
+  <script src="data/homework_17.js"></script>
+  <script src="data/homework_18.js"></script>
+  <script src="data/homework_19.js"></script>
+  <script src="data/homework_20.js"></script>
+  <script src="data/homework_21.js"></script>
+  <script src="data/homework_22.js"></script>
+  <script src="data/video_quizzes.js"></script>
+  <script src="data/products_data.js"></script>
+  <script src="data/calculations_data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -6,7 +6,6 @@ def build():
     workspace = os.path.dirname(os.path.abspath(__file__))
     html_path = os.path.join(workspace, 'index.html')
     css_path = os.path.join(workspace, 'index.css')
-    quiz_data_path = os.path.join(workspace, 'quiz_data.js')
     app_path = os.path.join(workspace, 'app.js')
     output_html_path = os.path.join(workspace, 'Baroid_Core_Trainer.html')
     output_zip_path = os.path.join(workspace, 'Baroid_Core_Trainer.zip')
@@ -20,8 +19,6 @@ def build():
         html = f.read()
     with open(css_path, 'r', encoding='utf-8') as f:
         css = f.read()
-    with open(quiz_data_path, 'r', encoding='utf-8') as f:
-        quiz_data = f.read()
     with open(app_path, 'r', encoding='utf-8') as f:
         app = f.read()
 
@@ -59,13 +56,23 @@ def build():
     if count == 0:
         print("Warning: Could not find <link rel=\"stylesheet\" href=\"index.css\"> in index.html")
         
-    print("Inlining quiz_data.js...")
-    # Find script tag for quiz_data.js and replace with script block
-    script1_regex = re.compile(r'<script\s+src="quiz_data\.js"\s*><\/script>')
-    script1_block = f"<script>\n{quiz_data}\n</script>"
-    html, count = script1_regex.subn(lambda m: script1_block, html)
-    if count == 0:
-        print("Warning: Could not find <script src=\"quiz_data.js\"></script> in index.html")
+    print("Inlining data/*.js files...")
+    # Find script tags for files under data/ and replace them with their contents dynamically
+    data_script_regex = re.compile(r'<script\s+src="data/([^"]+?\.js)"\s*><\/script>')
+    
+    def replace_data_script(match):
+        filename = match.group(1)
+        filepath = os.path.join(workspace, 'data', filename)
+        try:
+            with open(filepath, 'r', encoding='utf-8') as df:
+                file_content = df.read()
+            return f"<script>\n// Inlined data/{filename}\n{file_content}\n</script>"
+        except Exception as e:
+            print(f"Error: Could not read {filepath}: {e}")
+            return match.group(0)
+            
+    html, count = data_script_regex.subn(replace_data_script, html)
+    print(f"Inlined {count} data script files.")
         
     print("Inlining app.js...")
     # Find script tag for app.js and replace with script block

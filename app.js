@@ -41,6 +41,7 @@ let stats = {
   vfd_highScore: null,
   vhc_highScore: null,
   vpd_highScore: null,
+  failedQuestions: [],
   theme: 'dark'
 };
 
@@ -50,6 +51,10 @@ window.addEventListener('DOMContentLoaded', () => {
   applyTheme();
   updateDashboardStats();
   switchTab('dashboard');
+  
+  // Render Cheatsheet and Initialize counters
+  renderProductCheatSheet();
+  updateErrorLogCounter();
   
   // Initialize trainers with default parameters
   generateAlkalinityParams();
@@ -68,6 +73,10 @@ function loadStats() {
     const saved = localStorage.getItem('baroid_core_stats');
     if (saved) {
       stats = { ...stats, ...JSON.parse(saved) };
+    }
+    // Defensive initialization
+    if (!stats.failedQuestions || !Array.isArray(stats.failedQuestions)) {
+      stats.failedQuestions = [];
     }
   } catch (e) {
     console.warn("localStorage is not accessible in this context", e);
@@ -277,6 +286,25 @@ function switchTab(tabId) {
     } else {
       loadNafCase(currentNafCase);
     }
+  } else if (tabId === 'errors') {
+    document.getElementById('view-errors').style.display = 'block';
+    document.getElementById('nav-errors').classList.add('active');
+    document.getElementById('page-title').innerText = "Active Error Log";
+    document.getElementById('page-subtitle').innerText = "Review and practice your incorrect answers.";
+    updateErrorLogIntro();
+  }
+  
+  // Expand category automatically in sidebar
+  autoExpandSidebarCategory(tabId);
+}
+
+function autoExpandSidebarCategory(tabId) {
+  const link = document.getElementById(`nav-${tabId}`);
+  if (link) {
+    const parentDetails = link.closest('.nav-category');
+    if (parentDetails) {
+      parentDetails.open = true;
+    }
   }
 }
 
@@ -415,7 +443,11 @@ function startQuiz(quizId) {
   }
   
   const navEl = document.getElementById(navId);
-  if (navEl) navEl.classList.add('active');
+  if (navEl) {
+    navEl.classList.add('active');
+    const tabId = navId.replace('nav-', '');
+    autoExpandSidebarCategory(tabId);
+  }
   
   // Update header text
   document.getElementById('page-title').innerText = quizInfo.title;
@@ -714,6 +746,11 @@ function quizActionSubmit() {
     if (isCorrect) {
       stats.correctCount += 1;
       sessionCorrectCount += 1;
+      const targetQuizId = currentQuizId === 'errors' ? q.originalQuizId : currentQuizId;
+      removeFromErrorLog(targetQuizId, q.id);
+    } else {
+      const targetQuizId = currentQuizId === 'errors' ? q.originalQuizId : currentQuizId;
+      addToErrorLog(targetQuizId, q.id);
     }
     saveStats();
     
@@ -814,7 +851,11 @@ function showQuizResults() {
 }
 
 function restartCurrentQuiz() {
-  startQuiz(currentQuizId);
+  if (currentQuizId === 'errors') {
+    startErrorPractice();
+  } else {
+    startQuiz(currentQuizId);
+  }
 }
 
 
@@ -1949,4 +1990,135 @@ function checkNafAnswers() {
   } else {
     btn.innerText = "Finish Session";
   }
+}
+
+// ============================================================
+// BAROID PRODUCTS GLOSSARY & SEARCH
+// ============================================================
+function renderProductCheatSheet() {
+  const tbody = document.getElementById('table-products-body');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  
+  PRODUCTS_DATA.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.className = 'product-row';
+    tr.innerHTML = `
+      <td><span class="badge-product">${p.product}</span></td>
+      <td style="color: var(--text-muted); font-size: 12px; font-weight: 700; text-transform: uppercase;">${p.category}</td>
+      <td style="color: var(--primary); font-size: 13px; font-weight: 600;">${p.function}</td>
+      <td style="font-size: 13px; line-height: 1.5; color: var(--text-secondary);">${p.notes}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// ============================================================
+// ACTIVE ERROR LOG ("CAJA DE ERRORES") LOGIC
+// ============================================================
+function addToErrorLog(quizId, questionId) {
+  if (!quizId || !questionId) return;
+  if (!stats.failedQuestions) stats.failedQuestions = [];
+  
+  const exists = stats.failedQuestions.some(x => x.quizId === quizId && x.questionId === questionId);
+  if (!exists) {
+    stats.failedQuestions.push({ quizId, questionId });
+    saveStats();
+    updateErrorLogCounter();
+  }
+}
+
+function removeFromErrorLog(quizId, questionId) {
+  if (!quizId || !questionId) return;
+  if (!stats.failedQuestions) return;
+  
+  const initialLength = stats.failedQuestions.length;
+  stats.failedQuestions = stats.failedQuestions.filter(x => !(x.quizId === quizId && x.questionId === questionId));
+  if (stats.failedQuestions.length !== initialLength) {
+    saveStats();
+    updateErrorLogCounter();
+  }
+}
+
+function updateErrorLogCounter() {
+  const count = stats.failedQuestions ? stats.failedQuestions.length : 0;
+  
+  // Sidebar count badge
+  const badge = document.getElementById('nav-error-count');
+  if (badge) {
+    badge.innerText = count;
+    badge.style.display = count > 0 ? 'inline-block' : 'none';
+  }
+  
+  // Error workspace pending count
+  const pendingCountEl = document.getElementById('errors-pending-count');
+  if (pendingCountEl) {
+    pendingCountEl.innerText = count;
+    pendingCountEl.style.color = count > 0 ? 'var(--h-red)' : 'var(--success)';
+  }
+  
+  // Error practice button state
+  const btn = document.getElementById('btn-practice-errors');
+  if (btn) {
+    btn.disabled = count === 0;
+  }
+}
+
+function updateErrorLogIntro() {
+  updateErrorLogCounter();
+  
+  // Reset container visibilities
+  document.getElementById('errors-intro-container').style.display = 'block';
+  document.getElementById('errors-practice-container').style.display = 'none';
+}
+
+function startErrorPractice() {
+  if (!stats.failedQuestions || stats.failedQuestions.length === 0) return;
+  
+  // Resolve all failed questions from QUIZ_DATA
+  currentQuestions = [];
+  stats.failedQuestions.forEach(item => {
+    const quiz = QUIZ_DATA[item.quizId];
+    if (quiz) {
+      const q = quiz.questions.find(x => x.id === item.questionId);
+      if (q) {
+        // Copy question and attach original details so we can remove it on success
+        const qCopy = { ...q, originalQuizId: item.quizId };
+        currentQuestions.push(qCopy);
+      }
+    }
+  });
+
+  if (currentQuestions.length === 0) {
+    alert("No failed questions could be loaded from database.");
+    return;
+  }
+
+  // Shuffle errors so they practice in random order
+  currentQuestions.sort(() => Math.random() - 0.5);
+  
+  currentQuizId = 'errors';
+  currentQuestionIndex = 0;
+  selectedOptions = [];
+  hasCheckedAnswer = false;
+  sessionCorrectCount = 0;
+
+  // Switch to quiz view pane
+  document.querySelectorAll('.view-pane').forEach(el => el.style.display = 'none');
+  document.getElementById('view-quiz').style.display = 'block';
+  
+  // Highlight Error Log nav link
+  document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+  const errLink = document.getElementById('nav-errors');
+  if (errLink) errLink.classList.add('active');
+
+  // Update header text
+  document.getElementById('page-title').innerText = "Active Error Log Practice";
+  document.getElementById('page-subtitle').innerText = "Review and clear your incorrect answers.";
+  document.getElementById('quiz-badge-id').innerText = "Errors";
+
+  document.getElementById('quiz-container').style.display = 'block';
+  document.getElementById('quiz-results-container').style.display = 'none';
+
+  showQuestion(0);
 }
