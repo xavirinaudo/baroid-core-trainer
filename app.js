@@ -2197,18 +2197,36 @@ function showUpdateBanner(updateInfo) {
   const versionTag = `<span style="font-weight: 700; color: rgba(255,255,255,0.6); font-size: 11px;">[${updateInfo.version}]</span>`;
   const descriptionText = updateInfo.description || 'Hay una nueva versión del simulador disponible.';
 
+  const isLocalFile = window.location.protocol === 'file:';
+  let infoTextHtml = '';
+  let actionsHtml = '';
+
+  if (isLocalFile) {
+    infoTextHtml = '<p class="update-banner-text">Estás ejecutando una copia local offline. Para obtener la versión actualizada, descarga el nuevo archivo o usa la versión web:</p>';
+    actionsHtml = `
+      <button class="update-banner-btn update-banner-btn-secondary" onclick="window.dismissUpdate('${updateInfo.version}')">Más tarde</button>
+      <a class="update-banner-btn update-banner-btn-primary" style="text-decoration: none; text-align: center;" href="https://xavirinaudo.github.io/baroid-core-trainer/Baroid_Core_Trainer.html" target="_blank" onclick="window.dismissUpdate('${updateInfo.version}')">Descargar HTML</a>
+      <a class="update-banner-btn update-banner-btn-primary" style="text-decoration: none; text-align: center; background: #28a745;" href="https://xavirinaudo.github.io/baroid-core-trainer/" target="_blank" onclick="window.dismissUpdate('${updateInfo.version}')">Ver Web</a>
+    `;
+  } else {
+    infoTextHtml = '<p class="update-banner-text">Se han publicado correcciones y mejoras en el simulador.</p>';
+    actionsHtml = `
+      <button class="update-banner-btn update-banner-btn-secondary" onclick="window.dismissUpdate('${updateInfo.version}')">Más tarde</button>
+      <button class="update-banner-btn update-banner-btn-primary" onclick="window.handleUpdateApp('${updateInfo.version}')">Actualizar ahora</button>
+    `;
+  }
+
   banner.innerHTML = `
     <h4 class="update-banner-title">
       <span>¡Actualización Disponible!</span>
       ${versionTag}
     </h4>
-    <p class="update-banner-text">Se han publicado correcciones y mejoras en el simulador.</p>
+    ${infoTextHtml}
     <div class="update-banner-notes">
       ${descriptionText}
     </div>
     <div class="update-banner-actions">
-      <button class="update-banner-btn update-banner-btn-secondary" onclick="window.dismissUpdate('${updateInfo.version}')">Más tarde</button>
-      <button class="update-banner-btn update-banner-btn-primary" onclick="window.handleUpdateApp('${updateInfo.version}')">Actualizar ahora</button>
+      ${actionsHtml}
     </div>
   `;
 
