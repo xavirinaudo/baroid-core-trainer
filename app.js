@@ -66,8 +66,9 @@ window.addEventListener('DOMContentLoaded', () => {
   generateHoleParams();
   loadRandomContaminantCase();
 
-  // Check for trainer updates after initialization
+  // Check for trainer updates after initialization and then every 15 minutes
   setTimeout(checkUpdates, 3000);
+  setInterval(checkUpdates, 15 * 60 * 1000);
 });
 
 // Load and Save Stats
@@ -141,31 +142,36 @@ function switchTab(tabId) {
     document.getElementById('nav-hw5').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 5: Solids Control & Waste";
     document.getElementById('page-subtitle').innerText = "Practice questions about the waste hierarchy, solids classification, and mechanical separation.";
-    if (currentQuizId !== 'homework_5') startQuiz('homework_5');
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_5' || isFinished) startQuiz('homework_5');
   } else if (tabId === 'hw6') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw6').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 6: Solids Control Equipment";
     document.getElementById('page-subtitle').innerText = "Review shale shakers, screen API standards, conductance/conveyance, and feed pumps.";
-    if (currentQuizId !== 'homework_6') startQuiz('homework_6');
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_6' || isFinished) startQuiz('homework_6');
   } else if (tabId === 'hw7') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw7').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 7: Centrifuges & Dryers";
     document.getElementById('page-subtitle').innerText = "Review centrifuge settings, dewatering physics, vertical cuttings dryers, and dilution math.";
-    if (currentQuizId !== 'homework_7') startQuiz('homework_7');
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_7' || isFinished) startQuiz('homework_7');
   } else if (tabId === 'hw8') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw8').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 8: Alkalinity & pH (Theory)";
     document.getElementById('page-subtitle').innerText = "Practice theory questions about pH, filtrate alkalinity, and ionic calculations.";
-    if (currentQuizId !== 'homework_8') startQuiz('homework_8');
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_8' || isFinished) startQuiz('homework_8');
   } else if (tabId === 'hw9') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw9').classList.add('active');
     document.getElementById('page-title').innerText = "Homework 9: Chemistry & Clays (Theory)";
     document.getElementById('page-subtitle').innerText = "Clays and polymers theory questions, excluding all calculation items.";
-    if (currentQuizId !== 'homework_9') startQuiz('homework_9');
+    const isFinished = document.getElementById('quiz-results-container').style.display === 'block';
+    if (currentQuizId !== 'homework_9' || isFinished) startQuiz('homework_9');
   } else if (tabId === 'bp') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-bp').classList.add('active');
@@ -443,7 +449,16 @@ function startQuiz(quizId) {
   
   let navId = 'nav-hw8';
   let badgeName = "Homework 8";
-  if (quizId === 'homework_9') {
+  if (quizId === 'homework_5') {
+    navId = 'nav-hw5';
+    badgeName = "Homework 5";
+  } else if (quizId === 'homework_6') {
+    navId = 'nav-hw6';
+    badgeName = "Homework 6";
+  } else if (quizId === 'homework_7') {
+    navId = 'nav-hw7';
+    badgeName = "Homework 7";
+  } else if (quizId === 'homework_9') {
     navId = 'nav-hw9';
     badgeName = "Homework 9";
   } else if (quizId === 'business_processes') {
@@ -1997,44 +2012,103 @@ function checkUpdates() {
     return;
   }
 
+  const dismissedVersion = localStorage.getItem('app_dismissed_version');
   const versionUrl = 'https://xavirinaudo.github.io/baroid-core-trainer/version.json';
+  
   fetch(`${versionUrl}?t=${Date.now()}`)
     .then(res => {
       if (!res.ok) throw new Error('Network response was not ok');
       return res.json();
     })
     .then(data => {
-      if (data.version && data.version !== CURRENT_TRAINER_VERSION) {
-        showUpdateBanner(data.version);
+      if (data.version && data.version !== CURRENT_TRAINER_VERSION && data.version !== dismissedVersion) {
+        showUpdateBanner(data);
       }
     })
     .catch(err => console.warn('[Trainer Updates] Error al consultar version.json:', err));
 }
 
-function showUpdateBanner(newVersion) {
+// Global functions for update actions so they can be called from inline HTML event handlers
+window.dismissUpdate = function(version) {
+  localStorage.setItem('app_dismissed_version', version);
+  const banner = document.getElementById('update-notification-banner');
+  if (banner) {
+    banner.style.animation = 'slideOut 0.3s ease-in forwards';
+    setTimeout(() => banner.remove(), 300);
+  }
+};
+
+window.handleUpdateApp = async function(version) {
+  const primaryBtn = document.querySelector('.update-banner-btn-primary');
+  if (primaryBtn) {
+    primaryBtn.innerText = 'Actualizando...';
+    primaryBtn.disabled = true;
+  }
+
+  // 1. Guardar la versión en localStorage (opcional, para referencia)
+  localStorage.setItem('app_version', version);
+
+  // 2. Limpieza de cachés del navegador (Cache API)
+  if ('caches' in window) {
+    try {
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map(name => caches.delete(name)));
+      console.log('[Trainer Updates] Cachés de la Web API eliminadas con éxito.');
+    } catch (e) {
+      console.error('[Trainer Updates] Error eliminando cachés:', e);
+    }
+  }
+
+  // 3. Desregistro de Service Workers
+  if ('serviceWorker' in navigator) {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const registration of registrations) {
+        await registration.unregister();
+        console.log('[Trainer Updates] Service Worker desregistrado.');
+      }
+    } catch (e) {
+      console.error('[Trainer Updates] Error desregistrando Service Workers:', e);
+    }
+  }
+
+  // 4. Forzar recarga con Cache-Buster en la dirección URL
+  const cacheBuster = 'v-update=' + version;
+  let cleanUrl = window.location.href;
+
+  if (cleanUrl.includes('v-update=')) {
+    cleanUrl = cleanUrl.replace(/[?&]v-update=[^&]+/g, '');
+  }
+
+  const separator = cleanUrl.includes('?') ? '&' : '?';
+  window.location.href = cleanUrl + separator + cacheBuster;
+};
+
+function showUpdateBanner(updateInfo) {
   if (document.getElementById('update-notification-banner')) return;
 
   const style = document.createElement('style');
+  style.id = 'update-banner-styles';
   style.textContent = `
     .update-banner {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: rgba(25, 30, 45, 0.9);
+      background: rgba(25, 30, 45, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(229, 9, 20, 0.4);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(229, 9, 20, 0.5);
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       padding: 16px 20px;
       z-index: 99999;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 320px;
+      max-width: 340px;
       color: #fff;
       font-family: 'Inter', sans-serif;
-      animation: slideIn 0.3s ease-out forwards;
+      animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .update-banner-title {
       font-weight: 700;
@@ -2043,20 +2117,35 @@ function showUpdateBanner(newVersion) {
       margin: 0;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .update-banner-text {
       font-size: 13px;
       margin: 0;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.95);
       line-height: 1.4;
+    }
+    .update-banner-notes {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 2px solid #e50914;
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.75);
+      max-height: 80px;
+      overflow-y: auto;
+      margin: 2px 0;
     }
     .update-banner-actions {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       justify-content: flex-end;
+      margin-top: 4px;
     }
     .update-banner-btn {
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
@@ -2068,19 +2157,28 @@ function showUpdateBanner(newVersion) {
       background: #e50914;
       color: #fff;
     }
-    .update-banner-btn-primary:hover {
+    .update-banner-btn-primary:hover:not(:disabled) {
       background: #b2070f;
+    }
+    .update-banner-btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
     .update-banner-btn-secondary {
       background: transparent;
       color: rgba(255, 255, 255, 0.7);
     }
     .update-banner-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
       color: #fff;
     }
     @keyframes slideIn {
-      from { transform: translateY(100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from { transform: translateY(100px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    @keyframes slideOut {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(100px) scale(0.95); opacity: 0; }
     }
   `;
   document.head.appendChild(style);
@@ -2089,12 +2187,21 @@ function showUpdateBanner(newVersion) {
   banner.id = 'update-notification-banner';
   banner.className = 'update-banner';
   
+  const versionTag = `<span style="font-weight: 700; color: rgba(255,255,255,0.6); font-size: 11px;">[${updateInfo.version}]</span>`;
+  const descriptionText = updateInfo.description || 'Hay una nueva versión del simulador disponible.';
+
   banner.innerHTML = `
-    <h4 class="update-banner-title">¡Actualización Disponible!</h4>
-    <p class="update-banner-text">Hay una nueva versión del simulador disponible. Actualiza para obtener las últimas correcciones y mejoras.</p>
+    <h4 class="update-banner-title">
+      <span>¡Actualización Disponible!</span>
+      ${versionTag}
+    </h4>
+    <p class="update-banner-text">Se han publicado correcciones y mejoras en el simulador.</p>
+    <div class="update-banner-notes">
+      ${descriptionText}
+    </div>
     <div class="update-banner-actions">
-      <button class="update-banner-btn update-banner-btn-secondary" onclick="document.getElementById('update-notification-banner').remove()">Descartar</button>
-      <button class="update-banner-btn update-banner-btn-primary" onclick="window.location.reload(true)">Actualizar</button>
+      <button class="update-banner-btn update-banner-btn-secondary" onclick="window.dismissUpdate('${updateInfo.version}')">Más tarde</button>
+      <button class="update-banner-btn update-banner-btn-primary" onclick="window.handleUpdateApp('${updateInfo.version}')">Actualizar ahora</button>
     </div>
   `;
 
