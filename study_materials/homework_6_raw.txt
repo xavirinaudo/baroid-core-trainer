@@ -1,0 +1,204 @@
+--- PAGE 1 ---
+Question Feedback
+Introduction
+Baroid Core Homework 6
+Assessment Feedback
+Congratulations, you passed.
+Total score: 75  out of 75, 100%
+Question
+1 of 40Label the parts of an FLC-504 shaker below using the following diagram:
+Screen DiscardFeed Hopper/Back tank/ Possum bellyControl BoxFloat mountsScreen TensionVibrator MotorsJack Assembly (AWD)Vibrating BasketScreen DeckScreen Under Flow
+10  out of  10
+E
+H
+G
+D
+J
+F
+A
+B
+C
+I
+Question
+Apr 11 2023 |Logged in as : Gewaida, Alaa G
+--- PAGE 2 ---
+2 of 40Which piece of solids control equipment is capable of removing 60-80% of the total generated drilled solids from the drilling fluid if operated efficiently?
+Flo-DividerMud CleanerShale ShakerVertical DryerCentrifuge
+1  out of  1
+Question
+3 of 40What is the most important aspect of a shale shaker in regards to the size of solids removed?
+Screen selectionBasket angleMotor motionG-forceRPM of motor
+1  out of  1
+Question
+4 of 40Select the three main types of motion shale shakers utilize:
+OscillatingLinearCircularRhombicOvalElliptical
+3  out of  3
+Question
+5 of 40What shaker motion is the best choice for finer screening and increased basket angles?
+EllipticalCentrifugalOscillatingCircularLinearRhombic
+1  out of  1
+Question
+6 of 40What is the name of the API standard established in 2004 to allow individuals to easily compare screens?
+API-RP-13CAPI-RP-13B-1API-RP-13B-2API-RP-13A
+1  out of  1
+--- PAGE 3 ---
+Question
+7 of 40The established API standard for screen classification was created to standardize the following:
+TensionNon-blanked areaLabelingConveyance rateAspect ratioSeparation sizeWire durabilityConductance
+4  out of  4
+Question
+8 of 40Screen is defined as “The movement of drilling fluid and classified solid particles through the shaker screens.”
+1  out of  1
+C o n d u c t a n c e
+Question
+9 of 40Screen is defined as “The movement of unclassified solid particles off the shaker screens”
+1  out of  1
+C o n v e y a n c e
+Question
+10 of 40Shaker performance can GENERALLY be defined by the following parameters
+G-forceDryness of solids dischargeSolids removalProcessing CapacityBasket weightNumber of screen panels
+3  out of  3
+Question
+11 of 40What does screen mesh mean?
+Material of the screens constructionNumber of openings per linear inch for square mesh screensDimensions of the area the screens cover inside the Shaker
+Thickness in 1/32nd of inches
+1  out of  1
+Question
+12 of 40
+--- PAGE 4 ---
+What is the cut point potential of shaker screens that have satisfied the present API classification standards?
+D50
+D16
+D100
+D84
+1  out of  1
+Question
+13 of 40What unit of measurement is displayed on the API label of the screen to indicate screen conductance?
+NanodarcyMillidarcy (mD)Darcy (kD/mm)None of the above
+1  out of  1
+Question
+14 of 40Provide the contributing features that enable BaraMesh screens to consistently outperform the market competitors in regards to shaker screen durability and particleblinding prevention:
+A) BaraMesh feature providing increased Screen Durability: 
+B) BaraMesh feature providing improved Particle Blinding resistance: 
+2  out of  2
+I n c r e a s e d  w i r e  d i a m e t e r
+A l t e r e d  a s p e c t  R a t i o  f r o m  1 : 1  ( s q u a r e )  t o  1 : 1 . 6  ( r e c t a n g u l a r )
+Question
+15 of 40Provide the most significant benefits of using “corrugated” screens over “conventional” screens:
+Reduced particle blindingAbility to screen finer earlierIncreased screen conductanceReduced screen cost per unitIncreased screen durabilityIncreased non-blanked  screening area
+3  out of  3
+Question
+16 of 40When using a four screen shaker, what is the “fluid end point” rule of thumb during drilling operations?
+¼ of the screens coveredAs close to end of last screen as possible¾ of the screens covered50% of the screens covered80% of the screens coveredNone of the above
+1  out of  1
+--- PAGE 5 ---
+Question
+17 of 40What are the two types of screens typically used in oil and gas drilling operations in reference to “tension”?
+Field-tensioned screenFlexible frame screensPre-tensioned (rigid frame) screensCorrugated triangular-tensioned screens
+2  out of  2
+Question
+18 of 40What are the two types of screens typically used in oil and gas drilling operations in reference to “dimension”?
+Field-tensioned screensCorrugated (pyramid/3D) screensConventional (flat/2D) screensAdvanced (trapezoid/3D) screens
+2  out of  2
+Question
+19 of 40Using the diagram below, enter what adjustments, if any, need to made to the basket angle, screens, or flow rate to achieve the proper fluid end point
+Increase basket angleDecrease basket angleScreen down (coarser)Screen up (finer)Increase flow rateDecrease flow rateNone of the above
+3  out of  3
+Question
+20 of 40Using the diagram below, enter what adjustments, if any, need to made to the basket angle, screens, or flow rate to achieve the proper fluid end point
+Increase basket angle
+--- PAGE 6 ---
+Decrease basket angleScreen down (coarser)Screen up (finer)Increase flow rateDecrease flow rateNone of the above
+3  out of  3
+Question
+21 of 40Using the diagram below, enter what adjustments, if any, need to made to the basket angle, screens, or flow rate to achieve the proper fluid end point
+Increase basket angleDecrease basket angleScreen down (coarser)Screen up (finer)Increase flow rateDecrease flow rateNone of the above
+3  out of  3
+Question
+22 of 40Non-blanked area of a screen refers to which of the following:
+The total area of the shaker basketThe total area in which fluid covers the screen (fluid end-point)The total area of the panel (length x width)The total area that fluid can pass throughThe number of openings per square linear inch
+1  out of  1
+Question
+23 of 40List two negative consequences of the solids conveyance rate being to slow?
+Excessive bridging and derogation to solid particles causing screen blindingSolid particles form clumps and take longer to separateSolid particles become hotterIncreased wear and tear (damage) to screen
+2  out of  2
+Question
+24 of 40
+--- PAGE 7 ---
+One negative consequences of the solids conveyance rate being too fast, is  less dewatering/drying time causing increased surface fluid loss and excessive waste 
+TrueFalse
+1  out of  1
+Question
+25 of 40Which of the following are NOT a suggested operating guideline for shaker screens?
+Run finest mesh possible while covering 3/4 of the screen area.Use finer screens towards the back of the shaker and coarser for the drying panelOpen header box bypass valve when sending hole cleaning sweeps to avoid losing mudRun Screen frame as level as possible to reduce screen wear.Ensure screens are properly mounted on a clean screen frame.
+2  out of  2
+Question
+26 of 40What is the G-force of a shaker with a stroke length of 0.173 inches and a motor RPM of 1750RPM?Use the formula below to calculate (use 1 decimal for answer)
+G-force is (round using 1 decimal)7.5
+3  out of  3
+Question
+27 of 40A is a device / mechanism utilized to provide the length of movement (in inches) the shaker motors are providing.
+1  out of  1
+s t r o k e  d e t e c t o r
+Question
+28 of 40What are the common types of couplings used on pumps in the oilfield industry? (select all that apply)
+Flexible rubberDodgeLove joyChainFlexible glass
+2  out of  2
+Question
+29 of 40Which type of pump will degrade solids the fastest?
+Progressive CavityCentrifugalRotary lobeDiaphragm
+--- PAGE 8 ---
+Triplex pump
+1  out of  1
+Question
+30 of 40
+What type of pump should NOT be used to feed centrifuges?
+CentrifugalProgressive cavityLobe
+1  out of  1
+Question
+31 of 40
+Choose the two (2) pump characteristics associated with centrifugal pumps?
+Proportional FlowCavitation ProneReversibleSolid DegradingGentle “conveying” action
+2  out of  2
+Question
+32 of 40The is the component of the centrifugal pump positioned on a rotating axis (shaft) imparting the mechanical force on the drilling fluid needed to transportthe fluid to its receiving point
+1  out of  1
+I m p e l l e r
+Question
+33 of 40
+ A Progressive Cavity (PC) pump utilizes what components working in tandem to transfer drilling mud?
+Impeller / VoluteRotor / StatorGears / LobesCylinder / Piston Rod
+1  out of  1
+Question
+34 of 40Which factor causes the most wear in PC pumps?
+PressureSpeedTemperatureChemicalsAll of the above
+--- PAGE 9 ---
+1  out of  1
+Question
+35 of 40
+Why is the anti-spin bolt on centrifugal pump impellers important? 
+Makes the pump last longerMakes the pump more efficientSaves you from breaking the Volute/Casing/Snail/ImpellerIt has no particular purpose
+1  out of  1
+Question
+36 of 40Do the rotating lobes touch each other, in a rotary lobe pump?
+YesNo
+1  out of  1
+Question
+37 of 40Should you ever run a pump dry?
+YesNo
+1  out of  1
+Question
+38 of 40What is the most common pump found on drilling rigs surface pit systems?
+Rotary LobeProgressive CavityDiaphragm
+Centrifugal 
+None of the above
+1  out of  1
+Question
+39 of 40Choose the most critical characteristics of a positive displacement pump in regards to its use feeding a decanting centrifuge:
+Proportional flow rate to speed (RPM)High shearing velocitySolid degradingVariable speedGentle conveyance
+3  out of  3
+--- PAGE 10 ---
+Question
+40 of 40To ensure hydrocyclones are operating properly and efficiently they require
+75 psi at the feed inlet of the hydrocyclone75 feet of head at the discharge (outlet) of the centrifugal pump75 feet of head at the feed inlet of the hydrocyclone75 psi at the inlet of the centrifugal pump
+1  out of  1

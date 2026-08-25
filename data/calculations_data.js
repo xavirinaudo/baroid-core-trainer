@@ -1159,8 +1159,8 @@ Object.assign(CALCULATIONS_DATA, {
       explanation: "Diagnostic Workflow:\n1. Water Content Spike: Retort water increases from 18% to 28%, and oil decreases from 48% to 41%. Density drops from 12.5 to 12.1 ppg. This indicates massive water entry.\n2. Viscosity Spike: PV spikes from 38 to 60 cP, and Funnel Vis spikes from 70 to 105s, due to internal phase expansion (emulsion thickening).\n3. Salinity Drops (Moderate): Chlorides drop from 36,000 to 26,000 mg/L, Calcium drops from 24,000 to 13,200 mg/L, and WPS drops from 240,000 to 184,500 ppm. The drop is less severe than Fresh Water (to 115,000 ppm) because the incoming formation water contains dissolved salt.\n4. ES Drops: ES drops severely from 460 to 128 due to emulsion dilution and lowered salinity.\n\nRecommended Treatment:\nDilute with base oil (NAP), add emulsifiers to re-stabilize, and add CaCl2 to restore design WPS."
     }
   ]
-};
+});
 
 // ============================================================
 // HOMEWORK 18 – Formation Damage & Reservoir Fluids
-// ============================================================);
+// ============================================================

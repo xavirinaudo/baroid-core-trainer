@@ -1,0 +1,501 @@
+[
+  {
+    "id": "hw5_q1",
+    "number": 1,
+    "question": "Using the following diagram, complete the Waste Management Hierarchy",
+    "options_lines": [
+      "Reuse",
+      "Disposal of Waste",
+      "Separation of waste",
+      "2",
+      "6",
+      "5",
+      "Apr 11 2023 |Logged in as : Gewaida, Alaa G",
+      "Sepaato o waste",
+      "Recycle",
+      "Recover",
+      "Reduce"
+    ],
+    "score": 6
+  },
+  {
+    "id": "hw5_q2",
+    "number": 2,
+    "question": "Increasing solids content in a drilling fluid can result in several negative issues.",
+    "options_lines": [
+      "From the following list, select the most critical effects of improper solids control",
+      "Increased fluid loss due high ECDs",
+      "Stuck pipe due differential sticking",
+      "Increase of ROP and lowering of rig time",
+      "Poor cement jobs due thick filtercake",
+      "Increased lubrication",
+      "Increase of rig time by lowering ROP",
+      "Increased fluid waste volumes",
+      "Good cement jobs due thinner filtercake"
+    ],
+    "score": 5
+  },
+  {
+    "id": "hw5_q3",
+    "number": 3,
+    "question": "Which statements below reflect the role of solids control equipment?",
+    "options_lines": [
+      "Solids Control equipment typically provides discharged solids that are under the permitted ROC% limit to allowdischarging them overboard",
+      "Solids control operations address the first step of the waste management hierarchy by reducing the amount ofgenerated waste",
+      "Solids control equipment treats and segregates all waste bi-products from the discharged waste streams",
+      "Solids Control operations should only be used with expensive fluid systems",
+      "Solid control equipment is purposed to optimizes the drilling fluid performance and maximize drilling efficiencies"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q4",
+    "number": 4,
+    "question": "What purpose would solids control equipment serve when encountering formations at depths that provide a narrowmargin of error allowed between the pore pressure and fracture gradient",
+    "options_lines": [
+      "Increase penetration rates (ROP\u2019s)",
+      "Provide better cementing jobs",
+      "Lower probability of differential sticking",
+      "Provide Lower Equivalent Circulating Densities (ECD\u2019s)",
+      "Reduced torque and drag"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q5",
+    "number": 5,
+    "question": "What purpose would solids control equipment serve if an operator emphasized the importance to reach all sectiontarget depths (TD) on or ahead of schedule:",
+    "options_lines": [
+      "Increase penetration rates (ROP\u2019s)",
+      "Provide better cementing jobs",
+      "Lower probability of differential sticking",
+      "Provide Lower Equivalent Circulating Densities (ECD\u2019s)",
+      "Reduced torque and drag"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q6",
+    "number": 6,
+    "question": "What is considered the most effective and economically viable option to remove solids from the drilling fluid?",
+    "options_lines": [
+      "Dump & dilute",
+      "Chemical Treatment",
+      "Mechanical separation",
+      "Gravitational Settling",
+      "Dilution"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q7",
+    "number": 7,
+    "question": "What are the two most important reasons for adding weighting material and maintaining sufficient mud density?",
+    "options_lines": [
+      "Provide wellbore stability",
+      "Transport Cuttings to Surface",
+      "Suspend and release cuttings",
+      "Protect against corrosion",
+      "Provide hydraulic power to downhole tools",
+      "Control subsurface pressures"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q8",
+    "number": 8,
+    "question": "Barite should consist of the following physical characteristics?",
+    "options_lines": [
+      "Micron size of particles is predominantly <74 microns",
+      "Non-abrasive",
+      "Chemically reactive",
+      "High specific gravity",
+      "Chemically inert",
+      "Low specific gravity",
+      "Micron size of particles is predominantly >74 microns"
+    ],
+    "score": 4
+  },
+  {
+    "id": "hw5_q9",
+    "number": 9,
+    "question": "What are the two most important purposes of maintaining sufficient rheological properties?",
+    "options_lines": [
+      "Suspend and release cuttings",
+      "Transport cuttings to surface",
+      "Lubricate the bit",
+      "Provide wellbore stability",
+      "Provide hydraulic power to downhole tools"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q10",
+    "number": 10,
+    "question": "What are the four criteria which solid particles are typically classified?",
+    "options_lines": [
+      "Solid Particle color",
+      "Solid Particle Specific Gravity (SG)",
+      "Solid Particle mineralogy",
+      "Solid Particle Reactivity",
+      "Solid Particle shape",
+      "Solid Particle strength",
+      "Solid Particle Source",
+      "Solid Particle Size"
+    ],
+    "score": 4
+  },
+  {
+    "id": "hw5_q11",
+    "number": 11,
+    "question": "Solid particle degradation will result in smaller solid particle size causing an increase in the:",
+    "options_lines": [
+      "Solid particle distribution",
+      "Solid particles density",
+      "Solid particles reactiveness",
+      "Solid particles abrasiveness",
+      "Solid particles surface area"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q12",
+    "number": 12,
+    "question": "What characteristic of some shale formations causes hydration of the clay particles resulting in solid particle swelling?",
+    "options_lines": [
+      "Particle size",
+      "Particle density",
+      "Particle shape",
+      "Particle surface area",
+      "Particle degradation",
+      "Particle reactiveness"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q13",
+    "number": 13,
+    "question": "The two solid characteristics that pose the most difficult challenges to the fluids rheological properties and overallfluid performance are:",
+    "options_lines": [
+      "Solid Reactiveness",
+      "Solid abrasiveness",
+      "Solid density",
+      "Solid specific gravity",
+      "Solid size"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q14",
+    "number": 14,
+    "question": "",
+    "options_lines": [
+      "Which type of clay formation exhibits the highest potential for swelling?",
+      "Kaolinites",
+      "Smectites",
+      "Chlorites",
+      "Illites",
+      "All of the above"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q15",
+    "number": 15,
+    "question": "Why do clay particles that are \u201cinert\u201d still pose adverse challenges to the drilling fluid properties? (select all that apply)",
+    "options_lines": [
+      "The clay particles are so fine (small) making removal difficult for conventional solids control equipment",
+      "They consist of mostly abrasive solid particles causing further erosion of equipment.",
+      "They consist of mostly large solid particles resulting in increased solid surface area and less free liquid available tothe mud",
+      "They consist of mostly colloidal solid particles causing increased solid surface areas and less free liquid providingundesired viscosity of mud"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q16",
+    "number": 16,
+    "question": "Higher than normal sand content present in drilling muds can result in:",
+    "options_lines": [
+      "Excessive hydration of clays",
+      "Excessive dilution as sand is difficult to mechanically remove",
+      "Excessive equipment repair and pump maintenance costs",
+      "Increased amount of colloidal solid particles"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q17",
+    "number": 17,
+    "question": "The use of dilution only to reduce solids % provides what implications?",
+    "options_lines": [
+      "Does not lower the solids % in the mud",
+      "Excessive mud and waste volumes",
+      "Increasingly excessive mud maintenance costs",
+      "Fluid incompatibility with drilled solids"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q18",
+    "number": 18,
+    "question": "Use of gravitational settling only to lower solids content provides what operational implications?",
+    "options_lines": [
+      "Operational footprint constraints",
+      "Only the ability to settle out and remove large solid particles",
+      "Operational time constraints",
+      "All of the above"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q19",
+    "number": 19,
+    "question": "What following aspects significantly affect the settling velocity of a drilled solid? (Select all that apply)",
+    "options_lines": [
+      "Solid particles specific gravity",
+      "Solid particles shape",
+      "Solid particles micron size",
+      "Solid particles color",
+      "Fluid density",
+      "Fluid Viscosity",
+      "Fluid loss into the formation",
+      "Amount of G-force applied"
+    ],
+    "score": 5
+  },
+  {
+    "id": "hw5_q20",
+    "number": 20,
+    "question": "Chemical additions of thinners / dispersants to repair and overcome undesired increased rheological properties isreferred to as:",
+    "options_lines": [
+      "Coagulation",
+      "De-flocculation",
+      "Inhibition",
+      "Encapsulation",
+      "Flocculation"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q21",
+    "number": 21,
+    "question": "",
+    "options_lines": [
+      "involves the additions of high molecular weight polymers to coat and preserve the drilled solids in order",
+      "to prevent issues related to reactive solids"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q22",
+    "number": 22,
+    "question": "A chemical treatment used to enhance the solids removal efficiencies, also known as dewatering typically consists of:",
+    "options_lines": [
+      "a) The use of chemical additions to neutralize the negative charge of the solid particles resulting in solid particle aggregationis referred to as",
+      "b) The use of long chain polymer additions to envelope and bind the neutralized solid aggregates together  providing largersolid clusters  is referred to as"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q23",
+    "number": 23,
+    "question": "When drilling reactive formations prevention is generally accomplished by utilizing fluid systems that are formulatedto incorporate the chemistry needed to prevent excessive dispersion & hydration of solid particles.This is an example of:",
+    "options_lines": [
+      "Emulsification",
+      "Inhibition",
+      "Coagulation",
+      "De-flocculation",
+      "Flocculation"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q24",
+    "number": 24,
+    "question": "What are the categories that Baroid's BSS uses to classify their offered equipment and services?",
+    "options_lines": [
+      "Filtration (wellbore cleanup) Equipment & Services",
+      "Solids Control & Fluid Treatment Equipment & Services",
+      "Waste Disposal & Transportation Equipment & Services",
+      "Waste Handling & Transportation Equipment & Services",
+      "Waste Treatment & Disposal Equipment & Services",
+      "Waste Treatment & Transportation Equipment & Services",
+      "Spacers & Fluid Mixing equipment",
+      "Solids Solutions & Fluid Treatment Equipment & Services"
+    ],
+    "score": 4
+  },
+  {
+    "id": "hw5_q25",
+    "number": 25,
+    "question": "What section of the surface mud pit system are the solids control devices located?",
+    "options_lines": [
+      "Return section",
+      "Suction section",
+      "Additions section",
+      "Testing section",
+      "Reserves section"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q26",
+    "number": 26,
+    "question": "A is a device often installed on the flow line to ensure equal distribution of the circulated drilling fluid",
+    "options_lines": [
+      "and transported solids over the shakers"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q27",
+    "number": 27,
+    "question": "A is a preliminary screening mechanism utilized when drilling adolescent unconsolidated shale\u2019s",
+    "options_lines": [
+      "causing excessive solid hydration that would obstruct the shaker performance"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q28",
+    "number": 28,
+    "question": "What is the typical sequenced arrangement of conventional solids control equipment for a weighted system?",
+    "options_lines": [
+      "Shake shaker, desilter, desander, & centrifuge",
+      "Shale shaker, centrifuge, desander",
+      "Shale shaker, Mud Cleaner, Low Speed Centrifuge, High Speed Centrifuge",
+      "Shale Shaker, desander, desilter & centrifuge",
+      "Shale shaker, centrifuge, desander & desilter"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q29",
+    "number": 29,
+    "question": "",
+    "options_lines": [
+      "What is the typical sequenced arrangement of conventional solids control equipment for an un-weighted system?",
+      "Shake shaker, desilter, desander, & centrifuge",
+      "Shale shaker, centrifuge, desander",
+      "Shale shaker, Mud Cleaner, Low Speed Centrifuge, High Speed Centrifuge",
+      "Shale Shaker, desander, desilter & centrifuge",
+      "Shale shaker, centrifuge, desander & desilter"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q30",
+    "number": 30,
+    "question": "What is the angled settling pit located directly below the underbelly of the primary shakers?",
+    "options_lines": [
+      "Trip tank",
+      "Slugging pit",
+      "Sand trap",
+      "Return pit",
+      "Coarse tank"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q31",
+    "number": 31,
+    "question": "Which piece of Baroid Surface Solutions equipment is the first line of defense in solids control?",
+    "options_lines": [
+      "Shale shaker",
+      "Centrifuge",
+      "Dryer",
+      "Flow divider"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q32",
+    "number": 32,
+    "question": "What conventional solids control equipment removes solids based on the principle of accelerated sedimentation?",
+    "options_lines": [
+      "Hydrocyclones (desander and desilter)",
+      "Shale shakers",
+      "Cutting dryers",
+      "Decanting centrifuge",
+      "All of the above"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q33",
+    "number": 33,
+    "question": "What separation method is used when using a Shale Shaker?",
+    "options_lines": [
+      "Gravity",
+      "Filtering",
+      "Accelerated sedimentation",
+      "Centrifugal force",
+      "Desorption"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q34",
+    "number": 34,
+    "question": "A \u201cstand alone\u201d Hydrocyclone is better known as:",
+    "options_lines": [
+      "Desander",
+      "Centrifuge",
+      "Degasser",
+      "Desilter",
+      "All of the above"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q35",
+    "number": 35,
+    "question": "A mud cleaner combines what TWO methods to remove solids from the drilling mud?",
+    "options_lines": [
+      "Filtering",
+      "Gravitational settling",
+      "Accelerated Sedimentation",
+      "Accelerated Degradation"
+    ],
+    "score": 2
+  },
+  {
+    "id": "hw5_q36",
+    "number": 36,
+    "question": "What piece of conventional solids control equipment is purposed to remove fine to ultra-fine solids less than 20microns?",
+    "options_lines": [
+      "Shale Shaker",
+      "Desander",
+      "Flow divider",
+      "Centrifuge"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q37",
+    "number": 37,
+    "question": "A mud cleaner typically is used in place of stand-alone hydrocyclones on what type of mud systems?",
+    "options_lines": [
+      "Un-weighted systems",
+      "Completions Brine",
+      "Weighted systems",
+      "Water based systems",
+      "Non Aqueous fluid systems"
+    ],
+    "score": 1
+  },
+  {
+    "id": "hw5_q38",
+    "number": 38,
+    "question": "List the primary applications for centrifuges utilized by BSS",
+    "options_lines": [
+      "Max solids removal",
+      "Particle size reduction",
+      "Rheology control (barite recovery)",
+      "Chemically enhanced centrifugation (dewatering)",
+      "Rheology increase",
+      "None of the above"
+    ],
+    "score": 3
+  }
+]
