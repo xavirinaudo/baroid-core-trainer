@@ -4,7 +4,6 @@ $ErrorActionPreference = "Stop"
 Write-Output "Reading source files..."
 $html = [System.IO.File]::ReadAllText("index.html")
 $css = [System.IO.File]::ReadAllText("index.css")
-$quiz = [System.IO.File]::ReadAllText("quiz_data.js")
 $app = [System.IO.File]::ReadAllText("app.js")
 
 # Obtener el Git commit hash de forma síncrona
@@ -32,12 +31,24 @@ try {
 # Reemplazar el marcador en el código de app.js
 $app = $app.Replace('{{VERSION_PLACEHOLDER}}', $commitHash)
 
-Write-Output "Inlining styles and scripts..."
+Write-Output "Inlining styles..."
 # Replace CSS link
 $html = $html -replace '(?i)<link\s+rel="stylesheet"\s+href="index\.css"\s*/?>', "<style>`n$css`n</style>"
 
-# Replace quiz_data.js script link
-$html = $html -replace '(?i)<script\s+src="quiz_data\.js"\s*></script>', "<script>`n$quiz`n</script>"
+Write-Output "Inlining data script files..."
+# Find all data scripts in index.html and replace them
+$matches = [regex]::Matches($html, '<script\s+src="data/([^"]+?\.js)"\s*><\/script>')
+foreach ($match in $matches) {
+    $filename = $match.Groups[1].Value
+    $filepath = Join-Path "data" $filename
+    if (Test-Path $filepath) {
+        $fileContent = [System.IO.File]::ReadAllText($filepath)
+        $scriptBlock = "<script>`n// Inlined data/$filename`n$fileContent`n</script>"
+        $html = $html.Replace($match.Value, $scriptBlock)
+    } else {
+        Write-Warning "No se pudo encontrar el archivo $filepath"
+    }
+}
 
 # Replace app.js script link
 $html = $html -replace '(?i)<script\s+src="app\.js"\s*></script>', "<script>`n$app`n</script>"

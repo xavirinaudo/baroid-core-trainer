@@ -447,8 +447,8 @@ function startQuiz(quizId) {
   // Update sidebar active links
   document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
   
-  let navId = 'nav-hw8';
-  let badgeName = "Homework 8";
+  let navId = '';
+  let badgeName = '';
   if (quizId === 'homework_5') {
     navId = 'nav-hw5';
     badgeName = "Homework 5";
@@ -458,6 +458,9 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_7') {
     navId = 'nav-hw7';
     badgeName = "Homework 7";
+  } else if (quizId === 'homework_8') {
+    navId = 'nav-hw8';
+    badgeName = "Homework 8";
   } else if (quizId === 'homework_9') {
     navId = 'nav-hw9';
     badgeName = "Homework 9";
@@ -510,8 +513,12 @@ function startQuiz(quizId) {
     badgeName = 'Contam';
   }
   
-  const navLink = document.getElementById(navId);
-  if (navLink) navLink.classList.add('active');
+  if (navId) {
+    const navLink = document.getElementById(navId);
+    if (navLink) navLink.classList.add('active');
+  } else {
+    console.warn('[Trainer Updates] Unmapped quizId for navigation highlighting:', quizId);
+  }
   
   document.getElementById('quiz-badge-id').innerText = badgeName;
   
