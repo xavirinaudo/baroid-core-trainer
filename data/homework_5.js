@@ -6,6 +6,23 @@ Object.assign(QUIZ_DATA, {
       {
             "id": "hw5_q1",
             "number": 1,
+            "type": "matching",
+            "question": "Using the following diagram, complete the Waste Management Hierarchy. Order each process in the hierarchy from least expensive and energy consuming (1) to most (6).",
+            "keepKeysOrder": false,
+            "pairs": {
+                  "Reduce": "1",
+                  "Reuse": "2",
+                  "Recycle": "3",
+                  "Recover": "4",
+                  "Separation of waste": "5",
+                  "Disposal of waste": "6"
+            },
+            "explanation": "The correct hierarchy of waste management from least expensive and energy-consuming (most preferred) to most (least preferred) is: 1. Reduce, 2. Reuse, 3. Recycle, 4. Recover, 5. Separation of waste, and 6. Disposal of waste."
+      },
+
+      {
+            "id": "hw5_q2",
+            "number": 2,
             "type": "multiple",
             "question": "Increasing solids content in a drilling fluid can result in several negative issues. From the following list, select the most critical effects of improper solids control:",
             "options": [
@@ -52,8 +69,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "High solids content increases equivalent circulating density (ECD) and filter cake thickness, leading to increased fluid loss, stuck pipe risks, poor cement displacement, lower rate of penetration (ROP), and higher overall waste volume. (See Page 71)"
       },
       {
-            "id": "hw5_q2",
-            "number": 2,
+            "id": "hw5_q3",
+            "number": 3,
             "type": "multiple",
             "question": "Which statements below reflect the role of solids control equipment?",
             "options": [
@@ -85,8 +102,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Solids control is a proactive approach that minimizes waste at the source (the 'Reduce' step in the hierarchy) and optimizes fluid performance to maximize drilling efficiency. (See Page 73)"
       },
       {
-            "id": "hw5_q3",
-            "number": 3,
+            "id": "hw5_q4",
+            "number": 4,
             "type": "single",
             "question": "What purpose would solids control equipment serve when encountering formations at depths that provide a narrow margin of error allowed between the pore pressure and fracture gradient?",
             "options": [
@@ -115,8 +132,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Removing low-gravity solids keeps the mud weight (MW) and plastic viscosity (PV) low, minimizing the Equivalent Circulating Density (ECD) to prevent fracturing narrow-margin formations. (See Page 73)"
       },
       {
-            "id": "hw5_q4",
-            "number": 4,
+            "id": "hw5_q5",
+            "number": 5,
             "type": "single",
             "question": "What purpose would solids control equipment serve if an operator emphasized the importance to reach all section target depths (TD) on or ahead of schedule?",
             "options": [
@@ -145,8 +162,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Minimizing solids reduces mechanical friction at the bit, leading to higher rates of penetration (ROP) and faster drilling times. (See Page 73)"
       },
       {
-            "id": "hw5_q5",
-            "number": 5,
+            "id": "hw5_q6",
+            "number": 6,
             "type": "single",
             "question": "What is considered the most effective and economically viable option to remove solids from the drilling fluid?",
             "options": [
@@ -175,8 +192,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Mechanical separation using shale shakers, hydrocyclones, and centrifuges is the most efficient and cost-effective method to remove drill solids without discarding mud. (See Page 73)"
       },
       {
-            "id": "hw5_q6",
-            "number": 6,
+            "id": "hw5_q7",
+            "number": 7,
             "type": "multiple",
             "question": "What are the two most important reasons for adding weighting material and maintaining sufficient mud density?",
             "options": [
@@ -212,8 +229,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Weighting materials (primarily Barite) are added to increase mud density to provide hydrostatic pressure to control subsurface pressures and prevent wellbore collapse. (See Page 87)"
       },
       {
-            "id": "hw5_q7",
-            "number": 7,
+            "id": "hw5_q8",
+            "number": 8,
             "type": "multiple",
             "question": "Barite should consist of which of the following physical characteristics? (Select all that apply)",
             "options": [
@@ -255,8 +272,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "API barite must have a high specific gravity (4.1-4.2), be chemically inert (so it doesn't react with other additives), non-abrasive (to minimize tool wear), and predominantly under 74 microns. (See Page 87)"
       },
       {
-            "id": "hw5_q8",
-            "number": 8,
+            "id": "hw5_q9",
+            "number": 9,
             "type": "multiple",
             "question": "What are the two most important purposes of maintaining sufficient rheological properties?",
             "options": [
@@ -288,8 +305,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Maintaining correct rheological properties (yield point, plastic viscosity, gel strengths) ensures the fluid can transport cuttings to the surface during circulation and suspend them when static. (See Page 30)"
       },
       {
-            "id": "hw5_q9",
-            "number": 9,
+            "id": "hw5_q10",
+            "number": 10,
             "type": "multiple",
             "question": "What are the four criteria by which solid particles are typically classified in drilling fluids? (Select 4 options)",
             "options": [
@@ -335,8 +352,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "According to the Baroid solids classification system, solid particles are classified by their Specific Gravity, Reactivity (reactive vs inert), Source (commercial vs drilled), and Particle Size. (See Figure 60, Page 86)"
       },
       {
-            "id": "hw5_q10",
-            "number": 10,
+            "id": "hw5_q11",
+            "number": 11,
             "type": "single",
             "question": "Solid particle degradation will result in smaller solid particle size causing an increase in the:",
             "options": [
@@ -365,8 +382,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Mechanical degradation breaks down drill solids into smaller particles (fines and colloids), which exponentially increases the total solids surface area in contact with the fluid. (See Page 89)"
       },
       {
-            "id": "hw5_q11",
-            "number": 11,
+            "id": "hw5_q12",
+            "number": 12,
             "type": "single",
             "question": "What characteristic of some shale formations causes hydration of the clay particles resulting in solid particle swelling?",
             "options": [
@@ -399,8 +416,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Reactivity refers to the clay's potential to absorb water and swell. High-reactivity clays (like smectite/bentonite) swell rapidly when exposed to uninhibited water-based muds. (See Page 91)"
       },
       {
-            "id": "hw5_q12",
-            "number": 12,
+            "id": "hw5_q13",
+            "number": 13,
             "type": "multiple",
             "question": "The two solid characteristics that pose the most difficult challenges to the fluid's rheological properties and overall fluid performance are:",
             "options": [
@@ -432,8 +449,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Particle size (specifically colloidal fines) and clay reactiveness (hydration/dispersion) are the two factors that most severely impact plastic viscosity and gel strengths. (See Page 89)"
       },
       {
-            "id": "hw5_q13",
-            "number": 13,
+            "id": "hw5_q14",
+            "number": 14,
             "type": "single",
             "question": "Which type of clay formation exhibits the highest potential for swelling?",
             "options": [
@@ -462,8 +479,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Smectite clays (such as sodium montmorillonite) have a high cation exchange capacity and easily hydrate between silicate sheets, causing severe swelling. (See Page 88)"
       },
       {
-            "id": "hw5_q14",
-            "number": 14,
+            "id": "hw5_q15",
+            "number": 15,
             "type": "multiple",
             "question": "Why do clay particles that are \u201cinert\u201d still pose adverse challenges to the drilling fluid properties? (Select all that apply)",
             "options": [
@@ -491,8 +508,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Even if inert, fine and colloidal particles cannot be easily screened out by shakers and remain suspended. Their high surface area binds free water, increasing plastic viscosity. (See Page 89)"
       },
       {
-            "id": "hw5_q15",
-            "number": 15,
+            "id": "hw5_q16",
+            "number": 16,
             "type": "single",
             "question": "Higher than normal sand content present in drilling muds can result in:",
             "options": [
@@ -517,8 +534,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Sand (particles >74 microns) is highly abrasive and will rapidly erode pump liners, drill string components, and surface equipment if not removed. (See Page 15)"
       },
       {
-            "id": "hw5_q16",
-            "number": 16,
+            "id": "hw5_q17",
+            "number": 17,
             "type": "multiple",
             "question": "The use of dilution only to reduce solids % provides what implications?",
             "options": [
@@ -546,8 +563,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Dilution alone creates massive volumes of excess mud that must be treated or discarded, exponentially increasing chemical and disposal costs. (See Page 73)"
       },
       {
-            "id": "hw5_q17",
-            "number": 17,
+            "id": "hw5_q18",
+            "number": 18,
             "type": "single",
             "question": "Use of gravitational settling only to lower solids content provides what operational implications?",
             "options": [
@@ -572,8 +589,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Gravitational settling requires extremely large pit volumes (footprint), takes too long (time constraints), and only works for coarse particles, leaving fines suspended. (See Page 78)"
       },
       {
-            "id": "hw5_q18",
-            "number": 18,
+            "id": "hw5_q19",
+            "number": 19,
             "type": "multiple",
             "question": "What aspects significantly affect the settling velocity of a drilled solid? (Select all that apply)",
             "options": [
@@ -583,7 +600,7 @@ Object.assign(QUIZ_DATA, {
                   },
                   {
                         "label": "Solid particles shape",
-                        "value": "shape"
+                        "value": "shape_error"
                   },
                   {
                         "label": "Solid particles micron size",
@@ -612,17 +629,16 @@ Object.assign(QUIZ_DATA, {
             ],
             "answer": [
                   "sg",
-                  "shape",
                   "size",
                   "fluid_density",
                   "fluid_viscosity",
                   "g_force"
             ],
-            "explanation": "According to Stokes' Law, settling velocity is determined by the particle density (SG), size, shape, fluid density, fluid viscosity, and the gravitational/centrifugal forces (G-force) applied. (See Page 78)"
+            "explanation": "According to course material based on Stokes' Law, settling velocity is determined by the particle density (SG), size, fluid density, fluid viscosity, and the gravitational/centrifugal forces (G-force) applied. (See Page 78)"
       },
       {
-            "id": "hw5_q19",
-            "number": 19,
+            "id": "hw5_q20",
+            "number": 20,
             "type": "single",
             "question": "Chemical additions of thinners / dispersants to repair and overcome undesired increased rheological properties is referred to as:",
             "options": [
@@ -651,8 +667,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "De-flocculation uses chemical thinners to break up clay particle aggregates, reducing mud viscosity and gel strengths. (See Page 78)"
       },
       {
-            "id": "hw5_q20",
-            "number": 20,
+            "id": "hw5_q21",
+            "number": 21,
             "type": "single",
             "question": "Which chemical treatment process involves the additions of high molecular weight polymers to coat and preserve the drilled solids in order to prevent issues related to reactive solids?",
             "options": [
@@ -681,8 +697,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Encapsulation uses long-chain polymers to wrap around cuttings, preventing water contact, swelling, and subsequent dispersion. (See Page 78)"
       },
       {
-            "id": "hw5_q21",
-            "number": 21,
+            "id": "hw5_q22",
+            "number": 22,
             "type": "single",
             "question": "When dewatering, the chemical additions used to neutralize the negative charge of the fine suspended solid particles to allow them to form mini aggregates are referred to as:",
             "options": [
@@ -707,8 +723,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Coagulants neutralize the negative surface charges on clay particles, removing repulsive forces and allowing electrostatic attraction to aggregate them. (See Page 78)"
       },
       {
-            "id": "hw5_q22",
-            "number": 22,
+            "id": "hw5_q23",
+            "number": 23,
             "type": "single",
             "question": "When dewatering, the long chain polymer additions used to envelope and bind the aggregated solids together to form larger solid clusters (flocs) are referred to as:",
             "options": [
@@ -733,8 +749,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Flocculants are high molecular weight polymers that act as bridges to gather aggregated particles into large visible clusters called flocs. (See Page 78)"
       },
       {
-            "id": "hw5_q23",
-            "number": 23,
+            "id": "hw5_q24",
+            "number": 24,
             "type": "single",
             "question": "When drilling reactive formations, prevention is generally accomplished by utilizing fluid systems formulated to incorporate the chemistry needed to prevent excessive dispersion & hydration of solid particles. This is an example of:",
             "options": [
@@ -763,8 +779,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Inhibition is the chemical prevention of clay swelling and dispersion, typically achieved using salts (like KCl) or specialized polymers. (See Page 78)"
       },
       {
-            "id": "hw5_q24",
-            "number": 24,
+            "id": "hw5_q25",
+            "number": 25,
             "type": "multiple",
             "question": "What are the four categories that Baroid's BSS uses to classify their offered equipment and services? (Select 4 options)",
             "options": [
@@ -810,8 +826,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Baroid Surface Solutions (BSS) classifies its services into: Solids Control & Fluid Treatment, Waste Handling & Transportation, Waste Treatment & Disposal, and Filtration (wellbore cleanup). (See Baroid BSS Service Line definitions)"
       },
       {
-            "id": "hw5_q25",
-            "number": 25,
+            "id": "hw5_q26",
+            "number": 26,
             "type": "single",
             "question": "What section of the surface mud pit system are the solids control devices located?",
             "options": [
@@ -840,8 +856,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Solids control devices are located in the return section of the mud pits to remove drill solids immediately as mud returns from the wellbore, before it reaches the additions or suction sections. (See Mud Tank Layout)"
       },
       {
-            "id": "hw5_q26",
-            "number": 26,
+            "id": "hw5_q27",
+            "number": 27,
             "type": "single",
             "question": "A _____ is a device often installed on the flow line to ensure equal distribution of the circulated drilling fluid and transported solids over the shakers:",
             "options": [
@@ -866,8 +882,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Flow dividers split the flow line return stream equally among all operating shakers to prevent overloading any single shaker screen. (See Shaker installation)"
       },
       {
-            "id": "hw5_q27",
-            "number": 27,
+            "id": "hw5_q28",
+            "number": 28,
             "type": "single",
             "question": "A _____ is a preliminary screening mechanism utilized when drilling adolescent unconsolidated shales causing excessive solid hydration that would obstruct the shaker performance:",
             "options": [
@@ -892,8 +908,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Gumbo removal devices (like gumbo shakers or scalping screens) catch large sticky clay masses (gumbo) before they reach the primary shale shakers, preventing screen blinding. (See Page 75)"
       },
       {
-            "id": "hw5_q28",
-            "number": 28,
+            "id": "hw5_q29",
+            "number": 29,
             "type": "single",
             "question": "What is the typical sequenced arrangement of conventional solids control equipment for a weighted system?",
             "options": [
@@ -922,8 +938,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "In a weighted mud system, the sequence is: Shale shaker -> Mud Cleaner -> Low Speed Centrifuge -> High Speed Centrifuge. Hydrocyclones are bypass-routed to the Mud Cleaner to recover barite. (See Page 83)"
       },
       {
-            "id": "hw5_q29",
-            "number": 29,
+            "id": "hw5_q30",
+            "number": 30,
             "type": "single",
             "question": "What is the typical sequenced arrangement of conventional solids control equipment for an un-weighted system?",
             "options": [
@@ -952,8 +968,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "In an un-weighted mud system, mud flows from the Shale Shaker -> Desander -> Desilter -> Decanting Centrifuge in sequence, removing progressively smaller particles. (See Page 81)"
       },
       {
-            "id": "hw5_q30",
-            "number": 30,
+            "id": "hw5_q31",
+            "number": 31,
             "type": "single",
             "question": "What is the angled settling pit located directly below the underbelly of the primary shakers?",
             "options": [
@@ -982,8 +998,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "The sand trap is the compartment directly under the shakers. It is angled to settle out coarse solids that pass through broken screens, and is kept un-agitated. (See Sand Trap definition)"
       },
       {
-            "id": "hw5_q31",
-            "number": 31,
+            "id": "hw5_q32",
+            "number": 32,
             "type": "single",
             "question": "Which piece of Baroid Surface Solutions equipment is the first line of defense in solids control?",
             "options": [
@@ -1008,8 +1024,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "The shale shaker is the first line of defense, separating the bulk of coarse drilled solids (down to ~74 microns) by mechanical screening before they degrade. (See Page 73)"
       },
       {
-            "id": "hw5_q32",
-            "number": 32,
+            "id": "hw5_q33",
+            "number": 33,
             "type": "multiple",
             "question": "What conventional solids control equipment removes solids based on the principle of accelerated sedimentation? (Select all that apply)",
             "options": [
@@ -1037,8 +1053,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Decanting centrifuges and hydrocyclones use centrifugal acceleration to force solids to settle out much faster than they would under normal gravity. (See Page 80)"
       },
       {
-            "id": "hw5_q33",
-            "number": 33,
+            "id": "hw5_q34",
+            "number": 34,
             "type": "single",
             "question": "What separation method is used when using a Shale Shaker?",
             "options": [
@@ -1067,8 +1083,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Shale shakers separate solids by mechanical filtering (or screening) over wire mesh cloths. (See Page 80)"
       },
       {
-            "id": "hw5_q34",
-            "number": 34,
+            "id": "hw5_q35",
+            "number": 35,
             "type": "multiple",
             "question": "A \u201cstand alone\u201d Hydrocyclone configuration is better known as a: (Select all that apply)",
             "options": [
@@ -1100,8 +1116,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Stand-alone hydrocyclones are classified by cone size as either desanders (typically 10-12 inch cones) or desilters (typically 4 inch cones). (See Page 81)"
       },
       {
-            "id": "hw5_q35",
-            "number": 35,
+            "id": "hw5_q36",
+            "number": 36,
             "type": "multiple",
             "question": "A mud cleaner combines what TWO methods to remove solids from the drilling mud?",
             "options": [
@@ -1129,8 +1145,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "A mud cleaner consists of hydrocyclones (which separate solids via accelerated sedimentation) discharging their underflow onto a fine shale shaker screen (which separates via filtering). (See Mud Cleaner definition)"
       },
       {
-            "id": "hw5_q36",
-            "number": 36,
+            "id": "hw5_q37",
+            "number": 37,
             "type": "single",
             "question": "What piece of conventional solids control equipment is purposed to remove fine to ultra-fine solids less than 20 microns?",
             "options": [
@@ -1155,8 +1171,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Decanting centrifuges operate at high rotational speeds to exert thousands of Gs of centrifugal force, capable of separating fine to ultra-fine particles (down to 2-5 microns). (See Page 80)"
       },
       {
-            "id": "hw5_q37",
-            "number": 37,
+            "id": "hw5_q38",
+            "number": 38,
             "type": "single",
             "question": "A mud cleaner typically is used in place of stand-alone hydrocyclones on what type of mud systems?",
             "options": [
@@ -1185,8 +1201,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "In weighted systems, stand-alone hydrocyclones would discard valuable weighting material (barite) in their underflow. A mud cleaner screens this underflow to reclaim barite while discarding larger low-gravity solids. (See Mud Cleaner page)"
       },
       {
-            "id": "hw5_q38",
-            "number": 38,
+            "id": "hw5_q39",
+            "number": 39,
             "type": "multiple",
             "question": "List the primary applications for centrifuges utilized by BSS: (Select 3 options)",
             "options": [
