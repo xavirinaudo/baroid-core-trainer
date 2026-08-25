@@ -22,15 +22,16 @@ def ocr_image_powershell(img_path):
 
     function Await($asyncOperation, $type) {{
         $asTask = [System.WindowsRuntimeSystemExtensions].GetMethods() | 
-            Where-Object {{ $_.Name -eq 'AsTask' -and $_.GetGenericArguments().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' }}
-        $genericAsTask = $asTask.MakeGenericMethod($type)
-        $task = $genericAsTask.Invoke($null, @($asyncOperation))
+            Where-Object {{ $_.Name -eq 'AsTask' -and $_.GetGenericArguments().Count -eq 1 -and $_.GetParameters().Count -eq 1 }}
+        $genericAsTask = $asTask[0].MakeGenericMethod($type)
+        $myParams = [object[]]@($asyncOperation)
+        $task = $genericAsTask.Invoke($null, $myParams)
         $task.Wait()
         return $task.Result
     }}
 
     $file = Await ([Windows.Storage.StorageFile]::GetFileFromPathAsync("{abs_path}")) ([Windows.Storage.StorageFile])
-    $stream = Await ($file.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStreamWithContentType])
+    $stream = Await ($file.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStream])
     $decoder = Await ([Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($stream)) ([Windows.Graphics.Imaging.BitmapDecoder])
     $bitmap = Await ($decoder.GetSoftwareBitmapAsync()) ([Windows.Graphics.Imaging.SoftwareBitmap])
     

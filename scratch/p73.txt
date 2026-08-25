@@ -1,0 +1,36 @@
+Baroid Core Participant Guide 
+ 
+FOR INTERNAL USE ONLY Page 73 of 347 © Copyright 2020, Halliburton 
+             UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Solids Control 
+A solids control operation is a cost effective strategy of maximizing drilling efficiency by separating & removing 
+drilled solids from the drilling fluid generated during the drilling process.  
+ Mechanical separation of drilled solids is the most effective and economically viable option  
+ Solids removal is essential to the optimization of fluid performance 
+ Considered a Proactive / Preventive approach to mitigate solid related issues  
+ Reduces volumes of waste generated and lowers required dilution volumes. 
+ 
+Implementing successful Solids Control operations requires all the following aspects to be included in an 
+engineered solution:
+• Planning  
+• Design 
+• Preparation  
+• Installation 
+• Operation 
+• Data Collection 
+• Effective reporting  
+• Performance monitoring 
+• Continual Improvement 
+ 
+Solids Contamination: A Costly problem  
+ Drill solids contamination is unavoidable and can result in devastating consequences. 
+ Issues attributed to solids are often not immediately recognized 
+ Characteristics of the drilled solids dictate the severity of the contamination and its effects. 
+ Fluid treatment costs typically attribute the largest portion of the overall expense to remedy adverse 
+effects produced by solids. 
+ 
+ 
+ 
+ 
+ 

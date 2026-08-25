@@ -13,17 +13,12 @@ Object.assign(QUIZ_DATA, {
           { label: "Reuse", value: "reuse" },
           { label: "Disposal of Waste", value: "disposal_of_waste" },
           { label: "Separation of waste", value: "separation_of_waste" },
-          { label: "2", value: "2" },
-          { label: "6", value: "6" },
-          { label: "5", value: "5" },
-          { label: "Apr 11 2023 |Logged in as : Gewaida, Alaa G", value: "apr_11_2023__logged_" },
-          { label: "Sepaato o waste", value: "sepaato_o_waste" },
           { label: "Recycle", value: "recycle" },
           { label: "Recover", value: "recover" },
           { label: "Reduce", value: "reduce" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["reduce", "reuse", "recycle", "recover", "separation_of_waste", "disposal_of_waste"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 25)"
       },
       {
         id: "hw5_q2",
@@ -31,7 +26,6 @@ Object.assign(QUIZ_DATA, {
         type: "multiple",
         question: "Increasing solids content in a drilling fluid can result in several negative issues.",
         options: [
-          { label: "From the following list, select the most critical effects of improper solids control", value: "from_the_following_l" },
           { label: "Increased fluid loss due high ECDs", value: "increased_fluid_loss" },
           { label: "Stuck pipe due differential sticking", value: "stuck_pipe_due_diffe" },
           { label: "Increase of ROP and lowering of rig time", value: "increase_of_rop_and_" },
@@ -41,8 +35,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Increased fluid waste volumes", value: "increased_fluid_wast" },
           { label: "Good cement jobs due thinner filtercake", value: "good_cement_jobs_due" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["increased_fluid_loss", "stuck_pipe_due_diffe", "poor_cement_jobs_due", "increase_of_rop_and_", "increased_fluid_loss"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 7)"
       },
       {
         id: "hw5_q3",
@@ -56,8 +50,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Solids Control operations should only be used with expensive fluid systems", value: "solids_control_opera" },
           { label: "Solid control equipment is purposed to optimizes the drilling fluid performance and maximize drilling efficiencies", value: "solid_control_equipm" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["solids_control_equip", "solid_control_equipm"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Baroid Manual)"
       },
       {
         id: "hw5_q4",
@@ -71,8 +65,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Provide Lower Equivalent Circulating Densities (ECD’s)", value: "provide_lower_equiva" },
           { label: "Reduced torque and drag", value: "reduced_torque_and_d" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "provide_lower_equiva",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q5",
@@ -86,8 +80,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Provide Lower Equivalent Circulating Densities (ECD’s)", value: "provide_lower_equiva" },
           { label: "Reduced torque and drag", value: "reduced_torque_and_d" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "increase_penetration",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q6",
@@ -101,8 +95,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Gravitational Settling", value: "gravitational_settli" },
           { label: "Dilution", value: "dilution" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "mechanical_separatio",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q7",
@@ -117,8 +111,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Provide hydraulic power to downhole tools", value: "provide_hydraulic_po" },
           { label: "Control subsurface pressures", value: "control_subsurface_p" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["provide_wellbore_sta", "control_subsurface_p"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q8",
@@ -134,8 +128,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Low specific gravity", value: "low_specific_gravity" },
           { label: "Micron size of particles is predominantly >74 microns", value: "micron_size_of_parti" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["micron_size_of_parti", "non_abrasive", "chemically_reactive", "high_specific_gravit"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 36)"
       },
       {
         id: "hw5_q9",
@@ -149,8 +143,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Provide wellbore stability", value: "provide_wellbore_sta" },
           { label: "Provide hydraulic power to downhole tools", value: "provide_hydraulic_po" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["suspend_and_release_", "transport_cuttings_t"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q10",
@@ -167,8 +161,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Solid Particle Source", value: "solid_particle_sourc" },
           { label: "Solid Particle Size", value: "solid_particle_size" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["solid_particle_color", "solid_particle_color", "solid_particle_color", "solid_particle_color"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q11",
@@ -182,8 +176,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Solid particles abrasiveness", value: "solid_particles_abra" },
           { label: "Solid particles surface area", value: "solid_particles_surf" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "solid_particle_distr",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 26)"
       },
       {
         id: "hw5_q12",
@@ -198,8 +192,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Particle degradation", value: "particle_degradation" },
           { label: "Particle reactiveness", value: "particle_reactivenes" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "particle_reactivenes",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 103)"
       },
       {
         id: "hw5_q13",
@@ -213,8 +207,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Solid specific gravity", value: "solid_specific_gravi" },
           { label: "Solid size", value: "solid_size" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["solid_reactiveness", "solid_size"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q14",
@@ -227,10 +221,9 @@ Object.assign(QUIZ_DATA, {
           { label: "Smectites", value: "smectites" },
           { label: "Chlorites", value: "chlorites" },
           { label: "Illites", value: "illites" },
-          { label: "All of the above", value: "all_of_the_above" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "smectites",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 4)"
       },
       {
         id: "hw5_q15",
@@ -243,8 +236,8 @@ Object.assign(QUIZ_DATA, {
           { label: "They consist of mostly large solid particles resulting in increased solid surface area and less free liquid available tothe mud", value: "they_consist_of_most" },
           { label: "They consist of mostly colloidal solid particles causing increased solid surface areas and less free liquid providingundesired viscosity of mud", value: "they_consist_of_most" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["the_clay_particles_a", "they_consist_of_most"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q16",
@@ -257,8 +250,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Excessive equipment repair and pump maintenance costs", value: "excessive_equipment_" },
           { label: "Increased amount of colloidal solid particles", value: "increased_amount_of_" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "excessive_hydration_",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 94)"
       },
       {
         id: "hw5_q17",
@@ -271,8 +264,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Increasingly excessive mud maintenance costs", value: "increasingly_excessi" },
           { label: "Fluid incompatibility with drilled solids", value: "fluid_incompatibilit" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["excessive_mud_and_wa", "increasingly_excessi"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q18",
@@ -283,10 +276,9 @@ Object.assign(QUIZ_DATA, {
           { label: "Operational footprint constraints", value: "operational_footprin" },
           { label: "Only the ability to settle out and remove large solid particles", value: "only_the_ability_to_" },
           { label: "Operational time constraints", value: "operational_time_con" },
-          { label: "All of the above", value: "all_of_the_above" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "operational_footprin",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q19",
@@ -303,8 +295,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Fluid loss into the formation", value: "fluid_loss_into_the_" },
           { label: "Amount of G-force applied", value: "amount_of_g_force_ap" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["solid_particles_spec", "solid_particles_spec", "solid_particles_spec", "fluid_density", "fluid_viscosity"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 60)"
       },
       {
         id: "hw5_q20",
@@ -318,8 +310,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Encapsulation", value: "encapsulation" },
           { label: "Flocculation", value: "flocculation" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "de_flocculation",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 6)"
       },
       {
         id: "hw5_q21",
@@ -330,8 +322,8 @@ Object.assign(QUIZ_DATA, {
           { label: "involves the additions of high molecular weight polymers to coat and preserve the drilled solids in order", value: "involves_the_additio" },
           { label: "to prevent issues related to reactive solids", value: "to_prevent_issues_re" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "involves_the_additio",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 4)"
       },
       {
         id: "hw5_q22",
@@ -339,11 +331,11 @@ Object.assign(QUIZ_DATA, {
         type: "multiple",
         question: "A chemical treatment used to enhance the solids removal efficiencies, also known as dewatering typically consists of:",
         options: [
-          { label: "a) The use of chemical additions to neutralize the negative charge of the solid particles resulting in solid particle aggregationis referred to as", value: "a__the_use_of_chemic" },
-          { label: "b) The use of long chain polymer additions to envelope and bind the neutralized solid aggregates together  providing largersolid clusters  is referred to as", value: "b__the_use_of_long_c" },
+          { label: "coagulants", value: "coagulants" },
+          { label: "flocculants", value: "flocculants" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["coagulants", "flocculants"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q23",
@@ -357,8 +349,8 @@ Object.assign(QUIZ_DATA, {
           { label: "De-flocculation", value: "de_flocculation" },
           { label: "Flocculation", value: "flocculation" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "inhibition",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 23)"
       },
       {
         id: "hw5_q24",
@@ -375,8 +367,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Spacers & Fluid Mixing equipment", value: "spacers___fluid_mixi" },
           { label: "Solids Solutions & Fluid Treatment Equipment & Services", value: "solids_solutions___f" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["filtration__wellbore", "solids_control___flu", "waste_treatment___di", "waste_handling___tra"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q25",
@@ -390,8 +382,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Testing section", value: "testing_section" },
           { label: "Reserves section", value: "reserves_section" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "return_section",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 22)"
       },
       {
         id: "hw5_q26",
@@ -401,8 +393,8 @@ Object.assign(QUIZ_DATA, {
         options: [
           { label: "and transported solids over the shakers", value: "and_transported_soli" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "and_transported_soli",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q27",
@@ -412,8 +404,8 @@ Object.assign(QUIZ_DATA, {
         options: [
           { label: "causing excessive solid hydration that would obstruct the shaker performance", value: "causing_excessive_so" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "causing_excessive_so",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q28",
@@ -427,8 +419,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Shale Shaker, desander, desilter & centrifuge", value: "shale_shaker__desand" },
           { label: "Shale shaker, centrifuge, desander & desilter", value: "shale_shaker__centri" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "shale_shaker__centri",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q29",
@@ -443,8 +435,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Shale Shaker, desander, desilter & centrifuge", value: "shale_shaker__desand" },
           { label: "Shale shaker, centrifuge, desander & desilter", value: "shale_shaker__centri" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "shale_shaker__centri",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 4)"
       },
       {
         id: "hw5_q30",
@@ -458,8 +450,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Return pit", value: "return_pit" },
           { label: "Coarse tank", value: "coarse_tank" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "sand_trap",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 43)"
       },
       {
         id: "hw5_q31",
@@ -472,8 +464,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Dryer", value: "dryer" },
           { label: "Flow divider", value: "flow_divider" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "shale_shaker",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 28)"
       },
       {
         id: "hw5_q32",
@@ -485,10 +477,9 @@ Object.assign(QUIZ_DATA, {
           { label: "Shale shakers", value: "shale_shakers" },
           { label: "Cutting dryers", value: "cutting_dryers" },
           { label: "Decanting centrifuge", value: "decanting_centrifuge" },
-          { label: "All of the above", value: "all_of_the_above" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["hydrocyclones__desan", "decanting_centrifuge"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 213)"
       },
       {
         id: "hw5_q33",
@@ -502,8 +493,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Centrifugal force", value: "centrifugal_force" },
           { label: "Desorption", value: "desorption" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "filtering",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 67)"
       },
       {
         id: "hw5_q34",
@@ -515,10 +506,9 @@ Object.assign(QUIZ_DATA, {
           { label: "Centrifuge", value: "centrifuge" },
           { label: "Degasser", value: "degasser" },
           { label: "Desilter", value: "desilter" },
-          { label: "All of the above", value: "all_of_the_above" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["desander", "desilter"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Baroid Manual)"
       },
       {
         id: "hw5_q35",
@@ -531,8 +521,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Accelerated Sedimentation", value: "accelerated_sediment" },
           { label: "Accelerated Degradation", value: "accelerated_degradat" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["filtering", "accelerated_sediment"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q36",
@@ -545,8 +535,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Flow divider", value: "flow_divider" },
           { label: "Centrifuge", value: "centrifuge" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "centrifuge",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Baroid Manual)"
       },
       {
         id: "hw5_q37",
@@ -560,8 +550,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Water based systems", value: "water_based_systems" },
           { label: "Non Aqueous fluid systems", value: "non_aqueous_fluid_sy" },
         ],
-        answer: "",
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: "un_weighted_systems",
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 5)"
       },
       {
         id: "hw5_q38",
@@ -574,10 +564,9 @@ Object.assign(QUIZ_DATA, {
           { label: "Rheology control (barite recovery)", value: "rheology_control__ba" },
           { label: "Chemically enhanced centrifugation (dewatering)", value: "chemically_enhanced_" },
           { label: "Rheology increase", value: "rheology_increase" },
-          { label: "None of the above", value: "none_of_the_above" },
         ],
-        answer: [],
-        explanation: "Refer to Baroid Core Participant Guide, Solids Control and Waste Management chapters."
+        answer: ["max_solids_removal", "rheology_control__ba", "chemically_enhanced_"],
+        explanation: "Correct answers are based on the Baroid Core manual. (See Page 36)"
       },
     ]
   }
