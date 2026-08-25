@@ -640,8 +640,7 @@ questions = [
 ]
 
 # Write to file
-content = f"""var QUIZ_DATA = typeof QUIZ_DATA !== 'undefined' ? QUIZ_DATA : {{}};
-Object.assign(QUIZ_DATA, {{
+content = f"""Object.assign(QUIZ_DATA, {{
   homework_5: {{
     title: "Homework 5: Solids Control and Waste Management",
     description: "Assessment covering solids control classifications, settling velocity principles, and separation equipment sequence.",

@@ -779,6 +779,8 @@ function renderCalculationInputs(q) {
     else if (key === 'concentration') labelText = 'Concentration of treatment (lb/bbl)';
     else if (key === 'nap_ratio') labelText = 'NAP Ratio (%)';
     else if (key === 'water_ratio') labelText = 'Water Ratio (%)';
+    else if (key === 'dilution_bbl') labelText = 'Required Dilution Volume (bbl)';
+    else if (key === 'savings_usd') labelText = 'Cost Savings (US$)';
     
     const isString = typeof q.answer[key] === 'string';
     const inputId = `calc-ans-${key}`;

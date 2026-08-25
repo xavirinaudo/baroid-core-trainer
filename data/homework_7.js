@@ -1110,23 +1110,45 @@ Object.assign(QUIZ_DATA, {
             "number": 41,
             "type": "calculation",
             "question": "How much new volume (dilution) in barrels is required to maintain 6% drill solids for 3500' of 13 7/8\" hole with 80% solids removal efficiency? (Assume gauge hole, round to 2 decimal places)",
-            "answer": "2050.92",
-            "explanation": "Step 1: TDS generated = (13.875^2 / 1029.4) * 3500 * (1 - 0.80) = 0.187 * 3500 * 0.20 = 130.55 bbl of solids remaining. Step 2: Total Mud Volume = 130.55 / 0.06 = 2175.83 bbl. Step 3: Dilution volume = 2175.83 - 130.55 = 2050.92 bbl. (See Dilution formulas)"
+            "inputs": {
+                  "Hole Diameter": "13 7/8 in",
+                  "Interval Length": "3500 ft",
+                  "Initial/Max Solids Limit": "6%",
+                  "Solids Removal Efficiency": "80%"
+            },
+            "answer": {
+                  "dilution_bbl": 2050.92
+            },
+            "explanation": "Step 1: TDS generated = (13.875^2 / 1029.4) * 3500 * (1 - 0.80) = 192.51 * 3500 * 0.20 = 130.55 bbl of solids remaining. Step 2: Total Mud Volume = 130.55 / 0.06 = 2175.83 bbl. Step 3: Dilution volume = 2175.83 - 130.55 = 2050.92 bbl. (See Dilution formulas)"
       },
       {
             "id": "hw7_q42",
             "number": 42,
             "type": "calculation",
             "question": "How much new volume (dilution) in barrels is required to maintain 6% drill solids for 3500' of 13 7/8\" hole with 92% solids removal efficiency? (Assume gauge hole, round to 2 decimal places)",
-            "answer": "820.31",
-            "explanation": "TDS remaining = (13.875^2 / 1029.4) * 3500 * (1 - 0.92) = 0.187 * 3500 * 0.08 = 52.22 bbl of solids remaining. Total Mud Volume = 52.22 / 0.06 = 870.33 bbl. Dilution required = 870.33 - 52.22 = 820.31 bbl. (See Dilution formulas)"
+            "inputs": {
+                  "Hole Diameter": "13 7/8 in",
+                  "Interval Length": "3500 ft",
+                  "Initial/Max Solids Limit": "6%",
+                  "Solids Removal Efficiency": "92%"
+            },
+            "answer": {
+                  "dilution_bbl": 820.31
+            },
+            "explanation": "TDS remaining = (13.875^2 / 1029.4) * 3500 * (1 - 0.92) = 192.51 * 3500 * 0.08 = 52.22 bbl of solids remaining. Total Mud Volume = 52.22 / 0.06 = 870.33 bbl. Dilution required = 870.33 - 52.22 = 820.31 bbl. (See Dilution formulas)"
       },
       {
             "id": "hw7_q43",
             "number": 43,
             "type": "calculation",
             "question": "If each barrel of drilling fluid saved costs $150/barrel, what is the cost savings in US$ for Question 41 vs. Question 42? (Type whole number without commas or dollar signs)",
-            "answer": "184592",
+            "inputs": {
+                  "Cost per Barrel Saved": "$150",
+                  "Saved Volume": "1230.61 bbl"
+            },
+            "answer": {
+                  "savings_usd": 184592
+            },
             "explanation": "Volume Saved = 2050.92 - 820.31 = 1230.61 bbl. Cost Savings = 1230.61 bbl * $150/bbl = $184,591.50, which rounds to the whole number 184592. (See Dilution economics)"
       },
       {
@@ -1134,23 +1156,45 @@ Object.assign(QUIZ_DATA, {
             "number": 44,
             "type": "calculation",
             "question": "Given 75% solids removal efficiency with 8% drill solids limit for 1500' of 12 1/4\" hole. Calculate the required dilution volume in barrels. (Assume gauge hole, round to 2 decimal places)",
-            "answer": "628.71",
-            "explanation": "TDS generated = (12.25^2 / 1029.4) * 1500 * (1 - 0.75) = 0.14578 * 1500 * 0.25 = 54.67 bbl of solids remaining. Total Mud Volume = 54.67 / 0.08 = 683.38 bbl. Dilution required = 683.38 - 54.67 = 628.71 bbl. (See Dilution formulas)"
+            "inputs": {
+                  "Hole Diameter": "12 1/4 in",
+                  "Interval Length": "1500 ft",
+                  "Initial/Max Solids Limit": "8%",
+                  "Solids Removal Efficiency": "75%"
+            },
+            "answer": {
+                  "dilution_bbl": 628.71
+            },
+            "explanation": "TDS generated = (12.25^2 / 1029.4) * 1500 * (1 - 0.75) = 145.78 * 1500 * 0.25 = 54.67 bbl of solids remaining. Total Mud Volume = 54.67 / 0.08 = 683.38 bbl. Dilution required = 683.38 - 54.67 = 628.71 bbl. (See Dilution formulas)"
       },
       {
             "id": "hw7_q45",
             "number": 45,
             "type": "calculation",
             "question": "Given 90% solids removal efficiency with 8% drill solids limit for 1500' of 12 1/4\" hole. Calculate the required dilution volume in barrels. (Assume gauge hole, round to 2 decimal places)",
-            "answer": "251.51",
-            "explanation": "TDS remaining = (12.25^2 / 1029.4) * 1500 * (1 - 0.90) = 0.14578 * 1500 * 0.10 = 21.87 bbl of solids remaining. Total Mud Volume = 21.87 / 0.08 = 273.38 bbl. Dilution required = 273.38 - 21.87 = 251.51 bbl. (See Dilution formulas)"
+            "inputs": {
+                  "Hole Diameter": "12 1/4 in",
+                  "Interval Length": "1500 ft",
+                  "Initial/Max Solids Limit": "8%",
+                  "Solids Removal Efficiency": "90%"
+            },
+            "answer": {
+                  "dilution_bbl": 251.51
+            },
+            "explanation": "TDS remaining = (12.25^2 / 1029.4) * 1500 * (1 - 0.90) = 145.78 * 1500 * 0.10 = 21.87 bbl of solids remaining. Total Mud Volume = 21.87 / 0.08 = 273.38 bbl. Dilution required = 273.38 - 21.87 = 251.51 bbl. (See Dilution formulas)"
       },
       {
             "id": "hw7_q46",
             "number": 46,
             "type": "calculation",
             "question": "If each barrel of drilling fluid saved costs $180/barrel, what is the cost savings in US$ for Question 44 vs. Question 45? (Type whole number without commas or dollar signs)",
-            "answer": "67896",
+            "inputs": {
+                  "Cost per Barrel Saved": "$180",
+                  "Saved Volume": "377.20 bbl"
+            },
+            "answer": {
+                  "savings_usd": 67896
+            },
             "explanation": "Volume Saved = 628.71 - 251.51 = 377.20 bbl. Cost Savings = 377.20 bbl * $180/bbl = $67,896. (See Dilution economics)"
       }
 ]
