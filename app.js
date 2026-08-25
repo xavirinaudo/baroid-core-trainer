@@ -865,12 +865,27 @@ function quizActionSubmit() {
       if (selectedOptions.length === 0) return alert("Please select an option.");
       isCorrect = selectedOptions[0] === q.answer;
       
+      document.querySelectorAll('.option-card').forEach(el => {
+        const val = el.id.substring(4);
+        if (val === q.answer) el.classList.add('correct');
+        else if (selectedOptions.includes(val)) el.classList.add('incorrect');
+      });
+      
     } else if (q.type === 'multiple') {
       if (selectedOptions.length === 0) return alert("Please select at least one option.");
       
       const sortedUser = [...selectedOptions].sort();
       const sortedAns = [...q.answer].sort();
       isCorrect = JSON.stringify(sortedUser) === JSON.stringify(sortedAns);
+      
+      document.querySelectorAll('.option-card').forEach(el => {
+        const val = el.id.substring(4);
+        const shouldHave = q.answer.includes(val);
+        const selected = selectedOptions.includes(val);
+        
+        if (shouldHave) el.classList.add('correct');
+        else if (selected) el.classList.add('incorrect');
+      });
       
     } else if (q.type === 'matching') {
       let allCorrect = true;
