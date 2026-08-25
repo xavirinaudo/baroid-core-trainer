@@ -1,5 +1,3 @@
-const QUIZ_DATA = QUIZ_DATA || {};
-
 Object.assign(QUIZ_DATA, {
   homework_6: {
     title: "Homework 6: Solids Control Equipment",

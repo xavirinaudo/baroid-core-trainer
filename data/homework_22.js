@@ -217,7 +217,3 @@ QUIZ_DATA.homework_22 = {
     }
   ]
 };
-
-// Register new homeworks into QUIZ_DATA
-QUIZ_DATA.homework_18 = homework_18;
-QUIZ_DATA.homework_21 = homework_21;

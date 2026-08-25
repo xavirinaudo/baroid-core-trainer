@@ -706,8 +706,7 @@ questions = [
 ]
 
 # Write to file
-content = f"""var QUIZ_DATA = typeof QUIZ_DATA !== 'undefined' ? QUIZ_DATA : {{}};
-Object.assign(QUIZ_DATA, {{
+content = f"""Object.assign(QUIZ_DATA, {{
   homework_7: {{
     title: "Homework 7: Centrifuges & Cuttings Dryers",
     description: "Assessment covering decanting centrifuges operating variables, dewatering physics, vertical cuttings dryers parameters, and dilution economics calculations.",
