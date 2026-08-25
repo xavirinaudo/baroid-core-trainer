@@ -1,0 +1,30 @@
+Baroid Core Participant Guide 
+ 
+FOR INTERNAL USE ONLY Page 86 of 347 © Copyright 2020, Halliburton 
+             UPLOADED: 2020/Jan/13, 07:30:35 UTC 
+                          Not for reproduction and resale 
+Solids in Drilling Fluids overview 
+ 
+Figure 59 - Solids in drilling fluids 
+ 
+Solids Classification  
+ 
+ 
+Figure 60 - Solids Classification 
+Solids
+Specific 
+Gravity
+High gravity
+Low gravity
+Particle Size
+Sand
+Fine 
+sand/Silt
+Colloidal
+Reactivity
+Reactive
+Inert
+Source
+Commercial
+Drilled 
+solids

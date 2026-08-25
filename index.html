@@ -62,6 +62,19 @@
           <span class="badge-error-count" id="nav-error-count" style="display: none; background: var(--h-red, #cc0000); color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; margin-left: auto;">0</span>
         </a>
 
+        <!-- Category: Solids Control & Waste -->
+        <details class="nav-category" id="cat-solids">
+          <summary class="category-title">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="cat-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            Solids Control & Waste
+          </summary>
+          <div class="category-content">
+            <a class="nav-link" id="nav-hw5" onclick="switchTab('hw5')">Homework 5 (Solids & Waste)</a>
+            <a class="nav-link" id="nav-hw6" onclick="switchTab('hw6')">Homework 6 (Shakers & Screens)</a>
+            <a class="nav-link" id="nav-hw7" onclick="switchTab('hw7')">Homework 7 (Centrifuges & Dryers)</a>
+          </div>
+        </details>
+
         <!-- Category: Water-Based Fluids -->
         <details class="nav-category" id="cat-wbf" open>
           <summary class="category-title">
@@ -177,6 +190,30 @@
       <!-- VIEW: Dashboard -->
       <section id="view-dashboard" class="view-pane" style="display: flex; flex-direction: column; gap: 24px;">
         <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));">
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_5')">
+            <h3 class="card-title">Homework 5: Solids Control & Waste</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review waste hierarchy, solid classifications (High/Low SG, size, reactivity, source), and mechanical separation principles.</p>
+            <div class="task-info">
+              <span>37 theory questions</span>
+              <span id="score-hw5">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_6')">
+            <h3 class="card-title">Homework 6: Solids Control Equipment</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Practice questions on shale shakers, screen API-RP-13C classification standards (conductance/conveyance), and feed pumps.</p>
+            <div class="task-info">
+              <span>31 theory questions</span>
+              <span id="score-hw6">Record: --</span>
+            </div>
+          </div>
+          <div class="glass glass-hover task-card" onclick="startQuiz('homework_7')">
+            <h3 class="card-title">Homework 7: Centrifuges & Dryers</h3>
+            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Test your knowledge on centrifuge variables, dewatering coagulants/flocculants, vertical cuttings dryers, and dilution economics math.</p>
+            <div class="task-info">
+              <span>46 core questions</span>
+              <span id="score-hw7">Record: --</span>
+            </div>
+          </div>
           <div class="glass glass-hover task-card" onclick="startQuiz('homework_8')">
             <h3 class="card-title">Homework 8: Alkalinity (Theory)</h3>
             <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">Review pH concepts, filtrate alkalinity titrations (Pf, Mf, Pm) and interpret ionic concentrations based on API 13B-1 guidelines.</p>
@@ -1027,6 +1064,9 @@
 
   <!-- Application Logic -->
   <script src="data/init.js"></script>
+  <script src="data/homework_5.js"></script>
+  <script src="data/homework_6.js"></script>
+  <script src="data/homework_7.js"></script>
   <script src="data/homework_8.js"></script>
   <script src="data/homework_9.js"></script>
   <script src="data/business_processes.js"></script>

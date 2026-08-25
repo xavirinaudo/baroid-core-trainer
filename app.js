@@ -22,6 +22,9 @@ let stats = {
   totalAnswered: 0,
   correctCount: 0,
   simulatorsRun: 0,
+  hw5_highScore: null,
+  hw6_highScore: null,
+  hw7_highScore: null,
   hw8_highScore: null,
   hw9_highScore: null,
   bp_highScore: null,
@@ -133,6 +136,24 @@ function switchTab(tabId) {
     document.getElementById('nav-dashboard').classList.add('active');
     document.getElementById('page-title').innerText = "Learning Dashboard";
     document.getElementById('page-subtitle').innerText = "Monitor your stats and start practicing.";
+  } else if (tabId === 'hw5') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw5').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 5: Solids Control & Waste";
+    document.getElementById('page-subtitle').innerText = "Practice questions about the waste hierarchy, solids classification, and mechanical separation.";
+    if (currentQuizId !== 'homework_5') startQuiz('homework_5');
+  } else if (tabId === 'hw6') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw6').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 6: Solids Control Equipment";
+    document.getElementById('page-subtitle').innerText = "Review shale shakers, screen API standards, conductance/conveyance, and feed pumps.";
+    if (currentQuizId !== 'homework_6') startQuiz('homework_6');
+  } else if (tabId === 'hw7') {
+    document.getElementById('view-quiz').style.display = 'block';
+    document.getElementById('nav-hw7').classList.add('active');
+    document.getElementById('page-title').innerText = "Homework 7: Centrifuges & Dryers";
+    document.getElementById('page-subtitle').innerText = "Review centrifuge settings, dewatering physics, vertical cuttings dryers, and dilution math.";
+    if (currentQuizId !== 'homework_7') startQuiz('homework_7');
   } else if (tabId === 'hw8') {
     document.getElementById('view-quiz').style.display = 'block';
     document.getElementById('nav-hw8').classList.add('active');
@@ -332,6 +353,13 @@ function updateDashboardStats() {
   document.getElementById('stats-total-answered').innerText = stats.totalAnswered;
   document.getElementById('stats-correct-count').innerText = stats.correctCount;
   document.getElementById('stats-simulators-run').innerText = stats.simulatorsRun;
+  
+  const scoreHw5El = document.getElementById('score-hw5');
+  if (scoreHw5El) scoreHw5El.innerText = stats.hw5_highScore !== null ? `Record: ${stats.hw5_highScore}%` : "Record: --";
+  const scoreHw6El = document.getElementById('score-hw6');
+  if (scoreHw6El) scoreHw6El.innerText = stats.hw6_highScore !== null ? `Record: ${stats.hw6_highScore}%` : "Record: --";
+  const scoreHw7El = document.getElementById('score-hw7');
+  if (scoreHw7El) scoreHw7El.innerText = stats.hw7_highScore !== null ? `Record: ${stats.hw7_highScore}%` : "Record: --";
   
   const scoreHw8El = document.getElementById('score-hw8');
   if (scoreHw8El) scoreHw8El.innerText = stats.hw8_highScore !== null ? `Record: ${stats.hw8_highScore}%` : "Record: --";
@@ -1065,7 +1093,13 @@ function showQuizResults() {
   document.getElementById('quiz-results-summary').innerText = `You answered ${sessionCorrectCount} out of ${currentQuestions.length} questions correctly.`;
   document.getElementById('quiz-results-score').innerText = `${scorePercent}%`;
   
-  if (currentQuizId === 'homework_8') {
+  if (currentQuizId === 'homework_5') {
+    if (stats.hw5_highScore === null || scorePercent > stats.hw5_highScore) stats.hw5_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_6') {
+    if (stats.hw6_highScore === null || scorePercent > stats.hw6_highScore) stats.hw6_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_7') {
+    if (stats.hw7_highScore === null || scorePercent > stats.hw7_highScore) stats.hw7_highScore = scorePercent;
+  } else if (currentQuizId === 'homework_8') {
     if (stats.hw8_highScore === null || scorePercent > stats.hw8_highScore) stats.hw8_highScore = scorePercent;
   } else if (currentQuizId === 'homework_9') {
     if (stats.hw9_highScore === null || scorePercent > stats.hw9_highScore) stats.hw9_highScore = scorePercent;
@@ -2524,7 +2558,10 @@ window.addEventListener('keydown', (e) => {
 const COMMAND_PALETTE_ITEMS = [
   { name: "Learning Dashboard", target: "dashboard", category: "General", keywords: "inicio dashboard score stats" },
   { name: "Active Error Log", target: "errors", category: "General", keywords: "log errors fallas incorrectas" },
-  
+  { name: "Homework 5: Solids Control & Waste", target: "hw5", category: "Solids Control & Waste", keywords: "hw5 theory solids control waste hierarchy separation low high gravity lgs hgs" },
+  { name: "Homework 6: Solids Control Equipment", target: "hw6", category: "Solids Control Equipment", keywords: "hw6 theory shakers screens mesh api conductance conveyance feed pumps" },
+  { name: "Homework 7: Centrifuges & Dryers", target: "hw7", category: "Solids Control Equipment", keywords: "hw7 theory centrifuges vertical cuttings dryers dewatering coagulants flocculants dilution math calculations economics" },
+
   { name: "Homework 8: Alkalinity & pH", target: "hw8", category: "Water-Based Fluids", keywords: "hw8 theory alkalinity ph titration pm pf mf" },
   { name: "Homework 9: Clays & Polymers", target: "hw9", category: "Water-Based Fluids", keywords: "hw9 theory clays chemistry bentonite polymers" },
   { name: "Homework 11: Fluid Contaminants", target: "hw11", category: "Water-Based Fluids", keywords: "hw11 contaminants calcium cement salt treatment" },
@@ -2672,7 +2709,10 @@ function selectCommandItem(item) {
     switchTab(item.target);
   } else if (item.target.startsWith('hw') || item.target.startsWith('v') || item.target.startsWith('contaminants')) {
     let quizId = '';
-    if (item.target === 'hw8') quizId = 'homework_8';
+    if (item.target === 'hw5') quizId = 'homework_5';
+    else if (item.target === 'hw6') quizId = 'homework_6';
+    else if (item.target === 'hw7') quizId = 'homework_7';
+    else if (item.target === 'hw8') quizId = 'homework_8';
     else if (item.target === 'hw9') quizId = 'homework_9';
     else if (item.target === 'hw11') quizId = 'homework_11';
     else if (item.target === 'hw12') quizId = 'homework_12';
