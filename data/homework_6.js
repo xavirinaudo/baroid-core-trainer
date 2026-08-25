@@ -62,8 +62,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Linear", value: "Linear" },
           { label: "Rhombic", value: "Rhombic" }
         ],
-        answer: "Elliptical",
-        explanation: "Elliptical motion provides better conveyance out of the fluid pool, allowing for finer screens to be run and compensating for increased basket angles."
+        answer: "Linear",
+        explanation: "Linear motion is the best choice for finer screening and handling increased basket angles in shale shakers, offering high G-force and superior conveyance."
       },
       {
         id: "hw6_q5",
@@ -255,6 +255,23 @@ Object.assign(QUIZ_DATA, {
         explanation: "The non-blanked area refers exclusively to the net open area where fluid can actually flow, ignoring bonding materials or structural supports."
       },
       {
+        id: "hw6_q17_slow",
+        number: 23,
+        type: "multiple",
+        question: "List two negative consequences of the solids conveyance rate being to slow?",
+        options: [
+          { label: "Excessive bridging and derogation to solid particles causing screen blinding", value: "Excessive bridging and derogation to solid particles causing screen blinding" },
+          { label: "Solid particles form clumps and take longer to separate", value: "Solid particles form clumps and take longer to separate" },
+          { label: "Solid particles become hotter", value: "Solid particles become hotter" },
+          { label: "Increased wear and tear (damage) to screen", value: "Increased wear and tear (damage) to screen" }
+        ],
+        answer: [
+          "Excessive bridging and derogation to solid particles causing screen blinding",
+          "Increased wear and tear (damage) to screen"
+        ],
+        explanation: "If conveyance is too slow, the solids build up and degrade, causing screen blinding (bridging) and significantly increasing screen wear due to prolonged vibration."
+      },
+      {
         id: "hw6_q18",
         number: 24,
         type: "single",
@@ -340,6 +357,21 @@ Object.assign(QUIZ_DATA, {
         explanation: "Centrifugal pumps are dynamic pumps that rely on high velocity, making them prone to cavitation if suction head is inadequate, and highly solid degrading."
       },
       {
+        id: "hw6_q23_impeller",
+        number: 32,
+        type: "single",
+        question: "The ----------------- is the component of the centrifugal pump positioned on a rotating axis (shaft) imparting the mechanical force on the drilling fluid needed to transport the fluid to its receiving point.",
+        options: [
+          { label: "Impeller", value: "Impeller" },
+          { label: "Rotor", value: "Rotor" },
+          { label: "Lobes", value: "Lobes" },
+          { label: "Piston", value: "Piston" },
+          { label: "Stator", value: "Stator" }
+        ],
+        answer: "Impeller",
+        explanation: "The impeller is the rotating component inside a centrifugal pump that accelerates the fluid outwards, converting mechanical energy from the motor shaft into kinetic/velocity energy in the fluid."
+      },
+      {
         id: "hw6_q24",
         number: 33,
         type: "single",
@@ -365,8 +397,8 @@ Object.assign(QUIZ_DATA, {
           { label: "Chemicals", value: "Chemicals" },
           { label: "All of the above", value: "All of the above" }
         ],
-        answer: "All of the above",
-        explanation: "The elastomer stator is highly susceptible to wear and failure from excessive pressure, high RPM, heat, and chemical incompatibility."
+        answer: "Speed",
+        explanation: "Rotational speed is the single most critical factor causing abrasive wear in progressive cavity pumps, as wear increases exponentially with speed."
       },
       {
         id: "hw6_q26",
@@ -449,6 +481,21 @@ Object.assign(QUIZ_DATA, {
         ],
         answer: "75 feet of head at the feed inlet of the hydrocyclone",
         explanation: "Hydrocyclones require approximately 75 feet of hydraulic head at the inlet manifold to generate sufficient centrifugal force for separation."
+      },
+      {
+        id: "hw6_q32",
+        number: 41,
+        type: "single",
+        question: "A ___________ is a device / mechanism utilized to provide the length of movement (in inches) the shaker motors are providing.",
+        options: [
+          { label: "Stroke detector", value: "Stroke detector" },
+          { label: "Tachometer", value: "Tachometer" },
+          { label: "Chain", value: "Chain" },
+          { label: "Impeller", value: "Impeller" },
+          { label: "G-Force gauge", value: "G-Force gauge" }
+        ],
+        answer: "Stroke detector",
+        explanation: "A stroke detector (or stroke card) is a simple visual device stuck to the shaker basket side that uses optical illusions during vibration to measure the exact stroke length (amplitude) in inches."
       }
     ]
   }
