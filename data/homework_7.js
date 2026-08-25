@@ -527,18 +527,7 @@ Object.assign(QUIZ_DATA, {
                   "chemically_enhanced"
             ],
             "explanation": "Centrifuges are run on un-weighted mud at high speeds for maximum solids removal, on weighted mud at low speeds to recover barite (HGS), or with coagulants/flocculants for dewatering. (See Page 130)"
-      },
-      {
-            "id": "hw7_q21",
-            "number": 21,
-            "type": "single",
-            "question": "To achieve a finer cut point and a dryer solids discharge when operating a centrifuge on un-weighted mud, what changes should be made to the following settings?",
-            "options": [
-                  {
-                        "label": "Increase bowl speed, decrease conveyor speed, decrease pond depth, decrease feed rate",
-                        "value": "correct_adjust"
-                  },
-                  {
+      },                  {
                         "label": "Decrease bowl speed, increase conveyor speed, increase pond depth, increase feed rate",
                         "value": "wrong_1"
                   },
@@ -555,8 +544,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Higher bowl speed increases G-force (finer solids settle), lower conveyor speed increases dewatering time on the beach, lower pond depth drys solids by extending beach length, and lower feed rate increases fluid retention time. (See Centrifuge Optimization tables)"
       },
       {
-            "id": "hw7_q22",
-            "number": 22,
+            "id": "hw7_q21",
+            "number": 21,
             "type": "single",
             "question": "When using a centrifuge, if the desired effect is to remove finer solids, the bowl RPM should be increased and the pond depth should increase as well.",
             "options": [
@@ -573,8 +562,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Increasing bowl RPM increases G-force, and increasing pond depth (raising weirs) increases fluid pool volume, maximizing fluid retention time so finer solids have time to settle out. (See Centrifuge adjustments)"
       },
       {
-            "id": "hw7_q23",
-            "number": 23,
+            "id": "hw7_q22",
+            "number": 22,
             "type": "multiple",
             "question": "In two-stage centrifuging on weighted mud for rheology control, select all statements below that best describe the reasons for the specified bowl and conveyor settings on the first centrifuge (CF #1):",
             "options": [
@@ -602,8 +591,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "CF #1 runs at low speed (~800 Gs) to settle heavy barite (HGS) while letting LGS pass with the effluent. High conveyor speed ensures the recovered barite stays wet/fluid so it can mix back into the active mud system. (See Page 130)"
       },
       {
-            "id": "hw7_q24",
-            "number": 24,
+            "id": "hw7_q23",
+            "number": 23,
             "type": "single",
             "question": "In two-stage centrifuging for barite recovery (CF #1), what are the negative consequences of running a pond depth that is too high or too low?",
             "options": [
@@ -624,8 +613,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "A high pond increases retention time, causing unwanted LGS to settle out and return to the mud. A low pond increases dewatering time, making the recovered barite too dry to mix and causing chute plugging. (See Page 130)"
       },
       {
-            "id": "hw7_q25",
-            "number": 25,
+            "id": "hw7_q24",
+            "number": 24,
             "type": "multiple",
             "question": "Provide two reasons why a \u201cbig bowl\u201d centrifuge (like the DE-7200) would be the most appropriate choice to improve the removal of fine LGS: (Select 2 options)",
             "options": [
@@ -657,8 +646,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "A larger bowl diameter increases the internal volume (maximizing retention time) and has a higher mechanical G-force potential due to its larger radius, maximizing separation. (See Page 130)"
       },
       {
-            "id": "hw7_q26",
-            "number": 26,
+            "id": "hw7_q25",
+            "number": 25,
             "type": "multiple",
             "question": "List the three different types of centrifuges offered by BSS in regards to drive type: (Select 3 options)",
             "options": [
@@ -691,9 +680,9 @@ Object.assign(QUIZ_DATA, {
             "explanation": "BSS offers centrifuges classified by their drive mechanics: GBD (constant differential speed), FHD (hydraulic backdrive adjusting to load), and VFD (fully electric variable frequency speed control). (See Page 130)"
       },
       {
-            "id": "hw7_q27",
-            "number": 27,
-            "type": "single",
+            "id": "hw7_q26",
+            "number": 26,
+            "type": "multiple",
             "question": "The Dewatering process achieved with BaraH2O is often referred to as:",
             "options": [
                   {
@@ -713,12 +702,15 @@ Object.assign(QUIZ_DATA, {
                         "value": "chem_enhanced_solids"
                   }
             ],
-            "answer": "chem_enhanced_solids",
-            "explanation": "BaraH2O dewatering uses chemical polymers to flocculate ultra-fine solids, which is officially termed Chemically Enhanced Solid Removal. (See Dewatering manual)"
+            "answer": [
+                  "waste_red",
+                  "chem_enhanced_solids"
+            ],
+            "explanation": "Dewatering with BaraH2O is referred to as both Chemically Enhanced Waste Reduction (reducing waste volume) and Chemically Enhanced Solid Removal (removing fine solids with chemicals)."
       },
       {
-            "id": "hw7_q28",
-            "number": 28,
+            "id": "hw7_q27",
+            "number": 27,
             "type": "single",
             "question": "When dewatering mud, what chemicals are used to neutralize the negative charge of the fine suspended particles, allowing them to form mini aggregates?",
             "options": [
@@ -743,8 +735,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Coagulants are highly charged, low molecular weight salts or polymers that neutralize particle surface charges, allowing van der Waals forces to aggregate them. (See Page 78)"
       },
       {
-            "id": "hw7_q29",
-            "number": 29,
+            "id": "hw7_q28",
+            "number": 28,
             "type": "single",
             "question": "When dewatering mud, what chemicals are used to envelope the aggregated solids to form larger solid clusters called flocs?",
             "options": [
@@ -769,8 +761,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Flocculants are high molecular weight, long-chain polymer structures that bridge together coagulated particles into massive, easily removable flocs. (See Page 78)"
       },
       {
-            "id": "hw7_q30",
-            "number": 30,
+            "id": "hw7_q29",
+            "number": 29,
             "type": "single",
             "question": "Once the mud has been chemically treated in the Enviro-Floc unit, it is pumped to what device for mechanical removal of the flocculated solids?",
             "options": [
@@ -795,8 +787,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "The chemically treated slurry with suspended flocs is fed to a decanting centrifuge which mechanically extracts the water-free flocs. (See Enviro-Floc system)"
       },
       {
-            "id": "hw7_q31",
-            "number": 31,
+            "id": "hw7_q30",
+            "number": 30,
             "type": "multiple",
             "question": "Select the types of cuttings drying technologies most commonly utilized by BSS: (Select 2 options)",
             "options": [
@@ -832,8 +824,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "BSS uses high-speed Vertical Cuttings Dryers (VCD) and high-G drying shakers (Secondary Shakers) to reclaim fluid from wet cuttings discharge. (See Page 150)"
       },
       {
-            "id": "hw7_q32",
-            "number": 32,
+            "id": "hw7_q31",
+            "number": 31,
             "type": "multiple",
             "question": "Choose the correct method(s) of solid / fluid separation utilized by a Vertical Cuttings Dryer: (Select 2 options)",
             "options": [
@@ -865,8 +857,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "VCDs separate oil/water from cuttings by applying high centrifugal force (accelerating solids) through a wedged wire screen (filtering out liquid). (See Page 150)"
       },
       {
-            "id": "hw7_q33",
-            "number": 33,
+            "id": "hw7_q32",
+            "number": 32,
             "type": "multiple",
             "question": "What models of Vertical cuttings Dryers does BSS offer? (Select 2 options)",
             "options": [
@@ -894,8 +886,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Baroid Surface Solutions offers the V-71 (smaller capacity) and V-133 (high-capacity) vertical cuttings dryers. (See Page 150)"
       },
       {
-            "id": "hw7_q34",
-            "number": 34,
+            "id": "hw7_q33",
+            "number": 33,
             "type": "single",
             "question": "What is the typical range of G-force exerted by a vertical cuttings dryer (VCD)?",
             "options": [
@@ -916,12 +908,12 @@ Object.assign(QUIZ_DATA, {
                         "value": "1200"
                   }
             ],
-            "answer": "300_500",
-            "explanation": "Standard VCD rotating assemblies (screens/flights) run at speeds generating between 300 and 500 G-forces. (See Page 150)"
+            "answer": "500_700",
+            "explanation": "Vertical cuttings dryers (VCD) typically exert a maximum centrifugal force of 500 to 700 G-forces to separate liquid hydrocarbons and water from drill cuttings. (See VCD specifications)"
       },
       {
-            "id": "hw7_q35",
-            "number": 35,
+            "id": "hw7_q34",
+            "number": 34,
             "type": "multiple",
             "question": "Which pieces of equipment, besides the vertical dryer itself and its control panel, are needed to complete vertical dryer operations on a rig? (Select 5 options)",
             "options": [
@@ -968,8 +960,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "A complete VCD loop requires a delivery system (to load cuttings), a recovery tank (for liquid), a feed pump, a centrifuge (to clean recovered liquid), and a discharge system. (See Page 151)"
       },
       {
-            "id": "hw7_q36",
-            "number": 36,
+            "id": "hw7_q35",
+            "number": 35,
             "type": "multiple",
             "question": "What are the two main components of the vertical dryer's rotating assembly?",
             "options": [
@@ -997,8 +989,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "The rotating assembly consists of a wedged wire screen basket and a flighted scroll turning at slightly different speeds (differential) to convey cuttings downward. (See Page 150)"
       },
       {
-            "id": "hw7_q37",
-            "number": 37,
+            "id": "hw7_q36",
+            "number": 36,
             "type": "single",
             "question": "Is the vertical cuttings dryer considered to be a \u201cstand alone\u201d solids control device?",
             "options": [
@@ -1015,8 +1007,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "The dryer is not stand-alone. Fines pass through the screen with the liquid. A centrifuge must clean the collection tank liquid before returning it to the mud system, or fines will build up. (See Page 151)"
       },
       {
-            "id": "hw7_q38",
-            "number": 38,
+            "id": "hw7_q37",
+            "number": 37,
             "type": "multiple",
             "question": "Which statements are NOT true about vertical cuttings dryer operations? (Select all that apply)",
             "options": [
@@ -1053,8 +1045,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Vertical dryers require a centrifuge (not standalone), require constant supervision/cleaning (high maintenance), and fluid must be centrifuge-treated. (See VCD operating guidelines)"
       },
       {
-            "id": "hw7_q39",
-            "number": 39,
+            "id": "hw7_q38",
+            "number": 38,
             "type": "single",
             "question": "What is the typical ROC (retention on cuttings) percentage achieved at the discharge of a vertical cuttings dryer?",
             "options": [
@@ -1079,8 +1071,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "VCDs typically dry oil-base cuttings down to less than 5% oil on cuttings (ROC), satisfying standard environmental discharge or recycling limits. (See VCD specifications)"
       },
       {
-            "id": "hw7_q40",
-            "number": 40,
+            "id": "hw7_q39",
+            "number": 39,
             "type": "single",
             "question": "What is the optimum flight-to-screen clearance for a vertical cuttings dryer?",
             "options": [
@@ -1105,8 +1097,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Maintaining flight-to-screen clearance at 0.020 inches is critical. If too large, a cake build-up blinds the screen; if too tight, it will scrape and damage the screen. (See Dryer maintenance)"
       },
       {
-            "id": "hw7_q41",
-            "number": 41,
+            "id": "hw7_q40",
+            "number": 40,
             "type": "calculation",
             "question": "How much new volume (dilution) in barrels is required to maintain 6% drill solids for 3500' of 13 7/8\" hole with 80% solids removal efficiency? (Assume gauge hole, round to 2 decimal places)",
             "inputs": {
@@ -1121,8 +1113,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Step 1: TDS generated = (13.875^2 / 1029.4) * 3500 * (1 - 0.80) = 192.51 * 3500 * 0.20 = 130.55 bbl of solids remaining. Step 2: Total Mud Volume = 130.55 / 0.06 = 2175.83 bbl. Step 3: Dilution volume = 2175.83 - 130.55 = 2050.92 bbl. (See Dilution formulas)"
       },
       {
-            "id": "hw7_q42",
-            "number": 42,
+            "id": "hw7_q41",
+            "number": 41,
             "type": "calculation",
             "question": "How much new volume (dilution) in barrels is required to maintain 6% drill solids for 3500' of 13 7/8\" hole with 92% solids removal efficiency? (Assume gauge hole, round to 2 decimal places)",
             "inputs": {
@@ -1137,8 +1129,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "TDS remaining = (13.875^2 / 1029.4) * 3500 * (1 - 0.92) = 192.51 * 3500 * 0.08 = 52.22 bbl of solids remaining. Total Mud Volume = 52.22 / 0.06 = 870.33 bbl. Dilution required = 870.33 - 52.22 = 820.31 bbl. (See Dilution formulas)"
       },
       {
-            "id": "hw7_q43",
-            "number": 43,
+            "id": "hw7_q42",
+            "number": 42,
             "type": "calculation",
             "question": "If each barrel of drilling fluid saved costs $150/barrel, what is the cost savings in US$ for Question 41 vs. Question 42? (Type whole number without commas or dollar signs)",
             "inputs": {
@@ -1151,8 +1143,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "Volume Saved = 2050.92 - 820.31 = 1230.61 bbl. Cost Savings = 1230.61 bbl * $150/bbl = $184,591.50, which rounds to the whole number 184592. (See Dilution economics)"
       },
       {
-            "id": "hw7_q44",
-            "number": 44,
+            "id": "hw7_q43",
+            "number": 43,
             "type": "calculation",
             "question": "Given 75% solids removal efficiency with 8% drill solids limit for 1500' of 12 1/4\" hole. Calculate the required dilution volume in barrels. (Assume gauge hole, round to 2 decimal places)",
             "inputs": {
@@ -1167,8 +1159,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "TDS generated = (12.25^2 / 1029.4) * 1500 * (1 - 0.75) = 145.78 * 1500 * 0.25 = 54.67 bbl of solids remaining. Total Mud Volume = 54.67 / 0.08 = 683.38 bbl. Dilution required = 683.38 - 54.67 = 628.71 bbl. (See Dilution formulas)"
       },
       {
-            "id": "hw7_q45",
-            "number": 45,
+            "id": "hw7_q44",
+            "number": 44,
             "type": "calculation",
             "question": "Given 90% solids removal efficiency with 8% drill solids limit for 1500' of 12 1/4\" hole. Calculate the required dilution volume in barrels. (Assume gauge hole, round to 2 decimal places)",
             "inputs": {
@@ -1183,8 +1175,8 @@ Object.assign(QUIZ_DATA, {
             "explanation": "TDS remaining = (12.25^2 / 1029.4) * 1500 * (1 - 0.90) = 145.78 * 1500 * 0.10 = 21.87 bbl of solids remaining. Total Mud Volume = 21.87 / 0.08 = 273.38 bbl. Dilution required = 273.38 - 21.87 = 251.51 bbl. (See Dilution formulas)"
       },
       {
-            "id": "hw7_q46",
-            "number": 46,
+            "id": "hw7_q45",
+            "number": 45,
             "type": "calculation",
             "question": "If each barrel of drilling fluid saved costs $180/barrel, what is the cost savings in US$ for Question 44 vs. Question 45? (Type whole number without commas or dollar signs)",
             "inputs": {
@@ -1195,6 +1187,35 @@ Object.assign(QUIZ_DATA, {
                   "savings_usd": 67896
             },
             "explanation": "Volume Saved = 628.71 - 251.51 = 377.20 bbl. Cost Savings = 377.20 bbl * $180/bbl = $67,896. (See Dilution economics)"
+      },
+      {
+            "id": "hw7_q46",
+            "number": 46,
+            "type": "multiple",
+            "question": "Explain why a LOW or HIGH pond depth would NOT be acceptable pond depth setting for the first centrifuge (CF#1) on the diagram above. (Select all applicable answers)",
+            "options": [
+                  {
+                        "label": "Too LOW pond depth affects Increased Dewatering Time",
+                        "value": "low_dewatering"
+                  },
+                  {
+                        "label": "Too LOW pond depth affects Increased Retention Time",
+                        "value": "low_retention"
+                  },
+                  {
+                        "label": "Too HIGH pond depth affects negatively the Increased Retention Time",
+                        "value": "high_retention"
+                  },
+                  {
+                        "label": "Too HIGH pond depth affects negatively the Increased Dewatering Time",
+                        "value": "high_dewatering"
+                  }
+            ],
+            "answer": [
+                  "low_dewatering",
+                  "high_retention"
+            ],
+            "explanation": "For CF#1 (the barite recovery stage), we want the discharged solids (reclaimed barite slurry) to remain wet so they flow easily back to the active system. Too low pond depth increases dewatering time (drying the solids). Too high pond depth negatively affects the retention time of low-gravity solids (LGS) that we want to pass through to the second stage."
       }
 ]
   }
