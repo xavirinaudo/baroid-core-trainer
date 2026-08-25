@@ -296,6 +296,17 @@ function switchTab(tabId) {
   
   // Expand category automatically in sidebar
   autoExpandSidebarCategory(tabId);
+  
+  // Autofocus first input on tab switch
+  setTimeout(() => {
+    const activePane = document.querySelector('.view-pane[style*="display: flex"], .view-pane[style*="display: block"]');
+    if (activePane) {
+      const firstInp = activePane.querySelector('input');
+      if (firstInp && !firstInp.disabled) {
+        firstInp.focus();
+      }
+    }
+  }, 100);
 }
 
 function autoExpandSidebarCategory(tabId) {
@@ -364,15 +375,25 @@ function updateDashboardStats() {
     ring.style.background = `conic-gradient(var(--primary) ${accuracy}%, rgba(255,255,255,0.05) ${accuracy}%)`;
   }
 }
-
 // QUIZ SYSTEM LOGIC
 function startQuiz(quizId) {
   currentQuizId = quizId;
   const quizInfo = QUIZ_DATA[quizId];
-  // Shuffle questions randomly
-  currentQuestions = [...quizInfo.questions].sort(() => Math.random() - 0.5);
-  currentQuestionIndex = 0;
   
+  // Initialize questions with state tracking properties
+  currentQuestions = quizInfo.questions.map(question => {
+    const q = { ...question };
+    q.userAnswerState = 'unanswered';
+    q.userSelectedOptions = [];
+    if (q.options) {
+      q.shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+    }
+    q.userMatchingAnswers = {};
+    q.userCalculationAnswers = {};
+    return q;
+  });
+  
+  currentQuestionIndex = 0;
   selectedOptions = [];
   hasCheckedAnswer = false;
   sessionCorrectCount = 0;
@@ -428,43 +449,91 @@ function startQuiz(quizId) {
   } else if (quizId === 'homework_22') {
     navId = 'nav-hw22';
     badgeName = "Homework 22";
-  } else if (quizId === 'video_completions') {
-    navId = 'nav-vcf';
-    badgeName = "Video: Completions";
-  } else if (quizId === 'video_formation_damage') {
-    navId = 'nav-vfd';
-    badgeName = "Video: Formation Damage";
-  } else if (quizId === 'video_hole_cleaning') {
-    navId = 'nav-vhc';
-    badgeName = "Video: Hole Cleaning";
-  } else if (quizId === 'video_pills_displacement') {
-    navId = 'nav-vpd';
-    badgeName = "Video: Pills & Displacement";
+  } else if (quizId.startsWith('video_')) {
+    if (quizId === 'video_completions') { navId = 'nav-vcf'; badgeName = 'CF Video'; }
+    else if (quizId === 'video_formation_damage') { navId = 'nav-vfd'; badgeName = 'FD Video'; }
+    else if (quizId === 'video_hole_cleaning') { navId = 'nav-vhc'; badgeName = 'HC Video'; }
+    else if (quizId === 'video_pills_displacement') { navId = 'nav-vpd'; badgeName = 'Pill Video'; }
+  } else if (quizId.startsWith('contaminants')) {
+    navId = quizId === 'contaminants-naf' ? 'nav-contaminants-naf' : 'nav-contaminants';
+    badgeName = 'Contam';
   }
   
-  const navEl = document.getElementById(navId);
-  if (navEl) {
-    navEl.classList.add('active');
-    const tabId = navId.replace('nav-', '');
-    autoExpandSidebarCategory(tabId);
-  }
+  const navLink = document.getElementById(navId);
+  if (navLink) navLink.classList.add('active');
   
-  // Update header text
-  document.getElementById('page-title').innerText = quizInfo.title;
-  document.getElementById('page-subtitle').innerText = quizInfo.description;
   document.getElementById('quiz-badge-id').innerText = badgeName;
   
-  document.getElementById('quiz-container').style.display = 'block';
+  // Set page headers
+  document.getElementById('page-title').innerText = quizInfo.title;
+  document.getElementById('page-subtitle').innerText = quizInfo.description;
+  
+  // Hide result screen initially
   document.getElementById('quiz-results-container').style.display = 'none';
+  document.getElementById('quiz-container').style.display = 'block';
   
   showQuestion(0);
+}
+
+// Render the interactive top ribbon
+function renderQuizProgressGrid() {
+  const gridContainer = document.getElementById('quiz-progress-grid');
+  if (!gridContainer) return;
+  gridContainer.innerHTML = '';
+  
+  currentQuestions.forEach((q, idx) => {
+    const chip = document.createElement('div');
+    chip.className = `progress-chip ${q.userAnswerState}`;
+    if (idx === currentQuestionIndex) {
+      chip.classList.add('current');
+    }
+    chip.innerText = idx + 1;
+    chip.title = `Jump to Question ${idx + 1}`;
+    chip.onclick = () => {
+      saveUnsubmittedAnswers();
+      showQuestion(idx);
+    };
+    gridContainer.appendChild(chip);
+  });
+}
+
+// Save inputs before navigating away
+function saveUnsubmittedAnswers() {
+  if (hasCheckedAnswer) return;
+  const q = currentQuestions[currentQuestionIndex];
+  if (!q) return;
+  
+  if (q.type === 'single' || q.type === 'multiple') {
+    q.userSelectedOptions = [...selectedOptions];
+  } else if (q.type === 'matching') {
+    Object.keys(q.pairs).forEach(key => {
+      const selectEl = document.getElementById(`match-select-${key}`);
+      if (selectEl) {
+        q.userMatchingAnswers[key] = selectEl.value;
+      }
+    });
+  } else if (q.type.startsWith('calculation')) {
+    Object.keys(q.answer).forEach(key => {
+      const inputEl = document.getElementById(`calc-ans-${key}`);
+      if (inputEl) {
+        q.userCalculationAnswers[key] = inputEl.value;
+      }
+    });
+  }
 }
 
 function showQuestion(index) {
   currentQuestionIndex = index;
   const q = currentQuestions[index];
-  hasCheckedAnswer = false;
-  selectedOptions = [];
+  
+  // Set evaluated status based on saved state
+  hasCheckedAnswer = (q.userAnswerState === 'correct' || q.userAnswerState === 'incorrect');
+  
+  // Restore selected options
+  selectedOptions = q.userSelectedOptions ? [...q.userSelectedOptions] : [];
+  
+  // Render progress ribbon
+  renderQuizProgressGrid();
   
   document.getElementById('quiz-question-counter').innerText = `Question ${index + 1} of ${currentQuestions.length}`;
   document.getElementById('quiz-question-text').innerText = `${q.number}: ${q.question}`;
@@ -473,12 +542,19 @@ function showQuestion(index) {
   list.innerHTML = '';
   
   if (q.type === 'single' || q.type === 'multiple') {
-    const shuffledOpts = [...q.options].sort(() => Math.random() - 0.5);
-    shuffledOpts.forEach(opt => {
+    // Keep consistent shuffle order when navigating back and forth
+    if (!q.shuffledOptions) {
+      q.shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+    }
+    
+    q.shuffledOptions.forEach((opt, oIdx) => {
       const card = document.createElement('div');
       card.className = 'option-card glass glass-hover';
-      card.setAttribute('onclick', `selectOption('${opt.value}')`);
       card.id = `opt-${opt.value}`;
+      
+      if (!hasCheckedAnswer) {
+        card.setAttribute('onclick', `selectOption('${opt.value}')`);
+      }
       
       const indicator = document.createElement('div');
       indicator.className = q.type === 'single' ? 'option-radio' : 'option-checkbox';
@@ -488,18 +564,67 @@ function showQuestion(index) {
       
       card.appendChild(indicator);
       card.appendChild(text);
+      
+      // Shortcut key badge
+      const badge = document.createElement('span');
+      badge.className = 'shortcut-badge';
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      badge.innerText = `${oIdx + 1} / ${letters[oIdx]}`;
+      card.appendChild(badge);
+      
       list.appendChild(card);
+      
+      // Restore selected state
+      if (selectedOptions.includes(opt.value)) {
+        card.classList.add('selected');
+      }
+      
+      // Restore grading classes
+      if (hasCheckedAnswer) {
+        const isCorrectOpt = q.type === 'single' ? (opt.value === q.answer) : q.answer.includes(opt.value);
+        if (isCorrectOpt) {
+          card.classList.add('correct');
+        } else if (selectedOptions.includes(opt.value)) {
+          card.classList.add('incorrect');
+        }
+      }
     });
     
-    document.getElementById('btn-quiz-action').innerText = "Check Answer";
-    document.getElementById('btn-quiz-retry').style.display = 'none';
-    document.getElementById('btn-quiz-skip').style.display = 'inline-flex';
-    document.getElementById('btn-quiz-prev').disabled = index === 0;
-    document.getElementById('quiz-explanation-card').style.display = 'none';
+    if (hasCheckedAnswer) {
+      document.getElementById('btn-quiz-action').innerText = index === currentQuestions.length - 1 ? "View Results" : "Next Question";
+      document.getElementById('btn-quiz-retry').style.display = q.userAnswerState === 'correct' ? 'none' : 'inline-flex';
+      document.getElementById('btn-quiz-skip').style.display = 'none';
+      document.getElementById('btn-quiz-prev').disabled = index === 0;
+      
+      document.getElementById('quiz-explanation-text').innerText = q.explanation;
+      document.getElementById('quiz-explanation-card').style.display = 'block';
+    } else {
+      document.getElementById('btn-quiz-action').innerText = "Check Answer";
+      document.getElementById('btn-quiz-retry').style.display = 'none';
+      document.getElementById('btn-quiz-skip').style.display = 'inline-flex';
+      document.getElementById('btn-quiz-prev').disabled = index === 0;
+      document.getElementById('quiz-explanation-card').style.display = 'none';
+    }
   } else if (q.type === 'matching') {
     renderMatchingInputs(q);
+    if (hasCheckedAnswer) {
+      document.getElementById('btn-quiz-action').innerText = index === currentQuestions.length - 1 ? "View Results" : "Next Question";
+      document.getElementById('btn-quiz-retry').style.display = q.userAnswerState === 'correct' ? 'none' : 'inline-flex';
+      document.getElementById('btn-quiz-skip').style.display = 'none';
+      
+      document.getElementById('quiz-explanation-text').innerText = q.explanation;
+      document.getElementById('quiz-explanation-card').style.display = 'block';
+    }
   } else if (q.type.startsWith('calculation')) {
     renderCalculationInputs(q);
+    if (hasCheckedAnswer) {
+      document.getElementById('btn-quiz-action').innerText = index === currentQuestions.length - 1 ? "View Results" : "Next Question";
+      document.getElementById('btn-quiz-retry').style.display = q.userAnswerState === 'correct' ? 'none' : 'inline-flex';
+      document.getElementById('btn-quiz-skip').style.display = 'none';
+      
+      document.getElementById('quiz-explanation-text').innerText = q.explanation;
+      document.getElementById('quiz-explanation-card').style.display = 'block';
+    }
   }
 }
 
@@ -516,28 +641,23 @@ function renderMatchingInputs(q) {
   grid.style.gap = '16px';
   grid.style.alignItems = 'center';
   
-  // Shuffled list of all correct values or custom option pool (distractors)
   const allValues = q.options ? q.options : Object.values(q.pairs);
   const shuffledValues = [...allValues].sort(() => Math.random() - 0.5);
   
-  // Shuffled list of all keys (shuffled unless keepKeysOrder flag is true)
   const allKeys = Object.keys(q.pairs);
   const shuffledKeys = q.keepKeysOrder ? allKeys : [...allKeys].sort(() => Math.random() - 0.5);
   
   shuffledKeys.forEach(key => {
-    // Left side: formula / symbol / step
     const label = document.createElement('div');
     label.style.fontWeight = '600';
     label.style.fontSize = '16px';
     label.innerText = key;
     
-    // Right side: dropdown select
     const select = document.createElement('select');
     select.className = 'input-field';
     select.id = `match-select-${key}`;
     select.style.width = '100%';
     
-    // Add default empty option
     const defOpt = document.createElement('option');
     defOpt.value = '';
     defOpt.innerText = '-- Select match --';
@@ -549,6 +669,22 @@ function renderMatchingInputs(q) {
       opt.innerText = val;
       select.appendChild(opt);
     });
+    
+    // Restore selection
+    if (q.userMatchingAnswers && q.userMatchingAnswers[key] !== undefined) {
+      select.value = q.userMatchingAnswers[key];
+    }
+    
+    // Restore styling / state
+    if (hasCheckedAnswer) {
+      select.disabled = true;
+      const correctVal = q.pairs[key];
+      if (select.value === correctVal) {
+        select.classList.add('correct');
+      } else {
+        select.classList.add('incorrect');
+      }
+    }
     
     grid.appendChild(label);
     grid.appendChild(select);
@@ -609,10 +745,56 @@ function renderCalculationInputs(q) {
     else if (key === 'water_ratio') labelText = 'Water Ratio (%)';
     
     const isString = typeof q.answer[key] === 'string';
-    group.innerHTML = `
-      <label class="input-label" for="calc-ans-${key}">${labelText}</label>
-      <input type="${isString ? 'text' : 'number'}" ${isString ? '' : 'step="0.0001"'} id="calc-ans-${key}" class="input-field" placeholder="${isString ? 'e.g. Lime' : 'Enter calculated value...'}">
-    `;
+    const inputId = `calc-ans-${key}`;
+    
+    const label = document.createElement('label');
+    label.className = 'input-label';
+    label.setAttribute('for', inputId);
+    label.innerText = labelText;
+    
+    const input = document.createElement('input');
+    input.type = isString ? 'text' : 'number';
+    if (!isString) input.setAttribute('step', '0.0001');
+    input.id = inputId;
+    input.className = 'input-field';
+    input.placeholder = isString ? 'e.g. Lime' : 'Enter calculated value...';
+    
+    // Restore value
+    if (q.userCalculationAnswers && q.userCalculationAnswers[key] !== undefined) {
+      input.value = q.userCalculationAnswers[key];
+    }
+    
+    // Apply styling if graded
+    if (hasCheckedAnswer) {
+      input.disabled = true;
+      const targetVal = q.answer[key];
+      let isInputCorrect = false;
+      
+      if (typeof targetVal === 'string') {
+        isInputCorrect = input.value.trim().toLowerCase() === targetVal.trim().toLowerCase();
+      } else {
+        const userVal = parseFloat(input.value);
+        const tol = Math.max(0.1, targetVal * 0.01);
+        const diff = Math.abs(userVal - targetVal);
+        isInputCorrect = !isNaN(userVal) && diff <= tol;
+      }
+      
+      if (isInputCorrect) {
+        input.classList.add('correct');
+      } else {
+        input.classList.add('incorrect');
+      }
+    }
+    
+    // Enter key validation handler
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        quizActionSubmit();
+      }
+    });
+    
+    group.appendChild(label);
+    group.appendChild(input);
     inputGrid.appendChild(group);
   });
   
@@ -624,6 +806,14 @@ function renderCalculationInputs(q) {
   document.getElementById('btn-quiz-skip').style.display = 'inline-flex';
   document.getElementById('btn-quiz-prev').disabled = currentQuestionIndex === 0;
   document.getElementById('quiz-explanation-card').style.display = 'none';
+  
+  // Autofocus the first field
+  setTimeout(() => {
+    const firstInp = inputGrid.querySelector('input');
+    if (firstInp && !firstInp.disabled) {
+      firstInp.focus();
+    }
+  }, 60);
 }
 
 function selectOption(val) {
@@ -633,21 +823,32 @@ function selectOption(val) {
   if (q.type === 'single') {
     selectedOptions = [val];
     document.querySelectorAll('.option-card').forEach(el => el.classList.remove('selected'));
-    document.getElementById(`opt-${val}`).classList.add('selected');
+    const targetEl = document.getElementById(`opt-${val}`);
+    if (targetEl) targetEl.classList.add('selected');
+    
+    // Immediate auto-evaluation in Speedrun Mode
+    const isSpeedrun = document.getElementById('speedrun-mode-checkbox')?.checked;
+    if (isSpeedrun) {
+      setTimeout(() => {
+        quizActionSubmit();
+      }, 180);
+    }
   } else if (q.type === 'multiple') {
     const idx = selectedOptions.indexOf(val);
+    const targetEl = document.getElementById(`opt-${val}`);
     if (idx > -1) {
       selectedOptions.splice(idx, 1);
-      document.getElementById(`opt-${val}`).classList.remove('selected');
+      if (targetEl) targetEl.classList.remove('selected');
     } else {
       selectedOptions.push(val);
-      document.getElementById(`opt-${val}`).classList.add('selected');
+      if (targetEl) targetEl.classList.add('selected');
     }
   }
 }
 
 function quizActionSubmit() {
   const q = currentQuestions[currentQuestionIndex];
+  if (!q) return;
   
   if (!hasCheckedAnswer) {
     let isCorrect = false;
@@ -656,12 +857,6 @@ function quizActionSubmit() {
       if (selectedOptions.length === 0) return alert("Please select an option.");
       isCorrect = selectedOptions[0] === q.answer;
       
-      document.querySelectorAll('.option-card').forEach(el => {
-        const val = el.id.substring(4);
-        if (val === q.answer) el.classList.add('correct');
-        else if (selectedOptions.includes(val)) el.classList.add('incorrect');
-      });
-      
     } else if (q.type === 'multiple') {
       if (selectedOptions.length === 0) return alert("Please select at least one option.");
       
@@ -669,22 +864,13 @@ function quizActionSubmit() {
       const sortedAns = [...q.answer].sort();
       isCorrect = JSON.stringify(sortedUser) === JSON.stringify(sortedAns);
       
-      document.querySelectorAll('.option-card').forEach(el => {
-        const val = el.id.substring(4);
-        const shouldHave = q.answer.includes(val);
-        const selected = selectedOptions.includes(val);
-        
-        if (shouldHave) el.classList.add('correct');
-        else if (selected) el.classList.add('incorrect');
-      });
-      
     } else if (q.type === 'matching') {
       let allCorrect = true;
       let selectedCount = 0;
       
       Object.keys(q.pairs).forEach(key => {
         const selectEl = document.getElementById(`match-select-${key}`);
-        if (selectEl.value !== '') selectedCount++;
+        if (selectEl && selectEl.value !== '') selectedCount++;
       });
       
       if (selectedCount < Object.keys(q.pairs).length) {
@@ -693,6 +879,7 @@ function quizActionSubmit() {
       
       Object.keys(q.pairs).forEach(key => {
         const selectEl = document.getElementById(`match-select-${key}`);
+        if (!selectEl) return;
         const correctVal = q.pairs[key];
         
         if (selectEl.value === correctVal) {
@@ -711,6 +898,7 @@ function quizActionSubmit() {
       let allCorrect = true;
       Object.keys(q.answer).forEach(key => {
         const inputEl = document.getElementById(`calc-ans-${key}`);
+        if (!inputEl) return;
         const targetVal = q.answer[key];
         
         if (typeof targetVal === 'string') {
@@ -742,6 +930,24 @@ function quizActionSubmit() {
       isCorrect = allCorrect;
     }
     
+    // Update question state properties
+    q.userAnswerState = isCorrect ? 'correct' : 'incorrect';
+    if (q.type === 'single' || q.type === 'multiple') {
+      q.userSelectedOptions = [...selectedOptions];
+    } else if (q.type === 'matching') {
+      q.userMatchingAnswers = {};
+      Object.keys(q.pairs).forEach(key => {
+        const selectEl = document.getElementById(`match-select-${key}`);
+        if (selectEl) q.userMatchingAnswers[key] = selectEl.value;
+      });
+    } else if (q.type.startsWith('calculation')) {
+      q.userCalculationAnswers = {};
+      Object.keys(q.answer).forEach(key => {
+        const inputEl = document.getElementById(`calc-ans-${key}`);
+        if (inputEl) q.userCalculationAnswers[key] = inputEl.value;
+      });
+    }
+    
     stats.totalAnswered += 1;
     if (isCorrect) {
       stats.correctCount += 1;
@@ -762,7 +968,23 @@ function quizActionSubmit() {
     document.getElementById('btn-quiz-skip').style.display = 'none';
     hasCheckedAnswer = true;
     
+    // Re-render the visual progress chips
+    renderQuizProgressGrid();
+    
+    // Auto-advance in Speedrun Mode if answered CORRECTLY
+    const isSpeedrun = document.getElementById('speedrun-mode-checkbox')?.checked;
+    if (isSpeedrun && isCorrect) {
+      setTimeout(() => {
+        if (hasCheckedAnswer && currentQuestionIndex < currentQuestions.length - 1) {
+          showQuestion(currentQuestionIndex + 1);
+        } else if (hasCheckedAnswer && currentQuestionIndex === currentQuestions.length - 1) {
+          showQuizResults();
+        }
+      }, 1000);
+    }
+    
   } else {
+    // Already checked, advance to next question
     if (currentQuestionIndex < currentQuestions.length - 1) {
       showQuestion(currentQuestionIndex + 1);
     } else {
@@ -773,15 +995,27 @@ function quizActionSubmit() {
 
 function quizPrevQuestion() {
   if (currentQuestionIndex > 0) {
+    saveUnsubmittedAnswers();
     showQuestion(currentQuestionIndex - 1);
   }
 }
 
 function quizRetryQuestion() {
+  const q = currentQuestions[currentQuestionIndex];
+  if (q) {
+    q.userAnswerState = 'unanswered';
+    q.userSelectedOptions = [];
+    q.userMatchingAnswers = {};
+    q.userCalculationAnswers = {};
+  }
   showQuestion(currentQuestionIndex);
 }
 
 function quizSkipQuestion() {
+  const q = currentQuestions[currentQuestionIndex];
+  if (q && q.userAnswerState === 'unanswered') {
+    q.userAnswerState = 'skipped';
+  }
   if (currentQuestionIndex < currentQuestions.length - 1) {
     showQuestion(currentQuestionIndex + 1);
   } else {
@@ -879,6 +1113,17 @@ function switchTrainer(trainerName) {
     document.getElementById('trainer-hole').style.display = 'block';
     document.getElementById('btn-train-hole').classList.add('active');
   }
+  
+  // Focus first input field in active trainer
+  setTimeout(() => {
+    const pane = document.getElementById(`trainer-${trainerName}`);
+    if (pane) {
+      const firstInp = pane.querySelector('input');
+      if (firstInp && !firstInp.disabled) {
+        firstInp.focus();
+      }
+    }
+  }, 100);
 }
 
 // 1. Alkalinity Trainer
@@ -2121,4 +2366,305 @@ function startErrorPractice() {
   document.getElementById('quiz-results-container').style.display = 'none';
 
   showQuestion(0);
+}
+
+// ==========================================
+// KEYBOARD SHORTCUTS & INTERACTION CONTROLLER
+// ==========================================
+
+window.addEventListener('keydown', (e) => {
+  const activeEl = document.activeElement;
+  const isInputActive = activeEl && (
+    activeEl.tagName === 'INPUT' || 
+    activeEl.tagName === 'SELECT' || 
+    activeEl.tagName === 'TEXTAREA'
+  );
+  
+  // 1. GLOBAL COMMAND PALETTE: Ctrl + K or Cmd + K
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    toggleCommandPalette();
+    return;
+  }
+  
+  // 2. PALETTE IS OPEN: Handle Escape, Arrow Up/Down, Enter
+  const palette = document.getElementById('command-palette');
+  const isPaletteOpen = palette && palette.style.display !== 'none';
+  if (isPaletteOpen) {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeCommandPalette();
+      return;
+    }
+    return;
+  }
+  
+  // 3. Math Trainer Verification via Enter Key inside Inputs
+  if (isInputActive && e.key === 'Enter') {
+    const inputId = activeEl.id || '';
+    if (inputId.startsWith('input-alk-')) {
+      e.preventDefault();
+      checkAlkalinityAnswers();
+      return;
+    } else if (inputId.startsWith('input-mb-')) {
+      e.preventDefault();
+      checkMassBalanceAnswers();
+      return;
+    } else if (inputId.startsWith('input-sol-')) {
+      e.preventDefault();
+      checkSolidsAnswers();
+      return;
+    } else if (inputId.startsWith('input-hole-')) {
+      e.preventDefault();
+      checkHoleAnswers();
+      return;
+    } else if (inputId.startsWith('input-cont-') || inputId.startsWith('select-cont-')) {
+      e.preventDefault();
+      checkContaminantsAnswers();
+      return;
+    }
+  }
+
+  // If typing in any input field (like simulator fields), do not trigger quiz shortcuts
+  if (isInputActive) {
+    return;
+  }
+  
+  // 4. QUIZ PANELS SHORTCUTS
+  const quizView = document.getElementById('view-quiz');
+  const isQuizVisible = quizView && quizView.style.display !== 'none';
+  
+  if (isQuizVisible) {
+    const q = currentQuestions[currentQuestionIndex];
+    if (!q) return;
+    
+    // Select Option (A, B, C, D / 1, 2, 3, 4)
+    if (!hasCheckedAnswer && (q.type === 'single' || q.type === 'multiple')) {
+      const keyStr = e.key.toLowerCase();
+      let optionIdx = -1;
+      
+      if (['1', '2', '3', '4', '5', '6'].includes(keyStr)) {
+        optionIdx = parseInt(keyStr) - 1;
+      } else if (['a', 'b', 'c', 'd', 'e', 'f'].includes(keyStr)) {
+        optionIdx = keyStr.charCodeAt(0) - 97; // 'a' code is 97
+      }
+      
+      if (optionIdx >= 0 && q.shuffledOptions && optionIdx < q.shuffledOptions.length) {
+        e.preventDefault();
+        const optVal = q.shuffledOptions[optionIdx].value;
+        selectOption(optVal);
+        return;
+      }
+    }
+    
+    // Action: Space or Enter (Submit / Next)
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      quizActionSubmit();
+      return;
+    }
+    
+    // Prev question: ArrowLeft or P/p
+    if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'p') {
+      e.preventDefault();
+      quizPrevQuestion();
+      return;
+    }
+    
+    // Next/Skip: ArrowRight or S/s
+    if (e.key === 'ArrowRight' || e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      quizSkipQuestion();
+      return;
+    }
+    
+    // Retry question: R/r
+    if (e.key.toLowerCase() === 'r') {
+      e.preventDefault();
+      quizRetryQuestion();
+      return;
+    }
+  }
+});
+
+// ==========================================
+// COMMAND PALETTE MODULE IMPLEMENTATION
+// ==========================================
+
+const COMMAND_PALETTE_ITEMS = [
+  { name: "Learning Dashboard", target: "dashboard", category: "General", keywords: "inicio dashboard score stats" },
+  { name: "Active Error Log", target: "errors", category: "General", keywords: "log errors fallas incorrectas" },
+  
+  { name: "Homework 8: Alkalinity & pH", target: "hw8", category: "Water-Based Fluids", keywords: "hw8 theory alkalinity ph titration pm pf mf" },
+  { name: "Homework 9: Clays & Polymers", target: "hw9", category: "Water-Based Fluids", keywords: "hw9 theory clays chemistry bentonite polymers" },
+  { name: "Homework 11: Fluid Contaminants", target: "hw11", category: "Water-Based Fluids", keywords: "hw11 contaminants calcium cement salt treatment" },
+  { name: "Contaminants WBM Diagnostics", target: "contaminants", category: "Water-Based Fluids", keywords: "contaminants wbm day 1 day 2 check" },
+  
+  { name: "Homework 13: Non-Aqueous Fluids", target: "hw13", category: "Non-Aqueous Fluids", keywords: "hw13 naf ief emulsion retort waste base oil" },
+  { name: "Homework 14: WPS & Solids", target: "hw14", category: "Non-Aqueous Fluids", keywords: "hw14 wps salinity salts lime solids" },
+  { name: "Homework 15: NAF Formulations", target: "hw15", category: "Non-Aqueous Fluids", keywords: "hw15 formulations mixing sequence invermul geltone" },
+  { name: "Homework 16: OWR & Salinity Adjustments", target: "hw16", category: "Non-Aqueous Fluids", keywords: "hw16 owr adjustment build water phase salinity density" },
+  { name: "Homework 17: NAF Contaminants", target: "hw17", category: "Non-Aqueous Fluids", keywords: "hw17 naf contaminants water cement solids treatment" },
+  { name: "Contaminants NAF Diagnostics", target: "contaminants-naf", category: "Non-Aqueous Fluids", keywords: "contaminants naf day 1 day 2 check" },
+  
+  { name: "Homework 12: Drilling Hydraulics", target: "hw12", category: "Engineering & Hydraulics", keywords: "hw12 hydraulics rheology shear rates flow regimes" },
+  { name: "Homework 21: Hole Cleaning & Sweeps", target: "hw21", category: "Engineering & Hydraulics", keywords: "hw21 hole cleaning transport sweeps mud density speed" },
+  { name: "Homework 22: Pore Pressures & Stuck Pipe", target: "hw22", category: "Engineering & Hydraulics", keywords: "hw22 pore pressure stuck pipe casing spacer hydraulics" },
+  
+  { name: "Homework 18: Formation Damage & Reservoirs", target: "hw18", category: "Reservoir & Completion", keywords: "hw18 reservoirs formation damage skin completion drill-in" },
+  { name: "Homework 19: Wellbore Displacements & Brines", target: "hw19", category: "Reservoir & Completion", keywords: "hw19 displacements brines completion fluids displacement" },
+  { name: "Homework 20: Breakers & Packer Fluids", target: "hw20", category: "Reservoir & Completion", keywords: "hw20 breakers filter cake packers completion applications" },
+  
+  { name: "Video Quiz: Completion Fluids", target: "vcf", category: "Video Quizzes", keywords: "vcf video completion fluids hydrate brine selection ppe" },
+  { name: "Video Quiz: Formation Damage", target: "vfd", category: "Video Quizzes", keywords: "vfd video formation damage skin clay swelling scaling" },
+  { name: "Video Quiz: Hole Cleaning", target: "vhc", category: "Video Quizzes", keywords: "vhc video hole cleaning sweeps AV slip velocity" },
+  { name: "Video Quiz: Pills & Displacement", target: "vpd", category: "Video Quizzes", keywords: "vpd video pills displacement sweep pills cfg modeling" },
+  
+  { name: "Baroid Business Processes", target: "bp", category: "Tools & References", keywords: "bp business processes mainstays value proposition hard stops black book" },
+  { name: "Math Practice Simulators", target: "trainers", category: "Tools & References", keywords: "trainers math simulators calculations alkalinity mass balance solids capacity wellbore" },
+  { name: "Cheat Sheet & Glossary", target: "cheatsheet", category: "Tools & References", keywords: "cheatsheet glossary products formulas terms definitions" }
+];
+
+let selectedCommandIndex = 0;
+let filteredCommandItems = [];
+
+function toggleCommandPalette() {
+  const palette = document.getElementById('command-palette');
+  if (!palette) return;
+  
+  if (palette.style.display === 'none') {
+    palette.style.display = 'flex';
+    const input = document.getElementById('cmd-palette-input');
+    if (input) {
+      input.value = '';
+      setTimeout(() => input.focus(), 50);
+    }
+    selectedCommandIndex = 0;
+    filterCommandPalette();
+  } else {
+    palette.style.display = 'none';
+  }
+}
+
+function closeCommandPalette(event) {
+  const palette = document.getElementById('command-palette');
+  if (palette) {
+    palette.style.display = 'none';
+  }
+}
+
+function filterCommandPalette() {
+  const input = document.getElementById('cmd-palette-input');
+  const resultsContainer = document.getElementById('cmd-palette-results-list');
+  if (!input || !resultsContainer) return;
+  
+  const query = input.value.trim().toLowerCase();
+  
+  if (query === '') {
+    filteredCommandItems = [...COMMAND_PALETTE_ITEMS];
+  } else {
+    const terms = query.split(/\s+/);
+    filteredCommandItems = COMMAND_PALETTE_ITEMS.filter(item => {
+      const matchText = `${item.name} ${item.category} ${item.keywords}`.toLowerCase();
+      return terms.every(term => matchText.includes(term));
+    });
+  }
+  
+  if (selectedCommandIndex >= filteredCommandItems.length) {
+    selectedCommandIndex = Math.max(0, filteredCommandItems.length - 1);
+  }
+  
+  renderCommandPaletteResults();
+}
+
+function renderCommandPaletteResults() {
+  const resultsContainer = document.getElementById('cmd-palette-results-list');
+  if (!resultsContainer) return;
+  
+  resultsContainer.innerHTML = '';
+  
+  if (filteredCommandItems.length === 0) {
+    resultsContainer.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text-muted);font-size:14px;">No matching sections found.</div>`;
+    return;
+  }
+  
+  filteredCommandItems.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = `cmd-item ${idx === selectedCommandIndex ? 'selected' : ''}`;
+    div.onclick = () => selectCommandItem(item);
+    
+    let iconSvg = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.707.707M2 12a10 10 0 1120 0 10 10 0 01-20 0z"/></svg>`;
+    if (item.category === "General") {
+      iconSvg = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`;
+    } else if (item.category === "Video Quizzes") {
+      iconSvg = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`;
+    } else if (item.category.includes("Fluid")) {
+      iconSvg = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>`;
+    }
+    
+    div.innerHTML = `
+      ${iconSvg}
+      <span>${item.name}</span>
+      <span class="cmd-item-category">${item.category}</span>
+    `;
+    
+    if (idx === selectedCommandIndex) {
+      setTimeout(() => {
+        div.scrollIntoView({ block: 'nearest' });
+      }, 10);
+    }
+    
+    resultsContainer.appendChild(div);
+  });
+}
+
+function handleCommandPaletteKey(e) {
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    selectedCommandIndex = (selectedCommandIndex + 1) % filteredCommandItems.length;
+    renderCommandPaletteResults();
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    selectedCommandIndex = (selectedCommandIndex - 1 + filteredCommandItems.length) % filteredCommandItems.length;
+    renderCommandPaletteResults();
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (filteredCommandItems[selectedCommandIndex]) {
+      selectCommandItem(filteredCommandItems[selectedCommandIndex]);
+    }
+  }
+}
+
+function selectCommandItem(item) {
+  closeCommandPalette();
+  
+  if (item.target === 'dashboard' || item.target === 'errors' || item.target === 'bp' || item.target === 'trainers' || item.target === 'cheatsheet') {
+    switchTab(item.target);
+  } else if (item.target.startsWith('hw') || item.target.startsWith('v') || item.target.startsWith('contaminants')) {
+    let quizId = '';
+    if (item.target === 'hw8') quizId = 'homework_8';
+    else if (item.target === 'hw9') quizId = 'homework_9';
+    else if (item.target === 'hw11') quizId = 'homework_11';
+    else if (item.target === 'hw12') quizId = 'homework_12';
+    else if (item.target === 'hw13') quizId = 'homework_13';
+    else if (item.target === 'hw14') quizId = 'homework_14';
+    else if (item.target === 'hw15') quizId = 'homework_15';
+    else if (item.target === 'hw16') quizId = 'homework_16';
+    else if (item.target === 'hw17') quizId = 'homework_17';
+    else if (item.target === 'hw18') quizId = 'homework_18';
+    else if (item.target === 'hw19') quizId = 'homework_19';
+    else if (item.target === 'hw20') quizId = 'homework_20';
+    else if (item.target === 'hw21') quizId = 'homework_21';
+    else if (item.target === 'hw22') quizId = 'homework_22';
+    else if (item.target === 'vcf') quizId = 'video_completions';
+    else if (item.target === 'vfd') quizId = 'video_formation_damage';
+    else if (item.target === 'vhc') quizId = 'video_hole_cleaning';
+    else if (item.target === 'vpd') quizId = 'video_pills_displacement';
+    else if (item.target === 'contaminants') quizId = 'contaminants';
+    else if (item.target === 'contaminants-naf') quizId = 'contaminants-naf';
+    
+    if (quizId) {
+      startQuiz(quizId);
+    }
+  }
 }
