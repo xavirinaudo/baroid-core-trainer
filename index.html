@@ -24,6 +24,20 @@
     <div class="orb orb-2"></div>
   </div>
 
+  <!-- Mobile Top Header Bar -->
+  <div class="mobile-top-header" id="mobile-top-header">
+    <button class="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Toggle Navigation Menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <span class="mobile-logo-text">BAROID CORE</span>
+    <button class="mobile-search-btn" onclick="toggleCommandPalette()" aria-label="Search Command Palette">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div class="mobile-sidebar-overlay" id="mobile-sidebar-overlay" onclick="closeMobileSidebar()"></div>
+
   <div class="app-container">
     
     <!-- Sidebar Navigation -->
@@ -433,15 +447,15 @@
             <div class="inputs-grid">
               <div class="input-group">
                 <label class="input-label" for="input-alk-oh">Hydroxide (OH⁻), mg/L</label>
-                <input type="number" id="input-alk-oh" class="input-field" placeholder="E.g. 0">
+                <input type="number" id="input-alk-oh" class="input-field" placeholder="E.g. 0" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-alk-co3">Carbonate (CO₃²⁻), mg/L</label>
-                <input type="number" id="input-alk-co3" class="input-field" placeholder="E.g. 3840">
+                <input type="number" id="input-alk-co3" class="input-field" placeholder="E.g. 3840" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-alk-hco3">Bicarbonate (HCO₃⁻), mg/L</label>
-                <input type="number" id="input-alk-hco3" class="input-field" placeholder="E.g. 480">
+                <input type="number" id="input-alk-hco3" class="input-field" placeholder="E.g. 480" inputmode="decimal" pattern="[0-9.]*">
               </div>
             </div>
             
@@ -549,27 +563,27 @@
             <div class="inputs-grid">
               <div class="input-group">
                 <label class="input-label" for="input-sol-asg">ASG (3 decimals)</label>
-                <input type="number" step="0.001" id="input-sol-asg" class="input-field" placeholder="E.g. 3.915">
+                <input type="number" step="0.001" id="input-sol-asg" class="input-field" placeholder="E.g. 3.915" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-sol-lgspct">% LGS (low gravity solids)</label>
-                <input type="number" step="0.01" id="input-sol-lgspct" class="input-field" placeholder="E.g. 3.56">
+                <input type="number" step="0.01" id="input-sol-lgspct" class="input-field" placeholder="E.g. 3.56" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-sol-lgsppb">LGS concentration, ppb</label>
-                <input type="number" step="0.01" id="input-sol-lgsppb" class="input-field" placeholder="E.g. 32.44">
+                <input type="number" step="0.01" id="input-sol-lgsppb" class="input-field" placeholder="E.g. 32.44" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-sol-hgspct">% HGS (high gravity solids)</label>
-                <input type="number" step="0.01" id="input-sol-hgspct" class="input-field" placeholder="E.g. 16.44">
+                <input type="number" step="0.01" id="input-sol-hgspct" class="input-field" placeholder="E.g. 16.44" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-sol-hgsppb">HGS concentration, ppb</label>
-                <input type="number" step="0.01" id="input-sol-hgsppb" class="input-field" placeholder="E.g. 242.01">
+                <input type="number" step="0.01" id="input-sol-hgsppb" class="input-field" placeholder="E.g. 242.01" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-sol-drillppb">Drill solids concentration, ppb</label>
-                <input type="number" step="0.01" id="input-sol-drillppb" class="input-field" placeholder="E.g. 7.44">
+                <input type="number" step="0.01" id="input-sol-drillppb" class="input-field" placeholder="E.g. 7.44" inputmode="decimal" pattern="[0-9.]*">
               </div>
             </div>
             
@@ -630,43 +644,43 @@
             <div class="inputs-grid">
               <div class="input-group">
                 <label class="input-label" for="input-hole-pumpout">Pump Output (bbl/stk)</label>
-                <input type="number" step="0.0001" id="input-hole-pumpout" class="input-field" placeholder="E.g. 0.1183">
+                <input type="number" step="0.0001" id="input-hole-pumpout" class="input-field" placeholder="E.g. 0.1183" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-annvol">Annular Volume (bbl)</label>
-                <input type="number" step="0.01" id="input-hole-annvol" class="input-field" placeholder="E.g. 837.26">
+                <input type="number" step="0.01" id="input-hole-annvol" class="input-field" placeholder="E.g. 837.26" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-dpvol">Drill String Volume (bbl)</label>
-                <input type="number" step="0.01" id="input-hole-dpvol" class="input-field" placeholder="E.g. 235.69">
+                <input type="number" step="0.01" id="input-hole-dpvol" class="input-field" placeholder="E.g. 235.69" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-circvol">Total Circulating Volume (bbl)</label>
-                <input type="number" step="0.01" id="input-hole-circvol" class="input-field" placeholder="E.g. 2873.05">
+                <input type="number" step="0.01" id="input-hole-circvol" class="input-field" placeholder="E.g. 2873.05" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-bustk">Bottoms Up strokes (stk)</label>
-                <input type="number" id="input-hole-bustk" class="input-field" placeholder="E.g. 7078">
+                <input type="number" id="input-hole-bustk" class="input-field" placeholder="E.g. 7078" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-bumin">Bottoms Up time (min)</label>
-                <input type="number" id="input-hole-bumin" class="input-field" placeholder="E.g. 62">
+                <input type="number" id="input-hole-bumin" class="input-field" placeholder="E.g. 62" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-bitstk">Surface to Bit strokes (stk)</label>
-                <input type="number" id="input-hole-bitstk" class="input-field" placeholder="E.g. 1994">
+                <input type="number" id="input-hole-bitstk" class="input-field" placeholder="E.g. 1994" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-bitmin">Surface to Bit time (min)</label>
-                <input type="number" id="input-hole-bitmin" class="input-field" placeholder="E.g. 18">
+                <input type="number" id="input-hole-bitmin" class="input-field" placeholder="E.g. 18" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-totstk">Suction to Suction strokes (stk)</label>
-                <input type="number" id="input-hole-totstk" class="input-field" placeholder="E.g. 24287">
+                <input type="number" id="input-hole-totstk" class="input-field" placeholder="E.g. 24287" inputmode="decimal" pattern="[0-9.]*">
               </div>
               <div class="input-group">
                 <label class="input-label" for="input-hole-totmin">Suction to Suction time (min)</label>
-                <input type="number" id="input-hole-totmin" class="input-field" placeholder="E.g. 212">
+                <input type="number" id="input-hole-totmin" class="input-field" placeholder="E.g. 212" inputmode="decimal" pattern="[0-9.]*">
               </div>
             </div>
             
@@ -757,7 +771,7 @@
 
             <div class="input-group" id="group-cont-dosage">
               <label class="input-label" for="input-cont-dosage" style="font-weight:600;">3. Calculated Treatment Dosage (lb/bbl)</label>
-              <input type="number" step="0.0001" id="input-cont-dosage" class="input-field" placeholder="E.g. 1.5738 (Enter 0 if not applicable)">
+              <input type="number" step="0.0001" id="input-cont-dosage" class="input-field" placeholder="E.g. 1.5738 (Enter 0 if not applicable)" inputmode="decimal" pattern="[0-9.]*">
             </div>
           </div>
 
@@ -861,19 +875,21 @@
 
         <div style="margin-bottom: 24px;">
           <h4 style="font-family:var(--font-title); margin-bottom:12px; color:var(--primary);">Baroid Product Glossary (WBF & NAF)</h4>
-          <table class="sheet-table" id="table-products">
-            <thead>
-              <tr>
-                <th style="width: 180px;">Product</th>
-                <th style="width: 150px;">Category</th>
-                <th style="width: 180px;">Primary Function</th>
-                <th>Technical Notes (Baroid Participant Guide)</th>
-              </tr>
-            </thead>
-            <tbody id="table-products-body">
-              <!-- Rendered dynamically by JS -->
-            </tbody>
-          </table>
+          <div class="table-scroll-container">
+            <table class="sheet-table" id="table-products">
+              <thead>
+                <tr>
+                  <th style="width: 180px;">Product</th>
+                  <th style="width: 150px;">Category</th>
+                  <th style="width: 180px;">Primary Function</th>
+                  <th>Technical Notes (Baroid Participant Guide)</th>
+                </tr>
+              </thead>
+              <tbody id="table-products-body">
+                <!-- Rendered dynamically by JS -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div>
@@ -978,6 +994,35 @@
         <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select, <kbd>ESC</kbd> to close.</span>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav" id="mobile-bottom-nav">
+    <button class="mobile-nav-tab active" id="m-tab-dashboard" onclick="switchTab('dashboard')">
+      <div class="m-tab-pill">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      </div>
+      <span>Home</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-trainers" onclick="switchTab('trainers')">
+      <div class="m-tab-pill">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <span>Maths</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-cheatsheet" onclick="switchTab('cheatsheet')">
+      <div class="m-tab-pill">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      </div>
+      <span>Glossary</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-errors" onclick="switchTab('errors')" style="position:relative;">
+      <div class="m-tab-pill">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </div>
+      <span>Errors</span>
+      <span class="mobile-badge" id="mobile-nav-error-count" style="display: none;">0</span>
+    </button>
   </div>
 
   <!-- Application Logic -->

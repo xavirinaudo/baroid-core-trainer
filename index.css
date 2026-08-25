@@ -1203,3 +1203,330 @@ body[data-theme="light"] .cmd-palette-footer {
   to { transform: translateY(0) scale(1); }
 }
 
+/* ============================================================
+   MOBILE RESPONSIVE & PREMIUM UX/UI IMPROVEMENTS (v2.1)
+   ============================================================ */
+
+/* 1. View Pane Entry Animations */
+.view-pane {
+  animation: viewEnter 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes viewEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Tactical Click Scale feedback on touch-targets */
+.option-card:active, 
+.btn:active, 
+.mobile-nav-tab:active, 
+.task-card:active, 
+.progress-chip:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.05s ease !important;
+}
+
+/* 3. High Contrast Theme Refinements (Dark Mode) */
+body[data-theme="dark"] {
+  --text-secondary: #cbd5e1; /* Brighter, high readability slate grey */
+  --text-muted: #94a3b8;      /* Clearer secondary grey */
+}
+
+/* High Contrast Theme Refinements (Light Mode) */
+body[data-theme="light"] {
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-glow: rgba(0, 0, 0, 0.08);
+}
+body[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* 4. Table Scroll Wrapper */
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  border: 1px solid var(--border-glow);
+  background: rgba(255, 255, 255, 0.01);
+  margin-top: 10px;
+}
+
+/* 5. Mobile Layout Breakpoints (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Adjust app structure to fit top header and bottom nav */
+  .app-container {
+    grid-template-columns: 1fr;
+    padding-top: 56px; /* Space for fixed mobile top header */
+    padding-bottom: 74px; /* Space for fixed mobile bottom nav */
+    gap: 16px;
+    height: auto;
+    min-height: calc(100vh - 130px);
+  }
+
+  /* Make view panes take comfortable margins */
+  .view-pane {
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Transform sidebar to slide-out drawer menu overlay */
+  .sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 70px;
+    width: 280px;
+    z-index: 9999;
+    border-radius: 0 16px 16px 0 !important;
+    margin: 0 !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Mobile Top Header Styles */
+  .mobile-top-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: rgba(21, 28, 44, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glow);
+    z-index: 9998;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  body[data-theme="light"] .mobile-top-header {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .mobile-menu-btn, .mobile-search-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  
+  .mobile-menu-btn:hover, .mobile-search-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  body[data-theme="light"] .mobile-menu-btn:hover,
+  body[data-theme="light"] .mobile-search-btn:hover {
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  .mobile-logo-text {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+  }
+
+  /* Mobile Sidebar Overlay */
+  .mobile-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9990;
+  }
+  
+  .mobile-sidebar-overlay.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+  }
+
+  /* Mobile Bottom Navigation Bar Styles */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(21, 28, 44, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid var(--border-glow);
+    z-index: 9998;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  body[data-theme="light"] .mobile-bottom-nav {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .mobile-nav-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 4px;
+    height: 100%;
+    transition: color 0.2s ease;
+  }
+
+  /* Material Design 3 style Pill Highlight */
+  .m-tab-pill {
+    padding: 4px 18px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .mobile-nav-tab svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-nav-tab.active {
+    color: var(--text-primary);
+  }
+  
+  .mobile-nav-tab.active .m-tab-pill {
+    background-color: rgba(204, 0, 0, 0.15); /* Frosted red active indicator */
+    color: var(--h-red);
+    transform: scale(1.04);
+  }
+  
+  body[data-theme="light"] .mobile-nav-tab.active .m-tab-pill {
+    background-color: rgba(204, 0, 0, 0.08);
+  }
+  
+  .mobile-nav-tab.active svg {
+    transform: translateY(-1px);
+  }
+
+  /* Red count badge on bottom bar */
+  .mobile-badge {
+    position: absolute;
+    top: 6px;
+    right: 26%;
+    background: var(--h-red);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    min-width: 14px;
+    text-align: center;
+    border: 1px solid rgba(21, 28, 44, 0.8);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  /* Sticky Quiz Actions Footer Bar (Thumb Zone) */
+  .view-pane#view-quiz {
+    padding-bottom: 84px !important; /* Space for sticky actions footer */
+  }
+
+  #view-quiz .btn-group {
+    position: fixed;
+    bottom: 70px; /* Aligned right above bottom navigation tab bar */
+    left: 0;
+    right: 0;
+    background: rgba(21, 28, 44, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid var(--border-glow);
+    padding: 12px 16px env(safe-area-inset-bottom) 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    z-index: 9980;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  }
+  
+  body[data-theme="light"] #view-quiz .btn-group {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  #view-quiz .btn-group > div {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  #view-quiz .btn-group .btn {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  /* Forms modifications on mobile */
+  .inputs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .params-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* Desktop mobile-top-header and mobile-bottom-nav hiding */
+@media (min-width: 768px) {
+  .mobile-top-header, .mobile-bottom-nav, .mobile-sidebar-overlay {
+    display: none !important;
+  }
+}
+

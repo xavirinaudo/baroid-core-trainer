@@ -113,6 +113,14 @@ function applyTheme() {
 function switchTab(tabId) {
   currentTab = tabId;
   
+  // Close mobile drawer automatically
+  closeMobileSidebar();
+  
+  // Sync active mobile bottom tabs
+  document.querySelectorAll('.mobile-nav-tab').forEach(el => el.classList.remove('active'));
+  const mTab = document.getElementById(`m-tab-${tabId}`);
+  if (mTab) mTab.classList.add('active');
+  
   // Hide all sections
   document.querySelectorAll('.view-pane').forEach(el => el.style.display = 'none');
   
@@ -1312,37 +1320,37 @@ function renderMassBalanceInputsForCase(caseType) {
     inputsHTML = `
       <div class="input-group">
         <label class="input-label" for="input-mb-sacks">Sacks of Barite (100 lb/sk)</label>
-        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks...">
+        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks..." inputmode="decimal" pattern="[0-9.]*">
       </div>
       <div class="input-group">
         <label class="input-label" for="input-mb-dump">Volume of mud to dump (bbl)</label>
-        <input type="number" step="0.01" id="input-mb-dump" class="input-field" placeholder="bbl...">
+        <input type="number" step="0.01" id="input-mb-dump" class="input-field" placeholder="bbl..." inputmode="decimal" pattern="[0-9.]*">
       </div>
       <div class="input-group">
         <label class="input-label" for="input-mb-keep">Original volume to keep (bbl)</label>
-        <input type="number" step="0.01" id="input-mb-keep" class="input-field" placeholder="bbl...">
+        <input type="number" step="0.01" id="input-mb-keep" class="input-field" placeholder="bbl..." inputmode="decimal" pattern="[0-9.]*">
       </div>
     `;
   } else if (caseType === 'weight_up_only') {
     inputsHTML = `
       <div class="input-group">
         <label class="input-label" for="input-mb-sacks">Sacks of Barite (100 lb/sk)</label>
-        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks...">
+        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks..." inputmode="decimal" pattern="[0-9.]*">
       </div>
       <div class="input-group">
         <label class="input-label" for="input-mb-vfinal">Final Volume obtained (bbl)</label>
-        <input type="number" step="0.01" id="input-mb-vfinal" class="input-field" placeholder="bbl...">
+        <input type="number" step="0.01" id="input-mb-vfinal" class="input-field" placeholder="bbl..." inputmode="decimal" pattern="[0-9.]*">
       </div>
     `;
   } else if (caseType === 'build_from_scratch_baracarb') {
     inputsHTML = `
       <div class="input-group">
         <label class="input-label" for="input-mb-water">Volume of fresh water needed (bbl)</label>
-        <input type="number" step="0.01" id="input-mb-water" class="input-field" placeholder="bbl...">
+        <input type="number" step="0.01" id="input-mb-water" class="input-field" placeholder="bbl..." inputmode="decimal" pattern="[0-9.]*">
       </div>
       <div class="input-group">
         <label class="input-label" for="input-mb-sacks">Sacks of BARACARB (50 lb/sk)</label>
-        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks...">
+        <input type="number" id="input-mb-sacks" class="input-field" placeholder="Sacks..." inputmode="decimal" pattern="[0-9.]*">
       </div>
     `;
   }
@@ -2295,6 +2303,13 @@ function updateErrorLogCounter() {
     badge.style.display = count > 0 ? 'inline-block' : 'none';
   }
   
+  // Mobile bottom navigation count badge
+  const mBadge = document.getElementById('mobile-nav-error-count');
+  if (mBadge) {
+    mBadge.innerText = count;
+    mBadge.style.display = count > 0 ? 'inline-block' : 'none';
+  }
+  
   // Error workspace pending count
   const pendingCountEl = document.getElementById('errors-pending-count');
   if (pendingCountEl) {
@@ -2666,5 +2681,28 @@ function selectCommandItem(item) {
     if (quizId) {
       startQuiz(quizId);
     }
+  }
+}
+
+// ==========================================
+// MOBILE DRAWER MENU LOGIC
+// ==========================================
+function toggleMobileSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('mobile-sidebar-overlay');
+  
+  if (sidebar && overlay) {
+    sidebar.classList.toggle('mobile-open');
+    overlay.classList.toggle('active');
+  }
+}
+
+function closeMobileSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('mobile-sidebar-overlay');
+  
+  if (sidebar && overlay) {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
   }
 }
