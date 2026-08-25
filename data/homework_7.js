@@ -527,21 +527,6 @@ Object.assign(QUIZ_DATA, {
                   "chemically_enhanced"
             ],
             "explanation": "Centrifuges are run on un-weighted mud at high speeds for maximum solids removal, on weighted mud at low speeds to recover barite (HGS), or with coagulants/flocculants for dewatering. (See Page 130)"
-      },                  {
-                        "label": "Decrease bowl speed, increase conveyor speed, increase pond depth, increase feed rate",
-                        "value": "wrong_1"
-                  },
-                  {
-                        "label": "Increase bowl speed, increase conveyor speed, increase pond depth, decrease feed rate",
-                        "value": "wrong_2"
-                  },
-                  {
-                        "label": "Decrease bowl speed, decrease conveyor speed, decrease pond depth, increase feed rate",
-                        "value": "wrong_3"
-                  }
-            ],
-            "answer": "correct_adjust",
-            "explanation": "Higher bowl speed increases G-force (finer solids settle), lower conveyor speed increases dewatering time on the beach, lower pond depth drys solids by extending beach length, and lower feed rate increases fluid retention time. (See Centrifuge Optimization tables)"
       },
       {
             "id": "hw7_q21",
