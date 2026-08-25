@@ -14,29 +14,43 @@ def ocr_image_powershell(img_path):
         os.remove(temp_txt_path)
         
     ps_script = f"""
+    Add-Type -AssemblyName System.Runtime.WindowsRuntime
     [void][Windows.Security.Cryptography.CryptographicBuffer, Windows.Security.Cryptography, ContentType=WindowsRuntime]
     [void][Windows.Graphics.Imaging.BitmapDecoder, Windows.Graphics.Imaging, ContentType=WindowsRuntime]
     [void][Windows.Media.Ocr.OcrEngine, Windows.Media.Ocr, ContentType=WindowsRuntime]
     [void][Windows.Storage.StorageFile, Windows.Storage, ContentType=WindowsRuntime]
+
+    function Await($asyncOperation, $type) {{
+        $asTask = [System.WindowsRuntimeSystemExtensions].GetMethods() | 
+            Where-Object {{ $_.Name -eq 'AsTask' -and $_.GetGenericArguments().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' }}
+        $genericAsTask = $asTask.MakeGenericMethod($type)
+        $task = $genericAsTask.Invoke($null, @($asyncOperation))
+        $task.Wait()
+        return $task.Result
+    }}
+
+    $file = Await ([Windows.Storage.StorageFile]::GetFileFromPathAsync("{abs_path}")) ([Windows.Storage.StorageFile])
+    $stream = Await ($file.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStreamWithContentType])
+    $decoder = Await ([Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($stream)) ([Windows.Graphics.Imaging.BitmapDecoder])
+    $bitmap = Await ($decoder.GetSoftwareBitmapAsync()) ([Windows.Graphics.Imaging.SoftwareBitmap])
     
-    $file = [Windows.Storage.StorageFile]::GetFileFromPathAsync("{abs_path}").GetAwaiter().GetResult()
-    $stream = $file.OpenAsync([Windows.Storage.FileAccessMode]::Read).GetAwaiter().GetResult()
-    $decoder = [Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($stream).GetAwaiter().GetResult()
-    $bitmap = $decoder.GetSoftwareBitmapAsync().GetAwaiter().GetResult()
     $engine = [Windows.Media.Ocr.OcrEngine]::TryCreateFromUserProfileLanguages()
-    $result = $engine.RecognizeAsync($bitmap).GetAwaiter().GetResult()
-    
-    $result.Text | Out-File -FilePath "{temp_txt_path}" -Encoding utf8
+    if ($null -eq $engine) {{
+        "ERROR_ENGINE_NULL" | Out-File -FilePath "{temp_txt_path}" -Encoding utf8
+    }} else {{
+        $result = Await ($engine.RecognizeAsync($bitmap)) ([Windows.Media.Ocr.OcrResult])
+        $result.Text | Out-File -FilePath "{temp_txt_path}" -Encoding utf8
+    }}
     """
     
     # Run powershell command
     result = subprocess.run(
-        ["powershell", "-Command", ps_script],
+        ["powershell", "-ExecutionPolicy", "Bypass", "-Command", ps_script],
         capture_output=True
     )
     
     if not os.path.exists(temp_txt_path):
-        print(f"Error on OCR (no output file). Stderr: {result.stderr.decode('cp1252', errors='replace')}")
+        print(f"Error: temp output not found. stderr: {result.stderr.decode('cp1252', errors='replace')}")
         return ""
         
     with open(temp_txt_path, "r", encoding="utf-8-sig") as f:
