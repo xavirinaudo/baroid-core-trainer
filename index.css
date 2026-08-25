@@ -976,7 +976,9 @@ select.input-field option {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 20px;
-  padding: 4px 0;
+  /* Vertical padding ensures scale(1.08) + box-shadow of .current chip
+     are not clipped by the implicit overflow-y:hidden of overflow-x:auto */
+  padding: 6px 4px;
   max-width: 100%;
   overflow-x: auto;
 }
@@ -1374,23 +1376,27 @@ body[data-theme="light"] .glass {
     color: var(--primary);
   }
 
-  /* Mobile Sidebar Overlay covers full screen */
+  /* Mobile Sidebar Overlay – covers only the area BESIDE the sidebar (right side)
+     so it never overlaps or visually blurs the sidebar panel itself.
+     backdrop-filter is intentionally omitted: it creates a new stacking context
+     in mobile browsers that makes sibling elements (the sidebar) appear blurry
+     and can block touch events on them. */
   .mobile-sidebar-overlay {
     display: none;
     position: fixed;
-    top: 0 !important;
-    left: 0;
+    top: 0;
+    left: 280px;     /* Start right where the sidebar ends */
     right: 0;
-    bottom: 0 !important;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 9999 !important;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    /* NO backdrop-filter here — intentional, avoids blurring sidebar */
+    z-index: 9998; /* Below sidebar (10000) but above page content */
+    cursor: pointer;
   }
   
   .mobile-sidebar-overlay.active {
     display: block;
-    animation: fadeIn 0.2s ease;
+    animation: fadeIn 0.18s ease;
   }
 
   /* Mobile Bottom Navigation Bar Styles (Sleeker & shorter height) */
@@ -1479,8 +1485,10 @@ body[data-theme="light"] .glass {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
     gap: 5px !important;
-    padding-bottom: 4px;
-    margin-bottom: 12px !important;
+    /* Top + bottom padding prevents scale(1.08) and box-shadow of the
+       active chip from being clipped by the implicit overflow-y:hidden */
+    padding: 6px 4px !important;
+    margin-bottom: 10px !important;
   }
   .progress-chip {
     flex: 0 0 30px !important; /* Fixed width, non-shrinkable */
