@@ -440,6 +440,14 @@ function startQuiz(quizId) {
   hasCheckedAnswer = false;
   sessionCorrectCount = 0;
   
+  // Google Analytics Event for Quiz Started
+  if (typeof gtag === 'function') {
+    gtag('event', 'quiz_started', {
+      'quiz_id': quizId,
+      'quiz_title': quizInfo ? quizInfo.title : quizId
+    });
+  }
+  
   // Switch to quiz view pane
   document.querySelectorAll('.view-pane').forEach(el => el.style.display = 'none');
   document.getElementById('view-quiz').style.display = 'block';
@@ -1033,6 +1041,17 @@ function quizActionSubmit() {
       const targetQuizId = currentQuizId === 'errors' ? q.originalQuizId : currentQuizId;
       addToErrorLog(targetQuizId, q.id);
     }
+    
+    // Google Analytics Event for Answer Submitted
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_answer', {
+        'quiz_id': currentQuizId,
+        'question_id': q.id,
+        'question_type': q.type,
+        'is_correct': isCorrect ? 'correct' : 'incorrect'
+      });
+    }
+
     saveStats();
     
     document.getElementById('quiz-explanation-text').innerText = q.explanation;
@@ -1103,6 +1122,16 @@ function showQuizResults() {
   document.getElementById('quiz-results-container').style.display = 'block';
   
   const scorePercent = Math.round((sessionCorrectCount / currentQuestions.length) * 100);
+  
+  // Google Analytics Event for Quiz Completed
+  if (typeof gtag === 'function') {
+    gtag('event', 'quiz_completed', {
+      'quiz_id': currentQuizId,
+      'score_percent': scorePercent,
+      'correct_answers': sessionCorrectCount,
+      'total_questions': currentQuestions.length
+    });
+  }
   
   const congratsEl = document.getElementById('quiz-results-congrats');
   if (congratsEl) {
@@ -1313,6 +1342,12 @@ function checkAlkalinityAnswers() {
   else { hco3El.className = 'input-field incorrect'; allCorrect = false; }
   
   stats.simulatorsRun += 1;
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'alkalinity',
+      'result': allCorrect ? 'all_correct' : 'has_errors'
+    });
+  }
   saveStats();
   
   const stepText = `Evaluating results:\nPf = ${Pf} mL, Mf = ${Mf} mL\nCompute 2*Pf = ${Math.round(2*Pf*10)/10} mL\n\nCondition identified: ${conditionText}\n\nNumerical solution:\n- OH⁻ = ${OH} mg/L\n- CO₃²⁻ = ${CO3} mg/L\n- HCO₃⁻ = ${HCO3} mg/L`;
@@ -1517,6 +1552,12 @@ function checkMassBalanceAnswers() {
   }
   
   stats.simulatorsRun += 1;
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'mass_balance',
+      'result': isAllCorrect ? 'all_correct' : 'has_errors'
+    });
+  }
   saveStats();
   
   document.getElementById('train-mb-explanation-text').innerText = explanation;
@@ -1630,6 +1671,12 @@ function checkSolidsAnswers() {
   else { drbEl.className = 'input-field incorrect'; isAllCorrect = false; }
   
   stats.simulatorsRun += 1;
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'solids_control',
+      'result': isAllCorrect ? 'all_correct' : 'has_errors'
+    });
+  }
   saveStats();
   
   const stepText = `1) %Total Solids = 100 - ${water_pct} - ${oil_pct} = ${solids_pct}%\n2) Average Specific Gravity (ASG):\n   ASG = [100 * ${mw} - (${water_pct} * 8.345 + ${oil_pct} * 7.0)] / (${solids_pct} * 8.345) = ${asg}\n3) High Gravity Solids percentage (%HGS):\n   %HGS = ${solids_pct} * (ASG - 2.6) / 1.6 = ${hgs_pct}%\n4) Low Gravity Solids percentage (%LGS):\n   %LGS = ${solids_pct} - ${hgs_pct} = ${lgs_pct}%\n5) Concentrations in ppb:\n   - LGS ppb = %LGS * 9.1127 * 2.6 = ${lgs_ppb} ppb\n   - HGS ppb = %HGS * 9.1127 * 4.2 = ${hgs_ppb} ppb\n6) Drill solids concentration:\n   Commercial Bentonite = CEC * 5 = ${cec * 5} ppb\n   Drill Solids ppb = LGS ppb - Bentonita = ${lgs_ppb} - ${cec * 5} = ${drill_ppb} ppb.`;
@@ -1740,6 +1787,12 @@ function checkHoleAnswers() {
   });
   
   stats.simulatorsRun += 1;
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'hole_volume',
+      'result': allCorrect ? 'all_correct' : 'has_errors'
+    });
+  }
   saveStats();
   
   const stepText = `1) Triplex Pump output:\n   Output = 0.000243 * 6.5² * 12 * 0.96 = 0.1183 bbl/stk\n2) Drill string capacity (DP + DC):\n   - DP 4.5" (ID 3.958", length 9,650 ft) = 9650 * 3.958² / 1029.4 = 146.7 bbl\n   - DP 3.5" (ID 2.9", length 10,350 ft) = 10350 * 2.9² / 1029.4 = 84.5 bbl\n   - DC 3.5" (ID 1.5", length 2,000 ft) = 2000 * 1.5² / 1029.4 = 4.4 bbl\n   - Total capacities = 235.69 bbl\n3) Total annular volume = 837.26 bbl\n4) Circulating volume = Annular (837.26) + String (235.69) + Pits (1800) = 2873.05 bbl\n5) Strokes and times (Total SPM = 58 + 57 = 115 spm):\n   - Bottoms Up: 837.26 / 0.1183 = 7,078 strokes | Time = 62 min\n   - Surface to Bit: 235.69 / 0.1183 = 1,994 strokes | Time = 18 min\n   - Suction to Suction: 2873.05 / 0.1183 = 24,287 strokes | Time = 212 min.`;
@@ -1936,6 +1989,15 @@ function checkContaminantsAnswers() {
   dosageEl.disabled = true;
 
   let allCorrect = isContCorrect && isTreatCorrect && isDosageCorrect;
+
+  // Google Analytics Event for Contaminants WBM
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'contaminants_wbm',
+      'result': allCorrect ? 'all_correct' : 'has_errors',
+      'case_name': entry.name
+    });
+  }
 
   // Show detailed explanation
   const expEl = document.getElementById('train-cont-explanation');
@@ -2367,6 +2429,15 @@ function checkNafAnswers() {
   treatEl.disabled = true;
 
   let allCorrect = isContCorrect && isTreatCorrect;
+
+  // Google Analytics Event for Contaminants NAF
+  if (typeof gtag === 'function') {
+    gtag('event', 'simulator_run', {
+      'simulator_type': 'contaminants_naf',
+      'result': allCorrect ? 'all_correct' : 'has_errors',
+      'case_name': entry.name
+    });
+  }
 
   // Show detailed explanation
   const expEl = document.getElementById('train-cont-naf-explanation');
